@@ -1,7 +1,7 @@
 +++
-title = "{{ replace .TranslationBaseName "-" " " | title }}"
+title = "{{ .TranslationBaseName }}"
 date = {{ .Date }}
-url = "{{ dateFormat "2006-01" .Date }}-"
+url = "{{ dateFormat "2006-01" .Date }}-{{ .TranslationBaseName }}"
 +++
 
-## {{ replace .TranslationBaseName "-" " " | title }}
+## {{ .TranslationBaseName }}
