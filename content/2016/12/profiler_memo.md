@@ -1,11 +1,8 @@
-./2016/12/2016-12-11-profiler_memo.markdown
----
-layout: post
-title: "調べた PHP のプロファイラーのメモ"
-date: 2016-12-11 01:52:56 +0900
-comments: true
-categories: 
----
++++
+title = "調べた PHP のプロファイラーのメモ"
+date = 2016-12-11T01:52:56+09:00
+url = "2016-12-profiler_memo"
++++
 
 # プロファイラーを調べた
 
