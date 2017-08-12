@@ -1,0 +1,43 @@
+---
+id: 549
+title: Webデザインについて考える（http://www.laurent-millet.com/）
+date: 2012-11-26T01:24:33+00:00
+author: 管理者
+layout: post
+guid: http://5000164.jp/?p=549
+permalink: /2012-11-webdesign_laurent_millet/
+categories:
+  - WebDesign
+tags:
+  - webdesign
+---
+&nbsp;
+
+このサイトのデザインについて考える。
+
+&nbsp;
+
+Laurent Millet  
+<http://www.laurent-millet.com/>
+
+[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="Laurent Millet" border="0" alt="Laurent Millet" src="http://5000164.jp/wp-content/uploads/2012/11/Laurent-Millet_thumb.png" width="640" height="473" />](http://5000164.jp/wp-content/uploads/2012/11/Laurent-Millet.png)
+
+&nbsp;
+
+# コンテンツの並べ方
+
+コンテンツが理路整然と並べられていて、写真が映えている。
+
+写真のプロダクトの紹介がメインのサイトだとわかる。
+
+&nbsp;
+
+# コンテンツの見せ方
+
+アイテムをクリックすることでコンテンツが展開する。
+
+展開されたサイズは横幅が並べられているコンテンツの3つ分となり、この画面のまま展開される。
+
+展開された後も理路整然としていてストレスなくきれいにコンテンツの中身を見ることができる。
+
+やはりページ遷移はできるだけない方がストレスはかからなくてすむ。
