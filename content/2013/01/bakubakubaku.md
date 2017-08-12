@@ -6,7 +6,7 @@ url = "2013-01-bakubakubaku"
 &nbsp;
 
 <p align="center">
-  <a title="バクバクバク" href="http://nagurigaki.web.fc2.com/baku/" target="_blank">{{< figure src="/images/2013/01/1fc28d2282cd.png"" title="" >}}
+  <a title="バクバクバク" href="http://nagurigaki.web.fc2.com/baku/" target="_blank">{{< figure src="/images/2013/01/1fc28d2282cd.png" title="" >}}</a>
 </p>
 
 &nbsp;
