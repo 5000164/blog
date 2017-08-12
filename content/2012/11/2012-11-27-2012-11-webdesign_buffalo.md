@@ -1,7 +1,7 @@
 +++
 title = "Webデザインについて考える（http://builtbybuffalo.com/）"
 date = 2012-11-27T00:39:29+00:00
-permalink: /2012-11-webdesign_buffalo/
+url = "2012-11-webdesign_buffalo"
 +++
 &nbsp;
 
