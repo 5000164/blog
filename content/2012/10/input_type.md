@@ -29,15 +29,15 @@ HTML5からは入力文字をpatternで正規表現を利用して制御でき�
 
 <pre class="brush: xml; gutter: false; title: ; notranslate" title="">&lt;input type=&quot;number&quot;&gt;</pre>
 
-[<img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="number" border="0" alt="number" src="{{ .Site.BaseURL }}/images/2012/10/number_thumb1.png" width="324" height="484" />]({{ .Site.BaseURL }}/images/2012/10/number1.png)
+{{< figure src="/images/2012/10/number1.png" title="" >}}
 
 <pre class="brush: xml; gutter: false; title: ; notranslate" title="">&lt;input type=&quot;tel&quot;&gt;</pre>
 
-[<img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="tel" border="0" alt="tel" src="{{ .Site.BaseURL }}/images/2012/10/tel_thumb1.png" width="324" height="484" />]({{ .Site.BaseURL }}/images/2012/10/tel1.png)
+{{< figure src="/images/2012/10/tel1.png" title="" >}}
 
 <pre class="brush: xml; gutter: false; title: ; notranslate" title="">&lt;input type=&quot;text&quot; pattern=&quot;\d*&quot;&gt;</pre>
 
-[<img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="text" border="0" alt="text" src="{{ .Site.BaseURL }}/images/2012/10/text_thumb1.png" width="324" height="484" />]({{ .Site.BaseURL }}/images/2012/10/text1.png)
+{{< figure src="/images/2012/10/text1.png" title="" >}}
 
 &nbsp; 
 

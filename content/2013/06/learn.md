@@ -4,7 +4,7 @@ date = 2013-06-15T04:12:39+00:00
 url = "2013-06-learn"
 +++
 </p> <div style="text-align: center;">
-  <img src="{{ .Site.BaseURL }}/images/2013/06/20130614_learn-300x300.png" alt="20130614_learn" width="300" height="300" class="aligncenter size-medium wp-image-779" srcset="{{ .Site.BaseURL }}/images/2013/06/20130614_learn-300x300.png 300w, {{ .Site.BaseURL }}/images/2013/06/20130614_learn-150x150.png 150w, {{ .Site.BaseURL }}/images/2013/06/20130614_learn.png 500w" sizes="(max-width: 300px) 100vw, 300px" />
+  {{< figure src="/images/2013/06/20130614_learn.png" title="" >}}
 </div></a># よく思うこと私はよく「おれってダメだなぁ」と思います。
   
 それは自分の希望する理想像と現実とのギャップが原因です。

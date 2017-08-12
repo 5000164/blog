@@ -1,12 +1,12 @@
 +++
-title = "'漫画の感想（バクバクバク／&gamma;‐&gamma;）'"
+title = "漫画の感想（バクバクバク／γ‐γ）"
 date = 2013-01-14T01:52:01+00:00
 url = "2013-01-bakubakubaku"
 +++
 &nbsp;
 
 <p align="center">
-  <a title="バクバクバク" href="http://nagurigaki.web.fc2.com/baku/" target="_blank"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="バクバクバク" border="0" alt="バクバクバク" src="{{ .Site.BaseURL }}/images/2013/01/1fc28d2282cd.png" width="240" height="197" /><br /><span>バクバクバク／γ‐γ</span> </a>
+  <a title="バクバクバク" href="http://nagurigaki.web.fc2.com/baku/" target="_blank">{{< figure src="/images/2013/01/1fc28d2282cd.png"" title="" >}}
 </p>
 
 &nbsp;

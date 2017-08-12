@@ -3,7 +3,7 @@ title = "テキストボックスの文字を右寄せにしているとiOSで�
 date = 2013-02-07T00:57:47+00:00
 url = "2013-02-input"
 +++
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="de_20130206_input" border="0" alt="de_20130206_input" src="{{ .Site.BaseURL }}/images/2013/02/de_20130206_input_thumb.jpg" width="300" height="300" />]({{ .Site.BaseURL }}/images/2013/02/de_20130206_input.jpg)
+{{< figure src="/images/2013/02/de_20130206_input.jpg" title="" >}}
 
 &nbsp;
 
@@ -47,13 +47,13 @@ focusがあたっている時は左寄せにしてあげればいいのです。
 
 ## 動作画面
 
-このように動作します。[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="de_20130206_image1" border="0" alt="de_20130206_image1" src="{{ .Site.BaseURL }}/images/2013/02/de_20130206_image1_thumb.jpg" width="320" height="480" />]({{ .Site.BaseURL }}/images/2013/02/de_20130206_image1.jpg)
+このように動作します。{{< figure src="/images/2013/02/de_20130206_image1.jpg" title="" >}}
 
 テキストボックスに数字を右寄せで表示。
 
 &nbsp;
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="de_20130206_image2" border="0" alt="de_20130206_image2" src="{{ .Site.BaseURL }}/images/2013/02/de_20130206_image2_thumb.jpg" width="320" height="480" />]({{ .Site.BaseURL }}/images/2013/02/de_20130206_image2.jpg)
+{{< figure src="/images/2013/02/de_20130206_image2.jpg" title="" >}}
 
 上のテキストボックスは特に何も設定をしていません。
 
@@ -61,7 +61,7 @@ focusがあたっている時は左寄せにしてあげればいいのです。
 
 &nbsp;
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="de_20130206_image3" border="0" alt="de_20130206_image3" src="{{ .Site.BaseURL }}/images/2013/02/de_20130206_image3_thumb.jpg" width="320" height="480" />]({{ .Site.BaseURL }}/images/2013/02/de_20130206_image3.jpg)
+{{< figure src="/images/2013/02/de_20130206_image3.jpg" title="" >}}
 
 下のテキストボックスはfocusがあたった時点で左寄せにしています。
 

@@ -3,7 +3,7 @@ title = "リストバンド型のライフログガジェットを調べたの�
 date = 2014-01-01T17:44:17+00:00
 url = "2014-01-lifelog"
 +++
-[<img src="{{ .Site.BaseURL }}/images/2014/01/de_20140101_lifelog-300x300.jpg" alt="de_20140101_lifelog" width="300" height="300" class="aligncenter size-medium wp-image-1021" srcset="{{ .Site.BaseURL }}/images/2014/01/de_20140101_lifelog-300x300.jpg 300w, {{ .Site.BaseURL }}/images/2014/01/de_20140101_lifelog-150x150.jpg 150w, {{ .Site.BaseURL }}/images/2014/01/de_20140101_lifelog.jpg 900w" sizes="(max-width: 300px) 100vw, 300px" />]({{ .Site.BaseURL }}/images/2014/01/de_20140101_lifelog.jpg)
+{{< figure src="/images/2014/01/de_20140101_lifelog.jpg" title="" >}}
 
 # きっかけ
 

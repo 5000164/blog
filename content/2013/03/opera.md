@@ -3,7 +3,7 @@ title = "Operaの右クリックで表示中のページのURLを取得したり
 date = 2013-03-04T04:16:33+00:00
 url = "2013-03-opera"
 +++
-[<img title="de_20130303_Opera" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; border-left: 0px; display: block; padding-right: 0px; margin-right: auto" border="0" alt="de_20130303_Opera" src="{{ .Site.BaseURL }}/images/2013/03/de_20130303_Opera_thumb.jpg" width="300" height="300" />]({{ .Site.BaseURL }}/images/2013/03/de_20130303_Opera.jpg)
+{{< figure src="/images/2013/03/de_20130303_Opera.jpg" title="" >}}
 
 &nbsp;
 

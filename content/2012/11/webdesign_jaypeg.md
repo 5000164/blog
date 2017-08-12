@@ -10,7 +10,7 @@ url = "2012-11-webdesign_jaypeg"
 JAYPEG  
 <https://jypg.net/> 
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="JAYPEG_20121119" border="0" alt="JAYPEG_20121119" src="{{ .Site.BaseURL }}/images/2012/11/JAYPEG_20121119_thumb.png" width="627" height="484" />]({{ .Site.BaseURL }}/images/2012/11/JAYPEG_20121119.png)
+{{< figure src="/images/2012/11/JAYPEG_20121119.png" title="" >}}
 
 &nbsp; 
 

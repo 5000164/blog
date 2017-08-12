@@ -3,9 +3,8 @@ title = "HTMLとCSSとJavaScriptで空白と改行を削除するWebアプリを
 date = 2013-11-29T21:01:01+00:00
 url = "2013-11-space_delete"
 +++
-<div style="text-align: center;">
-  <a href="{{ .Site.BaseURL }}/images/2013/11/20131129_space_delete.png"><img src="{{ .Site.BaseURL }}/images/2013/11/20131129_space_delete-300x300.png" alt="20131129_space_delete" width="300" height="300" class="aligncenter size-medium wp-image-940" srcset="{{ .Site.BaseURL }}/images/2013/11/20131129_space_delete-300x300.png 300w, {{ .Site.BaseURL }}/images/2013/11/20131129_space_delete-150x150.png 150w, {{ .Site.BaseURL }}/images/2013/11/20131129_space_delete.png 900w" sizes="(max-width: 300px) 100vw, 300px" /></a>
-</div>
+
+{{< figure src="/images/2013/11/20131129_space_delete.png" title="" >}}
 
 # 作ったもの
 

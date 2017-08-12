@@ -1,16 +1,9 @@
----
-id: 829
-title: アニメの感想（ダンガンロンパ 希望の学園と絶望の高校生 The Animation）
-date: 2013-10-18T23:17:49+00:00
-author: 管理者
-layout: post
-guid: http://5000164.jp/?p=829
-permalink: /2013-10-danganronpa/
-categories:
-  - 感想
-tags:
-  - アニメ
----
++++
+title = "アニメの感想（ダンガンロンパ 希望の学園と絶望の高校生 The Animation）"
+date = 2013-10-18T23:17:49+00:00
+url = "2013-10-danganronpa"
++++
+
 <div style="text-align: center;">
   <a href="http://www.amazon.co.jp/gp/product/B00DGN7826/ref=as_li_ss_il?ie=UTF8&#038;camp=247&#038;creative=7399&#038;creativeASIN=B00DGN7826&#038;linkCode=as2&#038;tag=5000164-22"><img border="0" src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&#038;ASIN=B00DGN7826&#038;Format=_SL160_&#038;ID=AsinImage&#038;MarketPlace=JP&#038;ServiceVersion=20070822&#038;WS=1&#038;tag=5000164-22" /><br /><span>ダンガンロンパ 希望の学園と絶望の高校生 The Animation</span></a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&#038;l=as2&#038;o=9&#038;a=B00DGN7826" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 </div>

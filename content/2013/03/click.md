@@ -3,7 +3,7 @@ title = "iOSでDOMに要素追加してjQueryでclickイベントを取得する
 date = 2013-03-20T01:46:32+00:00
 url = "2013-03-click"
 +++
-[<img title="de_20130319_click" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; border-left: 0px; display: block; padding-right: 0px; margin-right: auto" border="0" alt="de_20130319_click" src="{{ .Site.BaseURL }}/images/2013/03/de_20130319_click_thumb.jpg" width="300" height="300" />]({{ .Site.BaseURL }}/images/2013/03/de_20130319_click.jpg)
+{{< figure src="/images/2013/03/de_20130319_click.jpg" title="" >}}
 
 &nbsp;
 

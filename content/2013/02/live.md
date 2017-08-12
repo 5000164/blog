@@ -3,7 +3,7 @@ title = "生きるのが難しい"
 date = 2013-02-09T02:24:26+00:00
 url = "2013-02-live"
 +++
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="de_20130208_live" border="0" alt="de_20130208_live" src="{{ .Site.BaseURL }}/images/2013/02/de_20130208_live_thumb.jpg" width="300" height="300" />]({{ .Site.BaseURL }}/images/2013/02/de_20130208_live.jpg)
+{{< figure src="/images/2013/02/de_20130208_live.jpg" title="" >}}
 
 &nbsp;
 

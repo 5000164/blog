@@ -4,7 +4,7 @@ date = 2013-06-23T04:59:54+00:00
 url = "2013-06-effect"
 +++
 </p> <div style="text-align: center;">
-  <img src="{{ .Site.BaseURL }}/images/2013/06/20130622_effect-300x300.png" alt="20130622_effect" width="300" height="300" class="aligncenter size-medium wp-image-787" srcset="{{ .Site.BaseURL }}/images/2013/06/20130622_effect-300x300.png 300w, {{ .Site.BaseURL }}/images/2013/06/20130622_effect-150x150.png 150w, {{ .Site.BaseURL }}/images/2013/06/20130622_effect.png 500w" sizes="(max-width: 300px) 100vw, 300px" />
+  {{< figure src="/images/2013/06/20130622_effect.png" title="" >}}
 </div></a># 他人を救うことはできない他人は変えられない。
   
 他人は救えない。変えられるのは自分だけ。

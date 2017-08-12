@@ -3,11 +3,11 @@ title = "WPFで枠のないウィンドウを作る"
 date = 2014-03-11T23:17:38+00:00
 url = "2014-03-wpf_practice_1"
 +++
-<img src="{{ .Site.BaseURL }}/images/2014/03/20140311_practice1-300x300.png" alt="20140311_practice1" width="300" height="300" class="aligncenter size-medium wp-image-1121" srcset="{{ .Site.BaseURL }}/images/2014/03/20140311_practice1-300x300.png 300w, {{ .Site.BaseURL }}/images/2014/03/20140311_practice1-150x150.png 150w, {{ .Site.BaseURL }}/images/2014/03/20140311_practice1.png 700w" sizes="(max-width: 300px) 100vw, 300px" />
+{{< figure src="/images/2014/03/20140311_practice1.png" title="" >}}
 
 # 実際に作ったものはこんな感じです
 
-<img src="{{ .Site.BaseURL }}/images/2014/03/20140311_practice1.png" alt="20140311_practice1" width="700" height="700" class="aligncenter size-full wp-image-1121" srcset="{{ .Site.BaseURL }}/images/2014/03/20140311_practice1.png 700w, {{ .Site.BaseURL }}/images/2014/03/20140311_practice1-150x150.png 150w, {{ .Site.BaseURL }}/images/2014/03/20140311_practice1-300x300.png 300w" sizes="(max-width: 700px) 100vw, 700px" />
+{{< figure src="/images/2014/03/20140311_practice1-300x300.png" title="" >}}
 
 ソースコードはこちら。
   

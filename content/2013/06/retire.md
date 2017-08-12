@@ -1,20 +1,12 @@
----
-id: 739
-title: 休職して退職してやっとわかったこと
-date: 2013-06-03T15:37:28+00:00
-author: 管理者
-layout: post
-guid: http://5000164.jp/?p=739
-permalink: /2013-06-retire/
-image: /wp-content/uploads/2013/06/de_20130603_retire.jpg
-categories:
-  - 独り言
-tags:
-  - 退職
----
-</p> <div style="text-align: center;">
-  <img src="http://5000164.jp/wp-content/uploads/2013/06/de_20130603_retire.jpg" alt="de_20130603_retire" width="300" height="300" class="aligncenter size-full wp-image-740" srcset="http://5000164.jp/wp-content/uploads/2013/06/de_20130603_retire.jpg 300w, http://5000164.jp/wp-content/uploads/2013/06/de_20130603_retire-150x150.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" />
-</div></a># 退職2013/5/20付で[株式会社アート・システム](http://www.art-sys.co.jp "http://www.art-sys.co.jp")を退職しました。
++++
+title = "休職して退職してやっとわかったこと"
+date = 2013-06-03T15:37:28+00:00
+url = "2013-06-retire"
++++
+
+{{< figure src="/images/2013/06/de_20130603_retire.jpg" title="de_20130603_retire" >}}
+
+# 退職2013/5/20付で[株式会社アート・システム](http://www.art-sys.co.jp "http://www.art-sys.co.jp")を退職しました。
   
 2010/3/29の入社から約3年間お世話になりました。
   

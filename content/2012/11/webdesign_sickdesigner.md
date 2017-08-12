@@ -12,7 +12,7 @@ url = "2012-11-webdesign_sickdesigner"
 Sickdesigner.com › The work and play of Radu Chelariu  
 http://sickdesigner.com/
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="Sickdesigner.com" border="0" alt="Sickdesigner.com" src="{{ .Site.BaseURL }}/images/2012/11/Sickdesigner.com_thumb.png" width="640" height="473" />]({{ .Site.BaseURL }}/images/2012/11/Sickdesigner.com_.png)
+{{< figure src="/images/2012/11/Sickdesigner.com_.png" title="" >}}
 
 &nbsp;
 

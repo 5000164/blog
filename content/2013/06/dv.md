@@ -1,23 +1,13 @@
----
-id: 790
-title: DVのことを調べたので簡単にまとめてみた
-date: 2013-06-24T04:51:48+00:00
-author: 管理者
-layout: post
-guid: http://5000164.jp/?p=790
-permalink: /2013-06-dv/
-image: /wp-content/uploads/2013/06/20130623_dv.png
-categories:
-  - 独り言
-tags:
-  - 考え方
----
-</p> <div style="text-align: center;">
-  <img src="http://5000164.jp/wp-content/uploads/2013/06/20130623_dv-300x300.png" alt="20130623_dv" width="300" height="300" class="aligncenter size-medium wp-image-800" srcset="http://5000164.jp/wp-content/uploads/2013/06/20130623_dv-300x300.png 300w, http://5000164.jp/wp-content/uploads/2013/06/20130623_dv-150x150.png 150w, http://5000164.jp/wp-content/uploads/2013/06/20130623_dv.png 500w" sizes="(max-width: 300px) 100vw, 300px" />
-</div></a># 調べるきっかけDVのことを調べるきっかけになったのはこの記事を読んだからでした。
-  
++++
+title = "DVのことを調べたので簡単にまとめてみた"
+date = 2013-06-24T04:51:48+00:00
+url = "2013-06-dv"
++++
 
-  
+{{< figure src="/images/2013/06/20130623_dv-300x300.png" title="20130623_dv" >}}
+
+# 調べるきっかけDVのことを調べるきっかけになったのはこの記事を読んだからでした。
+
 子育て中の親に安らぎを、映画『おおかみこどもの雨と雪』 &#8211; #RyoAnnaBlog
   
 [http://d.hatena.ne.jp/RyoAnna/20130617/1371476485](http://d.hatena.ne.jp/RyoAnna/20130617/1371476485 "http://d.hatena.ne.jp/RyoAnna/20130617/1371476485")

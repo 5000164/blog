@@ -12,7 +12,7 @@ url = "2012-11-webdesign_elite"
 Welcome to Elite Premium WordPress Theme  
 <http://mythemepreviews.com/elite-wp/>
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="Elite" border="0" alt="Elite" src="{{ .Site.BaseURL }}/images/2012/11/Elite_thumb.png" width="640" height="480" />]({{ .Site.BaseURL }}/images/2012/11/Elite.png)
+{{< figure src="/images/2012/11/Elite.png" title="" >}}
 
 &nbsp;
 

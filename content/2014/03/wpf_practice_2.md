@@ -3,11 +3,11 @@ title = "WPFで方向キーを入力した方向へ四角形を動かす"
 date = 2014-03-13T04:21:42+00:00
 url = "2014-03-wpf_practice_2"
 +++
-<img src="{{ .Site.BaseURL }}/images/2014/03/20140312_practice2-300x200.png" alt="20140312_practice2" width="300" height="200" class="aligncenter size-medium wp-image-1150" srcset="{{ .Site.BaseURL }}/images/2014/03/20140312_practice2-300x200.png 300w, {{ .Site.BaseURL }}/images/2014/03/20140312_practice2.png 525w" sizes="(max-width: 300px) 100vw, 300px" />
+{{< figure src="/images/2014/03/20140312_practice2.png" title="" >}}
 
 # 実際に作ったものはこんな感じです
 
-<img src="{{ .Site.BaseURL }}/images/2014/03/20140312_practice2.png" alt="20140312_practice2" width="525" height="350" class="aligncenter size-full wp-image-1150" srcset="{{ .Site.BaseURL }}/images/2014/03/20140312_practice2.png 525w, {{ .Site.BaseURL }}/images/2014/03/20140312_practice2-300x200.png 300w" sizes="(max-width: 525px) 100vw, 525px" />
+{{< figure src="/images/2014/03/20140312_practice2-300x200.png" title="" >}}
 
 方向キーの入力した方向へで赤い点が動きます。
   

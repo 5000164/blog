@@ -3,7 +3,7 @@ title = "ブログのデザインを変更しました Version 1.8"
 date = 2013-03-17T08:32:19+00:00
 url = "2013-03-blog_design"
 +++
-[<img title="top" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; display: block; padding-right: 0px; border-top-width: 0px; margin-right: auto" border="0" alt="top" src="{{ .Site.BaseURL }}/images/2013/03/top_thumb.png" width="300" height="300" />]({{ .Site.BaseURL }}/images/2013/03/top.png)
+{{< figure src="/images/2013/03/top.png" title="" >}}
 
 &nbsp;
 
