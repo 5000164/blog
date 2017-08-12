@@ -1,15 +1,7 @@
 +++
-id: 535
 title = "Webデザインについて考える（http://www.half-moon.or.jp/）"
 date: 2012-11-24T03:26:12+00:00
-author: 管理者
-layout: post
-guid: http://5000164.jp/?p=535
 permalink: /2012-11-webdesign_half-moon/
-categories:
-  - WebDesign
-tags:
-  - webdesign
 +++
 &nbsp;
 

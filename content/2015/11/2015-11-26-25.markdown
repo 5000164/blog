@@ -1,9 +1,6 @@
 +++
-layout: post
 title = ""25""
 date: 2015-11-26 00:11:18 +0900
-comments: true
-categories: 
 +++
 
 今日は引っ越しの手続きをいろいろとした

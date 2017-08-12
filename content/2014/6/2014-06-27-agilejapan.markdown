@@ -1,9 +1,6 @@
 +++
-layout: post
 title = ""新しい考え方をもらった – Agile Japan 2014 仙台サテライトに参加しました""
 date: 2014-06-27 22:54:42 +0900
-comments: true
-categories:
 +++
 
 # Agile Japan 2014 仙台サテライトに参加しました

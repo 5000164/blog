@@ -1,9 +1,6 @@
 +++
-layout: post
 title = ""29""
 date: 2015-11-30 04:57:47 +0900
-comments: true
-categories: 
 +++
 
 洗濯機が思ってたよりも静か

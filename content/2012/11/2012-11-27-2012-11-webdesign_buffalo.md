@@ -1,15 +1,7 @@
 +++
-id: 555
 title = "Webデザインについて考える（http://builtbybuffalo.com/）"
 date: 2012-11-27T00:39:29+00:00
-author: 管理者
-layout: post
-guid: http://5000164.jp/?p=555
 permalink: /2012-11-webdesign_buffalo/
-categories:
-  - WebDesign
-tags:
-  - webdesign
 +++
 &nbsp;
 

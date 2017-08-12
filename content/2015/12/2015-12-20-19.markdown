@@ -1,9 +1,6 @@
 +++
-layout: post
 title = ""19""
 date: 2015-12-20 05:17:35 +0900
-comments: true
-categories: 
 +++
 
 今日は書道に行く予定だったのに行けなかった

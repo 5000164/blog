@@ -1,9 +1,6 @@
 +++
-layout: post
 title = ""体調不良で早退した""
 date: 2014-05-15 23:07:13 +0900
-comments: true
-categories: 
 +++
 
 # なんだか突然具合が悪くなった

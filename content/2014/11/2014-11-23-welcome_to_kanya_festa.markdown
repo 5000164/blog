@@ -1,9 +1,6 @@
 +++
-layout: post
 title = ""しっくりこない - 小説「クドリャフカの順番」の感想""
 date: 2014-11-23 15:05:42 +0900
-comments: true
-categories: 
 +++
 
 ※ ネタバレ注意

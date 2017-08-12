@@ -1,9 +1,6 @@
 +++
-layout: post
 title = ""20""
 date: 2015-11-21 04:45:59 +0900
-comments: true
-categories: 
 +++
 
 価格の違いがわからない

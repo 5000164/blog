@@ -1,9 +1,6 @@
 +++
-layout: post
 title = ""20""
 date: 2015-12-21 02:14:52 +0900
-comments: true
-categories: 
 +++
 
 早く寝ようと思ってもうまくいかない

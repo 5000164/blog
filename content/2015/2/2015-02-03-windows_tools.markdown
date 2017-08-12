@@ -1,9 +1,6 @@
 +++
-layout: post
 title = ""Windows で PHP の開発をするときに使ったツール""
 date: 2015-02-03 23:13:39 +0900
-comments: true
-categories: 
 +++
 
 最近 Windows で PHP の開発をする機会があったので、使用したツールをまとめます

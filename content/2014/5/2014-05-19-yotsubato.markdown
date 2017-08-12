@@ -1,9 +1,6 @@
 +++
-layout: post
 title = ""気分が悪くなったらよつばと！を読もう""
 date: 2014-05-19 22:30:02 +0900
-comments: true
-categories: 
 +++
 
 # 最近よつばと！を読んでいます

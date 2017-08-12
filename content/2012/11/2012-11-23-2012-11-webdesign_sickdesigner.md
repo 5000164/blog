@@ -1,15 +1,7 @@
 +++
-id: 530
 title = "Webデザインについて考える（http://sickdesigner.com/）"
 date: 2012-11-23T01:12:53+00:00
-author: 管理者
-layout: post
-guid: http://5000164.jp/?p=530
 permalink: /2012-11-webdesign_sickdesigner/
-categories:
-  - WebDesign
-tags:
-  - webdesign
 +++
 &nbsp;
 
