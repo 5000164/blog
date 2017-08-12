@@ -1,4 +1,4 @@
----
++++
 id: 52
 title: WordPressのテーマ「TwentyEleven」で作成者とパーマリンクを非表示にする
 date: 2012-06-26T01:47:45+00:00
@@ -10,7 +10,7 @@ categories:
   - Development
 tags:
   - WordPress
----
++++
 <div>
   <div>
     テーマのフォルダにある

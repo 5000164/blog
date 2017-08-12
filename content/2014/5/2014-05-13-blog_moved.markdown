@@ -1,10 +1,10 @@
----
++++
 layout: post
 title: "ブログ移転しました"
 date: 2014-05-13 00:11:23 +0900
 comments: true
 categories: 
----
++++
 
 # WordPressからOctopressへ
 タイトルにもありますが、ブログを移転しました。  

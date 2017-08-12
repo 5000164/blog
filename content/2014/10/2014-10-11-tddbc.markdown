@@ -1,10 +1,10 @@
----
++++
 layout: post
 title: "まずは手を動かす - 「TDDBC仙台 4th」に参加しました"
 date: 2014-10-11 22:28:33 +0900
 comments: true
 categories: 
----
++++
 
 # 「TDDBC仙台 4th」に参加しました
 イベントの詳細はこちら。  

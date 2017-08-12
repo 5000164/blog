@@ -1,4 +1,4 @@
----
++++
 id: 530
 title: Webデザインについて考える（http://sickdesigner.com/）
 date: 2012-11-23T01:12:53+00:00
@@ -10,7 +10,7 @@ categories:
   - WebDesign
 tags:
   - webdesign
----
++++
 &nbsp;
 
 このサイトのデザインについて考える。

@@ -1,4 +1,4 @@
----
++++
 id: 512
 title: Webデザインについて考える（https://jypg.net/）
 date: 2012-11-20T01:44:22+00:00
@@ -10,7 +10,7 @@ categories:
   - WebDesign
 tags:
   - webdesign
----
++++
 このサイトのデザインについて考える。 
 
 &nbsp; 

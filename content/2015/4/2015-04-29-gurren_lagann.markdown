@@ -1,10 +1,10 @@
----
++++
 layout: post
 title: "あつい - アニメ「天元突破グレンラガン」の感想"
 date: 2015-04-29 20:00:44 +0900
 comments: true
 categories: 
----
++++
 
 ※ ネタバレ注意
 

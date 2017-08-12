@@ -1,10 +1,10 @@
----
++++
 layout: post
 title: "西暦の下 2 桁に 12 を足すと平成になる"
 date: 2015-08-19 00:18:50 +0900
 comments: true
 categories: 
----
++++
 
 今日知ったこと
 ===

@@ -1,10 +1,10 @@
----
++++
 layout: post
 title: "13"
 date: 2015-12-14 20:49:43 +0900
 comments: true
 categories: 
----
++++
 
 相手を自分の意のままにしようとしてる
 ===

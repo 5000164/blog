@@ -1,10 +1,10 @@
----
++++
 layout: post
 title: "Go 言語で文字列としてダブルコーテーションや改行を入れる"
 date: 2015-09-12 22:12:08 +0900
 comments: true
 categories: 
----
++++
 
 golang でダブルコーテーションや改行を string 型の変数に入れる
 ===

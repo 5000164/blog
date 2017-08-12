@@ -1,10 +1,10 @@
----
++++
 layout: post
 title: "10"
 date: 2015-12-11 01:24:39 +0900
 comments: true
 categories: 
----
++++
 
 対話すること
 ===
