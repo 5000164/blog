@@ -1,5 +1,5 @@
 +++
-title = ""Go を Mac にインストールした""
+title = "Go を Mac にインストールした"
 date = 2015-01-21T01:50:16+09:00
 url = "2015-01-install_go"
 +++

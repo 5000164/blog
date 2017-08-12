@@ -1,5 +1,5 @@
 +++
-title = ""Wikipedia のモバイル版を表示する Chrome 拡張機能を作った""
+title = "Wikipedia のモバイル版を表示する Chrome 拡張機能を作った"
 date = 2015-03-26T23:37:41+09:00
 url = "2015-03-redirect_to_mobile_wikipedia"
 +++
