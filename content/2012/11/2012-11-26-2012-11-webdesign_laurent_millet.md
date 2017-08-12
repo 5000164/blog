@@ -1,6 +1,6 @@
 +++
 id: 549
-title: Webデザインについて考える（http://www.laurent-millet.com/）
+title = "Webデザインについて考える（http://www.laurent-millet.com/）"
 date: 2012-11-26T01:24:33+00:00
 author: 管理者
 layout: post

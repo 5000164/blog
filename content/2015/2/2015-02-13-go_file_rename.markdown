@@ -1,6 +1,6 @@
 +++
 layout: post
-title: "Go の練習としてファイル名を変更するツールを作った"
+title = ""Go の練習としてファイル名を変更するツールを作った""
 date: 2015-02-13 01:29:47 +0900
 comments: true
 categories: 

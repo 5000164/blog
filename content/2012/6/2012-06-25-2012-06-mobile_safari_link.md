@@ -1,6 +1,6 @@
 +++
 id: 16
-title: Mobile Safariで数字に勝手にリンクが貼られるのを無効化する
+title = "Mobile Safariで数字に勝手にリンクが貼られるのを無効化する"
 date: 2012-06-25T23:09:21+00:00
 author: 管理者
 layout: post

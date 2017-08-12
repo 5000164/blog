@@ -1,6 +1,6 @@
 +++
 layout: post
-title: "PHP の二次元配列から同じキーの値だけで新しい配列を生成する"
+title = ""PHP の二次元配列から同じキーの値だけで新しい配列を生成する""
 date: 2015-07-23 00:15:30 +0900
 comments: true
 categories: 

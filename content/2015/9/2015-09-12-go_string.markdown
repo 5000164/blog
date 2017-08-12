@@ -1,6 +1,6 @@
 +++
 layout: post
-title: "Go 言語で文字列としてダブルコーテーションや改行を入れる"
+title = ""Go 言語で文字列としてダブルコーテーションや改行を入れる""
 date: 2015-09-12 22:12:08 +0900
 comments: true
 categories: 

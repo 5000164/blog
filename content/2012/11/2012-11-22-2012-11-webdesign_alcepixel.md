@@ -1,6 +1,6 @@
 +++
 id: 526
-title: Webデザインについて考える（http://alcepixel.com/）
+title = "Webデザインについて考える（http://alcepixel.com/）"
 date: 2012-11-22T00:55:30+00:00
 author: 管理者
 layout: post

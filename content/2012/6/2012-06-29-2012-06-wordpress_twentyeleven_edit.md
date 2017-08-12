@@ -1,6 +1,6 @@
 +++
 id: 76
-title: WordPressのテーマ「TwentyEleven」でいろいろ消したり幅広げたり色変えたりした
+title = "WordPressのテーマ「TwentyEleven」でいろいろ消したり幅広げたり色変えたりした"
 date: 2012-06-29T01:52:41+00:00
 author: 管理者
 layout: post

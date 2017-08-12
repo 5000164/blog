@@ -1,6 +1,6 @@
 +++
 layout: post
-title: "夢を語り合える世界をつくりたい - 「Hoping Invites | Tsutomu Uematsu | TEDxSapporo」の感想"
+title = ""夢を語り合える世界をつくりたい - 「Hoping Invites | Tsutomu Uematsu | TEDxSapporo」の感想""
 date: 2014-11-22 00:12:40 +0900
 comments: true
 categories:

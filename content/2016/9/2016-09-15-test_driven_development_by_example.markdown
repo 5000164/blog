@@ -1,6 +1,6 @@
 +++
 layout: post
-title: "テスト頑張ろう - 技術書「テスト駆動開発入門」の感想"
+title = ""テスト頑張ろう - 技術書「テスト駆動開発入門」の感想""
 date: 2016-09-15 03:01:06 +0900
 comments: true
 categories: 

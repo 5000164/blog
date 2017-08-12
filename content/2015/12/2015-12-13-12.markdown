@@ -1,6 +1,6 @@
 +++
 layout: post
-title: "12"
+title = ""12""
 date: 2015-12-13 16:51:18 +0900
 comments: true
 categories: 
