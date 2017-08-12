@@ -1,15 +1,7 @@
 +++
-id: 545
 title = "Webデザインについて考える（http://genelu.com/）"
 date: 2012-11-25T03:55:43+00:00
-author: 管理者
-layout: post
-guid: http://5000164.jp/?p=545
 permalink: /2012-11-webdesign_genelu/
-categories:
-  - WebDesign
-tags:
-  - webdesign
 +++
 &nbsp;
 

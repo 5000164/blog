@@ -1,9 +1,6 @@
 +++
-layout: post
 title = ""叫ぶ強さ - 小説「氷菓」の感想""
 date: 2014-11-18 01:02:24 +0900
-comments: true
-categories:
 +++
 
 ※ ネタバレ注意

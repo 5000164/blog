@@ -1,9 +1,6 @@
 +++
-layout: post
 title = ""サーティワンアイスクリームのメモ""
 date: 2015-07-27 02:35:33 +0900
-comments: true
-categories: 
 +++
 
 サーティワンアイスクリームで得た知見

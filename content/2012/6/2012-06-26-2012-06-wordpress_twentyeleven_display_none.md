@@ -1,15 +1,7 @@
 +++
-id: 52
 title = "WordPressのテーマ「TwentyEleven」で作成者とパーマリンクを非表示にする"
 date: 2012-06-26T01:47:45+00:00
-author: 管理者
-layout: post
-guid: http://219.94.241.240/?p=52
 permalink: /2012-06-wordpress_twentyeleven_display_none/
-categories:
-  - Development
-tags:
-  - WordPress
 +++
 <div>
   <div>

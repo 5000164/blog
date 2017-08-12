@@ -1,15 +1,7 @@
 +++
-id: 76
 title = "WordPressのテーマ「TwentyEleven」でいろいろ消したり幅広げたり色変えたりした"
 date: 2012-06-29T01:52:41+00:00
-author: 管理者
-layout: post
-guid: http://219.94.241.240/?p=76
 permalink: /2012-06-wordpress_twentyeleven_edit/
-categories:
-  - Development
-tags:
-  - WordPress
 +++
 <div>
   デザインをいろいろと変更しました。

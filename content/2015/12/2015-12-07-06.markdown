@@ -1,9 +1,6 @@
 +++
-layout: post
 title = ""06""
 date: 2015-12-07 02:41:55 +0900
-comments: true
-categories: 
 +++
 
 スター・ウォーズ エピソード5/帝国の逆襲を見た

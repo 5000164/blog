@@ -1,15 +1,7 @@
 +++
-id: 581
 title = "「ソフトウェア開発とデザイン －デザインとは－」という題で社内で発表しました"
 date: 2013-01-18T00:48:23+00:00
-author: 管理者
-layout: post
-guid: http://5000164.jp/?p=581
 permalink: /2013-01-software_design_design/
-categories:
-  - 勉強会
-tags:
-  - デザイン
 +++
 &nbsp;
 
