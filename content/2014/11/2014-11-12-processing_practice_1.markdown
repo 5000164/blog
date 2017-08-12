@@ -1,10 +1,10 @@
----
++++
 layout: post
 title: "Processing 始めました"
 date: 2014-11-12 04:52:21 +0900
 comments: true
 categories:
----
++++
 
 Processing がおもしろそうだった
 ====

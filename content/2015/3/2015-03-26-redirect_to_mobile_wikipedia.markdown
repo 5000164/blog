@@ -1,10 +1,10 @@
----
++++
 layout: post
 title: "Wikipedia のモバイル版を表示する Chrome 拡張機能を作った"
 date: 2015-03-26 23:37:41 +0900
 comments: true
 categories: 
----
++++
 
 Wikipedia はモバイル版の方が見やすいと思うのでモバイル版を表示する拡張機能を作った
 ====
@@ -15,14 +15,14 @@ Wikipedia はモバイル版の方が見やすいと思うのでモバイル版�
 ====
 
 作り方
-----
++++-
 Chrome 拡張機能の作り方がわからなかったので調べていたらドットインストールがあったのでここで勉強。  
 [Google Chrome拡張機能入門 (全20回) - プログラミングならドットインストール](http://dotinstall.com/lessons/basic_chrome_v2)  
 概要を把握。  
 思ってたよりさっくり作れそう。  
 
 TypeScript を使いたい
-----
++++-
 TypeScript を試したかった。  
 npm で TypeScript をインストールして PhpStorm で自動コンパイルするところまではすぐできた。  
 でも Chrome の API を認識させることができなくて困った。  
@@ -35,7 +35,7 @@ npm で TypeScript をインストールして PhpStorm で自動コンパイル
 [javascript - How do I use WebStorm for Chrome Extension Development? - Stack Overflow](http://stackoverflow.com/questions/13997468/how-do-i-use-webstorm-for-chrome-extension-development)
 
 実装内容 ver. 1
-----
++++-
 特定のページに来た時に動作すればいいんだから content_scripts でいけるだろと思って実装した。  
 なんか preRequest イベントってのがあるからそれ使いたい。  
 でも動かなかった。  
@@ -43,7 +43,7 @@ npm で TypeScript をインストールして PhpStorm で自動コンパイル
 ださい。
 
 実装内容 ver. 2
-----
++++-
 落ち着いて考えたら content_scripts はどうやらページが表示された後に動作する気配がある。  
 ってことは background にすれば preRequest 使えるんじゃないだろうかという仮説。  
 やってみたら使えた。  

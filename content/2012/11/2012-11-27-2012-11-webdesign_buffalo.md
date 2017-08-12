@@ -1,4 +1,4 @@
----
++++
 id: 555
 title: Webデザインについて考える（http://builtbybuffalo.com/）
 date: 2012-11-27T00:39:29+00:00
@@ -10,7 +10,7 @@ categories:
   - WebDesign
 tags:
   - webdesign
----
++++
 &nbsp;
 
 このサイトのデザインについて考える。

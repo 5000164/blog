@@ -1,10 +1,10 @@
----
++++
 layout: post
 title: "代わり映えのない二年間 - 小説「四畳半神話大系」の感想"
 date: 2014-07-05 10:24:22 +0900
 comments: true
 categories:
----
++++
 
 ※ネタバレ注意
 

@@ -1,4 +1,4 @@
----
++++
 id: 545
 title: Webデザインについて考える（http://genelu.com/）
 date: 2012-11-25T03:55:43+00:00
@@ -10,7 +10,7 @@ categories:
   - WebDesign
 tags:
   - webdesign
----
++++
 &nbsp;
 
 このサイトのデザインについて考える。

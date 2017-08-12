@@ -1,4 +1,4 @@
----
++++
 id: 535
 title: Webデザインについて考える（http://www.half-moon.or.jp/）
 date: 2012-11-24T03:26:12+00:00
@@ -10,7 +10,7 @@ categories:
   - WebDesign
 tags:
   - webdesign
----
++++
 &nbsp;
 
 このサイトのデザインについて考える。

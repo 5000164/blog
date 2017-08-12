@@ -1,10 +1,10 @@
----
++++
 layout: post
 title: "Ansible で作成したユーザーをパスワードなしで sudo できるようにする"
 date: 2015-11-28 02:55:39 +0900
 comments: true
 categories: 
----
++++
 
 先に簡単な結論
 ===
@@ -77,7 +77,7 @@ copy モジュールで持ってったら動いた
 結論
 ===
 ```
----
++++
 - hosts: all
   remote_user: vagrant
   sudo: yes

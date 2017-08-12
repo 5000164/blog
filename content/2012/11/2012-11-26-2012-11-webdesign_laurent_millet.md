@@ -1,4 +1,4 @@
----
++++
 id: 549
 title: Webデザインについて考える（http://www.laurent-millet.com/）
 date: 2012-11-26T01:24:33+00:00
@@ -10,7 +10,7 @@ categories:
   - WebDesign
 tags:
   - webdesign
----
++++
 &nbsp;
 
 このサイトのデザインについて考える。

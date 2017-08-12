@@ -1,10 +1,10 @@
----
++++
 layout: post
 title: "FuelPHP でデータを YAML 形式でインポート／エクスポートするタスク"
 date: 2015-03-19 00:05:37 +0900
 comments: true
 categories: 
----
++++
 
 データを YAML で管理する
 ====

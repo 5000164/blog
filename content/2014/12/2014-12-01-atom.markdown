@@ -1,10 +1,10 @@
----
++++
 layout: post
 title: "Windows の Atom で矩形選択する方法"
 date: 2014-12-01 23:55:30 +0900
 comments: true
 categories: 
----
++++
 
 結論
 ====

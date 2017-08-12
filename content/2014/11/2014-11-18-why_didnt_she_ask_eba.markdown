@@ -1,10 +1,10 @@
----
++++
 layout: post
 title: "これはしてやられた - 小説「愚者のエンドロール」の感想"
 date: 2014-11-18 01:23:43 +0900
 comments: true
 categories:
----
++++
 
 ※ ネタバレ注意
 
