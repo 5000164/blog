@@ -8,7 +8,7 @@
     <language>ja</language>
     <lastBuildDate>Sun, 11 Dec 2016 01:52:56 +0900</lastBuildDate>
     
-	<atom:link href="http://blog.5000164.jp/2016/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.5000164.jp/2016/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,8 +17,7 @@
       <pubDate>Sun, 11 Dec 2016 01:52:56 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2016-12-profiler_memo/</guid>
-      <description>プロファイラーを調べた PHP のパフォーマンスを向上させたくてプロファイリングすればなにかわかるのでは？と思ったので、プロファイリングしてくれるツールを調べた。
-New Relic は無料のプランがなくなっていた？ので除外。
+      <description>プロファイラーを調べた PHP のパフォーマンスを向上させたくてプロファイリングすればなにかわかるのでは？と思ったので、プロファイリングしてくれるツールを調べた。 New Relic は無料のプランがなくなっていた？ので除外。
 結論 テスト流す時に Xdebug でプロファイリングして、開発環境で XHProf でプロファイリングすればいいのかなと思った。
 XHProf は fork したプロセスのプロファイリングもできるみたいなことを見かけたため。
 実現性についてはこれから調べる。
