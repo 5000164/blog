@@ -2,9 +2,8 @@
 title = "4ヶ月無職で過ごした感想"
 date = 2014-02-28T00:14:30+00:00
 url = "2014-02-musyoku"
-image: /wp-content/uploads/2014/02/20140227_musyoku.jpg
 +++
-<img src="http://5000164.jp/wp-content/uploads/2014/02/20140227_musyoku-300x300.jpg" alt="20140227_musyoku" width="300" height="300" class="aligncenter size-medium wp-image-1115" srcset="http://5000164.jp/wp-content/uploads/2014/02/20140227_musyoku-300x300.jpg 300w, http://5000164.jp/wp-content/uploads/2014/02/20140227_musyoku-150x150.jpg 150w, http://5000164.jp/wp-content/uploads/2014/02/20140227_musyoku.jpg 450w" sizes="(max-width: 300px) 100vw, 300px" />
+<img src="{{ .Site.BaseURL }}/images/2014/02/20140227_musyoku-300x300.jpg" alt="20140227_musyoku" width="300" height="300" class="aligncenter size-medium wp-image-1115" srcset="{{ .Site.BaseURL }}/images/2014/02/20140227_musyoku-300x300.jpg 300w, {{ .Site.BaseURL }}/images/2014/02/20140227_musyoku-150x150.jpg 150w, {{ .Site.BaseURL }}/images/2014/02/20140227_musyoku.jpg 450w" sizes="(max-width: 300px) 100vw, 300px" />
 
 # 私は無職で約4ヶ月間過ごしました
 

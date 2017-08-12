@@ -2,9 +2,8 @@
 title = "テキストボックスの文字を右寄せにしているとiOSで入力しにくい"
 date = 2013-02-07T00:57:47+00:00
 url = "2013-02-input"
-image: /wp-content/uploads/2013/02/de_20130206_input_thumb.jpg
 +++
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="de_20130206_input" border="0" alt="de_20130206_input" src="http://5000164.jp/wp-content/uploads/2013/02/de_20130206_input_thumb.jpg" width="300" height="300" />](http://5000164.jp/wp-content/uploads/2013/02/de_20130206_input.jpg)
+[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="de_20130206_input" border="0" alt="de_20130206_input" src="{{ .Site.BaseURL }}/images/2013/02/de_20130206_input_thumb.jpg" width="300" height="300" />]({{ .Site.BaseURL }}/images/2013/02/de_20130206_input.jpg)
 
 &nbsp;
 
@@ -48,13 +47,13 @@ focusがあたっている時は左寄せにしてあげればいいのです。
 
 ## 動作画面
 
-このように動作します。[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="de_20130206_image1" border="0" alt="de_20130206_image1" src="http://5000164.jp/wp-content/uploads/2013/02/de_20130206_image1_thumb.jpg" width="320" height="480" />](http://5000164.jp/wp-content/uploads/2013/02/de_20130206_image1.jpg)
+このように動作します。[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="de_20130206_image1" border="0" alt="de_20130206_image1" src="{{ .Site.BaseURL }}/images/2013/02/de_20130206_image1_thumb.jpg" width="320" height="480" />]({{ .Site.BaseURL }}/images/2013/02/de_20130206_image1.jpg)
 
 テキストボックスに数字を右寄せで表示。
 
 &nbsp;
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="de_20130206_image2" border="0" alt="de_20130206_image2" src="http://5000164.jp/wp-content/uploads/2013/02/de_20130206_image2_thumb.jpg" width="320" height="480" />](http://5000164.jp/wp-content/uploads/2013/02/de_20130206_image2.jpg)
+[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="de_20130206_image2" border="0" alt="de_20130206_image2" src="{{ .Site.BaseURL }}/images/2013/02/de_20130206_image2_thumb.jpg" width="320" height="480" />]({{ .Site.BaseURL }}/images/2013/02/de_20130206_image2.jpg)
 
 上のテキストボックスは特に何も設定をしていません。
 
@@ -62,7 +61,7 @@ focusがあたっている時は左寄せにしてあげればいいのです。
 
 &nbsp;
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="de_20130206_image3" border="0" alt="de_20130206_image3" src="http://5000164.jp/wp-content/uploads/2013/02/de_20130206_image3_thumb.jpg" width="320" height="480" />](http://5000164.jp/wp-content/uploads/2013/02/de_20130206_image3.jpg)
+[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="de_20130206_image3" border="0" alt="de_20130206_image3" src="{{ .Site.BaseURL }}/images/2013/02/de_20130206_image3_thumb.jpg" width="320" height="480" />]({{ .Site.BaseURL }}/images/2013/02/de_20130206_image3.jpg)
 
 下のテキストボックスはfocusがあたった時点で左寄せにしています。
 

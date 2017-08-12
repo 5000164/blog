@@ -2,25 +2,24 @@
 title = "DXライブラリで読み込んだテキストをエンターで表示"
 date = 2014-04-01T02:03:09+00:00
 url = "2014-03-dxlib_practice_2"
-image: /wp-content/uploads/2014/04/20140331_practice2_eye.png
 +++
-<img src="http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_eye-300x300.png" alt="20140331_practice2_eye" width="300" height="300" class="aligncenter size-medium wp-image-1183" srcset="http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_eye-300x300.png 300w, http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_eye-150x150.png 150w, http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_eye.png 900w" sizes="(max-width: 300px) 100vw, 300px" />
+<img src="{{ .Site.BaseURL }}/images/2014/04/20140331_practice2_eye-300x300.png" alt="20140331_practice2_eye" width="300" height="300" class="aligncenter size-medium wp-image-1183" srcset="{{ .Site.BaseURL }}/images/2014/04/20140331_practice2_eye-300x300.png 300w, {{ .Site.BaseURL }}/images/2014/04/20140331_practice2_eye-150x150.png 150w, {{ .Site.BaseURL }}/images/2014/04/20140331_practice2_eye.png 900w" sizes="(max-width: 300px) 100vw, 300px" />
 
 # <a name="実行結果" href="#実行結果"></a>実行結果 {#実行結果}
 
-<img src="http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_1-1024x794.png" alt="20140331_practice2_1" width="1024" height="794" class="aligncenter size-large wp-image-1184" srcset="http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_1-1024x794.png 1024w, http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_1-300x232.png 300w, http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_1.png 1044w" sizes="(max-width: 1024px) 100vw, 1024px" />
+<img src="{{ .Site.BaseURL }}/images/2014/04/20140331_practice2_1-1024x794.png" alt="20140331_practice2_1" width="1024" height="794" class="aligncenter size-large wp-image-1184" srcset="{{ .Site.BaseURL }}/images/2014/04/20140331_practice2_1-1024x794.png 1024w, {{ .Site.BaseURL }}/images/2014/04/20140331_practice2_1-300x232.png 300w, {{ .Site.BaseURL }}/images/2014/04/20140331_practice2_1.png 1044w" sizes="(max-width: 1024px) 100vw, 1024px" />
 
 これが。
 
-<img src="http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_2-1024x794.png" alt="20140331_practice2_2" width="1024" height="794" class="aligncenter size-large wp-image-1185" srcset="http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_2-1024x794.png 1024w, http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_2-300x232.png 300w, http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_2.png 1044w" sizes="(max-width: 1024px) 100vw, 1024px" />
+<img src="{{ .Site.BaseURL }}/images/2014/04/20140331_practice2_2-1024x794.png" alt="20140331_practice2_2" width="1024" height="794" class="aligncenter size-large wp-image-1185" srcset="{{ .Site.BaseURL }}/images/2014/04/20140331_practice2_2-1024x794.png 1024w, {{ .Site.BaseURL }}/images/2014/04/20140331_practice2_2-300x232.png 300w, {{ .Site.BaseURL }}/images/2014/04/20140331_practice2_2.png 1044w" sizes="(max-width: 1024px) 100vw, 1024px" />
 
 こうなって。
 
-<img src="http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_3-1024x794.png" alt="20140331_practice2_3" width="1024" height="794" class="aligncenter size-large wp-image-1186" srcset="http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_3-1024x794.png 1024w, http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_3-300x232.png 300w, http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_3.png 1044w" sizes="(max-width: 1024px) 100vw, 1024px" />
+<img src="{{ .Site.BaseURL }}/images/2014/04/20140331_practice2_3-1024x794.png" alt="20140331_practice2_3" width="1024" height="794" class="aligncenter size-large wp-image-1186" srcset="{{ .Site.BaseURL }}/images/2014/04/20140331_practice2_3-1024x794.png 1024w, {{ .Site.BaseURL }}/images/2014/04/20140331_practice2_3-300x232.png 300w, {{ .Site.BaseURL }}/images/2014/04/20140331_practice2_3.png 1044w" sizes="(max-width: 1024px) 100vw, 1024px" />
 
 こうなってって。
 
-<img src="http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_4-1024x794.png" alt="20140331_practice2_4" width="1024" height="794" class="aligncenter size-large wp-image-1187" srcset="http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_4-1024x794.png 1024w, http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_4-300x232.png 300w, http://5000164.jp/wp-content/uploads/2014/04/20140331_practice2_4.png 1044w" sizes="(max-width: 1024px) 100vw, 1024px" />
+<img src="{{ .Site.BaseURL }}/images/2014/04/20140331_practice2_4-1024x794.png" alt="20140331_practice2_4" width="1024" height="794" class="aligncenter size-large wp-image-1187" srcset="{{ .Site.BaseURL }}/images/2014/04/20140331_practice2_4-1024x794.png 1024w, {{ .Site.BaseURL }}/images/2014/04/20140331_practice2_4-300x232.png 300w, {{ .Site.BaseURL }}/images/2014/04/20140331_practice2_4.png 1044w" sizes="(max-width: 1024px) 100vw, 1024px" />
 
 最終的にはこうなります。
   

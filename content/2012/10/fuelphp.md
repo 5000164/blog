@@ -3,7 +3,7 @@ title = "FuelPHP1.3でProfilerを有効にしたら最初から展開した状�
 date = 2012-10-15T01:50:10+00:00
 url = "2012-10-fuelphp"
 +++
-[<img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="FuelPHP_Profiler" border="0" alt="FuelPHP_Profiler" src="http://5000164.jp/wp-content/uploads/2012/10/FuelPHP_Profiler_thumb.png" width="377" height="484" />](http://5000164.jp/wp-content/uploads/2012/10/FuelPHP_Profiler.png) 
+[<img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="FuelPHP_Profiler" border="0" alt="FuelPHP_Profiler" src="{{ .Site.BaseURL }}/images/2012/10/FuelPHP_Profiler_thumb.png" width="377" height="484" />]({{ .Site.BaseURL }}/images/2012/10/FuelPHP_Profiler.png)
 
 &nbsp; 
 

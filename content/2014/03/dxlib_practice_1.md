@@ -2,13 +2,12 @@
 title = "DXライブラリできれいなフォントを表示する"
 date = 2014-03-16T03:20:28+00:00
 url = "2014-03-dxlib_practice_1"
-image: /wp-content/uploads/2014/03/20140315_practice1_eye.png
 +++
-<img src="http://5000164.jp/wp-content/uploads/2014/03/20140315_practice1-300x232.png" alt="20140315_practice1" width="300" height="232" class="aligncenter size-medium wp-image-1158" srcset="http://5000164.jp/wp-content/uploads/2014/03/20140315_practice1-300x232.png 300w, http://5000164.jp/wp-content/uploads/2014/03/20140315_practice1-1024x794.png 1024w, http://5000164.jp/wp-content/uploads/2014/03/20140315_practice1.png 1044w" sizes="(max-width: 300px) 100vw, 300px" />
+<img src="{{ .Site.BaseURL }}/images/2014/03/20140315_practice1-300x232.png" alt="20140315_practice1" width="300" height="232" class="aligncenter size-medium wp-image-1158" srcset="{{ .Site.BaseURL }}/images/2014/03/20140315_practice1-300x232.png 300w, {{ .Site.BaseURL }}/images/2014/03/20140315_practice1-1024x794.png 1024w, {{ .Site.BaseURL }}/images/2014/03/20140315_practice1.png 1044w" sizes="(max-width: 300px) 100vw, 300px" />
 
 # 早速見ていただきましょう
 
-<img src="http://5000164.jp/wp-content/uploads/2014/03/20140315_practice1-1024x794.png" alt="20140315_practice1" width="1024" height="794" class="aligncenter size-large wp-image-1158" srcset="http://5000164.jp/wp-content/uploads/2014/03/20140315_practice1-1024x794.png 1024w, http://5000164.jp/wp-content/uploads/2014/03/20140315_practice1-300x232.png 300w, http://5000164.jp/wp-content/uploads/2014/03/20140315_practice1.png 1044w" sizes="(max-width: 1024px) 100vw, 1024px" />
+<img src="{{ .Site.BaseURL }}/images/2014/03/20140315_practice1-1024x794.png" alt="20140315_practice1" width="1024" height="794" class="aligncenter size-large wp-image-1158" srcset="{{ .Site.BaseURL }}/images/2014/03/20140315_practice1-1024x794.png 1024w, {{ .Site.BaseURL }}/images/2014/03/20140315_practice1-300x232.png 300w, {{ .Site.BaseURL }}/images/2014/03/20140315_practice1.png 1044w" sizes="(max-width: 1024px) 100vw, 1024px" />
 
 ソースコードはこちら。
   
@@ -26,7 +25,7 @@ image: /wp-content/uploads/2014/03/20140315_practice1_eye.png
 
 # 結果はごらんの通り
 
-<img src="http://5000164.jp/wp-content/uploads/2014/03/20140315_practice1_zoom.png" alt="20140315_practice1_zoom" width="700" height="700" class="aligncenter size-full wp-image-1161" srcset="http://5000164.jp/wp-content/uploads/2014/03/20140315_practice1_zoom.png 700w, http://5000164.jp/wp-content/uploads/2014/03/20140315_practice1_zoom-150x150.png 150w, http://5000164.jp/wp-content/uploads/2014/03/20140315_practice1_zoom-300x300.png 300w" sizes="(max-width: 700px) 100vw, 700px" />
+<img src="{{ .Site.BaseURL }}/images/2014/03/20140315_practice1_zoom.png" alt="20140315_practice1_zoom" width="700" height="700" class="aligncenter size-full wp-image-1161" srcset="{{ .Site.BaseURL }}/images/2014/03/20140315_practice1_zoom.png 700w, {{ .Site.BaseURL }}/images/2014/03/20140315_practice1_zoom-150x150.png 150w, {{ .Site.BaseURL }}/images/2014/03/20140315_practice1_zoom-300x300.png 300w" sizes="(max-width: 700px) 100vw, 700px" />
 
 美しいフォントを表示させることができました。
   

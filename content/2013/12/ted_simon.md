@@ -2,9 +2,8 @@
 title = "'TEDの感想（サイモン シネック: 優れたリーダーはどうやって行動を促すか）'"
 date = 2013-12-03T00:50:28+00:00
 url = "2013-12-ted_simon"
-image: /wp-content/uploads/2013/12/20131203_golden_circle.png
 +++
-[<img src="http://5000164.jp/wp-content/uploads/2013/12/20131203_golden_circle.png" alt="20131203_golden_circle" width="300" height="300" class="aligncenter size-full wp-image-965" srcset="http://5000164.jp/wp-content/uploads/2013/12/20131203_golden_circle.png 300w, http://5000164.jp/wp-content/uploads/2013/12/20131203_golden_circle-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" />](http://5000164.jp/wp-content/uploads/2013/12/20131203_golden_circle.png)
+[<img src="{{ .Site.BaseURL }}/images/2013/12/20131203_golden_circle.png" alt="20131203_golden_circle" width="300" height="300" class="aligncenter size-full wp-image-965" srcset="{{ .Site.BaseURL }}/images/2013/12/20131203_golden_circle.png 300w, {{ .Site.BaseURL }}/images/2013/12/20131203_golden_circle-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" />]({{ .Site.BaseURL }}/images/2013/12/20131203_golden_circle.png)
 
 # 動画について
 

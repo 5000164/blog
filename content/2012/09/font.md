@@ -19,7 +19,7 @@ Adobeから新しいプログラミング用フォントがリリースされた
 
 まずは私が普段使っているRictyフォントの英字フォントであるInconsolataから。 
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Inconsolata" border="0" alt="Inconsolata" src="http://5000164.jp/wp-content/uploads/2012/09/Inconsolata_thumb.png" width="640" height="202" />](http://5000164.jp/wp-content/uploads/2012/09/Inconsolata.png) 
+[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Inconsolata" border="0" alt="Inconsolata" src="{{ .Site.BaseURL }}/images/2012/09/Inconsolata_thumb.png" width="640" height="202" />]({{ .Site.BaseURL }}/images/2012/09/Inconsolata.png)
 
 表示するスペースが少ないのに可読性が非常に高いのが特徴だと思います。 
 
@@ -33,7 +33,7 @@ Adobeから新しいプログラミング用フォントがリリースされた
 
 次にWindowsにプリインストールされているConsolas。 
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Consolas" border="0" alt="Consolas" src="http://5000164.jp/wp-content/uploads/2012/09/Consolas_thumb.png" width="640" height="202" />](http://5000164.jp/wp-content/uploads/2012/09/Consolas.png) 
+[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Consolas" border="0" alt="Consolas" src="{{ .Site.BaseURL }}/images/2012/09/Consolas_thumb.png" width="640" height="202" />]({{ .Site.BaseURL }}/images/2012/09/Consolas.png)
 
 少しまるっとしていて非常に読みやすいフォントです。 
 
@@ -47,7 +47,7 @@ Windowsにプリインストールされているので、とりあえず表示�
 
 そして新しくリリースされたSource Code Pro。 
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Source_Code_Pro" border="0" alt="Source_Code_Pro" src="http://5000164.jp/wp-content/uploads/2012/09/Source_Code_Pro_thumb.png" width="640" height="202" />](http://5000164.jp/wp-content/uploads/2012/09/Source_Code_Pro.png) 
+[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Source_Code_Pro" border="0" alt="Source_Code_Pro" src="{{ .Site.BaseURL }}/images/2012/09/Source_Code_Pro_thumb.png" width="640" height="202" />]({{ .Site.BaseURL }}/images/2012/09/Source_Code_Pro.png)
 
 他の2つに比べて少し大きく文字間と行間が広めなのが特徴だと思います。 
 
@@ -81,16 +81,16 @@ Windowsにプリインストールされているので、とりあえず表示�
 
 ## MS UI Gothic
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="MS_UI_Gothic" border="0" alt="MS_UI_Gothic" src="http://5000164.jp/wp-content/uploads/2012/09/MS_UI_Gothic_thumb.png" width="640" height="202" />](http://5000164.jp/wp-content/uploads/2012/09/MS_UI_Gothic.png) 
+[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="MS_UI_Gothic" border="0" alt="MS_UI_Gothic" src="{{ .Site.BaseURL }}/images/2012/09/MS_UI_Gothic_thumb.png" width="640" height="202" />]({{ .Site.BaseURL }}/images/2012/09/MS_UI_Gothic.png)
 
 &nbsp; 
 
 ## Meiryo UI
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Meiryo_UI" border="0" alt="Meiryo_UI" src="http://5000164.jp/wp-content/uploads/2012/09/Meiryo_UI_thumb.png" width="640" height="202" />](http://5000164.jp/wp-content/uploads/2012/09/Meiryo_UI.png) 
+[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Meiryo_UI" border="0" alt="Meiryo_UI" src="{{ .Site.BaseURL }}/images/2012/09/Meiryo_UI_thumb.png" width="640" height="202" />]({{ .Site.BaseURL }}/images/2012/09/Meiryo_UI.png)
 
 &nbsp; 
 
 ## Segoe UI
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Segoe_UI" border="0" alt="Segoe_UI" src="http://5000164.jp/wp-content/uploads/2012/09/Segoe_UI_thumb.png" width="640" height="202" />](http://5000164.jp/wp-content/uploads/2012/09/Segoe_UI.png)
+[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Segoe_UI" border="0" alt="Segoe_UI" src="{{ .Site.BaseURL }}/images/2012/09/Segoe_UI_thumb.png" width="640" height="202" />]({{ .Site.BaseURL }}/images/2012/09/Segoe_UI.png)

@@ -2,10 +2,9 @@
 title = "CSS3でなんちゃって立方体を実装してみた"
 date = 2013-06-08T19:51:33+00:00
 url = "2013-06-cube"
-image: /wp-content/uploads/2013/06/20130608_cube.png
 +++
 </p> <div style="text-align: center;">
-  <img src="http://5000164.jp/wp-content/uploads/2013/06/20130608_cube.png" alt="20130608_cube" width="300" height="300" class="aligncenter size-full wp-image-747" srcset="http://5000164.jp/wp-content/uploads/2013/06/20130608_cube.png 400w, http://5000164.jp/wp-content/uploads/2013/06/20130608_cube-150x150.png 150w, http://5000164.jp/wp-content/uploads/2013/06/20130608_cube-300x300.png 300w" sizes="(max-width: 300px) 100vw, 300px" />
+  <img src="{{ .Site.BaseURL }}/images/2013/06/20130608_cube.png" alt="20130608_cube" width="300" height="300" class="aligncenter size-full wp-image-747" srcset="{{ .Site.BaseURL }}/images/2013/06/20130608_cube.png 400w, {{ .Site.BaseURL }}/images/2013/06/20130608_cube-150x150.png 150w, {{ .Site.BaseURL }}/images/2013/06/20130608_cube-300x300.png 300w" sizes="(max-width: 300px) 100vw, 300px" />
 </div></a># 実装の練習最近がっつりコードを書く機会が減りました。
   
 なので練習としてCSS3でなんちゃって立方体を実装してみました。

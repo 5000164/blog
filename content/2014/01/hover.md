@@ -2,9 +2,8 @@
 title = "hoverした要素に好きなようにハイライトをかける"
 date = 2014-01-22T17:10:00+00:00
 url = "2014-01-hover"
-image: /wp-content/uploads/2014/01/20140122_hover.png
 +++
-<img src="http://5000164.jp/wp-content/uploads/2014/01/20140122_hover-300x300.png" alt="20140122_hover" width="300" height="300" class="aligncenter size-medium wp-image-1081" srcset="http://5000164.jp/wp-content/uploads/2014/01/20140122_hover-300x300.png 300w, http://5000164.jp/wp-content/uploads/2014/01/20140122_hover-150x150.png 150w, http://5000164.jp/wp-content/uploads/2014/01/20140122_hover.png 400w" sizes="(max-width: 300px) 100vw, 300px" />
+<img src="{{ .Site.BaseURL }}/images/2014/01/20140122_hover-300x300.png" alt="20140122_hover" width="300" height="300" class="aligncenter size-medium wp-image-1081" srcset="{{ .Site.BaseURL }}/images/2014/01/20140122_hover-300x300.png 300w, {{ .Site.BaseURL }}/images/2014/01/20140122_hover-150x150.png 150w, {{ .Site.BaseURL }}/images/2014/01/20140122_hover.png 400w" sizes="(max-width: 300px) 100vw, 300px" />
 
 # リンクとかをホバーしたら背景色を変えたりしますよね
 
