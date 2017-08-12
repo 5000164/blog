@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+<article>
+    <h1>2017-08-13 Jekyll の記事と WordPress の記事を Hugo にインポートする</h1>
+    
+
+<h2 id="背景">背景</h2>
+
+<p>WordPress から Jekyll に移行した時に記事の移行が面倒で放っておいた。
+Hugo に移行することにしたから Jekyll の記事と WordPress の記事を Hugo にインポートすることになった。
+つらい。</p>
+
+<h2 id="hugo-に合わせた最終的な形式">Hugo に合わせた最終的な形式</h2>
+
+<p>こんな感じに統一することを目指す。
+記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。</p>
+
+<pre><code>+++
+title = &quot;Jekyll の記事と WordPress の記事を Hugo にインポートする&quot;
+date = 2017-08-13T04:26:50+09:00
+url = &quot;2017-08-import&quot;
++++
+
+## 記事内容
+
+つらつら
+</code></pre>
+
+<h2 id="手順">手順</h2>
+
+<h3 id="wordpress-の記事を-markdown-形式に変換する">WordPress の記事を Markdown 形式に変換する</h3>
+
+<p>最初は Jekyll に移行しようと思ってたのでこれを使いました。
+<a href="https://github.com/benbalter/wordpress-to-jekyll-exporter">benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll</a></p>
+
+<h3 id="ファイル名を調整する">ファイル名を調整する</h3>
+
+<p>なんか日付がたくさんついてたので年と月でディレクトリを分けてからファイル名をきれいにした。</p>
+
+<pre><code>brew install rename
+find . -name &quot;*.md&quot; | xargs rename 's/\d\d\d\d-\d\d-\d\d-\d\d\d\d-\d\d-//'
+</code></pre>
+
+<h3 id="jekyll-の記事の-url-はファイル名に依存してたのでファイルの中に書き込む">Jekyll の記事の URL はファイル名に依存してたのでファイルの中に書き込む</h3>
+
+<p>ファイル名をファイルの中に書き込んでからあとで url に設定をするようにする。
+ついでにファイル名も調整する。</p>
+
+<pre><code>for i in $(find . -name &quot;*.markdown&quot;); do echo ${i} &gt; ${i}.new; cat ${i} &gt;&gt; ${i}.new; done
+find . -name &quot;*.markdown.new&quot; | xargs rename 's/.markdown.new/.md/'
+find . -name &quot;*.markdown&quot; | xargs rm -f
+find . -name &quot;*.md&quot; | xargs rename 's/\d\d\d\d-\d\d-\d\d-//'
+</code></pre>
+
+<h3 id="ひたすら正規表現で置換する">ひたすら正規表現で置換する</h3>
+
+<p>あとはもう望む形になるようにひたすら正規表現で置換する。
+<code>title</code> と `<code>
+WordPress からエクスポートした記事には</code>permalink`</p>
+
+</article>
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+
