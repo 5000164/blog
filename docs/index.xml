@@ -6,10 +6,27 @@
     <description>Recent content on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 13 Aug 2017 04:19:22 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 13 Aug 2017 05:17:55 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jekyll の記事と WordPress の記事を Hugo にインポートする</title>
+      <link>http://blog.5000164.jp/2017-08-import/</link>
+      <pubDate>Sun, 13 Aug 2017 05:17:55 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2017-08-import/</guid>
+      <description>背景 WordPress から Jekyll に移行した時に記事の移行が面倒で放っておいた。
+Hugo に移行することにしたから Jekyll の記事と WordPress の記事を Hugo にインポートすることになった。
+つらい。
+Hugo に合わせた最終的な形式 こんな感じに統一することを目指す。
+記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。
++++ title = &amp;quot;Jekyll の記事と WordPress の記事を Hugo にインポートする&amp;quot; date = 2017-08-13T04:26:50+09:00 url = &amp;quot;2017-08-import&amp;quot; +++ ## 記事内容 つらつら  手順 実際に行ったインポート作業の内容はこちら。
+Feature import article by 5000164 · Pull Request #2 · 5000164/blog
+WordPress の記事を Markdown 形式に変換する 最初は Jekyll に移行しようと思ってたのでこれを使いました。
+benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll</description>
+    </item>
     
     <item>
       <title>ブログを Hugo に移行しました</title>

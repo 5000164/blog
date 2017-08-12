@@ -2,7 +2,8 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>5000164 is here</title>
+    <title>Jekyll の記事と WordPress の記事を Hugo にインポートする | 5000164 is here</title>
+    <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/main.css">
     <meta name="generator" content="Hugo 0.26" />
 </head>
@@ -17,13 +18,13 @@
 
 <h2 id="背景">背景</h2>
 
-<p>WordPress から Jekyll に移行した時に記事の移行が面倒で放っておいた。
-Hugo に移行することにしたから Jekyll の記事と WordPress の記事を Hugo にインポートすることになった。
+<p>WordPress から Jekyll に移行した時に記事の移行が面倒で放っておいた。<br />
+Hugo に移行することにしたから Jekyll の記事と WordPress の記事を Hugo にインポートすることになった。<br />
 つらい。</p>
 
 <h2 id="hugo-に合わせた最終的な形式">Hugo に合わせた最終的な形式</h2>
 
-<p>こんな感じに統一することを目指す。
+<p>こんな感じに統一することを目指す。<br />
 記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。</p>
 
 <pre><code>+++
@@ -39,9 +40,12 @@ url = &quot;2017-08-import&quot;
 
 <h2 id="手順">手順</h2>
 
+<p>実際に行ったインポート作業の内容はこちら。<br />
+<a href="https://github.com/5000164/blog/pull/2">Feature import article by 5000164 · Pull Request #2 · 5000164/blog</a></p>
+
 <h3 id="wordpress-の記事を-markdown-形式に変換する">WordPress の記事を Markdown 形式に変換する</h3>
 
-<p>最初は Jekyll に移行しようと思ってたのでこれを使いました。
+<p>最初は Jekyll に移行しようと思ってたのでこれを使いました。<br />
 <a href="https://github.com/benbalter/wordpress-to-jekyll-exporter">benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll</a></p>
 
 <h3 id="ファイル名を調整する">ファイル名を調整する</h3>
@@ -54,7 +58,7 @@ find . -name &quot;*.md&quot; | xargs rename 's/\d\d\d\d-\d\d-\d\d-\d\d\d\d-\d\d
 
 <h3 id="jekyll-の記事の-url-はファイル名に依存してたのでファイルの中に書き込む">Jekyll の記事の URL はファイル名に依存してたのでファイルの中に書き込む</h3>
 
-<p>ファイル名をファイルの中に書き込んでからあとで url に設定をするようにする。
+<p>ファイル名をファイルの中に書き込んでからあとで url に設定をするようにする。<br />
 ついでにファイル名も調整する。</p>
 
 <pre><code>for i in $(find . -name &quot;*.markdown&quot;); do echo ${i} &gt; ${i}.new; cat ${i} &gt;&gt; ${i}.new; done
@@ -65,9 +69,20 @@ find . -name &quot;*.md&quot; | xargs rename 's/\d\d\d\d-\d\d-\d\d-//'
 
 <h3 id="ひたすら正規表現で置換する">ひたすら正規表現で置換する</h3>
 
-<p>あとはもう望む形になるようにひたすら正規表現で置換する。
-<code>title</code> と `<code>
-WordPress からエクスポートした記事には</code>permalink`</p>
+<p>あとはもう望む形になるようにひたすら正規表現で置換する。<br />
+<code>title</code> と <code>date</code> は最初から入っているものをうまく使う。<br />
+Jekyll の <code>date</code> の形式が違くてエラーになっていたので書式に気をつける。<br />
+WordPress からエクスポートした記事には <code>permalink</code> が入っていたのでそれをうまく利用して <code>url</code> にする。<br />
+Jekyll のファイルには先ほどファイルの中に埋め込んだファイル名をうまく使って <code>url</code> にする。<br />
+画像のリンクとかもひたすら変換する。</p>
+
+<h3 id="あとはなんかおかしいのを見つけたら手で直す">あとはなんかおかしいのを見つけたら手で直す</h3>
+
+<p>WordPress からエクスポートしたものが変なふうになってたり、なぜか <code>date</code> が 2 個設定されている記事があったり、おかしいものがあったら見つけ次第手で直す。</p>
+
+<h2 id="見た目おかしかったり壊れてるところがあったりするけどひとまず完了">見た目おかしかったり壊れてるところがあったりするけどひとまず完了</h2>
+
+<p>なんとなく見られるようになればよい、という感じでやりました。</p>
 
 </article>
 <footer>
