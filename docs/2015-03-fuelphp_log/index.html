@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+<h1 id="fuelphp-のログレベルは-info-の方が-debug-よりも上">FuelPHP のログレベルは INFO の方が DEBUG よりも上</h1>
+
+<p>Fuel の Core の Log クラスに $levels が定義されています。<br />
+FuelPHP 1.7.2 で INFO は 200、DEBUG は 100。</p>
+
+<h1 id="なぜ疑問に思ったのか">なぜ疑問に思ったのか</h1>
+
+<p>FuelPHP の config.php の出力するログレベルの設定のところに、</p>
+
+<pre><code>/**
+ * Logging Threshold.  Can be set to any of the following:
+ *
+ * Fuel::L_NONE
+ * Fuel::L_ERROR
+ * Fuel::L_WARNING
+ * Fuel::L_DEBUG
+ * Fuel::L_INFO
+ * Fuel::L_ALL
+ */
+</code></pre>
+
+<p>このように書いてあるので、「INFO に設定したら DEBUG ログも出るのかー」と勝手に思い込んでいたからでした。</p>
+
+<h1 id="実際に動かせばわかる">実際に動かせばわかる</h1>
+
+<p>実際に動かしたら、設定が DEBUG の時はログレベル INFO も DEBUG も出力されたが、設定が INFO の時は INFO が出力されて DEBUG は出力されなかった。</p>
+
+<h1 id="結論">結論</h1>
+
+<p>調べるために<a href="http://fuelphp.com/docs/classes/log.html">ドキュメント</a>を読んでいたら、Log::write() で任意のレベルをつけられること、logger() というエイリアスの関数があることがわかった。<br />
+<a href="http://blog.5000164.jp/2015-03-fuelphp_debug/">この前</a> l() って関数でログ出力できるようにしたばっかりだったのに、すでに似たようなものがあったとは。<br />
+ドキュメントを読むのは大事ですね。</p>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

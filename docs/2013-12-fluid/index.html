@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+
+<figure >
+    
+        <img src="/images/2013/12/20131201_fluid.png" />
+    
+    
+</figure>
+
+
+<h1 id="デモ">デモ</h1>
+
+<p>文章では説明しづらいので、なんだかよくわからないタイトルになってしまいました。</p>
+
+<p>まずは実際に見てもらった方が早いと思います。</p>
+
+<div class="codepen">
+  <p data-height="268" data-theme-id="2816" data-slug-hash="qxgIF" data-user="5000164" data-default-tab="result" class='codepen'>
+    See the Pen <a href='http://codepen.io/5000164/pen/qxgIF'>qxgIF</a> by SUGAWARA Hiroshi (<a href='http://codepen.io/5000164'>@5000164</a>) on <a href='http://codepen.io'>CodePen</a>
+  </p>
+  
+  <p>
+    </div> 
+    
+
+<pre><code>&lt;p&gt;
+  ここではデモのために、ウィンドウの幅ではなくdivの幅を変更するようにしています。&lt;br /&gt; divの幅を変更してみると、左側のテーブルの幅は変わらずに右側の文章の幅だけが変わっているのが確認できます。
+&lt;/p&gt;
+
+&lt;h1&gt;
+  実装方法
+&lt;/h1&gt;
+
+&lt;p&gt;
+  cssはこのようになっています。（関係のないプロパティは省略しています。）
+&lt;/p&gt;
+
+&lt;pre class=&quot;brush: css; title: ; notranslate&quot; title=&quot;&quot;&gt;
+</code></pre>
+
+<p>div {
+  position: relative;
+}
+table {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+}
+p {
+  margin: 0 0 0 250px;<br />
+}
+</pre></p>
+
+<pre><code>&lt;p&gt;
+  非常に簡単です。&lt;br /&gt; まず、tableをposition: absolute;で固定することを考えます。&lt;br /&gt; そのために親要素にposition: relative;を指定します。&lt;br /&gt; これでtableの位置が固定されるので、あとは右側のコンテンツにmarginを指定してtableと重ならないようにします。&lt;br /&gt; これだけです。
+&lt;/p&gt;
+
+&lt;h1&gt;
+  複雑に考える必要はなかった
+&lt;/h1&gt;
+
+&lt;p&gt;
+  最初に右側のコンテンツだけウィンドウサイズに応じて幅を変更させようとした時は、もっと複雑に考えていました。&lt;br /&gt; 左側のコンテンツにmin-widthを指定して、左右のコンテンツにwidthでそれぞれ%を指定しようとしたのですが、これは%で指定すると幅が大きく変わった時にレイアウトが崩れるので断念。&lt;br /&gt; 次はJavaScriptでウィンドウサイズのイベントを取得して動的にwidthを変更するしかないかと思ったのですが、なるべくシンプルにいってJavaScriptは使いたくなかったので保留。&lt;br /&gt; 他にいい方法がないかと考えていた時にこの方法を思いつきました。&lt;br /&gt; 試しに実装してみたら期待通りの動きをしてくれたのでこの方法に決定。&lt;br /&gt; シンプルに書けるのはいいものです。
+&lt;/p&gt;
+
+&lt;h1&gt;
+  まとめ
+&lt;/h1&gt;
+
+&lt;p&gt;
+  この方法は応用が利きそうです。
+&lt;/p&gt;
+</code></pre>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

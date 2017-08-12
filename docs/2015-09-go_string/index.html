@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+<h1 id="golang-でダブルコーテーションや改行を-string-型の変数に入れる">golang でダブルコーテーションや改行を string 型の変数に入れる</h1>
+
+<p>go では &ldquo; (ダブルコーテーション) で文字列を表します。<br />
+文字列の中にダブルコーテーションを入れるには \ (バックスラッシュ) でエスケープすればよかった。</p>
+
+<pre><code class="language-go">test := &quot;test\&quot;test&quot;
+</code></pre>
+
+<p>改行を入れるには \n で入れられる。</p>
+
+<pre><code class="language-go">newline := &quot;a\nb\nc&quot;
+</code></pre>
+
+<p>また、` (バッククオート) を使用することでヒアドキュメントのように書けた。</p>
+
+<pre><code class="language-go">here := `like
+a
+here document`
+</code></pre>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="http://nisenabe.hatenablog.com/entry/2013/06/09/155207">Go 言語で複数行にまたがる文字列を作る - nise_nabeの日記</a></li>
+<li><a href="http://golang.org/ref/spec#String_literals">The Go Programming Language Specification - The Go Programming Language</a></li>
+</ul>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

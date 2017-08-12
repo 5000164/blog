@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+<p>&nbsp;</p>
+
+<p>iOSのブラウザにおいて数字のみのキーボードを出したいときがあります。</p>
+
+<p>しかし、input type=&#8221;number&#8221;ってやっても数字以外のキーがでてきてしまう。</p>
+
+<p>そうだ、input type=&#8221;tel&#8221;ってやれば数字のみになる、しかしセマンティックではない。</p>
+
+<p>&nbsp;</p>
+
+<h1 id="そこで-input-type-8221-text-8221-pattern-8221-d-8221">そこで、input type=&#8221;text&#8221; pattern=&#8221;\d*&#8221;</h1>
+
+<p>HTML5からは入力文字をpatternで正規表現を利用して制御できるようになりました。</p>
+
+<p>そこで入力可能文字を数字のみにするとiOSで数字のみのキーボードを出してくれるというものです。</p>
+
+<p>賢いですね。</p>
+
+<p>&nbsp;</p>
+
+<h1 id="というわけで-実演">というわけで、実演</h1>
+
+<p>&nbsp;</p>
+
+<pre class="brush: xml; gutter: false; title: ; notranslate" title="">&lt;input type=&quot;number&quot;&gt;</pre>
+
+
+<figure >
+    
+        <img src="/images/2012/10/number1.png" />
+    
+    
+</figure>
+
+
+<pre class="brush: xml; gutter: false; title: ; notranslate" title="">&lt;input type=&quot;tel&quot;&gt;</pre>
+
+
+<figure >
+    
+        <img src="/images/2012/10/tel1.png" />
+    
+    
+</figure>
+
+
+<pre class="brush: xml; gutter: false; title: ; notranslate" title="">&lt;input type=&quot;text&quot; pattern=&quot;\d*&quot;&gt;</pre>
+
+
+<figure >
+    
+        <img src="/images/2012/10/text1.png" />
+    
+    
+</figure>
+
+
+<p>&nbsp;</p>
+
+<h1 id="以下-参考">以下、参考</h1>
+
+<p>&nbsp;</p>
+
+<p>少しのコードで実装可能な15のスマートフォンサイト用小技集 | Webクリエイターボックス</p>
+
+<p><a href="http://www.webcreatorbox.com/tech/smartphone-snippets/">http://www.webcreatorbox.com/tech/smartphone-snippets/</a></p>
+
+<p>&nbsp;</p>
+
+<p>input 要素 &#8211; フォーム &#8211; HTML要素 &#8211; HTML5 タグリファレンス &#8211; HTML5.JP</p>
+
+<p><a href="http://www.html5.jp/tag/elements/input.html">http://www.html5.jp/tag/elements/input.html</a></p>
+
+<p>&nbsp;</p>
+
+<p>JavaScript講座　15章　JavaScriptでの正規表現</p>
+
+<p><a href="http://www.site-cooler.com/kwl/javascript/15.htm">http://www.site-cooler.com/kwl/javascript/15.htm</a></p>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

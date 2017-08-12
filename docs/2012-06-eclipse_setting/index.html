@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+<p>毎回毎回Eclipseの設定を思い出すのがめんどくさくなったのでついにメモった。</p>
+
+<p>とりあえず最低限の設定だけ。</p>
+
+<ul>
+<li>Eclipse Market Place
+
+<ul>
+<li>Eclipse Color Themeで検索する。
+
+<ul>
+<li>Eclipse Color ThemeをInstallする。</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>環境設定</p>
+
+<ul>
+<li>&gt;General
+
+<ul>
+<li>Show heap status
+
+<ul>
+<li>check</li>
+</ul></li>
+<li>&gt;Appearance
+
+<ul>
+<li>-Color Theme
+
+<ul>
+<li>Obsidian</li>
+</ul></li>
+<li>-Color and Fonts
+
+<ul>
+<li>Basic
+
+<ul>
+<li>Text Font
+
+<ul>
+<li>Ricty 13</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>&gt;ContentTypes
+
+<ul>
+<li>Text
+
+<ul>
+<li>CSS
+
+<ul>
+<li>Add
+
+<ul>
+<li>*.scss</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>&gt;Editors
+
+<ul>
+<li>-FIle Associations
+
+<ul>
+<li>File types
+
+<ul>
+<li>Add
+
+<ul>
+<li>*.css</li>
+<li>*.scss</li>
+</ul></li>
+</ul></li>
+<li>Associated editors
+
+<ul>
+<li>*.cssと*.scssどちらも
+
+<ul>
+<li>CSS Editor</li>
+<li>Text Editor</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>&gt;Text Editors
+
+<ul>
+<li>Show line numbers
+
+<ul>
+<li>check</li>
+</ul></li>
+<li>Show whitespace characters
+
+<ul>
+<li>check</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>-Keys
+
+<ul>
+<li>Content Assist
+
+<ul>
+<li>command + return</li>
+</ul></li>
+</ul></li>
+<li>&gt;Workspace
+
+<ul>
+<li>Text file encoding
+
+<ul>
+<li>Other : UTF-8</li>
+</ul></li>
+<li>New text file line delimiter
+
+<ul>
+<li>Other : Unix</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>&gt;Web
+
+<ul>
+<li>&gt;CSS Files
+
+<ul>
+<li>Encoding
+
+<ul>
+<li>ISO 10646/Unicode(UTF-8)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>設定ファイル</p>
+
+<p>Eclipse.appのパッケージの内容を表示。</p>
+
+<p>/Contents/MacOS/eclipse.iniを開く。</p>
+
+<p>下記内容に変更。</p>
+
+<pre class="brush: plain; title: ; notranslate" title="">-vmargs
+-XX:MaxPermSize=256m
+-Xss2m
+-Xms256m
+-Xmx1024m
+</pre>
+
+<p>これで設定をとりあえずエクスポートして完了。</p>
+
+<p>あとはDropboxで共有するなりなんなり。</p>
+
+<p>参考サイト</p>
+
+<p><a title="livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと" href="http://blog.livedoor.jp/techblog/archives/65399350.html" target="_blank">livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと</a></p>
+
+<p>Eclipse Color Themeを使ってみよう</p>
+
+<p>設定のインポート・エクスポート &#8211; devillikeaangelの日記</p>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+
