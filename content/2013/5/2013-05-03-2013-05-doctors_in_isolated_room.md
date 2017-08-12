@@ -1,6 +1,6 @@
 +++
 title = "小説の感想（冷たい密室と博士たち／森博嗣）"
-date: 2013-05-03T23:59:08+00:00
+date = 2013-05-03T23:59:08+00:00
 permalink: /2013-05-doctors_in_isolated_room/
 +++
 <div style="text-align: center;">

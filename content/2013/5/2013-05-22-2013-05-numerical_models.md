@@ -1,6 +1,6 @@
 +++
 title = "小説の感想（数奇にして模型／森博嗣）"
-date: 2013-05-22T08:13:00+00:00
+date = 2013-05-22T08:13:00+00:00
 permalink: /2013-05-numerical_models/
 +++
 <div style="text-align: center;">
