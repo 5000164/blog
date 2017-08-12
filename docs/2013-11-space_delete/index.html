@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+
+<figure >
+    
+        <img src="/images/2013/11/20131129_space_delete.png" />
+    
+    
+</figure>
+
+
+<h1 id="作ったもの">作ったもの</h1>
+
+<p>まずは実際に作ったものです。</p>
+
+<p>見てからの方がわかりやすいと思います。</p>
+
+<p><a href="http://5000164.jp/space_delete/" title="空白改行削除 | 5000164 here.">空白改行削除 | 5000164 here.</a></p>
+
+<h1 id="概要">概要</h1>
+
+<p>半角スペース、全角スペース、タブ、改行を削除できます。</p>
+
+<h1 id="機能">機能</h1>
+
+<h2 id="改行削除">改行削除</h2>
+
+<p>改行を削除して出力領域に書き出し。</p>
+
+<p>ショートカットキーはCtrl + Enter。</p>
+
+<p>書き出したらテキストは全選択の状態なのでそのままコピー可。</p>
+
+<h2 id="空白削除">空白削除</h2>
+
+<p>半角スペース、全角スペース、タブを削除して編集領域に上書き。</p>
+
+<p>ショートカットキーはShift + Enter。</p>
+
+<p>空白の削除前に戻したい場合はCtrl + Alt + Z。</p>
+
+<h2 id="空白改行削除">空白改行削除</h2>
+
+<p>半角スペース、全角スペース、タブ、改行を削除して出力領域に書き出し。</p>
+
+<p>ショートカットキーはCtrl + Shift + Enter。</p>
+
+<h2 id="補助機能">補助機能</h2>
+
+<p>TabキーでTab文字の挿入。</p>
+
+<p>Shift + Tabで行頭のTab文字を削除。</p>
+
+<p>範囲を選択して削除した場合は選択範囲に対して処理の実行。</p>
+
+<p>範囲を選択してTab、Shift + Tabを押した場合には選択行に対して実行。</p>
+
+<h1 id="実装解説">実装解説</h1>
+
+<p>それではHTMLとCSSとJavaScriptについて各部分の詳細を説明します。</p>
+
+<h1 id="実装解説-html">実装解説：HTML</h1>
+
+<p>メインの部分はこんな感じです。</p>
+
+<pre class="brush: xml; title: ; notranslate" title="">&lt;header&gt;
+  &lt;div class="button_wrapper"&gt;
+    &lt;div class="button"&gt;&lt;label&gt;&lt;input type="checkbox" id="space_delete_flg"&gt;&lt;div id="space_button"&gt;空白&lt;/div&gt;&lt;/label&gt;&lt;/div&gt;
+    &lt;div class="button"&gt;&lt;label&gt;&lt;input type="checkbox" id="newline_delete_flg" checked&gt;&lt;div id="newline_button"&gt;改行&lt;/div&gt;&lt;/label&gt;&lt;/div&gt;
+    &lt;div id="delete_button" class="button"&gt;削除&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;a href="http://5000164.jp/2013-11-space_delete/" target="_blank"&gt;&lt;div id="info"&gt;i&lt;/div&gt;&lt;/a&gt;
+&lt;/header&gt;
+&lt;div id="input_wrapper"&gt;
+  &lt;div id="input_area"&gt;
+    &lt;textarea id="input"&gt;&lt;/textarea&gt;
+    &lt;div id="input_background"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="output_area"&gt;
+  &lt;input type="text" id="result" readonly&gt;&lt;/input&gt;
+&lt;/div&gt;
+</pre>
+
+<p>タグ構造は非常にシンプルです。</p>
+
+<p>今回はtextareaに入力した内容に合わせて背景色を変えるという処理を行っているので、textareaとdivタグを重ねています。</p>
+
+<p>ただ、contenteditableを使えば1つのタグだけでいけるのかもしれません。</p>
+
+<p>textareaとdivタグを重ねる手法だと、常に内容を同期させる必要があるので処理が重くなる可能性があります。</p>
+
+<p>ちょっとした入力内容から大丈夫かも知れませんが、次に同じようなことをしたくなったらcontenteditableでやります。</p>
+
+<h1 id="実装解説-css">実装解説：CSS</h1>
+
+<p>今回のCSSでは、編集領域をウィンドウサイズに合わせる、空白などの見えない文字を可視化する、ボタンを押した時にテキストが動く、というところがメインです。</p>
+
+<h2 id="編集領域をウィンドウサイズに合わせる">編集領域をウィンドウサイズに合わせる</h2>
+
+<p>まずは編集領域をウィンドウサイズに合わせる部分から。</p>
+
+<p>重要になるのはこのへんです。</p>
+
+<pre class="brush: css; title: ; notranslate" title="">html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: hsl(0, 0%, 15%);
+}
+#input_wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 640px;
+  height: 100%;
+  margin: 0;
+  padding: 30px 0 20px;
+  background: hsl(0, 0%, 15%);
+}
+</pre>
+
+<p>あんまり見なれないheight: 100%;が重要になります。</p>
+
+<p>私は初めて使った気がします。</p>
+
+<p>height: 100%;を使うためには、htmlとbodyにheight: 100%;を指定する必要があります。</p>
+
+<p>これ重要です。</p>
+
+<p>あとはコンテンツ部分にもheight: 100%;を指定して、paddingで上下の余白を調整してあげれば、コンテンツの高さを自動でウィンドウサイズに合わせることができます。</p>
+
+<h2 id="空白などの見えない文字を可視化する">空白などの見えない文字を可視化する</h2>
+
+<p>まずはtextareaとdivタグがずれないようにちゃんとスタイルを合わせます。</p>
+
+<pre class="brush: css; title: ; notranslate" title="">#input_area {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 640px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#input {
+  z-index: 2;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 610px;
+  height: 100%;
+  margin: 0;
+  padding: 0 15px;
+  resize: none;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  color: hsl(0, 0%, 85%);
+  background: transparent;
+  border: none;
+  outline: none;
+}
+#input_background {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 610px;
+  height: 100%;
+  margin: 0;
+  padding: 0 15px;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  color: transparent;
+}
+</pre>
+
+<p>ここではまず、親要素にposition: relative;を指定して、子要素にposition: absolute;のtop: 0;left: 0;で位置を合わせ、文字のスタイルなどを一致させます。</p>
+
+<p>そしてtextareaをbackground: transparent;とすることで後ろのdivタグが見えるようになります。</p>
+
+<p>divタグにはcolor: transparent;と指定してテキストが見えないようにします。</p>
+
+<p>これで表示する位置を合わせたら、次は実際に表示させます。</p>
+
+<pre class="brush: css; title: ; notranslate" title="">#input_background &gt; pre {
+  display: inline;
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+}
+#input_background &gt; pre:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 10px;
+  line-height: 30px;
+  color: hsl(0, 0%, 40%);
+  text-align: center;
+}
+#input_background &gt; pre.space {
+  position: relative;
+  background: hsl(0, 0%, 20%);
+}
+#input_background &gt; pre.space:after {
+  content: "･";
+}
+#input_background &gt; pre.em_space {
+  position: relative;
+  background: hsl(0, 0%, 20%);
+}
+#input_background &gt; pre.em_space:after {
+  content: "□";
+  font-size: 18px;
+}
+#input_background &gt; pre.tab {
+  position: relative;
+  background: hsl(0, 0%, 20%);
+}
+#input_background &gt; pre.tab:after {
+  content: "→";
+  text-align: left;
+}
+#input_background &gt; pre.crlf {
+  position: relative;
+  background: hsl(0, 0%, 20%);
+}
+#input_background &gt; pre.crlf:after {
+  content: "←↓";
+}
+#input_background &gt; pre.cr {
+  position: relative;
+  background: hsl(0, 0%, 20%);
+}
+#input_background &gt; pre.cr:after {
+  content: "←";
+}
+#input_background &gt; pre.lf {
+  position: relative;
+  background: hsl(0, 0%, 20%);
+}
+#input_background &gt; pre.lf:after {
+  content: "↓";
+}
+</pre>
+
+<p>ここではJavaScriptで該当の文字をpreタグで囲い、該当の文字ごとにクラス名が付けられる、という前提でのスタイルです。</p>
+
+<p>例えば、pre.spaceがあったら、背景を変えて「･」を表示させるようにしています。</p>
+
+<p>実際にpreタグの中に「･」を入れてしまうとtextareaとdivタグで内容が一致しなくなってしまうので、擬似要素を使って表示しています。</p>
+
+<h2 id="ボタンを押した時にテキストが動く">ボタンを押した時にテキストが動く</h2>
+
+<p>ここでは私がかねてから実装してみたかった、バウンスするようなアニメーションを適用しています。</p>
+
+<p>例として空白ボタンを見てみます。</p>
+
+<pre class="brush: css; title: ; notranslate" title="">header input[type=checkbox]:checked + #space_button {
+  background: hsl(0, 0%, 5%);
+  border: 1px solid hsl(0, 0%, 4%);
+  box-shadow: 0 1px 0 0 hsl(0, 0%, 13%);
+  text-indent: -.1em;
+  letter-spacing: -.1em;
+  -webkit-animation: space_button 500ms ease 0 1 normal;
+}
+</pre>
+
+<p>擬似要素が:checkedの時にだけアニメーションを指定することで、空白ボタンがチェックされたらアニメーションするようにしています。</p>
+
+<p>実際のアニメーションの動作はこうなっています。</p>
+
+<pre class="brush: css; title: ; notranslate" title="">@-webkit-keyframes space_button {
+  0% {
+    text-indent: 1em;
+    letter-spacing: 1em;
+  }
+  10% {
+    text-indent: .9em;
+    letter-spacing: .9em;
+  }
+  20% {
+    text-indent: .7em;
+    letter-spacing: .7em;
+  }
+  30% {
+    text-indent: .4em;
+    letter-spacing: .4em;
+  }
+  40% {
+    text-indent: -.1em;
+    letter-spacing: -.1em;
+  }
+  50% {
+    text-indent: .3em;
+    letter-spacing: .3em;
+  }
+  60% {
+    text-indent: -.1em;
+    letter-spacing: -.1em;
+  }
+  70% {
+    text-indent: .1em;
+    letter-spacing: .1em;
+  }
+  80% {
+    text-indent: -.1em;
+    letter-spacing: -.1em;
+  }
+  90% {
+    text-indent: 0em;
+    letter-spacing: 0em;
+  }
+  100% {
+    text-indent: -.1em;
+    letter-spacing: -.1em;
+  }
+}
+</pre>
+
+<p>このように、ここではtext-indentとletter-spacingを使うことで文字の間隔を変えています。</p>
+
+<p>あとは10%ごとに跳ね返ってるように見えるように間隔を調整すれば完了です。</p>
+
+<p>空白を消してるぞ！っというような動きができたので個人的には非常に満足しています。</p>
+
+<h1 id="実装解説-javascript">実装解説：JavaScript</h1>
+
+<p>JavaScriptの解説ですね。</p>
+
+<p>おおまかに分けると、入力内容の同期、空白や改行の削除処理、Tabの処理、となっています。</p>
+
+<p>また、今回はライブラリとしてjQueryを使用しています。</p>
+
+<h2 id="入力内容の同期">入力内容の同期</h2>
+
+<p>特定の文字に色をつけるために、textareaとdivの内容を同期します。</p>
+
+<p>その際に、特定の文字をマークアップしたり、入力内容のエスケープを行います。</p>
+
+<pre class="brush: jscript; title: ; notranslate" title="">～中略～
+$(function() {
+～中略～
+  // 入力された値を常に監視する
+  $("#input").bind('keydown keyup keypress change focus click', function() {
+    inputWatch($("#input").val());
+  });
+  
+  // スクロールを同期する
+  $("#input").bind('keydown keyup keypress change scroll', function() {
+    $("#input_background").scrollTop($("#input").scrollTop());
+  });
+～中略～
+});
+
+
+
+// 入力内容を監視
+function inputWatch(inputText) {
+  inputText = escapeHtml(inputText);
+  
+  // 入力された文字列を可視化する
+  inputText = inputText.replace(/ /g, "&lt;pre class=\"space\"&gt; &lt;/pre&gt;"); // 半角スペース
+  inputText = inputText.replace(/　/g, "&lt;pre class=\"em_space\"&gt;　&lt;/pre&gt;"); // 全角スペース
+  inputText = inputText.replace(/\t/g, "&lt;pre class=\"tab\"&gt;   &lt;/pre&gt;"); // タブ
+  inputText = inputText.replace(/\r\n/g, "&lt;pre class=\"crlf\"&gt;&lt;/pre&gt;&lt;br&gt;"); // CRLF
+  inputText = inputText.replace(/\r/g, "&lt;pre class=\"cr\"&gt;&lt;/pre&gt;&lt;br&gt;"); // CR
+  inputText = inputText.replace(/\n/g, "&lt;pre class=\"lf\"&gt;&lt;/pre&gt;&lt;br&gt;"); // LF
+  
+  // div要素の最後が&lt;br&gt;だとheightに反映されないようなので空白を最後に追加する
+  inputText += "　";
+  
+  // 入力内容と背景用の内容を同期させる
+  $("#input_background").html(inputText);
+}
+
+
+
+// HTML用に文字列をエスケープする
+function escapeHtml(string) {
+  // エスケープ対象は「&」「&lt;」「&gt;」「"」「'」
+  string = string.replace(/&/g, "&amp;");
+  string = string.replace(/&lt;/g, "&lt;");
+  string = string.replace(/&gt;/g, "&gt;");
+  string = string.replace(/\"/g, "&quot;");
+  string = string.replace(/\'/g, "&#39;");
+  
+  return string;
+}
+</pre>
+
+<p>内容を同期する時は、内容が変更しそうなイベントをすべてバインドして、同期処理を走らせます。</p>
+
+<h2 id="空白や改行の削除処理">空白や改行の削除処理</h2>
+
+<p>空白や改行は正規表現で削除しています。</p>
+
+<pre class="brush: jscript; title: ; notranslate" title="">// 改行削除
+function newlineDelete() {
+  var posStart = $("#input").get(0).selectionStart;
+  var posEnd = $("#input").get(0).selectionEnd;
+  var inputStr = $("#input").val();
+    
+  // 範囲選択をしていない場合
+  if(posStart === posEnd) {
+    // 改行をすべて削除
+    $("#result").val(inputStr.replace(/[\n\r]/g, ""));
+  }
+  // 範囲選択をしている場合
+  else {
+    var selStr = inputStr.substring(posStart, posEnd);
+    // 改行をすべて削除
+    $("#result").val(selStr.replace(/[\n\r]/g, ""));
+  }
+  
+  $("#result").focus();
+}
+
+
+
+// 空白削除
+function spaceDelete() {
+  var posStart = $("#input").get(0).selectionStart;
+  var posEnd = $("#input").get(0).selectionEnd;
+  var inputStr = $("#input").val();
+  // 内容をバックアップ
+  backupStr = $("#input").val();
+  backupPos = posStart;
+  
+  // 範囲選択をしていない場合
+  if(posStart === posEnd) {
+    // 空白をすべて削除
+    $("#input").val(inputStr.replace(/[ 　\t]/g, ""));
+    // キャレットの位置から前にある空白の数だけキャレットの位置を前に移動する
+    var moveCount = (inputStr.substring(0, posStart).match(/[ 　\t]/g) == null) ? 0 : inputStr.substring(0, posStart).match(/[ 　\t]/g).length;
+    var pos = posStart - moveCount;
+    $("#input").get(0).setSelectionRange(pos, pos);
+  }
+  // 範囲選択をしている場合
+  else {
+    var selStr = inputStr.substring(posStart, posEnd);
+    // 空白をすべて削除
+    $("#input").val(inputStr.substring(0, posStart) + selStr.replace(/[ 　\t]/g, "") + inputStr.substring(posEnd, inputStr.length));
+    $("#input").get(0).setSelectionRange(posStart, posStart);
+  }
+}
+
+
+
+// 空白改行削除
+function spaceNewlineDelete() {
+  var posStart = $("#input").get(0).selectionStart;
+  var posEnd = $("#input").get(0).selectionEnd;
+  var inputStr = $("#input").val();
+    
+  // 範囲選択をしていない場合
+  if(posStart === posEnd) {
+  // 空白改行をすべて削除
+    $("#result").val(inputStr.replace(/[ 　\n\r\t]/g, ""));
+  }
+  // 範囲選択をしている場合
+  else {
+    var selStr = inputStr.substring(posStart, posEnd);
+    // 改行をすべて削除
+    $("#result").val(selStr.replace(/[ 　\n\r\t]/g, ""));
+  }
+  
+  $("#result").focus();
+}
+</pre>
+
+<p>範囲選択をしていない場合は非常にシンプルなのですが、範囲を選択している時は選択範囲にのみ処理を実行させるようにすると処理が複雑になります。</p>
+
+<p>範囲選択をしている時は、選択範囲の始点と終点を取得し、それを基に処理を行います。</p>
+
+<h2 id="tabの処理">Tabの処理</h2>
+
+<p>ここが1番大変でした。</p>
+
+<p>ここに1番時間がかかりました。</p>
+
+<p>とりあえずソースはこんな感じです。</p>
+
+<pre class="brush: jscript; title: ; notranslate" title="">// タブを入力
+function insertTab() {
+  var posStart = $("#input").get(0).selectionStart;
+  var posEnd = $("#input").get(0).selectionEnd;
+  var inputStr = $("#input").val();
+    
+  // 範囲選択をしていない場合
+  if(posStart === posEnd) {
+    // カーソルの位置にタブを追加
+    $("#input").val(inputStr.substring(0,posStart) + "\t" + inputStr.substring(posStart, inputStr.length));
+    // カーソルの位置をタブの後ろに移動させる
+    $("#input").get(0).setSelectionRange(posStart + 1, posStart + 1);
+  }
+  // 範囲選択をしている場合
+  else {
+    var beforeSelStr = inputStr.substring(0, posStart);
+    var selStr = inputStr.substring(posStart, posEnd);
+    var afterSelStr = inputStr.substring(posEnd, inputStr.length);
+    
+    // 選択範囲始点の行頭にタブを追加
+    beforeSelStrSplit = beforeSelStr.split(/\n|\r|\r\n/g);
+    beforeSelStrSplit[beforeSelStrSplit.length - 1] = "\t" + beforeSelStrSplit[beforeSelStrSplit.length - 1];
+    // 選択範囲の行頭にタブを追加
+    selStr = selStr.replace(/[\n\r]/g, "\n\t");
+    // 分割した文字列を結合
+    $("#input").val(beforeSelStrSplit.join("\n") + selStr + afterSelStr);
+    // カーソルの選択範囲を維持する
+    $("#input").get(0).setSelectionRange(posStart + 1, posEnd + ((selStr.match(/[\n\r]/g) == null) ? 0 : selStr.match(/[\n\r]/g).length) + 1);
+  }
+}
+
+
+
+// 行頭のタブを削除
+function deleteTab() {
+  var posStart = $("#input").get(0).selectionStart;
+  var posEnd = $("#input").get(0).selectionEnd;
+  var inputStr = $("#input").val();
+    
+  // 範囲選択をしていない場合
+  if(posStart === posEnd) {
+    var beforeSelStr = inputStr.substring(0, posStart);
+    var afterSelStr = inputStr.substring(posStart, inputStr.length);
+    
+    // キャレットの行を取得
+    beforeSelStrSplit = beforeSelStr.split(/\n|\r|\r\n/g);
+    afterSelStrSplit = afterSelStr.split(/\n|\r|\r\n/g);
+    var beforeSelLineStr = beforeSelStrSplit[beforeSelStrSplit.length - 1];
+    var targetStr = beforeSelLineStr + afterSelStrSplit[0];
+    afterSelStrSplit[0] = "";
+    // 行頭のタブを削除
+    beforeSelStrSplit[beforeSelStrSplit.length - 1] = targetStr.replace(/^\t/, "");
+    // 分割した文字列を結合
+    $("#input").val(beforeSelStrSplit.join("\n") + afterSelStrSplit.join("\n"));
+    // カーソルの位置を維持する
+    var moveCount = (beforeSelLineStr.match(/^\t/) == null) ? 0 : 1;
+    $("#input").get(0).setSelectionRange(posStart - moveCount, posStart - moveCount);
+  }
+  // 範囲選択をしている場合
+  else {
+    var beforeSelStr = inputStr.substring(0, posStart);
+    var selStr = inputStr.substring(posStart, posEnd);
+    var afterSelStr = inputStr.substring(posEnd, inputStr.length);
+    
+    // 対象となる行を取得
+    beforeSelStrSplit = beforeSelStr.split(/\n|\r|\r\n/g);
+    selStrSplit = selStr.split(/\n|\r|\r\n/g);
+    afterSelStrSplit = afterSelStr.split(/\n|\r|\r\n/g);
+    var beforeSelLineStr = beforeSelStrSplit[beforeSelStrSplit.length - 1];
+    var afterSelLineStr = selStrSplit[selStrSplit.length - 1];
+    var targetStr = beforeSelLineStr + selStr + afterSelStrSplit[0];
+    beforeSelStrSplit[beforeSelStrSplit.length - 1] = "";
+    afterSelStrSplit[0] = "";
+    // 行頭のタブを削除
+    selStr = targetStr.replace(/^\t/, "").replace(/\n\t|\r\t|\r\n\t/g, "\n");
+    // 分割した文字列を結合
+    $("#input").val(beforeSelStrSplit.join("\n") + selStr + afterSelStrSplit.join("\n"));
+    // カーソルの位置を維持する
+    var moveCountStart = (beforeSelLineStr.match(/^\t/) == null) ? 0 : 1;
+    var moveCountEnd = (afterSelLineStr.match(/^\t/) == null) ? 0 : 1;
+    moveCountEnd += (targetStr.match(/\n\t|\r\t|\r\n\t/g) == null) ? 0 : targetStr.match(/\n\t|\r\t|\r\n\t/g).length;
+    $("#input").get(0).setSelectionRange(posStart - moveCountStart, posEnd - moveCountEnd);
+  }
+}
+</pre>
+
+<p>はい、ご覧のとおり複雑なことになってます。</p>
+
+<p>なぜかといいますと、textareaからは行頭というものを取得できないためです。</p>
+
+<p>改行記号を含んだ文字列として扱われます。</p>
+
+<p>なので、Shift + Tabをした場合や範囲選択をしている場合は、行頭を判別する処理が必要になります。</p>
+
+<p>また、Tab文字を入れたり消したりしますので、キャレットの位置がずれてしまいます。</p>
+
+<p>なので、変動した文字数を数えて、それに合わせてキャレットを移動させてあげています。</p>
+
+<p>ここらへんの処理がcontenteditableを使うと簡潔に書けそうな感じでした。（ブラウザは制限されるかも知れませんが。）</p>
+
+<h1 id="まとめ">まとめ</h1>
+
+<p>現時点でこのWebアプリはver.4です。</p>
+
+<p>ver.3では、Sfhit + Tab以外のキーボードからひと通りの処理に対応、空白文字可視化、などを行って制作時間は7時間くらい。</p>
+
+<p>ver.4では、Shift + Tab対応、範囲選択の処理に対応、デザイン変更、などを行って制作時間は12時間くらい。</p>
+
+<p>補助機能の実装に1番時間がかかってしまった。</p>
+
+<p>今までの合計製作時間は26時間くらいですね。</p>
+
+<p>非常に楽しく実装できて、とても勉強になって、一時期非常に役に立ったので、とても有意義でした。</p>
+
+<h1 id="参考にさせていただいたサイト">参考にさせていただいたサイト</h1>
+
+<p><a href="http://qiita.com/yuku_t/items/516ec6fe59b77b93edc5" title="JavaScript - Facebookみたいにtextareaの一部を強調する - Qiita [キータ]">JavaScript &#8211; Facebookみたいにtextareaの一部を強調する &#8211; Qiita [キータ]</a></p>
+
+<p><a href="http://www.backlog.jp/blog/2013/06/facebook-like-textarea.html" title="Facebookライクにテキストエリアを強調する方法 | Backlogブログ">Facebookライクにテキストエリアを強調する方法 | Backlogブログ</a></p>
+
+<p><a href="http://ginpen.com/2012/12/24/fix-window-height/" title="CSSだけでウィンドウぴったりに表示する編集画面を作る。（CSS おれおれ Advent Calendar 2012 – 23日目） | Ginpen.com">CSSだけでウィンドウぴったりに表示する編集画面を作る。（CSS おれおれ Advent Calendar 2012 – 23日目） | Ginpen.com</a></p>
+
+<p><a href="http://ginpen.com/2011/07/01/height-100-parcent/" title="CSSでheight:100%を使う方法について。 | Ginpen.com">CSSでheight:100%を使う方法について。 | Ginpen.com</a></p>
+
+<p><a href="http://d.hatena.ne.jp/hokaccha/20111028/1319814792" title="textareaでタブを入力できるようにする - hokaccha.hamalog v2">textareaでタブを入力できるようにする &#8211; hokaccha.hamalog v2</a></p>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+<h1 id="ubuntuのバージョン">Ubuntuのバージョン</h1>
+
+<p>ubuntu 14.04 LTS<br />
+64bit</p>
+
+<h1 id="javaのインストール">Javaのインストール</h1>
+
+<pre><code>sudo apt-get update
+sudo apt-get install -y python-software-properties
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install -y oracle-java8-installer
+sudo update-java-alternatives -s java-7-oracle
+</code></pre>
+
+<p>参考<br />
+<a href="http://xyk.hatenablog.com/entry/2013/10/15/175623">Ubuntu 12.04 LTS に Java (Oracle JDK) をインストールする - xykのブログ</a></p>
+
+<h1 id="intellij-ideaのインストール">IntelliJ IDEAのインストール</h1>
+
+<p>公式サイトからダウンロードする<br />
+<a href="http://www.jetbrains.com/idea/">IntelliJ IDEA — The Best Java and Polyglot IDE</a><br />
+任意のディレクトリに配置</p>
+
+<h1 id="intellij-ideaの起動">IntelliJ IDEAの起動</h1>
+
+<p>解凍したディレクトリ内の<code>bin/idea.sh</code>を実行</p>
+
+<h1 id="プロジェクトの作成">プロジェクトの作成</h1>
+
+<p>Java を選択<br />
+Project SDK で New -&gt; JDK を選択<br />
+<code>/usr/lib/jvm/java-8-oracle</code>を選択してOK</p>
+
+<h1 id="junitをインストール">JUnitをインストール</h1>
+
+<p>GitHub のリンクから<code>junit.jar</code>と<code>hamcrest-core.jar</code>をダウンロード<br />
+<a href="https://github.com/junit-team/junit">junit-team/junit</a><br />
+<code>junit.jar</code>と<code>hamcrest-core.jar</code>をプロジェクトにコピー<br />
+<code>junit.jar</code>と<code>hamcrest-core.jar</code>をライブラリに追加<br />
+参考<br />
+<a href="http://d.hatena.ne.jp/irof/20130110/p1">junit-4.11.jar が単独で使えない - 日々常々</a></p>
+
+<h1 id="試してみる">試してみる</h1>
+
+<p>プロジェクトの直下に<code>test</code>ディレクトリを作成<br />
+<code>test</code>ディレクトリを<code>Test Sources Root</code>にマーク<br />
+<code>src</code>ディレクトリの下に Java Class ファイルを作成<br />
+適当にメソッドを追加<br />
+クラスの範囲にキャレットがある状態で、メニューバー -&gt; Navigate -&gt; Test を選択<br />
+Create Test で JUnit4 を選び、Member で作成したメソッドをチェックして OK<br />
+作成されたテストメソッドを右クリックして Run を実行</p>
+
+<h1 id="補足">補足</h1>
+
+<p>テストメソッド名に日本語を使用した際に、テスト結果が文字化けしていた<br />
+IntelliJ IDEA の設定から、IDE Settings -&gt; Appearance -&gt; Override default fonts by を使用して回避</p>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

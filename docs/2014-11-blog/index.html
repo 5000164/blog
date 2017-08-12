@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+<ol>
+<li>Octopress をインストールしているディレクトリに移動
+
+<ul>
+<li><code>cd Blog/</code></li>
+</ul></li>
+<li>ブログの記事を生成
+
+<ul>
+<li><code>bundle exec rake new_post['URL にする文字列']</code>
+
+<ul>
+<li>日付のプレフィックスは自動で付与されるので「blog」などだけでよい</li>
+</ul></li>
+</ul></li>
+<li>生成された記事のマークダウンファイルをハイフンつなぎからアンダーバーつなぎに変える
+
+<ul>
+<li>アンダーバーで入力してもハイフンにされるため</li>
+</ul></li>
+<li>生成された記事を開いて書く
+
+<ul>
+<li>title を記事のタイトルに変える</li>
+</ul></li>
+<li>記事を書いたらプレビュー
+
+<ul>
+<li><code>bundle exec rake preview</code></li>
+<li><code>http://localhost:4000/</code></li>
+</ul></li>
+<li>プレビューして問題なかったら公開
+
+<ul>
+<li><code>bundle exec rake gen_deploy</code></li>
+</ul></li>
+<li>公開したらバージョン管理
+
+<ul>
+<li>SourceTree でコミット
+
+<ul>
+<li>コミットメッセージは「記事追加」とか適宜入力</li>
+</ul></li>
+</ul></li>
+<li>本番環境で動作確認、文章見直し
+
+<ul>
+<li><a href="http://blog.5000164.jp/">5000164 is here</a></li>
+</ul></li>
+</ol>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+<h1 id="ide-に-fuelphp-の補完を効かせたい">IDE に FuelPHP の補完を効かせたい</h1>
+
+<p>補完効かないのだるいなーと思ってぐぐったらあった。<br />
+<a href="http://d.hatena.ne.jp/Kenji_s/20120123/1327301678">Eclipse で FuelPHP のコード補完を行わせる冴えたやり方 - A Day in Serenity @ kenjis</a><br />
+これで生成して自動補完させることができた。</p>
+
+<h1 id="core-を拡張していたからクラス名が重複してしまった">Core を拡張していたからクラス名が重複してしまった</h1>
+
+<p>Core を拡張したクラスと _autocomplete.php のクラスがだぶってしまって、IDE が警告を出してきた。<br />
+でも手作業でコメントアウトするのはだるい。<br />
+というわけで生成処理を変更した。<br />
+FuelPHP 1.7.2 で動作確認してます。<br />
+<a href="https://gist.github.com/5000164/a7731d2e151c664bef13">IDE で FuelPHP の補完を効かせるための _autocomplete.php を生成するタスク</a></p>
+
+<h1 id="mit-ライセンスのソースを初めて変更して公開した">MIT ライセンスのソースを初めて変更して公開した</h1>
+
+<p>MIT ライセンスなので、原著作者のライセンス表記があればライセンス違反にはならないはずだが、変更して公開するのは初めてなのでこの書き方で正しいのか不安になる。</p>
+
+<h1 id="結果">結果</h1>
+
+<p>自動補完便利。<br />
+PhpStorm 賢い。</p>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

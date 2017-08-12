@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+<h1 id="php-の二次元配列から同じキーの値だけで新しい配列を生成する関数-array-column">PHP の二次元配列から同じキーの値だけで新しい配列を生成する関数 array_column</h1>
+
+<p>他の人のコードを読んでたらたまたま見つけた便利な関数 array_column。<br />
+二次元配列から同じキーの値だけで新しい配列を生成する。<br />
+<a href="http://php.net/manual/ja/function.array-column.php">PHP: array_column - Manual</a></p>
+
+<h1 id="同じキーの値だけで新しい配列を作るサンプル">同じキーの値だけで新しい配列を作るサンプル</h1>
+
+<pre><code class="language-php">&lt;?php
+$data = [
+    [
+        'id' =&gt; 1,
+        'name' =&gt; 'aaa',
+    ],
+    [
+        'id' =&gt; 2,
+        'name' =&gt; 'bbb',
+    ],
+];
+
+$id_list = array_column($data, 'id');
+$name_list = array_column($data, 'name');
+
+var_dump($id_list);
+// array(2) {
+//   [0]=&gt;
+//   int(1)
+//   [1]=&gt;
+//   int(2)
+// }
+
+var_dump($name_list);
+// array(2) {
+//   [0]=&gt;
+//   string(3) &quot;aaa&quot;
+//   [1]=&gt;
+//   string(3) &quot;bbb&quot;
+// }
+
+</code></pre>
+
+<h1 id="二次元配列の縦横を入れ替える-転置行列を得る-サンプル">二次元配列の縦横を入れ替える (転置行列を得る) サンプル</h1>
+
+<pre><code class="language-php">&lt;?php
+$data = [
+    [
+        'id' =&gt; 1,
+        'name' =&gt; 'aaa',
+    ],
+    [
+        'id' =&gt; 2,
+        'name' =&gt; 'bbb',
+    ],
+];
+
+$transposed_matrix = [];
+foreach ($data[0] as $key =&gt; $value) {
+    $transposed_matrix[$key] = array_column($data, $key);
+}
+
+var_dump($transposed_matrix);
+// array(2) {
+//     [&quot;id&quot;]=&gt;
+//   array(2) {
+//         [0]=&gt;
+//     int(1)
+//     [1]=&gt;
+//     int(2)
+//   }
+//   [&quot;name&quot;]=&gt;
+//   array(2) {
+//         [0]=&gt;
+//     string(3) &quot;aaa&quot;
+//     [1]=&gt;
+//     string(3) &quot;bbb&quot;
+//   }
+// }
+
+</code></pre>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="http://qiita.com/harukasan/items/a0773aef27d838852e44">PHPのarray_columnが便利 - Qiita</a></li>
+<li><a href="https://www.softel.co.jp/blogs/tech/archives/2576">【php】配列の縦横入れ替え的な操作 at softelメモ</a></li>
+<li><a href="http://blog.supermomonga.com/articles/php/array-to-transverse-matrix.html">PHPで二次元配列の転置行列を得る方法 - かなりすごいブログ</a>
+
+<ul>
+<li>難しくて理解できなかった</li>
+</ul></li>
+</ul>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

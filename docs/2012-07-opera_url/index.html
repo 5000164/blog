@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+<div>
+  <div>
+    Operaのmenu.iniを編集して実現します。
+  </div>
+  
+
+<p><div>
+    まずファイルの
+  </div></p>
+
+<p><pre class="brush: jscript; title: ; notranslate" title="">
+[Document Popup Menu]
+</pre>
+</div></p>
+
+<div>
+  の部分を探します。
+</div>
+
+<div>
+  見つけたら下に
+</div>
+
+<pre class="brush: jscript; title: ; notranslate" title="">++++++++++++++++++--9
+ ; get URL & Link
+ Item, "Copy URL" = Go to page, "javascript:(function(){window.prompt('', document.title+'\n'+location.href);})();" & Delay, 100 & Cut & Cancel
+ Item, "Create Link" = Go to page, "javascript:(function(){window.prompt('', '\n\n&lt;section&gt;\n&lt;div&gt;&lt;a href=\u0022'+location.href+'\u0022&gt;'+document.title+'&lt;/a&gt;&lt;/div&gt;\n&lt;p&gt;\n\n&lt;/p&gt;\n&lt;/section&gt;\n\n');})();" & Delay, 100 & Cut & Cancel
+ Item, "Reference Link" = Go to page, "javascript:(function(){window.prompt('', '&lt;div&gt;&lt;a href=\u0022'+location.href+'\u0022&gt;'+document.title+'&lt;/a&gt;&lt;/div&gt;\n\n');})();" & Delay, 100 & Cut & Cancel
+</pre>
+
+<div>
+  と追加します。
+</div>
+
+<div>
+  これでOperaを再起動すれば完了です。
+</div>
+
+<div>
+  これは単純にJavaScriptを利用しています。
+</div>
+
+<div>
+  実装するときにダブルコーテーションのところで一回ハマりました。
+</div>
+
+<div>
+  ダブルコーテーションをエスケープしてなかったのが動かない原因かと思いきや、Operaの設定を解釈する側でダブルコーテーションを使用してはいけなかったみたいです。
+</div>
+
+<div>
+  なのでダブルコーテーションをUnicodeの「0022」で表現して回避しています。
+</div>
+
+<div>
+  実際にこれを使ってみるとこんな感じになります。
+</div>
+
+<div>
+  カスタマイズは簡単なので、自分の環境に合わせて使ってください。
+</div><section> 
+
+<div>
+  「Copy URL」
+</div>
+
+<p><pre class="brush: xml; title: ; notranslate" title="">生きるためのブログ
+<a href="http://5000164.jp/">http://5000164.jp/</a>
+</pre></section> <section></p>
+
+<div>
+  「Create Link」
+</div>
+
+<p><pre class="brush: xml; title: ; notranslate" title="">&lt;section&gt;
+&lt;div&gt;&lt;a href=&ldquo;<a href="http://5000164.jp/&quot;&gt;生きるためのブログ&lt;/a&gt;&lt;/div&gt;">http://5000164.jp/&quot;&gt;生きるためのブログ&lt;/a&gt;&lt;/div&gt;</a>
+&lt;p&gt;</p>
+
+<p>&lt;/p&gt;
+&lt;/section&gt;</p>
+
+<p></pre></section> <section></p>
+
+<div>
+  「Reference Link」
+</div>
+
+<p><pre class="brush: xml; title: ; notranslate" title="">&lt;div&gt;&lt;a href=&ldquo;<a href="http://5000164.jp/&quot;&gt;生きるためのブログ&lt;/a&gt;&lt;/div&gt;">http://5000164.jp/&quot;&gt;生きるためのブログ&lt;/a&gt;&lt;/div&gt;</a></p>
+
+<p></pre></section></p>
+
+<div>
+  参考
+</div>
+
+<div>
+  <a href="http://my.opera.com/gyozazuki/blog/2009/10/20/opera">gyozazuki &#8211; Operaの右クリックメニュー</a>
+</div>
+
+<div>
+  <a href="http://d.hatena.ne.jp/mame-tanuki+tiraura/20100220/CopyURL">ブラウザで表示しているページのＵＲＬとタイトルをクリップボードにコピーする &#8211; そっとチラ裏</a>
+</div>
+
+<div>
+  <a href="http://d.hatena.ne.jp/mame-tanuki+tiraura/20110425/CopyURL2">ブラウザで表示しているページのＵＲＬとタイトルをクリップボードにコピーする(改) &#8211; そっとチラ裏</a>
+</div>
+
+<div>
+  <a href="http://www.tohoho-web.com/js/string.htm">文字列（String）</a>
+</div>
+
+<div>
+  <a href="http://wisdom.sakura.ne.jp/programming/cs/cs3.html">リテラル</a>
+</div>
+
+<div>
+</div>
+
+<div>
+</div>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

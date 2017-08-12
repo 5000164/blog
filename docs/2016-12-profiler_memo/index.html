@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+<h1 id="プロファイラーを調べた">プロファイラーを調べた</h1>
+
+<p>PHP のパフォーマンスを向上させたくてプロファイリングすればなにかわかるのでは？と思ったので、プロファイリングしてくれるツールを調べた。<br />
+New Relic は無料のプランがなくなっていた？ので除外。</p>
+
+<h1 id="結論">結論</h1>
+
+<p>テスト流す時に Xdebug でプロファイリングして、開発環境で XHProf でプロファイリングすればいいのかなと思った。<br />
+XHProf は fork したプロセスのプロファイリングもできるみたいなことを見かけたため。<br />
+実現性についてはこれから調べる。</p>
+
+<h1 id="調べたプロファイラーのメモ">調べたプロファイラーのメモ</h1>
+
+<ul>
+<li><a href="https://xdebug.org/">Xdebug - Debugger and Profiler Tool for PHP</a></li>
+<li><a href="https://github.com/phacility/xhprof">phacility/xhprof: XHProf is a function-level hierarchical profiler for PHP and has a simple HTML based user interface.</a></li>
+<li><a href="https://sandro-keil.de/blog/2015/02/10/php-profiling-tools/">PHP profiling tools - Z-Ray, Blackfire, Tideways, XHProf, XHGui - Blog by Sandro Keil</a></li>
+<li><a href="http://qiita.com/bezeklik/items/926f73cccc5ddd452a06">PHPプロファイラーのblackfireを使う - Qiita</a></li>
+<li><a href="http://stackoverflow.com/questions/16787462/php-xdebug-how-to-profile-forked-process">fork - php xdebug: How to profile forked process - Stack Overflow</a></li>
+<li><a href="https://www.jetbrains.com/help/phpstorm/2016.3/analyzing-xdebug-profiling-data.html">PhpStorm 2016.3 Help :: Analyzing Xdebug Profiling Data</a></li>
+<li><a href="https://www.jetbrains.com/help/phpstorm/2016.3/enabling-profiling-with-xdebug.html">PhpStorm 2016.3 Help :: Enabling Profiling with Xdebug</a></li>
+<li><a href="http://bashalog.c-brains.jp/12/11/08-095736.php">PhpStorm で PHPスクリプトの実行を解析する(Xdebugのプロファイラの結果を表示する) | バシャログ。</a></li>
+<li><a href="http://uzulla.hateblo.jp/entry/2015/10/28/124732">PHPのプロファイラであるZ-RayのPreview版を試しました - uzullaがブログ</a></li>
+</ul>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+
