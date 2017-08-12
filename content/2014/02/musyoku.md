@@ -3,7 +3,7 @@ title = "4ヶ月無職で過ごした感想"
 date = 2014-02-28T00:14:30+00:00
 url = "2014-02-musyoku"
 +++
-<img src="{{ .Site.BaseURL }}/images/2014/02/20140227_musyoku-300x300.jpg" alt="20140227_musyoku" width="300" height="300" class="aligncenter size-medium wp-image-1115" srcset="{{ .Site.BaseURL }}/images/2014/02/20140227_musyoku-300x300.jpg 300w, {{ .Site.BaseURL }}/images/2014/02/20140227_musyoku-150x150.jpg 150w, {{ .Site.BaseURL }}/images/2014/02/20140227_musyoku.jpg 450w" sizes="(max-width: 300px) 100vw, 300px" />
+{{< figure src="/images/2014/02/20140227_musyoku.jpg" title="" >}}
 
 # 私は無職で約4ヶ月間過ごしました
 

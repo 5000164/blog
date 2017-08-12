@@ -3,7 +3,7 @@ title = "自分を紹介するポートフォリオサイトを作った"
 date = 2014-01-21T13:15:09+00:00
 url = "2014-01-portfolio"
 +++
-<img src="{{ .Site.BaseURL }}/images/2014/01/de_20140121_portfolio-300x300.jpg" alt="de_20140121_portfolio" width="300" height="300" class="aligncenter size-medium wp-image-1071" srcset="{{ .Site.BaseURL }}/images/2014/01/de_20140121_portfolio-300x300.jpg 300w, {{ .Site.BaseURL }}/images/2014/01/de_20140121_portfolio-150x150.jpg 150w, {{ .Site.BaseURL }}/images/2014/01/de_20140121_portfolio.jpg 600w" sizes="(max-width: 300px) 100vw, 300px" />
+{{< figure src="/images/2014/01/de_20140121_portfolio.jpg" title="" >}}
 
 # 就職のためにポートフォリオサイトを作りました
 

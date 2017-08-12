@@ -3,7 +3,7 @@ title = "作詞してみた"
 date = 2013-02-14T03:19:55+00:00
 url = "2013-02-lyrics"
 +++
-[<img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="de_20130213_lyrics" border="0" alt="de_20130213_lyrics" src="{{ .Site.BaseURL }}/images/2013/02/de_20130213_lyrics_thumb.jpg" width="240" height="240" />]({{ .Site.BaseURL }}/images/2013/02/de_20130213_lyrics.jpg)
+{{< figure src="/images/2013/02/de_20130213_lyrics.jpg" title="" >}}
 
 &nbsp;
 

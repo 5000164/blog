@@ -17,9 +17,9 @@ Processing がおもしろそうだった
 Processing 触ってみた
 ====
 勉強会の課題を勝手にやってみました  
-こんなんができました  
-![実行結果](/images/2014-11-processing_practice_1/out.gif)  
-ソースはここにあります  
+こんなんができました
+{{< figure src="/images/2014/11/processing_practice_1/out.gif" title="実行結果" >}}
+ソースはここにあります
 [5000164/processing-practice-1](https://github.com/5000164/processing-practice-1)
 
 まとめ

@@ -3,7 +3,7 @@ title = "「あんたが怯えるから相手も怯えるのよ」という言�
 date = 2013-04-01T02:13:58+00:00
 url = "2013-03-frighten"
 +++
-<img class="size-full wp-image-665 aligncenter" style="display: block; margin: auto;" alt="de_20130331_hand" src="{{ .Site.BaseURL }}/images/2013/04/de_20130331_hand.jpg" width="300" height="300" srcset="{{ .Site.BaseURL }}/images/2013/04/de_20130331_hand.jpg 300w, {{ .Site.BaseURL }}/images/2013/04/de_20130331_hand-150x150.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" />
+{{< figure src="/images/2013/04/de_20130331_hand-150x150.jpg" title="" >}}
 
 # はじめに
 

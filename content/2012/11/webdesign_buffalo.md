@@ -12,7 +12,7 @@ url = "2012-11-webdesign_buffalo"
 Buffalo &#8211; Web Development, E-Commerce & Web Design &#8211; Brighton UK  
 <http://builtbybuffalo.com/>
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="Buffalo" border="0" alt="Buffalo" src="{{ .Site.BaseURL }}/images/2012/11/Buffalo_thumb.png" width="640" height="480" />]({{ .Site.BaseURL }}/images/2012/11/Buffalo.png)
+{{< figure src="/images/2012/11/Buffalo.png" title="" >}}
 
 &nbsp;
 
@@ -28,6 +28,6 @@ Buffalo &#8211; Web Development, E-Commerce & Web Design &#8211; Brighton UK
 
 このサイトでは下記の図のように3つの長方形を組み合わせることで実現している。
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="六角形" border="0" alt="六角形" src="{{ .Site.BaseURL }}/images/2012/11/thumb1.png" width="191" height="221" />]({{ .Site.BaseURL }}/images/2012/11/3ace5290e996.png)
+{{< figure src="/images/2012/11/3ace5290e996.png" title="" >}}
 
 こうすることによってマウスの判定も見た目と同様となりUXが向上すると思われる。

@@ -4,7 +4,7 @@ date = 2013-06-10T04:52:56+00:00
 url = "2013-06-think"
 +++
 </p> <div style="text-align: center;">
-  <img src="{{ .Site.BaseURL }}/images/2013/06/20130609_think-300x300.jpg" alt="20130609_think" width="300" height="300" class="aligncenter size-medium wp-image-761" srcset="{{ .Site.BaseURL }}/images/2013/06/20130609_think-300x300.jpg 300w, {{ .Site.BaseURL }}/images/2013/06/20130609_think-150x150.jpg 150w, {{ .Site.BaseURL }}/images/2013/06/20130609_think.jpg 800w" sizes="(max-width: 300px) 100vw, 300px" />
+  {{< figure src="/images/2013/06/20130609_think.jpg" title="" >}}
 </div></a># 言葉との出会い伊坂幸太郎の重力ピエロという作品の中で、神様に『自分で考えろ！』と言われるシーンがあります。
   
 私には衝撃的な言葉でした。

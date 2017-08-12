@@ -3,7 +3,7 @@ title = "変えられないエンジニア"
 date = 2014-03-26T23:03:14+00:00
 url = "2014-03-engineer"
 +++
-<img src="{{ .Site.BaseURL }}/images/2014/03/20140326_engineer-300x300.jpg" alt="20140326_engineer" width="300" height="300" class="aligncenter size-medium wp-image-1178" srcset="{{ .Site.BaseURL }}/images/2014/03/20140326_engineer-300x300.jpg 300w, {{ .Site.BaseURL }}/images/2014/03/20140326_engineer-150x150.jpg 150w, {{ .Site.BaseURL }}/images/2014/03/20140326_engineer.jpg 900w" sizes="(max-width: 300px) 100vw, 300px" />
+{{< figure src="/images/2014/03/20140326_engineer.jpg" title="" >}}
 
 # <a name="「君は変えられるエンジニアか？変えられないエンジニアか？」" href="#「君は変えられるエンジニアか？変えられないエンジニアか？」"></a>「君は変えられるエンジニアか？変えられないエンジニアか？」 {#「君は変えられるエンジニアか？変えられないエンジニアか？」}
 

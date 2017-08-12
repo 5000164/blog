@@ -4,7 +4,7 @@ date = 2013-11-21T23:58:36+00:00
 url = "2013-11-vocaloid_ranking_20131121"
 +++
 </p> <div style="text-align: center;">
-  <img src="{{ .Site.BaseURL }}/images/2013/06/vocaloid.png" alt="vocaloid" width="300" height="300" class="aligncenter size-full wp-image-774" srcset="{{ .Site.BaseURL }}/images/2013/06/vocaloid.png 300w, {{ .Site.BaseURL }}/images/2013/06/vocaloid-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" />
+  {{< figure src="/images/2013/06/vocaloid-150x150.png" title="" >}}
 </div></a># イントロまたしても久しぶりのランキングです。
   
 最近とてもハマった曲があったのでご紹介したくての更新。

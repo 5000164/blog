@@ -12,7 +12,7 @@ url = "2012-11-webdesign_alcepixel"
 alcePixel  
 <http://alcepixel.com/>
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="alcePixel" border="0" alt="alcePixel" src="{{ .Site.BaseURL }}/images/2012/11/alcePixel_thumb.png" width="640" height="454" />]({{ .Site.BaseURL }}/images/2012/11/alcePixel.png)
+{{< figure src="/images/2012/11/alcePixel.png" title="" >}}
 
 &nbsp;
 

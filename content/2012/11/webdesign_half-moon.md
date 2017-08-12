@@ -12,7 +12,7 @@ url = "2012-11-webdesign_half-moon"
 歯科ハーフムーン｜仙台市 インプラント 無痛治療｜トップページ  
 <http://www.half-moon.or.jp/>
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="歯科ハーフムーン" border="0" alt="歯科ハーフムーン" src="{{ .Site.BaseURL }}/images/2012/11/thumb.png" width="640" height="480" />]({{ .Site.BaseURL }}/images/2012/11/8a4183b6df54.png)
+{{< figure src="/images/2012/11/8a4183b6df54.png" title="" >}}
 
 &nbsp;
 

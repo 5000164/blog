@@ -3,9 +3,8 @@ title = "気が利くデザイン（Pocket）"
 date = 2013-11-02T03:03:50+00:00
 url = "2013-11-pocket"
 +++
-<div style="text-align: center;">
-  <a href="{{ .Site.BaseURL }}/images/2013/11/20131101_pocket.png"><img src="{{ .Site.BaseURL }}/images/2013/11/20131101_pocket-300x300.png" alt="20131101_pocket" width="300" height="300" class="aligncenter size-medium wp-image-918" srcset="{{ .Site.BaseURL }}/images/2013/11/20131101_pocket-300x300.png 300w, {{ .Site.BaseURL }}/images/2013/11/20131101_pocket-150x150.png 150w, {{ .Site.BaseURL }}/images/2013/11/20131101_pocket.png 578w" sizes="(max-width: 300px) 100vw, 300px" /></a>
-</div>
+
+{{< figure src="/images/2013/11/20131101_pocket.png" title="" >}}
 
 # Pocketについて
 

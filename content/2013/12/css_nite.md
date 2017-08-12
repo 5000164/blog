@@ -3,7 +3,7 @@ title = "CSS Nite in SENDAI, Vol.7 「変化するWebデザイン 〜既成概�
 date = 2013-12-01T23:18:10+00:00
 url = "2013-12-css_nite"
 +++
-[<img src="{{ .Site.BaseURL }}/images/2013/12/de_20131201_css_nite-300x300.jpg" alt="de_20131201_css_nite" width="300" height="300" class="aligncenter size-medium wp-image-954" srcset="{{ .Site.BaseURL }}/images/2013/12/de_20131201_css_nite-300x300.jpg 300w, {{ .Site.BaseURL }}/images/2013/12/de_20131201_css_nite-150x150.jpg 150w, {{ .Site.BaseURL }}/images/2013/12/de_20131201_css_nite.jpg 600w" sizes="(max-width: 300px) 100vw, 300px" />]({{ .Site.BaseURL }}/images/2013/12/de_20131201_css_nite.jpg)
+{{< figure src="/images/2013/12/de_20131201_css_nite.jpg" title="" >}}
 
 # CSS Nite in SENDAIについて
 

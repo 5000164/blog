@@ -3,7 +3,7 @@ title = "2013年出会えてよかったVOCALOID曲5選"
 date = 2014-01-01T15:44:14+00:00
 url = "2014-01-vocaloid_2013"
 +++
-[<img src="{{ .Site.BaseURL }}/images/2013/06/vocaloid.png" alt="vocaloid" width="300" height="300" class="aligncenter size-full wp-image-774" srcset="{{ .Site.BaseURL }}/images/2013/06/vocaloid.png 300w, {{ .Site.BaseURL }}/images/2013/06/vocaloid-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" />]({{ .Site.BaseURL }}/images/2013/06/vocaloid.png)
+{{< figure src="/images/2013/06/vocaloid.png" title="" >}}
 
 # イントロ
 

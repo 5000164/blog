@@ -14,7 +14,7 @@ http://www.wearegrand.com/
 
 &nbsp;
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; margin-left: auto; border-top: 0px; margin-right: auto; border-right: 0px; padding-top: 0px" title="20121120" border="0" alt="20121120" src="{{ .Site.BaseURL }}/images/2012/11/20121120_thumb.png" width="640" height="447" />]({{ .Site.BaseURL }}/images/2012/11/20121120.png)
+{{< figure src="/images/2012/11/20121120.png" title="" >}}
 
 &nbsp;
 
