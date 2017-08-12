@@ -2,10 +2,9 @@
 title = "他人を変えることはできないけど、影響を与えることはできると信じてる"
 date = 2013-06-23T04:59:54+00:00
 url = "2013-06-effect"
-image: /wp-content/uploads/2013/06/20130622_effect.png
 +++
 </p> <div style="text-align: center;">
-  <img src="http://5000164.jp/wp-content/uploads/2013/06/20130622_effect-300x300.png" alt="20130622_effect" width="300" height="300" class="aligncenter size-medium wp-image-787" srcset="http://5000164.jp/wp-content/uploads/2013/06/20130622_effect-300x300.png 300w, http://5000164.jp/wp-content/uploads/2013/06/20130622_effect-150x150.png 150w, http://5000164.jp/wp-content/uploads/2013/06/20130622_effect.png 500w" sizes="(max-width: 300px) 100vw, 300px" />
+  <img src="{{ .Site.BaseURL }}/images/2013/06/20130622_effect-300x300.png" alt="20130622_effect" width="300" height="300" class="aligncenter size-medium wp-image-787" srcset="{{ .Site.BaseURL }}/images/2013/06/20130622_effect-300x300.png 300w, {{ .Site.BaseURL }}/images/2013/06/20130622_effect-150x150.png 150w, {{ .Site.BaseURL }}/images/2013/06/20130622_effect.png 500w" sizes="(max-width: 300px) 100vw, 300px" />
 </div></a># 他人を救うことはできない他人は変えられない。
   
 他人は救えない。変えられるのは自分だけ。

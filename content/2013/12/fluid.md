@@ -2,9 +2,8 @@
 title = "コンテンツを横に2つ並べた時に片方だけコンテンツ幅がウィンドウ幅に追従するようにする"
 date = 2013-12-01T04:40:56+00:00
 url = "2013-12-fluid"
-image: /wp-content/uploads/2013/12/20131201_fluid.png
 +++
-[<img src="http://5000164.jp/wp-content/uploads/2013/12/20131201_fluid-300x300.png" alt="20131201_fluid" width="300" height="300" class="aligncenter size-medium wp-image-950" srcset="http://5000164.jp/wp-content/uploads/2013/12/20131201_fluid-300x300.png 300w, http://5000164.jp/wp-content/uploads/2013/12/20131201_fluid-150x150.png 150w, http://5000164.jp/wp-content/uploads/2013/12/20131201_fluid.png 900w" sizes="(max-width: 300px) 100vw, 300px" />](http://5000164.jp/wp-content/uploads/2013/12/20131201_fluid.png)
+[<img src="{{ .Site.BaseURL }}/images/2013/12/20131201_fluid-300x300.png" alt="20131201_fluid" width="300" height="300" class="aligncenter size-medium wp-image-950" srcset="{{ .Site.BaseURL }}/images/2013/12/20131201_fluid-300x300.png 300w, {{ .Site.BaseURL }}/images/2013/12/20131201_fluid-150x150.png 150w, {{ .Site.BaseURL }}/images/2013/12/20131201_fluid.png 900w" sizes="(max-width: 300px) 100vw, 300px" />]({{ .Site.BaseURL }}/images/2013/12/20131201_fluid.png)
 
 # デモ
 

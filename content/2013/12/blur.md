@@ -2,9 +2,8 @@
 title = "スクロールしてコンテンツが重なった部分にだけぼかしをかけているように見せる"
 date = 2013-12-08T05:40:29+00:00
 url = "2013-12-blur"
-image: /wp-content/uploads/2013/12/20131208_blur.png
 +++
-[<img src="http://5000164.jp/wp-content/uploads/2013/12/20131208_blur.png" alt="20131208_blur" width="300" height="300" class="aligncenter size-full wp-image-979" srcset="http://5000164.jp/wp-content/uploads/2013/12/20131208_blur.png 300w, http://5000164.jp/wp-content/uploads/2013/12/20131208_blur-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" />](http://5000164.jp/wp-content/uploads/2013/12/20131208_blur.png)
+[<img src="{{ .Site.BaseURL }}/images/2013/12/20131208_blur.png" alt="20131208_blur" width="300" height="300" class="aligncenter size-full wp-image-979" srcset="{{ .Site.BaseURL }}/images/2013/12/20131208_blur.png 300w, {{ .Site.BaseURL }}/images/2013/12/20131208_blur-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" />]({{ .Site.BaseURL }}/images/2013/12/20131208_blur.png)
 
 # きっかけ
 

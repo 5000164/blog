@@ -2,10 +2,9 @@
 title = "空白と改行を削除するツールを作った"
 date = 2013-10-23T23:59:00+00:00
 url = "2013-10-space_delete"
-image: /wp-content/uploads/2013/10/20131023_space_delete_thumb.png
 +++
 <div style="text-align: center;">
-  <a href="http://5000164.jp/wp-content/uploads/2013/10/20131023_space_delete_thumb.png"><img src="http://5000164.jp/wp-content/uploads/2013/10/20131023_space_delete_thumb-300x300.png" alt="20131023_space_delete_thumb" width="300" height="300" class="aligncenter size-medium wp-image-877" srcset="http://5000164.jp/wp-content/uploads/2013/10/20131023_space_delete_thumb-300x300.png 300w, http://5000164.jp/wp-content/uploads/2013/10/20131023_space_delete_thumb-150x150.png 150w, http://5000164.jp/wp-content/uploads/2013/10/20131023_space_delete_thumb.png 900w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+  <a href="{{ .Site.BaseURL }}/images/2013/10/20131023_space_delete_thumb.png"><img src="{{ .Site.BaseURL }}/images/2013/10/20131023_space_delete_thumb-300x300.png" alt="20131023_space_delete_thumb" width="300" height="300" class="aligncenter size-medium wp-image-877" srcset="{{ .Site.BaseURL }}/images/2013/10/20131023_space_delete_thumb-300x300.png 300w, {{ .Site.BaseURL }}/images/2013/10/20131023_space_delete_thumb-150x150.png 150w, {{ .Site.BaseURL }}/images/2013/10/20131023_space_delete_thumb.png 900w" sizes="(max-width: 300px) 100vw, 300px" /></a>
 </div>
 
 # 作ったもの
@@ -58,7 +57,7 @@ image: /wp-content/uploads/2013/10/20131023_space_delete_thumb.png
 
 ## 作ってみた Ver.1
 
-[<img src="http://5000164.jp/wp-content/uploads/2013/10/20131023_space_delete_ver1-1024x526.png" alt="空白改行削除 Ver.1" width="100%" class="aligncenter size-large wp-image-862" srcset="http://5000164.jp/wp-content/uploads/2013/10/20131023_space_delete_ver1-1024x526.png 1024w, http://5000164.jp/wp-content/uploads/2013/10/20131023_space_delete_ver1-300x154.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://5000164.jp/wp-content/uploads/2013/10/20131023_space_delete_ver1.png)
+[<img src="{{ .Site.BaseURL }}/images/2013/10/20131023_space_delete_ver1-1024x526.png" alt="空白改行削除 Ver.1" width="100%" class="aligncenter size-large wp-image-862" srcset="{{ .Site.BaseURL }}/images/2013/10/20131023_space_delete_ver1-1024x526.png 1024w, {{ .Site.BaseURL }}/images/2013/10/20131023_space_delete_ver1-300x154.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" />]({{ .Site.BaseURL }}/images/2013/10/20131023_space_delete_ver1.png)
   
 というわけで作ってみた。
   
@@ -76,7 +75,7 @@ image: /wp-content/uploads/2013/10/20131023_space_delete_thumb.png
 
 ## 作ってみた Ver.2
 
-[<img src="http://5000164.jp/wp-content/uploads/2013/10/20131023_space_delete_ver2-1024x526.png" alt="空白改行削除 Ver.2" width="100%" class="aligncenter size-large wp-image-872" srcset="http://5000164.jp/wp-content/uploads/2013/10/20131023_space_delete_ver2-1024x526.png 1024w, http://5000164.jp/wp-content/uploads/2013/10/20131023_space_delete_ver2-300x154.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://5000164.jp/wp-content/uploads/2013/10/20131023_space_delete_ver2.png)
+[<img src="{{ .Site.BaseURL }}/images/2013/10/20131023_space_delete_ver2-1024x526.png" alt="空白改行削除 Ver.2" width="100%" class="aligncenter size-large wp-image-872" srcset="{{ .Site.BaseURL }}/images/2013/10/20131023_space_delete_ver2-1024x526.png 1024w, {{ .Site.BaseURL }}/images/2013/10/20131023_space_delete_ver2-300x154.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" />]({{ .Site.BaseURL }}/images/2013/10/20131023_space_delete_ver2.png)
   
 というわけで作ってみた。
   

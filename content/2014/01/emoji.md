@@ -2,9 +2,8 @@
 title = "HTC J One HTL22では絵文字が表示されないので簡単な対処法を見つけた"
 date = 2014-01-27T01:29:02+00:00
 url = "2014-01-emoji"
-image: /wp-content/uploads/2014/01/20140127_emoji_eye.png
 +++
-<img src="http://5000164.jp/wp-content/uploads/2014/01/20140127_emoji_eye-300x300.png" alt="20140127_emoji_eye" width="300" height="300" class="aligncenter size-medium wp-image-1095" srcset="http://5000164.jp/wp-content/uploads/2014/01/20140127_emoji_eye-300x300.png 300w, http://5000164.jp/wp-content/uploads/2014/01/20140127_emoji_eye-150x150.png 150w, http://5000164.jp/wp-content/uploads/2014/01/20140127_emoji_eye.png 600w" sizes="(max-width: 300px) 100vw, 300px" />
+<img src="{{ .Site.BaseURL }}/images/2014/01/20140127_emoji_eye-300x300.png" alt="20140127_emoji_eye" width="300" height="300" class="aligncenter size-medium wp-image-1095" srcset="{{ .Site.BaseURL }}/images/2014/01/20140127_emoji_eye-300x300.png 300w, {{ .Site.BaseURL }}/images/2014/01/20140127_emoji_eye-150x150.png 150w, {{ .Site.BaseURL }}/images/2014/01/20140127_emoji_eye.png 600w" sizes="(max-width: 300px) 100vw, 300px" />
 
 # HTC J Oneって絵文字が表示されないんですね
 
@@ -28,15 +27,15 @@ rootをとって絵文字のフォントを入れれば表示することもで�
 
 絵文字をコピーします。
 
-<img src="http://5000164.jp/wp-content/uploads/2014/01/20140127_emoji_1-576x1024.png" alt="20140127_emoji_1" width="576" height="1024" class="aligncenter size-large wp-image-1086" style="margin-bottom: 60px;" srcset="http://5000164.jp/wp-content/uploads/2014/01/20140127_emoji_1-576x1024.png 576w, http://5000164.jp/wp-content/uploads/2014/01/20140127_emoji_1-168x300.png 168w, http://5000164.jp/wp-content/uploads/2014/01/20140127_emoji_1.png 1080w" sizes="(max-width: 576px) 100vw, 576px" />
+<img src="{{ .Site.BaseURL }}/images/2014/01/20140127_emoji_1-576x1024.png" alt="20140127_emoji_1" width="576" height="1024" class="aligncenter size-large wp-image-1086" style="margin-bottom: 60px;" srcset="{{ .Site.BaseURL }}/images/2014/01/20140127_emoji_1-576x1024.png 576w, {{ .Site.BaseURL }}/images/2014/01/20140127_emoji_1-168x300.png 168w, {{ .Site.BaseURL }}/images/2014/01/20140127_emoji_1.png 1080w" sizes="(max-width: 576px) 100vw, 576px" />
 
 Eメールアプリを起動して絵文字を貼り付けます。
 
-<img src="http://5000164.jp/wp-content/uploads/2014/01/20140127_emoji_2-576x1024.png" alt="20140127_emoji_2" width="576" height="1024" class="aligncenter size-large wp-image-1087" style="margin-bottom: 60px;" srcset="http://5000164.jp/wp-content/uploads/2014/01/20140127_emoji_2-576x1024.png 576w, http://5000164.jp/wp-content/uploads/2014/01/20140127_emoji_2-168x300.png 168w, http://5000164.jp/wp-content/uploads/2014/01/20140127_emoji_2.png 1080w" sizes="(max-width: 576px) 100vw, 576px" />
+<img src="{{ .Site.BaseURL }}/images/2014/01/20140127_emoji_2-576x1024.png" alt="20140127_emoji_2" width="576" height="1024" class="aligncenter size-large wp-image-1087" style="margin-bottom: 60px;" srcset="{{ .Site.BaseURL }}/images/2014/01/20140127_emoji_2-576x1024.png 576w, {{ .Site.BaseURL }}/images/2014/01/20140127_emoji_2-168x300.png 168w, {{ .Site.BaseURL }}/images/2014/01/20140127_emoji_2.png 1080w" sizes="(max-width: 576px) 100vw, 576px" />
 
 絵文字が表示されます。
 
-<img src="http://5000164.jp/wp-content/uploads/2014/01/20140127_emoji_3-576x1024.png" alt="20140127_emoji_3" width="576" height="1024" class="aligncenter size-large wp-image-1088" style="margin-bottom: 60px;" srcset="http://5000164.jp/wp-content/uploads/2014/01/20140127_emoji_3-576x1024.png 576w, http://5000164.jp/wp-content/uploads/2014/01/20140127_emoji_3-168x300.png 168w, http://5000164.jp/wp-content/uploads/2014/01/20140127_emoji_3.png 1080w" sizes="(max-width: 576px) 100vw, 576px" />
+<img src="{{ .Site.BaseURL }}/images/2014/01/20140127_emoji_3-576x1024.png" alt="20140127_emoji_3" width="576" height="1024" class="aligncenter size-large wp-image-1088" style="margin-bottom: 60px;" srcset="{{ .Site.BaseURL }}/images/2014/01/20140127_emoji_3-576x1024.png 576w, {{ .Site.BaseURL }}/images/2014/01/20140127_emoji_3-168x300.png 168w, {{ .Site.BaseURL }}/images/2014/01/20140127_emoji_3.png 1080w" sizes="(max-width: 576px) 100vw, 576px" />
 
 # どうやらEメールアプリはアプリ側で解釈してくれているらしい
 
