@@ -1,6 +1,6 @@
 +++
 layout: post
-title: "サーティワンアイスクリームのメモ"
+title = ""サーティワンアイスクリームのメモ""
 date: 2015-07-27 02:35:33 +0900
 comments: true
 categories: 

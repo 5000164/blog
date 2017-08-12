@@ -1,6 +1,6 @@
 +++
 layout: post
-title: "FuelPHP で Debug::dump() と Log::debug() を簡単に使えるようにする"
+title = ""FuelPHP で Debug::dump() と Log::debug() を簡単に使えるようにする""
 date: 2015-03-01 22:19:02 +0900
 comments: true
 categories: 

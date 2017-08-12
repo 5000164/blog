@@ -1,6 +1,6 @@
 +++
 layout: post
-title: "阿良々木くんはかっこいい - 小説「終物語（上）」の感想"
+title = ""阿良々木くんはかっこいい - 小説「終物語（上）」の感想""
 date: 2015-04-29 22:13:23 +0900
 comments: true
 categories: 

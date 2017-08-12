@@ -1,6 +1,6 @@
 +++
 id: 545
-title: Webデザインについて考える（http://genelu.com/）
+title = "Webデザインについて考える（http://genelu.com/）"
 date: 2012-11-25T03:55:43+00:00
 author: 管理者
 layout: post

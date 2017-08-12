@@ -1,6 +1,6 @@
 +++
 layout: post
-title: "海と空、そしてかっこよさとは - 映画「紅の豚」の感想"
+title = ""海と空、そしてかっこよさとは - 映画「紅の豚」の感想""
 date: 2015-07-21 23:13:34 +0900
 comments: true
 categories: 

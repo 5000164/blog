@@ -1,6 +1,6 @@
 +++
 layout: post
-title: "Wikipedia のモバイル版を表示する Chrome 拡張機能を作った"
+title = ""Wikipedia のモバイル版を表示する Chrome 拡張機能を作った""
 date: 2015-03-26 23:37:41 +0900
 comments: true
 categories: 
