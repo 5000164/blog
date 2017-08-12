@@ -1,0 +1,6 @@
+baseURL = "http://blog.5000164.jp"
+languageCode = "ja"
+title = "5000164 is here"
+theme = "divided"
+publishDir = "docs"
+googleAnalytics = "UA-51024599-1"
