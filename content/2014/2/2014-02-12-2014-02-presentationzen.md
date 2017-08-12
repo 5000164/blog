@@ -1,6 +1,6 @@
 +++
 title = "'プレゼンは想いを伝える手段 &#8211; 本の感想（プレゼンテーションzen／ガー・レイノルズ、熊谷小百合訳）'"
-date: 2014-02-12T00:27:55+00:00
+date = 2014-02-12T00:27:55+00:00
 permalink: /2014-02-presentationzen/
 +++
 <div style="text-align: center;">

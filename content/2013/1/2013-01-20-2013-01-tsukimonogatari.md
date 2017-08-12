@@ -1,6 +1,6 @@
 +++
 title = "小説の感想（憑物語／西尾維新）"
-date: 2013-01-20T22:14:39+00:00
+date = 2013-01-20T22:14:39+00:00
 permalink: /2013-01-tsukimonogatari/
 +++
 <div style="text-align: center;">

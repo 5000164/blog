@@ -1,6 +1,6 @@
 +++
 title = "Webデザインについて考える（http://genelu.com/）"
-date: 2012-11-25T03:55:43+00:00
+date = 2012-11-25T03:55:43+00:00
 permalink: /2012-11-webdesign_genelu/
 +++
 &nbsp;

@@ -1,6 +1,6 @@
 +++
 title = ""IDE で FuelPHP の補完を効かせるための _autocomplete.php を生成するタスク""
-date: 2015-03-05 02:41:53 +0900
+date = 2015-03-05T02:41:53+09:00
 +++
 
 IDE に FuelPHP の補完を効かせたい
