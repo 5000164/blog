@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+
+<figure >
+    
+        <img src="/images/2014/03/20140315_practice1.png" />
+    
+    
+</figure>
+
+
+<h1 id="早速見ていただきましょう">早速見ていただきましょう</h1>
+
+
+<figure >
+    
+        <img src="/images/2014/03/20140315_practice1.png" />
+    
+    
+</figure>
+
+
+<p>ソースコードはこちら。</p>
+
+<p><a href="https://github.com/5000164/dxlib-practice-1">5000164/dxlib-practice-1</a></p>
+
+<h1 id="dxライブラリで1番最初に確認したのがフォントの表示">DXライブラリで1番最初に確認したのがフォントの表示</h1>
+
+<p>ゲームのようなものを作りたいなと考えていて、知人に教えてもらったDXライブラリを使うことにしました。</p>
+
+<p><a href="http://homepage2.nifty.com/natupaji/DxLib/index.html">ＤＸライブラリ置き場　ＨＯＭＥ</a></p>
+
+<p>その際に、1番初めに確認したことがフォントの表示でした。</p>
+
+<p>フォントの美しさはモチベーションに直結します。</p>
+
+<h1 id="結果はごらんの通り">結果はごらんの通り</h1>
+
+
+<figure >
+    
+        <img src="/images/2014/03/20140315_practice1_zoom-300x300.png" />
+    
+    
+</figure>
+
+
+<p>美しいフォントを表示させることができました。</p>
+
+<p>ちなみに比較対象として、デフォルト設定でのフォントを下部に表示しています。</p>
+
+<h1 id="フォントをきれいに表示するには1行追加するだけ">フォントをきれいに表示するには1行追加するだけ</h1>
+
+<pre class="brush: cpp; title: ; notranslate" title="">ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8);
+</pre>
+
+<p>この文を追加するだけです。</p>
+
+<p>この文を追加することでフォントにアンチエイリアスをかけてくれます。</p>
+
+<p><a href="http://homepage2.nifty.com/natupaji/DxLib/function/dxfunc_graph2.html#R17N24">ＤＸライブラリ置き場　リファレンスページ</a></p>
+
+<h1 id="よりうつくしい表示のために若干の影をつけています">よりうつくしい表示のために若干の影をつけています</h1>
+
+<p>アンチエイリアスをかけるだけで十分きれいに表示されます。</p>
+
+<p>ですが、ここではよりフォントを際立たせるために、若干の影をつけています。</p>
+
+<p>まずは背景に影を描画。</p>
+
+<p>フォントを描画したあとにガウシアンフィルタをかけるのがポイント。</p>
+
+<pre class="brush: cpp; title: ; notranslate" title="">// 影の表示開始位置
+    text_x = font_size + shadow_offset_x;
+    text_y = font_size + shadow_offset_y;
+
+    // 影のベースとなる文字列を描画
+    for (int row = 0; row &lt; 5; row++)
+    {
+        DrawString(text_x, (int)(text_y + ((font_size * line_height) * row)), text[row], shadow_color_dx);
+    }
+
+    // ガウスフィルターを施して影にする
+    GraphFilter(backscreen, DX_GRAPH_FILTER_GAUSS, 8, 50);
+</pre>
+
+<p>背景ができたら、普通にフォントを描画します。</p>
+
+<pre class="brush: cpp; title: ; notranslate" title="">// テキスト表示開始位置
+    text_x = font_size;
+    text_y = font_size;
+
+    // 文字列の描画
+    for (int row = 0; row &lt; 5; row++)
+    {
+        DrawString(text_x, (int)(text_y + ((font_size * line_height) * row)), text[row], font_color_dx);
+    }
+</pre>
+
+<p>これで完成です。</p>
+
+<h1 id="まとめ">まとめ</h1>
+
+<p>もちろん処理の負荷が高くなるとのことですが、美しいフォントの表示が可能であると知れて満足です。</p>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+<div>
+  <div>
+    テーマのフォルダにある
+  </div>
+  
+
+<p><div>
+  </div></p>
+
+<p><pre class="brush: plain; title: ; notranslate" title="">
+content-single.php
+</pre></p>
+
+<p><div>
+  </div></p>
+
+<p><div>
+    を編集します。
+  </div></p>
+
+<p><div>
+  </div></p>
+
+<p><div>
+    34～40行目の
+  </div></p>
+
+<p><div>
+  </div></p>
+
+<p><pre class="brush: php; title: ; notranslate" title="">
+if ( &ldquo; != $tag_list ) {
+$utility_text = __( &lsquo;This entry was posted in %1$s and tagged %2$s by &lt;a href=&quot;%6$s&quot;&gt;%5$s&lt;/a&gt;. Bookmark the &lt;a href=&quot;%3$s&quot; title=&quot;Permalink to %4$s&quot; rel=&quot;bookmark&quot;&gt;permalink&lt;/a&gt;.&lsquo;, &lsquo;twentyeleven&rsquo; );
+} elseif ( &ldquo; != $categories_list ) {
+$utility_text = __( &lsquo;This entry was posted in %1$s by &lt;a href=&quot;%6$s&quot;&gt;%5$s&lt;/a&gt;. Bookmark the &lt;a href=&quot;%3$s&quot; title=&quot;Permalink to %4$s&quot; rel=&quot;bookmark&quot;&gt;permalink&lt;/a&gt;.&lsquo;, &lsquo;twentyeleven&rsquo; );
+} else {
+$utility_text = __( &lsquo;This entry was posted by &lt;a href=&quot;%6$s&quot;&gt;%5$s&lt;/a&gt;. Bookmark the &lt;a href=&quot;%3$s&quot; title=&quot;Permalink to %4$s&quot; rel=&quot;bookmark&quot;&gt;permalink&lt;/a&gt;.&lsquo;, &lsquo;twentyeleven&rsquo; );
+}
+</pre></p>
+
+<p><div>
+  </div></p>
+
+<p><div>
+    の部分を
+  </div></p>
+
+<p><div>
+  </div></p>
+
+<p><pre class="brush: php; title: ; notranslate" title="">
+if ( &ldquo; != $tag_list ) {
+$utility_text = __( &lsquo;category %1$s and tag %2$s&rsquo;, &lsquo;twentyeleven&rsquo; );
+} elseif ( &ldquo; != $categories_list ) {
+$utility_text = __( &lsquo;category %1$s&rsquo;, &lsquo;twentyeleven&rsquo; );
+} else {
+$utility_text = __( &ldquo;, &lsquo;twentyeleven&rsquo; );
+}
+</pre></p>
+
+<p><div>
+  </div></p>
+
+<p><div>
+    と変更します。
+  </div></p>
+
+<p><div>
+  </div></p>
+
+<p><div>
+    おそらく、単一記事表示時にカテゴリやタグを表示する部分での処理だと思われます。
+  </div></p>
+
+<p><div>
+    全体表示時の対処はまだ不明。
+  </div></p>
+
+<p><div>
+    作成者とパーマリンクは表示されないので保留にします。
+  </div></p>
+
+<p><p>
+    &nbsp;
+  </p></p>
+
+<p><div>
+    参考サイト
+  </div></p>
+
+<p><div>
+    WordPressのTwentyElevenで作成者を非表示にする方法 | 沖縄なんくるウェブブログ
+  </div></p>
+
+<p><p>
+    &nbsp;
+  </p></p>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

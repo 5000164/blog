@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+
+<figure >
+    
+        <img src="/images/2013/10/20131023_space_delete_thumb.png" />
+    
+    
+</figure>
+
+
+<h1 id="作ったもの">作ったもの</h1>
+
+<p><a href="http://5000164.jp/space_delete/" title="空白改行削除 | 5000164 here.">空白改行削除 | 5000164 here.</a></p>
+
+<h1 id="作ったものの概要">作ったものの概要</h1>
+
+<p>半角スペース、全角スペース、タブ、改行を削除します。</p>
+
+<h1 id="作成にいたる経緯">作成にいたる経緯</h1>
+
+<p>パソコンに何もアプリケーションをインストールしてはいけない環境。</p>
+
+<p>文章を少しだけ修正する作業。</p>
+
+<p>修正した文章は改行と空白を削除しなければならない。</p>
+
+<p>という状況がつらかったから作った。</p>
+
+<h1 id="webアプリという選択肢">Webアプリという選択肢</h1>
+
+<p>アプリケーションはインストールできないけど、Webアプリならインストール不要。</p>
+
+<p>なのでいい感じにWebで使えるツールを探す。</p>
+
+<p>改行を削除するツールはたくさん見つかったが、使いづらい。</p>
+
+<p>見つけたものは「改行を削除」するだけのツールのみ。</p>
+
+<p>必要な作業は「文章を編集」して「改行を削除」すること。</p>
+
+<p>出来上がってる文章をペーストして、改行を削除して、削除結果をコピーするという前提で作られているので、ちょっとした修正がやりづらい。</p>
+
+<h1 id="だから少しだけ編集もしやすいツールを作った-h2">だから少しだけ編集もしやすいツールを作った</h2></h1>
+
+<p>少しだけ編集しやすくするにあたって重視したことは下記の3つです。</p>
+
+<ul style="list-style-type: disc; margin: 1em; padding-left: 40px;">
+  <li>
+    編集領域は広め
+  </li>
+  <li>
+    ショートカットで削除処理が実行可能
+  </li>
+  <li>
+    削除処理をしたらそのままCtrl+Cしたい
+  </li>
+</ul>
+
+<h2 id="作ってみた-ver-1">作ってみた Ver.1</h2>
+
+
+<figure >
+    
+        <img src="/images/2013/10/20131023_space_delete_ver1.png" />
+    
+    
+</figure>
+
+
+<p>というわけで作ってみた。</p>
+
+<p>編集領域はちょっと広め。</p>
+
+<p>なによりも編集部分のフォントサイズと行間の設定を自分好みにした。</p>
+
+<p>自分のために作っただけあって他のツールよりも使いやすい。</p>
+
+<p>でも使ってると編集領域が物足りないと感じた。</p>
+
+<p>フォントサイズは大きめにしてるのでもっと編集領域を広げたい。</p>
+
+<p>そしてもっとエディタ感を出したい。</p>
+
+<h2 id="作ってみた-ver-2">作ってみた Ver.2</h2>
+
+
+<figure >
+    
+        <img src="/images/2013/10/20131023_space_delete_ver2.png" />
+    
+    
+</figure>
+
+
+<p>というわけで作ってみた。</p>
+
+<p>とってもエディタエディタさせました。</p>
+
+<p>ウィンドウサイズを変更しても編集領域が追従します。</p>
+
+<p>Pure CSSで実現。</p>
+
+<p>動作対象はもちろんモダンブラウザです。</p>
+
+<p>機能を満たしながらも編集領域は最大限確保できたかなと思います。</p>
+
+<p>とりあえず満足。</p>
+
+<p>ちょっとだけ編集する用なのでTabキーとか使えないです。</p>
+
+<p>あとは行番号の表示とかにも興味あったけど、とりあえずこれで一段落。</p>
+
+<h1 id="改行と空白を削除してる部分の処理内容">改行と空白を削除してる部分の処理内容</h1>
+
+<p>JavaScriptで実装しています。</p>
+
+<p>jQueryを使用。</p>
+
+<pre class="brush: jscript; title: ; notranslate" title="">$(function() {
+  
+  // Ctrl + Enterを押した場合に空白削除処理実行
+  $("#input").keydown(function(event)　{
+    if(event.ctrlKey === true && event.which === 13) {
+      spaceDelete();
+    }
+  });
+  
+  // ボタンをクリックした場合も空白削除処理実行
+  $("#run").click(function() {
+    spaceDelete();
+  });
+  
+  // 空白削除処理実行後に内容を全選択する
+  $("#result").focus(function() {
+    $(this).select();
+  });
+});
+  
+// 空白削除処理
+function spaceDelete() {
+  
+  // 入力文字列取得
+  var inputText = $("#input").val();
+  var resultText = "";
+  
+  // 空白文字をすべて削除
+  resultText = inputText.replace(/\s/g, "");
+  
+  // 空白文字を削除した文字列を出力
+  $("#result").val(resultText);
+  
+  // 出力内容にフォーカス
+  $("#result").focus();
+}
+</pre>
+
+<p>処理内容はこれだけです。</p>
+
+<p>正規表現で文字列を置換しています。</p>
+
+<p>正規表現の\sは全角スペースに一致しないと思ったら一致するんですね。</p>
+
+<h1 id="まとめ">まとめ</h1>
+
+<p>Ver.1の製作時間は2時間くらい。</p>
+
+<p>Ver.2の製作時間は5時間くらい。</p>
+
+<p>CSSだけで編集領域をウィンドウに合わせるのに時間がかかった。</p>
+
+<p>自分なりには結構使いやすく作れたので満足です。</p>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

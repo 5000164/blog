@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+<h1 id="先に簡単な結論">先に簡単な結論</h1>
+
+<p><code>/etc/sudoers.d/</code> の下にパスワードなしで sudo できる設定を追加する。</p>
+
+<h1 id="vagrant-の-vm-に-ansible-で環境を構築する">Vagrant の VM に Ansible で環境を構築する</h1>
+
+<p>いつもは vagrant ユーザーをそのまま使っていたのだが、ユーザー名を変えておいた方がなんとなくよさそう、と思ってユーザー名を変えることにした。<br />
+ユーザーの追加は user モジュールを使って簡単にできる。<br />
+問題は作成したユーザーで sudo できないことだった。</p>
+
+<h1 id="一応オプションをつけて毎回パスワードを入力すれば回避できる">一応オプションをつけて毎回パスワードを入力すれば回避できる</h1>
+
+<pre><code>ansible-playbook playbook.yml --ask-sudo-pass
+</code></pre>
+
+<p>ってやって、毎回パスワードを入れれば動く。<br />
+でもだるい。</p>
+
+<h1 id="vagrant-ユーザーはなんでパスワードなしで-sudo-できるのか">vagrant ユーザーはなんでパスワードなしで sudo できるのか</h1>
+
+<p>なぜ、どうして。<br />
+全然仕組みを理解できていなかった。<br />
+そして今日たまたまこの記事を見る。<br />
+<a href="http://qiita.com/aosho235/items/05d4a4f549016e41cde7">suとsudoの違い - Qiita</a><br />
+「suは切替先ユーザー（root）のパスワードが要求されるのに対し、sudoは元のユーザーのパスワードが要求される。」<br />
+なるほど、もしかしてこれでは？<br />
+「ansible sudoers」でググる。<br />
+<a href="http://qiita.com/kiarina/items/813878489f4adba4eb34">Ansibleでユーザを追加 - Qiita</a><br />
+<a href="http://qiita.com/suin/items/155ca2b98c485935db1b">ansibleでsudo可能なユーザを追加する - Qiita</a><br />
+なるほど。<br />
+「sudo group」でググる。<br />
+<a href="http://webkaru.net/linux/sudo-user-add/">sudoユーザーを追加する方法 - Linux入門 - Webkaru</a><br />
+やってみよう。</p>
+
+<h1 id="sudo-はできたけどパスワードは聞かれる">sudo はできたけどパスワードは聞かれる</h1>
+
+<p>なぜだ。<br />
+そうか、vagrant と同じグループに入れればいいのかと思いつく。<br />
+vagrant グループに入れてみる。</p>
+
+<h1 id="状況は変わらず">状況は変わらず</h1>
+
+<p>なんで vagrant はパスワードなしで実行できるんだ。<br />
+特に <code>/etc/sudoers</code> に vagrant の記述はないのに。<br />
+と思ったら、よく見たら最後に <code>#includedir /etc/sudoers.d</code> って書いてある。</p>
+
+<h1 id="etc-sudoers-d-に-vagrant-ってファイルがあった">/etc/sudoers.d/ に vagrant ってファイルがあった</h1>
+
+<pre><code>vagrant ALL=(ALL) NOPASSWD:ALL
+</code></pre>
+
+<p>これか。<br />
+なるほどたしかにパスワードなしって書いてある。<br />
+でもそしたらやっぱり vagrant グループに入れればいけるのでは？</p>
+
+<h1 id="がついてないからグループに指定してるのではなく-vagrant-ユーザーにだけ指定してた">% がついてないからグループに指定してるのではなく vagrant ユーザーにだけ指定してた</h1>
+
+<p>やっと理解した。<br />
+つまり追加するユーザーの設定をここに追加すればいいわけだ。</p>
+
+<h1 id="copy-モジュールで持ってったら動いた">copy モジュールで持ってったら動いた</h1>
+
+<p>やった。<br />
+でも調べてたらもっと簡単な記述があった。<br />
+<a href="http://qiita.com/hidekuro/items/8cd1ebe1c52a256593ef">Vagrant + Ansibleで環境構築をコード化する(4)さらにPlaybook　～終わり～ - Qiita</a></p>
+
+<h1 id="結論">結論</h1>
+
+<pre><code>+++
+- hosts: all
+  remote_user: vagrant
+  sudo: yes
+  vars:
+    user_name: # ユーザー名を設定
+    password: # ハッシュ化したパスワードを設定
+  tasks:
+    - user: name=&amp;#123;&amp;#123; user_name &amp;#125;&amp;#125; password=&amp;#123;&amp;#123; password &amp;#125;&amp;#125; groups=&amp;#123;&amp;#123; user_name &amp;#125;&amp;#125;
+    - lineinfile: dest=/etc/sudoers.d/&amp;#123;&amp;#123; user_name &amp;#125;&amp;#125; line=&quot;&amp;#123;&amp;#123; user_name &amp;#125;&amp;#125; ALL=(ALL) NOPASSWD:ALL&quot; create=yes owner=root group=root mode=0440
+    - authorized_key: user=&amp;#123;&amp;#123; user_name &amp;#125;&amp;#125; key=&quot;&amp;#123;&amp;#123; lookup('file', '/home/charlie/.ssh/id_rsa.pub') &amp;#125;&amp;#125;&quot; # Ansible を実行しているユーザーの持っている公開鍵へのパス
+</code></pre>
+
+<p>これで同じ playbook の中で作成したユーザーでパスワードなしで <code>sudo: yes</code> できるようになった。</p>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

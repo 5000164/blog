@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+
+<figure >
+    
+        <img src="/images/2014/03/20140312_practice2.png" />
+    
+    
+</figure>
+
+
+<h1 id="実際に作ったものはこんな感じです">実際に作ったものはこんな感じです</h1>
+
+
+<figure >
+    
+        <img src="/images/2014/03/20140312_practice2-300x200.png" />
+    
+    
+</figure>
+
+
+<p>方向キーの入力した方向へで赤い点が動きます。</p>
+
+<p>ソースコードはこちら。</p>
+
+<p><a href="https://github.com/5000164/wpf-practice-2">5000164/wpf-practice-2</a></p>
+
+<h1 id="画面に動かすものを表示する">画面に動かすものを表示する</h1>
+
+<p>とりあえずなんでもよかったので、Rectangleタグで四角形を表示します。</p>
+
+<p>そして、位置を指定するためにCanvasタグで囲みます。</p>
+
+<pre class="brush: xml; title: ; notranslate" title="">&lt;Canvas&gt;
+            &lt;Rectangle Name="pointer" Width="10" Height="10" Fill="Red" Canvas.Left="0" Canvas.Top="0" /&gt;
+        &lt;/Canvas&gt;
+</pre>
+
+<p>これでXAML側はほぼ完成。</p>
+
+<p>あとは動かすだけ。</p>
+
+<h1 id="キーボードの入力を取得します">キーボードの入力を取得します</h1>
+
+<p>WindowにPreviewKeyDownをつけます。</p>
+
+<p>これでキーが押されたらイベントが発生します。</p>
+
+<p><a href="http://gushwell.ldblog.jp/archives/52318833.html">WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&#8217;s C# Dev Notes</a></p>
+
+<h1 id="c-側で座標を取得するために">C#側で座標を取得するために</h1>
+
+<p>まずは四角にNameをつけます。</p>
+
+<p>これでC#側で変数として扱えます。</p>
+
+<p><a href="http://ufcpp.net/study/dotnet/wpf_xamlcode.html">XAML とプログラムコード（WPF） (.NET Framework)</a></p>
+
+<h1 id="四角の現在位置を取得する">四角の現在位置を取得する</h1>
+
+<p>C#側で四角につけた名前から座標を取得します。</p>
+
+<pre class="brush: csharp; title: ; notranslate" title="">// 現在地を取得
+            Double leftPosition = Canvas.GetLeft(this.pointer);
+            Double topPosition = Canvas.GetTop(this.pointer);
+</pre>
+
+<p><a href="http://msdn.microsoft.com/ja-jp/library/system.windows.controls.canvas.getleft(v=vs.110).aspx">Canvas.GetLeft メソッド (System.Windows.Controls)</a></p>
+
+<h1 id="入力されたキーの内容を判断する">入力されたキーの内容を判断する</h1>
+
+<p>次は、方向キーが入力された方向へ動くために、入力されたキーを判断します。</p>
+
+<pre class="brush: csharp; title: ; notranslate" title="">// 入力された方向キーの方向へ移動
+            if (e.Key == Key.Up)
+                // 上
+            else if (e.Key == Key.Down)
+                // 下
+            else if (e.Key == Key.Left)
+                // 左
+            else if (e.Key == Key.Right)
+                // 右
+</pre>
+
+<p><a href="http://msdn.microsoft.com/ja-jp/library/system.windows.input.key(v=vs.110).aspx">Key 列挙体 (System.Windows.Input)</a></p>
+
+<h1 id="入力された方向へ移動する">入力された方向へ移動する</h1>
+
+<p>入力された方向がわかったら、その方向へ座標を移動してthis.pointerにセットします。</p>
+
+<pre class="brush: csharp; title: ; notranslate" title="">// 入力された方向キーの方向へ移動
+            if (e.Key == Key.Up)
+                Canvas.SetTop(this.pointer, topPosition - 10);
+            else if (e.Key == Key.Down)
+                Canvas.SetTop(this.pointer, topPosition + 10);
+            else if (e.Key == Key.Left)
+                Canvas.SetLeft(this.pointer, leftPosition - 10);
+            else if (e.Key == Key.Right)
+                Canvas.SetLeft(this.pointer, leftPosition + 10);
+</pre>
+
+<p><a href="http://msdn.microsoft.com/ja-jp/library/system.windows.controls.canvas.setleft(v=vs.110).aspx">Canvas.SetLeft メソッド (System.Windows.Controls)</a></p>
+
+<h1 id="完成">完成</h1>
+
+<p>これで、キーボードの方向キーを入力した方向へ移動することができました。</p>
+
+<p>ただ、ゲームのようなものを作ろうと思っていたのですが、これだと実装が大変そうです。</p>
+
+<p>他の方法も調べてみようと思います。</p>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

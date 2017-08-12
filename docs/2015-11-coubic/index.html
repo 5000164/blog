@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+<h1 id="coubic-と作った拡張機能">Coubic と作った拡張機能</h1>
+
+<ul>
+<li><a href="https://coubic.com/">予約システム「Coubic (クービック)」| 無料で予約管理</a></li>
+<li><a href="https://github.com/5000164/coubic-reserve-blocker">5000164/coubic-reserve-blocker</a></li>
+</ul>
+
+<h1 id="coubic-とは">Coubic とは</h1>
+
+<p>無料でも使える予約システム。<br />
+無料の予約システムを軽く調べたけど、1 番良さそうだった。</p>
+
+<h1 id="coubic-では休憩時間が設定できない">Coubic では休憩時間が設定できない</h1>
+
+<p>Coubic では休憩時間が設定できなかった。<br />
+定休日と営業時間は設定できるのに。<br />
+なにか良い方法はないかと調べたら、予約ブロック機能というものがあった。<br />
+しかし 1 つずつしか予約をブロックできない。<br />
+すべての営業日に予約ブロックを入れるのはとてもだるい。</p>
+
+<h1 id="指定した期間の予約をブロックできるようにしたい">指定した期間の予約をブロックできるようにしたい</h1>
+
+<p>だから指定した期間の予約をブロックする拡張機能を作った。</p>
+
+<h1 id="chrome-拡張機能で作った">Chrome 拡張機能で作った</h1>
+
+<p>そんなに調べてないけど、API とかなさそうだったし、画面の操作を自動化すればそれでいいやと思った。<br />
+最初はブックマークレットでいけるかなと思った。<br />
+DOM の操作を自動化できるようにして、さあ期間内で連続して予約ブロックするぞ、と思ったら、ブックマークレットでは情報を保持できないことに気付いた。<br />
+だから Chrome 拡張機能にすることにした。<br />
+Chrome 拡張機能は作ってみたかったしいい機会だと思った。</p>
+
+<h1 id="開始ボタンを押したら自動で登録し続ける">開始ボタンを押したら自動で登録し続ける</h1>
+
+<p>自動で登録するために、content_scripts で処理を行う必要がある。<br />
+任意のタイミングで処理を開始するために、background を利用する必要がある。<br />
+予約ブロックする期間を設定するために、options_page を用意する必要がある。<br />
+ということで一通り触れて勉強になった。</p>
+
+<h1 id="処理を行う仕組み">処理を行う仕組み</h1>
+
+<p>options_page で期間と時間を設定しておく。<br />
+ツールバーの拡張機能を押すことで、background で処理フラグを立ててリロードする。<br />
+該当ページの content_scripts でフラグをチェックし続けて、処理フラグが立っていたら処理を行う。<br />
+予約ブロックを登録する処理を行う。<br />
+処理が完了したら処理フラグを元に戻す。</p>
+
+<h1 id="うまくいかなかったところ">うまくいかなかったところ</h1>
+
+<p>開発ツールの Console から <code>$(&quot;[name=\&quot;commit\&quot;]&quot;).click();</code> とすると動くのに、拡張機能からだと動かなかった。<br />
+これのせいでいろいろ調べて、拡張機能からだと click できないのか？とか思って直接 post するようにしたら、クッキーが有効じゃないとかってエラーで怒られて、よくわからなくて時間がかかった。<br />
+クリックの仕方が間違ってるのかも知れないと思って <code>$(&quot;[name=\&quot;commit\&quot;]&quot;).trigger(&quot;click&quot;);</code> とやってみたら動いた。<br />
+サイト側の JavaScript でイベント取得してなんかいろいろやってから post してるのだろうか。<br />
+登録内容が重複してる場合はエラーが出ていたからなにか処理をしているのだろうか。<br />
+ここに気付かなくて時間がかかってしまった。</p>
+
+<h1 id="まとめ">まとめ</h1>
+
+<p>それっぽく動くものができたし、勉強にもなったのでよかった。<br />
+これからもなにか便利にしたいと思ったら Chrome 拡張機能を作ったりしていきたい。</p>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+
+<figure >
+    
+        <img src="/images/2013/03/de_20130319_click.jpg" />
+    
+    
+</figure>
+
+
+<p>&nbsp;</p>
+
+<h1 id="clickイベントを取得したい">clickイベントを取得したい</h1>
+
+<p>DOMに要素を追加するとjQueryのclickイベントって効かなくなるんですね</p>
+
+<p>知らなかった</p>
+
+<p>そういう時はjQueryのonを使えばclickイベントも取得できるってことで実装</p>
+
+<p>Chromeで動作確認</p>
+
+<p>動いた</p>
+
+<p>iOSで見てみる</p>
+
+<p>動かない</p>
+
+<p>&nbsp;</p>
+
+<h1 id="iosでonのclickイベントが取得できない">iOSでonのclickイベントが取得できない</h1>
+
+<p>iOSで動かなくていろいろ調べてみました</p>
+
+<p>でもサンプルが動いてるサイトもある</p>
+
+<p>うーん</p>
+
+<p>そこで手元でちょっとずつ変更を加えながら調べてみたところ</p>
+
+<p>サンプルのaタグをdivタグに変えると動かなくなるということが判明</p>
+
+<p>そこでonlick=&#8221;&#8221;を追加すれば動くようになるという記事を発見</p>
+
+<p>divタグにonclick=&#8221;&#8221;を追加することでiOSでも無事にclickイベントを拾うことができました</p>
+
+<p>iOSのlabel要素と同じ対処法ですね</p>
+
+<p>動かないのは同じような理由なのでしょうか</p>
+
+<p>&nbsp;</p>
+
+<h1 id="デモ">デモ</h1>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h1 id="まとめ">まとめ</h1>
+
+<p>iOSのDOMに追加したdiv要素のclickイベントを取得したかったらonclick=&#8221;&#8221;をつけること</p>
+
+<p>&nbsp;</p>
+
+<h1 id="参考">参考</h1>
+
+<p>スマートフォンブラウザのjQuery Clickイベントに関すること &#8211; くらげだらけ<br />
+<a href="http://kudakurage.hatenadiary.com/entry/20120502/1335920244">http://kudakurage.hatenadiary.com/entry/20120502/1335920244</a></p>
+
+<p>&nbsp;</p>
+
+<p>guess what?: JQueryのliveイベントがiPhoneのSafariで登録できない<br />
+<a href="http://aqubiblog.blogspot.jp/2011/04/jqueryliveiphonesafari.html">http://aqubiblog.blogspot.jp/2011/04/jqueryliveiphonesafari.html</a></p>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+<h1 id="wikipedia-はモバイル版の方が見やすいと思うのでモバイル版を表示する拡張機能を作った">Wikipedia はモバイル版の方が見やすいと思うのでモバイル版を表示する拡張機能を作った</h1>
+
+<p>ソースはこちら。<br />
+<a href="https://github.com/5000164/redirect-to-mobile-wikipedia">5000164/redirect-to-mobile-wikipedia</a></p>
+
+<h1 id="実装について">実装について</h1>
+
+<p>作り方
++++-
+Chrome 拡張機能の作り方がわからなかったので調べていたらドットインストールがあったのでここで勉強。<br />
+<a href="http://dotinstall.com/lessons/basic_chrome_v2">Google Chrome拡張機能入門 (全20回) - プログラミングならドットインストール</a><br />
+概要を把握。<br />
+思ってたよりさっくり作れそう。</p>
+
+<p>TypeScript を使いたい
++++-
+TypeScript を試したかった。<br />
+npm で TypeScript をインストールして PhpStorm で自動コンパイルするところまではすぐできた。<br />
+でも Chrome の API を認識させることができなくて困った。<br />
+ライブラリをダウンロードすればいけるよって書いてあったけど、それだけだと chrome なんてないよと怒られてしまう。<br />
+だから手動でインストールしてパスを通したら、今度は定義が複数あるって言われた。<br />
+最終的に、PhpStorm 側でダウンロードしたものを消して、tsd でダウンロードしたやつを PhpStorm 側に設定することで落ち着いた。<br />
+<a href="https://www.jetbrains.com/phpstorm/help/transpiling-typescript-to-javascript.html">Transpiling TypeScript to JavaScript</a><br />
+<a href="http://qiita.com/pine613/items/0c89bf4ff0fdcafbc5ff">TypeScript での Chrome 拡張機能開発 Tips - Qiita</a><br />
+<a href="http://qiita.com/macococo/items/e3833a30e99d421584e0">TypeScript で Chrome Extension を開発する際の環境準備 - Qiita</a><br />
+<a href="http://stackoverflow.com/questions/13997468/how-do-i-use-webstorm-for-chrome-extension-development">javascript - How do I use WebStorm for Chrome Extension Development? - Stack Overflow</a></p>
+
+<p>実装内容 ver. 1
++++-
+特定のページに来た時に動作すればいいんだから content_scripts でいけるだろと思って実装した。<br />
+なんか preRequest イベントってのがあるからそれ使いたい。<br />
+でも動かなかった。<br />
+うまく動かせなかったので諦めて location.href でモバイル版にリダイレクトさせていた。<br />
+ださい。</p>
+
+<p>実装内容 ver. 2
++++-
+落ち着いて考えたら content_scripts はどうやらページが表示された後に動作する気配がある。<br />
+ってことは background にすれば preRequest 使えるんじゃないだろうかという仮説。<br />
+やってみたら使えた。<br />
+ということでアクセスする URL を確認して Wikipedia だったらそのままモバイル版を表示する拡張機能ができた。<br />
+<a href="https://developer.chrome.com/extensions">What are extensions? - Google Chrome</a><br />
+<a href="https://developer.chrome.com/extensions/content_scripts">Content Scripts - Google Chrome</a><br />
+<a href="https://developer.chrome.com/extensions/event_pages">Event Pages - Google Chrome</a><br />
+<a href="https://developer.chrome.com/extensions/webRequest">chrome.webRequest - Google Chrome</a></p>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="https://developer.chrome.com/extensions/samples#search:catblock">Sample Extensions - Google Chrome</a><br />
+
+<ul>
+<li>この CatBlock というサンプルがとても参考になった</li>
+</ul></li>
+</ul>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

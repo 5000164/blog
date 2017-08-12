@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+<h1 id="firefox-で-api-からデータが取得できない">Firefox で API からデータが取得できない</h1>
+
+<p>サーバー側に API を実装して、Chrome では値が取得できてるのに、Firefox では値が取得できていなかった。<br />
+ちゃんと <code>Access-Control-Allow-Origin: *</code> って感じにしてたのに、許可されていませんって感じのエラーメッセージが出ていた。<br />
+開発ツールのネットワークの履歴を見てたら、メソッドのところが <code>OPTIONS</code> って出てたので、OPTIONS メソッドの時にも <code>Access-Control-Allow-Origin: *</code> を返してあげるようにした。<br />
+FuelPHP のコントローラーにどうやって書くのだろと思って試しに書いてみたら動いた。</p>
+
+<pre><code class="language-php">/**
+ * プリフライトリクエスト用のコントローラー
+ */
+public function options_index()
+{
+    $this-&gt;response-&gt;set_header('Access-Control-Allow-Origin', '*');
+}
+</code></pre>
+
+<p>こんな感じ。<br />
+どうやら、XHR ではプリフライトリクエストってやつを送るらしくて、その時にアクセスが許可されていないから API からデータを持ってきていなかったらしい。(現時点の Chrome では送ってなかった)<br />
+なるほどな。</p>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

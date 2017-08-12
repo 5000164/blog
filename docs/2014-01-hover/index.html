@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5000164 is here</title>
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+
+
+
+<figure >
+    
+        <img src="/images/2014/01/20140122_hover.png" />
+    
+    
+</figure>
+
+
+<h1 id="リンクとかをホバーしたら背景色を変えたりしますよね">リンクとかをホバーしたら背景色を変えたりしますよね</h1>
+
+<p>リンクをホバーしたら文字色と背景色が変わるという実装はよくあります。</p>
+
+<p>このコンテンツはクリッカブルですよ、と知らせるためですね。</p>
+
+<p>でもリンクの中に画像が含まれている時は画像だけ変わらなかったりします。</p>
+
+<p>これはちょっと違和感です。</p>
+
+<p>そこですべてに覆いかぶさっているように見せます。</p>
+
+<h1 id="まずはデモをどうぞ">まずはデモをどうぞ</h1>
+
+<div class="codepen">
+  <p data-height="332" data-theme-id="2816" data-slug-hash="vexEB" data-default-tab="result" class='codepen'>
+    See the Pen <a href='http://codepen.io/5000164/pen/vexEB'>hoverした要素の上に色をかぶせる</a> by SUGAWARA Hiroshi (<a href='http://codepen.io/5000164'>@5000164</a>) on <a href='http://codepen.io'>CodePen</a>.
+  </p>
+  
+  <p>
+    </div> 
+    
+
+<pre><code>&lt;h1&gt;
+  実装の解説です
+&lt;/h1&gt;
+
+&lt;p&gt;
+  非常に簡単です。&lt;br /&gt; 今までhoverの擬似クラスにしていた部分をhoverの擬似クラスのafter擬似要素にします。&lt;br /&gt; 文章だとちょっとわかりづらいのでコードで書くと、
+&lt;/p&gt;
+
+&lt;pre class=&quot;brush: css; title: ; notranslate&quot; title=&quot;&quot;&gt;
+</code></pre>
+
+<p>a:hover {
+  ・・・
+}
+</pre></p>
+
+<pre><code>&lt;p&gt;
+  これを
+&lt;/p&gt;
+
+&lt;pre class=&quot;brush: css; title: ; notranslate&quot; title=&quot;&quot;&gt;
+</code></pre>
+
+<p>a:hover::after {
+  ・・・
+}
+</pre></p>
+
+<pre><code>&lt;p&gt;
+  こうします。&lt;br /&gt; あとはちょっと装飾してやれば簡単に実現できます。
+&lt;/p&gt;
+
+&lt;h1&gt;
+  まとめ
+&lt;/h1&gt;
+
+&lt;p&gt;
+  hoverした時に画像にハイライトがついていないのが個人的にすごく気になっていたので、簡単に実装できてよかったです。&lt;br /&gt; ちょっと応用すれば他のこともできそうですね。
+&lt;/p&gt;
+</code></pre>
+
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+
