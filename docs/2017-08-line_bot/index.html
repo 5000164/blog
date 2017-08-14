@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>AWS Lambda の Python 3.6 で LINE Bot を動かす | 5000164 is here</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/monokai.css">
+    <meta name="generator" content="Hugo 0.26" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+<article>
+    <h1>2017-08-14 AWS Lambda の Python 3.6 で LINE Bot を動かす</h1>
+    
+
+<h2 id="目的">目的</h2>
+
+<p>LINE Bot を使って生活を少し便利にしたい。</p>
+
+<h2 id="背景">背景</h2>
+
+<p>最近 LINE をよく使ってるから。<br />
+なんかちょっとしたメモとか簡単に確認したいなーと思ったから。<br />
+たまたま AWS Lambda の料金を調べたら思っていたよりも安かったので使ってみたくなったから。</p>
+
+<h2 id="この記事のスタートとゴール">この記事のスタートとゴール</h2>
+
+<p>スタートは、 LINE をすでに使っているが、 API などは使ったことがないところ。<br />
+ゴールは、 LINE のグループチャットで特定の発言をしたら特定の内容を返してくれるところ。</p>
+
+<h2 id="line-bot-を使えるように登録する">LINE Bot を使えるように登録する</h2>
+
+<p>Messaging API の登録をする。<br />
+<a href="https://business.line.me/ja/services/bot">Messaging APIのご紹介 | LINE Business Center</a></p>
+
+<p>Developer Trial を選ぶ。<br />
+<a href="http://qiita.com/yoshizaki_kkgk/items/bd4277d3943200beab26">LINE BOTの作り方を世界一わかりやすく解説（１）【アカウント準備編】 - Qiita</a></p>
+
+<h2 id="line-bot-を使えるように設定する">LINE Bot を使えるように設定する</h2>
+
+<p>LINE@ MANAGER から以下の感じに Bot を設定する。</p>
+
+<ul>
+<li>API を利用する</li>
+<li>Webhook を利用する</li>
+<li>グループトーク参加を利用する</li>
+<li>自動応答メッセージを利用しない</li>
+<li>友だち追加時あいさつを利用しない</li>
+<li>基本設定アカウントページメニュー非表示</li>
+</ul>
+
+<h2 id="line-bot-と友だちになってグループトークを作成">LINE Bot と友だちになってグループトークを作成</h2>
+
+<p>QR コードから友だち追加する。<br />
+<a href="http://whippet-818.hatenablog.com/entry/2017/02/07/004558">LINE Messaging APIを使用したLINE Botの作り方 - george’s ぶろぐ</a></p>
+
+<p>友だちになったらグループトークを作成して追加する。</p>
+
+<h2 id="aws-lambda-と-amazon-api-gateway-を作成する">AWS Lambda と Amazon API Gateway を作成する</h2>
+
+<p>記事を参考にしながら AWS Lambda と Amazon API Gateway を作成する。<br />
+<a href="http://qiita.com/kooohei/items/650c331f95f83072f4d6">Line botをAWS LambdaとAPI Gatewayでアモーレ！！- 実装編 - Qiita</a><br />
+<a href="http://qiita.com/toshihirock/items/8720118164a02dfdd11a">API Gatewayを使ってアクセスキー認証でLambdaを実行する - Qiita</a></p>
+
+<h2 id="url-に直接アクセスして-hello-from-lambda-を表示する">URL に直接アクセスして Hello from Lambda を表示する</h2>
+
+<p>そのままではうまく動かなかった。<br />
+いろいろ見ていたら「LAMBDA_PROXY」のところが違うということに気付いた。<br />
+<a href="https://cloudpack.media/15956">&ldquo;API Gateway&rdquo;のバックエンドを&rdquo;Lambda&rdquo;にしてJSONデータをエコーさせる | cloudpack.media</a></p>
+
+<p>調べたら新たに追加された機能らしい。<br />
+似たような現象を見つけて、レスポンスの返し方が違うと気付く。<br />
+<a href="http://aile.hatenablog.com/entry/2016/09/23/220522">AWS API Gateway Lambda proxy integration を使う - うさぎ駆動開発</a></p>
+
+<p>公式のサンプルが見つけられなかったけど、この記事のように <code>statusCode</code> と <code>body</code> を入れたら動いた。<br />
+<a href="http://webscale.plumbing/python-lambda-api-gateway-proxy">Python Lambda Proxy for API Gateway</a></p>
+
+<p>この段階でのコードは下記。<br />
+これでブラウザでアクセスすることで <code>Hello from Lambda</code> と表示される。</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="lineno">1 </span><span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="lineno">2 </span>    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="s1">&#39;Hello from Lambda&#39;</span><span class="p">}</span>
+</code></pre></div>
+
+<p>「Lambda プロキシ統合の使用」のオプションを外したら最初のままのコードでも動いたが、このオプションを付けた方が楽な部分があるらしい？ので付けたままにしておく。</p>
+
+<h2 id="line-からのリクエストを受け取れるようにする">LINE からのリクエストを受け取れるようにする</h2>
+
+<p>LINE developers の Webhook URL にさきほど作成した Amazon API Gateway の URL を登録する。<br />
+この時に <code>amazonaws.com:443</code> のように HTTPS のポート番号を付けないとうまくいかない、らしい。<br />
+Webhook URL を設定したら Bot のいるグループチャットで発言をして CloudWatch にログが出ることを確認する。</p>
+
+<h2 id="line-に発言する">LINE に発言する</h2>
+
+<p>Python なので Requests とか使えたら楽だけど、サードパーティーのライブラリは zip でアップロードしたりという操作が必要なようだったので、今回は標準の機能だけでやる。</p>
+
+<p>環境変数に LINE developers の Channel Secret と Channel Access Token をセットする。<br />
+KMS というやつを使った方がセキュアらしいんですがちょっとよくわかりませんでしたすいません。<br />
+<a href="http://qiita.com/TakashiKOYANAGAWA/items/30352b288b23c8c8daae">AWS Lambda環境変数対応をお触り - Qiita</a></p>
+
+<p>ここで <code>event</code> の中身を取ろうとしたら、なんかうまく取れない。<br />
+記事によって書いてあることもまちまちでよくわからない。<br />
+<a href="http://www.kazuweb.asia/aws/lambda/chatbot">LINE Messaging API と AWS Lambda で LINE BOT を作ってみた</a><br />
+<a href="http://blog.livedoor.jp/sce_info3-craft/archives/9508633.html">LINE Bot APIの使ってLINEからメッセージを送ることで自宅のエアコンの電源を入れられるようにするシステム(AWS利用)を試作してみる : 工作と競馬</a><br />
+<a href="https://techblog.recochoku.jp/1835">LINE Messaging APIを試してみた | レコチョクのエンジニアブログ</a></p>
+
+<p>なのでまずはログを残すことにした。<br />
+とても簡単にログが残せて CloudWatch が使えてすごい便利ー、ってなりました。<br />
+こういう恩恵が受けられるのがサーバーレスアーキテクチャーなのかなーとかちょっと思ったよくわかってないけど。<br />
+<a href="http://docs.aws.amazon.com/ja_jp/lambda/latest/dg/python-logging.html">ログ記録 (Python) - AWS Lambda</a></p>
+
+<p>ログを残して見てみた結果、 <code>event</code> は dict で <code>event</code> が持ってる <code>body</code> の中身が JSON の文字列だということがわかりました。<br />
+なので、他のサイトでやっているように events をループで回したいってなったら以下の方法でいけることがわかった。</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="lineno">1 </span><span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;body&#39;</span><span class="p">])[</span><span class="s1">&#39;events&#39;</span><span class="p">]:</span>
+<span class="lineno">2 </span>    <span class="c1"># なにか処理</span>
+</code></pre></div>
+
+<p>ここまで来たらあとは LINE に POST を送れば発言できる。<br />
+<a href="http://qiita.com/neko_the_shadow/items/324976c7b54623e82b26">Python3のスクリプトでjsonをPOSTする - Qiita</a></p>
+
+<p>現時点でのコードは下記のような感じ。<br />
+発言を受け取ったらただ <code>test</code> と発言するだけ。</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="lineno"> 1 </span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="lineno"> 2 </span>
+<span class="lineno"> 3 </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="lineno"> 4 </span><span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span> <span class="nn">urllib.parse</span>
+<span class="lineno"> 5 </span><span class="kn">import</span> <span class="nn">json</span>
+<span class="lineno"> 6 </span>
+<span class="lineno"> 7 </span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="lineno"> 8 </span><span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="lineno"> 9 </span>
+<span class="lineno">10 </span><span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="lineno">11 </span>    
+<span class="lineno">12 </span>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="lineno">13 </span>    
+<span class="lineno">14 </span>    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">request</span><span class="p">[</span><span class="s1">&#39;body&#39;</span><span class="p">])[</span><span class="s1">&#39;events&#39;</span><span class="p">]:</span>
+<span class="lineno">15 </span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">event</span><span class="p">))</span>
+<span class="lineno">16 </span>        
+<span class="lineno">17 </span>        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.line.me/v2/bot/message/reply&#39;</span>
+<span class="lineno">18 </span>        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+<span class="lineno">19 </span>            <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+<span class="lineno">20 </span>            <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;LINE_CHANNEL_ACCESS_TOKEN&#39;</span><span class="p">]</span>
+<span class="lineno">21 </span>        <span class="p">}</span>
+<span class="lineno">22 </span>        <span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
+<span class="lineno">23 </span>            <span class="s1">&#39;replyToken&#39;</span><span class="p">:</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;replyToken&#39;</span><span class="p">],</span>
+<span class="lineno">24 </span>            <span class="s1">&#39;messages&#39;</span><span class="p">:</span> <span class="p">[</span>
+<span class="lineno">25 </span>                <span class="p">{</span>
+<span class="lineno">26 </span>                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="lineno">27 </span>                    <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+<span class="lineno">28 </span>                <span class="p">}</span>
+<span class="lineno">29 </span>            <span class="p">]</span>
+<span class="lineno">30 </span>        <span class="p">}</span>
+<span class="lineno">31 </span>        
+<span class="lineno">32 </span>        <span class="n">req</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">body</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="lineno">33 </span>        <span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span> <span class="k">as</span> <span class="n">res</span><span class="p">:</span>
+<span class="lineno">34 </span>            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+<span class="lineno">35 </span>    
+<span class="lineno">36 </span>    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="s1">&#39;{}&#39;</span><span class="p">}</span>
+</code></pre></div>
+
+<p><code>def lambda_handler(request, context):</code> の部分は <code>event</code> っていう変数名が使いたかったので第一引数の変数名を <code>request</code> に変更。<br />
+これの <code>&quot;text&quot;: &quot;test&quot;,</code> の部分を <code>&quot;text&quot;: event['message']['text'],</code> と変えるとオウム返しを行うことができる。<br />
+<code>logger.info(json.dumps(event))</code> みたいな感じで JSON 文字列としてログに残しておくと CloudWatch が勝手にログを整形して表示してくれるので便利。</p>
+
+<h2 id="特定の内容の時だけ反応するようにする">特定の内容の時だけ反応するようにする</h2>
+
+<p>ここまできたらあとは作れば動くという感じなので簡単。<br />
+<code>event['message']['text']</code> が発言内容を持っているのでループの最初で下記のように特定の発言以外を弾くようにしてあげればいい。</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="lineno">1 </span><span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;memo&#39;</span><span class="p">:</span>
+<span class="lineno">2 </span>    <span class="k">continue</span>
+</code></pre></div>
+
+<h2 id="特定の発言者にだけ反応するようにする">特定の発言者にだけ反応するようにする</h2>
+
+<p>こちらも同じような感じ。<br />
+発言者のユーザー ID が <code>event['source']['userId']</code> で取れるので、特定のユーザー ID 以外を弾くようにする。</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="lineno">1 </span><span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">][</span><span class="s1">&#39;userId&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;userId&#39;</span><span class="p">:</span>
+<span class="lineno">2 </span>    <span class="k">continue</span>
+</code></pre></div>
+
+<h2 id="リクエストの検証を行う">リクエストの検証を行う</h2>
+
+<p>サーバーの公開されている API に送られたリクエストのうち、 LINE からきたリクエストだけを信用するようにする。<br />
+この検証を行わないと LINE 以外からのリクエストにも反応してしまう。<br />
+個人の認証が LINE からのリクエストの検証と、ユーザー ID の特定だけで、信頼できるものなのかどうかはわからないので別途調査が必要。<br />
+リクエストの検証自体はサンプルを元に簡単に実装することができた。<br />
+Amazon API Gateway のテスト機能が便利だった。<br />
+<a href="https://devdocs.line.me/ja/">LINE API Reference</a><br />
+<a href="https://blog.ultica.jp/archives/6">1時間でLINE BOTを作ってみた – Ultica Blog – ウルチカ ブログ –</a></p>
+
+<h2 id="あらかじめ用意しておいたメモを特定の発言で返してくれる-bot-の完成">あらかじめ用意しておいたメモを特定の発言で返してくれる Bot の完成</h2>
+
+<p>いろいろ調整して最終的にできあがったコードがこちら。</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="lineno"> 1 </span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="lineno"> 2 </span>
+<span class="lineno"> 3 </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="lineno"> 4 </span><span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span> <span class="nn">urllib.parse</span>
+<span class="lineno"> 5 </span><span class="kn">import</span> <span class="nn">json</span>
+<span class="lineno"> 6 </span>
+<span class="lineno"> 7 </span><span class="kn">import</span> <span class="nn">base64</span>
+<span class="lineno"> 8 </span><span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="lineno"> 9 </span><span class="kn">import</span> <span class="nn">hmac</span>
+<span class="lineno">10 </span>
+<span class="lineno">11 </span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="lineno">12 </span><span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="lineno">13 </span>
+<span class="lineno">14 </span><span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="lineno">15 </span>
+<span class="lineno">16 </span>    <span class="c1"># リクエストの検証を行う</span>
+<span class="lineno">17 </span>    <span class="n">channel_secret</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;LINE_CHANNEL_SECRET&#39;</span><span class="p">]</span>
+<span class="lineno">18 </span>    <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="lineno">19 </span>    <span class="nb">hash</span> <span class="o">=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">channel_secret</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> <span class="n">body</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+<span class="lineno">20 </span>    <span class="n">signature</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="lineno">21 </span>
+<span class="lineno">22 </span>    <span class="c1"># LINE 以外からのアクセスだった場合は処理を終了させる</span>
+<span class="lineno">23 </span>    <span class="k">if</span> <span class="n">signature</span> <span class="o">!=</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;headers&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;X-Line-Signature&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
+<span class="lineno">24 </span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;LINE 以外からのアクセス request={request}&#39;</span><span class="p">)</span>
+<span class="lineno">25 </span>        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="s1">&#39;{}&#39;</span><span class="p">}</span>
+<span class="lineno">26 </span>
+<span class="lineno">27 </span>    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">body</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;events&#39;</span><span class="p">,</span> <span class="p">[]):</span>
+<span class="lineno">28 </span>
+<span class="lineno">29 </span>        <span class="c1"># 発言者を絞り込む</span>
+<span class="lineno">30 </span>        <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">][</span><span class="s1">&#39;userId&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;userId&#39;</span><span class="p">:</span>
+<span class="lineno">31 </span>            <span class="k">continue</span>
+<span class="lineno">32 </span>
+<span class="lineno">33 </span>        <span class="c1"># 反応する発言内容を絞り込む</span>
+<span class="lineno">34 </span>        <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;memo&#39;</span><span class="p">:</span>
+<span class="lineno">35 </span>            <span class="k">continue</span>
+<span class="lineno">36 </span>
+<span class="lineno">37 </span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">request</span><span class="p">))</span>
+<span class="lineno">38 </span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">event</span><span class="p">))</span>
+<span class="lineno">39 </span>
+<span class="lineno">40 </span>        <span class="c1"># LINE に発言する</span>
+<span class="lineno">41 </span>        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.line.me/v2/bot/message/reply&#39;</span>
+<span class="lineno">42 </span>        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+<span class="lineno">43 </span>            <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+<span class="lineno">44 </span>            <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;LINE_CHANNEL_ACCESS_TOKEN&#39;</span><span class="p">],</span>
+<span class="lineno">45 </span>        <span class="p">}</span>
+<span class="lineno">46 </span>        <span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
+<span class="lineno">47 </span>            <span class="s1">&#39;replyToken&#39;</span><span class="p">:</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;replyToken&#39;</span><span class="p">],</span>
+<span class="lineno">48 </span>            <span class="s1">&#39;messages&#39;</span><span class="p">:</span> <span class="p">[</span>
+<span class="lineno">49 </span>                <span class="p">{</span>
+<span class="lineno">50 </span>                    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+<span class="lineno">51 </span>                    <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;memo</span><span class="se">\n\n</span><span class="s1">返してもらいたいメモの内容をここに書く&#39;</span><span class="p">,</span>
+<span class="lineno">52 </span>                <span class="p">}</span>
+<span class="lineno">53 </span>            <span class="p">]</span>
+<span class="lineno">54 </span>        <span class="p">}</span>
+<span class="lineno">55 </span>        <span class="n">req</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">body</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="lineno">56 </span>        <span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span> <span class="k">as</span> <span class="n">res</span><span class="p">:</span>
+<span class="lineno">57 </span>            <span class="n">res_body</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="lineno">58 </span>            <span class="k">if</span> <span class="n">res_body</span> <span class="o">!=</span> <span class="s1">&#39;{}&#39;</span><span class="p">:</span>
+<span class="lineno">59 </span>                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">res_body</span><span class="p">)</span>
+<span class="lineno">60 </span>
+<span class="lineno">61 </span>    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="s1">&#39;{}&#39;</span><span class="p">}</span>
+</code></pre></div>
+
+<h2 id="感想">感想</h2>
+
+<p>最近 Python を触っているのでなにも考えずに Python を選択したが、思ったよりも情報が少なくて大変だった。<br />
+bot 作るのって楽しい。<br />
+AWS Lambda を触ってみれてよかった。<br />
+もうちょい機能とか足して個人用に便利にしていきたい。<br />
+こんな感じでコード書いてったらひどいことになりそうだから、 AWS Lambda でうまいこと整理する方法を知りたい。</p>
+
+</article>
+<footer>
+    SUGAWARA Hiroshi
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

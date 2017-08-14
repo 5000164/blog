@@ -6,10 +6,31 @@
     <description>Recent content in 2017s on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 14 Aug 2017 22:44:23 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 14 Aug 2017 23:04:38 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/2017/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AWS Lambda の Python 3.6 で LINE Bot を動かす</title>
+      <link>http://blog.5000164.jp/2017-08-line_bot/</link>
+      <pubDate>Mon, 14 Aug 2017 23:04:38 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2017-08-line_bot/</guid>
+      <description>目的 LINE Bot を使って生活を少し便利にしたい。
+背景 最近 LINE をよく使ってるから。
+なんかちょっとしたメモとか簡単に確認したいなーと思ったから。
+たまたま AWS Lambda の料金を調べたら思っていたよりも安かったので使ってみたくなったから。
+この記事のスタートとゴール スタートは、 LINE をすでに使っているが、 API などは使ったことがないところ。
+ゴールは、 LINE のグループチャットで特定の発言をしたら特定の内容を返してくれるところ。
+LINE Bot を使えるように登録する Messaging API の登録をする。
+Messaging APIのご紹介 | LINE Business Center
+Developer Trial を選ぶ。
+LINE BOTの作り方を世界一わかりやすく解説（１）【アカウント準備編】 - Qiita
+LINE Bot を使えるように設定する LINE@ MANAGER から以下の感じに Bot を設定する。
+ API を利用する Webhook を利用する グループトーク参加を利用する 自動応答メッセージを利用しない 友だち追加時あいさつを利用しない 基本設定アカウントページメニュー非表示  LINE Bot と友だちになってグループトークを作成 QR コードから友だち追加する。
+LINE Messaging APIを使用したLINE Botの作り方 - george’s ぶろぐ</description>
+    </item>
     
     <item>
       <title>Hugo でシンタックスハイライトを使う</title>
