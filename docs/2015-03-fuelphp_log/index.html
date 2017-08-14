@@ -14,7 +14,8 @@
 </header>
 
 <article>
-    <h1>2015-03-06 FuelPHP のログレベルは INFO の方が DEBUG よりも上</h1>
+    <div>2015-03-06</div>
+    <h1>FuelPHP のログレベルは INFO の方が DEBUG よりも上</h1>
     
 
 <h1 id="fuelphp-のログレベルは-info-の方が-debug-よりも上">FuelPHP のログレベルは INFO の方が DEBUG よりも上</h1>
@@ -25,18 +26,27 @@ FuelPHP 1.7.2 で INFO は 200、DEBUG は 100。</p>
 <h1 id="なぜ疑問に思ったのか">なぜ疑問に思ったのか</h1>
 
 <p>FuelPHP の config.php の出力するログレベルの設定のところに、</p>
-<div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="cm">/**</span>
-<span class="lineno"> 2 </span><span class="cm"> * Logging Threshold.  Can be set to any of the following:</span>
-<span class="lineno"> 3 </span><span class="cm"> *</span>
-<span class="lineno"> 4 </span><span class="cm"> * Fuel::L_NONE</span>
-<span class="lineno"> 5 </span><span class="cm"> * Fuel::L_ERROR</span>
-<span class="lineno"> 6 </span><span class="cm"> * Fuel::L_WARNING</span>
-<span class="lineno"> 7 </span><span class="cm"> * Fuel::L_DEBUG</span>
-<span class="lineno"> 8 </span><span class="cm"> * Fuel::L_INFO</span>
-<span class="lineno"> 9 </span><span class="cm"> * Fuel::L_ALL</span>
-<span class="lineno">10 </span><span class="cm"> */</span><span class="w"></span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Logging Threshold.  Can be set to any of the following:</span>
+<span class="cm"> *</span>
+<span class="cm"> * Fuel::L_NONE</span>
+<span class="cm"> * Fuel::L_ERROR</span>
+<span class="cm"> * Fuel::L_WARNING</span>
+<span class="cm"> * Fuel::L_DEBUG</span>
+<span class="cm"> * Fuel::L_INFO</span>
+<span class="cm"> * Fuel::L_ALL</span>
+<span class="cm"> */</span><span class="w"></span>
 </pre></div>
-
+</td></tr></table>
 <p>このように書いてあるので、「INFO に設定したら DEBUG ログも出るのかー」と勝手に思い込んでいたからでした。</p>
 
 <h1 id="実際に動かせばわかる">実際に動かせばわかる</h1>

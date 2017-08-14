@@ -14,7 +14,8 @@
 </header>
 
 <article>
-    <h1>2017-08-14 Hugo でシンタックスハイライトを使う</h1>
+    <div>2017-08-14</div>
+    <h1>Hugo でシンタックスハイライトを使う</h1>
     
 
 <h2 id="結論">結論</h2>
@@ -23,13 +24,17 @@
 <li>シンタックスハイライト用の css をテーマで読み込んでおく</li>
 <li><code>config.toml</code> に下記の設定を追加</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="lineno">1 </span>pygmentscodefences = true
-<span class="lineno">2 </span>pygmentsCodeFencesGuessSyntax = true
-<span class="lineno">3 </span>pygmentsStyle = &quot;monokai&quot;
-<span class="lineno">4 </span>pygmentsUseClasses = true
-<span class="lineno">5 </span>pygmentsoptions = &quot;linenos=inline&quot;
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>pygmentscodefences = true
+pygmentsCodeFencesGuessSyntax = true
+pygmentsStyle = &quot;monokai&quot;
+pygmentsUseClasses = true
+pygmentsoptions = &quot;linenos=inline&quot;
 </pre></div>
-
+</td></tr></table>
 <h2 id="背景">背景</h2>
 
 <p>コードを見やすくしたいからシンタックスハイライトを使おうと思った。<br />
@@ -42,18 +47,18 @@
 
 <p>シンタックスハイライトするのに必要なやつ。<br />
 何も考えずに入れる。</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="lineno">1 </span>sudo easy_install Pygments
-</code></pre></div>
-
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-bash" data-lang="bash">1</code></pre></div></td><td class="code"><div class="highlight"><pre><span></span>sudo easy_install Pygments
+</pre></div>
+</td></tr></table>
 <h3 id="シンタックスハイライト用の-css-を生成する">シンタックスハイライト用の css を生成する</h3>
 
 <p>カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。<br />
 クラスで指定する場合は css を事前に生成しておいて読むこんでおく必要がある。<br />
 下記のコマンドで css を生成する。<br />
 デフォルトで用意されていないカラースキーマの使い方がわからなかったので今回は monokai を使う。</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="lineno">1 </span>pygmentize -f html -S monokai -a .highlight &gt; monokai.css
-</code></pre></div>
-
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-bash" data-lang="bash">1</code></pre></div></td><td class="code"><div class="highlight"><pre><span></span>pygmentize -f html -S monokai -a .highlight &gt; monokai.css
+</pre></div>
+</td></tr></table>
 <h3 id="生成した-css-をテーマで読み込む">生成した css をテーマで読み込む</h3>
 
 <p>テーマの static ディレクトリに css を置いて header で読み込む。</p>
@@ -64,13 +69,17 @@
 <code>pygmentscodefences</code> の設定が公式ドキュメントに見つからなくて罠だった。<br />
 これを <code>true</code> にしないとバッククオート 3 つでシンタックスハイライトを有効にする機能が動かない。<br />
 <code>pygmentsoptions</code> は Pygments のオプションを指定するところで、ここで見た目を変えたりできる。</p>
-<div class="highlight"><pre><span></span><span class="lineno">1 </span>pygmentscodefences = true
-<span class="lineno">2 </span>pygmentsCodeFencesGuessSyntax = true
-<span class="lineno">3 </span>pygmentsStyle = &quot;monokai&quot;
-<span class="lineno">4 </span>pygmentsUseClasses = true
-<span class="lineno">5 </span>pygmentsoptions = &quot;linenos=inline&quot;
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>pygmentscodefences = true
+pygmentsCodeFencesGuessSyntax = true
+pygmentsStyle = &quot;monokai&quot;
+pygmentsUseClasses = true
+pygmentsoptions = &quot;linenos=inline&quot;
 </pre></div>
-
+</td></tr></table>
 <h2 id="感想">感想</h2>
 
 <p>スッとできると思ったら意外とひっかかって疲れた。<br />

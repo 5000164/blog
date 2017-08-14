@@ -14,7 +14,8 @@
 </header>
 
 <article>
-    <h1>2015-11-28 Ansible で作成したユーザーをパスワードなしで sudo できるようにする</h1>
+    <div>2015-11-28</div>
+    <h1>Ansible で作成したユーザーをパスワードなしで sudo できるようにする</h1>
     
 
 <h1 id="先に簡単な結論">先に簡単な結論</h1>
@@ -28,9 +29,9 @@
 問題は作成したユーザーで sudo できないことだった。</p>
 
 <h1 id="一応オプションをつけて毎回パスワードを入力すれば回避できる">一応オプションをつけて毎回パスワードを入力すれば回避できる</h1>
-<div class="highlight"><pre><span></span><span class="lineno">1 </span>ansible-playbook playbook.yml --ask-sudo-pass
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>ansible-playbook playbook.yml --ask-sudo-pass
 </pre></div>
-
+</td></tr></table>
 <p>ってやって、毎回パスワードを入れれば動く。<br />
 でもだるい。</p>
 
@@ -63,9 +64,9 @@ vagrant グループに入れてみる。</p>
 と思ったら、よく見たら最後に <code>#includedir /etc/sudoers.d</code> って書いてある。</p>
 
 <h1 id="etc-sudoers-d-に-vagrant-ってファイルがあった">/etc/sudoers.d/ に vagrant ってファイルがあった</h1>
-<div class="highlight"><pre><span></span><span class="lineno">1 </span>vagrant ALL=(ALL) NOPASSWD:ALL
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>vagrant ALL=(ALL) NOPASSWD:ALL
 </pre></div>
-
+</td></tr></table>
 <p>これか。<br />
 なるほどたしかにパスワードなしって書いてある。<br />
 でもそしたらやっぱり vagrant グループに入れればいけるのでは？</p>
@@ -82,19 +83,29 @@ vagrant グループに入れてみる。</p>
 <a href="http://qiita.com/hidekuro/items/8cd1ebe1c52a256593ef">Vagrant + Ansibleで環境構築をコード化する(4)さらにPlaybook　～終わり～ - Qiita</a></p>
 
 <h1 id="結論">結論</h1>
-<div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="x">+++</span>
-<span class="lineno"> 2 </span><span class="x">- hosts: all</span>
-<span class="lineno"> 3 </span><span class="x">  remote_user: vagrant</span>
-<span class="lineno"> 4 </span><span class="x">  sudo: yes</span>
-<span class="lineno"> 5 </span><span class="x">  vars:</span>
-<span class="lineno"> 6 </span><span class="x">    user_name: # ユーザー名を設定</span>
-<span class="lineno"> 7 </span><span class="x">    password: # ハッシュ化したパスワードを設定</span>
-<span class="lineno"> 8 </span><span class="x">  tasks:</span>
-<span class="lineno"> 9 </span><span class="x">    - user: name=</span><span class="cp">{{</span> <span class="nv">user_name</span> <span class="cp">}}</span><span class="x"> password=</span><span class="cp">{{</span> <span class="nv">password</span> <span class="cp">}}</span><span class="x"> groups=</span><span class="cp">{{</span> <span class="nv">user_name</span> <span class="cp">}}</span><span class="x"></span>
-<span class="lineno">10 </span><span class="x">    - lineinfile: dest=/etc/sudoers.d/</span><span class="cp">{{</span> <span class="nv">user_name</span> <span class="cp">}}</span><span class="x"> line=&quot;</span><span class="cp">{{</span> <span class="nv">user_name</span> <span class="cp">}}</span><span class="x"> ALL=(ALL) NOPASSWD:ALL&quot; create=yes owner=root group=root mode=0440</span>
-<span class="lineno">11 </span><span class="x">    - authorized_key: user=</span><span class="cp">{{</span> <span class="nv">user_name</span> <span class="cp">}}</span><span class="x"> key=&quot;</span><span class="cp">{{</span> <span class="nv">lookup</span><span class="o">(</span><span class="s1">&#39;file&#39;</span><span class="o">,</span> <span class="s1">&#39;/home/charlie/.ssh/id_rsa.pub&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x">&quot; # Ansible を実行しているユーザーの持っている公開鍵へのパス</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="x">+++</span>
+<span class="x">- hosts: all</span>
+<span class="x">  remote_user: vagrant</span>
+<span class="x">  sudo: yes</span>
+<span class="x">  vars:</span>
+<span class="x">    user_name: # ユーザー名を設定</span>
+<span class="x">    password: # ハッシュ化したパスワードを設定</span>
+<span class="x">  tasks:</span>
+<span class="x">    - user: name=</span><span class="cp">{{</span> <span class="nv">user_name</span> <span class="cp">}}</span><span class="x"> password=</span><span class="cp">{{</span> <span class="nv">password</span> <span class="cp">}}</span><span class="x"> groups=</span><span class="cp">{{</span> <span class="nv">user_name</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">    - lineinfile: dest=/etc/sudoers.d/</span><span class="cp">{{</span> <span class="nv">user_name</span> <span class="cp">}}</span><span class="x"> line=&quot;</span><span class="cp">{{</span> <span class="nv">user_name</span> <span class="cp">}}</span><span class="x"> ALL=(ALL) NOPASSWD:ALL&quot; create=yes owner=root group=root mode=0440</span>
+<span class="x">    - authorized_key: user=</span><span class="cp">{{</span> <span class="nv">user_name</span> <span class="cp">}}</span><span class="x"> key=&quot;</span><span class="cp">{{</span> <span class="nv">lookup</span><span class="o">(</span><span class="s1">&#39;file&#39;</span><span class="o">,</span> <span class="s1">&#39;/home/charlie/.ssh/id_rsa.pub&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x">&quot; # Ansible を実行しているユーザーの持っている公開鍵へのパス</span>
 </pre></div>
-
+</td></tr></table>
 <p>これで同じ playbook の中で作成したユーザーでパスワードなしで <code>sudo: yes</code> できるようになった。</p>
 
 </article>

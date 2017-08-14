@@ -14,7 +14,8 @@
 </header>
 
 <article>
-    <h1>2013-12-01 コンテンツを横に2つ並べた時に片方だけコンテンツ幅がウィンドウ幅に追従するようにする</h1>
+    <div>2013-12-01</div>
+    <h1>コンテンツを横に2つ並べた時に片方だけコンテンツ幅がウィンドウ幅に追従するようにする</h1>
     
 
 
@@ -40,21 +41,33 @@
   <p>
     </div> 
     
-<div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="nt">&lt;p&gt;</span>
-<span class="lineno"> 2 </span>  ここではデモのために、ウィンドウの幅ではなくdivの幅を変更するようにしています。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> divの幅を変更してみると、左側のテーブルの幅は変わらずに右側の文章の幅だけが変わっているのが確認できます。
-<span class="lineno"> 3 </span><span class="nt">&lt;/p&gt;</span>
-<span class="lineno"> 4 </span>
-<span class="lineno"> 5 </span><span class="nt">&lt;h1&gt;</span>
-<span class="lineno"> 6 </span>  実装方法
-<span class="lineno"> 7 </span><span class="nt">&lt;/h1&gt;</span>
-<span class="lineno"> 8 </span>
-<span class="lineno"> 9 </span><span class="nt">&lt;p&gt;</span>
-<span class="lineno">10 </span>  cssはこのようになっています。（関係のないプロパティは省略しています。）
-<span class="lineno">11 </span><span class="nt">&lt;/p&gt;</span>
-<span class="lineno">12 </span>
-<span class="lineno">13 </span><span class="nt">&lt;pre</span> <span class="na">class=</span><span class="s">&quot;brush: css; title: ; notranslate&quot;</span> <span class="na">title=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">&lt;p&gt;</span>
+  ここではデモのために、ウィンドウの幅ではなくdivの幅を変更するようにしています。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> divの幅を変更してみると、左側のテーブルの幅は変わらずに右側の文章の幅だけが変わっているのが確認できます。
+<span class="nt">&lt;/p&gt;</span>
 
+<span class="nt">&lt;h1&gt;</span>
+  実装方法
+<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>
+  cssはこのようになっています。（関係のないプロパティは省略しています。）
+<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;pre</span> <span class="na">class=</span><span class="s">&quot;brush: css; title: ; notranslate&quot;</span> <span class="na">title=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</td></tr></table>
 <p>div {
   position: relative;
 }
@@ -68,27 +81,45 @@ p {
   margin: 0 0 0 250px;<br />
 }
 </pre></p>
-<div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="nt">&lt;p&gt;</span>
-<span class="lineno"> 2 </span>  非常に簡単です。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> まず、tableをposition: absolute;で固定することを考えます。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> そのために親要素にposition: relative;を指定します。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> これでtableの位置が固定されるので、あとは右側のコンテンツにmarginを指定してtableと重ならないようにします。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> これだけです。
-<span class="lineno"> 3 </span><span class="nt">&lt;/p&gt;</span>
-<span class="lineno"> 4 </span>
-<span class="lineno"> 5 </span><span class="nt">&lt;h1&gt;</span>
-<span class="lineno"> 6 </span>  複雑に考える必要はなかった
-<span class="lineno"> 7 </span><span class="nt">&lt;/h1&gt;</span>
-<span class="lineno"> 8 </span>
-<span class="lineno"> 9 </span><span class="nt">&lt;p&gt;</span>
-<span class="lineno">10 </span>  最初に右側のコンテンツだけウィンドウサイズに応じて幅を変更させようとした時は、もっと複雑に考えていました。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> 左側のコンテンツにmin-widthを指定して、左右のコンテンツにwidthでそれぞれ%を指定しようとしたのですが、これは%で指定すると幅が大きく変わった時にレイアウトが崩れるので断念。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> 次はJavaScriptでウィンドウサイズのイベントを取得して動的にwidthを変更するしかないかと思ったのですが、なるべくシンプルにいってJavaScriptは使いたくなかったので保留。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> 他にいい方法がないかと考えていた時にこの方法を思いつきました。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> 試しに実装してみたら期待通りの動きをしてくれたのでこの方法に決定。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> シンプルに書けるのはいいものです。
-<span class="lineno">11 </span><span class="nt">&lt;/p&gt;</span>
-<span class="lineno">12 </span>
-<span class="lineno">13 </span><span class="nt">&lt;h1&gt;</span>
-<span class="lineno">14 </span>  まとめ
-<span class="lineno">15 </span><span class="nt">&lt;/h1&gt;</span>
-<span class="lineno">16 </span>
-<span class="lineno">17 </span><span class="nt">&lt;p&gt;</span>
-<span class="lineno">18 </span>  この方法は応用が利きそうです。
-<span class="lineno">19 </span><span class="nt">&lt;/p&gt;</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">&lt;p&gt;</span>
+  非常に簡単です。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> まず、tableをposition: absolute;で固定することを考えます。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> そのために親要素にposition: relative;を指定します。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> これでtableの位置が固定されるので、あとは右側のコンテンツにmarginを指定してtableと重ならないようにします。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> これだけです。
+<span class="nt">&lt;/p&gt;</span>
 
+<span class="nt">&lt;h1&gt;</span>
+  複雑に考える必要はなかった
+<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>
+  最初に右側のコンテンツだけウィンドウサイズに応じて幅を変更させようとした時は、もっと複雑に考えていました。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> 左側のコンテンツにmin-widthを指定して、左右のコンテンツにwidthでそれぞれ%を指定しようとしたのですが、これは%で指定すると幅が大きく変わった時にレイアウトが崩れるので断念。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> 次はJavaScriptでウィンドウサイズのイベントを取得して動的にwidthを変更するしかないかと思ったのですが、なるべくシンプルにいってJavaScriptは使いたくなかったので保留。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> 他にいい方法がないかと考えていた時にこの方法を思いつきました。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> 試しに実装してみたら期待通りの動きをしてくれたのでこの方法に決定。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> シンプルに書けるのはいいものです。
+<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;h1&gt;</span>
+  まとめ
+<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>
+  この方法は応用が利きそうです。
+<span class="nt">&lt;/p&gt;</span>
+</pre></div>
+</td></tr></table>
 </article>
 <footer>
     SUGAWARA Hiroshi

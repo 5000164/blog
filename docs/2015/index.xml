@@ -352,7 +352,7 @@ tmux も触ってどっちがいいか考えよう。
 Vagrant の VM に Ansible で環境を構築する いつもは vagrant ユーザーをそのまま使っていたのだが、ユーザー名を変えておいた方がなんとなくよさそう、と思ってユーザー名を変えることにした。
 ユーザーの追加は user モジュールを使って簡単にできる。
 問題は作成したユーザーで sudo できないことだった。
-一応オプションをつけて毎回パスワードを入力すれば回避できる 1 ansible-playbook playbook.yml --ask-sudo-pass  ってやって、毎回パスワードを入れれば動く。
+一応オプションをつけて毎回パスワードを入力すれば回避できる 1ansible-playbook playbook.yml --ask-sudo-pass   ってやって、毎回パスワードを入れれば動く。
 でもだるい。
 vagrant ユーザーはなんでパスワードなしで sudo できるのか なぜ、どうして。
 全然仕組みを理解できていなかった。
@@ -498,7 +498,7 @@ Chrome 拡張機能は作ってみたかったしいい機会だと思った。
 ちゃんと Access-Control-Allow-Origin: * って感じにしてたのに、許可されていませんって感じのエラーメッセージが出ていた。
 開発ツールのネットワークの履歴を見てたら、メソッドのところが OPTIONS って出てたので、OPTIONS メソッドの時にも Access-Control-Allow-Origin: * を返してあげるようにした。
 FuelPHP のコントローラーにどうやって書くのだろと思って試しに書いてみたら動いた。
-1 /** 2 * プリフライトリクエスト用のコントローラー 3 */ 4 public function options_index() 5 { 6 $this-&amp;gt;response-&amp;gt;set_header(&amp;#39;Access-Control-Allow-Origin&amp;#39;, &amp;#39;*&amp;#39;); 7 }  こんな感じ。
+1 2 3 4 5 6 7/** * プリフライトリクエスト用のコントローラー */ public function options_index() { $this-&amp;gt;response-&amp;gt;set_header(&amp;#39;Access-Control-Allow-Origin&amp;#39;, &amp;#39;*&amp;#39;); }   こんな感じ。
 どうやら、XHR ではプリフライトリクエストってやつを送るらしくて、その時にアクセスが許可されていないから API からデータを持ってきていなかったらしい。(現時点の Chrome では送ってなかった)
 なるほどな。</description>
     </item>
@@ -649,9 +649,9 @@ Chrome 拡張機能を作っている もう少しでできそうだー、と思
       <guid>http://blog.5000164.jp/2015-09-go_string/</guid>
       <description> golang でダブルコーテーションや改行を string 型の変数に入れる go では &amp;ldquo; (ダブルコーテーション) で文字列を表します。
 文字列の中にダブルコーテーションを入れるには \ (バックスラッシュ) でエスケープすればよかった。
-1 test := &amp;quot;test\&amp;quot;test&amp;quot;  改行を入れるには \n で入れられる。
-1 newline := &amp;quot;a\nb\nc&amp;quot;  また、` (バッククオート) を使用することでヒアドキュメントのように書けた。
-1 here := `like 2 a 3 here document`  参考  Go 言語で複数行にまたがる文字列を作る - nise_nabeの日記 The Go Programming Language Specification - The Go Programming Language  </description>
+1test := &amp;quot;test\&amp;quot;test&amp;quot;   改行を入れるには \n で入れられる。
+1newline := &amp;quot;a\nb\nc&amp;quot;   また、` (バッククオート) を使用することでヒアドキュメントのように書けた。
+1 2 3here := `like a here document`   参考  Go 言語で複数行にまたがる文字列を作る - nise_nabeの日記 The Go Programming Language Specification - The Go Programming Language  </description>
     </item>
     
     <item>
@@ -764,7 +764,7 @@ Chrome 拡張機能を作っている もう少しでできそうだー、と思
       <description>PHP の二次元配列から同じキーの値だけで新しい配列を生成する関数 array_column 他の人のコードを読んでたらたまたま見つけた便利な関数 array_column。
 二次元配列から同じキーの値だけで新しい配列を生成する。
 PHP: array_column - Manual
-同じキーの値だけで新しい配列を作るサンプル 1 &amp;lt;?php 2 $data = [ 3  [ 4  &amp;#39;id&amp;#39; =&amp;gt; 1, 5  &amp;#39;name&amp;#39; =&amp;gt; &amp;#39;aaa&amp;#39;, 6  ], 7  [ 8  &amp;#39;id&amp;#39; =&amp;gt; 2, 9  &amp;#39;name&amp;#39; =&amp;gt; &amp;#39;bbb&amp;#39;, 10  ], 11 ]; 12  13 $id_list = array_column($data, &amp;#39;id&amp;#39;); 14 $name_list = array_column($data, &amp;#39;name&amp;#39;); 15  16 var_dump($id_list); 17 // array(2) { 18 // [0]=&amp;gt; 19 // int(1) 20 // [1]=&amp;gt; 21 // int(2) 22 // } 23  24 var_dump($name_list); 25 // array(2) { 26 // [0]=&amp;gt; 27 // string(3) &amp;quot;aaa&amp;quot; 28 // [1]=&amp;gt; 29 // string(3) &amp;quot;bbb&amp;quot; 30 // }  二次元配列の縦横を入れ替える (転置行列を得る) サンプル 1 &amp;lt;?</description>
+同じキーの値だけで新しい配列を作るサンプル 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30&amp;lt;?php $data = [ [ &amp;#39;id&amp;#39; =&amp;gt; 1, &amp;#39;name&amp;#39; =&amp;gt; &amp;#39;aaa&amp;#39;, ], [ &amp;#39;id&amp;#39; =&amp;gt; 2, &amp;#39;name&amp;#39; =&amp;gt; &amp;#39;bbb&amp;#39;, ], ]; $id_list = array_column($data, &amp;#39;id&amp;#39;); $name_list = array_column($data, &amp;#39;name&amp;#39;); var_dump($id_list); // array(2) { // [0]=&amp;gt; // int(1) // [1]=&amp;gt; // int(2) // } var_dump($name_list); // array(2) { // [0]=&amp;gt; // string(3) &amp;quot;aaa&amp;quot; // [1]=&amp;gt; // string(3) &amp;quot;bbb&amp;quot; // }   二次元配列の縦横を入れ替える (転置行列を得る) サンプル 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34&amp;lt;?</description>
     </item>
     
     <item>
@@ -962,8 +962,7 @@ list_tables でテーブル一覧が取れるかなと思ったら動作せず�
       <description>FuelPHP のログレベルは INFO の方が DEBUG よりも上 Fuel の Core の Log クラスに $levels が定義されています。
 FuelPHP 1.7.2 で INFO は 200、DEBUG は 100。
 なぜ疑問に思ったのか FuelPHP の config.php の出力するログレベルの設定のところに、
-1 /** 2 * Logging Threshold. Can be set to any of the following: 3 * 4 * Fuel::L_NONE 5 * Fuel::L_ERROR 6 * Fuel::L_WARNING 7 * Fuel::L_DEBUG 8 * Fuel::L_INFO 9 * Fuel::L_ALL 10 */  このように書いてあるので、「INFO に設定したら DEBUG ログも出るのかー」と勝手に思い込んでいたからでした。
-実際に動かせばわかる 実際に動かしたら、設定が DEBUG の時はログレベル INFO も DEBUG も出力されたが、設定が INFO の時は INFO が出力されて DEBUG は出力されなかった。</description>
+ 1 2 3 4 5 6 7 8 9 10/** * Logging Threshold. Can be set to any of the following: * * Fuel::L_NONE * Fuel::L_ERROR * Fuel::L_WARNING * Fuel::L_DEBUG * Fuel::L_INFO * Fuel::L_ALL */   このように書いてあるので、「INFO に設定したら DEBUG ログも出るのかー」と勝手に思い込んでいたからでした。</description>
     </item>
     
     <item>
