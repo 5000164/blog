@@ -22,10 +22,9 @@ Hugo に移行することにしたから Jekyll の記事と WordPress の記�
 つらい。
 Hugo に合わせた最終的な形式 こんな感じに統一することを目指す。
 記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。
-+++ title = &amp;quot;Jekyll の記事と WordPress の記事を Hugo にインポートする&amp;quot; date = 2017-08-13T04:26:50+09:00 url = &amp;quot;2017-08-import&amp;quot; +++ ## 記事内容 つらつら  手順 実際に行ったインポート作業の内容はこちら。
+1 +++ 2 title = &amp;quot;Jekyll の記事と WordPress の記事を Hugo にインポートする&amp;quot; 3 date = 2017-08-13T04:26:50+09:00 4 url = &amp;quot;2017-08-import&amp;quot; 5 +++ 6  7 ## 記事内容 8  9 つらつら  手順 実際に行ったインポート作業の内容はこちら。
 Feature import article by 5000164 · Pull Request #2 · 5000164/blog
-WordPress の記事を Markdown 形式に変換する 最初は Jekyll に移行しようと思ってたのでこれを使いました。
-benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll</description>
+WordPress の記事を Markdown 形式に変換する 最初は Jekyll に移行しようと思ってたのでこれを使いました。</description>
     </item>
     
     <item>

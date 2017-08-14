@@ -5,6 +5,7 @@
     <title>FuelPHP のログレベルは INFO の方が DEBUG よりも上 | 5000164 is here</title>
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/monokai.css">
     <meta name="generator" content="Hugo 0.26" />
 </head>
 <body>
@@ -24,18 +25,17 @@ FuelPHP 1.7.2 で INFO は 200、DEBUG は 100。</p>
 <h1 id="なぜ疑問に思ったのか">なぜ疑問に思ったのか</h1>
 
 <p>FuelPHP の config.php の出力するログレベルの設定のところに、</p>
-
-<pre><code>/**
- * Logging Threshold.  Can be set to any of the following:
- *
- * Fuel::L_NONE
- * Fuel::L_ERROR
- * Fuel::L_WARNING
- * Fuel::L_DEBUG
- * Fuel::L_INFO
- * Fuel::L_ALL
- */
-</code></pre>
+<div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="cm">/**</span>
+<span class="lineno"> 2 </span><span class="cm"> * Logging Threshold.  Can be set to any of the following:</span>
+<span class="lineno"> 3 </span><span class="cm"> *</span>
+<span class="lineno"> 4 </span><span class="cm"> * Fuel::L_NONE</span>
+<span class="lineno"> 5 </span><span class="cm"> * Fuel::L_ERROR</span>
+<span class="lineno"> 6 </span><span class="cm"> * Fuel::L_WARNING</span>
+<span class="lineno"> 7 </span><span class="cm"> * Fuel::L_DEBUG</span>
+<span class="lineno"> 8 </span><span class="cm"> * Fuel::L_INFO</span>
+<span class="lineno"> 9 </span><span class="cm"> * Fuel::L_ALL</span>
+<span class="lineno">10 </span><span class="cm"> */</span><span class="w"></span>
+</pre></div>
 
 <p>このように書いてあるので、「INFO に設定したら DEBUG ログも出るのかー」と勝手に思い込んでいたからでした。</p>
 

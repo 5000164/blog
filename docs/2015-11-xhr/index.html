@@ -5,6 +5,7 @@
     <title>XHR のプリフライトリクエストを Access-Control-Allow-Origin で許可する | 5000164 is here</title>
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/monokai.css">
     <meta name="generator" content="Hugo 0.26" />
 </head>
 <body>
@@ -22,15 +23,14 @@
 ちゃんと <code>Access-Control-Allow-Origin: *</code> って感じにしてたのに、許可されていませんって感じのエラーメッセージが出ていた。<br />
 開発ツールのネットワークの履歴を見てたら、メソッドのところが <code>OPTIONS</code> って出てたので、OPTIONS メソッドの時にも <code>Access-Control-Allow-Origin: *</code> を返してあげるようにした。<br />
 FuelPHP のコントローラーにどうやって書くのだろと思って試しに書いてみたら動いた。</p>
-
-<pre><code class="language-php">/**
- * プリフライトリクエスト用のコントローラー
- */
-public function options_index()
-{
-    $this-&gt;response-&gt;set_header('Access-Control-Allow-Origin', '*');
-}
-</code></pre>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span></span><span class="lineno">1 </span><span class="x">/**</span>
+<span class="lineno">2 </span><span class="x"> * プリフライトリクエスト用のコントローラー</span>
+<span class="lineno">3 </span><span class="x"> */</span>
+<span class="lineno">4 </span><span class="x">public function options_index()</span>
+<span class="lineno">5 </span><span class="x">{</span>
+<span class="lineno">6 </span><span class="x">    $this-&gt;response-&gt;set_header(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;);</span>
+<span class="lineno">7 </span><span class="x">}</span>
+</code></pre></div>
 
 <p>こんな感じ。<br />
 どうやら、XHR ではプリフライトリクエストってやつを送るらしくて、その時にアクセスが許可されていないから API からデータを持ってきていなかったらしい。(現時点の Chrome では送ってなかった)<br />

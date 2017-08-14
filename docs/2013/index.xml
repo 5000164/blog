@@ -122,7 +122,7 @@ CSSでも同じことができないかなと思って調べました。
 擬似的に実現 CSSにはblurというプロパティがあるのですが、このblurはコンテンツ全体にぼかしをかけます。
 重なったレイヤーの透過した部分にだけぼかしをかける、といったことはできません。
 なので、このblurをうまく使って一部だけのぼかしを擬似的に実現します。
-デモ See the Pen スクロールして重なった部分だけぼかし by SUGAWARA Hiroshi (@5000164) on CodePen   &amp;lt;p&amp;gt; このデモは-webkit-のベンダープレフィックスがついているのであしからず。 &amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt; 実装方法 &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; まず、HTMLで同じ内容のコンテンツを2つ用意します。&amp;lt;br /&amp;gt; 次に、CSSで2つのコンテンツがきれいにくっつくように指定します。&amp;lt;br /&amp;gt; ポイントはoverflow-x: hidden;とoverflow-y: scroll;です。&amp;lt;br /&amp;gt; そうしたら、同じ内容のコンテンツの片方にblurをかけます。&amp;lt;br /&amp;gt; その次は、2つのコンテンツの表示位置を同じ高さに合わせます。&amp;lt;br /&amp;gt; ここではbeforeの擬似要素を使って高さを合わせています。&amp;lt;br /&amp;gt; 最後に、JavaScriptでスクロールを同期すれば完了です。 &amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt; まとめ &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; スクロールの制御もJavaScriptでやってしまうと相性がいいのかも知れないと思いました。&amp;lt;br /&amp;gt; とりあえず、半透明のレイヤーの透過した部分にだけぼかしをかけるというCSSのプロパティが欲しいです。 &amp;lt;/p&amp;gt;  </description>
+デモ See the Pen スクロールして重なった部分だけぼかし by SUGAWARA Hiroshi (@5000164) on CodePen   1 &amp;lt;p&amp;gt; 2  このデモは-webkit-のベンダープレフィックスがついているのであしからず。 3 &amp;lt;/p&amp;gt; 4  5 &amp;lt;h1&amp;gt; 6  実装方法 7 &amp;lt;/h1&amp;gt; 8  9 &amp;lt;p&amp;gt; 10  まず、HTMLで同じ内容のコンテンツを2つ用意します。&amp;lt;br /&amp;gt; 次に、CSSで2つのコンテンツがきれいにくっつくように指定します。&amp;lt;br /&amp;gt; ポイントはoverflow-x: hidden;とoverflow-y: scroll;です。&amp;lt;br /&amp;gt; そうしたら、同じ内容のコンテンツの片方にblurをかけます。&amp;lt;br /&amp;gt; その次は、2つのコンテンツの表示位置を同じ高さに合わせます。&amp;lt;br /&amp;gt; ここではbeforeの擬似要素を使って高さを合わせています。&amp;lt;br /&amp;gt; 最後に、JavaScriptでスクロールを同期すれば完了です。 11 &amp;lt;/p&amp;gt; 12  13 &amp;lt;h1&amp;gt; 14  まとめ 15 &amp;lt;/h1&amp;gt; 16  17 &amp;lt;p&amp;gt; 18  スクロールの制御もJavaScriptでやってしまうと相性がいいのかも知れないと思いました。&amp;lt;br /&amp;gt; とりあえず、半透明のレイヤーの透過した部分にだけぼかしをかけるというCSSのプロパティが欲しいです。 19 &amp;lt;/p&amp;gt;  </description>
     </item>
     
     <item>
@@ -183,11 +183,9 @@ Webは情報発信という面で長けています。
       <pubDate>Sun, 01 Dec 2013 04:40:56 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-12-fluid/</guid>
-      <description>  デモ 文章では説明しづらいので、なんだかよくわからないタイトルになってしまいました。
+      <description>デモ 文章では説明しづらいので、なんだかよくわからないタイトルになってしまいました。
 まずは実際に見てもらった方が早いと思います。
-See the Pen qxgIF by SUGAWARA Hiroshi (@5000164) on CodePen   &amp;lt;p&amp;gt; ここではデモのために、ウィンドウの幅ではなくdivの幅を変更するようにしています。&amp;lt;br /&amp;gt; divの幅を変更してみると、左側のテーブルの幅は変わらずに右側の文章の幅だけが変わっているのが確認できます。 &amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt; 実装方法 &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; cssはこのようになっています。（関係のないプロパティは省略しています。） &amp;lt;/p&amp;gt; &amp;lt;pre class=&amp;quot;brush: css; title: ; notranslate&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;  div { position: relative; } table { position: absolute; top: 0; left: 0; width: 250px; } p { margin: 0 0 0 250px;
-} 
-&amp;lt;p&amp;gt; 非常に簡単です。&amp;lt;br /&amp;gt; まず、tableをposition: absolute;で固定することを考えます。&amp;lt;br /&amp;gt; そのために親要素にposition: relative;を指定します。&amp;lt;br /&amp;gt; これでtableの位置が固定されるので、あとは右側のコンテンツにmarginを指定してtableと重ならないようにします。&amp;lt;br /&amp;gt; これだけです。 &amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt; 複雑に考える必要はなかった &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; 最初に右側のコンテンツだけウィンドウサイズに応じて幅を変更させようとした時は、もっと複雑に考えていました。&amp;lt;br /&amp;gt; 左側のコンテンツにmin-widthを指定して、左右のコンテンツにwidthでそれぞれ%を指定しようとしたのですが、これは%で指定すると幅が大きく変わった時にレイアウトが崩れるので断念。&amp;lt;br /&amp;gt; 次はJavaScriptでウィンドウサイズのイベントを取得して動的にwidthを変更するしかないかと思ったのですが、なるべくシンプルにいってJavaScriptは使いたくなかったので保留。&amp;lt;br /&amp;gt; 他にいい方法がないかと考えていた時にこの方法を思いつきました。&amp;lt;br /&amp;gt; 試しに実装してみたら期待通りの動きをしてくれたのでこの方法に決定。&amp;lt;br /&amp;gt; シンプルに書けるのはいいものです。 &amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt; まとめ &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; この方法は応用が利きそうです。 &amp;lt;/p&amp;gt;  </description>
+See the Pen qxgIF by SUGAWARA Hiroshi (@5000164) on CodePen   1 &amp;lt;p&amp;gt; 2  ここではデモのために、ウィンドウの幅ではなくdivの幅を変更するようにしています。&amp;lt;br /&amp;gt; divの幅を変更してみると、左側のテーブルの幅は変わらずに右側の文章の幅だけが変わっているのが確認できます。 3 &amp;lt;/p&amp;gt; 4  5 &amp;lt;h1&amp;gt; 6  実装方法 7 &amp;lt;/h1&amp;gt; 8  9 &amp;lt;p&amp;gt; 10  cssはこのようになっています。（関係のないプロパティは省略しています。） 11 &amp;lt;/p&amp;gt; 12  13 &amp;lt;pre class=&amp;quot;brush: css; title: ; notranslate&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;  div { position: relative; } table { position: absolute; top: 0; left: 0; width: 250px; } p { margin: 0 0 0 250px;</description>
     </item>
     
     <item>

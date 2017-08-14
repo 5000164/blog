@@ -5,6 +5,7 @@
     <title>コンテンツを横に2つ並べた時に片方だけコンテンツ幅がウィンドウ幅に追従するようにする | 5000164 is here</title>
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/monokai.css">
     <meta name="generator" content="Hugo 0.26" />
 </head>
 <body>
@@ -39,21 +40,20 @@
   <p>
     </div> 
     
-
-<pre><code>&lt;p&gt;
-  ここではデモのために、ウィンドウの幅ではなくdivの幅を変更するようにしています。&lt;br /&gt; divの幅を変更してみると、左側のテーブルの幅は変わらずに右側の文章の幅だけが変わっているのが確認できます。
-&lt;/p&gt;
-
-&lt;h1&gt;
-  実装方法
-&lt;/h1&gt;
-
-&lt;p&gt;
-  cssはこのようになっています。（関係のないプロパティは省略しています。）
-&lt;/p&gt;
-
-&lt;pre class=&quot;brush: css; title: ; notranslate&quot; title=&quot;&quot;&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="nt">&lt;p&gt;</span>
+<span class="lineno"> 2 </span>  ここではデモのために、ウィンドウの幅ではなくdivの幅を変更するようにしています。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> divの幅を変更してみると、左側のテーブルの幅は変わらずに右側の文章の幅だけが変わっているのが確認できます。
+<span class="lineno"> 3 </span><span class="nt">&lt;/p&gt;</span>
+<span class="lineno"> 4 </span>
+<span class="lineno"> 5 </span><span class="nt">&lt;h1&gt;</span>
+<span class="lineno"> 6 </span>  実装方法
+<span class="lineno"> 7 </span><span class="nt">&lt;/h1&gt;</span>
+<span class="lineno"> 8 </span>
+<span class="lineno"> 9 </span><span class="nt">&lt;p&gt;</span>
+<span class="lineno">10 </span>  cssはこのようになっています。（関係のないプロパティは省略しています。）
+<span class="lineno">11 </span><span class="nt">&lt;/p&gt;</span>
+<span class="lineno">12 </span>
+<span class="lineno">13 </span><span class="nt">&lt;pre</span> <span class="na">class=</span><span class="s">&quot;brush: css; title: ; notranslate&quot;</span> <span class="na">title=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
+</pre></div>
 
 <p>div {
   position: relative;
@@ -68,27 +68,26 @@ p {
   margin: 0 0 0 250px;<br />
 }
 </pre></p>
-
-<pre><code>&lt;p&gt;
-  非常に簡単です。&lt;br /&gt; まず、tableをposition: absolute;で固定することを考えます。&lt;br /&gt; そのために親要素にposition: relative;を指定します。&lt;br /&gt; これでtableの位置が固定されるので、あとは右側のコンテンツにmarginを指定してtableと重ならないようにします。&lt;br /&gt; これだけです。
-&lt;/p&gt;
-
-&lt;h1&gt;
-  複雑に考える必要はなかった
-&lt;/h1&gt;
-
-&lt;p&gt;
-  最初に右側のコンテンツだけウィンドウサイズに応じて幅を変更させようとした時は、もっと複雑に考えていました。&lt;br /&gt; 左側のコンテンツにmin-widthを指定して、左右のコンテンツにwidthでそれぞれ%を指定しようとしたのですが、これは%で指定すると幅が大きく変わった時にレイアウトが崩れるので断念。&lt;br /&gt; 次はJavaScriptでウィンドウサイズのイベントを取得して動的にwidthを変更するしかないかと思ったのですが、なるべくシンプルにいってJavaScriptは使いたくなかったので保留。&lt;br /&gt; 他にいい方法がないかと考えていた時にこの方法を思いつきました。&lt;br /&gt; 試しに実装してみたら期待通りの動きをしてくれたのでこの方法に決定。&lt;br /&gt; シンプルに書けるのはいいものです。
-&lt;/p&gt;
-
-&lt;h1&gt;
-  まとめ
-&lt;/h1&gt;
-
-&lt;p&gt;
-  この方法は応用が利きそうです。
-&lt;/p&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="nt">&lt;p&gt;</span>
+<span class="lineno"> 2 </span>  非常に簡単です。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> まず、tableをposition: absolute;で固定することを考えます。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> そのために親要素にposition: relative;を指定します。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> これでtableの位置が固定されるので、あとは右側のコンテンツにmarginを指定してtableと重ならないようにします。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> これだけです。
+<span class="lineno"> 3 </span><span class="nt">&lt;/p&gt;</span>
+<span class="lineno"> 4 </span>
+<span class="lineno"> 5 </span><span class="nt">&lt;h1&gt;</span>
+<span class="lineno"> 6 </span>  複雑に考える必要はなかった
+<span class="lineno"> 7 </span><span class="nt">&lt;/h1&gt;</span>
+<span class="lineno"> 8 </span>
+<span class="lineno"> 9 </span><span class="nt">&lt;p&gt;</span>
+<span class="lineno">10 </span>  最初に右側のコンテンツだけウィンドウサイズに応じて幅を変更させようとした時は、もっと複雑に考えていました。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> 左側のコンテンツにmin-widthを指定して、左右のコンテンツにwidthでそれぞれ%を指定しようとしたのですが、これは%で指定すると幅が大きく変わった時にレイアウトが崩れるので断念。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> 次はJavaScriptでウィンドウサイズのイベントを取得して動的にwidthを変更するしかないかと思ったのですが、なるべくシンプルにいってJavaScriptは使いたくなかったので保留。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> 他にいい方法がないかと考えていた時にこの方法を思いつきました。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> 試しに実装してみたら期待通りの動きをしてくれたのでこの方法に決定。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> シンプルに書けるのはいいものです。
+<span class="lineno">11 </span><span class="nt">&lt;/p&gt;</span>
+<span class="lineno">12 </span>
+<span class="lineno">13 </span><span class="nt">&lt;h1&gt;</span>
+<span class="lineno">14 </span>  まとめ
+<span class="lineno">15 </span><span class="nt">&lt;/h1&gt;</span>
+<span class="lineno">16 </span>
+<span class="lineno">17 </span><span class="nt">&lt;p&gt;</span>
+<span class="lineno">18 </span>  この方法は応用が利きそうです。
+<span class="lineno">19 </span><span class="nt">&lt;/p&gt;</span>
+</pre></div>
 
 </article>
 <footer>

@@ -5,6 +5,7 @@
     <title>PHP の二次元配列から同じキーの値だけで新しい配列を生成する | 5000164 is here</title>
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/monokai.css">
     <meta name="generator" content="Hugo 0.26" />
 </head>
 <body>
@@ -23,78 +24,74 @@
 <a href="http://php.net/manual/ja/function.array-column.php">PHP: array_column - Manual</a></p>
 
 <h1 id="同じキーの値だけで新しい配列を作るサンプル">同じキーの値だけで新しい配列を作るサンプル</h1>
-
-<pre><code class="language-php">&lt;?php
-$data = [
-    [
-        'id' =&gt; 1,
-        'name' =&gt; 'aaa',
-    ],
-    [
-        'id' =&gt; 2,
-        'name' =&gt; 'bbb',
-    ],
-];
-
-$id_list = array_column($data, 'id');
-$name_list = array_column($data, 'name');
-
-var_dump($id_list);
-// array(2) {
-//   [0]=&gt;
-//   int(1)
-//   [1]=&gt;
-//   int(2)
-// }
-
-var_dump($name_list);
-// array(2) {
-//   [0]=&gt;
-//   string(3) &quot;aaa&quot;
-//   [1]=&gt;
-//   string(3) &quot;bbb&quot;
-// }
-
-</code></pre>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span></span><span class="lineno"> 1 </span><span class="cp">&lt;?php</span>
+<span class="lineno"> 2 </span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+<span class="lineno"> 3 </span>    <span class="p">[</span>
+<span class="lineno"> 4 </span>        <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+<span class="lineno"> 5 </span>        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;aaa&#39;</span><span class="p">,</span>
+<span class="lineno"> 6 </span>    <span class="p">],</span>
+<span class="lineno"> 7 </span>    <span class="p">[</span>
+<span class="lineno"> 8 </span>        <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
+<span class="lineno"> 9 </span>        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;bbb&#39;</span><span class="p">,</span>
+<span class="lineno">10 </span>    <span class="p">],</span>
+<span class="lineno">11 </span><span class="p">];</span>
+<span class="lineno">12 </span>
+<span class="lineno">13 </span><span class="nv">$id_list</span> <span class="o">=</span> <span class="nb">array_column</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">);</span>
+<span class="lineno">14 </span><span class="nv">$name_list</span> <span class="o">=</span> <span class="nb">array_column</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">);</span>
+<span class="lineno">15 </span>
+<span class="lineno">16 </span><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$id_list</span><span class="p">);</span>
+<span class="lineno">17 </span><span class="c1">// array(2) {</span>
+<span class="lineno">18 </span><span class="c1">//   [0]=&gt;</span>
+<span class="lineno">19 </span><span class="c1">//   int(1)</span>
+<span class="lineno">20 </span><span class="c1">//   [1]=&gt;</span>
+<span class="lineno">21 </span><span class="c1">//   int(2)</span>
+<span class="lineno">22 </span><span class="c1">// }</span>
+<span class="lineno">23 </span>
+<span class="lineno">24 </span><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$name_list</span><span class="p">);</span>
+<span class="lineno">25 </span><span class="c1">// array(2) {</span>
+<span class="lineno">26 </span><span class="c1">//   [0]=&gt;</span>
+<span class="lineno">27 </span><span class="c1">//   string(3) &quot;aaa&quot;</span>
+<span class="lineno">28 </span><span class="c1">//   [1]=&gt;</span>
+<span class="lineno">29 </span><span class="c1">//   string(3) &quot;bbb&quot;</span>
+<span class="lineno">30 </span><span class="c1">// }</span>
+</code></pre></div>
 
 <h1 id="二次元配列の縦横を入れ替える-転置行列を得る-サンプル">二次元配列の縦横を入れ替える (転置行列を得る) サンプル</h1>
-
-<pre><code class="language-php">&lt;?php
-$data = [
-    [
-        'id' =&gt; 1,
-        'name' =&gt; 'aaa',
-    ],
-    [
-        'id' =&gt; 2,
-        'name' =&gt; 'bbb',
-    ],
-];
-
-$transposed_matrix = [];
-foreach ($data[0] as $key =&gt; $value) {
-    $transposed_matrix[$key] = array_column($data, $key);
-}
-
-var_dump($transposed_matrix);
-// array(2) {
-//     [&quot;id&quot;]=&gt;
-//   array(2) {
-//         [0]=&gt;
-//     int(1)
-//     [1]=&gt;
-//     int(2)
-//   }
-//   [&quot;name&quot;]=&gt;
-//   array(2) {
-//         [0]=&gt;
-//     string(3) &quot;aaa&quot;
-//     [1]=&gt;
-//     string(3) &quot;bbb&quot;
-//   }
-// }
-
-</code></pre>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span></span><span class="lineno"> 1 </span><span class="cp">&lt;?php</span>
+<span class="lineno"> 2 </span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+<span class="lineno"> 3 </span>    <span class="p">[</span>
+<span class="lineno"> 4 </span>        <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+<span class="lineno"> 5 </span>        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;aaa&#39;</span><span class="p">,</span>
+<span class="lineno"> 6 </span>    <span class="p">],</span>
+<span class="lineno"> 7 </span>    <span class="p">[</span>
+<span class="lineno"> 8 </span>        <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
+<span class="lineno"> 9 </span>        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;bbb&#39;</span><span class="p">,</span>
+<span class="lineno">10 </span>    <span class="p">],</span>
+<span class="lineno">11 </span><span class="p">];</span>
+<span class="lineno">12 </span>
+<span class="lineno">13 </span><span class="nv">$transposed_matrix</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="lineno">14 </span><span class="k">foreach</span> <span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">15 </span>    <span class="nv">$transposed_matrix</span><span class="p">[</span><span class="nv">$key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">array_column</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nv">$key</span><span class="p">);</span>
+<span class="lineno">16 </span><span class="p">}</span>
+<span class="lineno">17 </span>
+<span class="lineno">18 </span><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$transposed_matrix</span><span class="p">);</span>
+<span class="lineno">19 </span><span class="c1">// array(2) {</span>
+<span class="lineno">20 </span><span class="c1">//     [&quot;id&quot;]=&gt;</span>
+<span class="lineno">21 </span><span class="c1">//   array(2) {</span>
+<span class="lineno">22 </span><span class="c1">//         [0]=&gt;</span>
+<span class="lineno">23 </span><span class="c1">//     int(1)</span>
+<span class="lineno">24 </span><span class="c1">//     [1]=&gt;</span>
+<span class="lineno">25 </span><span class="c1">//     int(2)</span>
+<span class="lineno">26 </span><span class="c1">//   }</span>
+<span class="lineno">27 </span><span class="c1">//   [&quot;name&quot;]=&gt;</span>
+<span class="lineno">28 </span><span class="c1">//   array(2) {</span>
+<span class="lineno">29 </span><span class="c1">//         [0]=&gt;</span>
+<span class="lineno">30 </span><span class="c1">//     string(3) &quot;aaa&quot;</span>
+<span class="lineno">31 </span><span class="c1">//     [1]=&gt;</span>
+<span class="lineno">32 </span><span class="c1">//     string(3) &quot;bbb&quot;</span>
+<span class="lineno">33 </span><span class="c1">//   }</span>
+<span class="lineno">34 </span><span class="c1">// }</span>
+</code></pre></div>
 
 <h1 id="参考">参考</h1>
 
