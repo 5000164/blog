@@ -6,10 +6,28 @@
     <description>Recent content on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 13 Aug 2017 05:17:55 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 14 Aug 2017 22:44:23 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo でシンタックスハイライトを使う</title>
+      <link>http://blog.5000164.jp/2017-08-syntax_highlighting/</link>
+      <pubDate>Mon, 14 Aug 2017 22:44:23 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2017-08-syntax_highlighting/</guid>
+      <description>結論  シンタックスハイライト用の css をテーマで読み込んでおく config.toml に下記の設定を追加  1 pygmentscodefences = true 2 pygmentsCodeFencesGuessSyntax = true 3 pygmentsStyle = &amp;quot;monokai&amp;quot; 4 pygmentsUseClasses = true 5 pygmentsoptions = &amp;quot;linenos=inline&amp;quot;  背景 コードを見やすくしたいからシンタックスハイライトを使おうと思った。
+やってみたら思ったよりもできなかった。
+なんか疲れたのでメモ。
+手順 Pygments をインストールする シンタックスハイライトするのに必要なやつ。
+何も考えずに入れる。
+1 sudo easy_install Pygments  シンタックスハイライト用の css を生成する カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。
+クラスで指定する場合は css を事前に生成しておいて読むこんでおく必要がある。
+下記のコマンドで css を生成する。
+デフォルトで用意されていないカラースキーマの使い方がわからなかったので今回は monokai を使う。
+1 pygmentize -f html -S monokai -a .highlight &amp;gt; monokai.css  生成した css をテーマで読み込む テーマの static ディレクトリに css を置いて header で読み込む。</description>
+    </item>
     
     <item>
       <title>Jekyll の記事と WordPress の記事を Hugo にインポートする</title>
