@@ -6,10 +6,21 @@
     <description>Recent content on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 14 Aug 2017 23:04:38 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 10 Sep 2017 23:10:48 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ケーブルをまとめるために買ったチューブが便利</title>
+      <link>http://blog.5000164.jp/2017-09-cable/</link>
+      <pubDate>Sun, 10 Sep 2017 23:10:48 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2017-09-cable/</guid>
+      <description>ケーブルをまとめるチューブが便利 ケーブルをまとめるチューブを買った。
+ケーブルをまとめられて便利。
+Amazon | ELECOM ゴチャゴチャなケーブルを整理するチューブ 内径20mm 長さ5.0m ブラック BST-20BK | ELECOM(エレコム) | パソコン・周辺機器 通販</description>
+    </item>
     
     <item>
       <title>AWS Lambda の Python 3.6 で LINE Bot を動かす</title>
