@@ -11,4 +11,4 @@ url = "2017-09-cable"
 ケーブルをまとめるチューブを買った。  
 ケーブルをまとめられて便利。
 
-[Amazon | ELECOM ゴチャゴチャなケーブルを整理するチューブ 内径20mm 長さ5.0m ブラック BST-20BK | ELECOM(エレコム) | パソコン・周辺機器 通販](http://amzn.to/2xYD2zJ)
+[Amazon | ELECOM ゴチャゴチャなケーブルを整理するチューブ 内径20mm 長さ5.0m ブラック BST-20BK | ELECOM(エレコム) | パソコン・周辺機器 通販](https://www.amazon.co.jp/dp/B0000CE5D8)
