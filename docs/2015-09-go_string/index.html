@@ -25,16 +25,21 @@
 
 <p>go では &ldquo; (ダブルコーテーション) で文字列を表します。<br />
 文字列の中にダブルコーテーションを入れるには \ (バックスラッシュ) でエスケープすればよかった。</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="ln">1</span><span class="s7df">test</span><span class="s1f40"> </span><span class="sfa0">:=</span><span class="s1f40"> </span><span class="sc1c">&#34;test\&#34;test&#34;</span></code></pre>
-</div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-go" data-lang="go">1</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-go" data-lang="go"><span></span><span class="nx">test</span> <span class="o">:=</span> <span class="s">&quot;test\&quot;test&quot;</span>
+</code></pre></div>
+</td></tr></table>
 <p>改行を入れるには \n で入れられる。</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="ln">1</span><span class="s7df">newline</span><span class="s1f40"> </span><span class="sfa0">:=</span><span class="s1f40"> </span><span class="sc1c">&#34;a\nb\nc&#34;</span></code></pre>
-</div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-go" data-lang="go">1</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-go" data-lang="go"><span></span><span class="nx">newline</span> <span class="o">:=</span> <span class="s">&quot;a\nb\nc&quot;</span>
+</code></pre></div>
+</td></tr></table>
 <p>また、` (バッククオート) を使用することでヒアドキュメントのように書けた。</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="ln">1</span><span class="s7df">here</span><span class="s1f40"> </span><span class="sfa0">:=</span><span class="s1f40"> </span><span class="sc1c">`like
-</span><span class="ln">2</span><span class="sc1c">a
-</span><span class="ln">3</span><span class="sc1c">here document`</span></code></pre>
-</div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-go" data-lang="go">1
+2
+3</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-go" data-lang="go"><span></span><span class="nx">here</span> <span class="o">:=</span> <span class="s">`like</span>
+<span class="s">a</span>
+<span class="s">here document`</span>
+</code></pre></div>
+</td></tr></table>
 <h1 id="参考">参考</h1>
 
 <ul>

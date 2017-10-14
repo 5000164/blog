@@ -85,16 +85,16 @@ LINE Messaging APIを使用したLINE Botの作り方 - george’s ぶろぐ</de
       <pubDate>Mon, 14 Aug 2017 22:44:23 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-08-syntax_highlighting/</guid>
-      <description>結論  シンタックスハイライト用の css をテーマで読み込んでおく config.toml に下記の設定を追加  1pygmentscodefences = true 2pygmentsCodeFencesGuessSyntax = true 3pygmentsStyle = &amp;#34;monokai&amp;#34; 4pygmentsUseClasses = true 5pygmentsoptions = &amp;#34;linenos=inline&amp;#34;  背景 コードを見やすくしたいからシンタックスハイライトを使おうと思った。
+      <description>結論  シンタックスハイライト用の css をテーマで読み込んでおく config.toml に下記の設定を追加  1 2 3 4 5pygmentscodefences = true pygmentsCodeFencesGuessSyntax = true pygmentsStyle = &amp;quot;monokai&amp;quot; pygmentsUseClasses = true pygmentsoptions = &amp;quot;linenos=inline&amp;quot;   背景 コードを見やすくしたいからシンタックスハイライトを使おうと思った。
 やってみたら思ったよりもできなかった。
 なんか疲れたのでメモ。
 手順 Pygments をインストールする シンタックスハイライトするのに必要なやつ。
 何も考えずに入れる。
-1sudo easy_install Pygments  シンタックスハイライト用の css を生成する カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。
+1sudo easy_install Pygments   シンタックスハイライト用の css を生成する カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。
 クラスで指定する場合は css を事前に生成しておいて読むこんでおく必要がある。
 下記のコマンドで css を生成する。
 デフォルトで用意されていないカラースキーマの使い方がわからなかったので今回は monokai を使う。
-1pygmentize -f html -S monokai -a .highlight &amp;gt; monokai.css  生成した css をテーマで読み込む テーマの static ディレクトリに css を置いて header で読み込む。</description>
+1pygmentize -f html -S monokai -a .highlight &amp;gt; monokai.css   生成した css をテーマで読み込む テーマの static ディレクトリに css を置いて header で読み込む。</description>
     </item>
     
     <item>
@@ -108,10 +108,9 @@ Hugo に移行することにしたから Jekyll の記事と WordPress の記�
 つらい。
 Hugo に合わせた最終的な形式 こんな感じに統一することを目指す。
 記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。
-1+++2title = &amp;#34;Jekyll の記事と WordPress の記事を Hugo にインポートする&amp;#34;3date = 2017-08-13T04:26:50+09:004url = &amp;#34;2017-08-import&amp;#34;5+++67##記事内容 89つらつら  手順 実際に行ったインポート作業の内容はこちら。
+1 2 3 4 5 6 7 8 9+++ title = &amp;quot;Jekyll の記事と WordPress の記事を Hugo にインポートする&amp;quot; date = 2017-08-13T04:26:50+09:00 url = &amp;quot;2017-08-import&amp;quot; +++ ## 記事内容 つらつら   手順 実際に行ったインポート作業の内容はこちら。
 Feature import article by 5000164 · Pull Request #2 · 5000164/blog
-WordPress の記事を Markdown 形式に変換する 最初は Jekyll に移行しようと思ってたのでこれを使いました。
-benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll</description>
+WordPress の記事を Markdown 形式に変換する 最初は Jekyll に移行しようと思ってたのでこれを使いました。</description>
     </item>
     
     <item>

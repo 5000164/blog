@@ -85,9 +85,11 @@
 
 <p>この段階でのコードは下記。<br />
 これでブラウザでアクセスすることで <code>Hello from Lambda</code> と表示される。</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="ln">1</span><span class="s3e8">def</span><span class="s1f40"> </span><span class="s7d9">lambda_handler</span><span class="s1388">(</span><span class="s7d0">event</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">context</span><span class="s1388">):</span><span class="s1f40">
-</span><span class="ln">2</span><span class="s1f40">    </span><span class="s3e8">return</span><span class="s1f40"> </span><span class="s1388">{</span><span class="sc1c"></span><span class="sc1c">&#39;statusCode&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc80">200</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;body&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;Hello from Lambda&#39;</span><span class="s1388">}</span></code></pre>
-</div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-python" data-lang="python">1
+2</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="s1">&#39;Hello from Lambda&#39;</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
 <p>「Lambda プロキシ統合の使用」のオプションを外したら最初のままのコードでも動いたが、このオプションを付けた方が楽な部分があるらしい？ので付けたままにしておく。</p>
 
 <h2 id="line-からのリクエストを受け取れるようにする">LINE からのリクエストを受け取れるようにする</h2>
@@ -117,51 +119,89 @@ KMS というやつを使った方がセキュアらしいんですがちょっ�
 
 <p>ログを残して見てみた結果、 <code>event</code> は dict で <code>event</code> が持ってる <code>body</code> の中身が JSON の文字列だということがわかりました。<br />
 なので、他のサイトでやっているように events をループで回したいってなったら以下の方法でいけることがわかった。</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="ln">1</span><span class="s3e8">for</span><span class="s1f40"> </span><span class="s7d0">event</span><span class="s1f40"> </span><span class="sfa0">in</span><span class="s1f40"> </span><span class="s7d0">json</span><span class="sfa0">.</span><span class="s7d0">loads</span><span class="s1388">(</span><span class="s7d0">event</span><span class="s1388">[</span><span class="sc1c"></span><span class="sc1c">&#39;body&#39;</span><span class="s1388">])[</span><span class="sc1c"></span><span class="sc1c">&#39;events&#39;</span><span class="s1388">]:</span><span class="s1f40">
-</span><span class="ln">2</span><span class="s1f40">    </span><span class="s1770"># なにか処理</span></code></pre>
-</div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-python" data-lang="python">1
+2</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;body&#39;</span><span class="p">])[</span><span class="s1">&#39;events&#39;</span><span class="p">]:</span>
+    <span class="c1"># なにか処理</span>
+</code></pre></div>
+</td></tr></table>
 <p>ここまで来たらあとは LINE に POST を送れば発言できる。<br />
 <a href="http://qiita.com/neko_the_shadow/items/324976c7b54623e82b26">Python3のスクリプトでjsonをPOSTする - Qiita</a></p>
 
 <p>現時点でのコードは下記のような感じ。<br />
 発言を受け取ったらただ <code>test</code> と発言するだけ。</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="ln"> 1</span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">logging</span><span class="s1f40">
-</span><span class="ln"> 2</span><span class="s1f40">
-</span><span class="ln"> 3</span><span class="s1f40"></span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">os</span><span class="s1f40">
-</span><span class="ln"> 4</span><span class="s1f40"></span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">urllib.request</span><span class="sfa0">,</span><span class="s1f40"> </span><span class="s7d0">urllib.parse</span><span class="s1f40">
-</span><span class="ln"> 5</span><span class="s1f40"></span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">json</span><span class="s1f40">
-</span><span class="ln"> 6</span><span class="s1f40">
-</span><span class="ln"> 7</span><span class="s1f40"></span><span class="s7d0">logger</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">logging</span><span class="sfa0">.</span><span class="s7d0">getLogger</span><span class="s1388">()</span><span class="s1f40">
-</span><span class="ln"> 8</span><span class="s1f40"></span><span class="s7d0">logger</span><span class="sfa0">.</span><span class="s7d0">setLevel</span><span class="s1388">(</span><span class="s7d0">logging</span><span class="sfa0">.</span><span class="s7d0">INFO</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="ln"> 9</span><span class="s1f40">
-</span><span class="ln">10</span><span class="s1f40"></span><span class="s3e8">def</span><span class="s1f40"> </span><span class="s7d9">lambda_handler</span><span class="s1388">(</span><span class="s7d0">request</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">context</span><span class="s1388">):</span><span class="s1f40">
-</span><span class="ln">11</span><span class="s1f40">    
-</span><span class="ln">12</span><span class="s1f40">    </span><span class="s7d0">logger</span><span class="sfa0">.</span><span class="s7d0">info</span><span class="s1388">(</span><span class="s7d0">request</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="ln">13</span><span class="s1f40">    
-</span><span class="ln">14</span><span class="s1f40">    </span><span class="s3e8">for</span><span class="s1f40"> </span><span class="s7d0">event</span><span class="s1f40"> </span><span class="sfa0">in</span><span class="s1f40"> </span><span class="s7d0">json</span><span class="sfa0">.</span><span class="s7d0">loads</span><span class="s1388">(</span><span class="s7d0">request</span><span class="s1388">[</span><span class="sc1c"></span><span class="sc1c">&#39;body&#39;</span><span class="s1388">])[</span><span class="sc1c"></span><span class="sc1c">&#39;events&#39;</span><span class="s1388">]:</span><span class="s1f40">
-</span><span class="ln">15</span><span class="s1f40">        </span><span class="s7d0">logger</span><span class="sfa0">.</span><span class="s7d0">info</span><span class="s1388">(</span><span class="s7d0">json</span><span class="sfa0">.</span><span class="s7d0">dumps</span><span class="s1388">(</span><span class="s7d0">event</span><span class="s1388">))</span><span class="s1f40">
-</span><span class="ln">16</span><span class="s1f40">        
-</span><span class="ln">17</span><span class="s1f40">        </span><span class="s7d0">url</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;https://api.line.me/v2/bot/message/reply&#39;</span><span class="s1f40">
-</span><span class="ln">18</span><span class="s1f40">        </span><span class="s7d0">headers</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s1f40">
-</span><span class="ln">19</span><span class="s1f40">            </span><span class="sc1c"></span><span class="sc1c">&#39;Content-Type&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;application/json&#39;</span><span class="s1388">,</span><span class="s1f40">
-</span><span class="ln">20</span><span class="s1f40">            </span><span class="sc1c"></span><span class="sc1c">&#39;Authorization&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;Bearer &#39;</span><span class="s1f40"> </span><span class="sfa0">+</span><span class="s1f40"> </span><span class="s7d0">os</span><span class="sfa0">.</span><span class="s7d0">environ</span><span class="s1388">[</span><span class="sc1c"></span><span class="sc1c">&#39;LINE_CHANNEL_ACCESS_TOKEN&#39;</span><span class="s1388">]</span><span class="s1f40">
-</span><span class="ln">21</span><span class="s1f40">        </span><span class="s1388">}</span><span class="s1f40">
-</span><span class="ln">22</span><span class="s1f40">        </span><span class="s7d0">body</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s1f40">
-</span><span class="ln">23</span><span class="s1f40">            </span><span class="sc1c"></span><span class="sc1c">&#39;replyToken&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="s7d0">event</span><span class="s1388">[</span><span class="sc1c"></span><span class="sc1c">&#39;replyToken&#39;</span><span class="s1388">],</span><span class="s1f40">
-</span><span class="ln">24</span><span class="s1f40">            </span><span class="sc1c"></span><span class="sc1c">&#39;messages&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="s1388">[</span><span class="s1f40">
-</span><span class="ln">25</span><span class="s1f40">                </span><span class="s1388">{</span><span class="s1f40">
-</span><span class="ln">26</span><span class="s1f40">                    </span><span class="sc1c"></span><span class="sc1c">&#34;type&#34;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#34;text&#34;</span><span class="s1388">,</span><span class="s1f40">
-</span><span class="ln">27</span><span class="s1f40">                    </span><span class="sc1c"></span><span class="sc1c">&#34;text&#34;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#34;test&#34;</span><span class="s1388">,</span><span class="s1f40">
-</span><span class="ln">28</span><span class="s1f40">                </span><span class="s1388">}</span><span class="s1f40">
-</span><span class="ln">29</span><span class="s1f40">            </span><span class="s1388">]</span><span class="s1f40">
-</span><span class="ln">30</span><span class="s1f40">        </span><span class="s1388">}</span><span class="s1f40">
-</span><span class="ln">31</span><span class="s1f40">        
-</span><span class="ln">32</span><span class="s1f40">        </span><span class="s7d0">req</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">urllib</span><span class="sfa0">.</span><span class="s7d0">request</span><span class="sfa0">.</span><span class="s7d0">Request</span><span class="s1388">(</span><span class="s7d0">url</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">data</span><span class="sfa0">=</span><span class="s7d0">json</span><span class="sfa0">.</span><span class="s7d0">dumps</span><span class="s1388">(</span><span class="s7d0">body</span><span class="s1388">)</span><span class="sfa0">.</span><span class="s7d0">encode</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;utf-8&#39;</span><span class="s1388">),</span><span class="s1f40"> </span><span class="s7d0">method</span><span class="sfa0">=</span><span class="sc1c"></span><span class="sc1c">&#39;POST&#39;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">headers</span><span class="sfa0">=</span><span class="s7d0">headers</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="ln">33</span><span class="s1f40">        </span><span class="s3e8">with</span><span class="s1f40"> </span><span class="s7d0">urllib</span><span class="sfa0">.</span><span class="s7d0">request</span><span class="sfa0">.</span><span class="s7d0">urlopen</span><span class="s1388">(</span><span class="s7d0">req</span><span class="s1388">)</span><span class="s1f40"> </span><span class="s3e8">as</span><span class="s1f40"> </span><span class="s7d0">res</span><span class="s1388">:</span><span class="s1f40">
-</span><span class="ln">34</span><span class="s1f40">            </span><span class="s7d0">logger</span><span class="sfa0">.</span><span class="s7d0">info</span><span class="s1388">(</span><span class="s7d0">res</span><span class="sfa0">.</span><span class="s7d0">read</span><span class="s1388">()</span><span class="sfa0">.</span><span class="s7d0">decode</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#34;utf-8&#34;</span><span class="s1388">))</span><span class="s1f40">
-</span><span class="ln">35</span><span class="s1f40">    
-</span><span class="ln">36</span><span class="s1f40">    </span><span class="s3e8">return</span><span class="s1f40"> </span><span class="s1388">{</span><span class="sc1c"></span><span class="sc1c">&#39;statusCode&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc80">200</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;body&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;{}&#39;</span><span class="s1388">}</span></code></pre>
-</div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-python" data-lang="python"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span> <span class="nn">urllib.parse</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">request</span><span class="p">[</span><span class="s1">&#39;body&#39;</span><span class="p">])[</span><span class="s1">&#39;events&#39;</span><span class="p">]:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">event</span><span class="p">))</span>
+        
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.line.me/v2/bot/message/reply&#39;</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;LINE_CHANNEL_ACCESS_TOKEN&#39;</span><span class="p">]</span>
+        <span class="p">}</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;replyToken&#39;</span><span class="p">:</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;replyToken&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;messages&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+        
+        <span class="n">req</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">body</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span> <span class="k">as</span> <span class="n">res</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="s1">&#39;{}&#39;</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
 <p><code>def lambda_handler(request, context):</code> の部分は <code>event</code> っていう変数名が使いたかったので第一引数の変数名を <code>request</code> に変更。<br />
 これの <code>&quot;text&quot;: &quot;test&quot;,</code> の部分を <code>&quot;text&quot;: event['message']['text'],</code> と変えるとオウム返しを行うことができる。<br />
 <code>logger.info(json.dumps(event))</code> みたいな感じで JSON 文字列としてログに残しておくと CloudWatch が勝手にログを整形して表示してくれるので便利。</p>
@@ -170,16 +210,20 @@ KMS というやつを使った方がセキュアらしいんですがちょっ�
 
 <p>ここまできたらあとは作れば動くという感じなので簡単。<br />
 <code>event['message']['text']</code> が発言内容を持っているのでループの最初で下記のように特定の発言以外を弾くようにしてあげればいい。</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="ln">1</span><span class="s3e8">if</span><span class="s1f40"> </span><span class="s7d0">event</span><span class="s1388">[</span><span class="sc1c"></span><span class="sc1c">&#39;message&#39;</span><span class="s1388">][</span><span class="sc1c"></span><span class="sc1c">&#39;text&#39;</span><span class="s1388">]</span><span class="s1f40"> </span><span class="sfa0">!=</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;memo&#39;</span><span class="s1388">:</span><span class="s1f40">
-</span><span class="ln">2</span><span class="s1f40">    </span><span class="s3e8">continue</span></code></pre>
-</div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-python" data-lang="python">1
+2</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;memo&#39;</span><span class="p">:</span>
+    <span class="k">continue</span>
+</code></pre></div>
+</td></tr></table>
 <h2 id="特定の発言者にだけ反応するようにする">特定の発言者にだけ反応するようにする</h2>
 
 <p>こちらも同じような感じ。<br />
 発言者のユーザー ID が <code>event['source']['userId']</code> で取れるので、特定のユーザー ID 以外を弾くようにする。</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="ln">1</span><span class="s3e8">if</span><span class="s1f40"> </span><span class="s7d0">event</span><span class="s1388">[</span><span class="sc1c"></span><span class="sc1c">&#39;source&#39;</span><span class="s1388">][</span><span class="sc1c"></span><span class="sc1c">&#39;userId&#39;</span><span class="s1388">]</span><span class="s1f40"> </span><span class="sfa0">!=</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;userId&#39;</span><span class="s1388">:</span><span class="s1f40">
-</span><span class="ln">2</span><span class="s1f40">    </span><span class="s3e8">continue</span></code></pre>
-</div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-python" data-lang="python">1
+2</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">][</span><span class="s1">&#39;userId&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;userId&#39;</span><span class="p">:</span>
+    <span class="k">continue</span>
+</code></pre></div>
+</td></tr></table>
 <h2 id="リクエストの検証を行う">リクエストの検証を行う</h2>
 
 <p>サーバーの公開されている API に送られたリクエストのうち、 LINE からきたリクエストだけを信用するようにする。<br />
@@ -193,68 +237,129 @@ Amazon API Gateway のテスト機能が便利だった。<br />
 <h2 id="あらかじめ用意しておいたメモを特定の発言で返してくれる-bot-の完成">あらかじめ用意しておいたメモを特定の発言で返してくれる Bot の完成</h2>
 
 <p>いろいろ調整して最終的にできあがったコードがこちら。</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="ln"> 1</span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">logging</span><span class="s1f40">
-</span><span class="ln"> 2</span><span class="s1f40">
-</span><span class="ln"> 3</span><span class="s1f40"></span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">os</span><span class="s1f40">
-</span><span class="ln"> 4</span><span class="s1f40"></span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">urllib.request</span><span class="sfa0">,</span><span class="s1f40"> </span><span class="s7d0">urllib.parse</span><span class="s1f40">
-</span><span class="ln"> 5</span><span class="s1f40"></span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">json</span><span class="s1f40">
-</span><span class="ln"> 6</span><span class="s1f40">
-</span><span class="ln"> 7</span><span class="s1f40"></span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">base64</span><span class="s1f40">
-</span><span class="ln"> 8</span><span class="s1f40"></span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">hashlib</span><span class="s1f40">
-</span><span class="ln"> 9</span><span class="s1f40"></span><span class="s3eb">import</span><span class="s1f40"> </span><span class="s7d0">hmac</span><span class="s1f40">
-</span><span class="ln">10</span><span class="s1f40">
-</span><span class="ln">11</span><span class="s1f40"></span><span class="s7d0">logger</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">logging</span><span class="sfa0">.</span><span class="s7d0">getLogger</span><span class="s1388">()</span><span class="s1f40">
-</span><span class="ln">12</span><span class="s1f40"></span><span class="s7d0">logger</span><span class="sfa0">.</span><span class="s7d0">setLevel</span><span class="s1388">(</span><span class="s7d0">logging</span><span class="sfa0">.</span><span class="s7d0">INFO</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="ln">13</span><span class="s1f40">
-</span><span class="ln">14</span><span class="s1f40"></span><span class="s3e8">def</span><span class="s1f40"> </span><span class="s7d9">lambda_handler</span><span class="s1388">(</span><span class="s7d0">request</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">context</span><span class="s1388">):</span><span class="s1f40">
-</span><span class="ln">15</span><span class="s1f40">
-</span><span class="ln">16</span><span class="s1f40">    </span><span class="s1770"># リクエストの検証を行う</span><span class="s1f40">
-</span><span class="ln">17</span><span class="s1f40">    </span><span class="s7d0">channel_secret</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">os</span><span class="sfa0">.</span><span class="s7d0">environ</span><span class="s1388">[</span><span class="sc1c"></span><span class="sc1c">&#39;LINE_CHANNEL_SECRET&#39;</span><span class="s1388">]</span><span class="s1f40">
-</span><span class="ln">18</span><span class="s1f40">    </span><span class="s7d0">body</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">request</span><span class="sfa0">.</span><span class="s7d0">get</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;body&#39;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;&#39;</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="ln">19</span><span class="s1f40">    </span><span class="s7d0">hash</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">hmac</span><span class="sfa0">.</span><span class="s7d0">new</span><span class="s1388">(</span><span class="s7d0">channel_secret</span><span class="sfa0">.</span><span class="s7d0">encode</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;utf-8&#39;</span><span class="s1388">),</span><span class="s1f40"> </span><span class="s7d0">body</span><span class="sfa0">.</span><span class="s7d0">encode</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;utf-8&#39;</span><span class="s1388">),</span><span class="s1f40"> </span><span class="s7d0">hashlib</span><span class="sfa0">.</span><span class="s7d0">sha256</span><span class="s1388">)</span><span class="sfa0">.</span><span class="s7d0">digest</span><span class="s1388">()</span><span class="s1f40">
-</span><span class="ln">20</span><span class="s1f40">    </span><span class="s7d0">signature</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">base64</span><span class="sfa0">.</span><span class="s7d0">b64encode</span><span class="s1388">(</span><span class="s7d0">hash</span><span class="s1388">)</span><span class="sfa0">.</span><span class="s7d0">decode</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;utf-8&#39;</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="ln">21</span><span class="s1f40">
-</span><span class="ln">22</span><span class="s1f40">    </span><span class="s1770"># LINE 以外からのアクセスだった場合は処理を終了させる</span><span class="s1f40">
-</span><span class="ln">23</span><span class="s1f40">    </span><span class="s3e8">if</span><span class="s1f40"> </span><span class="s7d0">signature</span><span class="s1f40"> </span><span class="sfa0">!=</span><span class="s1f40"> </span><span class="s7d0">request</span><span class="sfa0">.</span><span class="s7d0">get</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;headers&#39;</span><span class="s1388">)</span><span class="sfa0">.</span><span class="s7d0">get</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;X-Line-Signature&#39;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;&#39;</span><span class="s1388">):</span><span class="s1f40">
-</span><span class="ln">24</span><span class="s1f40">        </span><span class="s7d0">logger</span><span class="sfa0">.</span><span class="s7d0">info</span><span class="s1388">(</span><span class="s7d0">f</span><span class="sc1c"></span><span class="sc1c">&#39;LINE 以外からのアクセス request={request}&#39;</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="ln">25</span><span class="s1f40">        </span><span class="s3e8">return</span><span class="s1f40"> </span><span class="s1388">{</span><span class="sc1c"></span><span class="sc1c">&#39;statusCode&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc80">200</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;body&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;{}&#39;</span><span class="s1388">}</span><span class="s1f40">
-</span><span class="ln">26</span><span class="s1f40">
-</span><span class="ln">27</span><span class="s1f40">    </span><span class="s3e8">for</span><span class="s1f40"> </span><span class="s7d0">event</span><span class="s1f40"> </span><span class="sfa0">in</span><span class="s1f40"> </span><span class="s7d0">json</span><span class="sfa0">.</span><span class="s7d0">loads</span><span class="s1388">(</span><span class="s7d0">body</span><span class="s1388">)</span><span class="sfa0">.</span><span class="s7d0">get</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;events&#39;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s1388">[]):</span><span class="s1f40">
-</span><span class="ln">28</span><span class="s1f40">
-</span><span class="ln">29</span><span class="s1f40">        </span><span class="s1770"># 発言者を絞り込む</span><span class="s1f40">
-</span><span class="ln">30</span><span class="s1f40">        </span><span class="s3e8">if</span><span class="s1f40"> </span><span class="s7d0">event</span><span class="s1388">[</span><span class="sc1c"></span><span class="sc1c">&#39;source&#39;</span><span class="s1388">][</span><span class="sc1c"></span><span class="sc1c">&#39;userId&#39;</span><span class="s1388">]</span><span class="s1f40"> </span><span class="sfa0">!=</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;userId&#39;</span><span class="s1388">:</span><span class="s1f40">
-</span><span class="ln">31</span><span class="s1f40">            </span><span class="s3e8">continue</span><span class="s1f40">
-</span><span class="ln">32</span><span class="s1f40">
-</span><span class="ln">33</span><span class="s1f40">        </span><span class="s1770"># 反応する発言内容を絞り込む</span><span class="s1f40">
-</span><span class="ln">34</span><span class="s1f40">        </span><span class="s3e8">if</span><span class="s1f40"> </span><span class="s7d0">event</span><span class="s1388">[</span><span class="sc1c"></span><span class="sc1c">&#39;message&#39;</span><span class="s1388">][</span><span class="sc1c"></span><span class="sc1c">&#39;text&#39;</span><span class="s1388">]</span><span class="s1f40"> </span><span class="sfa0">!=</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;memo&#39;</span><span class="s1388">:</span><span class="s1f40">
-</span><span class="ln">35</span><span class="s1f40">            </span><span class="s3e8">continue</span><span class="s1f40">
-</span><span class="ln">36</span><span class="s1f40">
-</span><span class="ln">37</span><span class="s1f40">        </span><span class="s7d0">logger</span><span class="sfa0">.</span><span class="s7d0">info</span><span class="s1388">(</span><span class="s7d0">json</span><span class="sfa0">.</span><span class="s7d0">dumps</span><span class="s1388">(</span><span class="s7d0">request</span><span class="s1388">))</span><span class="s1f40">
-</span><span class="ln">38</span><span class="s1f40">        </span><span class="s7d0">logger</span><span class="sfa0">.</span><span class="s7d0">info</span><span class="s1388">(</span><span class="s7d0">json</span><span class="sfa0">.</span><span class="s7d0">dumps</span><span class="s1388">(</span><span class="s7d0">event</span><span class="s1388">))</span><span class="s1f40">
-</span><span class="ln">39</span><span class="s1f40">
-</span><span class="ln">40</span><span class="s1f40">        </span><span class="s1770"># LINE に発言する</span><span class="s1f40">
-</span><span class="ln">41</span><span class="s1f40">        </span><span class="s7d0">url</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;https://api.line.me/v2/bot/message/reply&#39;</span><span class="s1f40">
-</span><span class="ln">42</span><span class="s1f40">        </span><span class="s7d0">headers</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s1f40">
-</span><span class="ln">43</span><span class="s1f40">            </span><span class="sc1c"></span><span class="sc1c">&#39;Content-Type&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;application/json&#39;</span><span class="s1388">,</span><span class="s1f40">
-</span><span class="ln">44</span><span class="s1f40">            </span><span class="sc1c"></span><span class="sc1c">&#39;Authorization&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;Bearer &#39;</span><span class="s1f40"> </span><span class="sfa0">+</span><span class="s1f40"> </span><span class="s7d0">os</span><span class="sfa0">.</span><span class="s7d0">environ</span><span class="s1388">[</span><span class="sc1c"></span><span class="sc1c">&#39;LINE_CHANNEL_ACCESS_TOKEN&#39;</span><span class="s1388">],</span><span class="s1f40">
-</span><span class="ln">45</span><span class="s1f40">        </span><span class="s1388">}</span><span class="s1f40">
-</span><span class="ln">46</span><span class="s1f40">        </span><span class="s7d0">body</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s1388">{</span><span class="s1f40">
-</span><span class="ln">47</span><span class="s1f40">            </span><span class="sc1c"></span><span class="sc1c">&#39;replyToken&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="s7d0">event</span><span class="s1388">[</span><span class="sc1c"></span><span class="sc1c">&#39;replyToken&#39;</span><span class="s1388">],</span><span class="s1f40">
-</span><span class="ln">48</span><span class="s1f40">            </span><span class="sc1c"></span><span class="sc1c">&#39;messages&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="s1388">[</span><span class="s1f40">
-</span><span class="ln">49</span><span class="s1f40">                </span><span class="s1388">{</span><span class="s1f40">
-</span><span class="ln">50</span><span class="s1f40">                    </span><span class="sc1c"></span><span class="sc1c">&#39;type&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;text&#39;</span><span class="s1388">,</span><span class="s1f40">
-</span><span class="ln">51</span><span class="s1f40">                    </span><span class="sc1c"></span><span class="sc1c">&#39;text&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;memo</span><span class="sc25">\n\n</span><span class="sc1c">返してもらいたいメモの内容をここに書く&#39;</span><span class="s1388">,</span><span class="s1f40">
-</span><span class="ln">52</span><span class="s1f40">                </span><span class="s1388">}</span><span class="s1f40">
-</span><span class="ln">53</span><span class="s1f40">            </span><span class="s1388">]</span><span class="s1f40">
-</span><span class="ln">54</span><span class="s1f40">        </span><span class="s1388">}</span><span class="s1f40">
-</span><span class="ln">55</span><span class="s1f40">        </span><span class="s7d0">req</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">urllib</span><span class="sfa0">.</span><span class="s7d0">request</span><span class="sfa0">.</span><span class="s7d0">Request</span><span class="s1388">(</span><span class="s7d0">url</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">data</span><span class="sfa0">=</span><span class="s7d0">json</span><span class="sfa0">.</span><span class="s7d0">dumps</span><span class="s1388">(</span><span class="s7d0">body</span><span class="s1388">)</span><span class="sfa0">.</span><span class="s7d0">encode</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;utf-8&#39;</span><span class="s1388">),</span><span class="s1f40"> </span><span class="s7d0">method</span><span class="sfa0">=</span><span class="sc1c"></span><span class="sc1c">&#39;POST&#39;</span><span class="s1388">,</span><span class="s1f40"> </span><span class="s7d0">headers</span><span class="sfa0">=</span><span class="s7d0">headers</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="ln">56</span><span class="s1f40">        </span><span class="s3e8">with</span><span class="s1f40"> </span><span class="s7d0">urllib</span><span class="sfa0">.</span><span class="s7d0">request</span><span class="sfa0">.</span><span class="s7d0">urlopen</span><span class="s1388">(</span><span class="s7d0">req</span><span class="s1388">)</span><span class="s1f40"> </span><span class="s3e8">as</span><span class="s1f40"> </span><span class="s7d0">res</span><span class="s1388">:</span><span class="s1f40">
-</span><span class="ln">57</span><span class="s1f40">            </span><span class="s7d0">res_body</span><span class="s1f40"> </span><span class="sfa0">=</span><span class="s1f40"> </span><span class="s7d0">res</span><span class="sfa0">.</span><span class="s7d0">read</span><span class="s1388">()</span><span class="sfa0">.</span><span class="s7d0">decode</span><span class="s1388">(</span><span class="sc1c"></span><span class="sc1c">&#39;utf-8&#39;</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="ln">58</span><span class="s1f40">            </span><span class="s3e8">if</span><span class="s1f40"> </span><span class="s7d0">res_body</span><span class="s1f40"> </span><span class="sfa0">!=</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;{}&#39;</span><span class="s1388">:</span><span class="s1f40">
-</span><span class="ln">59</span><span class="s1f40">                </span><span class="s7d0">logger</span><span class="sfa0">.</span><span class="s7d0">info</span><span class="s1388">(</span><span class="s7d0">res_body</span><span class="s1388">)</span><span class="s1f40">
-</span><span class="ln">60</span><span class="s1f40">
-</span><span class="ln">61</span><span class="s1f40">    </span><span class="s3e8">return</span><span class="s1f40"> </span><span class="s1388">{</span><span class="sc1c"></span><span class="sc1c">&#39;statusCode&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc80">200</span><span class="s1388">,</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;body&#39;</span><span class="s1388">:</span><span class="s1f40"> </span><span class="sc1c"></span><span class="sc1c">&#39;{}&#39;</span><span class="s1388">}</span></code></pre>
-</div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-python" data-lang="python"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span> <span class="nn">urllib.parse</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">import</span> <span class="nn">hmac</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+
+    <span class="c1"># リクエストの検証を行う</span>
+    <span class="n">channel_secret</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;LINE_CHANNEL_SECRET&#39;</span><span class="p">]</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="nb">hash</span> <span class="o">=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">channel_secret</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> <span class="n">body</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+
+    <span class="c1"># LINE 以外からのアクセスだった場合は処理を終了させる</span>
+    <span class="k">if</span> <span class="n">signature</span> <span class="o">!=</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;headers&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;X-Line-Signature&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;LINE 以外からのアクセス request={request}&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="s1">&#39;{}&#39;</span><span class="p">}</span>
+
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">body</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;events&#39;</span><span class="p">,</span> <span class="p">[]):</span>
+
+        <span class="c1"># 発言者を絞り込む</span>
+        <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">][</span><span class="s1">&#39;userId&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;userId&#39;</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="c1"># 反応する発言内容を絞り込む</span>
+        <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;memo&#39;</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">request</span><span class="p">))</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">event</span><span class="p">))</span>
+
+        <span class="c1"># LINE に発言する</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.line.me/v2/bot/message/reply&#39;</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;LINE_CHANNEL_ACCESS_TOKEN&#39;</span><span class="p">],</span>
+        <span class="p">}</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;replyToken&#39;</span><span class="p">:</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;replyToken&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;messages&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;memo</span><span class="se">\n\n</span><span class="s1">返してもらいたいメモの内容をここに書く&#39;</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+        <span class="n">req</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">body</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span> <span class="k">as</span> <span class="n">res</span><span class="p">:</span>
+            <span class="n">res_body</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">res_body</span> <span class="o">!=</span> <span class="s1">&#39;{}&#39;</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">res_body</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="s1">&#39;{}&#39;</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
 <h2 id="感想">感想</h2>
 
 <p>最近 Python を触っているのでなにも考えずに Python を選択したが、思ったよりも情報が少なくて大変だった。<br />

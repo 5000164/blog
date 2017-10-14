@@ -58,26 +58,45 @@
   <p>
     </div> 
     
-<div class="highlight"><pre class="chroma"><span class="ln"> 1</span><span class="s1f40">&lt;p&gt;
-</span><span class="ln"> 2</span><span class="s1f40">  このデモは-webkit-のベンダープレフィックスがついているのであしからず。
-</span><span class="ln"> 3</span><span class="s1f40">&lt;/p&gt;
-</span><span class="ln"> 4</span><span class="s1f40">
-</span><span class="ln"> 5</span><span class="s1f40">&lt;h1&gt;
-</span><span class="ln"> 6</span><span class="s1f40">  実装方法
-</span><span class="ln"> 7</span><span class="s1f40">&lt;/h1&gt;
-</span><span class="ln"> 8</span><span class="s1f40">
-</span><span class="ln"> 9</span><span class="s1f40">&lt;p&gt;
-</span><span class="ln">10</span><span class="s1f40">  まず、HTMLで同じ内容のコンテンツを2つ用意します。&lt;br /&gt; 次に、CSSで2つのコンテンツがきれいにくっつくように指定します。&lt;br /&gt; ポイントはoverflow-x: hidden;とoverflow-y: scroll;です。&lt;br /&gt; そうしたら、同じ内容のコンテンツの片方にblurをかけます。&lt;br /&gt; その次は、2つのコンテンツの表示位置を同じ高さに合わせます。&lt;br /&gt; ここではbeforeの擬似要素を使って高さを合わせています。&lt;br /&gt; 最後に、JavaScriptでスクロールを同期すれば完了です。
-</span><span class="ln">11</span><span class="s1f40">&lt;/p&gt;
-</span><span class="ln">12</span><span class="s1f40">
-</span><span class="ln">13</span><span class="s1f40">&lt;h1&gt;
-</span><span class="ln">14</span><span class="s1f40">  まとめ
-</span><span class="ln">15</span><span class="s1f40">&lt;/h1&gt;
-</span><span class="ln">16</span><span class="s1f40">
-</span><span class="ln">17</span><span class="s1f40">&lt;p&gt;
-</span><span class="ln">18</span><span class="s1f40">  スクロールの制御もJavaScriptでやってしまうと相性がいいのかも知れないと思いました。&lt;br /&gt; とりあえず、半透明のレイヤーの透過した部分にだけぼかしをかけるというCSSのプロパティが欲しいです。
-</span><span class="ln">19</span><span class="s1f40">&lt;/p&gt;</span></pre>
-</div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">&lt;p&gt;</span>
+  このデモは-webkit-のベンダープレフィックスがついているのであしからず。
+<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;h1&gt;</span>
+  実装方法
+<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>
+  まず、HTMLで同じ内容のコンテンツを2つ用意します。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> 次に、CSSで2つのコンテンツがきれいにくっつくように指定します。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> ポイントはoverflow-x: hidden;とoverflow-y: scroll;です。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> そうしたら、同じ内容のコンテンツの片方にblurをかけます。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> その次は、2つのコンテンツの表示位置を同じ高さに合わせます。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> ここではbeforeの擬似要素を使って高さを合わせています。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> 最後に、JavaScriptでスクロールを同期すれば完了です。
+<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;h1&gt;</span>
+  まとめ
+<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>
+  スクロールの制御もJavaScriptでやってしまうと相性がいいのかも知れないと思いました。<span class="nt">&lt;br</span> <span class="nt">/&gt;</span> とりあえず、半透明のレイヤーの透過した部分にだけぼかしをかけるというCSSのプロパティが欲しいです。
+<span class="nt">&lt;/p&gt;</span>
+</pre></div>
+</td></tr></table>
 </article>
 <footer>
     SUGAWARA Hiroshi

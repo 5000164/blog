@@ -237,7 +237,7 @@ TDD はやっぱりおもしろい気がする あの感じ好きだ。
       <pubDate>Fri, 14 Nov 2014 20:39:16 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-11-sqlite/</guid>
-      <description>結論 1adb shell 2run-as {パッケージ名} cat databases/{DB 名} &amp;gt; /sdcard/{DB 名} 3exit 4adb pull /sdcard/{DB 名} ~/Downloads/{DB 名}  解説 adb pull ではパッケージの権限がないため直接ファイルを取得できない
+      <description>結論 1 2 3 4adb shell run-as {パッケージ名} cat databases/{DB 名} &amp;gt; /sdcard/{DB 名} exit adb pull /sdcard/{DB 名} ~/Downloads/{DB 名}   解説 adb pull ではパッケージの権限がないため直接ファイルを取得できない
 なので run-as コマンドを使いパッケージの権限があるユーザーで adb pull できる領域にファイルをコピー
 Android は cp コマンドがないので cat コマンドの出力をリダイレクトして同じ内容のファイルを生成している
 ファイルが adb pull できる領域にコピーできたので adb pull
@@ -245,7 +245,7 @@ Android は cp コマンドがないので cat コマンドの出力をリダイ
 継続的に繰り返すのは大変だけど、手軽に見られるのは楽
 DB Browser for SQLite
 SQLite Manager :: Add-ons for Firefox
-まとめ 1adb -d shell &amp;#34;run-as {パッケージ名} cat databases/{DB 名} &amp;gt; /sdcard/{DB 名}&amp;#34; 2adb pull /sdcard/{DB 名} ~/Downloads/{DB 名}  ってやれば 2 行でいけるかも知れないけど未検証</description>
+まとめ 1 2adb -d shell &amp;quot;run-as {パッケージ名} cat databases/{DB 名} &amp;gt; /sdcard/{DB 名}&amp;quot; adb pull /sdcard/{DB 名} ~/Downloads/{DB 名}   ってやれば 2 行でいけるかも知れないけど未検証</description>
     </item>
     
     <item>
@@ -467,16 +467,14 @@ Try &amp;amp; Error は壊れた &amp;amp; 直したであり、ここにコス�
       <guid>http://blog.5000164.jp/2014-06-junit/</guid>
       <description>Ubuntuのバージョン ubuntu 14.04 LTS
 64bit
-Javaのインストール 1sudo apt-get update 2sudo apt-get install -y python-software-properties 3sudo add-apt-repository ppa:webupd8team/java 4sudo apt-get update 5sudo apt-get install -y oracle-java8-installer 6sudo update-java-alternatives -s java-7-oracle  参考
+Javaのインストール 1 2 3 4 5 6sudo apt-get update sudo apt-get install -y python-software-properties sudo add-apt-repository ppa:webupd8team/java sudo apt-get update sudo apt-get install -y oracle-java8-installer sudo update-java-alternatives -s java-7-oracle   参考
 Ubuntu 12.04 LTS に Java (Oracle JDK) をインストールする - xykのブログ
 IntelliJ IDEAのインストール 公式サイトからダウンロードする
 IntelliJ IDEA — The Best Java and Polyglot IDE
 任意のディレクトリに配置
 IntelliJ IDEAの起動 解凍したディレクトリ内のbin/idea.shを実行
 プロジェクトの作成 Java を選択
-Project SDK で New -&amp;gt; JDK を選択
-/usr/lib/jvm/java-8-oracleを選択してOK
-JUnitをインストール GitHub のリンクからjunit.</description>
+Project SDK で New -&amp;gt; JDK を選択</description>
     </item>
     
     <item>
@@ -896,14 +894,13 @@ rootをとって絵文字のフォントを入れれば表示することもで�
       <pubDate>Wed, 22 Jan 2014 17:10:00 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-01-hover/</guid>
-      <description>  リンクとかをホバーしたら背景色を変えたりしますよね リンクをホバーしたら文字色と背景色が変わるという実装はよくあります。
+      <description>リンクとかをホバーしたら背景色を変えたりしますよね リンクをホバーしたら文字色と背景色が変わるという実装はよくあります。
 このコンテンツはクリッカブルですよ、と知らせるためですね。
 でもリンクの中に画像が含まれている時は画像だけ変わらなかったりします。
 これはちょっと違和感です。
 そこですべてに覆いかぶさっているように見せます。
-まずはデモをどうぞ See the Pen hoverした要素の上に色をかぶせる by SUGAWARA Hiroshi (@5000164) on CodePen.   1&amp;lt;h1&amp;gt; 2実装の解説です 3&amp;lt;/h1&amp;gt; 45&amp;lt;p&amp;gt; 6非常に簡単です。&amp;lt;br /&amp;gt; 今までhoverの擬似クラスにしていた部分をhoverの擬似クラスのafter擬似要素にします。&amp;lt;br /&amp;gt; 文章だとちょっとわかりづらいのでコードで書くと、 7&amp;lt;/p&amp;gt; 89&amp;lt;pre class=&amp;#34;brush: css; title: ; notranslate&amp;#34; title=&amp;#34;&amp;#34;&amp;gt;  a:hover { ・・・ } 
-1&amp;lt;p&amp;gt; 2これを 3&amp;lt;/p&amp;gt; 45&amp;lt;pre class=&amp;#34;brush: css; title: ; notranslate&amp;#34; title=&amp;#34;&amp;#34;&amp;gt;  a:hover::after { ・・・ } 
-1&amp;lt;p&amp;gt; 2こうします。&amp;lt;br /&amp;gt; あとはちょっと装飾してやれば簡単に実現できます。 3&amp;lt;/p&amp;gt; 45&amp;lt;h1&amp;gt; 6まとめ 7&amp;lt;/h1&amp;gt; 89&amp;lt;p&amp;gt; 10hoverした時に画像にハイライトがついていないのが個人的にすごく気になっていたので、簡単に実装できてよかったです。&amp;lt;br /&amp;gt; ちょっと応用すれば他のこともできそうですね。 11&amp;lt;/p&amp;gt; </description>
+まずはデモをどうぞ See the Pen hoverした要素の上に色をかぶせる by SUGAWARA Hiroshi (@5000164) on CodePen.   1 2 3 4 5 6 7 8 9&amp;lt;h1&amp;gt; 実装の解説です &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; 非常に簡単です。&amp;lt;br /&amp;gt; 今までhoverの擬似クラスにしていた部分をhoverの擬似クラスのafter擬似要素にします。&amp;lt;br /&amp;gt; 文章だとちょっとわかりづらいのでコードで書くと、 &amp;lt;/p&amp;gt; &amp;lt;pre class=&amp;quot;brush: css; title: ; notranslate&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;   a:hover { ・・・ } 
+1 2 3 4 5&amp;lt;p&amp;gt; これを &amp;lt;/p&amp;gt; &amp;lt;pre class=&amp;quot;brush: css; title: ; notranslate&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;   a:hover::after { ・・・ }</description>
     </item>
     
     <item>
