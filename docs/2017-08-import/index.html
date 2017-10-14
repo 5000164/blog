@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=600">
-    <meta name="generator" content="Hugo 0.27.1" />
+    <meta name="generator" content="Hugo 0.29" />
     <title>Jekyll の記事と WordPress の記事を Hugo にインポートする | 5000164 is here</title>
     <link href="/favicon.ico" rel="icon">
     <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet">
@@ -31,25 +31,16 @@ Hugo に移行することにしたから Jekyll の記事と WordPress の記�
 
 <p>こんな感じに統一することを目指す。<br />
 記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-md" data-lang="md">1
-2
-3
-4
-5
-6
-7
-8
-9</code></pre></div></td><td class="code"><div class="highlight"><pre><span></span>+++
-title = &quot;Jekyll の記事と WordPress の記事を Hugo にインポートする&quot;
-date = 2017-08-13T04:26:50+09:00
-url = &quot;2017-08-import&quot;
-+++
-
-<span class="gu">##</span> 記事内容
-
-つらつら
-</pre></div>
-</td></tr></table>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md"><span class="ln">1</span><span class="s1f40">+++</span><span class="ss4">
+</span><span class="ln">2</span><span class="ss4"></span><span class="s1f40">title = &#34;Jekyll の記事と WordPress の記事を Hugo にインポートする&#34;</span><span class="ss4">
+</span><span class="ln">3</span><span class="ss4"></span><span class="s1f40">date = 2017-08-13T04:26:50+09:00</span><span class="ss4">
+</span><span class="ln">4</span><span class="ss4"></span><span class="s1f40">url = &#34;2017-08-import&#34;</span><span class="ss4">
+</span><span class="ln">5</span><span class="ss4"></span><span class="s1f40">+++</span><span class="ss4">
+</span><span class="ln">6</span><span class="ss4">
+</span><span class="ln">7</span><span class="ss4"></span><span class="s1b61">##</span><span class="s1f40"> 記事内容
+</span><span class="ln">8</span><span class="s1f40"></span><span class="ss4">
+</span><span class="ln">9</span><span class="ss4"></span><span class="s1f40">つらつら</span></code></pre>
+</div>
 <h2 id="手順">手順</h2>
 
 <p>実際に行ったインポート作業の内容はこちら。<br />
@@ -63,24 +54,18 @@ url = &quot;2017-08-import&quot;
 <h3 id="ファイル名を調整する">ファイル名を調整する</h3>
 
 <p>なんか日付がたくさんついてたので年と月でディレクトリを分けてからファイル名をきれいにした。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-bash" data-lang="bash">1
-2</code></pre></div></td><td class="code"><div class="highlight"><pre><span></span>brew install rename
-find . -name <span class="s2">&quot;*.md&quot;</span> <span class="p">|</span> xargs rename <span class="s1">&#39;s/\d\d\d\d-\d\d-\d\d-\d\d\d\d-\d\d-//&#39;</span>
-</pre></div>
-</td></tr></table>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="s1f40">brew install rename
+</span><span class="ln">2</span><span class="s1f40">find . -name </span><span class="sc1c">&#34;*.md&#34;</span><span class="s1f40"> </span><span class="s1388">|</span><span class="s1f40"> xargs rename </span><span class="sc1c">&#39;s/\d\d\d\d-\d\d-\d\d-\d\d\d\d-\d\d-//&#39;</span></code></pre>
+</div>
 <h3 id="jekyll-の記事の-url-はファイル名に依存してたのでファイルの中に書き込む">Jekyll の記事の URL はファイル名に依存してたのでファイルの中に書き込む</h3>
 
 <p>ファイル名をファイルの中に書き込んでからあとで url に設定をするようにする。<br />
 ついでにファイル名も調整する。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-bash" data-lang="bash">1
-2
-3
-4</code></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> i in <span class="k">$(</span>find . -name <span class="s2">&quot;*.markdown&quot;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="si">${</span><span class="nv">i</span><span class="si">}</span> &gt; <span class="si">${</span><span class="nv">i</span><span class="si">}</span>.new<span class="p">;</span> cat <span class="si">${</span><span class="nv">i</span><span class="si">}</span> &gt;&gt; <span class="si">${</span><span class="nv">i</span><span class="si">}</span>.new<span class="p">;</span> <span class="k">done</span>
-find . -name <span class="s2">&quot;*.markdown.new&quot;</span> <span class="p">|</span> xargs rename <span class="s1">&#39;s/.markdown.new/.md/&#39;</span>
-find . -name <span class="s2">&quot;*.markdown&quot;</span> <span class="p">|</span> xargs rm -f
-find . -name <span class="s2">&quot;*.md&quot;</span> <span class="p">|</span> xargs rename <span class="s1">&#39;s/\d\d\d\d-\d\d-\d\d-//&#39;</span>
-</pre></div>
-</td></tr></table>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="s3e8">for</span><span class="s1f40"> i in </span><span class="s3e8">$(</span><span class="s1f40">find . -name </span><span class="sc1c">&#34;*.markdown&#34;</span><span class="s3e8">)</span><span class="s1388">;</span><span class="s1f40"> </span><span class="s3e8">do</span><span class="s1f40"> </span><span class="s7d0">echo</span><span class="s1f40"> </span><span class="sc1c">${</span><span class="s7d0">i</span><span class="sc1c">}</span><span class="s1f40"> &gt; </span><span class="sc1c">${</span><span class="s7d0">i</span><span class="sc1c">}</span><span class="s1f40">.new</span><span class="s1388">;</span><span class="s1f40"> cat </span><span class="sc1c">${</span><span class="s7d0">i</span><span class="sc1c">}</span><span class="s1f40"> &gt;&gt; </span><span class="sc1c">${</span><span class="s7d0">i</span><span class="sc1c">}</span><span class="s1f40">.new</span><span class="s1388">;</span><span class="s1f40"> </span><span class="s3e8">done</span><span class="s1f40">
+</span><span class="ln">2</span><span class="s1f40">find . -name </span><span class="sc1c">&#34;*.markdown.new&#34;</span><span class="s1f40"> </span><span class="s1388">|</span><span class="s1f40"> xargs rename </span><span class="sc1c">&#39;s/.markdown.new/.md/&#39;</span><span class="s1f40">
+</span><span class="ln">3</span><span class="s1f40">find . -name </span><span class="sc1c">&#34;*.markdown&#34;</span><span class="s1f40"> </span><span class="s1388">|</span><span class="s1f40"> xargs rm -f
+</span><span class="ln">4</span><span class="s1f40">find . -name </span><span class="sc1c">&#34;*.md&#34;</span><span class="s1f40"> </span><span class="s1388">|</span><span class="s1f40"> xargs rename </span><span class="sc1c">&#39;s/\d\d\d\d-\d\d-\d\d-//&#39;</span></code></pre>
+</div>
 <h3 id="ひたすら正規表現で置換する">ひたすら正規表現で置換する</h3>
 
 <p>あとはもう望む形になるようにひたすら正規表現で置換する。<br />

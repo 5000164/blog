@@ -64,16 +64,16 @@ LINE Messaging APIを使用したLINE Botの作り方 - george’s ぶろぐ</de
       <pubDate>Mon, 14 Aug 2017 22:44:23 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-08-syntax_highlighting/</guid>
-      <description>結論  シンタックスハイライト用の css をテーマで読み込んでおく config.toml に下記の設定を追加  1 2 3 4 5pygmentscodefences = true pygmentsCodeFencesGuessSyntax = true pygmentsStyle = &amp;quot;monokai&amp;quot; pygmentsUseClasses = true pygmentsoptions = &amp;quot;linenos=inline&amp;quot;   背景 コードを見やすくしたいからシンタックスハイライトを使おうと思った。
+      <description>結論  シンタックスハイライト用の css をテーマで読み込んでおく config.toml に下記の設定を追加  1pygmentscodefences = true 2pygmentsCodeFencesGuessSyntax = true 3pygmentsStyle = &amp;#34;monokai&amp;#34; 4pygmentsUseClasses = true 5pygmentsoptions = &amp;#34;linenos=inline&amp;#34;  背景 コードを見やすくしたいからシンタックスハイライトを使おうと思った。
 やってみたら思ったよりもできなかった。
 なんか疲れたのでメモ。
 手順 Pygments をインストールする シンタックスハイライトするのに必要なやつ。
 何も考えずに入れる。
-1sudo easy_install Pygments   シンタックスハイライト用の css を生成する カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。
+1sudo easy_install Pygments  シンタックスハイライト用の css を生成する カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。
 クラスで指定する場合は css を事前に生成しておいて読むこんでおく必要がある。
 下記のコマンドで css を生成する。
 デフォルトで用意されていないカラースキーマの使い方がわからなかったので今回は monokai を使う。
-1pygmentize -f html -S monokai -a .highlight &amp;gt; monokai.css   生成した css をテーマで読み込む テーマの static ディレクトリに css を置いて header で読み込む。</description>
+1pygmentize -f html -S monokai -a .highlight &amp;gt; monokai.css  生成した css をテーマで読み込む テーマの static ディレクトリに css を置いて header で読み込む。</description>
     </item>
     
     <item>
@@ -87,9 +87,10 @@ Hugo に移行することにしたから Jekyll の記事と WordPress の記�
 つらい。
 Hugo に合わせた最終的な形式 こんな感じに統一することを目指す。
 記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。
-1 2 3 4 5 6 7 8 9+++ title = &amp;quot;Jekyll の記事と WordPress の記事を Hugo にインポートする&amp;quot; date = 2017-08-13T04:26:50+09:00 url = &amp;quot;2017-08-import&amp;quot; +++ ## 記事内容 つらつら   手順 実際に行ったインポート作業の内容はこちら。
+1+++2title = &amp;#34;Jekyll の記事と WordPress の記事を Hugo にインポートする&amp;#34;3date = 2017-08-13T04:26:50+09:004url = &amp;#34;2017-08-import&amp;#34;5+++67##記事内容 89つらつら  手順 実際に行ったインポート作業の内容はこちら。
 Feature import article by 5000164 · Pull Request #2 · 5000164/blog
-WordPress の記事を Markdown 形式に変換する 最初は Jekyll に移行しようと思ってたのでこれを使いました。</description>
+WordPress の記事を Markdown 形式に変換する 最初は Jekyll に移行しようと思ってたのでこれを使いました。
+benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll</description>
     </item>
     
     <item>
@@ -475,7 +476,7 @@ tmux も触ってどっちがいいか考えよう。
 Vagrant の VM に Ansible で環境を構築する いつもは vagrant ユーザーをそのまま使っていたのだが、ユーザー名を変えておいた方がなんとなくよさそう、と思ってユーザー名を変えることにした。
 ユーザーの追加は user モジュールを使って簡単にできる。
 問題は作成したユーザーで sudo できないことだった。
-一応オプションをつけて毎回パスワードを入力すれば回避できる 1ansible-playbook playbook.yml --ask-sudo-pass   ってやって、毎回パスワードを入れれば動く。
+一応オプションをつけて毎回パスワードを入力すれば回避できる 1ansible-playbook playbook.yml --ask-sudo-pass  ってやって、毎回パスワードを入れれば動く。
 でもだるい。
 vagrant ユーザーはなんでパスワードなしで sudo できるのか なぜ、どうして。
 全然仕組みを理解できていなかった。
@@ -621,7 +622,7 @@ Chrome 拡張機能は作ってみたかったしいい機会だと思った。
 ちゃんと Access-Control-Allow-Origin: * って感じにしてたのに、許可されていませんって感じのエラーメッセージが出ていた。
 開発ツールのネットワークの履歴を見てたら、メソッドのところが OPTIONS って出てたので、OPTIONS メソッドの時にも Access-Control-Allow-Origin: * を返してあげるようにした。
 FuelPHP のコントローラーにどうやって書くのだろと思って試しに書いてみたら動いた。
-1 2 3 4 5 6 7/** * プリフライトリクエスト用のコントローラー */ public function options_index() { $this-&amp;gt;response-&amp;gt;set_header(&amp;#39;Access-Control-Allow-Origin&amp;#39;, &amp;#39;*&amp;#39;); }   こんな感じ。
+1/** 2 * プリフライトリクエスト用のコントローラー 3 */ 4public function options_index() 5{ 6 $this-&amp;gt;response-&amp;gt;set_header(&amp;#39;Access-Control-Allow-Origin&amp;#39;, &amp;#39;*&amp;#39;); 7}  こんな感じ。
 どうやら、XHR ではプリフライトリクエストってやつを送るらしくて、その時にアクセスが許可されていないから API からデータを持ってきていなかったらしい。(現時点の Chrome では送ってなかった)
 なるほどな。</description>
     </item>
@@ -772,9 +773,9 @@ Chrome 拡張機能を作っている もう少しでできそうだー、と思
       <guid>http://blog.5000164.jp/2015-09-go_string/</guid>
       <description> golang でダブルコーテーションや改行を string 型の変数に入れる go では &amp;ldquo; (ダブルコーテーション) で文字列を表します。
 文字列の中にダブルコーテーションを入れるには \ (バックスラッシュ) でエスケープすればよかった。
-1test := &amp;quot;test\&amp;quot;test&amp;quot;   改行を入れるには \n で入れられる。
-1newline := &amp;quot;a\nb\nc&amp;quot;   また、` (バッククオート) を使用することでヒアドキュメントのように書けた。
-1 2 3here := `like a here document`   参考  Go 言語で複数行にまたがる文字列を作る - nise_nabeの日記 The Go Programming Language Specification - The Go Programming Language  </description>
+1test:=&amp;#34;test\&amp;#34;test&amp;#34;  改行を入れるには \n で入れられる。
+1newline:=&amp;#34;a\nb\nc&amp;#34;  また、` (バッククオート) を使用することでヒアドキュメントのように書けた。
+1here:=`like 2a 3here document`  参考  Go 言語で複数行にまたがる文字列を作る - nise_nabeの日記 The Go Programming Language Specification - The Go Programming Language  </description>
     </item>
     
     <item>
@@ -884,10 +885,10 @@ Chrome 拡張機能を作っている もう少しでできそうだー、と思
       <pubDate>Thu, 23 Jul 2015 00:15:30 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-07-array_column/</guid>
-      <description>PHP の二次元配列から同じキーの値だけで新しい配列を生成する関数 array_column 他の人のコードを読んでたらたまたま見つけた便利な関数 array_column。
+      <description> PHP の二次元配列から同じキーの値だけで新しい配列を生成する関数 array_column 他の人のコードを読んでたらたまたま見つけた便利な関数 array_column。
 二次元配列から同じキーの値だけで新しい配列を生成する。
 PHP: array_column - Manual
-同じキーの値だけで新しい配列を作るサンプル 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30&amp;lt;?php $data = [ [ &amp;#39;id&amp;#39; =&amp;gt; 1, &amp;#39;name&amp;#39; =&amp;gt; &amp;#39;aaa&amp;#39;, ], [ &amp;#39;id&amp;#39; =&amp;gt; 2, &amp;#39;name&amp;#39; =&amp;gt; &amp;#39;bbb&amp;#39;, ], ]; $id_list = array_column($data, &amp;#39;id&amp;#39;); $name_list = array_column($data, &amp;#39;name&amp;#39;); var_dump($id_list); // array(2) { // [0]=&amp;gt; // int(1) // [1]=&amp;gt; // int(2) // } var_dump($name_list); // array(2) { // [0]=&amp;gt; // string(3) &amp;quot;aaa&amp;quot; // [1]=&amp;gt; // string(3) &amp;quot;bbb&amp;quot; // }   二次元配列の縦横を入れ替える (転置行列を得る) サンプル 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34&amp;lt;?</description>
+同じキーの値だけで新しい配列を作るサンプル 1&amp;lt;?php2$data=[3[4&amp;#39;id&amp;#39;=&amp;gt;1,5&amp;#39;name&amp;#39;=&amp;gt;&amp;#39;aaa&amp;#39;,6],7[8&amp;#39;id&amp;#39;=&amp;gt;2,9&amp;#39;name&amp;#39;=&amp;gt;&amp;#39;bbb&amp;#39;,10],11];1213$id_list=array_column($data,&amp;#39;id&amp;#39;);14$name_list=array_column($data,&amp;#39;name&amp;#39;);1516var_dump($id_list);17// array(2) { 18// [0]=&amp;gt; 19// int(1) 20// [1]=&amp;gt; 21// int(2) 22// } 2324var_dump($name_list);25// array(2) { 26// [0]=&amp;gt; 27// string(3) &amp;#34;aaa&amp;#34; 28// [1]=&amp;gt; 29// string(3) &amp;#34;bbb&amp;#34; 30//}  二次元配列の縦横を入れ替える (転置行列を得る) サンプル 1&amp;lt;?php2$data=[3[4&amp;#39;id&amp;#39;=&amp;gt;1,5&amp;#39;name&amp;#39;=&amp;gt;&amp;#39;aaa&amp;#39;,6],7[8&amp;#39;id&amp;#39;=&amp;gt;2,9&amp;#39;name&amp;#39;=&amp;gt;&amp;#39;bbb&amp;#39;,10],11];1213$transposed_matrix=[];14foreach($data[0]as$key=&amp;gt;$value){15$transposed_matrix[$key]=array_column($data,$key);16}1718var_dump($transposed_matrix);19// array(2) { 20// [&amp;#34;id&amp;#34;]=&amp;gt; 21// array(2) { 22// [0]=&amp;gt; 23// int(1) 24// [1]=&amp;gt; 25// int(2) 26// } 27// [&amp;#34;name&amp;#34;]=&amp;gt; 28// array(2) { 29// [0]=&amp;gt; 30// string(3) &amp;#34;aaa&amp;#34; 31// [1]=&amp;gt; 32// string(3) &amp;#34;bbb&amp;#34; 33// } 34//}  参考  PHPのarray_columnが便利 - Qiita 【php】配列の縦横入れ替え的な操作 at softelメモ PHPで二次元配列の転置行列を得る方法 - かなりすごいブログ  難しくて理解できなかった   </description>
     </item>
     
     <item>
@@ -1085,7 +1086,8 @@ list_tables でテーブル一覧が取れるかなと思ったら動作せず�
       <description>FuelPHP のログレベルは INFO の方が DEBUG よりも上 Fuel の Core の Log クラスに $levels が定義されています。
 FuelPHP 1.7.2 で INFO は 200、DEBUG は 100。
 なぜ疑問に思ったのか FuelPHP の config.php の出力するログレベルの設定のところに、
- 1 2 3 4 5 6 7 8 9 10/** * Logging Threshold. Can be set to any of the following: * * Fuel::L_NONE * Fuel::L_ERROR * Fuel::L_WARNING * Fuel::L_DEBUG * Fuel::L_INFO * Fuel::L_ALL */   このように書いてあるので、「INFO に設定したら DEBUG ログも出るのかー」と勝手に思い込んでいたからでした。</description>
+1/** 2* Logging Threshold. Can be set to any of the following: 3* 4* Fuel::L_NONE 5* Fuel::L_ERROR 6* Fuel::L_WARNING 7* Fuel::L_DEBUG 8* Fuel::L_INFO 9* Fuel::L_ALL 10*/  このように書いてあるので、「INFO に設定したら DEBUG ログも出るのかー」と勝手に思い込んでいたからでした。
+実際に動かせばわかる 実際に動かしたら、設定が DEBUG の時はログレベル INFO も DEBUG も出力されたが、設定が INFO の時は INFO が出力されて DEBUG は出力されなかった。</description>
     </item>
     
     <item>
@@ -1408,7 +1410,7 @@ TDD はやっぱりおもしろい気がする あの感じ好きだ。
       <pubDate>Fri, 14 Nov 2014 20:39:16 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-11-sqlite/</guid>
-      <description>結論 1 2 3 4adb shell run-as {パッケージ名} cat databases/{DB 名} &amp;gt; /sdcard/{DB 名} exit adb pull /sdcard/{DB 名} ~/Downloads/{DB 名}   解説 adb pull ではパッケージの権限がないため直接ファイルを取得できない
+      <description>結論 1adb shell 2run-as {パッケージ名} cat databases/{DB 名} &amp;gt; /sdcard/{DB 名} 3exit 4adb pull /sdcard/{DB 名} ~/Downloads/{DB 名}  解説 adb pull ではパッケージの権限がないため直接ファイルを取得できない
 なので run-as コマンドを使いパッケージの権限があるユーザーで adb pull できる領域にファイルをコピー
 Android は cp コマンドがないので cat コマンドの出力をリダイレクトして同じ内容のファイルを生成している
 ファイルが adb pull できる領域にコピーできたので adb pull
@@ -1416,7 +1418,7 @@ Android は cp コマンドがないので cat コマンドの出力をリダイ
 継続的に繰り返すのは大変だけど、手軽に見られるのは楽
 DB Browser for SQLite
 SQLite Manager :: Add-ons for Firefox
-まとめ 1 2adb -d shell &amp;quot;run-as {パッケージ名} cat databases/{DB 名} &amp;gt; /sdcard/{DB 名}&amp;quot; adb pull /sdcard/{DB 名} ~/Downloads/{DB 名}   ってやれば 2 行でいけるかも知れないけど未検証</description>
+まとめ 1adb -d shell &amp;#34;run-as {パッケージ名} cat databases/{DB 名} &amp;gt; /sdcard/{DB 名}&amp;#34; 2adb pull /sdcard/{DB 名} ~/Downloads/{DB 名}  ってやれば 2 行でいけるかも知れないけど未検証</description>
     </item>
     
     <item>
@@ -1638,14 +1640,16 @@ Try &amp;amp; Error は壊れた &amp;amp; 直したであり、ここにコス�
       <guid>http://blog.5000164.jp/2014-06-junit/</guid>
       <description>Ubuntuのバージョン ubuntu 14.04 LTS
 64bit
-Javaのインストール 1 2 3 4 5 6sudo apt-get update sudo apt-get install -y python-software-properties sudo add-apt-repository ppa:webupd8team/java sudo apt-get update sudo apt-get install -y oracle-java8-installer sudo update-java-alternatives -s java-7-oracle   参考
+Javaのインストール 1sudo apt-get update 2sudo apt-get install -y python-software-properties 3sudo add-apt-repository ppa:webupd8team/java 4sudo apt-get update 5sudo apt-get install -y oracle-java8-installer 6sudo update-java-alternatives -s java-7-oracle  参考
 Ubuntu 12.04 LTS に Java (Oracle JDK) をインストールする - xykのブログ
 IntelliJ IDEAのインストール 公式サイトからダウンロードする
 IntelliJ IDEA — The Best Java and Polyglot IDE
 任意のディレクトリに配置
 IntelliJ IDEAの起動 解凍したディレクトリ内のbin/idea.shを実行
 プロジェクトの作成 Java を選択
-Project SDK で New -&amp;gt; JDK を選択</description>
+Project SDK で New -&amp;gt; JDK を選択
+/usr/lib/jvm/java-8-oracleを選択してOK
+JUnitをインストール GitHub のリンクからjunit.</description>
     </item>
     
     <item>
@@ -2065,13 +2069,14 @@ rootをとって絵文字のフォントを入れれば表示することもで�
       <pubDate>Wed, 22 Jan 2014 17:10:00 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-01-hover/</guid>
-      <description>リンクとかをホバーしたら背景色を変えたりしますよね リンクをホバーしたら文字色と背景色が変わるという実装はよくあります。
+      <description>  リンクとかをホバーしたら背景色を変えたりしますよね リンクをホバーしたら文字色と背景色が変わるという実装はよくあります。
 このコンテンツはクリッカブルですよ、と知らせるためですね。
 でもリンクの中に画像が含まれている時は画像だけ変わらなかったりします。
 これはちょっと違和感です。
 そこですべてに覆いかぶさっているように見せます。
-まずはデモをどうぞ See the Pen hoverした要素の上に色をかぶせる by SUGAWARA Hiroshi (@5000164) on CodePen.   1 2 3 4 5 6 7 8 9&amp;lt;h1&amp;gt; 実装の解説です &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; 非常に簡単です。&amp;lt;br /&amp;gt; 今までhoverの擬似クラスにしていた部分をhoverの擬似クラスのafter擬似要素にします。&amp;lt;br /&amp;gt; 文章だとちょっとわかりづらいのでコードで書くと、 &amp;lt;/p&amp;gt; &amp;lt;pre class=&amp;quot;brush: css; title: ; notranslate&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;   a:hover { ・・・ } 
-1 2 3 4 5&amp;lt;p&amp;gt; これを &amp;lt;/p&amp;gt; &amp;lt;pre class=&amp;quot;brush: css; title: ; notranslate&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;   a:hover::after { ・・・ }</description>
+まずはデモをどうぞ See the Pen hoverした要素の上に色をかぶせる by SUGAWARA Hiroshi (@5000164) on CodePen.   1&amp;lt;h1&amp;gt; 2実装の解説です 3&amp;lt;/h1&amp;gt; 45&amp;lt;p&amp;gt; 6非常に簡単です。&amp;lt;br /&amp;gt; 今までhoverの擬似クラスにしていた部分をhoverの擬似クラスのafter擬似要素にします。&amp;lt;br /&amp;gt; 文章だとちょっとわかりづらいのでコードで書くと、 7&amp;lt;/p&amp;gt; 89&amp;lt;pre class=&amp;#34;brush: css; title: ; notranslate&amp;#34; title=&amp;#34;&amp;#34;&amp;gt;  a:hover { ・・・ } 
+1&amp;lt;p&amp;gt; 2これを 3&amp;lt;/p&amp;gt; 45&amp;lt;pre class=&amp;#34;brush: css; title: ; notranslate&amp;#34; title=&amp;#34;&amp;#34;&amp;gt;  a:hover::after { ・・・ } 
+1&amp;lt;p&amp;gt; 2こうします。&amp;lt;br /&amp;gt; あとはちょっと装飾してやれば簡単に実現できます。 3&amp;lt;/p&amp;gt; 45&amp;lt;h1&amp;gt; 6まとめ 7&amp;lt;/h1&amp;gt; 89&amp;lt;p&amp;gt; 10hoverした時に画像にハイライトがついていないのが個人的にすごく気になっていたので、簡単に実装できてよかったです。&amp;lt;br /&amp;gt; ちょっと応用すれば他のこともできそうですね。 11&amp;lt;/p&amp;gt; </description>
     </item>
     
     <item>
@@ -2348,7 +2353,7 @@ CSSでも同じことができないかなと思って調べました。
 擬似的に実現 CSSにはblurというプロパティがあるのですが、このblurはコンテンツ全体にぼかしをかけます。
 重なったレイヤーの透過した部分にだけぼかしをかける、といったことはできません。
 なので、このblurをうまく使って一部だけのぼかしを擬似的に実現します。
-デモ See the Pen スクロールして重なった部分だけぼかし by SUGAWARA Hiroshi (@5000164) on CodePen    1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19&amp;lt;p&amp;gt; このデモは-webkit-のベンダープレフィックスがついているのであしからず。 &amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt; 実装方法 &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; まず、HTMLで同じ内容のコンテンツを2つ用意します。&amp;lt;br /&amp;gt; 次に、CSSで2つのコンテンツがきれいにくっつくように指定します。&amp;lt;br /&amp;gt; ポイントはoverflow-x: hidden;とoverflow-y: scroll;です。&amp;lt;br /&amp;gt; そうしたら、同じ内容のコンテンツの片方にblurをかけます。&amp;lt;br /&amp;gt; その次は、2つのコンテンツの表示位置を同じ高さに合わせます。&amp;lt;br /&amp;gt; ここではbeforeの擬似要素を使って高さを合わせています。&amp;lt;br /&amp;gt; 最後に、JavaScriptでスクロールを同期すれば完了です。 &amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt; まとめ &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; スクロールの制御もJavaScriptでやってしまうと相性がいいのかも知れないと思いました。&amp;lt;br /&amp;gt; とりあえず、半透明のレイヤーの透過した部分にだけぼかしをかけるというCSSのプロパティが欲しいです。 &amp;lt;/p&amp;gt;  </description>
+デモ See the Pen スクロールして重なった部分だけぼかし by SUGAWARA Hiroshi (@5000164) on CodePen   1&amp;lt;p&amp;gt; 2このデモは-webkit-のベンダープレフィックスがついているのであしからず。 3&amp;lt;/p&amp;gt; 45&amp;lt;h1&amp;gt; 6実装方法 7&amp;lt;/h1&amp;gt; 89&amp;lt;p&amp;gt; 10まず、HTMLで同じ内容のコンテンツを2つ用意します。&amp;lt;br /&amp;gt; 次に、CSSで2つのコンテンツがきれいにくっつくように指定します。&amp;lt;br /&amp;gt; ポイントはoverflow-x: hidden;とoverflow-y: scroll;です。&amp;lt;br /&amp;gt; そうしたら、同じ内容のコンテンツの片方にblurをかけます。&amp;lt;br /&amp;gt; その次は、2つのコンテンツの表示位置を同じ高さに合わせます。&amp;lt;br /&amp;gt; ここではbeforeの擬似要素を使って高さを合わせています。&amp;lt;br /&amp;gt; 最後に、JavaScriptでスクロールを同期すれば完了です。 11&amp;lt;/p&amp;gt; 1213&amp;lt;h1&amp;gt; 14まとめ 15&amp;lt;/h1&amp;gt; 1617&amp;lt;p&amp;gt; 18スクロールの制御もJavaScriptでやってしまうと相性がいいのかも知れないと思いました。&amp;lt;br /&amp;gt; とりあえず、半透明のレイヤーの透過した部分にだけぼかしをかけるというCSSのプロパティが欲しいです。 19&amp;lt;/p&amp;gt; </description>
     </item>
     
     <item>
@@ -2409,9 +2414,11 @@ Webは情報発信という面で長けています。
       <pubDate>Sun, 01 Dec 2013 04:40:56 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-12-fluid/</guid>
-      <description>デモ 文章では説明しづらいので、なんだかよくわからないタイトルになってしまいました。
+      <description>  デモ 文章では説明しづらいので、なんだかよくわからないタイトルになってしまいました。
 まずは実際に見てもらった方が早いと思います。
-See the Pen qxgIF by SUGAWARA Hiroshi (@5000164) on CodePen    1 2 3 4 5 6 7 8 9 10 11 12 13&amp;lt;p&amp;gt; ここではデモのために、ウィンドウの幅ではなくdivの幅を変更するようにしています。&amp;lt;br /&amp;gt; divの幅を変更してみると、左側のテーブルの幅は変わらずに右側の文章の幅だけが変わっているのが確認できます。 &amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt; 実装方法 &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; cssはこのようになっています。（関係のないプロパティは省略しています。） &amp;lt;/p&amp;gt; &amp;lt;pre class=&amp;quot;brush: css; title: ; notranslate&amp;quot; title=&amp;quot;&amp;quot;&amp;gt;   div { position: relative; } table { position: absolute; top: 0; left: 0; width: 250px; } p { margin: 0 0 0 250px;</description>
+See the Pen qxgIF by SUGAWARA Hiroshi (@5000164) on CodePen   1&amp;lt;p&amp;gt; 2ここではデモのために、ウィンドウの幅ではなくdivの幅を変更するようにしています。&amp;lt;br /&amp;gt; divの幅を変更してみると、左側のテーブルの幅は変わらずに右側の文章の幅だけが変わっているのが確認できます。 3&amp;lt;/p&amp;gt; 45&amp;lt;h1&amp;gt; 6実装方法 7&amp;lt;/h1&amp;gt; 89&amp;lt;p&amp;gt; 10cssはこのようになっています。（関係のないプロパティは省略しています。） 11&amp;lt;/p&amp;gt; 1213&amp;lt;pre class=&amp;#34;brush: css; title: ; notranslate&amp;#34; title=&amp;#34;&amp;#34;&amp;gt;  div { position: relative; } table { position: absolute; top: 0; left: 0; width: 250px; } p { margin: 0 0 0 250px;
+} 
+1&amp;lt;p&amp;gt; 2非常に簡単です。&amp;lt;br /&amp;gt; まず、tableをposition: absolute;で固定することを考えます。&amp;lt;br /&amp;gt; そのために親要素にposition: relative;を指定します。&amp;lt;br /&amp;gt; これでtableの位置が固定されるので、あとは右側のコンテンツにmarginを指定してtableと重ならないようにします。&amp;lt;br /&amp;gt; これだけです。 3&amp;lt;/p&amp;gt; 45&amp;lt;h1&amp;gt; 6複雑に考える必要はなかった 7&amp;lt;/h1&amp;gt; 89&amp;lt;p&amp;gt; 10最初に右側のコンテンツだけウィンドウサイズに応じて幅を変更させようとした時は、もっと複雑に考えていました。&amp;lt;br /&amp;gt; 左側のコンテンツにmin-widthを指定して、左右のコンテンツにwidthでそれぞれ%を指定しようとしたのですが、これは%で指定すると幅が大きく変わった時にレイアウトが崩れるので断念。&amp;lt;br /&amp;gt; 次はJavaScriptでウィンドウサイズのイベントを取得して動的にwidthを変更するしかないかと思ったのですが、なるべくシンプルにいってJavaScriptは使いたくなかったので保留。&amp;lt;br /&amp;gt; 他にいい方法がないかと考えていた時にこの方法を思いつきました。&amp;lt;br /&amp;gt; 試しに実装してみたら期待通りの動きをしてくれたのでこの方法に決定。&amp;lt;br /&amp;gt; シンプルに書けるのはいいものです。 11&amp;lt;/p&amp;gt; 1213&amp;lt;h1&amp;gt; 14まとめ 15&amp;lt;/h1&amp;gt; 1617&amp;lt;p&amp;gt; 18この方法は応用が利きそうです。 19&amp;lt;/p&amp;gt; </description>
     </item>
     
     <item>
