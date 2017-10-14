@@ -6,10 +6,31 @@
     <description>Recent content on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 24 Sep 2017 20:53:36 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 14 Oct 2017 22:10:57 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rust入門者向けハンズオンに参加した</title>
+      <link>http://blog.5000164.jp/2017-10-rust/</link>
+      <pubDate>Sat, 14 Oct 2017 22:10:57 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2017-10-rust/</guid>
+      <description>Rust入門者向けハンズオンに参加した Rust入門者向けハンズオン #4 - connpass
+Rust に興味はあったけど触ったことなかったからよさそうと思って参加した。
+触れてよかった。
+これからも機会があれば触りたい。
+言語に抱いたイメージ 現実的な言語だと思った。
+ちゃんと実戦で使えるもの、という現実解としてこの形になったという感じ。
+人間は信用できない、安全側に倒している、というのもよい。
+メモリー周りの問題を解決することに興味が向いていると思うと納得するところもある。
+関数型言語に影響を強く受けているということで触りやすかった。
+基本的にイミュータブルとか。
+でも参照とかを意識的にたくさん書いてる気配があるあたり、厳密にイミュータブルにするんじゃなくて処理の高速化のためとのバランスを取っている感じ。
+結論 現時点でメインで触ることはない。
+でも次ツールを書こうと思ったら Go じゃなくて Rust を選択すると思う。</description>
+    </item>
     
     <item>
       <title>デスクの向きを窓に向けたら気持ちがいい</title>
