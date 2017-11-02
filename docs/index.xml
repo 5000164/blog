@@ -6,10 +6,20 @@
     <description>Recent content on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 31 Oct 2017 23:19:11 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 02 Nov 2017 13:05:43 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Google 検索で日本語で検索するブックマークレット</title>
+      <link>http://blog.5000164.jp/2017-11-search/</link>
+      <pubDate>Thu, 02 Nov 2017 13:05:43 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2017-11-search/</guid>
+      <description>コード 1javascript:(function(){location=(location.href+&amp;#39;&amp;amp;hl=ja&amp;#39;)}());   背景 Google 検索の設定を英語にしているが、まだ読めないことがたくさんあるので日本語で検索したくなる。
+URL に hl=ja というパラメーターをつけることで言語設定を日本語にして検索することができるのでそれを簡略するためにブックマークレットを使う。</description>
+    </item>
     
     <item>
       <title>Mistel Barocco の設定備忘録</title>
