@@ -30,167 +30,165 @@
 </figure>
 
 
-<h1 id="作ったもの">作ったもの</h1>
+<h2 id="作ったもの">作ったもの</h2>
 
 <p><a href="http://5000164.jp/space_delete/" title="空白改行削除 | 5000164 here.">空白改行削除 | 5000164 here.</a></p>
 
-<h1 id="作ったものの概要">作ったものの概要</h1>
+<h2 id="作ったものの概要">作ったものの概要</h2>
 
 <p>半角スペース、全角スペース、タブ、改行を削除します。</p>
 
-<h1 id="作成にいたる経緯">作成にいたる経緯</h1>
+<h2 id="作成にいたる経緯">作成にいたる経緯</h2>
 
-<p>パソコンに何もアプリケーションをインストールしてはいけない環境。</p>
+<p>パソコンに何もアプリケーションをインストールしてはいけない環境。<br />
+文章を少しだけ修正する作業。<br />
+修正した文章は改行と空白を削除しなければならない。<br />
+という状況がつらかったから作った。</p>
 
-<p>文章を少しだけ修正する作業。</p>
+<h2 id="webアプリという選択肢">Webアプリという選択肢</h2>
 
-<p>修正した文章は改行と空白を削除しなければならない。</p>
+<p>アプリケーションはインストールできないけど、Webアプリならインストール不要。<br />
+なのでいい感じにWebで使えるツールを探す。<br />
+改行を削除するツールはたくさん見つかったが、使いづらい。<br />
+見つけたものは「改行を削除」するだけのツールのみ。<br />
+必要な作業は「文章を編集」して「改行を削除」すること。<br />
+出来上がってる文章をペーストして、改行を削除して、削除結果をコピーするという前提で作られているので、ちょっとした修正がやりづらい。</p>
 
-<p>という状況がつらかったから作った。</p>
-
-<h1 id="webアプリという選択肢">Webアプリという選択肢</h1>
-
-<p>アプリケーションはインストールできないけど、Webアプリならインストール不要。</p>
-
-<p>なのでいい感じにWebで使えるツールを探す。</p>
-
-<p>改行を削除するツールはたくさん見つかったが、使いづらい。</p>
-
-<p>見つけたものは「改行を削除」するだけのツールのみ。</p>
-
-<p>必要な作業は「文章を編集」して「改行を削除」すること。</p>
-
-<p>出来上がってる文章をペーストして、改行を削除して、削除結果をコピーするという前提で作られているので、ちょっとした修正がやりづらい。</p>
-
-<h1 id="だから少しだけ編集もしやすいツールを作った-h2">だから少しだけ編集もしやすいツールを作った</h2></h1>
+<h2 id="だから少しだけ編集もしやすいツールを作った">だから少しだけ編集もしやすいツールを作った</h2>
 
 <p>少しだけ編集しやすくするにあたって重視したことは下記の3つです。</p>
 
-<ul style="list-style-type: disc; margin: 1em; padding-left: 40px;">
-  <li>
-    編集領域は広め
-  </li>
-  <li>
-    ショートカットで削除処理が実行可能
-  </li>
-  <li>
-    削除処理をしたらそのままCtrl+Cしたい
-  </li>
+<ul>
+<li>編集領域は広め</li>
+<li>ショートカットで削除処理が実行可能</li>
+<li>削除処理をしたらそのままCtrl+Cしたい</li>
 </ul>
 
-<h2 id="作ってみた-ver-1">作ってみた Ver.1</h2>
+<h3 id="作ってみた-ver-1">作ってみた Ver.1</h3>
 
-
+<p>
 <figure >
     
         <img src="/images/2013/10/20131023_space_delete_ver1.png" />
     
     
 </figure>
+<br />
+というわけで作ってみた。<br />
+編集領域はちょっと広め。<br />
+なによりも編集部分のフォントサイズと行間の設定を自分好みにした。<br />
+自分のために作っただけあって他のツールよりも使いやすい。<br />
+でも使ってると編集領域が物足りないと感じた。<br />
+フォントサイズは大きめにしてるのでもっと編集領域を広げたい。<br />
+そしてもっとエディタ感を出したい。</p>
 
+<h3 id="作ってみた-ver-2">作ってみた Ver.2</h3>
 
-<p>というわけで作ってみた。</p>
-
-<p>編集領域はちょっと広め。</p>
-
-<p>なによりも編集部分のフォントサイズと行間の設定を自分好みにした。</p>
-
-<p>自分のために作っただけあって他のツールよりも使いやすい。</p>
-
-<p>でも使ってると編集領域が物足りないと感じた。</p>
-
-<p>フォントサイズは大きめにしてるのでもっと編集領域を広げたい。</p>
-
-<p>そしてもっとエディタ感を出したい。</p>
-
-<h2 id="作ってみた-ver-2">作ってみた Ver.2</h2>
-
-
+<p>
 <figure >
     
         <img src="/images/2013/10/20131023_space_delete_ver2.png" />
     
     
 </figure>
+<br />
+というわけで作ってみた。<br />
+とってもエディタエディタさせました。<br />
+ウィンドウサイズを変更しても編集領域が追従します。<br />
+Pure CSSで実現。<br />
+動作対象はもちろんモダンブラウザです。<br />
+機能を満たしながらも編集領域は最大限確保できたかなと思います。<br />
+とりあえず満足。<br />
+ちょっとだけ編集する用なのでTabキーとか使えないです。<br />
+あとは行番号の表示とかにも興味あったけど、とりあえずこれで一段落。</p>
 
+<h2 id="改行と空白を削除してる部分の処理内容">改行と空白を削除してる部分の処理内容</h2>
 
-<p>というわけで作ってみた。</p>
-
-<p>とってもエディタエディタさせました。</p>
-
-<p>ウィンドウサイズを変更しても編集領域が追従します。</p>
-
-<p>Pure CSSで実現。</p>
-
-<p>動作対象はもちろんモダンブラウザです。</p>
-
-<p>機能を満たしながらも編集領域は最大限確保できたかなと思います。</p>
-
-<p>とりあえず満足。</p>
-
-<p>ちょっとだけ編集する用なのでTabキーとか使えないです。</p>
-
-<p>あとは行番号の表示とかにも興味あったけど、とりあえずこれで一段落。</p>
-
-<h1 id="改行と空白を削除してる部分の処理内容">改行と空白を削除してる部分の処理内容</h1>
-
-<p>JavaScriptで実装しています。</p>
-
-<p>jQueryを使用。</p>
-
-<pre class="brush: jscript; title: ; notranslate" title="">$(function() {
+<p>JavaScriptで実装しています。<br />
+jQueryを使用。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-javascript" data-lang="javascript"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   
-  // Ctrl + Enterを押した場合に空白削除処理実行
-  $("#input").keydown(function(event)　{
-    if(event.ctrlKey === true && event.which === 13) {
-      spaceDelete();
-    }
-  });
+  <span class="c1">// Ctrl + Enterを押した場合に空白削除処理実行</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#input&quot;</span><span class="p">).</span><span class="nx">keydown</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span>　<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">ctrlKey</span> <span class="o">===</span> <span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="nx">event</span><span class="p">.</span><span class="nx">which</span> <span class="o">===</span> <span class="mi">13</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">spaceDelete</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
   
-  // ボタンをクリックした場合も空白削除処理実行
-  $("#run").click(function() {
-    spaceDelete();
-  });
+  <span class="c1">// ボタンをクリックした場合も空白削除処理実行</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#run&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">spaceDelete</span><span class="p">();</span>
+  <span class="p">});</span>
   
-  // 空白削除処理実行後に内容を全選択する
-  $("#result").focus(function() {
-    $(this).select();
-  });
-});
+  <span class="c1">// 空白削除処理実行後に内容を全選択する</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#result&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">select</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">});</span>
   
-// 空白削除処理
-function spaceDelete() {
+<span class="c1">// 空白削除処理</span>
+<span class="kd">function</span> <span class="nx">spaceDelete</span><span class="p">()</span> <span class="p">{</span>
   
-  // 入力文字列取得
-  var inputText = $("#input").val();
-  var resultText = "";
+  <span class="c1">// 入力文字列取得</span>
+  <span class="kd">var</span> <span class="nx">inputText</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#input&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">resultText</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
   
-  // 空白文字をすべて削除
-  resultText = inputText.replace(/\s/g, "");
+  <span class="c1">// 空白文字をすべて削除</span>
+  <span class="nx">resultText</span> <span class="o">=</span> <span class="nx">inputText</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\s/g</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
   
-  // 空白文字を削除した文字列を出力
-  $("#result").val(resultText);
+  <span class="c1">// 空白文字を削除した文字列を出力</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#result&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">resultText</span><span class="p">);</span>
   
-  // 出力内容にフォーカス
-  $("#result").focus();
-}
-</pre>
+  <span class="c1">// 出力内容にフォーカス</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#result&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>処理内容はこれだけです。<br />
+正規表現で文字列を置換しています。<br />
+正規表現の\sは全角スペースに一致しないと思ったら一致するんですね。</p>
 
-<p>処理内容はこれだけです。</p>
+<h2 id="まとめ">まとめ</h2>
 
-<p>正規表現で文字列を置換しています。</p>
-
-<p>正規表現の\sは全角スペースに一致しないと思ったら一致するんですね。</p>
-
-<h1 id="まとめ">まとめ</h1>
-
-<p>Ver.1の製作時間は2時間くらい。</p>
-
-<p>Ver.2の製作時間は5時間くらい。</p>
-
-<p>CSSだけで編集領域をウィンドウに合わせるのに時間がかかった。</p>
-
-<p>自分なりには結構使いやすく作れたので満足です。</p>
+<p>Ver.1の製作時間は2時間くらい。<br />
+Ver.2の製作時間は5時間くらい。<br />
+CSSだけで編集領域をウィンドウに合わせるのに時間がかかった。<br />
+自分なりには結構使いやすく作れたので満足です。</p>
 
 </article>
 <footer>
