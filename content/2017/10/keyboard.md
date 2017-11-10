@@ -16,6 +16,8 @@ url = "2017-10-keyboard"
 ### Mistel Barocco マクロ設定
 
 - Left Control: Fn
+- Left Command: Right Command
+- Right Command: Left Command
 - Backspace: \\\
 - \\\: Backspace
 - Fn + \\\: Delete
