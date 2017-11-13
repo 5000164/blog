@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://blog.5000164.jp/2017-11-profile/</loc>
+    <lastmod>2017-11-13T10:24:04+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://blog.5000164.jp/2017-11-search/</loc>
     <lastmod>2017-11-02T13:05:43+09:00</lastmod>
   </url>
@@ -1124,13 +1129,13 @@
   
   <url>
     <loc>http://blog.5000164.jp/2017/</loc>
-    <lastmod>2017-11-02T13:05:43+09:00</lastmod>
+    <lastmod>2017-11-13T10:24:04+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.5000164.jp/</loc>
-    <lastmod>2017-11-02T13:05:43+09:00</lastmod>
+    <lastmod>2017-11-13T10:24:04+09:00</lastmod>
     <priority>0</priority>
   </url>
   
