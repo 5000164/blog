@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=600">
+    <meta name="generator" content="Hugo 0.30.2" />
+    <title>開いているページのはてなブックマークのコメントページに移動するブックマークレット | 5000164 is here</title>
+    <link href="/favicon.ico" rel="icon">
+    <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/monokai.css" rel="stylesheet">
+    <link href="http://blog.5000164.jp/2017-11-hatebu/" rel="canonical">
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+<article>
+    <div>2017-11-17</div>
+    <h1>開いているページのはてなブックマークのコメントページに移動するブックマークレット</h1>
+    
+
+<h2 id="コード">コード</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-javascript" data-lang="javascript">1</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">javascript</span><span class="o">:</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span><span class="nx">location</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;http://b.hatena.ne.jp/entry/&#39;</span><span class="o">+</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">+</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="o">+</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">)}());</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="背景">背景</h2>
+
+<p>はてなブックマークの人気エントリーを RSS で購読しているが、なんでこれが人気エントリーになっているんだろう？と思う時がある。<br />
+その時に毎回はてなブックマークを検索して、そこからさらに URL を入力して、とやっていたが、それが手間だったのでブックマークレットで遷移できるようにした。</p>
+
+</article>
+<footer>
+    <div>菅原 浩</div>
+    <div><a href="https://github.com/5000164/profile">About</a></div>
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

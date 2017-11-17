@@ -6,10 +6,20 @@
     <description>Recent content in 2017s on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 14 Nov 2017 20:55:51 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 17 Nov 2017 13:13:43 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/2017/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>開いているページのはてなブックマークのコメントページに移動するブックマークレット</title>
+      <link>http://blog.5000164.jp/2017-11-hatebu/</link>
+      <pubDate>Fri, 17 Nov 2017 13:13:43 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2017-11-hatebu/</guid>
+      <description>コード 1javascript:(function(){location=(&amp;#39;http://b.hatena.ne.jp/entry/&amp;#39;+location.host+location.pathname+location.search)}());   背景 はてなブックマークの人気エントリーを RSS で購読しているが、なんでこれが人気エントリーになっているんだろう？と思う時がある。
+その時に毎回はてなブックマークを検索して、そこからさらに URL を入力して、とやっていたが、それが手間だったのでブックマークレットで遷移できるようにした。</description>
+    </item>
     
     <item>
       <title>その判断は合理的か？ - 本「不合理　誰もがまぬがれない思考の罠100」の感想</title>
