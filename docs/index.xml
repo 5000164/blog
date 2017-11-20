@@ -6,10 +6,25 @@
     <description>Recent content on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 17 Nov 2017 13:13:43 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 20 Nov 2017 13:26:39 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>高速化のために Hugo で CSS を HTML に埋め込む</title>
+      <link>http://blog.5000164.jp/2017-11-speed/</link>
+      <pubDate>Mon, 20 Nov 2017 13:26:39 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2017-11-speed/</guid>
+      <description>速い is 正義 CSS は HTML に埋め込んだ方が速いらしい。
+では Hugo でどうやってそれを実現するのか。
+partial を使えばできそうだと思ってぐぐったらあった。
+ [Feature request] Partial CSS files · Issue #3186 · gohugoio/hugo  これに従って下記のように修正する。
+1&amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt;{{ partial &amp;quot;css/main.css&amp;quot; . | print | safeCSS }}{{ partial &amp;quot;css/monokai.css&amp;quot; . | print | safeCSS }}&amp;lt;/style&amp;gt;   これでできた。
+コードはここ。
+ 高速化のために Web フォントをやめて CSS を HTML への埋め込みにした · 5000164/divided@0f3132d  Minify はまだできてない 簡単にやる方法あるのかな。</description>
+    </item>
     
     <item>
       <title>開いているページのはてなブックマークのコメントページに移動するブックマークレット</title>
