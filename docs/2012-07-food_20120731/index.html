@@ -9,6 +9,8 @@
     margin: 0;
     font-size: 62.5%;
     font-family: sans-serif;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02rem;
     overflow-x: hidden;
 }
 
@@ -29,11 +31,33 @@ body {
 
 header {
     padding: 20px;
+    letter-spacing: -0.2rem;
 }
 
 footer {
     padding: 20px;
     text-align: right;
+    letter-spacing: -0.2rem;
+}
+
+.articles {
+    list-style: none;
+    margin: 0 20px;
+    padding: 0;
+}
+
+.articles > li {
+    margin: 40px 0;
+}
+
+.articles > li > a {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 2rem;
+}
+
+.articles > li > a > div:first-child {
+    white-space: nowrap;
 }
 
 article {
