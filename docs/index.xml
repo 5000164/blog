@@ -32,8 +32,9 @@ partial を使えばできそうだと思ってぐぐったらあった。
       <pubDate>Fri, 17 Nov 2017 13:13:43 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-11-hatebu/</guid>
-      <description>コード 1javascript:(function(){location=(&amp;#39;http://b.hatena.ne.jp/entry/&amp;#39;+location.host+location.pathname+location.search)}());   背景 はてなブックマークの人気エントリーを RSS で購読しているが、なんでこれが人気エントリーになっているんだろう？と思う時がある。
-その時に毎回はてなブックマークを検索して、そこからさらに URL を入力して、とやっていたが、それが手間だったのでブックマークレットで遷移できるようにした。</description>
+      <description> コード 1javascript:(function(){location=(&amp;#39;http://b.hatena.ne.jp/entry/&amp;#39;+(location.protocol==&amp;#39;https:&amp;#39;?&amp;#39;s/&amp;#39;:&amp;#39;&amp;#39;)+location.host+location.pathname+location.search)}());   背景 はてなブックマークの人気エントリーを RSS で購読しているが、なんでこれが人気エントリーになっているんだろう？と思う時がある。
+その時に毎回はてなブックマークを検索して、そこからさらに URL を入力して、とやっていたが、それが手間だったのでブックマークレットで遷移できるようにした。
+参考  エントリーページの URL 変更について - はてなブックマーク日記 - 機能変更、お知らせなど  </description>
     </item>
     
     <item>
