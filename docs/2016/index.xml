@@ -17,11 +17,7 @@
       <pubDate>Sun, 11 Dec 2016 01:52:56 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2016-12-profiler_memo/</guid>
-      <description>プロファイラーを調べた PHP のパフォーマンスを向上させたくてプロファイリングすればなにかわかるのでは？と思ったので、プロファイリングしてくれるツールを調べた。 New Relic は無料のプランがなくなっていた？ので除外。
-結論 テスト流す時に Xdebug でプロファイリングして、開発環境で XHProf でプロファイリングすればいいのかなと思った。
-XHProf は fork したプロセスのプロファイリングもできるみたいなことを見かけたため。
-実現性についてはこれから調べる。
-調べたプロファイラーのメモ  Xdebug - Debugger and Profiler Tool for PHP phacility/xhprof: XHProf is a function-level hierarchical profiler for PHP and has a simple HTML based user interface. PHP profiling tools - Z-Ray, Blackfire, Tideways, XHProf, XHGui - Blog by Sandro Keil PHPプロファイラーのblackfireを使う - Qiita fork - php xdebug: How to profile forked process - Stack Overflow PhpStorm 2016.</description>
+      <description>プロファイラーを調べた PHP のパフォーマンスを向上させたくてプロファイリングすればなにかわかるのでは？と思ったので、プロファイリングしてくれるツ</description>
     </item>
     
     <item>
@@ -30,14 +26,7 @@ XHProf は fork したプロセスのプロファイリングもできるみた�
       <pubDate>Thu, 15 Sep 2016 03:01:06 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2016-09-test_driven_development_by_example/</guid>
-      <description>やっと読むことができた 本はだいぶ前に買ったのだけど、買った当時は理解できなくて最後まで読むことができなかった。
-テスト駆動開発入門なのであって、テスト入門ではない。
-テストを書いたことがないと理解できないと思う。
-もっとテストのことを考えられるようになった どういう考えでテストしていくのかを、なんとなく感じ取ることができた。
-正しいテストとは、といったことを考えていたので、この本を読むことでもっとテストのことを考えられるようになった。
-テストについてもっと勉強したい 読むことはできたけど、まだわからないことが多かった。
-テストについてもっと勉強したい。
-次は実戦テスト駆動開発を読む。</description>
+      <description>やっと読むことができた 本はだいぶ前に買ったのだけど、買った当時は理解できなくて最後まで読むことができなかった。 テスト駆動開発入門なのであって</description>
     </item>
     
   </channel>
