@@ -4,10 +4,12 @@ languageCode = "ja"
 title = "5000164 is here"
 theme = "divided"
 publishDir = "docs"
+
+pygmentsUseClassic = true
 pygmentscodefences = true
 pygmentsCodeFencesGuessSyntax = true
 pygmentsStyle = "monokai"
 pygmentsUseClasses = true
 pygmentsoptions = "linenos=on"
+
 googleAnalytics = "UA-51024599-1"
-pygmentsUseClassic = true
