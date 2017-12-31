@@ -61,7 +61,7 @@ url = "2017-12-adopt_2017"
 特に勉強や仕事のタスクは終わらないものもあるので、終わらせられるものをやろうとした結果雑務のタスクだけを消化してしまうなど。  
 朝勉強とあわせて、朝は勉強、勉強の後は仕事、仕事の後は雑務、と分けることでそれぞれの作業に手を付けることができるようになった。
 
-### Kindle
+### 電子書籍リーダー
 
 <a href="https://www.amazon.co.jp/dp/B06XDK92KS/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=9e9091ebc13575dc402d67874b83936f" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B06XDK92KS&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=li3&o=9&a=B06XDK92KS" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
