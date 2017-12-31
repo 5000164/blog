@@ -6,10 +6,19 @@
     <description>Recent content in 2017s on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 31 Dec 2017 17:17:03 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 31 Dec 2017 17:57:13 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/2017/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2017 年に取り入れてよかったもの</title>
+      <link>http://blog.5000164.jp/2017-12-adopt_2017/</link>
+      <pubDate>Sun, 31 Dec 2017 17:57:13 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2017-12-adopt_2017/</guid>
+      <description>人生をよりよいものにするために 2017 年もいろいろなものを取り入れた。 その中でもよかったと思うものを振り返る。 前提 2017 年に新しく導入したもののみを取</description>
+    </item>
     
     <item>
       <title>教養としてのScala ~ そろそろ始めてみたい2017冬 に参加した</title>

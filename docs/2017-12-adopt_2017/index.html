@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=600">
+    <style type="text/css">html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: 62.5%;
+    font-family: sans-serif;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02rem;
+    overflow-x: hidden;
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+body {
+    width: 600px;
+    margin: auto;
+    font-size: 2rem;
+    line-height: 1.73;
+    color: hsl(235, 20%, 30%);
+    background-color: hsl(25, 50%, 99%);
+}
+
+header {
+    padding: 20px;
+    letter-spacing: -0.2rem;
+}
+
+footer {
+    padding: 20px;
+    text-align: right;
+    letter-spacing: -0.2rem;
+}
+
+.articles {
+    list-style: none;
+    margin: 0 20px;
+    padding: 0;
+}
+
+.articles > li {
+    margin: 40px 0;
+}
+
+.articles > li > a {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 2rem;
+}
+
+.articles > li > a > div:first-child {
+    white-space: nowrap;
+}
+
+.articles > li > a > div:last-child {
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+article {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding: 20px;
+}
+
+h1 {
+    margin: 10px 0 20px;
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+h2 {
+    margin: 80px 0 20px;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+h3 {
+    margin: 80px 0 20px;
+    font-size: 1.8rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.highlighttable {
+    table-layout: fixed;
+    width: 600px;
+    background-color: #272822;
+    border-spacing: 0;
+}
+
+@media (min-width: 601px) {
+    .highlighttable {
+        margin-left: -1000%;
+        margin-right: -1000%;
+        padding-left: 1000%;
+        padding-right: 1000%;
+    }
+}
+
+@media (max-width: 600px) {
+    .highlighttable {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}
+
+.highlighttable .linenos {
+    width: 22px;
+    padding-left: 2px;
+    padding-right: 6px;
+    color: #f8f8f2;
+    text-align: right;
+}
+
+.highlighttable .code {
+    width: 566px;
+    padding-left: 2px;
+    padding-right: 2px;
+    overflow-x: scroll;
+}
+.highlight .hll { background-color: #49483e }
+.highlight  { background: #272822; color: #f8f8f2 }
+.highlight .c { color: #75715e } /* Comment */
+.highlight .err { color: #960050; background-color: #1e0010 } /* Error */
+.highlight .k { color: #66d9ef } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+.highlight .n { color: #f8f8f2 } /* Name */
+.highlight .o { color: #f92672 } /* Operator */
+.highlight .p { color: #f8f8f2 } /* Punctuation */
+.highlight .ch { color: #75715e } /* Comment.Hashbang */
+.highlight .cm { color: #75715e } /* Comment.Multiline */
+.highlight .cp { color: #75715e } /* Comment.Preproc */
+.highlight .cpf { color: #75715e } /* Comment.PreprocFile */
+.highlight .c1 { color: #75715e } /* Comment.Single */
+.highlight .cs { color: #75715e } /* Comment.Special */
+.highlight .gd { color: #f92672 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gi { color: #a6e22e } /* Generic.Inserted */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #75715e } /* Generic.Subheading */
+.highlight .kc { color: #66d9ef } /* Keyword.Constant */
+.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+.highlight .kn { color: #f92672 } /* Keyword.Namespace */
+.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+.highlight .kt { color: #66d9ef } /* Keyword.Type */
+.highlight .ld { color: #e6db74 } /* Literal.Date */
+.highlight .m { color: #ae81ff } /* Literal.Number */
+.highlight .s { color: #e6db74 } /* Literal.String */
+.highlight .na { color: #a6e22e } /* Name.Attribute */
+.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
+.highlight .nc { color: #a6e22e } /* Name.Class */
+.highlight .no { color: #66d9ef } /* Name.Constant */
+.highlight .nd { color: #a6e22e } /* Name.Decorator */
+.highlight .ni { color: #f8f8f2 } /* Name.Entity */
+.highlight .ne { color: #a6e22e } /* Name.Exception */
+.highlight .nf { color: #a6e22e } /* Name.Function */
+.highlight .nl { color: #f8f8f2 } /* Name.Label */
+.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
+.highlight .nx { color: #a6e22e } /* Name.Other */
+.highlight .py { color: #f8f8f2 } /* Name.Property */
+.highlight .nt { color: #f92672 } /* Name.Tag */
+.highlight .nv { color: #f8f8f2 } /* Name.Variable */
+.highlight .ow { color: #f92672 } /* Operator.Word */
+.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
+.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
+.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
+.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
+.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
+.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
+.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
+.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+.highlight .sc { color: #e6db74 } /* Literal.String.Char */
+.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+.highlight .se { color: #ae81ff } /* Literal.String.Escape */
+.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
+.highlight .sx { color: #e6db74 } /* Literal.String.Other */
+.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
+.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
+.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */
+</style>
+    <title>2017 年に取り入れてよかったもの | 5000164 is here</title>
+    <link href="/favicon.ico" rel="icon">
+    <link href="http://blog.5000164.jp/2017-12-adopt_2017/" rel="canonical">
+    <meta name="generator" content="Hugo 0.31.1" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+<article>
+    <div>2017-12-31</div>
+    <h1>2017 年に取り入れてよかったもの</h1>
+    
+
+<h2 id="人生をよりよいものにするために">人生をよりよいものにするために</h2>
+
+<p>2017 年もいろいろなものを取り入れた。<br />
+その中でもよかったと思うものを振り返る。</p>
+
+<h2 id="前提">前提</h2>
+
+<ul>
+<li>2017 年に新しく導入したもののみを取り上げる</li>
+<li>導入してよかったと感じているのは 28 歳 男性 プログラマー</li>
+</ul>
+
+<h2 id="学習編">学習編</h2>
+
+<h3 id="ポモドーロテクニック">ポモドーロテクニック</h3>
+
+<p>2017 年に導入して 1 番よかったものはこれ。<br />
+今まで存在とやり方は知っていたが、自分には合わないだろうという偏見で 1 度も試したことがなかった。<br />
+リモートワークを行うようになったこと、勉強のタスクをうまく区切れなくて手をつけるのに億劫になってしまっていたことを解消するために導入した。<br />
+導入して 1 番よかったことは、今までの「このタスクをやるのに何分」という考え方から「25 分でここまでできる」という考え方に変わったこと。<br />
+目標の設定もしやすいし、振り返りもできるし、達成感も得られるし、非常におすすめ。</p>
+
+<h3 id="kpt-による振り返り">KPT による振り返り</h3>
+
+<p>改善を進めていくために振り返りを導入した。<br />
+その振り返り手法として KPT を使っている。<br />
+ポモドーロテクニックによって振り返りを行いやすく、いいところを考えて達成感を得られ、次への改善を考えられるなど、シンプルで使いやすい。</p>
+
+<h3 id="早起き">早起き</h3>
+
+<p>早起きはいいという話はよく聞くけど、あんまり信用していなかった。<br />
+でもやったことがなかったのでやってみた。<br />
+結果的には、後述する朝勉強との組み合わせによってとてもいいと感じるようになった。</p>
+
+<h3 id="朝勉強">朝勉強</h3>
+
+<p>朝早起きして、仕事の時間まで勉強をすることにした。<br />
+まだできないことも多いけど、できた日はとても達成感がある。<br />
+なぜなら夜に開放感が得られるから。<br />
+今までは仕事が終わった後に「疲れてるけど勉強しないと」という義務感があってつらかったけど、朝に勉強をしておくとそういう義務感がなくなってとても楽になった。</p>
+
+<h3 id="昼休み読書">昼休み読書</h3>
+
+<p>昼休みは読書の時間にした。<br />
+1 日のルーチンに組み込むことによって意志の力を使って「頑張らないと」と思うことがなくなって楽になった。<br />
+ご飯の時も読みながら食べている。<br />
+後述する Kindle のおかげで実現することができた。</p>
+
+<h3 id="移動中読書">移動中読書</h3>
+
+<p>これも移動中は読書の時間と決めることで頑張る必要がなくなって楽になった。<br />
+こちらも Kindle のおかげで実現することができた。</p>
+
+<h3 id="時間帯でやることを分ける">時間帯でやることを分ける</h3>
+
+<p>タスクに優先順位をつけていて、勉強と仕事と雑務の優先順位が混ざった時にどこから手を付けるか迷ってしまうことがあった。<br />
+特に勉強や仕事のタスクは終わらないものもあるので、終わらせられるものをやろうとした結果雑務のタスクだけを消化してしまうなど。<br />
+朝勉強とあわせて、朝は勉強、勉強の後は仕事、仕事の後は雑務、と分けることでそれぞれの作業に手を付けることができるようになった。</p>
+
+<h3 id="kindle">Kindle</h3>
+
+<p><a href="https://www.amazon.co.jp/dp/B06XDK92KS/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=9e9091ebc13575dc402d67874b83936f" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B06XDK92KS&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=li3&o=9&a=B06XDK92KS" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+
+<ul>
+<li><a href="https://www.amazon.co.jp/dp/B06XDK92KS">Amazon | Kindle Oasis - 電子書籍リーダー</a></li>
+</ul>
+
+<p>電子ペーパーが切り替わるところがあまり好きじゃなかったので避けていたが、軽くて片手で持てて表示もきれいで画面も大きくて見やすいので買った。<br />
+その結果非常に良かった。<br />
+本を読む専用の筐体というのが本を読むぞという気持ちになっていい。</p>
+
+<h3 id="l-字デスク">L 字デスク</h3>
+
+<ul>
+<li><a href="http://www.ikea.com/jp/ja/catalog/products/S59006415/">BEKANT コーナーデスク 右 - ブラックブラウン/ブラック - IKEA</a></li>
+</ul>
+
+<p>L 字デスクに興味はあったが使ったことがなかったので買ってみた。<br />
+手元のスペースが広くていい。</p>
+
+<h3 id="モニターアーム">モニターアーム</h3>
+
+<p><a href="https://www.amazon.co.jp/dp/B074NVDV1J/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=b3cc66dba6c3a091078e166e0bd7834f" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B074NVDV1J&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=li3&o=9&a=B074NVDV1J" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+
+<ul>
+<li><a href="https://www.amazon.co.jp/dp/B074NVDV1J">Amazon | グリーンハウス 液晶ディスプレイアーム 5軸 クランプ式 (モニターサイズ:32インチまで) GH-AMCG01 | グリーンハウス | パソコン・周辺機器 通販</a></li>
+</ul>
+
+<p>モニターアームは高いと思っていたが、改めて見てみたら安かったので買ってみた。<br />
+デスクのスペースが広くなっていい。</p>
+
+<h2 id="仕事編">仕事編</h2>
+
+<h3 id="リモートワーク">リモートワーク</h3>
+
+<p>生活の選択肢が増えるのがとてもいい。<br />
+移動時間がなくなるのもとてもいい。<br />
+ただコミュニケーションが非常に難しい。<br />
+自己管理も非常に難しい。<br />
+改善していきたい。</p>
+
+<h2 id="生活編">生活編</h2>
+
+<h3 id="個人-slack">個人 Slack</h3>
+
+<p>Slack に自分用のワークスペースを作って運用し始めた。<br />
+RSS や Twitter の情報を Slack に集約することで情報収集しやすくなった。</p>
+
+<h3 id="comp-gummy">COMP GUMMY</h3>
+
+<ul>
+<li><a href="http://www.comp.jp/gummy.html">COMP GUMMY | 完全食 COMP</a></li>
+</ul>
+
+<p>COMP はすでに導入していて、とてもいいものだけど、味が甘めでしょっぱいものが食べたくなってしまう問題があった。<br />
+COMP GUMMY は味が甘い系ではなくしょっぱい系で、噛みごたえもあり、 COMP と COMP GUMMY をあわせることで満足度が上がった。</p>
+
+<h3 id="空気清浄機">空気清浄機</h3>
+
+<p><a href="https://www.amazon.co.jp/dp/B073WJDQMN/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=c23a61e8d27cab86efeba1ec1854342a" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B073WJDQMN&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=li3&o=9&a=B073WJDQMN" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+
+<ul>
+<li><a href="http://www.yodobashi.com/product/100000001003707352/">ヨドバシ.com - Blueair ブルーエア 101436 [空気清浄機 Blue Pure 411 Particle＋Carbon] 通販【全品無料配達】</a></li>
+</ul>
+
+<p>空気清浄機も買ったことがなかったので買ってみた。<br />
+買ったやつはあんまり評価良くないけど、ほこりをたくさん吸ってるのを見るとこんなにほこりを吸っていたのかとなって買ってよかったという気持ちになる。</p>
+
+<h3 id="収納">収納</h3>
+
+<p><a href="https://www.amazon.co.jp/dp/B001RCU1V8/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=35671f17e731867b5a24a4443d34674b" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B001RCU1V8&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=li3&o=9&a=B001RCU1V8" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+
+<ul>
+<li><a href="https://www.amazon.co.jp/dp/B001RCU1V8">Amazon | フェローズ バンカーズボックス 703ボックス A4ファイル用 黒 3枚パック 対荷重30kg | 文房具・オフィス用品 | 文房具・オフィス用品</a></li>
+</ul>
+
+<p>物が床に散らばっている状態だったので収納を買った。<br />
+収納を買うと物がしまえて便利だということに気付いた。<br />
+引っ越しをよくするので、その気になれば簡単に捨てられるものを探した結果ダンボール製の収納を買うことにした。</p>
+
+<h3 id="目覚まし時計">目覚まし時計</h3>
+
+<p><a href="https://hb.afl.rakuten.co.jp/hgc/164a7833.fc0cc12c.164a7834.5b0639cb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmoonmoon%2Finti4%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmoonmoon%2Fi%2F10000152%2F&link_type=pict&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0Iiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJkb3duIiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MH0%3D" target="_blank" rel="nofollow" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hgb/164a7833.fc0cc12c.164a7834.5b0639cb/?me_id=1280430&item_id=10000152&m=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_gold%2Fmoonmoon%2Fimages%2Finti4_pc%2Finti4_items_00b.jpg%3F_ex%3D80x80&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_gold%2Fmoonmoon%2Fimages%2Finti4_pc%2Finti4_items_00b.jpg%3F_ex%3D400x400&s=400x400&t=pict" border="0" alt="" title=""></a></p>
+
+<ul>
+<li><a href="https://item.rakuten.co.jp/moonmoon/inti4/">【楽天市場】目覚まし時計 光と大音量の最強目覚ましinti4 最新の寝坊対策は光と大音量で起きる 保証付 おしゃれ 子供 デジタル おもしろ：ムーンムーン楽天市場店</a></li>
+</ul>
+
+<p>こんなに高いものを買う必要はなかったかも知れないけど、朝起きる時間に明るくなるのは起きやすくなっていい。<br />
+他の光目覚まし時計を使ったことがないので比較はできないけど、今のところ満足している。</p>
+
+<h3 id="6-畳の部屋">6 畳の部屋</h3>
+
+<p>6 畳の部屋がちょうどいい広さだと知った。</p>
+
+<h3 id="キッチン不使用">キッチン不使用</h3>
+
+<p>キッチンをまったく使用しない、食器や調味料、調理器具などもまったく買わないことで物とかかるお金を減らすことができた。<br />
+普段は COMP と COMP GUMMY を食べ、外食したくなったら外で食べている。<br />
+ただ、紙コップと割り箸はあった方が便利。</p>
+
+<h3 id="部屋に花を飾る">部屋に花を飾る</h3>
+
+<p>部屋に花を飾ると気持ちがいい。</p>
+
+<h2 id="ツール編">ツール編</h2>
+
+<h3 id="ウィンドウマネージャー">ウィンドウマネージャー</h3>
+
+<ul>
+<li><a href="https://github.com/ianyh/Amethyst">ianyh/Amethyst: Automatic tiling window manager for macOS à la xmonad.</a></li>
+</ul>
+
+<p>今までウィンドウの位置を揃えたりしていた手間がなくなった。</p>
+
+<h3 id="入力切替">入力切替</h3>
+
+<ul>
+<li><a href="https://ei-kana.appspot.com/">⌘英かな</a></li>
+</ul>
+
+<p>入力切替をトグル式に切り替えるのは現在の入力モードを把握する必要があって手間だった。<br />
+特定のキーを押すことで入力モードを指定できるのが日本語キーボードのメリットだったが、このアプリのおかげで英字キーボードがいいと思えるようになった。</p>
+
+<h3 id="パスワード管理">パスワード管理</h3>
+
+<ul>
+<li><a href="https://keepersecurity.com/">Best Password Manager &amp; Secure Digital Vault - Keeper</a></li>
+</ul>
+
+<p>今まで KeePass を使っていたが、有料のサービスはやっぱり便利だった。</p>
+
+<h3 id="ポモドーロタイマー">ポモドーロタイマー</h3>
+
+<ul>
+<li><a href="https://play.google.com/store/apps/details?id=com.AT.PomodoroTimer&amp;hl=ja">Brain Focus Productivity Timer - Google Play の Android アプリ</a></li>
+</ul>
+
+<p>Pebble に通知が来る Android アプリを探したところ、これが使いやすくてよかった。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>特に勉強する仕組みを作ることを意識した。<br />
+よいと思ったものはこれからも継続していきたい。</p>
+
+</article>
+<footer>
+    <div>菅原 浩</div>
+    <div><a href="https://github.com/5000164/profile">About</a></div>
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+
