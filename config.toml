@@ -1,4 +1,5 @@
 baseURL = "http://blog.5000164.jp"
+DefaultContentLanguage = "ja"
 hasCJKLanguage = true
 languageCode = "ja"
 title = "5000164 is here"
