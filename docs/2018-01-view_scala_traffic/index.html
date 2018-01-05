@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=600">
+    <style type="text/css">html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: 62.5%;
+    font-family: sans-serif;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02rem;
+    overflow-x: hidden;
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+body {
+    width: 600px;
+    margin: auto;
+    font-size: 2rem;
+    line-height: 1.73;
+    color: hsl(235, 20%, 30%);
+    background-color: hsl(25, 50%, 99%);
+}
+
+header {
+    padding: 20px;
+    letter-spacing: -0.2rem;
+}
+
+footer {
+    padding: 20px;
+    text-align: right;
+    letter-spacing: -0.2rem;
+}
+
+.articles {
+    list-style: none;
+    margin: 0 20px;
+    padding: 0;
+}
+
+.articles > li {
+    margin: 40px 0;
+}
+
+.articles > li > a {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 2rem;
+}
+
+.articles > li > a > div:first-child {
+    white-space: nowrap;
+}
+
+.articles > li > a > div:last-child {
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+article {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding: 20px;
+}
+
+h1 {
+    margin: 10px 0 20px;
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+h2 {
+    margin: 80px 0 20px;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+h3 {
+    margin: 80px 0 20px;
+    font-size: 1.8rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.highlighttable {
+    table-layout: fixed;
+    width: 600px;
+    background-color: #272822;
+    border-spacing: 0;
+}
+
+@media (min-width: 601px) {
+    .highlighttable {
+        margin-left: -1000%;
+        margin-right: -1000%;
+        padding-left: 1000%;
+        padding-right: 1000%;
+    }
+}
+
+@media (max-width: 600px) {
+    .highlighttable {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}
+
+.highlighttable .linenos {
+    width: 22px;
+    padding-left: 2px;
+    padding-right: 6px;
+    color: #f8f8f2;
+    text-align: right;
+}
+
+.highlighttable .code {
+    width: 566px;
+    padding-left: 2px;
+    padding-right: 2px;
+    overflow-x: scroll;
+}
+.highlight .hll { background-color: #49483e }
+.highlight  { background: #272822; color: #f8f8f2 }
+.highlight .c { color: #75715e } /* Comment */
+.highlight .err { color: #960050; background-color: #1e0010 } /* Error */
+.highlight .k { color: #66d9ef } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+.highlight .n { color: #f8f8f2 } /* Name */
+.highlight .o { color: #f92672 } /* Operator */
+.highlight .p { color: #f8f8f2 } /* Punctuation */
+.highlight .ch { color: #75715e } /* Comment.Hashbang */
+.highlight .cm { color: #75715e } /* Comment.Multiline */
+.highlight .cp { color: #75715e } /* Comment.Preproc */
+.highlight .cpf { color: #75715e } /* Comment.PreprocFile */
+.highlight .c1 { color: #75715e } /* Comment.Single */
+.highlight .cs { color: #75715e } /* Comment.Special */
+.highlight .gd { color: #f92672 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gi { color: #a6e22e } /* Generic.Inserted */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #75715e } /* Generic.Subheading */
+.highlight .kc { color: #66d9ef } /* Keyword.Constant */
+.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+.highlight .kn { color: #f92672 } /* Keyword.Namespace */
+.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+.highlight .kt { color: #66d9ef } /* Keyword.Type */
+.highlight .ld { color: #e6db74 } /* Literal.Date */
+.highlight .m { color: #ae81ff } /* Literal.Number */
+.highlight .s { color: #e6db74 } /* Literal.String */
+.highlight .na { color: #a6e22e } /* Name.Attribute */
+.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
+.highlight .nc { color: #a6e22e } /* Name.Class */
+.highlight .no { color: #66d9ef } /* Name.Constant */
+.highlight .nd { color: #a6e22e } /* Name.Decorator */
+.highlight .ni { color: #f8f8f2 } /* Name.Entity */
+.highlight .ne { color: #a6e22e } /* Name.Exception */
+.highlight .nf { color: #a6e22e } /* Name.Function */
+.highlight .nl { color: #f8f8f2 } /* Name.Label */
+.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
+.highlight .nx { color: #a6e22e } /* Name.Other */
+.highlight .py { color: #f8f8f2 } /* Name.Property */
+.highlight .nt { color: #f92672 } /* Name.Tag */
+.highlight .nv { color: #f8f8f2 } /* Name.Variable */
+.highlight .ow { color: #f92672 } /* Operator.Word */
+.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
+.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
+.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
+.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
+.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
+.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
+.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
+.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+.highlight .sc { color: #e6db74 } /* Literal.String.Char */
+.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+.highlight .se { color: #ae81ff } /* Literal.String.Escape */
+.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
+.highlight .sx { color: #e6db74 } /* Literal.String.Other */
+.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
+.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
+.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */
+</style>
+    <title>Scala の SSL / TLS 通信の中身を見る | 5000164 is here</title>
+    <link href="/favicon.ico" rel="icon">
+    <link href="http://blog.5000164.jp/2018-01-view_scala_traffic/" rel="canonical">
+    <meta name="generator" content="Hugo 0.32" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp">5000164 is here</a>
+</header>
+
+<article>
+    <div>2018-01-05</div>
+    <h1>Scala の SSL / TLS 通信の中身を見る</h1>
+    
+
+<h2 id="scala-の通信の中身が見たい">Scala の通信の中身が見たい</h2>
+
+<p>Scala で API を叩くコードを書いた。<br />
+ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。</p>
+
+<h2 id="プロキシーを通す">プロキシーを通す</h2>
+
+<p><a href="https://www.charlesproxy.com/">Charles</a> を使ってローカルにプロキシーを立てる。 (<a href="https://www.getpostman.com/">Postman</a> も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。)<br />
+HTTP 通信のライブラリとして <a href="https://github.com/softwaremill/sttp">sttp</a> を使用していたので <a href="http://sttp.readthedocs.io/en/latest/conf/proxy.html">プロキシーの設定方法</a> を参考にして下記のように設定する。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-scala" data-lang="scala">1</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">val</span> <span class="n">backend</span> <span class="k">=</span> <span class="nc">HttpURLConnectionBackend</span><span class="o">(</span><span class="n">options</span> <span class="k">=</span> <span class="nc">SttpBackendOptions</span><span class="o">.</span><span class="n">httpProxy</span><span class="o">(</span><span class="s">&quot;localhost&quot;</span><span class="o">,</span> <span class="mi">8888</span><span class="o">))</span>
+</code></pre></div>
+</td></tr></table>
+<p>これだけで、 HTTP 通信の中身は見られるようになる。</p>
+
+<h2 id="ssl-tls-通信の中身を見えるようにする">SSL / TLS 通信の中身を見えるようにする</h2>
+
+<p>SSL / TLS 通信の中身を見るための手順としては</p>
+
+<ul>
+<li>Charles の証明書を信頼したキーストアを生成する</li>
+<li>生成したキーストアをアプリケーションから読み込む</li>
+<li>Charles の SSL Proxy を有効にする</li>
+</ul>
+
+<p>となる。</p>
+
+<h3 id="charles-の証明書を信頼したキーストアを生成する">Charles の証明書を信頼したキーストアを生成する</h3>
+
+<p>まず Charles の証明書を取得する。<br />
+これはアプリケーションのメニューの <code>Help &gt; SSL Proxying &gt; Save Charles Root Certificate...</code> から取得できる。<br />
+拡張子は <code>Binary certificate (.cer)</code> で保存する。<br />
+保存したら取得した証明書を信頼したキーストアを生成する。<br />
+この時に普段使用されるキーストアを別の場所にコピーしてから作業を行うことで環境を汚さないようにした。<br />
+普段使用されるキーストアは jdk の中にあり、自分の場合は <code>$(/usr/libexec/java_home)/lib/security/cacerts</code> にあった。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-bash" data-lang="bash">1</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>keytool -keystore cacerts -importcert -alias charles -file charles-ssl-proxying-certificate.cer
+</code></pre></div>
+</td></tr></table>
+<p>また、この時に <code>keytool -list -keystore cacerts</code> のようにして内容を表示して追加されたかどうか確認することができる。</p>
+
+<h3 id="生成したキーストアをアプリケーションから読み込む">生成したキーストアをアプリケーションから読み込む</h3>
+
+<p>先ほど作成したキーストアをアプリケーションから読み込む。<br />
+実行環境としては IntelliJ IDEA で Scala を動かしている。<br />
+設定方法が環境変数に指定する方法しかわからなかったので環境変数に設定を行う。<br />
+下記のような内容を実行時の <code>VM parameters</code> に設定する。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-bash" data-lang="bash">1</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>-Djavax.net.ssl.keyStore<span class="o">=</span>/path/to/cacerts -Djavax.net.ssl.keyStorePassword<span class="o">=</span>changeit -Djavax.net.ssl.trustStore<span class="o">=</span>/path/to/cacerts -Djavax.net.ssl.trustStorePassword<span class="o">=</span>changeit
+</code></pre></div>
+</td></tr></table>
+<p><code>/path/to/cacerts</code> には先ほど作成したキーストアへのパスを指定する。</p>
+
+<h3 id="charles-の-ssl-proxy-を有効にする">Charles の SSL Proxy を有効にする</h3>
+
+<p>証明書を設定することで通信を行えるようにはなるが、このままでは通信の内容を見ることはできない。<br />
+通信の内容を見るために Charles の SSL Proxy の設定を有効にする。<br />
+メニューの <code>Proxy &gt; SSL Proxying Settings...</code> から設定画面を開き、 <code>Enable SSL Proxying</code> を有効にして対象のドメインを追加する。<br />
+これで SSL / TLS の通信の内容を見ることができるようになる。</p>
+
+<h2 id="感想">感想</h2>
+
+<p>なにをどうすれば通信の中身が見えるようになるのか全然わからない状態で調べ始めたけど、調べたらなんとかなってよかった。<br />
+通信の中身が見えるの便利。</p>
+
+<h2 id="ハマったことのメモ">ハマったことのメモ</h2>
+
+<ul>
+<li>Scala に javaOptions を設定する方法がわからなかった
+
+<ul>
+<li>build.sbt に書いても動かなかった
+
+<ul>
+<li>IntelliJ IDEA 経由で実行してたからっぽい？ <code>sbt run</code> したら動いた</li>
+</ul></li>
+</ul></li>
+<li>下記の方法で javaOptions の中身が表示できるけど仕組みはわかってない
+
+<ul>
+<li>これのおかげで javaOptions に設定できたと思ってたけどできてなかった、というところが問題だと気付くことができた</li>
+</ul></li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-scala" data-lang="scala"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="c1">// import what we need</span>
+<span class="k">import</span> <span class="nn">java.lang.management.ManagementFactory</span>
+
+<span class="k">import</span> <span class="nn">scala.collection.JavaConverters._</span>
+
+<span class="c1">// get a RuntimeMXBean reference</span>
+<span class="k">val</span> <span class="n">runtimeMxBean</span> <span class="k">=</span> <span class="nc">ManagementFactory</span><span class="o">.</span><span class="n">getRuntimeMXBean</span>
+
+<span class="c1">// get the jvm&#39;s input arguments as a list of strings</span>
+<span class="k">val</span> <span class="n">listOfArguments</span> <span class="k">=</span> <span class="n">runtimeMxBean</span><span class="o">.</span><span class="n">getInputArguments</span><span class="o">.</span><span class="n">asScala</span>
+
+<span class="c1">// print the arguments using my logger</span>
+<span class="k">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="n">listOfArguments</span><span class="o">)</span> <span class="n">println</span><span class="o">(</span><span class="s">s&quot;ARG: </span><span class="si">$a</span><span class="s">&quot;</span><span class="o">)</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="参考になったリンク">参考になったリンク</h2>
+
+<ul>
+<li><a href="https://alvinalexander.com/java/how-see-jvm-parameters-arguments-from-running-java-application">How to read JVM parameters/arguments from within a running Java application | alvinalexander.com</a></li>
+<li><a href="http://kiririmode.hatenablog.jp/entry/20160611/1465570800">JavaのJSSEでクライアント証明書を自由に選択できるようにする - 理系学生日記</a></li>
+<li><a href="https://qiita.com/kompiro/items/25b2e01c2e9aaab7f67d">SSLクライアント証明書を使って通信する - Qiita</a></li>
+<li><a href="http://web.plus-idea.net/2012/10/java-ssl-keystore/">javaのプログラムから、自己証明書等を利用したサイトにSSL接続する | ぱーくん plus idea</a></li>
+<li><a href="https://gist.github.com/tomykaira/6862475">How to use personal SSL CA on connecting to MySQL from Scala (sbt)</a></li>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/java-add-certificate-ca-store">Java CA ストアへの証明書の追加 | Microsoft Docs</a></li>
+<li><a href="https://www.qoosky.io/techs/9db75cec15">JDK keytool の基本的な使い方 (openssl との対比) - Qoosky</a></li>
+<li><a href="https://qiita.com/nenokido2000/items/b36b6e5f0854d7d63ba6">JavaにSSL証明書を追加する - Qiita</a></li>
+</ul>
+
+</article>
+<footer>
+    <div>菅原 浩</div>
+    <div><a href="https://github.com/5000164/profile">About</a></div>
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+
