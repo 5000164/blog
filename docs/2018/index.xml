@@ -6,10 +6,19 @@
     <description>Recent content in 2018s on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 13 Jan 2018 20:59:55 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jan 2018 08:53:55 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/2018/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Scala で JavaFX の Canvas でテキストを表示する</title>
+      <link>http://blog.5000164.jp/2018-01-scala_javafx_generate_image/</link>
+      <pubDate>Sun, 14 Jan 2018 08:53:55 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2018-01-scala_javafx_generate_image/</guid>
+      <description>昨日の記事 ではすでに存在する画像を表示したが、やりたいことは生成したテキストを画像にするということだったので、まずはテキストを表示できるよう</description>
+    </item>
     
     <item>
       <title>Scala で JavaFX を使って画像を表示する</title>
