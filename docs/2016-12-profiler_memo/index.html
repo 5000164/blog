@@ -2,47 +2,54 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=600">
-    <style type="text/css">html {
+    <meta name="viewport" content="width=640">
+    <style type="text/css">/* 全体の設定 */
+html {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-size: 62.5%;
+    font-size: 62.5%; /* 1 em を 10 px にするため*/
     font-family: sans-serif;
-    font-feature-settings: "palt";
-    letter-spacing: 0.02rem;
-    overflow-x: hidden;
-}
-
-@media (max-width: 600px) {
-    html {
-        font-size: 75%;
-    }
+    font-feature-settings: "palt"; /* 自動カーニングさせる */
+    letter-spacing: 0.02rem; /* 字間を調整 */
 }
 
 body {
-    width: 600px;
-    margin: auto;
+    width: 100%;
+    height: 100%;
+    margin: 0;
     font-size: 2rem;
     line-height: 1.73;
     color: hsl(235, 20%, 30%);
     background-color: hsl(25, 50%, 99%);
 }
 
+/* スマホでは文字を大きくする */
+@media (max-width: 640px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+/* 共通の設定 */
 header {
-    padding: 20px;
+    width: 600px;
+    margin: 20px auto 120px;
     letter-spacing: -0.2rem;
 }
 
 footer {
-    padding: 20px;
+    width: 600px;
+    margin: 120px auto 20px;
     text-align: right;
     letter-spacing: -0.2rem;
 }
 
+/* トップページの設定 */
 .articles {
+    width: 600px;
     list-style: none;
-    margin: 0 20px;
+    margin: 0 auto 20px;
     padding: 0;
 }
 
@@ -66,58 +73,74 @@ footer {
     word-wrap: break-word;
 }
 
-article {
-    margin-top: 80px;
-    margin-bottom: 80px;
-    padding: 20px;
+/* 記事ページの設定 */
+body > p {
+    width: 600px;
+    margin: 40px auto;
+}
+
+body > div {
+    width: 600px;
+    margin: auto;
+}
+
+body > ul {
+    width: 560px;
+    margin: auto;
+    padding-left: 40px;
 }
 
 h1 {
-    margin: 10px 0 20px;
-    font-size: 2.4rem;
+    width: 600px;
+    margin: 20px auto 120px;
+    font-size: 3rem;
+    font-weight: normal;
     text-align: center;
 }
 
 h2 {
-    margin: 80px 0 20px;
-    font-size: 2.2rem;
+    width: 600px;
+    margin: 120px auto 60px;
+    font-size: 2.4rem;
+    font-weight: normal;
     text-align: center;
 }
 
 h3 {
-    margin: 80px 0 20px;
-    font-size: 1.8rem;
+    width: 600px;
+    margin: 60px auto 40px;
+    font-size: 1.6rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+h4 {
+    width: 600px;
+    margin: 10px auto 10px;
+    font-size: 1.4rem;
     font-weight: normal;
     text-align: center;
 }
 
 img {
     display: block;
+    width: 600px;
     max-width: 100%;
     margin: 0 auto;
 }
 
 .highlighttable {
     table-layout: fixed;
-    width: 600px;
+    width: 100%;
     background-color: #272822;
     border-spacing: 0;
 }
 
-@media (min-width: 601px) {
-    .highlighttable {
-        margin-left: -1000%;
-        margin-right: -1000%;
-        padding-left: 1000%;
-        padding-right: 1000%;
-    }
-}
-
-@media (max-width: 600px) {
-    .highlighttable {
-        margin-left: -20px;
-        margin-right: -20px;
-    }
+.highlighttable > tbody {
+    display: block;
+    width: 600px;
+    margin: auto;
+    background-color: #272822;
 }
 
 .highlighttable .linenos {
@@ -133,6 +156,10 @@ img {
     padding-left: 2px;
     padding-right: 2px;
     overflow-x: scroll;
+}
+
+.highlighttable .highlight {
+    width: 566px;
 }
 .highlight .hll { background-color: #49483e }
 .highlight  { background: #272822; color: #f8f8f2 }
@@ -215,10 +242,9 @@ img {
     <a href="http://blog.5000164.jp">5000164 is here</a>
 </header>
 
-<article>
-    <div>2016-12-11</div>
-    <h1>調べた PHP のプロファイラーのメモ</h1>
-    
+<div>2016-12-11</div>
+<h1>調べた PHP のプロファイラーのメモ</h1>
+
 
 <h1 id="プロファイラーを調べた">プロファイラーを調べた</h1>
 
@@ -245,7 +271,6 @@ XHProf は fork したプロセスのプロファイリングもできるみた�
 <li><a href="http://uzulla.hateblo.jp/entry/2015/10/28/124732">PHPのプロファイラであるZ-RayのPreview版を試しました - uzullaがブログ</a></li>
 </ul>
 
-</article>
 <footer>
     <div>菅原 浩</div>
     <div><a href="https://github.com/5000164/profile">About</a></div>
