@@ -6,10 +6,19 @@
     <description>Recent content on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 14 Jan 2018 08:53:55 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jan 2018 20:35:10 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Scala で JavaFX の Casvas の内容を画像として保存する</title>
+      <link>http://blog.5000164.jp/2018-01-scala_javafx_save_image/</link>
+      <pubDate>Mon, 15 Jan 2018 20:35:10 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2018-01-scala_javafx_save_image/</guid>
+      <description>昨日の記事 の続きのようなもの。 Canvas で表示できるようになったから画像として保存する。 コードはこんな感じ。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18val c =</description>
+    </item>
     
     <item>
       <title>Scala で JavaFX の Canvas でテキストを表示する</title>
