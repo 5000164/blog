@@ -9,19 +9,22 @@ html {
     height: 100%;
     margin: 0;
     font-size: 62.5%; /* 1 em を 10 px にするため*/
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-kerning: normal; /* フォントのカーニングを常に有効にする */
     font-feature-settings: "palt"; /* 自動カーニングさせる */
     letter-spacing: 0.02rem; /* 字間を調整 */
+    -webkit-font-smoothing: antialiased; /* フォントにアンチエイリアスをかける (少し細く見える) */
+    -moz-osx-font-smoothing: grayscale; /* 同上 */
 }
 
 body {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.73;
-    color: hsl(235, 20%, 30%);
-    background-color: hsl(25, 50%, 99%);
+    color: hsl(235, 10%, 30%);
+    background-color: hsl(0, 100%, 100%);
 }
 
 /* スマホでは文字を大きくする */
@@ -31,18 +34,29 @@ body {
     }
 }
 
-/* 共通の設定 */
 header {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 60px auto 120px;
     letter-spacing: -0.2rem;
+}
+
+header > a {
+    text-decoration: none;
 }
 
 footer {
     width: 600px;
-    margin: 120px auto 20px;
+    margin: 120px auto 60px;
     text-align: right;
     letter-spacing: -0.2rem;
+}
+
+a {
+    color: hsl(235, 10%, 30%);
+}
+
+a:visited {
+    color: hsl(235, 10%, 50%);
 }
 
 /* トップページの設定 */
@@ -54,7 +68,7 @@ footer {
 }
 
 .articles > li {
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 .articles > li > a {
@@ -76,48 +90,38 @@ footer {
 /* 記事ページの設定 */
 body > p {
     width: 600px;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 body > div {
     width: 600px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 body > ul {
-    width: 560px;
+    width: 580px;
     margin: auto;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 h1 {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 0 auto 20px;
     font-size: 3rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h2 {
     width: 600px;
-    margin: 120px auto 60px;
+    margin: 120px auto 40px;
     font-size: 2.4rem;
-    font-weight: normal;
-    text-align: center;
-}
-
-h3 {
-    width: 600px;
-    margin: 60px auto 40px;
-    font-size: 1.6rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h4 {
     width: 600px;
     margin: 10px auto 10px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: normal;
     text-align: center;
 }
@@ -294,24 +298,24 @@ body > blockquote > p::before {
 
 <h2 id="機能">機能</h2>
 
-<h3 id="改行削除">改行削除</h3>
+<h2 id="改行削除">改行削除</h2>
 
 <p>改行を削除して出力領域に書き出し。<br />
 ショートカットキーはCtrl + Enter。<br />
 書き出したらテキストは全選択の状態なのでそのままコピー可。</p>
 
-<h3 id="空白削除">空白削除</h3>
+<h2 id="空白削除">空白削除</h2>
 
 <p>半角スペース、全角スペース、タブを削除して編集領域に上書き。<br />
 ショートカットキーはShift + Enter。<br />
 空白の削除前に戻したい場合はCtrl + Alt + Z。</p>
 
-<h3 id="空白改行削除">空白改行削除</h3>
+<h2 id="空白改行削除">空白改行削除</h2>
 
 <p>半角スペース、全角スペース、タブ、改行を削除して出力領域に書き出し。<br />
 ショートカットキーはCtrl + Shift + Enter。</p>
 
-<h3 id="補助機能">補助機能</h3>
+<h2 id="補助機能">補助機能</h2>
 
 <p>TabキーでTab文字の挿入。<br />
 Shift + Tabで行頭のTab文字を削除。<br />
@@ -370,7 +374,7 @@ textareaとdivタグを重ねる手法だと、常に内容を同期させる必
 
 <p>今回のCSSでは、編集領域をウィンドウサイズに合わせる、空白などの見えない文字を可視化する、ボタンを押した時にテキストが動く、というところがメインです。</p>
 
-<h3 id="編集領域をウィンドウサイズに合わせる">編集領域をウィンドウサイズに合わせる</h3>
+<h2 id="編集領域をウィンドウサイズに合わせる">編集領域をウィンドウサイズに合わせる</h2>
 
 <p>まずは編集領域をウィンドウサイズに合わせる部分から。<br />
 重要になるのはこのへんです。</p>
@@ -413,7 +417,7 @@ height: 100%;を使うためには、htmlとbodyにheight: 100%;を指定する�
 これ重要です。<br />
 あとはコンテンツ部分にもheight: 100%;を指定して、paddingで上下の余白を調整してあげれば、コンテンツの高さを自動でウィンドウサイズに合わせることができます。</p>
 
-<h3 id="空白などの見えない文字を可視化する">空白などの見えない文字を可視化する</h3>
+<h2 id="空白などの見えない文字を可視化する">空白などの見えない文字を可視化する</h2>
 
 <p>まずはtextareaとdivタグがずれないようにちゃんとスタイルを合わせます。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-css" data-lang="css"> 1
@@ -662,7 +666,7 @@ divタグにはcolor: transparent;と指定してテキストが見えないよ�
 例えば、pre.spaceがあったら、背景を変えて「･」を表示させるようにしています。<br />
 実際にpreタグの中に「･」を入れてしまうとtextareaとdivタグで内容が一致しなくなってしまうので、擬似要素を使って表示しています。</p>
 
-<h3 id="ボタンを押した時にテキストが動く">ボタンを押した時にテキストが動く</h3>
+<h2 id="ボタンを押した時にテキストが動く">ボタンを押した時にテキストが動く</h2>
 
 <p>ここでは私がかねてから実装してみたかった、バウンスするようなアニメーションを適用しています。<br />
 例として空白ボタンを見てみます。</p>
@@ -788,7 +792,7 @@ divタグにはcolor: transparent;と指定してテキストが見えないよ�
 おおまかに分けると、入力内容の同期、空白や改行の削除処理、Tabの処理、となっています。<br />
 また、今回はライブラリとしてjQueryを使用しています。</p>
 
-<h3 id="入力内容の同期">入力内容の同期</h3>
+<h2 id="入力内容の同期">入力内容の同期</h2>
 
 <p>特定の文字に色をつけるために、textareaとdivの内容を同期します。<br />
 その際に、特定の文字をマークアップしたり、入力内容のエスケープを行います。</p>
@@ -893,7 +897,7 @@ divタグにはcolor: transparent;と指定してテキストが見えないよ�
 </td></tr></table>
 <p>内容を同期する時は、内容が変更しそうなイベントをすべてバインドして、同期処理を走らせます。</p>
 
-<h3 id="空白や改行の削除処理">空白や改行の削除処理</h3>
+<h2 id="空白や改行の削除処理">空白や改行の削除処理</h2>
 
 <p>空白や改行は正規表現で削除しています。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-javascript" data-lang="javascript"> 1
@@ -1044,7 +1048,7 @@ divタグにはcolor: transparent;と指定してテキストが見えないよ�
 <p>範囲選択をしていない場合は非常にシンプルなのですが、範囲を選択している時は選択範囲にのみ処理を実行させるようにすると処理が複雑になります。<br />
 範囲選択をしている時は、選択範囲の始点と終点を取得し、それを基に処理を行います。</p>
 
-<h3 id="tabの処理">Tabの処理</h3>
+<h2 id="tabの処理">Tabの処理</h2>
 
 <p>ここが1番大変でした。<br />
 ここに1番時間がかかりました。<br />

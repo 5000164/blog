@@ -9,19 +9,22 @@ html {
     height: 100%;
     margin: 0;
     font-size: 62.5%; /* 1 em を 10 px にするため*/
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-kerning: normal; /* フォントのカーニングを常に有効にする */
     font-feature-settings: "palt"; /* 自動カーニングさせる */
     letter-spacing: 0.02rem; /* 字間を調整 */
+    -webkit-font-smoothing: antialiased; /* フォントにアンチエイリアスをかける (少し細く見える) */
+    -moz-osx-font-smoothing: grayscale; /* 同上 */
 }
 
 body {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.73;
-    color: hsl(235, 20%, 30%);
-    background-color: hsl(25, 50%, 99%);
+    color: hsl(235, 10%, 30%);
+    background-color: hsl(0, 100%, 100%);
 }
 
 /* スマホでは文字を大きくする */
@@ -31,18 +34,29 @@ body {
     }
 }
 
-/* 共通の設定 */
 header {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 60px auto 120px;
     letter-spacing: -0.2rem;
+}
+
+header > a {
+    text-decoration: none;
 }
 
 footer {
     width: 600px;
-    margin: 120px auto 20px;
+    margin: 120px auto 60px;
     text-align: right;
     letter-spacing: -0.2rem;
+}
+
+a {
+    color: hsl(235, 10%, 30%);
+}
+
+a:visited {
+    color: hsl(235, 10%, 50%);
 }
 
 /* トップページの設定 */
@@ -54,7 +68,7 @@ footer {
 }
 
 .articles > li {
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 .articles > li > a {
@@ -76,48 +90,38 @@ footer {
 /* 記事ページの設定 */
 body > p {
     width: 600px;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 body > div {
     width: 600px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 body > ul {
-    width: 560px;
+    width: 580px;
     margin: auto;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 h1 {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 0 auto 20px;
     font-size: 3rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h2 {
     width: 600px;
-    margin: 120px auto 60px;
+    margin: 120px auto 40px;
     font-size: 2.4rem;
-    font-weight: normal;
-    text-align: center;
-}
-
-h3 {
-    width: 600px;
-    margin: 60px auto 40px;
-    font-size: 1.6rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h4 {
     width: 600px;
     margin: 10px auto 10px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: normal;
     text-align: center;
 }
@@ -287,7 +291,7 @@ body > blockquote > p::before {
 
 <h2 id="学習編">学習編</h2>
 
-<h3 id="ポモドーロテクニック">ポモドーロテクニック</h3>
+<h2 id="ポモドーロテクニック">ポモドーロテクニック</h2>
 
 <p>2017 年に導入して 1 番よかったものはこれ。<br />
 今まで存在とやり方は知っていたが、自分には合わないだろうという偏見で 1 度も試したことがなかった。<br />
@@ -295,44 +299,44 @@ body > blockquote > p::before {
 導入して 1 番よかったことは、今までの「このタスクをやるのに何分」という考え方から「25 分でここまでできる」という考え方に変わったこと。<br />
 目標の設定もしやすいし、振り返りもできるし、達成感も得られるし、非常におすすめ。</p>
 
-<h3 id="kpt-による振り返り">KPT による振り返り</h3>
+<h2 id="kpt-による振り返り">KPT による振り返り</h2>
 
 <p>改善を進めていくために振り返りを導入した。<br />
 その振り返り手法として KPT を使っている。<br />
 ポモドーロテクニックによって振り返りを行いやすく、いいところを考えて達成感を得られ、次への改善を考えられるなど、シンプルで使いやすい。</p>
 
-<h3 id="早起き">早起き</h3>
+<h2 id="早起き">早起き</h2>
 
 <p>早起きはいいという話はよく聞くけど、あんまり信用していなかった。<br />
 でもやったことがなかったのでやってみた。<br />
 結果的には、後述する朝勉強との組み合わせによってとてもいいと感じるようになった。</p>
 
-<h3 id="朝勉強">朝勉強</h3>
+<h2 id="朝勉強">朝勉強</h2>
 
 <p>朝早起きして、仕事の時間まで勉強をすることにした。<br />
 まだできないことも多いけど、できた日はとても達成感がある。<br />
 なぜなら夜に開放感が得られるから。<br />
 今までは仕事が終わった後に「疲れてるけど勉強しないと」という義務感があってつらかったけど、朝に勉強をしておくとそういう義務感がなくなってとても楽になった。</p>
 
-<h3 id="昼休み読書">昼休み読書</h3>
+<h2 id="昼休み読書">昼休み読書</h2>
 
 <p>昼休みは読書の時間にした。<br />
 1 日のルーチンに組み込むことによって意志の力を使って「頑張らないと」と思うことがなくなって楽になった。<br />
 ご飯の時も読みながら食べている。<br />
 後述する Kindle のおかげで実現することができた。</p>
 
-<h3 id="移動中読書">移動中読書</h3>
+<h2 id="移動中読書">移動中読書</h2>
 
 <p>これも移動中は読書の時間と決めることで頑張る必要がなくなって楽になった。<br />
 こちらも Kindle のおかげで実現することができた。</p>
 
-<h3 id="時間帯でやることを分ける">時間帯でやることを分ける</h3>
+<h2 id="時間帯でやることを分ける">時間帯でやることを分ける</h2>
 
 <p>タスクに優先順位をつけていて、勉強と仕事と雑務の優先順位が混ざった時にどこから手を付けるか迷ってしまうことがあった。<br />
 特に勉強や仕事のタスクは終わらないものもあるので、終わらせられるものをやろうとした結果雑務のタスクだけを消化してしまうなど。<br />
 朝勉強とあわせて、朝は勉強、勉強の後は仕事、仕事の後は雑務、と分けることでそれぞれの作業に手を付けることができるようになった。</p>
 
-<h3 id="電子書籍リーダー">電子書籍リーダー</h3>
+<h2 id="電子書籍リーダー">電子書籍リーダー</h2>
 
 <p><a href="https://www.amazon.co.jp/dp/B06XDK92KS/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=9e9091ebc13575dc402d67874b83936f" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B06XDK92KS&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=li3&o=9&a=B06XDK92KS" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
 
@@ -344,7 +348,7 @@ body > blockquote > p::before {
 その結果非常に良かった。<br />
 本を読む専用の筐体というのが本を読むぞという気持ちになっていい。</p>
 
-<h3 id="l-字デスク">L 字デスク</h3>
+<h2 id="l-字デスク">L 字デスク</h2>
 
 <ul>
 <li><a href="http://www.ikea.com/jp/ja/catalog/products/S59006415/">BEKANT コーナーデスク 右 - ブラックブラウン/ブラック - IKEA</a></li>
@@ -353,7 +357,7 @@ body > blockquote > p::before {
 <p>L 字デスクに興味はあったが使ったことがなかったので買ってみた。<br />
 作業スペースが広くていい。</p>
 
-<h3 id="モニターアーム">モニターアーム</h3>
+<h2 id="モニターアーム">モニターアーム</h2>
 
 <p><a href="https://www.amazon.co.jp/dp/B074NVDV1J/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=b3cc66dba6c3a091078e166e0bd7834f" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B074NVDV1J&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=li3&o=9&a=B074NVDV1J" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
 
@@ -366,7 +370,7 @@ body > blockquote > p::before {
 
 <h2 id="仕事編">仕事編</h2>
 
-<h3 id="リモートワーク">リモートワーク</h3>
+<h2 id="リモートワーク">リモートワーク</h2>
 
 <p>生活の選択肢が増えるのがとてもいい。<br />
 移動時間がなくなるのもとてもいい。<br />
@@ -376,12 +380,12 @@ body > blockquote > p::before {
 
 <h2 id="生活編">生活編</h2>
 
-<h3 id="個人-slack">個人 Slack</h3>
+<h2 id="個人-slack">個人 Slack</h2>
 
 <p>Slack に自分用のワークスペースを作って運用し始めた。<br />
 RSS や Twitter の情報を Slack に集約することで情報収集しやすくなった。</p>
 
-<h3 id="comp-gummy">COMP GUMMY</h3>
+<h2 id="comp-gummy">COMP GUMMY</h2>
 
 <ul>
 <li><a href="http://www.comp.jp/gummy.html">COMP GUMMY | 完全食 COMP</a></li>
@@ -390,7 +394,7 @@ RSS や Twitter の情報を Slack に集約することで情報収集しやす
 <p>COMP はすでに導入していて、とてもいいものだけど、味が甘めでしょっぱいものが食べたくなってしまう問題があった。<br />
 COMP GUMMY は味が甘い系ではなくしょっぱい系で、噛みごたえもあり、 COMP と COMP GUMMY をあわせることで満足度が上がった。</p>
 
-<h3 id="空気清浄機">空気清浄機</h3>
+<h2 id="空気清浄機">空気清浄機</h2>
 
 <p><a href="https://www.amazon.co.jp/dp/B073WJDQMN/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=c23a61e8d27cab86efeba1ec1854342a" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B073WJDQMN&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=li3&o=9&a=B073WJDQMN" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
 
@@ -401,7 +405,7 @@ COMP GUMMY は味が甘い系ではなくしょっぱい系で、噛みごたえ
 <p>空気清浄機も買ったことがなかったので買ってみた。<br />
 買ったやつはあんまり評価良くないけど、ほこりをたくさん吸ってるのを見るとこんなにほこりを吸っていたのかとなって買ってよかったという気持ちになる。</p>
 
-<h3 id="収納">収納</h3>
+<h2 id="収納">収納</h2>
 
 <p><a href="https://www.amazon.co.jp/dp/B001RCU1V8/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=35671f17e731867b5a24a4443d34674b" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B001RCU1V8&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=li3&o=9&a=B001RCU1V8" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
 
@@ -413,7 +417,7 @@ COMP GUMMY は味が甘い系ではなくしょっぱい系で、噛みごたえ
 収納を買うと物がしまえて便利だということに気付いた。<br />
 引っ越しをよくするので、その気になれば簡単に捨てられるものを探した結果ダンボール製の収納を買うことにした。</p>
 
-<h3 id="光目覚まし時計">光目覚まし時計</h3>
+<h2 id="光目覚まし時計">光目覚まし時計</h2>
 
 <p><a href="https://hb.afl.rakuten.co.jp/hgc/164a7833.fc0cc12c.164a7834.5b0639cb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmoonmoon%2Finti4%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmoonmoon%2Fi%2F10000152%2F&link_type=pict&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0Iiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJkb3duIiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MH0%3D" target="_blank" rel="nofollow" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hgb/164a7833.fc0cc12c.164a7834.5b0639cb/?me_id=1280430&item_id=10000152&m=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_gold%2Fmoonmoon%2Fimages%2Finti4_pc%2Finti4_items_00b.jpg%3F_ex%3D80x80&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_gold%2Fmoonmoon%2Fimages%2Finti4_pc%2Finti4_items_00b.jpg%3F_ex%3D400x400&s=400x400&t=pict" border="0" alt="" title=""></a></p>
 
@@ -424,23 +428,23 @@ COMP GUMMY は味が甘い系ではなくしょっぱい系で、噛みごたえ
 <p>こんなに高いものを買う必要はなかったかも知れないけど、朝起きる時間に明るくなるのは起きやすくなっていい。<br />
 他の光目覚まし時計を使ったことがないので比較はできないけど、今のところ満足している。</p>
 
-<h3 id="6-畳の部屋">6 畳の部屋</h3>
+<h2 id="6-畳の部屋">6 畳の部屋</h2>
 
 <p>6 畳の部屋がちょうどいい広さだと知った。</p>
 
-<h3 id="キッチン不使用">キッチン不使用</h3>
+<h2 id="キッチン不使用">キッチン不使用</h2>
 
 <p>キッチンをまったく使用しない、食器や調味料、調理器具などもまったく買わないことで物とかかるお金を減らすことができた。<br />
 普段は COMP と COMP GUMMY を食べ、外食したくなったら外で食べている。<br />
 ただ、紙コップと割り箸はあった方が便利。</p>
 
-<h3 id="部屋に花を飾る">部屋に花を飾る</h3>
+<h2 id="部屋に花を飾る">部屋に花を飾る</h2>
 
 <p>部屋に花を飾ると気持ちがいい。</p>
 
 <h2 id="ツール編">ツール編</h2>
 
-<h3 id="ウィンドウマネージャー">ウィンドウマネージャー</h3>
+<h2 id="ウィンドウマネージャー">ウィンドウマネージャー</h2>
 
 <ul>
 <li><a href="https://github.com/ianyh/Amethyst">ianyh/Amethyst: Automatic tiling window manager for macOS à la xmonad.</a></li>
@@ -448,7 +452,7 @@ COMP GUMMY は味が甘い系ではなくしょっぱい系で、噛みごたえ
 
 <p>今までウィンドウの位置を揃えたりしていた手間がなくなった。</p>
 
-<h3 id="入力切替">入力切替</h3>
+<h2 id="入力切替">入力切替</h2>
 
 <ul>
 <li><a href="https://ei-kana.appspot.com/">⌘英かな</a></li>
@@ -457,7 +461,7 @@ COMP GUMMY は味が甘い系ではなくしょっぱい系で、噛みごたえ
 <p>入力切替をトグル式に切り替えるのは現在の入力モードを把握する必要があって手間だった。<br />
 特定のキーを押すことで入力モードを指定できるのが日本語キーボードのメリットだったが、このアプリのおかげで英字キーボードがいいと思えるようになった。</p>
 
-<h3 id="パスワード管理">パスワード管理</h3>
+<h2 id="パスワード管理">パスワード管理</h2>
 
 <ul>
 <li><a href="https://keepersecurity.com/">Best Password Manager &amp; Secure Digital Vault - Keeper</a></li>
@@ -465,7 +469,7 @@ COMP GUMMY は味が甘い系ではなくしょっぱい系で、噛みごたえ
 
 <p>今まで KeePass を使っていたが、有料のサービスはやっぱり便利だった。</p>
 
-<h3 id="ポモドーロタイマー">ポモドーロタイマー</h3>
+<h2 id="ポモドーロタイマー">ポモドーロタイマー</h2>
 
 <ul>
 <li><a href="https://play.google.com/store/apps/details?id=com.AT.PomodoroTimer&amp;hl=ja">Brain Focus Productivity Timer - Google Play の Android アプリ</a></li>

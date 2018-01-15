@@ -9,19 +9,22 @@ html {
     height: 100%;
     margin: 0;
     font-size: 62.5%; /* 1 em を 10 px にするため*/
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-kerning: normal; /* フォントのカーニングを常に有効にする */
     font-feature-settings: "palt"; /* 自動カーニングさせる */
     letter-spacing: 0.02rem; /* 字間を調整 */
+    -webkit-font-smoothing: antialiased; /* フォントにアンチエイリアスをかける (少し細く見える) */
+    -moz-osx-font-smoothing: grayscale; /* 同上 */
 }
 
 body {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.73;
-    color: hsl(235, 20%, 30%);
-    background-color: hsl(25, 50%, 99%);
+    color: hsl(235, 10%, 30%);
+    background-color: hsl(0, 100%, 100%);
 }
 
 /* スマホでは文字を大きくする */
@@ -31,18 +34,29 @@ body {
     }
 }
 
-/* 共通の設定 */
 header {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 60px auto 120px;
     letter-spacing: -0.2rem;
+}
+
+header > a {
+    text-decoration: none;
 }
 
 footer {
     width: 600px;
-    margin: 120px auto 20px;
+    margin: 120px auto 60px;
     text-align: right;
     letter-spacing: -0.2rem;
+}
+
+a {
+    color: hsl(235, 10%, 30%);
+}
+
+a:visited {
+    color: hsl(235, 10%, 50%);
 }
 
 /* トップページの設定 */
@@ -54,7 +68,7 @@ footer {
 }
 
 .articles > li {
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 .articles > li > a {
@@ -76,48 +90,38 @@ footer {
 /* 記事ページの設定 */
 body > p {
     width: 600px;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 body > div {
     width: 600px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 body > ul {
-    width: 560px;
+    width: 580px;
     margin: auto;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 h1 {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 0 auto 20px;
     font-size: 3rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h2 {
     width: 600px;
-    margin: 120px auto 60px;
+    margin: 120px auto 40px;
     font-size: 2.4rem;
-    font-weight: normal;
-    text-align: center;
-}
-
-h3 {
-    width: 600px;
-    margin: 60px auto 40px;
-    font-size: 1.6rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h4 {
     width: 600px;
     margin: 10px auto 10px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: normal;
     text-align: center;
 }
@@ -273,44 +277,44 @@ body > blockquote > p::before {
 <h1>気分が悪くなったらよつばと！を読もう</h1>
 
 
-<h1 id="最近よつばと-を読んでいます">最近よつばと！を読んでいます</h1>
+<h2 id="最近よつばと-を読んでいます">最近よつばと！を読んでいます</h2>
 
 <p>よつばと！面白いですよね。<br />
 何回読んでも面白い。</p>
 
-<h1 id="気分が悪くなる時ってありますよね">気分が悪くなる時ってありますよね</h1>
+<h2 id="気分が悪くなる時ってありますよね">気分が悪くなる時ってありますよね</h2>
 
 <p>なんだか気に食わないことが連続しておこったり。<br />
 特に意味もなくイライラしたり。<br />
 そういう時がありますよね。<br />
 私はよくあります。</p>
 
-<h1 id="この前も気分が悪くなった">この前も気分が悪くなった</h1>
+<h2 id="この前も気分が悪くなった">この前も気分が悪くなった</h2>
 
 <p>この前は特に意味もなく気分が悪くなりました。<br />
 そういう時って他人の一挙手一投足がやけに目について不快感を覚えてしまいます。</p>
 
-<h1 id="いつもの感じでよつばと-を読んだ">いつもの感じでよつばと！を読んだ</h1>
+<h2 id="いつもの感じでよつばと-を読んだ">いつもの感じでよつばと！を読んだ</h2>
 
 <p>最近よつばと！を読んでいるので、いつもの感じで読みました。</p>
 
-<h1 id="読んでたら気分がよくなった">読んでたら気分がよくなった</h1>
+<h2 id="読んでたら気分がよくなった">読んでたら気分がよくなった</h2>
 
 <p>さっきまで感じてたいやな気分を感じなくなりました。<br />
 むしろいい気分になりました。</p>
 
-<h1 id="理由はよくわからないけど-救われた">理由はよくわからないけど、救われた</h1>
+<h2 id="理由はよくわからないけど-救われた">理由はよくわからないけど、救われた</h2>
 
 <p>なぜ気分がよくなったのか、それはまだよくわかっていません。<br />
 よつばと！については考える余地が多く残っていそうです。<br />
 でも結果はよくわかりました。<br />
 暗澹とした気持ちを救ってくれたのです。</p>
 
-<h1 id="気分が悪くなったらよつばと-を読もう">気分が悪くなったらよつばと！を読もう</h1>
+<h2 id="気分が悪くなったらよつばと-を読もう">気分が悪くなったらよつばと！を読もう</h2>
 
 <p>つまり、そういうことです。</p>
 
-<h1 id="おまけ">おまけ</h1>
+<h2 id="おまけ">おまけ</h2>
 
 <p>公式で、2話分の試し読みができます。<br />
 <a href="http://yotuba.com/yotu_comics.html">コミックス「よつばと！」</a></p>

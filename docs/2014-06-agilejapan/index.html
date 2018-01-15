@@ -9,19 +9,22 @@ html {
     height: 100%;
     margin: 0;
     font-size: 62.5%; /* 1 em を 10 px にするため*/
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-kerning: normal; /* フォントのカーニングを常に有効にする */
     font-feature-settings: "palt"; /* 自動カーニングさせる */
     letter-spacing: 0.02rem; /* 字間を調整 */
+    -webkit-font-smoothing: antialiased; /* フォントにアンチエイリアスをかける (少し細く見える) */
+    -moz-osx-font-smoothing: grayscale; /* 同上 */
 }
 
 body {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.73;
-    color: hsl(235, 20%, 30%);
-    background-color: hsl(25, 50%, 99%);
+    color: hsl(235, 10%, 30%);
+    background-color: hsl(0, 100%, 100%);
 }
 
 /* スマホでは文字を大きくする */
@@ -31,18 +34,29 @@ body {
     }
 }
 
-/* 共通の設定 */
 header {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 60px auto 120px;
     letter-spacing: -0.2rem;
+}
+
+header > a {
+    text-decoration: none;
 }
 
 footer {
     width: 600px;
-    margin: 120px auto 20px;
+    margin: 120px auto 60px;
     text-align: right;
     letter-spacing: -0.2rem;
+}
+
+a {
+    color: hsl(235, 10%, 30%);
+}
+
+a:visited {
+    color: hsl(235, 10%, 50%);
 }
 
 /* トップページの設定 */
@@ -54,7 +68,7 @@ footer {
 }
 
 .articles > li {
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 .articles > li > a {
@@ -76,48 +90,38 @@ footer {
 /* 記事ページの設定 */
 body > p {
     width: 600px;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 body > div {
     width: 600px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 body > ul {
-    width: 560px;
+    width: 580px;
     margin: auto;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 h1 {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 0 auto 20px;
     font-size: 3rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h2 {
     width: 600px;
-    margin: 120px auto 60px;
+    margin: 120px auto 40px;
     font-size: 2.4rem;
-    font-weight: normal;
-    text-align: center;
-}
-
-h3 {
-    width: 600px;
-    margin: 60px auto 40px;
-    font-size: 1.6rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h4 {
     width: 600px;
     margin: 10px auto 10px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: normal;
     text-align: center;
 }
@@ -273,18 +277,18 @@ body > blockquote > p::before {
 <h1>新しい考え方をもらった – Agile Japan 2014 仙台サテライトに参加しました</h1>
 
 
-<h1 id="agile-japan-2014-仙台サテライトに参加しました">Agile Japan 2014 仙台サテライトに参加しました</h1>
+<h2 id="agile-japan-2014-仙台サテライトに参加しました">Agile Japan 2014 仙台サテライトに参加しました</h2>
 
 <p>イベントの詳細はこちら。<br />
 <a href="http://tohoku-dev.jp/modules/eguide/event.php?eid=262">イベント案内 | 2014-06-27 (金) Agile Japan 2014 仙台サテライト 「ひとりぼっちは、寂しいもんな」 #AgileJapan - 東北デベロッパーズコミュニティ</a></p>
 
-<h1 id="柔軟な考え方をもらいました">柔軟な考え方をもらいました</h1>
+<h2 id="柔軟な考え方をもらいました">柔軟な考え方をもらいました</h2>
 
 <p>ためになる話をいくつも聞けて、自分の中にはなかった新しい考え方をもらいました。<br />
 今まで自分の中にあったものよりも、もっともっと柔軟な考え方をもらいました。<br />
 以下、自分の解釈です。</p>
 
-<h1 id="アジャイルを導入するために-アジャイルを説明しない">アジャイルを導入するために、アジャイルを説明しない</h1>
+<h2 id="アジャイルを導入するために-アジャイルを説明しない">アジャイルを導入するために、アジャイルを説明しない</h2>
 
 <p>アジャイルとは、ソフトウェア価値の最大化であり、利益を最大化する姿勢である。<br />
 その手法として Scrum や XP があるのであり、それ自体はアジャイルではない。<br />
@@ -297,14 +301,14 @@ body > blockquote > p::before {
 アジャイルアジャイルと肩肘張るのではなく、少しずつ試してみる。<br />
 改善が本質であり、プロセスの尊守は大事ではない。</p>
 
-<h1 id="日本語と日本の文化を大事にする">日本語と日本の文化を大事にする</h1>
+<h2 id="日本語と日本の文化を大事にする">日本語と日本の文化を大事にする</h2>
 
 <p>日本の文化は、相手を思いやる文化である。<br />
 日本語は、相手によって言葉が変わる。<br />
 この洞察力が日本人の素晴らしい能力。<br />
 単一民族のみでチームを構成するという強さ。</p>
 
-<h1 id="レースは速さではなく精度と効率">レースは速さではなく精度と効率</h1>
+<h2 id="レースは速さではなく精度と効率">レースは速さではなく精度と効率</h2>
 
 <p>博打をやってはいけない。<br />
 速さを競うものではなく、いかに精度よく効率よくタイムを縮めるか。<br />
@@ -312,42 +316,42 @@ Try &amp; Error は壊れた &amp; 直したであり、ここにコストをか
 エラーを出さないために、予測可能なものだけを実行する。<br />
 未来の目標をチームで共有することで、予測を可能にする。</p>
 
-<h1 id="データはマネジメントツール">データはマネジメントツール</h1>
+<h2 id="データはマネジメントツール">データはマネジメントツール</h2>
 
 <p>裁量権を現場に与える。<br />
 現場の判断を周りに納得させるためにデータを使う。</p>
 
-<h1 id="現場の技術力が最上流工程">現場の技術力が最上流工程</h1>
+<h2 id="現場の技術力が最上流工程">現場の技術力が最上流工程</h2>
 
 <p>できもしないものを設計してもしかたがない。<br />
 現場の技術力で設計の幅が決まる。<br />
 現場のレベルが上がらなければ、設計のレベルは上がらない。</p>
 
-<h1 id="未来は言語化できない">未来は言語化できない</h1>
+<h2 id="未来は言語化できない">未来は言語化できない</h2>
 
 <p>言語は過去のものであり、コミュニケーションツールである。<br />
 未来のことは、過去には存在したことがないから言葉が存在しない。<br />
 未来は画像であり、その具体的なシーンを共有する。<br />
 具体的なシーンを想像できる目標をつくる。</p>
 
-<h1 id="権限ではなく責任をもらう">権限ではなく責任をもらう</h1>
+<h2 id="権限ではなく責任をもらう">権限ではなく責任をもらう</h2>
 
 <p>メンバーは失敗する。<br />
 その失敗を最大限リカバーするために責任をもらう。<br />
 リーダーが全ての責任を持つことでメンバーは安心して全力を出せる。</p>
 
-<h1 id="人のために何かをしようと思うとアイディアが無限に生まれる">人のために何かをしようと思うとアイディアが無限に生まれる</h1>
+<h2 id="人のために何かをしようと思うとアイディアが無限に生まれる">人のために何かをしようと思うとアイディアが無限に生まれる</h2>
 
 <p>自分のために何かをする、と考えると、何をしようか、となる。<br />
 何をしようか、の前に、誰をどうしたいのか。<br />
 人を喜ばせるという目標があるとイメージが生まれる。</p>
 
-<h1 id="自分にできることをやる">自分にできることをやる</h1>
+<h2 id="自分にできることをやる">自分にできることをやる</h2>
 
 <p>自分がすべてを完璧にこなすなんてことはできない。<br />
 失敗しちゃいけないと思うから動けなくなる。</p>
 
-<h1 id="刺激をもらいました">刺激をもらいました</h1>
+<h2 id="刺激をもらいました">刺激をもらいました</h2>
 
 <p>自分はまだまだだと思えました。<br />
 自分がやってみたいなと思ってることをやっている人がいる。<br />

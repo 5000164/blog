@@ -9,19 +9,22 @@ html {
     height: 100%;
     margin: 0;
     font-size: 62.5%; /* 1 em を 10 px にするため*/
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-kerning: normal; /* フォントのカーニングを常に有効にする */
     font-feature-settings: "palt"; /* 自動カーニングさせる */
     letter-spacing: 0.02rem; /* 字間を調整 */
+    -webkit-font-smoothing: antialiased; /* フォントにアンチエイリアスをかける (少し細く見える) */
+    -moz-osx-font-smoothing: grayscale; /* 同上 */
 }
 
 body {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.73;
-    color: hsl(235, 20%, 30%);
-    background-color: hsl(25, 50%, 99%);
+    color: hsl(235, 10%, 30%);
+    background-color: hsl(0, 100%, 100%);
 }
 
 /* スマホでは文字を大きくする */
@@ -31,18 +34,29 @@ body {
     }
 }
 
-/* 共通の設定 */
 header {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 60px auto 120px;
     letter-spacing: -0.2rem;
+}
+
+header > a {
+    text-decoration: none;
 }
 
 footer {
     width: 600px;
-    margin: 120px auto 20px;
+    margin: 120px auto 60px;
     text-align: right;
     letter-spacing: -0.2rem;
+}
+
+a {
+    color: hsl(235, 10%, 30%);
+}
+
+a:visited {
+    color: hsl(235, 10%, 50%);
 }
 
 /* トップページの設定 */
@@ -54,7 +68,7 @@ footer {
 }
 
 .articles > li {
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 .articles > li > a {
@@ -76,48 +90,38 @@ footer {
 /* 記事ページの設定 */
 body > p {
     width: 600px;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 body > div {
     width: 600px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 body > ul {
-    width: 560px;
+    width: 580px;
     margin: auto;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 h1 {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 0 auto 20px;
     font-size: 3rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h2 {
     width: 600px;
-    margin: 120px auto 60px;
+    margin: 120px auto 40px;
     font-size: 2.4rem;
-    font-weight: normal;
-    text-align: center;
-}
-
-h3 {
-    width: 600px;
-    margin: 60px auto 40px;
-    font-size: 1.6rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h4 {
     width: 600px;
     margin: 10px auto 10px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: normal;
     text-align: center;
 }
@@ -273,53 +277,53 @@ body > blockquote > p::before {
 <h1>体調不良で早退した</h1>
 
 
-<h1 id="なんだか突然具合が悪くなった">なんだか突然具合が悪くなった</h1>
+<h2 id="なんだか突然具合が悪くなった">なんだか突然具合が悪くなった</h2>
 
 <p>朝はなんともなかったのに、昼過ぎくらいから急に体調が悪くなったので早退しました。<br />
 症状としては、頭が重いのと、吐き気ですかね。</p>
 
-<h1 id="具合が悪くなった時は余計な心配をせずに帰りたい">具合が悪くなった時は余計な心配をせずに帰りたい</h1>
+<h2 id="具合が悪くなった時は余計な心配をせずに帰りたい">具合が悪くなった時は余計な心配をせずに帰りたい</h2>
 
 <p>ただでさえ具合が悪い状態の時に、余計な心配はしたくない。<br />
 帰ったら迷惑になるんじゃないか、とかそんなことは考えたくない。</p>
 
-<h1 id="頭脳労働で頭がうまく働かないのは致命的">頭脳労働で頭がうまく働かないのは致命的</h1>
+<h2 id="頭脳労働で頭がうまく働かないのは致命的">頭脳労働で頭がうまく働かないのは致命的</h2>
 
 <p>そもそも頭がうまく働いてない時点で生産性はガタ落ちである。<br />
 そんな状態で無理に作業するよりも、さっさと体調を治してから作業を再開した方がいい。<br />
 目先の進捗に気を取られると、体調不良がずるずると長引いてしまう。</p>
 
-<h1 id="もし風邪だったら周りに風邪をうつしてしまうリスクがある">もし風邪だったら周りに風邪をうつしてしまうリスクがある</h1>
+<h2 id="もし風邪だったら周りに風邪をうつしてしまうリスクがある">もし風邪だったら周りに風邪をうつしてしまうリスクがある</h2>
 
 <p>もし体調不良の原因がウイルス性のものだった場合、自分がその場に居続けるだけで周りの人にリスクを負わせ続けることになる。<br />
 風邪を完全に防ぐことはできないので、具合が悪かったらおとなしく隔離されるべきである。</p>
 
-<h1 id="つまり-具合が悪い時はさっさと帰るに限る">つまり、具合が悪い時はさっさと帰るに限る</h1>
+<h2 id="つまり-具合が悪い時はさっさと帰るに限る">つまり、具合が悪い時はさっさと帰るに限る</h2>
 
 <p>無理してもいいことはない。</p>
 
-<h1 id="もし-自分の体調不良に気付けない場合">もし、自分の体調不良に気付けない場合</h1>
+<h2 id="もし-自分の体調不良に気付けない場合">もし、自分の体調不良に気付けない場合</h2>
 
 <p>仕事をしていて、自分の体調不良に気付けない場合がある。<br />
 というか、私にはあった。<br />
 普通に仕事ができてると思っていたけど、実は体調が悪かったということが。</p>
 
-<h1 id="自分の体調不良に気付くために-自分の仕事量を調べるといい">自分の体調不良に気付くために、自分の仕事量を調べるといい</h1>
+<h2 id="自分の体調不良に気付くために-自分の仕事量を調べるといい">自分の体調不良に気付くために、自分の仕事量を調べるといい</h2>
 
 <p>仕事がうまく進まなかったら、それはなにかがおかしいということ。<br />
 体調は悪くないとしても、現状を疑ったほうがいい。</p>
 
-<h1 id="少しづつ変化していくものには気付きづらい">少しづつ変化していくものには気付きづらい</h1>
+<h2 id="少しづつ変化していくものには気付きづらい">少しづつ変化していくものには気付きづらい</h2>
 
 <p>徐々に変わっていくとわからないものである。<br />
 そのために、定量的な指標が必要になる。</p>
 
-<h1 id="例えば-普段からタイムトラッキングをする">例えば、普段からタイムトラッキングをする</h1>
+<h2 id="例えば-普段からタイムトラッキングをする">例えば、普段からタイムトラッキングをする</h2>
 
 <p>普段から自分がどのくらいの作業をどのくらいの時間でできるのかを知る。<br />
 自分の作業にどのくらいの時間がかかるかわかれば「あれ、この作業に時間かかりすぎだろ」って気付ける。</p>
 
-<h1 id="まとめ">まとめ</h1>
+<h2 id="まとめ">まとめ</h2>
 
 <p>体調不良になったら帰る。<br />
 仕事進まなかったら現状を疑う。<br />

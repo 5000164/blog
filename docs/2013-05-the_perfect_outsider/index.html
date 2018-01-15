@@ -9,19 +9,22 @@ html {
     height: 100%;
     margin: 0;
     font-size: 62.5%; /* 1 em を 10 px にするため*/
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-kerning: normal; /* フォントのカーニングを常に有効にする */
     font-feature-settings: "palt"; /* 自動カーニングさせる */
     letter-spacing: 0.02rem; /* 字間を調整 */
+    -webkit-font-smoothing: antialiased; /* フォントにアンチエイリアスをかける (少し細く見える) */
+    -moz-osx-font-smoothing: grayscale; /* 同上 */
 }
 
 body {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.73;
-    color: hsl(235, 20%, 30%);
-    background-color: hsl(25, 50%, 99%);
+    color: hsl(235, 10%, 30%);
+    background-color: hsl(0, 100%, 100%);
 }
 
 /* スマホでは文字を大きくする */
@@ -31,18 +34,29 @@ body {
     }
 }
 
-/* 共通の設定 */
 header {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 60px auto 120px;
     letter-spacing: -0.2rem;
+}
+
+header > a {
+    text-decoration: none;
 }
 
 footer {
     width: 600px;
-    margin: 120px auto 20px;
+    margin: 120px auto 60px;
     text-align: right;
     letter-spacing: -0.2rem;
+}
+
+a {
+    color: hsl(235, 10%, 30%);
+}
+
+a:visited {
+    color: hsl(235, 10%, 50%);
 }
 
 /* トップページの設定 */
@@ -54,7 +68,7 @@ footer {
 }
 
 .articles > li {
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 .articles > li > a {
@@ -76,48 +90,38 @@ footer {
 /* 記事ページの設定 */
 body > p {
     width: 600px;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 body > div {
     width: 600px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 body > ul {
-    width: 560px;
+    width: 580px;
     margin: auto;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 h1 {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 0 auto 20px;
     font-size: 3rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h2 {
     width: 600px;
-    margin: 120px auto 60px;
+    margin: 120px auto 40px;
     font-size: 2.4rem;
-    font-weight: normal;
-    text-align: center;
-}
-
-h3 {
-    width: 600px;
-    margin: 60px auto 40px;
-    font-size: 1.6rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h4 {
     width: 600px;
     margin: 10px auto 10px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: normal;
     text-align: center;
 }
@@ -279,7 +283,7 @@ body > blockquote > p::before {
 
 <p>※ネタバレ注意</p>
 
-<h1 id="感想">感想</h1>
+<h2 id="感想">感想</h2>
 
 <p>S&amp;Mシリーズ10作目にして最終作。</p>
 
@@ -287,7 +291,7 @@ body > blockquote > p::before {
 
 <p>厚いですな。</p>
 
-<h1 id="本の構成">本の構成</h1>
+<h2 id="本の構成">本の構成</h2>
 
 <p>序盤からガシガシと攻めてきて、クライマックス感がすごかった。</p>
 
@@ -295,7 +299,7 @@ body > blockquote > p::before {
 
 <p>最初から勢いがあって850ページを苦にさせない面白さでした。</p>
 
-<h1 id="事件を解くヒント">事件を解くヒント</h1>
+<h2 id="事件を解くヒント">事件を解くヒント</h2>
 
 <p>勝手にヒントだと思ってるのは下記の二点です。</p>
 
@@ -333,7 +337,7 @@ body > blockquote > p::before {
 
 <p>この二点がお芝居だったことを示唆していると感じたポイントです。</p>
 
-<h1 id="作中で気に入っている表現">作中で気に入っている表現</h1>
+<h2 id="作中で気に入っている表現">作中で気に入っている表現</h2>
 
 <h2 id="良い意見だ">良い意見だ</h2>
 
@@ -371,7 +375,7 @@ body > blockquote > p::before {
 
 <p>よくわからないものですよね。</p>
 
-<h1 id="真賀田四季について">真賀田四季について</h1>
+<h2 id="真賀田四季について">真賀田四季について</h2>
 
 <h2 id="実際の居所">実際の居所</h2>
 
@@ -417,7 +421,7 @@ body > blockquote > p::before {
 
 <p>そして毎日部屋から出勤していたという瀬戸千依の旦那様はナノクラフトが用意したのだろうか。</p>
 
-<h1 id="まとめ">まとめ</h1>
+<h2 id="まとめ">まとめ</h2>
 
 <p>もっと早くに読みたかった。</p>
 

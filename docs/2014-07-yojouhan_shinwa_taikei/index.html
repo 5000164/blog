@@ -9,19 +9,22 @@ html {
     height: 100%;
     margin: 0;
     font-size: 62.5%; /* 1 em を 10 px にするため*/
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-kerning: normal; /* フォントのカーニングを常に有効にする */
     font-feature-settings: "palt"; /* 自動カーニングさせる */
     letter-spacing: 0.02rem; /* 字間を調整 */
+    -webkit-font-smoothing: antialiased; /* フォントにアンチエイリアスをかける (少し細く見える) */
+    -moz-osx-font-smoothing: grayscale; /* 同上 */
 }
 
 body {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.73;
-    color: hsl(235, 20%, 30%);
-    background-color: hsl(25, 50%, 99%);
+    color: hsl(235, 10%, 30%);
+    background-color: hsl(0, 100%, 100%);
 }
 
 /* スマホでは文字を大きくする */
@@ -31,18 +34,29 @@ body {
     }
 }
 
-/* 共通の設定 */
 header {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 60px auto 120px;
     letter-spacing: -0.2rem;
+}
+
+header > a {
+    text-decoration: none;
 }
 
 footer {
     width: 600px;
-    margin: 120px auto 20px;
+    margin: 120px auto 60px;
     text-align: right;
     letter-spacing: -0.2rem;
+}
+
+a {
+    color: hsl(235, 10%, 30%);
+}
+
+a:visited {
+    color: hsl(235, 10%, 50%);
 }
 
 /* トップページの設定 */
@@ -54,7 +68,7 @@ footer {
 }
 
 .articles > li {
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 .articles > li > a {
@@ -76,48 +90,38 @@ footer {
 /* 記事ページの設定 */
 body > p {
     width: 600px;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 body > div {
     width: 600px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 body > ul {
-    width: 560px;
+    width: 580px;
     margin: auto;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 h1 {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 0 auto 20px;
     font-size: 3rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h2 {
     width: 600px;
-    margin: 120px auto 60px;
+    margin: 120px auto 40px;
     font-size: 2.4rem;
-    font-weight: normal;
-    text-align: center;
-}
-
-h3 {
-    width: 600px;
-    margin: 60px auto 40px;
-    font-size: 1.6rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h4 {
     width: 600px;
     margin: 10px auto 10px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: normal;
     text-align: center;
 }
@@ -275,11 +279,11 @@ body > blockquote > p::before {
 
 <p>※ネタバレ注意</p>
 
-<h1 id="アニメを見たので-小説を読んだ">アニメを見たので、小説を読んだ</h1>
+<h2 id="アニメを見たので-小説を読んだ">アニメを見たので、小説を読んだ</h2>
 
 <p><a href="http://blog.5000164.jp/2014-07-yojouhan/">この記事</a>でアニメの感想を書きましたが、アニメを見たら原作が気になったので小説を読みました。</p>
 
-<h1 id="アニメはよくできている">アニメはよくできている</h1>
+<h2 id="アニメはよくできている">アニメはよくできている</h2>
 
 <p>原作を読んで思ったのは、アニメはよくできてるなー、ということでした。<br />
 原作をうまく解釈してアニメという形に合わせた感じがします。<br />
@@ -287,17 +291,17 @@ body > blockquote > p::before {
 よく30分でうまく区切りをつけたと思います。<br />
 ただ、アニメだと時計の演出があってタイムリープもののように感じられましたが、実際はそうではないと思ったのが残念なところ。</p>
 
-<h1 id="森見登美彦らしい表現が楽しい">森見登美彦らしい表現が楽しい</h1>
+<h2 id="森見登美彦らしい表現が楽しい">森見登美彦らしい表現が楽しい</h2>
 
 <p>随所に森見登美彦らしい言葉づかいが感じられて、楽しめました。</p>
 
-<h1 id="代わり映えのない二年間">代わり映えのない二年間</h1>
+<h2 id="代わり映えのない二年間">代わり映えのない二年間</h2>
 
 <p>どの世界の「私」も、明石さんとはうまくいくことができた。<br />
 小津とも親友であった。<br />
 どの世界でも代わり映えのない二年間であった。</p>
 
-<h1 id="人生は選択の連続である">人生は選択の連続である</h1>
+<h2 id="人生は選択の連続である">人生は選択の連続である</h2>
 
 <p>選択することとは、同時に選択しないことでもある。<br />
 選択次第で人生は変わる。<br />
@@ -305,7 +309,7 @@ body > blockquote > p::before {
 しかし、どの人生でも、他の何者にもなれない自分であることに変わりはない。<br />
 それを受け入れ、腰を据えよう。</p>
 
-<h1 id="過去の自分を大目に見よう">過去の自分を大目に見よう</h1>
+<h2 id="過去の自分を大目に見よう">過去の自分を大目に見よう</h2>
 
 <p>過去の自分は、もちろんいくつもの過ちを犯してきただろう。<br />
 そんな自分の過去を全て肯定して自分を抱きしめる必要はない。<br />

@@ -9,19 +9,22 @@ html {
     height: 100%;
     margin: 0;
     font-size: 62.5%; /* 1 em を 10 px にするため*/
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-kerning: normal; /* フォントのカーニングを常に有効にする */
     font-feature-settings: "palt"; /* 自動カーニングさせる */
     letter-spacing: 0.02rem; /* 字間を調整 */
+    -webkit-font-smoothing: antialiased; /* フォントにアンチエイリアスをかける (少し細く見える) */
+    -moz-osx-font-smoothing: grayscale; /* 同上 */
 }
 
 body {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.73;
-    color: hsl(235, 20%, 30%);
-    background-color: hsl(25, 50%, 99%);
+    color: hsl(235, 10%, 30%);
+    background-color: hsl(0, 100%, 100%);
 }
 
 /* スマホでは文字を大きくする */
@@ -31,18 +34,29 @@ body {
     }
 }
 
-/* 共通の設定 */
 header {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 60px auto 120px;
     letter-spacing: -0.2rem;
+}
+
+header > a {
+    text-decoration: none;
 }
 
 footer {
     width: 600px;
-    margin: 120px auto 20px;
+    margin: 120px auto 60px;
     text-align: right;
     letter-spacing: -0.2rem;
+}
+
+a {
+    color: hsl(235, 10%, 30%);
+}
+
+a:visited {
+    color: hsl(235, 10%, 50%);
 }
 
 /* トップページの設定 */
@@ -54,7 +68,7 @@ footer {
 }
 
 .articles > li {
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 .articles > li > a {
@@ -76,48 +90,38 @@ footer {
 /* 記事ページの設定 */
 body > p {
     width: 600px;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 body > div {
     width: 600px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 body > ul {
-    width: 560px;
+    width: 580px;
     margin: auto;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 h1 {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 0 auto 20px;
     font-size: 3rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h2 {
     width: 600px;
-    margin: 120px auto 60px;
+    margin: 120px auto 40px;
     font-size: 2.4rem;
-    font-weight: normal;
-    text-align: center;
-}
-
-h3 {
-    width: 600px;
-    margin: 60px auto 40px;
-    font-size: 1.6rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h4 {
     width: 600px;
     margin: 10px auto 10px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: normal;
     text-align: center;
 }
@@ -275,12 +279,12 @@ body > blockquote > p::before {
 
 <p>※ネタバレ注意</p>
 
-<h1 id="友人におすすめされました">友人におすすめされました</h1>
+<h2 id="友人におすすめされました">友人におすすめされました</h2>
 
 <p>おすすめのアニメを友人に聞いたところ、四畳半神話大系をおすすめされたので見ました。<br />
 原作が森見登美彦とのことで、「太陽の塔」と「夜は短し歩けよ乙女」がおもしろかったので期待。</p>
 
-<h1 id="森見登美彦っぽくておもしろかった">森見登美彦っぽくておもしろかった</h1>
+<h2 id="森見登美彦っぽくておもしろかった">森見登美彦っぽくておもしろかった</h2>
 
 <p>全体的に非常に雰囲気がよかったです。<br />
 キャラクター原案が中村佑介で、うまいことキャラが動いているなと感じました。<br />
@@ -288,27 +292,27 @@ body > blockquote > p::before {
 また、主人公のナレーションを含め、メインキャストの声に違和感がないのがよかった。<br />
 森見登美彦作品の雰囲気がうまく出ていて、おもしろかったです。</p>
 
-<h1 id="アニメには合っていない気がした">アニメには合っていない気がした</h1>
+<h2 id="アニメには合っていない気がした">アニメには合っていない気がした</h2>
 
 <p>作品自体はおもしろかったのですが、中盤やや間延びした印象を受けました。<br />
 アニメの30分区切りという性質にうまく合っていなかったように思います。<br />
 もっと内容を詰めて短くしてもよかった。</p>
 
-<h1 id="最後にググッっともってくるのはさすが">最後にググッっともってくるのはさすが</h1>
+<h2 id="最後にググッっともってくるのはさすが">最後にググッっともってくるのはさすが</h2>
 
 <p>四畳半に閉じ込められて、自分の他の可能性に気付いて、それでも、今この自分は一歩踏み出せるんだと気付いた時に、世界が開ける。</p>
 
-<h1 id="印象的だったところ">印象的だったところ</h1>
+<h2 id="印象的だったところ">印象的だったところ</h2>
 
 <p>小津が香織さんを回収しにきた時に、顔がおかしいと思ったけど、妖怪みたいな顔は小津の一面だったというところ。<br />
 どのパラレルワールドでも、明石さんのもちぐまを持っているところ。</p>
 
-<h1 id="原作を読みたくなった">原作を読みたくなった</h1>
+<h2 id="原作を読みたくなった">原作を読みたくなった</h2>
 
 <p>きっと、原作もおもしろいと思う。<br />
 でも、明石さんの驚いた顔はアニメでしか見れないのだろう。</p>
 
-<h1 id="責任者はどこか">責任者はどこか</h1>
+<h2 id="責任者はどこか">責任者はどこか</h2>
 
 <p>私の人生の責任者はどこか。<br />
 それは私だ。</p>

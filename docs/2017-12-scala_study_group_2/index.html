@@ -9,19 +9,22 @@ html {
     height: 100%;
     margin: 0;
     font-size: 62.5%; /* 1 em を 10 px にするため*/
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-kerning: normal; /* フォントのカーニングを常に有効にする */
     font-feature-settings: "palt"; /* 自動カーニングさせる */
     letter-spacing: 0.02rem; /* 字間を調整 */
+    -webkit-font-smoothing: antialiased; /* フォントにアンチエイリアスをかける (少し細く見える) */
+    -moz-osx-font-smoothing: grayscale; /* 同上 */
 }
 
 body {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.73;
-    color: hsl(235, 20%, 30%);
-    background-color: hsl(25, 50%, 99%);
+    color: hsl(235, 10%, 30%);
+    background-color: hsl(0, 100%, 100%);
 }
 
 /* スマホでは文字を大きくする */
@@ -31,18 +34,29 @@ body {
     }
 }
 
-/* 共通の設定 */
 header {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 60px auto 120px;
     letter-spacing: -0.2rem;
+}
+
+header > a {
+    text-decoration: none;
 }
 
 footer {
     width: 600px;
-    margin: 120px auto 20px;
+    margin: 120px auto 60px;
     text-align: right;
     letter-spacing: -0.2rem;
+}
+
+a {
+    color: hsl(235, 10%, 30%);
+}
+
+a:visited {
+    color: hsl(235, 10%, 50%);
 }
 
 /* トップページの設定 */
@@ -54,7 +68,7 @@ footer {
 }
 
 .articles > li {
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 .articles > li > a {
@@ -76,48 +90,38 @@ footer {
 /* 記事ページの設定 */
 body > p {
     width: 600px;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 body > div {
     width: 600px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 body > ul {
-    width: 560px;
+    width: 580px;
     margin: auto;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 h1 {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 0 auto 20px;
     font-size: 3rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h2 {
     width: 600px;
-    margin: 120px auto 60px;
+    margin: 120px auto 40px;
     font-size: 2.4rem;
-    font-weight: normal;
-    text-align: center;
-}
-
-h3 {
-    width: 600px;
-    margin: 60px auto 40px;
-    font-size: 1.6rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h4 {
     width: 600px;
     margin: 10px auto 10px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: normal;
     text-align: center;
 }
@@ -275,19 +279,19 @@ body > blockquote > p::before {
 
 <h2 id="scala-の勉強会">Scala の勉強会</h2>
 
-<h3 id="詳細">詳細</h3>
+<h2 id="詳細">詳細</h2>
 
 <ul>
 <li><a href="https://d-cube.connpass.com/event/74106/">【再増席】教養としてのScala ~ そろそろ始めてみたい2017冬 - connpass</a></li>
 </ul>
 
-<h3 id="スライド">スライド</h3>
+<h2 id="スライド">スライド</h2>
 
 <ul>
 <li><a href="https://d-cube.connpass.com/event/74106/presentation/">【再増席】教養としてのScala ~ そろそろ始めてみたい2017冬 - Media List - connpass</a></li>
 </ul>
 
-<h3 id="関連ブログ">関連ブログ</h3>
+<h2 id="関連ブログ">関連ブログ</h2>
 
 <ul>
 <li><a href="http://takezoe.hatenablog.com/entry/2017/12/25/083638">教養としてのScala勉強会に参加しました - たけぞう瀕死ブログ</a></li>
@@ -295,7 +299,7 @@ body > blockquote > p::before {
 
 <h2 id="各発表のメモ">各発表のメモ</h2>
 
-<h3 id="頑張りすぎないscala">頑張りすぎないScala</h3>
+<h2 id="頑張りすぎないscala">頑張りすぎないScala</h2>
 
 <ul>
 <li>楽しんでスカラやる</li>
@@ -309,7 +313,7 @@ body > blockquote > p::before {
 </ul></li>
 </ul>
 
-<h3 id="今日から始めるスカライフ-majiでkoiする5秒前">今日から始めるスカライフ~MajiでKoiする5秒前~</h3>
+<h2 id="今日から始めるスカライフ-majiでkoiする5秒前">今日から始めるスカライフ~MajiでKoiする5秒前~</h2>
 
 <ul>
 <li>参考になる資料
@@ -324,7 +328,7 @@ body > blockquote > p::before {
 <li>プレゼンに絵文字いい</li>
 </ul>
 
-<h3 id="プルプル-ボクはわるいscalaじゃないよ">プルプル…ボクはわるいScalaじゃないよ</h3>
+<h2 id="プルプル-ボクはわるいscalaじゃないよ">プルプル…ボクはわるいScalaじゃないよ</h2>
 
 <ul>
 <li>Scala 省略 ルール でググるといい資料が出てくる
@@ -334,7 +338,7 @@ body > blockquote > p::before {
 </ul></li>
 </ul>
 
-<h3 id="例外は-投げない-scalableエラー処理入門">例外は &ldquo;投げない&rdquo; ~Scalableエラー処理入門~</h3>
+<h2 id="例外は-投げない-scalableエラー処理入門">例外は &ldquo;投げない&rdquo; ~Scalableエラー処理入門~</h2>
 
 <ul>
 <li>Either
@@ -345,7 +349,7 @@ body > blockquote > p::before {
 </ul></li>
 </ul>
 
-<h3 id="とりあえずscalaをはじめるときに知っておきたい10個のこと">とりあえずScalaをはじめるときに知っておきたい10個のこと</h3>
+<h2 id="とりあえずscalaをはじめるときに知っておきたい10個のこと">とりあえずScalaをはじめるときに知っておきたい10個のこと</h2>
 
 <ul>
 <li>??? というメソッド便利そう</li>

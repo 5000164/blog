@@ -9,19 +9,22 @@ html {
     height: 100%;
     margin: 0;
     font-size: 62.5%; /* 1 em を 10 px にするため*/
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-kerning: normal; /* フォントのカーニングを常に有効にする */
     font-feature-settings: "palt"; /* 自動カーニングさせる */
     letter-spacing: 0.02rem; /* 字間を調整 */
+    -webkit-font-smoothing: antialiased; /* フォントにアンチエイリアスをかける (少し細く見える) */
+    -moz-osx-font-smoothing: grayscale; /* 同上 */
 }
 
 body {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.73;
-    color: hsl(235, 20%, 30%);
-    background-color: hsl(25, 50%, 99%);
+    color: hsl(235, 10%, 30%);
+    background-color: hsl(0, 100%, 100%);
 }
 
 /* スマホでは文字を大きくする */
@@ -31,18 +34,29 @@ body {
     }
 }
 
-/* 共通の設定 */
 header {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 60px auto 120px;
     letter-spacing: -0.2rem;
+}
+
+header > a {
+    text-decoration: none;
 }
 
 footer {
     width: 600px;
-    margin: 120px auto 20px;
+    margin: 120px auto 60px;
     text-align: right;
     letter-spacing: -0.2rem;
+}
+
+a {
+    color: hsl(235, 10%, 30%);
+}
+
+a:visited {
+    color: hsl(235, 10%, 50%);
 }
 
 /* トップページの設定 */
@@ -54,7 +68,7 @@ footer {
 }
 
 .articles > li {
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 .articles > li > a {
@@ -76,48 +90,38 @@ footer {
 /* 記事ページの設定 */
 body > p {
     width: 600px;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 body > div {
     width: 600px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 body > ul {
-    width: 560px;
+    width: 580px;
     margin: auto;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 h1 {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 0 auto 20px;
     font-size: 3rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h2 {
     width: 600px;
-    margin: 120px auto 60px;
+    margin: 120px auto 40px;
     font-size: 2.4rem;
-    font-weight: normal;
-    text-align: center;
-}
-
-h3 {
-    width: 600px;
-    margin: 60px auto 40px;
-    font-size: 1.6rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h4 {
     width: 600px;
     margin: 10px auto 10px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: normal;
     text-align: center;
 }
@@ -273,12 +277,12 @@ body > blockquote > p::before {
 <h1>わからないことがわかった - 「DDD勉強会×すくすくスクラム仙台」に参加しました</h1>
 
 
-<h1 id="ddd勉強会-すくすくスクラム仙台-に参加しました">「DDD勉強会×すくすくスクラム仙台」に参加しました</h1>
+<h2 id="ddd勉強会-すくすくスクラム仙台-に参加しました">「DDD勉強会×すくすくスクラム仙台」に参加しました</h2>
 
 <p>イベントの詳細はこちら。<br />
 <a href="http://sukusuku-sendai.doorkeeper.jp/events/14558">DDD勉強会×すくすくスクラム仙台　コラボ企画　「Scrum でモデリングってどうしよう。プロダクトバックログとモデリングのいい関係」 - すくすくスクラム仙台 | Doorkeeper</a></p>
 
-<h1 id="わからないことがわかった">わからないことがわかった</h1>
+<h2 id="わからないことがわかった">わからないことがわかった</h2>
 
 <p>DDD も、Scrum も、全然わかってないけど興味があった。<br />
 どんなものか知りたかった。<br />
@@ -286,7 +290,7 @@ body > blockquote > p::before {
 その結果、自分がわからないことがわかった。<br />
 いや、当たり前のことなんですけど、厳然と事実として目の前につきつけられた。</p>
 
-<h1 id="わからないことがわかることが改善の一歩目">わからないことがわかることが改善の一歩目</h1>
+<h2 id="わからないことがわかることが改善の一歩目">わからないことがわかることが改善の一歩目</h2>
 
 <p>自分が開発する時に、この機能はこういうように実装しよう、と考える。<br />
 そこには明確な基準がない。<br />
@@ -295,7 +299,7 @@ body > blockquote > p::before {
 だから、ごちゃごちゃになる。<br />
 ここに、基準が作れそうだと感じた。</p>
 
-<h1 id="優先順位を付けて最小で回す">優先順位を付けて最小で回す</h1>
+<h2 id="優先順位を付けて最小で回す">優先順位を付けて最小で回す</h2>
 
 <p>機能を洗い出す。<br />
 優先順位を付ける。<br />
@@ -305,7 +309,7 @@ body > blockquote > p::before {
 こうすればいいのかなと思った。<br />
 でもまだよくわかってないので、もっと知りたい。</p>
 
-<h1 id="大きい単位で見せたがる">大きい単位で見せたがる</h1>
+<h2 id="大きい単位で見せたがる">大きい単位で見せたがる</h2>
 
 <p>ものを作ると、なるべく見栄えをよくしようとする。<br />
 そうすると、単位が大きくなる。<br />
@@ -317,7 +321,7 @@ body > blockquote > p::before {
 こんなの使えない、となったら、じゃあこうしましょう、となる。<br />
 小さい単位で見せる。</p>
 
-<h1 id="安定的に不安定">安定的に不安定</h1>
+<h2 id="安定的に不安定">安定的に不安定</h2>
 
 <p>一定した環境にいると、安定してしまう。<br />
 安定してしまうと、変化がなくなる。<br />
@@ -326,20 +330,20 @@ body > blockquote > p::before {
 だから、不安定な状態を作り出す。<br />
 そうすれば、適応しようとして成長する。</p>
 
-<h1 id="無能に悪意を見出さない">無能に悪意を見出さない</h1>
+<h2 id="無能に悪意を見出さない">無能に悪意を見出さない</h2>
 
 <p>自分が意味わからないと思ったら聞く。<br />
 そこに悪意はない。<br />
 <a href="http://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%B3%E3%83%AD%E3%83%B3%E3%81%AE%E5%89%83%E5%88%80">ハンロンの剃刀 - Wikipedia</a></p>
 
-<h1 id="新人を育てるには上司が楽しそうに仕事をすればいい">新人を育てるには上司が楽しそうに仕事をすればいい</h1>
+<h2 id="新人を育てるには上司が楽しそうに仕事をすればいい">新人を育てるには上司が楽しそうに仕事をすればいい</h2>
 
 <p>上司が眉間にしわを寄せて仕事をしていたら、社内で出世しようとは思わないだろう。<br />
 上司が楽しそうに仕事してれば、羨ましいと思う。<br />
 そんなに楽しいなら自分もその仕事がしたいと思う。<br />
 そうすれば、成長する。</p>
 
-<h1 id="周りからわかるように楽しくする">周りからわかるように楽しくする</h1>
+<h2 id="周りからわかるように楽しくする">周りからわかるように楽しくする</h2>
 
 <p>自分は楽しそうに仕事できているか。<br />
 楽しそうに改善できているか。<br />

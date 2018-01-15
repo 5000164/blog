@@ -9,19 +9,22 @@ html {
     height: 100%;
     margin: 0;
     font-size: 62.5%; /* 1 em を 10 px にするため*/
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-kerning: normal; /* フォントのカーニングを常に有効にする */
     font-feature-settings: "palt"; /* 自動カーニングさせる */
     letter-spacing: 0.02rem; /* 字間を調整 */
+    -webkit-font-smoothing: antialiased; /* フォントにアンチエイリアスをかける (少し細く見える) */
+    -moz-osx-font-smoothing: grayscale; /* 同上 */
 }
 
 body {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.73;
-    color: hsl(235, 20%, 30%);
-    background-color: hsl(25, 50%, 99%);
+    color: hsl(235, 10%, 30%);
+    background-color: hsl(0, 100%, 100%);
 }
 
 /* スマホでは文字を大きくする */
@@ -31,18 +34,29 @@ body {
     }
 }
 
-/* 共通の設定 */
 header {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 60px auto 120px;
     letter-spacing: -0.2rem;
+}
+
+header > a {
+    text-decoration: none;
 }
 
 footer {
     width: 600px;
-    margin: 120px auto 20px;
+    margin: 120px auto 60px;
     text-align: right;
     letter-spacing: -0.2rem;
+}
+
+a {
+    color: hsl(235, 10%, 30%);
+}
+
+a:visited {
+    color: hsl(235, 10%, 50%);
 }
 
 /* トップページの設定 */
@@ -54,7 +68,7 @@ footer {
 }
 
 .articles > li {
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 .articles > li > a {
@@ -76,48 +90,38 @@ footer {
 /* 記事ページの設定 */
 body > p {
     width: 600px;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 body > div {
     width: 600px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 body > ul {
-    width: 560px;
+    width: 580px;
     margin: auto;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 h1 {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 0 auto 20px;
     font-size: 3rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h2 {
     width: 600px;
-    margin: 120px auto 60px;
+    margin: 120px auto 40px;
     font-size: 2.4rem;
-    font-weight: normal;
-    text-align: center;
-}
-
-h3 {
-    width: 600px;
-    margin: 60px auto 40px;
-    font-size: 1.6rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h4 {
     width: 600px;
     margin: 10px auto 10px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: normal;
     text-align: center;
 }
@@ -273,12 +277,12 @@ body > blockquote > p::before {
 <h1>UbuntuのIntelliJ IDEAでJUnitを使う準備をする</h1>
 
 
-<h1 id="ubuntuのバージョン">Ubuntuのバージョン</h1>
+<h2 id="ubuntuのバージョン">Ubuntuのバージョン</h2>
 
 <p>ubuntu 14.04 LTS<br />
 64bit</p>
 
-<h1 id="javaのインストール">Javaのインストール</h1>
+<h2 id="javaのインストール">Javaのインストール</h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -295,23 +299,23 @@ sudo update-java-alternatives -s java-7-oracle
 <p>参考<br />
 <a href="http://xyk.hatenablog.com/entry/2013/10/15/175623">Ubuntu 12.04 LTS に Java (Oracle JDK) をインストールする - xykのブログ</a></p>
 
-<h1 id="intellij-ideaのインストール">IntelliJ IDEAのインストール</h1>
+<h2 id="intellij-ideaのインストール">IntelliJ IDEAのインストール</h2>
 
 <p>公式サイトからダウンロードする<br />
 <a href="http://www.jetbrains.com/idea/">IntelliJ IDEA — The Best Java and Polyglot IDE</a><br />
 任意のディレクトリに配置</p>
 
-<h1 id="intellij-ideaの起動">IntelliJ IDEAの起動</h1>
+<h2 id="intellij-ideaの起動">IntelliJ IDEAの起動</h2>
 
 <p>解凍したディレクトリ内の<code>bin/idea.sh</code>を実行</p>
 
-<h1 id="プロジェクトの作成">プロジェクトの作成</h1>
+<h2 id="プロジェクトの作成">プロジェクトの作成</h2>
 
 <p>Java を選択<br />
 Project SDK で New -&gt; JDK を選択<br />
 <code>/usr/lib/jvm/java-8-oracle</code>を選択してOK</p>
 
-<h1 id="junitをインストール">JUnitをインストール</h1>
+<h2 id="junitをインストール">JUnitをインストール</h2>
 
 <p>GitHub のリンクから<code>junit.jar</code>と<code>hamcrest-core.jar</code>をダウンロード<br />
 <a href="https://github.com/junit-team/junit">junit-team/junit</a><br />
@@ -320,7 +324,7 @@ Project SDK で New -&gt; JDK を選択<br />
 参考<br />
 <a href="http://d.hatena.ne.jp/irof/20130110/p1">junit-4.11.jar が単独で使えない - 日々常々</a></p>
 
-<h1 id="試してみる">試してみる</h1>
+<h2 id="試してみる">試してみる</h2>
 
 <p>プロジェクトの直下に<code>test</code>ディレクトリを作成<br />
 <code>test</code>ディレクトリを<code>Test Sources Root</code>にマーク<br />
@@ -330,7 +334,7 @@ Project SDK で New -&gt; JDK を選択<br />
 Create Test で JUnit4 を選び、Member で作成したメソッドをチェックして OK<br />
 作成されたテストメソッドを右クリックして Run を実行</p>
 
-<h1 id="補足">補足</h1>
+<h2 id="補足">補足</h2>
 
 <p>テストメソッド名に日本語を使用した際に、テスト結果が文字化けしていた<br />
 IntelliJ IDEA の設定から、IDE Settings -&gt; Appearance -&gt; Override default fonts by を使用して回避</p>

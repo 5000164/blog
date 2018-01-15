@@ -9,19 +9,22 @@ html {
     height: 100%;
     margin: 0;
     font-size: 62.5%; /* 1 em を 10 px にするため*/
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-kerning: normal; /* フォントのカーニングを常に有効にする */
     font-feature-settings: "palt"; /* 自動カーニングさせる */
     letter-spacing: 0.02rem; /* 字間を調整 */
+    -webkit-font-smoothing: antialiased; /* フォントにアンチエイリアスをかける (少し細く見える) */
+    -moz-osx-font-smoothing: grayscale; /* 同上 */
 }
 
 body {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.73;
-    color: hsl(235, 20%, 30%);
-    background-color: hsl(25, 50%, 99%);
+    color: hsl(235, 10%, 30%);
+    background-color: hsl(0, 100%, 100%);
 }
 
 /* スマホでは文字を大きくする */
@@ -31,18 +34,29 @@ body {
     }
 }
 
-/* 共通の設定 */
 header {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 60px auto 120px;
     letter-spacing: -0.2rem;
+}
+
+header > a {
+    text-decoration: none;
 }
 
 footer {
     width: 600px;
-    margin: 120px auto 20px;
+    margin: 120px auto 60px;
     text-align: right;
     letter-spacing: -0.2rem;
+}
+
+a {
+    color: hsl(235, 10%, 30%);
+}
+
+a:visited {
+    color: hsl(235, 10%, 50%);
 }
 
 /* トップページの設定 */
@@ -54,7 +68,7 @@ footer {
 }
 
 .articles > li {
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 .articles > li > a {
@@ -76,48 +90,38 @@ footer {
 /* 記事ページの設定 */
 body > p {
     width: 600px;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 body > div {
     width: 600px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 body > ul {
-    width: 560px;
+    width: 580px;
     margin: auto;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 h1 {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 0 auto 20px;
     font-size: 3rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h2 {
     width: 600px;
-    margin: 120px auto 60px;
+    margin: 120px auto 40px;
     font-size: 2.4rem;
-    font-weight: normal;
-    text-align: center;
-}
-
-h3 {
-    width: 600px;
-    margin: 60px auto 40px;
-    font-size: 1.6rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h4 {
     width: 600px;
     margin: 10px auto 10px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: normal;
     text-align: center;
 }
@@ -282,7 +286,7 @@ body > blockquote > p::before {
 </figure>
 
 
-<h1 id="実際に作ったものはこんな感じです">実際に作ったものはこんな感じです</h1>
+<h2 id="実際に作ったものはこんな感じです">実際に作ったものはこんな感じです</h2>
 
 
 <figure >
@@ -297,7 +301,7 @@ body > blockquote > p::before {
 
 <p><a href="https://github.com/5000164/wpf-practice-1">5000164/wpf-practice-1</a></p>
 
-<h1 id="実装するにあたって参考にしたサイト">実装するにあたって参考にしたサイト</h1>
+<h2 id="実装するにあたって参考にしたサイト">実装するにあたって参考にしたサイト</h2>
 
 <p>こちらの記事を参考にさせていただきました。</p>
 
@@ -312,7 +316,7 @@ body > blockquote > p::before {
     &lt;/WindowChrome.WindowChrome&gt;
 </pre>
 
-<h1 id="枠なしには出来たけどウィンドウの影が気になる">枠なしには出来たけどウィンドウの影が気になる</h1>
+<h2 id="枠なしには出来たけどウィンドウの影が気になる">枠なしには出来たけどウィンドウの影が気になる</h2>
 
 <p>ウィンドウの枠がなくなってかっこよくなったのに、影が主張し過ぎで気になります。</p>
 
@@ -326,7 +330,7 @@ body > blockquote > p::before {
 
 <p>WPF初心者の私には無理だと判断したので、この記事の冒頭で紹介されていた簡易版で実装します。</p>
 
-<h1 id="影をいい感じにつける">影をいい感じにつける</h1>
+<h2 id="影をいい感じにつける">影をいい感じにつける</h2>
 
 <pre class="brush: xml; title: ; notranslate" title="">&lt;Window x:Class="練習1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -354,7 +358,7 @@ body > blockquote > p::before {
 
 <p>内側のBorderにMarginを設けて、影をつけています。</p>
 
-<h1 id="windowstyle-none-だと移動やリサイズができない">WindowStyle=&ldquo;None&rdquo;だと移動やリサイズができない</h1>
+<h2 id="windowstyle-none-だと移動やリサイズができない">WindowStyle=&ldquo;None&rdquo;だと移動やリサイズができない</h2>
 
 <p>しかし、この方法だと移動がリサイズができなくなるらしいです。</p>
 
@@ -366,7 +370,7 @@ body > blockquote > p::before {
 
 <p>と思っていたら、前述のWindowChromeのおかげか、特に何もせずに移動もリサイズもできました。</p>
 
-<h1 id="よくわからないけど動いたので完成">よくわからないけど動いたので完成</h1>
+<h2 id="よくわからないけど動いたので完成">よくわからないけど動いたので完成</h2>
 
 <p>というわけで、枠なしのウィンドウを作りたい、という目的は達成しました。</p>
 

@@ -9,19 +9,22 @@ html {
     height: 100%;
     margin: 0;
     font-size: 62.5%; /* 1 em を 10 px にするため*/
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-kerning: normal; /* フォントのカーニングを常に有効にする */
     font-feature-settings: "palt"; /* 自動カーニングさせる */
     letter-spacing: 0.02rem; /* 字間を調整 */
+    -webkit-font-smoothing: antialiased; /* フォントにアンチエイリアスをかける (少し細く見える) */
+    -moz-osx-font-smoothing: grayscale; /* 同上 */
 }
 
 body {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.73;
-    color: hsl(235, 20%, 30%);
-    background-color: hsl(25, 50%, 99%);
+    color: hsl(235, 10%, 30%);
+    background-color: hsl(0, 100%, 100%);
 }
 
 /* スマホでは文字を大きくする */
@@ -31,18 +34,29 @@ body {
     }
 }
 
-/* 共通の設定 */
 header {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 60px auto 120px;
     letter-spacing: -0.2rem;
+}
+
+header > a {
+    text-decoration: none;
 }
 
 footer {
     width: 600px;
-    margin: 120px auto 20px;
+    margin: 120px auto 60px;
     text-align: right;
     letter-spacing: -0.2rem;
+}
+
+a {
+    color: hsl(235, 10%, 30%);
+}
+
+a:visited {
+    color: hsl(235, 10%, 50%);
 }
 
 /* トップページの設定 */
@@ -54,7 +68,7 @@ footer {
 }
 
 .articles > li {
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 .articles > li > a {
@@ -76,48 +90,38 @@ footer {
 /* 記事ページの設定 */
 body > p {
     width: 600px;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 body > div {
     width: 600px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 body > ul {
-    width: 560px;
+    width: 580px;
     margin: auto;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 h1 {
     width: 600px;
-    margin: 20px auto 120px;
+    margin: 0 auto 20px;
     font-size: 3rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h2 {
     width: 600px;
-    margin: 120px auto 60px;
+    margin: 120px auto 40px;
     font-size: 2.4rem;
-    font-weight: normal;
-    text-align: center;
-}
-
-h3 {
-    width: 600px;
-    margin: 60px auto 40px;
-    font-size: 1.6rem;
-    font-weight: normal;
-    text-align: center;
+    font-weight: bold;
 }
 
 h4 {
     width: 600px;
     margin: 10px auto 10px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: normal;
     text-align: center;
 }
@@ -290,7 +294,7 @@ Twitter のことを最近いいなと感じ始めていたのだけれど投稿
 
 <h2 id="技術的なところ">技術的なところ</h2>
 
-<h3 id="scala-のライブラリと-java-のライブラリ">Scala のライブラリと Java のライブラリ</h3>
+<h2 id="scala-のライブラリと-java-のライブラリ">Scala のライブラリと Java のライブラリ</h2>
 
 <p>build.sbt で slack-scala-client は追加できるのに twitter4j-core は追加できないと悩んでいたら、 % と %% が違うことを知った。</p>
 
@@ -302,7 +306,7 @@ Twitter のことを最近いいなと感じ始めていたのだけれど投稿
 
 <p>slack-scala-client は Scala のライブラリなので略記法でいける、 twitter4j-core は Java のライブラリなので略記法ではいけない、ということだった。</p>
 
-<h3 id="モックを使ったテスト">モックを使ったテスト</h3>
+<h2 id="モックを使ったテスト">モックを使ったテスト</h2>
 
 <p>コントローラーのテストを書く時に、副作用が出る部分をモックにしようとした。<br />
 調べたら Mockito というモックライブラリがよく使われているようなので、 ScalaTest と Mockito を使うことにした。</p>
@@ -348,7 +352,7 @@ Twitter のことを最近いいなと感じ始めていたのだけれど投稿
 
 <p><a href="https://github.com/5000164/scala-bot/blob/master/src/test/scala/jp/_5000164/scala_bot/interfaces/OperatorSpec.scala">scala-bot/OperatorSpec.scala at master · 5000164/scala-bot</a></p>
 
-<h3 id="副作用がある関数の返り値">副作用がある関数の返り値</h3>
+<h2 id="副作用がある関数の返り値">副作用がある関数の返り値</h2>
 
 <p>今回の場合では副作用は Twitter にツイートすることで発生する。<br />
 副作用がある関数の返り値をどうやって表現するか、 Boolean にするか Option にするかライブラリが投げるエラーをそのままキャッチするか、どれもしっくりこないと思っていて調べていたら Either を見つけたので使ってみた。<br />
@@ -365,7 +369,7 @@ Either だと、エラーが起きたら文字列を返して、正常終了し�
 </td></tr></table>
 <p>のように表現することができた。</p>
 
-<h3 id="コマンドを増やしやすいような設計">コマンドを増やしやすいような設計</h3>
+<h2 id="コマンドを増やしやすいような設計">コマンドを増やしやすいような設計</h2>
 
 <p>今はツイートする機能だけだが、今後機能を増やしたいと思った時に追加しやすいように心がけた。<br />
 そのために DDD を意識しながら全体の設計を行った。<br />
