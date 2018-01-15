@@ -5,7 +5,7 @@ url = "2014-03-dxlib_practice_1"
 +++
 {{< figure src="/images/2014/03/20140315_practice1.png" title="" >}}
 
-# 早速見ていただきましょう
+## 早速見ていただきましょう
 
 {{< figure src="/images/2014/03/20140315_practice1.png" title="" >}}
 
@@ -13,7 +13,7 @@ url = "2014-03-dxlib_practice_1"
   
 [5000164/dxlib-practice-1](https://github.com/5000164/dxlib-practice-1)
 
-# DXライブラリで1番最初に確認したのがフォントの表示
+## DXライブラリで1番最初に確認したのがフォントの表示
 
 ゲームのようなものを作りたいなと考えていて、知人に教えてもらったDXライブラリを使うことにしました。
 
@@ -23,7 +23,7 @@ url = "2014-03-dxlib_practice_1"
   
 フォントの美しさはモチベーションに直結します。
 
-# 結果はごらんの通り
+## 結果はごらんの通り
 
 {{< figure src="/images/2014/03/20140315_practice1_zoom-300x300.png" title="" >}}
 
@@ -31,7 +31,7 @@ url = "2014-03-dxlib_practice_1"
   
 ちなみに比較対象として、デフォルト設定でのフォントを下部に表示しています。
 
-# フォントをきれいに表示するには1行追加するだけ
+## フォントをきれいに表示するには1行追加するだけ
 
 <pre class="brush: cpp; title: ; notranslate" title="">ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8);
 </pre>
@@ -42,7 +42,7 @@ url = "2014-03-dxlib_practice_1"
 
 [ＤＸライブラリ置き場　リファレンスページ](http://homepage2.nifty.com/natupaji/DxLib/function/dxfunc_graph2.html#R17N24)
 
-# よりうつくしい表示のために若干の影をつけています
+## よりうつくしい表示のために若干の影をつけています
 
 アンチエイリアスをかけるだけで十分きれいに表示されます。
   
@@ -81,6 +81,6 @@ url = "2014-03-dxlib_practice_1"
 
 これで完成です。
 
-# まとめ
+## まとめ
 
 もちろん処理の負荷が高くなるとのことですが、美しいフォントの表示が可能であると知れて満足です。

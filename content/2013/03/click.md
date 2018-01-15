@@ -7,7 +7,7 @@ url = "2013-03-click"
 
 &nbsp;
 
-# clickイベントを取得したい
+## clickイベントを取得したい
 
 DOMに要素を追加するとjQueryのclickイベントって効かなくなるんですね
 
@@ -25,7 +25,7 @@ iOSで見てみる
 
 &nbsp;
 
-# iOSでonのclickイベントが取得できない
+## iOSでonのclickイベントが取得できない
 
 iOSで動かなくていろいろ調べてみました
 
@@ -47,7 +47,7 @@ iOSのlabel要素と同じ対処法ですね
 
 &nbsp;
 
-# デモ
+## デモ
 
 
 
@@ -55,13 +55,13 @@ iOSのlabel要素と同じ対処法ですね
 
 &nbsp;
 
-# まとめ
+## まとめ
 
 iOSのDOMに追加したdiv要素のclickイベントを取得したかったらonclick=&#8221;&#8221;をつけること
 
 &nbsp;
 
-# 参考
+## 参考
 
 スマートフォンブラウザのjQuery Clickイベントに関すること &#8211; くらげだらけ  
 <http://kudakurage.hatenadiary.com/entry/20120502/1335920244>

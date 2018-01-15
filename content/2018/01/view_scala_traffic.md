@@ -30,7 +30,7 @@ SSL / TLS 通信の中身を見るための手順としては
 
 となる。
 
-### Charles の証明書を信頼したキーストアを生成する
+## Charles の証明書を信頼したキーストアを生成する
 
 まず Charles の証明書を取得する。  
 これはアプリケーションのメニューの `Help > SSL Proxying > Save Charles Root Certificate...` から取得できる。  
@@ -45,7 +45,7 @@ keytool -keystore cacerts -importcert -alias charles -file charles-ssl-proxying-
 
 また、この時に `keytool -list -keystore cacerts` のようにして内容を表示して追加されたかどうか確認することができる。
 
-### 生成したキーストアをアプリケーションから読み込む
+## 生成したキーストアをアプリケーションから読み込む
 
 先ほど作成したキーストアをアプリケーションから読み込む。  
 実行環境としては IntelliJ IDEA で Scala を動かしている。  
@@ -58,7 +58,7 @@ keytool -keystore cacerts -importcert -alias charles -file charles-ssl-proxying-
 
 `/path/to/cacerts` には先ほど作成したキーストアへのパスを指定する。
 
-### Charles の SSL Proxy を有効にする
+## Charles の SSL Proxy を有効にする
 
 証明書を設定することで通信を行えるようにはなるが、このままでは通信の内容を見ることはできない。  
 通信の内容を見るために Charles の SSL Proxy の設定を有効にする。  

@@ -20,7 +20,7 @@ url = "2017-12-scala_study_group"
 
 ## 各発表のメモ
 
-### PHPエンジニアが始めるScala
+## PHPエンジニアが始めるScala
 
 - 型エイリアス
   - 知らなかった便利そう
@@ -29,7 +29,7 @@ url = "2017-12-scala_study_group"
 - for yield わからない
 - flatMap わからない
 
-### "cats" in practice. 関数型ライブラリcatsの紹介と アドテクシステムにおける使用例
+## "cats" in practice. 関数型ライブラリcatsの紹介と アドテクシステムにおける使用例
 
 - モナドわからない
 - 圏論もわからない
@@ -37,18 +37,18 @@ url = "2017-12-scala_study_group"
 - cats 使ってみたい
 - Try 型わからない
 
-### ScalaのDIパターンについて
+## ScalaのDIパターンについて
 
 - Cake Pattern 初めてふわっと理解できたかも
     - でもやばい今もう忘れてる
 - テスト書く時それぞれでどうなるのか知りたい
 
-### Futureのおまじないを理解する
+## Futureのおまじないを理解する
 
 - Future わからない
 - implicit してる
 
-### 役に立たないScala入門はじめの0歩
+## 役に立たないScala入門はじめの0歩
 
 - メモリー食う
 

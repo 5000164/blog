@@ -17,7 +17,7 @@ url = "2012-10-vocaloid_ranking_20121015"
 
 &nbsp; 
 
-# 3位：Escape☆=Velocity／PSGO-Z 
+## 3位：Escape☆=Velocity／PSGO-Z
 
 [nicodo display=&#8221;player&#8221; width=&#8221;640&#8243; height=&#8221;360&#8243;]sm16594273[/nicodo] 
 
@@ -37,7 +37,7 @@ Nsenでたまたま知ったPSGO-Zさん。
 
 &nbsp; 
 
-# 2位：ワンホット・ミニッツ／ショミ 
+## 2位：ワンホット・ミニッツ／ショミ
 
 [nicodo display=&#8221;player&#8221; width=&#8221;640&#8243; height=&#8221;360&#8243;]sm16482252[/nicodo] 
 
@@ -55,7 +55,7 @@ Nsenでたまたま知ったPSGO-Zさん。
 
 &nbsp; 
 
-# 1位：みんなみくみくにしてあげる♪／ika, MOSAIC.TUNE 
+## 1位：みんなみくみくにしてあげる♪／ika, MOSAIC.TUNE
 
 [nicodo display=&#8221;player&#8221; width=&#8221;640&#8243; height=&#8221;360&#8243;]sm19069321[/nicodo] 
 
@@ -89,7 +89,7 @@ VOCALOIDの文化はみくみくにしてあげる♪から始まったと言っ
 
 &nbsp; 
 
-# 以下、現時点のマイリスト 
+## 以下、現時点のマイリスト
 
 <div class="niconico">
   [nicodo]sm14476037[/nicodo]<br />[nicodo]sm14564166[/nicodo]<br />[nicodo]sm14709473[/nicodo]<br />[nicodo]sm15307196[/nicodo]<br />[nicodo]sm12071713[/nicodo]<br />[nicodo]sm8228650[/nicodo]<br />[nicodo]nm15742836[/nicodo]<br />[nicodo]nm16012790[/nicodo]<br />[nicodo]sm15938520[/nicodo]<br />[nicodo]sm16613114[/nicodo]<br />[nicodo]sm16793142[/nicodo]<br />[nicodo]sm16896636[/nicodo]<br />[nicodo]sm17241020[/nicodo]<br />[nicodo]sm17274025[/nicodo]<br />[nicodo]sm4141643[/nicodo]<br />[nicodo]sm13292706[/nicodo]<br />[nicodo]sm17235354[/nicodo]<br />[nicodo]sm17574798[/nicodo]<br />[nicodo]sm4487356[/nicodo]<br />[nicodo]sm17917917[/nicodo]<br />[nicodo]nm17917154[/nicodo]<br />[nicodo]sm13974660[/nicodo]<br />[nicodo]sm11819157[/nicodo]<br />[nicodo]sm7556559[/nicodo]<br />[nicodo]sm8365796[/nicodo]<br />[nicodo]sm10589810[/nicodo]<br />[nicodo]sm17637208[/nicodo]<br />[nicodo]sm12908777[/nicodo]<br />[nicodo]nm6971638[/nicodo]<br />[nicodo]sm18258211[/nicodo]<br />[nicodo]sm9251026[/nicodo]<br />[nicodo]sm18408895[/nicodo]<br />[nicodo]sm15187219[/nicodo]<br />[nicodo]sm17969073[/nicodo]<br />[nicodo]sm14456127[/nicodo]<br />[nicodo]sm16483227[/nicodo]<br />[nicodo]sm16594273[/nicodo]<br />[nicodo]sm18485361[/nicodo]<br />[nicodo]sm16482252[/nicodo]<br />[nicodo]sm14317611[/nicodo]<br />[nicodo]sm15663997[/nicodo]<br />[nicodo]sm16802960[/nicodo]<br />[nicodo]sm19069321[/nicodo]

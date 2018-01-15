@@ -4,18 +4,18 @@ date = 2016-12-11T01:52:56+09:00
 url = "2016-12-profiler_memo"
 +++
 
-# プロファイラーを調べた
+## プロファイラーを調べた
 
 PHP のパフォーマンスを向上させたくてプロファイリングすればなにかわかるのでは？と思ったので、プロファイリングしてくれるツールを調べた。
 New Relic は無料のプランがなくなっていた？ので除外。
 
-# 結論
+## 結論
 
 テスト流す時に Xdebug でプロファイリングして、開発環境で XHProf でプロファイリングすればいいのかなと思った。  
 XHProf は fork したプロセスのプロファイリングもできるみたいなことを見かけたため。  
 実現性についてはこれから調べる。
 
-# 調べたプロファイラーのメモ
+## 調べたプロファイラーのメモ
 
 - [Xdebug - Debugger and Profiler Tool for PHP](https://xdebug.org/)
 - [phacility/xhprof: XHProf is a function-level hierarchical profiler for PHP and has a simple HTML based user interface.](https://github.com/phacility/xhprof)

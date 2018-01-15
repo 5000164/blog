@@ -21,7 +21,7 @@ Slack の bot に投げた内容をツイートする。
 
 ## 技術的なところ
 
-### Scala のライブラリと Java のライブラリ
+## Scala のライブラリと Java のライブラリ
 
 build.sbt で slack-scala-client は追加できるのに twitter4j-core は追加できないと悩んでいたら、 % と %% が違うことを知った。
 
@@ -31,7 +31,7 @@ build.sbt で slack-scala-client は追加できるのに twitter4j-core は追�
 
 slack-scala-client は Scala のライブラリなので略記法でいける、 twitter4j-core は Java のライブラリなので略記法ではいけない、ということだった。
 
-### モックを使ったテスト
+## モックを使ったテスト
 
 コントローラーのテストを書く時に、副作用が出る部分をモックにしようとした。  
 調べたら Mockito というモックライブラリがよく使われているようなので、 ScalaTest と Mockito を使うことにした。
@@ -87,7 +87,7 @@ verify(mockClient).sendMessage("channel", "message")
 
 [scala-bot/OperatorSpec.scala at master · 5000164/scala-bot](https://github.com/5000164/scala-bot/blob/master/src/test/scala/jp/_5000164/scala_bot/interfaces/OperatorSpec.scala)
 
-### 副作用がある関数の返り値
+## 副作用がある関数の返り値
 
 今回の場合では副作用は Twitter にツイートすることで発生する。  
 副作用がある関数の返り値をどうやって表現するか、 Boolean にするか Option にするかライブラリが投げるエラーをそのままキャッチするか、どれもしっくりこないと思っていて調べていたら Either を見つけたので使ってみた。  
@@ -103,7 +103,7 @@ twitter.tweet(Command.content(message.text)) match {
 
 のように表現することができた。
 
-### コマンドを増やしやすいような設計
+## コマンドを増やしやすいような設計
 
 今はツイートする機能だけだが、今後機能を増やしたいと思った時に追加しやすいように心がけた。  
 そのために DDD を意識しながら全体の設計を行った。  

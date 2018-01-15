@@ -4,11 +4,11 @@ date = 2014-06-14T22:46:26+09:00
 url = "2014-06-junit"
 +++
 
-# Ubuntuのバージョン
+## Ubuntuのバージョン
 ubuntu 14.04 LTS  
 64bit
 
-# Javaのインストール
+## Javaのインストール
 ```
 sudo apt-get update
 sudo apt-get install -y python-software-properties
@@ -20,20 +20,20 @@ sudo update-java-alternatives -s java-7-oracle
 参考  
 [Ubuntu 12.04 LTS に Java (Oracle JDK) をインストールする - xykのブログ](http://xyk.hatenablog.com/entry/2013/10/15/175623)
 
-# IntelliJ IDEAのインストール
+## IntelliJ IDEAのインストール
 公式サイトからダウンロードする  
 [IntelliJ IDEA — The Best Java and Polyglot IDE](http://www.jetbrains.com/idea/)  
 任意のディレクトリに配置
 
-# IntelliJ IDEAの起動
+## IntelliJ IDEAの起動
 解凍したディレクトリ内の`bin/idea.sh`を実行
 
-# プロジェクトの作成
+## プロジェクトの作成
 Java を選択  
 Project SDK で New -> JDK を選択  
 `/usr/lib/jvm/java-8-oracle`を選択してOK
 
-# JUnitをインストール
+## JUnitをインストール
 GitHub のリンクから`junit.jar`と`hamcrest-core.jar`をダウンロード  
 [junit-team/junit](https://github.com/junit-team/junit)  
 `junit.jar`と`hamcrest-core.jar`をプロジェクトにコピー  
@@ -41,7 +41,7 @@ GitHub のリンクから`junit.jar`と`hamcrest-core.jar`をダウンロード
 参考  
 [junit-4.11.jar が単独で使えない - 日々常々](http://d.hatena.ne.jp/irof/20130110/p1)
 
-# 試してみる
+## 試してみる
 プロジェクトの直下に`test`ディレクトリを作成  
 `test`ディレクトリを`Test Sources Root`にマーク  
 `src`ディレクトリの下に Java Class ファイルを作成  
@@ -50,6 +50,6 @@ GitHub のリンクから`junit.jar`と`hamcrest-core.jar`をダウンロード
 Create Test で JUnit4 を選び、Member で作成したメソッドをチェックして OK  
 作成されたテストメソッドを右クリックして Run を実行
 
-# 補足
+## 補足
 テストメソッド名に日本語を使用した際に、テスト結果が文字化けしていた  
 IntelliJ IDEA の設定から、IDE Settings -> Appearance -> Override default fonts by を使用して回避

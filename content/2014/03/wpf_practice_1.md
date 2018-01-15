@@ -5,7 +5,7 @@ url = "2014-03-wpf_practice_1"
 +++
 {{< figure src="/images/2014/03/20140311_practice1.png" title="" >}}
 
-# 実際に作ったものはこんな感じです
+## 実際に作ったものはこんな感じです
 
 {{< figure src="/images/2014/03/20140311_practice1-300x300.png" title="" >}}
 
@@ -13,7 +13,7 @@ url = "2014-03-wpf_practice_1"
   
 [5000164/wpf-practice-1](https://github.com/5000164/wpf-practice-1)
 
-# 実装するにあたって参考にしたサイト
+## 実装するにあたって参考にしたサイト
 
 こちらの記事を参考にさせていただきました。
 
@@ -28,7 +28,7 @@ url = "2014-03-wpf_practice_1"
     &lt;/WindowChrome.WindowChrome&gt;
 </pre>
 
-# 枠なしには出来たけどウィンドウの影が気になる
+## 枠なしには出来たけどウィンドウの影が気になる
 
 ウィンドウの枠がなくなってかっこよくなったのに、影が主張し過ぎで気になります。
   
@@ -42,7 +42,7 @@ url = "2014-03-wpf_practice_1"
   
 WPF初心者の私には無理だと判断したので、この記事の冒頭で紹介されていた簡易版で実装します。
 
-# 影をいい感じにつける
+## 影をいい感じにつける
 
 <pre class="brush: xml; title: ; notranslate" title="">&lt;Window x:Class="練習1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -70,7 +70,7 @@ WindowにWindowStyle="None"、AllowsTransparency="True"、Background="Transparen
   
 内側のBorderにMarginを設けて、影をつけています。
 
-# WindowStyle="None"だと移動やリサイズができない
+## WindowStyle="None"だと移動やリサイズができない
 
 しかし、この方法だと移動がリサイズができなくなるらしいです。
   
@@ -82,7 +82,7 @@ WindowにWindowStyle="None"、AllowsTransparency="True"、Background="Transparen
   
 と思っていたら、前述のWindowChromeのおかげか、特に何もせずに移動もリサイズもできました。
 
-# よくわからないけど動いたので完成
+## よくわからないけど動いたので完成
 
 というわけで、枠なしのウィンドウを作りたい、という目的は達成しました。
   

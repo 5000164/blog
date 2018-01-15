@@ -6,14 +6,14 @@ url = "2017-10-keyboard"
 
 ## 設定
 
-### Mac Modifier Keys
+## Mac Modifier Keys
 
 - Caps Lock: Control
 - Conrtol: Control
 - Option: Command
 - Command: Option
 
-### Mistel Barocco マクロ設定
+## Mistel Barocco マクロ設定
 
 - Left Control: Fn
 - Left Command: Right Command

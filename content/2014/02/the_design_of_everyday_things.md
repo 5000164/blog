@@ -7,7 +7,7 @@ url = "2014-02-the_design_of_everyday_things"
   <a href="http://www.amazon.co.jp/gp/product/478850362X/ref=as_li_ss_il?ie=UTF8&#038;camp=247&#038;creative=7399&#038;creativeASIN=478850362X&#038;linkCode=as2&#038;tag=5000164-22"><img border="0" src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&#038;ASIN=478850362X&#038;Format=_SL160_&#038;ID=AsinImage&#038;MarketPlace=JP&#038;ServiceVersion=20070822&#038;WS=1&#038;tag=5000164-22" /><br /><span>誰のためのデザイン？／D.A.ノーマン、野島久雄訳</span></a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&#038;l=as2&#038;o=9&#038;a=478850362X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 </div>
 
-# 非常にわかりやすかった
+## 非常にわかりやすかった
 
 具体的な例が多く出てきて非常にわかりやすかった。
   
@@ -17,13 +17,13 @@ url = "2014-02-the_design_of_everyday_things"
   
 どのようにデザインすれば使いやすくなるのか。
 
-# 読むのに半年くらいかかった
+## 読むのに半年くらいかかった
 
 読み始めるのにそれほど抵抗はないのだけれど、読み進めるのが遅かった。
   
 事前に読みやすい読みやすいという評判を聞いていたせいで、私が誤ったメンタルモデルを構築してしまったのかも知れない。
 
-# ユーザーよりも開発者を優先したことがある
+## ユーザーよりも開発者を優先したことがある
 
 なにかを作る時に、「作るのが簡単だから」という理由で決定したことがある。
   
@@ -31,7 +31,7 @@ url = "2014-02-the_design_of_everyday_things"
   
 デザインをもっと考えるべきであった。
 
-# わかりやすさよりも見た目の簡単さを優先したことがある
+## わかりやすさよりも見た目の簡単さを優先したことがある
 
 具体例としても出てきたボタンの配置について、なんとなくすべてを同じ形にしてしまったことがある。
   
@@ -41,7 +41,7 @@ url = "2014-02-the_design_of_everyday_things"
   
 ボタンにも同じ形なら同じ形であることの意味を考えるべきである。
 
-# もっと使いやすさについて学んでいきたい
+## もっと使いやすさについて学んでいきたい
 
 読むのに時間はかかったが非常にためになる本だった。
   

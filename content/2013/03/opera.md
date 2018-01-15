@@ -7,7 +7,7 @@ url = "2013-03-opera"
 
 &nbsp;
 
-# Operaの右クリックをカスタマイズ
+## Operaの右クリックをカスタマイズ
 
 Operaの右クリックで表示されるメニューをちょっとカスタマイズするだけですごく使いやすくなりますよ
 
@@ -41,6 +41,6 @@ Item, "Open page in Google Chrome"=Execute program, "chrome","%u"
 Item, "Open link in Google Chrome"=Execute program, "chrome","%l"
 </pre>
 
-# 結論
+## 結論
 
 ちょっとしたカスタマイズですごく幸せになれます

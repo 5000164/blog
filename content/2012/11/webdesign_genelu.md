@@ -16,7 +16,7 @@ Gene Lu. User Experience/Interaction Designer. Welcome.
 
 &nbsp;
 
-# 全体
+## 全体
 
 背景色と文字色のバランスがちょうどいい。
 

@@ -5,7 +5,7 @@ url = "2014-01-lifelog"
 +++
 {{< figure src="/images/2014/01/de_20140101_lifelog.jpg" title="" >}}
 
-# きっかけ
+## きっかけ
 
 なんかうまく睡眠をとれている気がしません。
   
@@ -13,7 +13,7 @@ url = "2014-01-lifelog"
   
 リストバンド型が楽そうだなと思ったので、リストバンド型だけ調べてます。
 
-# Jawbone UP
+## Jawbone UP
 
 いきなりですが、これを買いました。
   
@@ -37,7 +37,7 @@ UP24が日本で発売されるまで様子を見るか、UPを買うか。
   
 [Jawbone UP24 : Jawboneから次のUPが発表！今度はBluetooth機能が追加！ | favLife with iPhone](http://www.favlife.com/archives/16755)
 
-# Nike+ FuelBand SE
+## Nike+ FuelBand SE
 
 ## メモ
 
@@ -49,7 +49,7 @@ UP24が日本で発売されるまで様子を見るか、UPを買うか。
 
 [付けただけでアクティブな気分！毎日のあらゆる活動を記録する「Nike+ FuelBand SE」が日本上陸！ : ギズモード・ジャパン](http://www.gizmodo.jp/2013/11/nike_fuelband_se_2.html)
 
-# Fitbit Force, Fitbit Flex
+## Fitbit Force, Fitbit Flex
 
 ## メモ
 
@@ -65,7 +65,7 @@ UP24が日本で発売されるまで様子を見るか、UPを買うか。
   
 Fitbit Flexを約二ヶ月間使ってみて | deform
 
-# BASIS
+## BASIS
 
 ## メモ
 
@@ -79,7 +79,7 @@ Fitbit Flexを約二ヶ月間使ってみて | deform
 
 [where on earth is my wonderwall? 多分日本でいちばん早いBASISのレビュー](http://qwerty1234567890.blog116.fc2.com/blog-entry-319.html)
 
-# Amiigo
+## Amiigo
 
 ## メモ
 
@@ -93,7 +93,7 @@ Fitbit Flexを約二ヶ月間使ってみて | deform
   
 [メモ: Amiigo](http://hcondo2000.blogspot.jp/search/label/Amiigo)
 
-# まとめ
+## まとめ
 
 NikeのFuelBandしか知らなかったけど、調べたらいろいろあることがわかりました。
   

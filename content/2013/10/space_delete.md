@@ -38,7 +38,7 @@ url = "2013-10-space_delete"
 - ショートカットで削除処理が実行可能
 - 削除処理をしたらそのままCtrl+Cしたい
 
-### 作ってみた Ver.1
+## 作ってみた Ver.1
 
 {{< figure src="/images/2013/10/20131023_space_delete_ver1.png" title="" >}}  
 というわけで作ってみた。  
@@ -49,7 +49,7 @@ url = "2013-10-space_delete"
 フォントサイズは大きめにしてるのでもっと編集領域を広げたい。  
 そしてもっとエディタ感を出したい。
 
-### 作ってみた Ver.2
+## 作ってみた Ver.2
 
 {{< figure src="/images/2013/10/20131023_space_delete_ver2.png" title="" >}}  
 というわけで作ってみた。  

@@ -16,7 +16,7 @@ Welcome to Elite Premium WordPress Theme
 
 &nbsp;
 
-# 色
+## 色
 
 トップのテクスチャと写真の色使いが絶妙に渋くてお洒落な雰囲気を醸し出している。
 
@@ -24,6 +24,6 @@ Welcome to Elite Premium WordPress Theme
 
 &nbsp;
 
-# 全体
+## 全体
 
 これはWordPressのテーマだそうで、もっとデザインのスキルを身につけなければと感じる。

@@ -16,7 +16,7 @@ url = "2017-12-adopt_2017"
 
 ## 学習編
 
-### ポモドーロテクニック
+## ポモドーロテクニック
 
 2017 年に導入して 1 番よかったものはこれ。  
 今まで存在とやり方は知っていたが、自分には合わないだろうという偏見で 1 度も試したことがなかった。  
@@ -24,44 +24,44 @@ url = "2017-12-adopt_2017"
 導入して 1 番よかったことは、今までの「このタスクをやるのに何分」という考え方から「25 分でここまでできる」という考え方に変わったこと。  
 目標の設定もしやすいし、振り返りもできるし、達成感も得られるし、非常におすすめ。
 
-### KPT による振り返り
+## KPT による振り返り
 
 改善を進めていくために振り返りを導入した。  
 その振り返り手法として KPT を使っている。  
 ポモドーロテクニックによって振り返りを行いやすく、いいところを考えて達成感を得られ、次への改善を考えられるなど、シンプルで使いやすい。
 
-### 早起き
+## 早起き
 
 早起きはいいという話はよく聞くけど、あんまり信用していなかった。  
 でもやったことがなかったのでやってみた。  
 結果的には、後述する朝勉強との組み合わせによってとてもいいと感じるようになった。
 
-### 朝勉強
+## 朝勉強
 
 朝早起きして、仕事の時間まで勉強をすることにした。  
 まだできないことも多いけど、できた日はとても達成感がある。  
 なぜなら夜に開放感が得られるから。  
 今までは仕事が終わった後に「疲れてるけど勉強しないと」という義務感があってつらかったけど、朝に勉強をしておくとそういう義務感がなくなってとても楽になった。
 
-### 昼休み読書
+## 昼休み読書
 
 昼休みは読書の時間にした。  
 1 日のルーチンに組み込むことによって意志の力を使って「頑張らないと」と思うことがなくなって楽になった。  
 ご飯の時も読みながら食べている。  
 後述する Kindle のおかげで実現することができた。
 
-### 移動中読書
+## 移動中読書
 
 これも移動中は読書の時間と決めることで頑張る必要がなくなって楽になった。  
 こちらも Kindle のおかげで実現することができた。
 
-### 時間帯でやることを分ける
+## 時間帯でやることを分ける
 
 タスクに優先順位をつけていて、勉強と仕事と雑務の優先順位が混ざった時にどこから手を付けるか迷ってしまうことがあった。  
 特に勉強や仕事のタスクは終わらないものもあるので、終わらせられるものをやろうとした結果雑務のタスクだけを消化してしまうなど。  
 朝勉強とあわせて、朝は勉強、勉強の後は仕事、仕事の後は雑務、と分けることでそれぞれの作業に手を付けることができるようになった。
 
-### 電子書籍リーダー
+## 電子書籍リーダー
 
 <a href="https://www.amazon.co.jp/dp/B06XDK92KS/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=9e9091ebc13575dc402d67874b83936f" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B06XDK92KS&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=li3&o=9&a=B06XDK92KS" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
@@ -71,14 +71,14 @@ url = "2017-12-adopt_2017"
 その結果非常に良かった。  
 本を読む専用の筐体というのが本を読むぞという気持ちになっていい。
 
-### L 字デスク
+## L 字デスク
 
 - [BEKANT コーナーデスク 右 - ブラックブラウン/ブラック - IKEA](http://www.ikea.com/jp/ja/catalog/products/S59006415/)
 
 L 字デスクに興味はあったが使ったことがなかったので買ってみた。  
 作業スペースが広くていい。
 
-### モニターアーム
+## モニターアーム
 
 <a href="https://www.amazon.co.jp/dp/B074NVDV1J/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=b3cc66dba6c3a091078e166e0bd7834f" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B074NVDV1J&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=li3&o=9&a=B074NVDV1J" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
@@ -89,7 +89,7 @@ L 字デスクに興味はあったが使ったことがなかったので買っ
 
 ## 仕事編
 
-### リモートワーク
+## リモートワーク
 
 生活の選択肢が増えるのがとてもいい。  
 移動時間がなくなるのもとてもいい。  
@@ -99,19 +99,19 @@ L 字デスクに興味はあったが使ったことがなかったので買っ
 
 ## 生活編
 
-### 個人 Slack
+## 個人 Slack
 
 Slack に自分用のワークスペースを作って運用し始めた。  
 RSS や Twitter の情報を Slack に集約することで情報収集しやすくなった。
 
-### COMP GUMMY
+## COMP GUMMY
 
 - [COMP GUMMY | 完全食 COMP](http://www.comp.jp/gummy.html)
 
 COMP はすでに導入していて、とてもいいものだけど、味が甘めでしょっぱいものが食べたくなってしまう問題があった。  
 COMP GUMMY は味が甘い系ではなくしょっぱい系で、噛みごたえもあり、 COMP と COMP GUMMY をあわせることで満足度が上がった。
 
-### 空気清浄機
+## 空気清浄機
 
 <a href="https://www.amazon.co.jp/dp/B073WJDQMN/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=c23a61e8d27cab86efeba1ec1854342a" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B073WJDQMN&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=li3&o=9&a=B073WJDQMN" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
@@ -120,7 +120,7 @@ COMP GUMMY は味が甘い系ではなくしょっぱい系で、噛みごたえ
 空気清浄機も買ったことがなかったので買ってみた。  
 買ったやつはあんまり評価良くないけど、ほこりをたくさん吸ってるのを見るとこんなにほこりを吸っていたのかとなって買ってよかったという気持ちになる。
 
-### 収納
+## 収納
 
 <a href="https://www.amazon.co.jp/dp/B001RCU1V8/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=35671f17e731867b5a24a4443d34674b" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B001RCU1V8&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=li3&o=9&a=B001RCU1V8" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
@@ -130,7 +130,7 @@ COMP GUMMY は味が甘い系ではなくしょっぱい系で、噛みごたえ
 収納を買うと物がしまえて便利だということに気付いた。  
 引っ越しをよくするので、その気になれば簡単に捨てられるものを探した結果ダンボール製の収納を買うことにした。
 
-### 光目覚まし時計
+## 光目覚まし時計
 
 <a href="https://hb.afl.rakuten.co.jp/hgc/164a7833.fc0cc12c.164a7834.5b0639cb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmoonmoon%2Finti4%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmoonmoon%2Fi%2F10000152%2F&link_type=pict&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0Iiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJkb3duIiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MH0%3D" target="_blank" rel="nofollow" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hgb/164a7833.fc0cc12c.164a7834.5b0639cb/?me_id=1280430&item_id=10000152&m=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_gold%2Fmoonmoon%2Fimages%2Finti4_pc%2Finti4_items_00b.jpg%3F_ex%3D80x80&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_gold%2Fmoonmoon%2Fimages%2Finti4_pc%2Finti4_items_00b.jpg%3F_ex%3D400x400&s=400x400&t=pict" border="0" alt="" title=""></a>
 
@@ -139,42 +139,42 @@ COMP GUMMY は味が甘い系ではなくしょっぱい系で、噛みごたえ
 こんなに高いものを買う必要はなかったかも知れないけど、朝起きる時間に明るくなるのは起きやすくなっていい。  
 他の光目覚まし時計を使ったことがないので比較はできないけど、今のところ満足している。
 
-### 6 畳の部屋
+## 6 畳の部屋
 
 6 畳の部屋がちょうどいい広さだと知った。
 
-### キッチン不使用
+## キッチン不使用
 
 キッチンをまったく使用しない、食器や調味料、調理器具などもまったく買わないことで物とかかるお金を減らすことができた。  
 普段は COMP と COMP GUMMY を食べ、外食したくなったら外で食べている。  
 ただ、紙コップと割り箸はあった方が便利。
 
-### 部屋に花を飾る
+## 部屋に花を飾る
 
 部屋に花を飾ると気持ちがいい。
 
 ## ツール編
 
-### ウィンドウマネージャー
+## ウィンドウマネージャー
 
 - [ianyh/Amethyst: Automatic tiling window manager for macOS à la xmonad.](https://github.com/ianyh/Amethyst)
 
 今までウィンドウの位置を揃えたりしていた手間がなくなった。
 
-### 入力切替
+## 入力切替
 
 - [⌘英かな](https://ei-kana.appspot.com/)
 
 入力切替をトグル式に切り替えるのは現在の入力モードを把握する必要があって手間だった。  
 特定のキーを押すことで入力モードを指定できるのが日本語キーボードのメリットだったが、このアプリのおかげで英字キーボードがいいと思えるようになった。
 
-### パスワード管理
+## パスワード管理
 
 - [Best Password Manager & Secure Digital Vault - Keeper](https://keepersecurity.com/)
 
 今まで KeePass を使っていたが、有料のサービスはやっぱり便利だった。
 
-### ポモドーロタイマー
+## ポモドーロタイマー
 
 - [Brain Focus Productivity Timer - Google Play の Android アプリ](https://play.google.com/store/apps/details?id=com.AT.PomodoroTimer&hl=ja)
 

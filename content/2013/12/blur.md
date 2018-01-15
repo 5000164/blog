@@ -5,17 +5,17 @@ url = "2013-12-blur"
 +++
 {{< figure src="/images/2013/12/20131208_blur.png" title="" >}}
 
-# きっかけ
+## きっかけ
 
 iOS7って半透明のレイヤーの透過した部分だけぼかしがかかりますよね。
   
 CSSでも同じことができないかなと思って調べました。
 
-# 結論
+## 結論
 
 現在のCSSではできない模様。
 
-# 擬似的に実現
+## 擬似的に実現
 
 CSSにはblurというプロパティがあるのですが、このblurはコンテンツ全体にぼかしをかけます。
   
@@ -23,7 +23,7 @@ CSSにはblurというプロパティがあるのですが、このblurはコン
   
 なので、このblurをうまく使って一部だけのぼかしを擬似的に実現します。
 
-# デモ
+## デモ
 
 <div class="codepen">
   <p data-height="350" data-theme-id="2816" data-slug-hash="CIGyt" data-user="5000164" data-default-tab="result" class='codepen'>

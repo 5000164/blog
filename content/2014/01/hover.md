@@ -5,7 +5,7 @@ url = "2014-01-hover"
 +++
 {{< figure src="/images/2014/01/20140122_hover.png" title="" >}}
 
-# リンクとかをホバーしたら背景色を変えたりしますよね
+## リンクとかをホバーしたら背景色を変えたりしますよね
 
 リンクをホバーしたら文字色と背景色が変わるという実装はよくあります。
   
@@ -17,7 +17,7 @@ url = "2014-01-hover"
   
 そこですべてに覆いかぶさっているように見せます。
 
-# まずはデモをどうぞ
+## まずはデモをどうぞ
 
 <div class="codepen">
   <p data-height="332" data-theme-id="2816" data-slug-hash="vexEB" data-default-tab="result" class='codepen'>

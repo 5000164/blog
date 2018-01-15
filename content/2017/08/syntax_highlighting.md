@@ -25,7 +25,7 @@ pygmentsoptions = "linenos=inline"
 
 ## 手順
 
-### Pygments をインストールする
+## Pygments をインストールする
 
 シンタックスハイライトするのに必要なやつ。  
 何も考えずに入れる。
@@ -34,7 +34,7 @@ pygmentsoptions = "linenos=inline"
 sudo easy_install Pygments
 ```
 
-### シンタックスハイライト用の css を生成する
+## シンタックスハイライト用の css を生成する
 
 カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。  
 クラスで指定する場合は css を事前に生成しておいて読むこんでおく必要がある。  
@@ -45,11 +45,11 @@ sudo easy_install Pygments
 pygmentize -f html -S monokai -a .highlight > monokai.css
 ```
 
-### 生成した css をテーマで読み込む
+## 生成した css をテーマで読み込む
 
 テーマの static ディレクトリに css を置いて header で読み込む。
 
-### シンタックスハイライトを使うように設定する
+## シンタックスハイライトを使うように設定する
 
 `config.toml` に下記の設定を追加。  
 `pygmentscodefences` の設定が公式ドキュメントに見つからなくて罠だった。  

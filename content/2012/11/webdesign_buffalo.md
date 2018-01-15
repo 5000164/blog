@@ -16,7 +16,7 @@ Buffalo &#8211; Web Development, E-Commerce & Web Design &#8211; Brighton UK
 
 &nbsp;
 
-# ナビゲーションについて
+## ナビゲーションについて
 
 ナビゲーションの形が六角形で特徴的である。
 
@@ -24,7 +24,7 @@ Buffalo &#8211; Web Development, E-Commerce & Web Design &#8211; Brighton UK
 
 &nbsp;
 
-# 六角形の実現方法
+## 六角形の実現方法
 
 このサイトでは下記の図のように3つの長方形を組み合わせることで実現している。
 

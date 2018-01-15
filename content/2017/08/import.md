@@ -32,12 +32,12 @@ url = "2017-08-import"
 実際に行ったインポート作業の内容はこちら。  
 [Feature import article by 5000164 · Pull Request #2 · 5000164/blog](https://github.com/5000164/blog/pull/2)
 
-### WordPress の記事を Markdown 形式に変換する
+## WordPress の記事を Markdown 形式に変換する
 
 最初は Jekyll に移行しようと思ってたのでこれを使いました。  
 [benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll](https://github.com/benbalter/wordpress-to-jekyll-exporter)
 
-### ファイル名を調整する
+## ファイル名を調整する
 
 なんか日付がたくさんついてたので年と月でディレクトリを分けてからファイル名をきれいにした。
 
@@ -46,7 +46,7 @@ brew install rename
 find . -name "*.md" | xargs rename 's/\d\d\d\d-\d\d-\d\d-\d\d\d\d-\d\d-//'
 ```
 
-### Jekyll の記事の URL はファイル名に依存してたのでファイルの中に書き込む
+## Jekyll の記事の URL はファイル名に依存してたのでファイルの中に書き込む
 
 ファイル名をファイルの中に書き込んでからあとで url に設定をするようにする。  
 ついでにファイル名も調整する。
@@ -58,7 +58,7 @@ find . -name "*.markdown" | xargs rm -f
 find . -name "*.md" | xargs rename 's/\d\d\d\d-\d\d-\d\d-//'
 ```
 
-### ひたすら正規表現で置換する
+## ひたすら正規表現で置換する
 
 あとはもう望む形になるようにひたすら正規表現で置換する。  
 `title` と `date` は最初から入っているものをうまく使う。  
@@ -67,7 +67,7 @@ WordPress からエクスポートした記事には `permalink` が入ってい
 Jekyll のファイルには先ほどファイルの中に埋め込んだファイル名をうまく使って `url` にする。  
 画像のリンクとかもひたすら変換する。
 
-### あとはなんかおかしいのを見つけたら手で直す
+## あとはなんかおかしいのを見つけたら手で直す
 
 WordPress からエクスポートしたものが変なふうになってたり、なぜか `date` が 2 個設定されている記事があったり、おかしいものがあったら見つけ次第手で直す。
 
