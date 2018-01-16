@@ -10,8 +10,8 @@ url = "2015-07-porco_rosso"
 <a href="http://www.amazon.co.jp/gp/product/B00005R5J6/ref=as_li_qf_sp_asin_il?ie=UTF8&camp=247&creative=1211&creativeASIN=B00005R5J6&linkCode=as2&tag=5000164-22"><img border="0" src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00005R5J6&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=as2&o=9&a=B00005R5J6" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 </div>
 
-海と空がきれいで、光の使い方が心地よい
-====
+## 海と空がきれいで、光の使い方が心地よい
+
 海がきれい。  
 空がきれい。  
 光がきれい。  
@@ -22,8 +22,8 @@ url = "2015-07-porco_rosso"
 だからウイスキーを飲んだ。  
 気持ちいい。
 
-かっこよさとは
-====
+## かっこよさとは
+
 個々人には各々が考えるかっこよさがあって、それは人それぞれで、とても多様である。  
 紅の豚の面白さの核は、登場人物がみんな自らのかっこよさを追求しているところにある、と感じた。  
 マルコしかり、フィオしかり、ジーナしかり。  
@@ -67,13 +67,13 @@ url = "2015-07-porco_rosso"
 理想を求め続ける姿勢。  
 そのための圧倒的な力。
 
-かっこよく生きるには力がいる
-====
+## かっこよく生きるには力がいる
+
 それは技術であり、価値だ。  
 かっこよく生きるのはとても困難であり、受け入れる力と乗り越える力がいる。
 
-まとめ
-====
+## まとめ
+
 考察はなしで感想だけ。  
 見たことはあったような気がしてたけど全然覚えてなくて、改めて見てみたら面白かった。  
 情熱が伝わってくるのは好きだ。  

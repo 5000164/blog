@@ -4,8 +4,8 @@ date = 2015-02-03T23:13:39+09:00
 url = "2015-02-windows_tools"
 +++
 
-最近 Windows で PHP の開発をする機会があったので、使用したツールをまとめます
-====
+## 最近 Windows で PHP の開発をする機会があったので、使用したツールをまとめます
+
 * [Atom](https://atom.io/)
     - エディタ
 * [Chocolatey Gallery](https://chocolatey.org/)
@@ -79,8 +79,8 @@ url = "2015-02-windows_tools"
 * [Antibody Software - WizMouse makes your mouse wheel work on the window under the mouse](http://antibody-software.com/web/software/software/wizmouse-makes-your-mouse-wheel-work-on-the-window-under-the-mouse/)
     - ユーティリティ
 
-使ってみればよかった
-====
+## 使ってみればよかった
+
 * [ダウンロード](http://www.ponsoftware.com/archiver/download.htm)
     - アーカイバ
 * [Visual Merge and Diff Tools | Perforce](http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools)

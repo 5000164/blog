@@ -4,13 +4,13 @@ date = 2015-03-26T23:37:41+09:00
 url = "2015-03-redirect_to_mobile_wikipedia"
 +++
 
-Wikipedia はモバイル版の方が見やすいと思うのでモバイル版を表示する拡張機能を作った
-====
+## Wikipedia はモバイル版の方が見やすいと思うのでモバイル版を表示する拡張機能を作った
+
 ソースはこちら。  
 [5000164/redirect-to-mobile-wikipedia](https://github.com/5000164/redirect-to-mobile-wikipedia)
 
-実装について
-====
+## 実装について
+
 
 作り方
 +++-
@@ -51,7 +51,7 @@ npm で TypeScript をインストールして PhpStorm で自動コンパイル
 [Event Pages - Google Chrome](https://developer.chrome.com/extensions/event_pages)  
 [chrome.webRequest - Google Chrome](https://developer.chrome.com/extensions/webRequest)  
 
-参考
-====
+## 参考
+
 * [Sample Extensions - Google Chrome](https://developer.chrome.com/extensions/samples#search:catblock)  
     - この CatBlock というサンプルがとても参考になった
