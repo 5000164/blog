@@ -106,7 +106,7 @@ body > ul {
 
 h1 {
     width: 600px;
-    margin: 0 auto 20px;
+    margin: 0 auto;
     font-size: 3rem;
     font-weight: bold;
 }
@@ -124,6 +124,15 @@ h4 {
     font-size: 1.8rem;
     font-weight: normal;
     text-align: center;
+}
+
+.title {
+    width: 600px;
+    margin: 0 auto 20px;
+}
+
+.date {
+    text-align: right;
 }
 
 figure {
@@ -273,8 +282,10 @@ body > blockquote > p::before {
     <a href="http://blog.5000164.jp">5000164 is here</a>
 </header>
 
-<div>2018-01-05</div>
-<h1>Scala の SSL / TLS 通信の中身を見る</h1>
+<div class="title">
+    <h1>Scala の SSL / TLS 通信の中身を見る</h1>
+    <div class="date">2018-01-05</div>
+</div>
 
 
 <h2 id="scala-の通信の中身が見たい">Scala の通信の中身が見たい</h2>
