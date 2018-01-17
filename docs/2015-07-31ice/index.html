@@ -88,20 +88,8 @@ a:visited {
 }
 
 /* 記事ページの設定 */
-body > p {
-    width: 600px;
-    margin: 20px auto;
-}
-
-body > div {
-    width: 600px;
-    margin: 0 auto;
-}
-
-body > ul {
-    width: 580px;
-    margin: auto;
-    padding-left: 20px;
+.title {
+    margin: 40px auto;
 }
 
 h1 {
@@ -111,11 +99,46 @@ h1 {
     font-weight: bold;
 }
 
+.date {
+    width: 600px;
+    margin: 0 auto;
+    text-align: right;
+}
+
+.content {
+    margin: 40px auto;
+}
+
+.content p {
+    width: 600px;
+    margin: 40px auto;
+}
+
+.content p:first-child {
+    margin-top: 0;
+}
+
+.content h2 + p {
+    margin-top: 0;
+}
+
+.content p:last-child {
+    margin-bottom: 0;
+}
+
 h2 {
     width: 600px;
     margin: 120px auto 20px;
     font-size: 2.4rem;
     font-weight: bold;
+}
+
+h2:first-child {
+    margin-top: 0;
+}
+
+h2 + h2 {
+    margin-top: 0;
 }
 
 h4 {
@@ -126,13 +149,10 @@ h4 {
     text-align: center;
 }
 
-.title {
-    width: 600px;
-    margin: 0 auto 20px;
-}
-
-.date {
-    text-align: right;
+.content ul {
+    width: 580px;
+    margin: auto;
+    padding-left: 20px;
 }
 
 figure {
@@ -146,18 +166,18 @@ img {
     margin: 0 auto;
 }
 
-body > blockquote {
+blockquote {
     width: 600px;
     margin: 20px auto;
 }
 
-body > blockquote > p {
+blockquote > p {
     position: relative;
     width: 580px;
     padding-left: 20px;
 }
 
-body > blockquote > p::before {
+blockquote > p::before {
     content: "";
     display: block;
     position: absolute;
@@ -282,11 +302,13 @@ body > blockquote > p::before {
     <a href="http://blog.5000164.jp">5000164 is here</a>
 </header>
 
-<div class="title">
-    <h1>サーティワンアイスクリームのメモ</h1>
-    <div class="date">2015-07-27</div>
-</div>
-
+<article>
+    <div class="title">
+        <div class="date">2015-07-27</div>
+        <h1>サーティワンアイスクリームのメモ</h1>
+    </div>
+    <div class="content">
+        
 
 <h2 id="サーティワンアイスクリームで得た知見">サーティワンアイスクリームで得た知見</h2>
 
@@ -298,6 +320,8 @@ body > blockquote > p::before {
 <li>チョップドチョコレート</li>
 </ul>
 
+    </div>
+</article>
 <footer>
     <div>菅原 浩</div>
     <div><a href="https://github.com/5000164/profile">About</a></div>

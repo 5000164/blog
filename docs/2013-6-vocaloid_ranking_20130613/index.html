@@ -88,20 +88,8 @@ a:visited {
 }
 
 /* 記事ページの設定 */
-body > p {
-    width: 600px;
-    margin: 20px auto;
-}
-
-body > div {
-    width: 600px;
-    margin: 0 auto;
-}
-
-body > ul {
-    width: 580px;
-    margin: auto;
-    padding-left: 20px;
+.title {
+    margin: 40px auto;
 }
 
 h1 {
@@ -111,11 +99,46 @@ h1 {
     font-weight: bold;
 }
 
+.date {
+    width: 600px;
+    margin: 0 auto;
+    text-align: right;
+}
+
+.content {
+    margin: 40px auto;
+}
+
+.content p {
+    width: 600px;
+    margin: 40px auto;
+}
+
+.content p:first-child {
+    margin-top: 0;
+}
+
+.content h2 + p {
+    margin-top: 0;
+}
+
+.content p:last-child {
+    margin-bottom: 0;
+}
+
 h2 {
     width: 600px;
     margin: 120px auto 20px;
     font-size: 2.4rem;
     font-weight: bold;
+}
+
+h2:first-child {
+    margin-top: 0;
+}
+
+h2 + h2 {
+    margin-top: 0;
 }
 
 h4 {
@@ -126,13 +149,10 @@ h4 {
     text-align: center;
 }
 
-.title {
-    width: 600px;
-    margin: 0 auto 20px;
-}
-
-.date {
-    text-align: right;
+.content ul {
+    width: 580px;
+    margin: auto;
+    padding-left: 20px;
 }
 
 figure {
@@ -146,18 +166,18 @@ img {
     margin: 0 auto;
 }
 
-body > blockquote {
+blockquote {
     width: 600px;
     margin: 20px auto;
 }
 
-body > blockquote > p {
+blockquote > p {
     position: relative;
     width: 580px;
     padding-left: 20px;
 }
 
-body > blockquote > p::before {
+blockquote > p::before {
     content: "";
     display: block;
     position: absolute;
@@ -282,11 +302,13 @@ body > blockquote > p::before {
     <a href="http://blog.5000164.jp">5000164 is here</a>
 </header>
 
-<div class="title">
-    <h1>おれおれVOCALOIDランキング（2013.6.13）</h1>
-    <div class="date">2013-06-14</div>
-</div>
-<p></p> <div style="text-align: center;">
+<article>
+    <div class="title">
+        <div class="date">2013-06-14</div>
+        <h1>おれおれVOCALOIDランキング（2013.6.13）</h1>
+    </div>
+    <div class="content">
+        <p></p> <div style="text-align: center;">
   
 <figure >
     
@@ -331,6 +353,8 @@ body > blockquote > p::before {
 
 <p>このような曲たちを生み出してくれる製作者の方々に感謝。# 以下、現時点のマイリスト [nicodo]sm21081505[/nicodo][nicodo]sm18623327[/nicodo][nicodo]sm18131841[/nicodo][nicodo]nm8325511[/nicodo][nicodo]sm20244918[/nicodo][nicodo]sm20620231[/nicodo][nicodo]sm20504992[/nicodo][nicodo]sm20516203[/nicodo][nicodo]sm20528839[/nicodo][nicodo]sm20443568[/nicodo][nicodo]sm20271398[/nicodo][nicodo]sm13779513[/nicodo][nicodo]sm20227430[/nicodo][nicodo]sm19251235[/nicodo][nicodo]sm19133907[/nicodo][nicodo]sm18945135[/nicodo][nicodo]sm16802960[/nicodo][nicodo]sm15663997[/nicodo][nicodo]sm16482252[/nicodo][nicodo]sm16594273[/nicodo][nicodo]sm16483227[/nicodo][nicodo]sm14456127[/nicodo][nicodo]sm17969073[/nicodo][nicodo]nm6971638[/nicodo][nicodo]nm17917154[/nicodo][nicodo]sm13292706[/nicodo][nicodo]nm16012790[/nicodo][nicodo]nm15742836[/nicodo][nicodo]sm12071713[/nicodo][nicodo]sm15307196[/nicodo][nicodo]sm14476037[/nicodo]</p>
 
+    </div>
+</article>
 <footer>
     <div>菅原 浩</div>
     <div><a href="https://github.com/5000164/profile">About</a></div>
