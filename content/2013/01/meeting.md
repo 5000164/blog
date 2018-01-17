@@ -64,8 +64,8 @@ url = "2013-01-meeting"
 
 ## 以下参考にさせていただいたもの
 
-<a href="http://web-tan.forum.impressrd.jp/e/2012/01/17/11954" target="_blank">グーグル流「会議を意味あるものにする5つのルール」 | Web担当者Forum</a> 
+[グーグル流「会議を意味あるものにする5つのルール」 | Web担当者Forum](http://web-tan.forum.impressrd.jp/e/2012/01/17/11954)
 
-<a href="http://blog.goo.ne.jp/dimebag_darell_20041208_rip/e/07c547f4ce3646b53c0a28c6ed291b63" target="_blank">IBM社員が身につけている会議ルール &#8211; 皆、みんな、ミンナ！～見んなよ（笑）</a> 
+[IBM社員が身につけている会議ルール &#8211; 皆、みんな、ミンナ！～見んなよ（笑）](http://blog.goo.ne.jp/dimebag_darell_20041208_rip/e/07c547f4ce3646b53c0a28c6ed291b63)
 
-<a href="http://kd1.blog103.fc2.com/blog-entry-200.html" target="_blank">フィンランドの5年生が作った議論のルール　負けまいとする心でしょう！</a>
+[フィンランドの5年生が作った議論のルール　負けまいとする心でしょう！](http://kd1.blog103.fc2.com/blog-entry-200.html)

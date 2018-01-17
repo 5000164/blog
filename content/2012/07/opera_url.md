@@ -105,23 +105,23 @@ http://5000164.jp/
 </div>
 
 <div>
-  <a href="http://my.opera.com/gyozazuki/blog/2009/10/20/opera">gyozazuki &#8211; Operaの右クリックメニュー</a>
+  [gyozazuki &#8211; Operaの右クリックメニュー](http://my.opera.com/gyozazuki/blog/2009/10/20/opera)
 </div>
 
 <div>
-  <a href="http://d.hatena.ne.jp/mame-tanuki+tiraura/20100220/CopyURL">ブラウザで表示しているページのＵＲＬとタイトルをクリップボードにコピーする &#8211; そっとチラ裏</a>
+  [ブラウザで表示しているページのＵＲＬとタイトルをクリップボードにコピーする &#8211; そっとチラ裏](http://d.hatena.ne.jp/mame-tanuki+tiraura/20100220/CopyURL)
 </div>
 
 <div>
-  <a href="http://d.hatena.ne.jp/mame-tanuki+tiraura/20110425/CopyURL2">ブラウザで表示しているページのＵＲＬとタイトルをクリップボードにコピーする(改) &#8211; そっとチラ裏</a>
+  [ブラウザで表示しているページのＵＲＬとタイトルをクリップボードにコピーする(改) &#8211; そっとチラ裏](http://d.hatena.ne.jp/mame-tanuki+tiraura/20110425/CopyURL2)
 </div>
 
 <div>
-  <a href="http://www.tohoho-web.com/js/string.htm">文字列（String）</a>
+  [文字列（String）](http://www.tohoho-web.com/js/string.htm)
 </div>
 
 <div>
-  <a href="http://wisdom.sakura.ne.jp/programming/cs/cs3.html">リテラル</a>
+  [リテラル](http://wisdom.sakura.ne.jp/programming/cs/cs3.html)
 </div>
 
 <div>

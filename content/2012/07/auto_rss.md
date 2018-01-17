@@ -35,5 +35,5 @@ RSS配信してないサイトをRSSで購読したいといったときはWeb�
 </div>
 
 <div>
-  <a href="http://128bit.blog41.fc2.com/blog-entry-272.html">RSSを勝手に自動作成・更新してくれる無料Webサービスまとめ 2011年版 : web memo.Ver.2</a>
+  [RSSを勝手に自動作成・更新してくれる無料Webサービスまとめ 2011年版 : web memo.Ver.2](http://128bit.blog41.fc2.com/blog-entry-272.html)
 </div>

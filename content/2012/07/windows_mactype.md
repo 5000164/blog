@@ -35,5 +35,5 @@ url = "2012-07-windows_mactype"
 </div>
 
 <div>
-  <a href="http://did2memo.net/2012/04/06/mactype-20120406-install/">アップデートチェック機能を搭載したMacType最新版（2012.0406版）をインストールしてみた | 情報科学屋さんを目指す人のメモ</a>
+  [アップデートチェック機能を搭載したMacType最新版（2012.0406版）をインストールしてみた | 情報科学屋さんを目指す人のメモ](http://did2memo.net/2012/04/06/mactype-20120406-install/)
 </div>

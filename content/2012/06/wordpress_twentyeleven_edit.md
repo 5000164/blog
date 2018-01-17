@@ -345,9 +345,9 @@ $default_background_color = '1d1d1d';
 </div>
 
 <div>
-  <a title="E BISUCOM TECH LAB : WordPress 3.3.xにおけるカスタム背景の表示 （WordPressレッスンブックのサンプルで背景画像が表示されない問題に関して）" href="http://ebisu.com/memo/custom_background/" target="_blank">E BISUCOM TECH LAB : WordPress 3.3.xにおけるカスタム背景の表示 （WordPressレッスンブックのサンプルで背景画像が表示されない問題に関して）</a>
+  [E BISUCOM TECH LAB : WordPress 3.3.xにおけるカスタム背景の表示 （WordPressレッスンブックのサンプルで背景画像が表示されない問題に関して）](http://ebisu.com/memo/custom_background/)
 </div>
 
 <div>
-  <a title="WordPress3.4のテーマカスタマイザーで自由度の高いテーマを作ろう | webOpixel" href="http://www.webopixel.net/wordpress/586.html" target="_blank">WordPress3.4のテーマカスタマイザーで自由度の高いテーマを作ろう | webOpixel</a>
+  [WordPress3.4のテーマカスタマイザーで自由度の高いテーマを作ろう | webOpixel](http://www.webopixel.net/wordpress/586.html)
 </div>

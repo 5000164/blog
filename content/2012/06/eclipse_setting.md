@@ -79,7 +79,7 @@ Eclipse.appのパッケージの内容を表示。
 
 参考サイト
 
-<a title="livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと" href="http://blog.livedoor.jp/techblog/archives/65399350.html" target="_blank">livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと</a>
+[livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと](http://blog.livedoor.jp/techblog/archives/65399350.html)
 
 Eclipse Color Themeを使ってみよう
 
