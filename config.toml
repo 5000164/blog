@@ -1,4 +1,4 @@
-baseURL = "http://blog.5000164.jp"
+baseURL = "http://blog.5000164.jp/"
 DefaultContentLanguage = "ja"
 hasCJKLanguage = true
 languageCode = "ja"
