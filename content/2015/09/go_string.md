@@ -6,7 +6,6 @@ url = "2015-09-go_string"
 
 ## golang でダブルコーテーションや改行を string 型の変数に入れる
 
-
 go では " (ダブルコーテーション) で文字列を表します。  
 文字列の中にダブルコーテーションを入れるには \ (バックスラッシュ) でエスケープすればよかった。
 
@@ -29,7 +28,6 @@ here document`
 ```
 
 ## 参考
-
 
 - [Go 言語で複数行にまたがる文字列を作る - nise_nabeの日記](http://nisenabe.hatenablog.com/entry/2013/06/09/155207)
 - [The Go Programming Language Specification - The Go Programming Language](http://golang.org/ref/spec#String_literals)

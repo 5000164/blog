@@ -3,6 +3,7 @@ title = "Webデザインについて考える（http://www.laurent-millet.com/�
 date = 2012-11-26T01:24:33+00:00
 url = "2012-11-webdesign_laurent_millet"
 +++
+
 &nbsp;
 
 このサイトのデザインについて考える。

@@ -3,6 +3,7 @@ title = "CSS Nite in SENDAI, Vol.7 「変化するWebデザイン 〜既成概�
 date = 2013-12-01T23:18:10+00:00
 url = "2013-12-css_nite"
 +++
+
 {{< figure src="/images/2013/12/de_20131201_css_nite.jpg" title="" >}}
 
 ## CSS Nite in SENDAIについて

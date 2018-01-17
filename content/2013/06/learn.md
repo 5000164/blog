@@ -3,6 +3,7 @@ title = "「おれってダメだ」「そんなことないよ」について�
 date = 2013-06-15T04:12:39+00:00
 url = "2013-06-learn"
 +++
+
 </p> <div style="text-align: center;">
   {{< figure src="/images/2013/06/20130614_learn.png" title="" >}}
 </div></a># よく思うこと私はよく「おれってダメだなぁ」と思います。

@@ -3,6 +3,7 @@ title = "DXライブラリで読み込んだテキストをエンターで表示
 date = 2014-04-01T02:03:09+00:00
 url = "2014-03-dxlib_practice_2"
 +++
+
 {{< figure src="/images/2014/04/20140331_practice2_eye.png" title="" >}}
 
 ## <a name="実行結果" href="#実行結果"></a>実行結果 {#実行結果}

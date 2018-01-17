@@ -3,6 +3,7 @@ title = "Operaの右クリックで現在表示中ページのタイトルやら
 date = 2012-07-05T01:02:05+00:00
 url = "2012-07-opera_url"
 +++
+
 <div>
   <div>
     Operaのmenu.iniを編集して実現します。
@@ -83,8 +84,7 @@ http://5000164.jp/
 &lt;/p&gt;
 &lt;/section&gt;
 
-
-</pre></section> <section> 
+</pre></section> <section>
 
 <div>
   「Reference Link」
@@ -92,8 +92,7 @@ http://5000164.jp/
 
 <pre class="brush: xml; title: ; notranslate" title="">&lt;div&gt;&lt;a href="http://5000164.jp/"&gt;生きるためのブログ&lt;/a&gt;&lt;/div&gt;
 
-
-</pre></section> 
+</pre></section>
 
 <div>
   参考

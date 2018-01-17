@@ -3,6 +3,7 @@ title = "ブログのデザインを変更しました Version 1.8"
 date = 2013-03-17T08:32:19+00:00
 url = "2013-03-blog_design"
 +++
+
 {{< figure src="/images/2013/03/top.png" title="" >}}
 
 &nbsp;

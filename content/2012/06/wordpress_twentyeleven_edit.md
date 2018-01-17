@@ -3,6 +3,7 @@ title = "WordPressのテーマ「TwentyEleven」でいろいろ消したり幅�
 date = 2012-06-29T01:52:41+00:00
 url = "2012-06-wordpress_twentyeleven_edit"
 +++
+
 <div>
   デザインをいろいろと変更しました。
 </div>

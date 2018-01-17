@@ -3,6 +3,7 @@ title = "おれおれVOCALOIDランキング（2013.11.21）"
 date = 2013-11-21T23:58:36+00:00
 url = "2013-11-vocaloid_ranking_20131121"
 +++
+
 </p> <div style="text-align: center;">
   {{< figure src="/images/2013/06/vocaloid-150x150.png" title="" >}}
 </div></a># イントロまたしても久しぶりのランキングです。

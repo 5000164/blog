@@ -3,6 +3,7 @@ title = "FuelPHP1.3でProfilerを有効にしたら最初から展開した状�
 date = 2012-10-15T01:50:10+00:00
 url = "2012-10-fuelphp"
 +++
+
 {{< figure src="/images/2012/10/FuelPHP_Profiler.png" title="" >}}
 
 &nbsp; 

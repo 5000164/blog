@@ -3,6 +3,7 @@ title = "小説の感想（有限と微小のパン／森博嗣）"
 date = 2013-05-23T23:14:27+00:00
 url = "2013-05-the_perfect_outsider"
 +++
+
 <div style="text-align: center;">
   <a href="http://www.amazon.co.jp/gp/product/4062732947/ref=as_li_ss_il?ie=UTF8&#038;camp=247&#038;creative=7399&#038;creativeASIN=4062732947&#038;linkCode=as2&#038;tag=5000164-22"><img border="0" src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&#038;ASIN=4062732947&#038;Format=_SL160_&#038;ID=AsinImage&#038;MarketPlace=JP&#038;ServiceVersion=20070822&#038;WS=1&#038;tag=5000164-22" /><br /><span>有限と微小のパン／森博嗣</span></a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&#038;l=as2&#038;o=9&#038;a=4062732947" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 </div>
@@ -30,7 +31,6 @@ S&Mシリーズ10作目にして最終作。
 勝手にヒントだと思ってるのは下記の二点です。
   
 
-
 <blockquote style="background: rgba(245, 245, 245, 1);">
   <p>
     料理に味つけをするように、道徳と装飾を仮想構築しているだけ。
@@ -40,8 +40,6 @@ S&Mシリーズ10作目にして最終作。
     「有限と微小のパン」P.139より
   </div>
 </blockquote>
-
-
 
 <blockquote style="background: rgba(245, 245, 245, 1);">
   <p>

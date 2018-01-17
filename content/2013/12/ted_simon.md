@@ -3,6 +3,7 @@ title = "TEDの感想（サイモン シネック: 優れたリーダーはど�
 date = 2013-12-03T00:50:28+00:00
 url = "2013-12-ted_simon"
 +++
+
 {{< figure src="/images/2013/12/20131203_golden_circle.png" title="" >}}
 
 ## 動画について

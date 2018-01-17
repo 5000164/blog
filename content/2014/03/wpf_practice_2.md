@@ -3,6 +3,7 @@ title = "WPFで方向キーを入力した方向へ四角形を動かす"
 date = 2014-03-13T04:21:42+00:00
 url = "2014-03-wpf_practice_2"
 +++
+
 {{< figure src="/images/2014/03/20140312_practice2.png" title="" >}}
 
 ## 実際に作ったものはこんな感じです

@@ -3,6 +3,7 @@ title = "WPFで枠のないウィンドウを作る"
 date = 2014-03-11T23:17:38+00:00
 url = "2014-03-wpf_practice_1"
 +++
+
 {{< figure src="/images/2014/03/20140311_practice1.png" title="" >}}
 
 ## 実際に作ったものはこんな感じです

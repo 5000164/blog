@@ -3,6 +3,7 @@ title = "他人を変えることはできないけど、影響を与えるこ�
 date = 2013-06-23T04:59:54+00:00
 url = "2013-06-effect"
 +++
+
 </p> <div style="text-align: center;">
   {{< figure src="/images/2013/06/20130622_effect.png" title="" >}}
 </div></a># 他人を救うことはできない他人は変えられない。

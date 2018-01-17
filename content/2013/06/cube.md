@@ -3,6 +3,7 @@ title = "CSS3でなんちゃって立方体を実装してみた"
 date = 2013-06-08T19:51:33+00:00
 url = "2013-06-cube"
 +++
+
 </p> <div style="text-align: center;">
   {{< figure src="/images/2013/06/20130608_cube-300x300.png" title="" >}}
 </div></a># 実装の練習最近がっつりコードを書く機会が減りました。

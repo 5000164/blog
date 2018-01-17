@@ -3,6 +3,7 @@ title = "作詞してみた"
 date = 2013-02-14T03:19:55+00:00
 url = "2013-02-lyrics"
 +++
+
 {{< figure src="/images/2013/02/de_20130213_lyrics.jpg" title="" >}}
 
 &nbsp;

@@ -3,6 +3,7 @@ title = "漫画の感想（バクバクバク／γ‐γ）"
 date = 2013-01-14T01:52:01+00:00
 url = "2013-01-bakubakubaku"
 +++
+
 &nbsp;
 
 <p align="center">
