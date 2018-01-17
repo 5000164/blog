@@ -18,9 +18,7 @@ url = "2014-01-vocaloid_2013"
 
 ## キアゲハ・プリケノート &#8211; 初音ミク &#8211; あえる
 
-<div style="text-align: center;">
   [nicodo display=&#8221;player&#8221; width=&#8221;640&#8243; height=&#8221;360&#8243;]sm20271398[/nicodo]
-</div>
 
 あえるさんのキアゲハ・プリケノート。
 
@@ -34,9 +32,7 @@ url = "2014-01-vocaloid_2013"
 
 ## Mermaid &#8211; MC : MIKU RIN GUMI LUKA &#038; DJ : LEN &#8211; Torero
 
-<div style="text-align: center;">
   [nicodo display=&#8221;player&#8221; width=&#8221;640&#8243; height=&#8221;360&#8243;]sm20624241[/nicodo]
-</div>
 
 ToreroさんのMermaid。
 
@@ -50,9 +46,7 @@ Toreroさんの曲の中でもMermaidが今のところ1番の好みなのでMer
 
 ## 死なない魔法 &#8211; GUMI &#8211; みやけ
 
-<div style="text-align: center;">
   [nicodo display=&#8221;player&#8221; width=&#8221;640&#8243; height=&#8221;360&#8243;]sm21673452[/nicodo]
-</div>
 
 みやけさんの死なない魔法。
 
@@ -62,9 +56,7 @@ Toreroさんの曲の中でもMermaidが今のところ1番の好みなのでMer
 
 ## 宇宙遊泳 &#8211; 初音ミク &#8211; 青屋夏生
 
-<div style="text-align: center;">
   [nicodo display=&#8221;player&#8221; width=&#8221;640&#8243; height=&#8221;360&#8243;]sm22408044[/nicodo]
-</div>
 
 青屋夏生さんの宇宙遊泳。
 
@@ -76,9 +68,7 @@ Toreroさんの曲の中でもMermaidが今のところ1番の好みなのでMer
 
 ## 制空権 &#8211; 初音ミク &#8211; ずきお
 
-<div style="text-align: center;">
   [nicodo display=&#8221;player&#8221; width=&#8221;640&#8243; height=&#8221;360&#8243;]nm22446967[/nicodo]
-</div>
 
 ずきおさんの制空権。
 

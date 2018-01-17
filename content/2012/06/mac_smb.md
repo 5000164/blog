@@ -29,3 +29,4 @@ smb://ドメイン名;ユーザ名@ServerName/ShareName
 ログインした時に自動接続する方法もあるらしいです。
 
 [Mac OS X：ログインしたときに自動的にサーバに接続する方法](http://support.apple.com/kb/HT4011?viewlocale=ja_JP&locale=ja_JP)
+

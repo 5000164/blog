@@ -6,8 +6,7 @@ url = "2012-11-webdesign_elite"
 
 このサイトのデザインについて考える。
 
-Welcome to Elite Premium WordPress Theme  
-<http://mythemepreviews.com/elite-wp/>
+[Welcome to Elite Premium WordPress Theme](http://mythemepreviews.com/elite-wp/)
 
 {{< figure src="/images/2012/11/Elite.png" title="" >}}
 

@@ -50,8 +50,6 @@ iOSのDOMに追加したdiv要素のclickイベントを取得したかったら
 
 ## 参考
 
-スマートフォンブラウザのjQuery Clickイベントに関すること &#8211; くらげだらけ  
-<http://kudakurage.hatenadiary.com/entry/20120502/1335920244>
+[スマートフォンブラウザのjQuery Clickイベントに関すること &#8211; くらげだらけ](http://kudakurage.hatenadiary.com/entry/20120502/1335920244)
 
-guess what?: JQueryのliveイベントがiPhoneのSafariで登録できない  
-<http://aqubiblog.blogspot.jp/2011/04/jqueryliveiphonesafari.html>
+[guess what?: JQueryのliveイベントがiPhoneのSafariで登録できない](http://aqubiblog.blogspot.jp/2011/04/jqueryliveiphonesafari.html)

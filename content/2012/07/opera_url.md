@@ -4,27 +4,17 @@ date = 2012-07-05T01:02:05+00:00
 url = "2012-07-opera_url"
 +++
 
-<div>
-  <div>
-    Operaのmenu.iniを編集して実現します。
-  </div>
+Operaのmenu.iniを編集して実現します。
 
-  <div>
-    まずファイルの
-  </div>
+まずファイルの
 
 ```
 [Document Popup Menu]
 ```
-</div>
 
-<div>
-  の部分を探します。
-</div>
+の部分を探します。
 
-<div>
-  見つけたら下に
-</div>
+見つけたら下に
 
 ```javascript
 ++++++++++++++++++--9
@@ -34,51 +24,30 @@ url = "2012-07-opera_url"
  Item, "Reference Link" = Go to page, "javascript:(function(){window.prompt('', '&lt;div&gt;&lt;a href=\u0022'+location.href+'\u0022&gt;'+document.title+'&lt;/a&gt;&lt;/div&gt;\n\n');})();" & Delay, 100 & Cut & Cancel
 ```
 
-<div>
-  と追加します。
-</div>
+と追加します。
 
-<div>
-  これでOperaを再起動すれば完了です。
-</div>
+これでOperaを再起動すれば完了です。
 
-<div>
-  これは単純にJavaScriptを利用しています。
-</div>
+これは単純にJavaScriptを利用しています。
 
-<div>
-  実装するときにダブルコーテーションのところで一回ハマりました。
-</div>
+実装するときにダブルコーテーションのところで一回ハマりました。
 
-<div>
-  ダブルコーテーションをエスケープしてなかったのが動かない原因かと思いきや、Operaの設定を解釈する側でダブルコーテーションを使用してはいけなかったみたいです。
-</div>
+ダブルコーテーションをエスケープしてなかったのが動かない原因かと思いきや、Operaの設定を解釈する側でダブルコーテーションを使用してはいけなかったみたいです。
 
-<div>
-  なのでダブルコーテーションをUnicodeの「0022」で表現して回避しています。
-</div>
+なのでダブルコーテーションをUnicodeの「0022」で表現して回避しています。
 
-<div>
-  実際にこれを使ってみるとこんな感じになります。
-</div>
+実際にこれを使ってみるとこんな感じになります。
 
-<div>
-  カスタマイズは簡単なので、自分の環境に合わせて使ってください。
-</div><section> 
+カスタマイズは簡単なので、自分の環境に合わせて使ってください。
 
-<div>
   「Copy URL」
-</div>
 
 ```html
 生きるためのブログ
 http://5000164.jp/
 ```
-</section> <section> 
 
-<div>
   「Create Link」
-</div>
 
 ```html
 &lt;section&gt;
@@ -89,43 +58,22 @@ http://5000164.jp/
 &lt;/section&gt;
 
 ```
-</section> <section>
 
-<div>
   「Reference Link」
-</div>
 
 ```html
 &lt;div&gt;&lt;a href="http://5000164.jp/"&gt;生きるためのブログ&lt;/a&gt;&lt;/div&gt;
 ```
-</section>
 
-<div>
-  参考
-</div>
+参考
 
-<div>
   [gyozazuki &#8211; Operaの右クリックメニュー](http://my.opera.com/gyozazuki/blog/2009/10/20/opera)
-</div>
 
-<div>
   [ブラウザで表示しているページのＵＲＬとタイトルをクリップボードにコピーする &#8211; そっとチラ裏](http://d.hatena.ne.jp/mame-tanuki+tiraura/20100220/CopyURL)
-</div>
 
-<div>
   [ブラウザで表示しているページのＵＲＬとタイトルをクリップボードにコピーする(改) &#8211; そっとチラ裏](http://d.hatena.ne.jp/mame-tanuki+tiraura/20110425/CopyURL2)
-</div>
 
-<div>
-  [文字列（String）](http://www.tohoho-web.com/js/string.htm)
-</div>
+[文字列（String）](http://www.tohoho-web.com/js/string.htm)
 
-<div>
-  [リテラル](http://wisdom.sakura.ne.jp/programming/cs/cs3.html)
-</div>
+[リテラル](http://wisdom.sakura.ne.jp/programming/cs/cs3.html)
 
-<div>
-</div>
-
-<div>
-</div>

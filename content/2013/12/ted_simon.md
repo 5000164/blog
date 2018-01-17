@@ -10,9 +10,6 @@ url = "2013-12-ted_simon"
 
 私が今回見た動画はこちらです。
 
-<div style="margin: 20px auto; text-align: center;">
-</div>
-
 ## ゴールデンサークルについて
 
 このゴールデンサークルという考え方は非常にわかりやすい。
@@ -41,10 +38,5 @@ url = "2013-12-ted_simon"
 
 ゴールデンサークルをCSSで実装したので載せておきますね。
 
-<div class="codepen">
-  <p data-height="268" data-theme-id="2816" data-slug-hash="DmwFo" data-user="5000164" data-default-tab="result" class='codepen'>
-    See the Pen <a href='http://codepen.io/5000164/pen/DmwFo'>ゴールデンサークル</a> by SUGAWARA Hiroshi (<a href='http://codepen.io/5000164'>@5000164</a>) on <a href='http://codepen.io'>CodePen</a>
-  </p>
+    See the Pen ゴールデンサークル by SUGAWARA Hiroshi (@5000164) on CodePen
 
-  <p>
-    </div>

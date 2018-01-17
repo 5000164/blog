@@ -6,8 +6,7 @@ url = "2012-11-webdesign_half-moon"
 
 このサイトのデザインについて考える。
 
-歯科ハーフムーン｜仙台市 インプラント 無痛治療｜トップページ  
-<http://www.half-moon.or.jp/>
+[歯科ハーフムーン｜仙台市 インプラント 無痛治療｜トップページ](http://www.half-moon.or.jp/)
 
 {{< figure src="/images/2012/11/8a4183b6df54.png" title="" >}}
 
@@ -19,5 +18,4 @@ Webデザインではタイトル画像をクリックしたらトップペー�
 
 ## 参考
 
-ロゴマークの暗黙知について &#8211; Webサイトの上部にリンクは必要か？ -｜Web Design KOJIKA17  
-<http://kojika17.com/2011/09/implicit-knowledge-for-logo.html>
+[ロゴマークの暗黙知について &#8211; Webサイトの上部にリンクは必要か？ -｜Web Design KOJIKA17](http://kojika17.com/2011/09/implicit-knowledge-for-logo.html)

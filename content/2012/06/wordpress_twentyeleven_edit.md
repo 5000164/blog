@@ -4,45 +4,25 @@ date = 2012-06-29T01:52:41+00:00
 url = "2012-06-wordpress_twentyeleven_edit"
 +++
 
-<div>
-  デザインをいろいろと変更しました。
-</div>
+デザインをいろいろと変更しました。
 
-<div>
-  作業の途中で元ファイルがわからなくなりテーマをまるごと再インストールしたりもしました。
-</div>
+作業の途中で元ファイルがわからなくなりテーマをまるごと再インストールしたりもしました。
 
-<div>
-  設定情報とかも一緒に消しちゃって記事が見れなくなった時は焦った。
-</div>
+設定情報とかも一緒に消しちゃって記事が見れなくなった時は焦った。
 
-<div>
-  でもなんとか元に戻りました。
-</div>
+でもなんとか元に戻りました。
 
-<div>
-  以下は変更内容です。
-</div>
+以下は変更内容です。
 
-<div>
-  あんまり詳しく調べずに、それっぽいファイルをそれっぽく修正したらそれっぽい動きになっただけなので、参考にする時は注意してください。
-</div>
+あんまり詳しく調べずに、それっぽいファイルをそれっぽく修正したらそれっぽい動きになっただけなので、参考にする時は注意してください。
 
-<div>
-  まず、出したくないものを消します。
-</div>
+まず、出したくないものを消します。
 
-<div>
-  メニューバー（ナビゲーションバー）と検索ボックスを消します。
-</div>
+メニューバー（ナビゲーションバー）と検索ボックスを消します。
 
-<div>
-  今のところ使用していないので。
-</div>
+今のところ使用していないので。
 
-<div>
-  header.phpの114行目以降
-</div>
+header.phpの114行目以降
 
 ```php
 &amp;lt;?php
@@ -71,9 +51,7 @@ url = "2012-06-wordpress_twentyeleven_edit"
       &amp;lt;div id=&amp;quot;main&amp;quot;&amp;gt;
 ```
 
-<div>
-  を下記に変更します。
-</div>
+を下記に変更します。
 
 ```php
 &amp;lt;?php
@@ -92,17 +70,11 @@ url = "2012-06-wordpress_twentyeleven_edit"
       &amp;lt;div id=&amp;quot;main&amp;quot;&amp;gt;
 ```
 
-<div>
-  これでヘッダがすっきりしました。
-</div>
+これでヘッダがすっきりしました。
 
-<div>
   次にフッタの「Proudly powered by WordPress」を消したいのでフッダまるごと消します。
-</div>
 
-<div>
-  footer.phpの15行～29行
-</div>
+footer.phpの15行～29行
 
 ```php
 &amp;lt;footer id=&amp;quot;colophon&amp;quot; role=&amp;quot;contentinfo&amp;quot;&amp;gt;
@@ -122,9 +94,7 @@ url = "2012-06-wordpress_twentyeleven_edit"
       &amp;lt;/footer&amp;gt;&amp;lt;!-- #colophon --&amp;gt;
 ```
 
-<div>
-  を下記に変更します。
-</div>
+を下記に変更します。
 
 ```php
 &amp;lt;footer id=&amp;quot;colophon&amp;quot; role=&amp;quot;contentinfo&amp;quot;&amp;gt;
@@ -140,17 +110,11 @@ url = "2012-06-wordpress_twentyeleven_edit"
       &amp;lt;/footer&amp;gt;&amp;lt;!-- #colophon --&amp;gt;
 ```
 
-<div>
-  これでフッダが表示されなくなりました。
-</div>
+これでフッダが表示されなくなりました。
 
-<div>
-  次は、トップページ表示時に記事の内容を表示したくないので、タイトルのみ表示されるようにします。
-</div>
+次は、トップページ表示時に記事の内容を表示したくないので、タイトルのみ表示されるようにします。
 
-<div>
-  content.phpを下記にします。（長いのをごっそり消してるので元ファイルは割愛）
-</div>
+content.phpを下記にします。（長いのをごっそり消してるので元ファイルは割愛）
 
 ```php
 &amp;lt;?php
@@ -177,107 +141,73 @@ url = "2012-06-wordpress_twentyeleven_edit"
       &amp;lt;/article&amp;gt;&amp;lt;!-- #post-&amp;lt;?php the_ID(); ?&amp;gt; --&amp;gt;
 ```
 
-<div>
-  21行～32行のヘッダのmeta情報を削除し、
-</div>
+21行～32行のヘッダのmeta情報を削除し、
 
-<div>
-  34行～81行のコンテント情報を削除します。
-</div>
+34行～81行のコンテント情報を削除します。
 
-<div>
-  あとはデザインを変更します。
-</div>
+あとはデザインを変更します。
 
-<div>
-  まずはコンテント幅の変更から。
-</div>
+まずはコンテント幅の変更から。
 
-<div>
-  style.cssの196行目前後
-</div>
+style.cssの196行目前後
 
 ```css
 /* One column */
  .one-column #page {
       max-width: 690px;
- }
+}
 ```
 
-<div>
-  を下記に変更します。
-</div>
+を下記に変更します。
 
 ```css
 /* One column */
  .one-column #page {
       width: 980px;
- }
+}
 ```
 
-<div>
-  これでコンテント幅が変わったはずです。
-</div>
+これでコンテント幅が変わったはずです。
 
-<div>
-  コンテント幅の980pxはAppleのサイトを参考にしています。
-</div>
+コンテント幅の980pxはAppleのサイトを参考にしています。
 
-<div>
-  次は背景色と文字色を変更します。
-</div>
+次は背景色と文字色を変更します。
 
-<div>
-  おそらく暗い背景に設定しているのでdark.cssというものを読み込んでおり、このファイルを編集します。
-</div>
+おそらく暗い背景に設定しているのでdark.cssというものを読み込んでおり、このファイルを編集します。
 
-<div>
-  普通は普通にstyle.cssを編集すれば反映される気がします。
-</div>
+普通は普通にstyle.cssを編集すれば反映される気がします。
 
-<div>
-  dark.cssの10行目前後
-</div>
+dark.cssの10行目前後
 
 ```css
 body {
       background: #1d1d1d;
       color: #bbb;
- }
+}
  #page {
       background: #0f0f0f;
- }
+}
 ```
 
-<div>
-  を下記に変更します。
-</div>
+を下記に変更します。
 
 ```css
 body {
       background: rgb(25, 25, 25);
       color: rgb(250, 250, 250);
- }
+}
  #page {
       background: rgb(50, 50, 50);
- }
+}
 ```
 
-<div>
-  これで色情報が反映されると思いきや反映されません。
-</div>
+これで色情報が反映されると思いきや反映されません。
 
-<div>
-  インスペクタで調べたところ、headタグの中にstyleが直接書かれていたのが原因でした。
-</div>
+インスペクタで調べたところ、headタグの中にstyleが直接書かれていたのが原因でした。
 
-<div>
-  なのでこの直接指定している出力を切ります。
-</div>
+なのでこの直接指定している出力を切ります。
 
-<div>
-  functions.phpの106行～111行の
-</div>
+functions.phpの106行～111行の
 
 ```php
       // Add support for custom backgrounds.
@@ -288,66 +218,39 @@ body {
       ) );
 ```
 
-<div>
-  の記述を削除します。
-</div>
+の記述を削除します。
 
-<div>
-  そして144行目の
-</div>
+そして144行目の
 
 ```php
           add_custom_background();
 ```
 
-<div>
-  の記述を削除します。
-</div>
+の記述を削除します。
 
-<div>
-  おそらく102行目の
-</div>
+おそらく102行目の
 
 ```php
 $default_background_color = '1d1d1d';
 ```
 
-<div>
-  とかの指定を変えてあげれば色が変わるんでしょうけど、スタイルの指定はcssで一括で管理したいので削除します。
-</div>
+とかの指定を変えてあげれば色が変わるんでしょうけど、スタイルの指定はcssで一括で管理したいので削除します。
 
-<div>
-  以上で設定終了です。
-</div>
+以上で設定終了です。
 
-<div>
-  多少は人様にみせられるような形になってきたかなと思います。
-</div>
+多少は人様にみせられるような形になってきたかなと思います。
 
-<div>
-  今後はもっとスタイルをいじっていきたいですね。
-</div>
+今後はもっとスタイルをいじっていきたいですね。
 
-<div>
-  参考
-</div>
+参考
 
-<div>
   WordPressのテーマ作成（１）：ファイル構成 &#8211; 基礎編 | Lovelog+* &#8211; WordPressリファレンス
-</div>
 
-<div>
   WordPressのテーマとなるファイル構成 | プログラミングアフィリエイトで集客する方法
-</div>
 
-<div>
   WordPressカスタマイズ－カスタムヘッダーで背景を変更する－ | remember-it
-</div>
 
-<div>
   [E BISUCOM TECH LAB : WordPress 3.3.xにおけるカスタム背景の表示 （WordPressレッスンブックのサンプルで背景画像が表示されない問題に関して）](http://ebisu.com/memo/custom_background/)
-</div>
 
-<div>
   [WordPress3.4のテーマカスタマイザーで自由度の高いテーマを作ろう | webOpixel](http://www.webopixel.net/wordpress/586.html)
-</div>
+

@@ -40,14 +40,8 @@ HTML5からは入力文字をpatternで正規表現を利用して制御でき�
 
 ## 以下、参考
 
-少しのコードで実装可能な15のスマートフォンサイト用小技集 | Webクリエイターボックス
+[少しのコードで実装可能な15のスマートフォンサイト用小技集 | Webクリエイターボックス](http://www.webcreatorbox.com/tech/smartphone-snippets/)
 
-<http://www.webcreatorbox.com/tech/smartphone-snippets/> 
+[input 要素 &#8211; フォーム &#8211; HTML要素 &#8211; HTML5 タグリファレンス &#8211; HTML5.JP](http://www.html5.jp/tag/elements/input.html)
 
-input 要素 &#8211; フォーム &#8211; HTML要素 &#8211; HTML5 タグリファレンス &#8211; HTML5.JP
-
-<http://www.html5.jp/tag/elements/input.html> 
-
-JavaScript講座　15章　JavaScriptでの正規表現
-
-http://www.site-cooler.com/kwl/javascript/15.htm
+[JavaScript講座　15章　JavaScriptでの正規表現](http://www.site-cooler.com/kwl/javascript/15.htm)

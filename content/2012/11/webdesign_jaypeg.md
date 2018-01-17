@@ -6,8 +6,7 @@ url = "2012-11-webdesign_jaypeg"
 
 このサイトのデザインについて考える。 
 
-JAYPEG  
-<https://jypg.net/> 
+[JAYPEG](https://jypg.net/) 
 
 {{< figure src="/images/2012/11/JAYPEG_20121119.png" title="" >}}
 

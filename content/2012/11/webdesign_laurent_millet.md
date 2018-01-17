@@ -6,8 +6,7 @@ url = "2012-11-webdesign_laurent_millet"
 
 このサイトのデザインについて考える。
 
-Laurent Millet
-<http://www.laurent-millet.com/>
+[Laurent Millet](http://www.laurent-millet.com/)
 
 {{< figure src="/images/2012/11/Laurent-Millet.png" title="" >}}
 

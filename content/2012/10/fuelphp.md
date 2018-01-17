@@ -63,3 +63,4 @@ $return_output .='&lt;/div&gt;&lt;/div&gt;&lt;div id="openProfiler" style="displ
 とりあえず、これでちょっとだけ快適になった。 
 
 常時表示されなくなったことにはなにか理由があるんですかねえ。
+

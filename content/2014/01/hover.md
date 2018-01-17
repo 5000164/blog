@@ -20,50 +20,32 @@ url = "2014-01-hover"
 
 ## まずはデモをどうぞ
 
-<div class="codepen">
-  <p data-height="332" data-theme-id="2816" data-slug-hash="vexEB" data-default-tab="result" class='codepen'>
-    See the Pen <a href='http://codepen.io/5000164/pen/vexEB'>hoverした要素の上に色をかぶせる</a> by SUGAWARA Hiroshi (<a href='http://codepen.io/5000164'>@5000164</a>) on <a href='http://codepen.io'>CodePen</a>.
-  </p>
+    See the Pen hoverした要素の上に色をかぶせる by SUGAWARA Hiroshi (@5000164) on CodePen.
 
-  <p>
-    </div> 
+実装の解説です
 
-    <h1>
-      実装の解説です
-    </h1>
-
-    <p>
-      非常に簡単です。  
+      非常に簡単です。
  今までhoverの擬似クラスにしていた部分をhoverの擬似クラスのafter擬似要素にします。  
- 文章だとちょっとわかりづらいのでコードで書くと、
-    </p>
+文章だとちょっとわかりづらいのでコードで書くと、
 
 ```css
 a:hover {
-  ・・・
+・・・
 }
 ```
 
-    <p>
-      これを
-    </p>
+これを
 
 ```css
 a:hover::after {
-  ・・・
+・・・
 }
 ```
 
-    <p>
-      こうします。  
- あとはちょっと装飾してやれば簡単に実現できます。
-    </p>
+      こうします。
+あとはちょっと装飾してやれば簡単に実現できます。
 
-    <h1>
-      まとめ
-    </h1>
+まとめ
 
-    <p>
-      hoverした時に画像にハイライトがついていないのが個人的にすごく気になっていたので、簡単に実装できてよかったです。  
- ちょっと応用すれば他のこともできそうですね。
-    </p>
+      hoverした時に画像にハイライトがついていないのが個人的にすごく気になっていたので、簡単に実装できてよかったです。
+ちょっと応用すれば他のこともできそうですね。

@@ -23,3 +23,4 @@ telto:でのリンクの貼り方は下記になります。
 参考サイト
 
 [jQueryMobileを使ってのスマートフォンサイトの構築メモ at HouseTect, JavaScriptな情報をあなたに](http://hisasann.com/housetect/2011/02/jquerymobile.html)
+

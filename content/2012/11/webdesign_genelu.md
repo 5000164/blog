@@ -6,8 +6,7 @@ url = "2012-11-webdesign_genelu"
 
 このサイトのデザインについて考える。
 
-Gene Lu. User Experience/Interaction Designer. Welcome.
-<http://genelu.com/>
+[Gene Lu. User Experience/Interaction Designer. Welcome.](http://genelu.com/)
 
 {{< figure src="/images/2012/11/GeneLu.png" title="" >}}
 

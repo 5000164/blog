@@ -26,37 +26,21 @@ CSSにはblurというプロパティがあるのですが、このblurはコン
 
 ## デモ
 
-<div class="codepen">
-  <p data-height="350" data-theme-id="2816" data-slug-hash="CIGyt" data-user="5000164" data-default-tab="result" class='codepen'>
-    See the Pen <a href='http://codepen.io/5000164/pen/CIGyt'>スクロールして重なった部分だけぼかし</a> by SUGAWARA Hiroshi (<a href='http://codepen.io/5000164'>@5000164</a>) on <a href='http://codepen.io'>CodePen</a>
-  </p>
+    See the Pen スクロールして重なった部分だけぼかし by SUGAWARA Hiroshi (@5000164) on CodePen
 
-  <p>
-    </div> 
+このデモは-webkit-のベンダープレフィックスがついているのであしからず。
 
-    <p>
-      このデモは-webkit-のベンダープレフィックスがついているのであしからず。
-    </p>
+実装方法
 
-    <h1>
-      実装方法
-    </h1>
-
-    <p>
-      まず、HTMLで同じ内容のコンテンツを2つ用意します。  
+      まず、HTMLで同じ内容のコンテンツを2つ用意します。
  次に、CSSで2つのコンテンツがきれいにくっつくように指定します。  
  ポイントはoverflow-x: hidden;とoverflow-y: scroll;です。  
  そうしたら、同じ内容のコンテンツの片方にblurをかけます。  
  その次は、2つのコンテンツの表示位置を同じ高さに合わせます。  
  ここではbeforeの擬似要素を使って高さを合わせています。  
- 最後に、JavaScriptでスクロールを同期すれば完了です。
-    </p>
+最後に、JavaScriptでスクロールを同期すれば完了です。
 
-    <h1>
-      まとめ
-    </h1>
+まとめ
 
-    <p>
-      スクロールの制御もJavaScriptでやってしまうと相性がいいのかも知れないと思いました。  
- とりあえず、半透明のレイヤーの透過した部分にだけぼかしをかけるというCSSのプロパティが欲しいです。
-    </p>
+      スクロールの制御もJavaScriptでやってしまうと相性がいいのかも知れないと思いました。
+とりあえず、半透明のレイヤーの透過した部分にだけぼかしをかけるというCSSのプロパティが欲しいです。

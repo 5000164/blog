@@ -6,8 +6,7 @@ url = "2012-11-webdesign_alcepixel"
 
 このサイトのデザインについて考える。
 
-alcePixel
-<http://alcepixel.com/>
+[alcePixel](http://alcepixel.com/)
 
 {{< figure src="/images/2012/11/alcePixel.png" title="" >}}
 

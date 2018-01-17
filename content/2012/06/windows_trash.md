@@ -97,3 +97,4 @@ Toolbar
 [Place a Fully Functional Recycle Bin on your Windows 7 Taskbar &#8211; TechSpot Guides](http://www.techspot.com/guides/196-recycle-bin-on-windows-7-taskbar/)
 
 [ImeTray Windows7対応,IMEの状態をタスクトレイに表示の詳細情報 : Vector ソフトを探す！](http://www.vector.co.jp/soft/win95/writing/se456773.html)
+

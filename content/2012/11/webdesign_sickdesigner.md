@@ -6,8 +6,7 @@ url = "2012-11-webdesign_sickdesigner"
 
 このサイトのデザインについて考える。
 
-Sickdesigner.com › The work and play of Radu Chelariu
-http://sickdesigner.com/
+[Sickdesigner.com › The work and play of Radu Chelariu](http://sickdesigner.com/)
 
 {{< figure src="/images/2012/11/Sickdesigner.com_.png" title="" >}}
 

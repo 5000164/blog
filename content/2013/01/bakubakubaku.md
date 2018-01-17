@@ -4,9 +4,7 @@ date = 2013-01-14T01:52:01+00:00
 url = "2013-01-bakubakubaku"
 +++
 
-<p align="center">
-  <a title="バクバクバク" href="http://nagurigaki.web.fc2.com/baku/" target="_blank">{{< figure src="/images/2013/01/1fc28d2282cd.png" title="" >}}</a>
-</p>
+<a title="バクバクバク" href="http://nagurigaki.web.fc2.com/baku/" target="_blank">{{< figure src="/images/2013/01/1fc28d2282cd.png" title="" >}}</a>
 
 ## ネタバレ注意
 
@@ -14,8 +12,7 @@ url = "2013-01-bakubakubaku"
 
 すぐに読めるので興味がある人は読んでみてはどうでしょうか。
 
-バクバクバク
-<http://nagurigaki.web.fc2.com/baku/>
+[バクバクバク](http://nagurigaki.web.fc2.com/baku/)
 
 ## 感想
 

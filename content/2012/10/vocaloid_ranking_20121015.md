@@ -66,14 +66,11 @@ VOCALOIDの文化はみくみくにしてあげる♪から始まったと言っ
 
 ミクはまさにアイドルですね。 
 
-<p style="font-size: 36px; font-weight: bold; color: #CC3333">
-  みっくみくにされました！！！！１ </strong></font>
-</p>
+みっくみくにされました！！！！１
 
 ## 以下、現時点のマイリスト
 
-<div class="niconico">
-  [nicodo]sm14476037[/nicodo]  
+  [nicodo]sm14476037[/nicodo]
 [nicodo]sm14564166[/nicodo]  
 [nicodo]sm14709473[/nicodo]  
 [nicodo]sm15307196[/nicodo]  
@@ -116,8 +113,6 @@ VOCALOIDの文化はみくみくにしてあげる♪から始まったと言っ
 [nicodo]sm15663997[/nicodo]  
 [nicodo]sm16802960[/nicodo]  
 [nicodo]sm19069321[/nicodo]
-</div>
 
-<p style="clear: both;">
-  以上
-</p>
+以上
+

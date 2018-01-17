@@ -4,34 +4,15 @@ date = 2012-06-26T01:47:45+00:00
 url = "2012-06-wordpress_twentyeleven_display_none"
 +++
 
-<div>
-  <div>
-    テーマのフォルダにある
-  </div>
-
-  <div>
-  </div>
+テーマのフォルダにある
 
 ```
 content-single.php
 ```
 
-  <div>
-  </div>
+を編集します。
 
-  <div>
-    を編集します。
-  </div>
-
-  <div>
-  </div>
-
-  <div>
-    34～40行目の
-  </div>
-
-  <div>
-  </div>
+34～40行目の
 
 ```php
 if ( '' != $tag_list ) {
@@ -43,15 +24,7 @@ $utility_text = __( 'This entry was posted by &lt;a href=&quot;%6$s&quot;&gt;%5$
 }
 ```
 
-  <div>
-  </div>
-
-  <div>
-    の部分を
-  </div>
-
-  <div>
-  </div>
+の部分を
 
 ```php
 if ( '' != $tag_list ) {
@@ -63,40 +36,15 @@ $utility_text = __( '', 'twentyeleven' );
 }
 ```
 
-  <div>
-  </div>
+と変更します。
 
-  <div>
-    と変更します。
-  </div>
+おそらく、単一記事表示時にカテゴリやタグを表示する部分での処理だと思われます。
 
-  <div>
-  </div>
+全体表示時の対処はまだ不明。
 
-  <div>
-    おそらく、単一記事表示時にカテゴリやタグを表示する部分での処理だと思われます。
-  </div>
+作成者とパーマリンクは表示されないので保留にします。
 
-  <div>
-    全体表示時の対処はまだ不明。
-  </div>
+参考サイト
 
-  <div>
-    作成者とパーマリンクは表示されないので保留にします。
-  </div>
-
-  <p>
-
-  </p>
-
-  <div>
-    参考サイト
-  </div>
-
-  <div>
     WordPressのTwentyElevenで作成者を非表示にする方法 | 沖縄なんくるウェブブログ
-  </div>
 
-  <p>
-
-  </p>
