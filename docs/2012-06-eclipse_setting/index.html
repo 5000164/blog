@@ -12,10 +12,10 @@ ga('send', 'pageview');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=640">
     <title>Eclipse設定メモ | 5000164 is here</title>
-    <meta name="description" content="毎回毎回Eclipseの設定を思い出すのがめんどくさくなったのでついにメモった。 とりあえず最低限の設定だけ。 Eclipse Market Place Eclipse Color Themeで検索する。 Eclipse Color ThemeをInstallする。 環境設定 &gt;General Show heap status check &gt;Appearance -Color Theme Obsidian -Color and Fonts Basic Text Font Ricty 13 &gt;ContentTypes Text CSS Add *.scss &gt;Editors -FIle Associations File types Add *.css *.scss Associated editors *.cssと*.scssどちらも CSS Editor Text Editor &gt;Text Editors Show line numbers check Show whitespace characters check -Keys Content Assist command &#43; return &gt;Workspace Text file encoding Other : UTF-8 New text file line delimiter Other : Unix &gt;Web &gt;CSS Files Encoding ISO 10646/Unicode(UTF-8) 設定ファイル Eclipse.appのパッケージの内容を表示。 /Contents/MacOS/eclipse.iniを開く。 下記内容に変更。 -vmargs -XX:MaxPermSize=256m -Xss2m -Xms256m -Xmx1024m これで設定をとりあえずエクスポートして完了。 あとはDropboxで共有するなりなんなり。 参考サイト livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと Eclipse Color Themeを使ってみよう 設定のインポート・エクスポート &#8211; devillikeaangelの日記">
+    <meta name="description" content="毎回毎回Eclipseの設定を思い出すのがめんどくさくなったのでついにメモった。 とりあえず最低限の設定だけ。 Eclipse Market Place Eclipse Color Themeで検索する。 Eclipse Color ThemeをInstallする。 環境設定 &gt;General Show heap status check &gt;Appearance -Color Theme Obsidian -Color and Fonts Basic Text Font Ricty 13 &gt;ContentTypes Text CSS Add *.scss &gt;Editors -FIle Associations File types Add *.css *.scss Associated editors *.cssと*.scssどちらも CSS Editor Text Editor &gt;Text Editors Show line numbers check Show whitespace characters check -Keys Content Assist command &#43; return &gt;Workspace Text file encoding Other : UTF-8 New text file line delimiter Other : Unix &gt;Web &gt;CSS Files Encoding ISO 10646/Unicode(UTF-8) 設定ファイル Eclipse.appのパッケージの内容を表示。 /Contents/MacOS/eclipse.iniを開く。 下記内容に変更。 12345 -vmargs -XX:MaxPermSize=256m -Xss2m -Xms256m -Xmx1024m これで設定をとりあえずエクスポートして完了。 あとはDropboxで共有するなりなんなり。 参考サイト livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと Eclipse Color Themeを使ってみよう 設定のインポート・エクスポート &#8211; devillikeaangelの日記">
     <link href="http://blog.5000164.jp/2012-06-eclipse_setting/" rel="canonical">
     <meta property="og:title" content="Eclipse設定メモ | 5000164 is here">
-    <meta property="og:description" content="毎回毎回Eclipseの設定を思い出すのがめんどくさくなったのでついにメモった。 とりあえず最低限の設定だけ。 Eclipse Market Place Eclipse Color Themeで検索する。 Eclipse Color ThemeをInstallする。 環境設定 &gt;General Show heap status check &gt;Appearance -Color Theme Obsidian -Color and Fonts Basic Text Font Ricty 13 &gt;ContentTypes Text CSS Add *.scss &gt;Editors -FIle Associations File types Add *.css *.scss Associated editors *.cssと*.scssどちらも CSS Editor Text Editor &gt;Text Editors Show line numbers check Show whitespace characters check -Keys Content Assist command &#43; return &gt;Workspace Text file encoding Other : UTF-8 New text file line delimiter Other : Unix &gt;Web &gt;CSS Files Encoding ISO 10646/Unicode(UTF-8) 設定ファイル Eclipse.appのパッケージの内容を表示。 /Contents/MacOS/eclipse.iniを開く。 下記内容に変更。 -vmargs -XX:MaxPermSize=256m -Xss2m -Xms256m -Xmx1024m これで設定をとりあえずエクスポートして完了。 あとはDropboxで共有するなりなんなり。 参考サイト livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと Eclipse Color Themeを使ってみよう 設定のインポート・エクスポート &#8211; devillikeaangelの日記">
+    <meta property="og:description" content="毎回毎回Eclipseの設定を思い出すのがめんどくさくなったのでついにメモった。 とりあえず最低限の設定だけ。 Eclipse Market Place Eclipse Color Themeで検索する。 Eclipse Color ThemeをInstallする。 環境設定 &gt;General Show heap status check &gt;Appearance -Color Theme Obsidian -Color and Fonts Basic Text Font Ricty 13 &gt;ContentTypes Text CSS Add *.scss &gt;Editors -FIle Associations File types Add *.css *.scss Associated editors *.cssと*.scssどちらも CSS Editor Text Editor &gt;Text Editors Show line numbers check Show whitespace characters check -Keys Content Assist command &#43; return &gt;Workspace Text file encoding Other : UTF-8 New text file line delimiter Other : Unix &gt;Web &gt;CSS Files Encoding ISO 10646/Unicode(UTF-8) 設定ファイル Eclipse.appのパッケージの内容を表示。 /Contents/MacOS/eclipse.iniを開く。 下記内容に変更。 12345 -vmargs -XX:MaxPermSize=256m -Xss2m -Xms256m -Xmx1024m これで設定をとりあえずエクスポートして完了。 あとはDropboxで共有するなりなんなり。 参考サイト livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと Eclipse Color Themeを使ってみよう 設定のインポート・エクスポート &#8211; devillikeaangelの日記">
     <meta property="og:url" content="http://blog.5000164.jp/2012-06-eclipse_setting/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@5000164">
@@ -188,21 +188,24 @@ ga('send', 'pageview');
 <p>/Contents/MacOS/eclipse.iniを開く。</p>
 
 <p>下記内容に変更。</p>
-
-<pre class="brush: plain; title: ; notranslate" title="">-vmargs
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">5</span></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">-vmargs
 -XX:MaxPermSize=256m
 -Xss2m
 -Xms256m
--Xmx1024m
-</pre>
-
+-Xmx1024m</pre></td></tr></table>
+</div>
+</div>
 <p>これで設定をとりあえずエクスポートして完了。</p>
 
 <p>あとはDropboxで共有するなりなんなり。</p>
 
 <p>参考サイト</p>
 
-<p><a title="livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと" href="http://blog.livedoor.jp/techblog/archives/65399350.html" target="_blank">livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと</a></p>
+<p><a href="http://blog.livedoor.jp/techblog/archives/65399350.html">livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと</a></p>
 
 <p>Eclipse Color Themeを使ってみよう</p>
 

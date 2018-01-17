@@ -12,10 +12,10 @@ ga('send', 'pageview');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=640">
     <title>FuelPHP1.3でProfilerを有効にしたら最初から展開した状態で表示されるようにする | 5000164 is here</title>
-    <meta name="description" content="最近FuelPHPを使っています。 バージョン1.2.1を使っていたのですが、1.3がでたということで1.3を使い始めました。 そこでデバッグをするときに、&#8217;profiling&#8217; =&gt; true,とかしてプロファイラを表示させるんですが、プロファイラが最小化状態で表示されます。 1.2.1のプロファイラは展開した状態で表示されてたのに。 trueってしたらプロファイラは常に表示されてて欲しいです。 ということで、常に表示されるようにします。 fuel/core/vendor/phpquickprofiler/display.php を開きます。 305行目の $return_output .=&#39;&lt;div style=&#34;clear:both;&#34;&gt;&lt;/div&gt;&lt;div id=&#34;pqp-container&#34; class=&#34;pQp tallDetails&#34; style=&#34;display:none;position:inherit;&#34;&gt;&#39;; を $return_output .=&#39;&lt;div style=&#34;clear:both;&#34;&gt;&lt;/div&gt;&lt;div id=&#34;pqp-container&#34; class=&#34;pQp tallDetails&#34; style=&#34;display:block;position:inherit;&#34;&gt;&#39;; にします。 （display:none;をdisplay:block;に変更。） 661行目の $return_output .=&#39;&lt;/div&gt;&lt;/div&gt;&lt;div id=&#34;openProfiler&#34;&gt;&lt;a href=&#34;#&#34; onclick=&#34;openProfiler();return false&#34; title=&#34;Open Code Profiler&#34;&gt;Code Profiler&lt;/a&gt;&lt;/div&gt;&#39;; を $return_output .=&#39;&lt;/div&gt;&lt;/div&gt;&lt;div id=&#34;openProfiler&#34; style=&#34;display: none; &#34;&gt;&lt;a href=&#34;#&#34; onclick=&#34;openProfiler();return false&#34; title=&#34;Open Code Profiler&#34;&gt;Code Profiler&lt;/a&gt;&lt;/div&gt;&#39;; にします。 （ style=&#8221;display: none; &#8220;の追記。） 以上で常時表示されるようになったはずです。 検索して見つけた要素のスタイルを適当に変更してるだけなので、なんか他に方">
+    <meta name="description" content="最近FuelPHPを使っています。 バージョン1.2.1を使っていたのですが、1.3がでたということで1.3を使い始めました。 そこでデバッグをするときに、&#8217;profiling&#8217; =&gt; true,とかしてプロファイラを表示させるんですが、プロファイラが最小化状態で表示されます。 1.2.1のプロファイラは展開した状態で表示されてたのに。 trueってしたらプロファイラは常に表示されてて欲しいです。 ということで、常に表示されるようにします。 1 fuel/core/vendor/phpquickprofiler/display.php を開きます。 305行目の 1 $return_output .=&#39;&lt;div style=&#34;clear:both;&#34;&gt;&lt;/div&gt;&lt;div id=&#34;pqp-container&#34; class=&#34;pQp tallDetails&#34; style=&#34;display:none;position:inherit;&#34;&gt;&#39;; を 1 $return_output .=&#39;&lt;div style=&#34;clear:both;&#34;&gt;&lt;/div&gt;&lt;div id=&#34;pqp-container&#34; class=&#34;pQp tallDetails&#34; style=&#34;display:block;position:inherit;&#34;&gt;&#39;; にします。 （display:none;をdisplay:block;に変更。） 661行目の 1 $return_output .=&#39;&lt;/div&gt;&lt;/div&gt;&lt;div id=&#34;openProfiler&#34;&gt;&lt;a href=&#34;#&#34; onclick=&#34;openProfiler();return false&#34; title=&#34;Open Code Profiler&#34;&gt;Code Profiler&lt;/a&gt;&lt;/div&gt;&#39;; を 1 $return_output .=&#39;&lt;/div&gt;&lt;/div&gt;&lt;div id=&#34;openProfiler&#34; style=&#34;display: none; &#34;&gt;&lt;a href=&#34;#&#34; onclick=&#34;openProfiler();return false&#34; title=&#34;Open Code Profiler&#34;&gt;Code Profiler&lt;/a&gt;&lt;/div&gt;&#39;; にします。 （ style=&#8221;display: none; &#8220;の追記。） 以上で常時表示されるようになったはずです。 検索して見つけた要素のスタイルを適当に変更してるだけなので、な">
     <link href="http://blog.5000164.jp/2012-10-fuelphp/" rel="canonical">
     <meta property="og:title" content="FuelPHP1.3でProfilerを有効にしたら最初から展開した状態で表示されるようにする | 5000164 is here">
-    <meta property="og:description" content="最近FuelPHPを使っています。 バージョン1.2.1を使っていたのですが、1.3がでたということで1.3を使い始めました。 そこでデバッグをするときに、&#8217;profiling&#8217; =&gt; true,とかしてプロファイラを表示させるんですが、プロファイラが最小化状態で表示されます。 1.2.1のプロファイラは展開した状態で表示されてたのに。 trueってしたらプロファイラは常に表示されてて欲しいです。 ということで、常に表示されるようにします。 fuel/core/vendor/phpquickprofiler/display.php を開きます。 305行目の $return_output .=&#39;&lt;div style=&#34;clear:both;&#34;&gt;&lt;/div&gt;&lt;div id=&#34;pqp-container&#34; class=&#34;pQp tallDetails&#34; style=&#34;display:none;position:inherit;&#34;&gt;&#39;; を $return_output .=&#39;&lt;div style=&#34;clear:both;&#34;&gt;&lt;/div&gt;&lt;div id=&#34;pqp-container&#34; class=&#34;pQp tallDetails&#34; style=&#34;display:block;position:inherit;&#34;&gt;&#39;; にします。 （display:none;をdisplay:block;に変更。） 661行目の $return_output .=&#39;&lt;/div&gt;&lt;/div&gt;&lt;div id=&#34;openProfiler&#34;&gt;&lt;a href=&#34;#&#34; onclick=&#34;openProfiler();return false&#34; title=&#34;Open Code Profiler&#34;&gt;Code Profiler&lt;/a&gt;&lt;/div&gt;&#39;; を $return_output .=&#39;&lt;/div&gt;&lt;/div&gt;&lt;div id=&#34;openProfiler&#34; style=&#34;display: none; &#34;&gt;&lt;a href=&#34;#&#34; onclick=&#34;openProfiler();return false&#34; title=&#34;Open Code Profiler&#34;&gt;Code Profiler&lt;/a&gt;&lt;/div&gt;&#39;; にします。 （ style=&#8221;display: none; &#8220;の追記。） 以上で常時表示されるようになったはずです。 検索して見つけた要素のスタイルを適当に変更してるだけなので、なんか他に方">
+    <meta property="og:description" content="最近FuelPHPを使っています。 バージョン1.2.1を使っていたのですが、1.3がでたということで1.3を使い始めました。 そこでデバッグをするときに、&#8217;profiling&#8217; =&gt; true,とかしてプロファイラを表示させるんですが、プロファイラが最小化状態で表示されます。 1.2.1のプロファイラは展開した状態で表示されてたのに。 trueってしたらプロファイラは常に表示されてて欲しいです。 ということで、常に表示されるようにします。 1 fuel/core/vendor/phpquickprofiler/display.php を開きます。 305行目の 1 $return_output .=&#39;&lt;div style=&#34;clear:both;&#34;&gt;&lt;/div&gt;&lt;div id=&#34;pqp-container&#34; class=&#34;pQp tallDetails&#34; style=&#34;display:none;position:inherit;&#34;&gt;&#39;; を 1 $return_output .=&#39;&lt;div style=&#34;clear:both;&#34;&gt;&lt;/div&gt;&lt;div id=&#34;pqp-container&#34; class=&#34;pQp tallDetails&#34; style=&#34;display:block;position:inherit;&#34;&gt;&#39;; にします。 （display:none;をdisplay:block;に変更。） 661行目の 1 $return_output .=&#39;&lt;/div&gt;&lt;/div&gt;&lt;div id=&#34;openProfiler&#34;&gt;&lt;a href=&#34;#&#34; onclick=&#34;openProfiler();return false&#34; title=&#34;Open Code Profiler&#34;&gt;Code Profiler&lt;/a&gt;&lt;/div&gt;&#39;; を 1 $return_output .=&#39;&lt;/div&gt;&lt;/div&gt;&lt;div id=&#34;openProfiler&#34; style=&#34;display: none; &#34;&gt;&lt;a href=&#34;#&#34; onclick=&#34;openProfiler();return false&#34; title=&#34;Open Code Profiler&#34;&gt;Code Profiler&lt;/a&gt;&lt;/div&gt;&#39;; にします。 （ style=&#8221;display: none; &#8220;の追記。） 以上で常時表示されるようになったはずです。 検索して見つけた要素のスタイルを適当に変更してるだけなので、な">
     <meta property="og:url" content="http://blog.5000164.jp/2012-10-fuelphp/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@5000164">
@@ -54,31 +54,51 @@ ga('send', 'pageview');
 <p>trueってしたらプロファイラは常に表示されてて欲しいです。</p>
 
 <p>ということで、常に表示されるようにします。</p>
-
-<pre class="brush: plain; gutter: false; title: ; notranslate" title="">fuel/core/vendor/phpquickprofiler/display.php</pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">fuel/core/vendor/phpquickprofiler/display.php</pre></td></tr></table>
+</div>
+</div>
 <p>を開きます。</p>
 
 <p>305行目の</p>
-
-<pre class="brush: php; first-line: 305; html-script: true; title: ; notranslate" title="">$return_output .='&lt;div style="clear:both;"&gt;&lt;/div&gt;&lt;div id="pqp-container" class="pQp tallDetails" style="display:none;position:inherit;"&gt;';</pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$return_output .=&#39;&lt;div style=&#34;clear:both;&#34;&gt;&lt;/div&gt;&lt;div id=&#34;pqp-container&#34; class=&#34;pQp tallDetails&#34; style=&#34;display:none;position:inherit;&#34;&gt;&#39;;</code></pre></td></tr></table>
+</div>
+</div>
 <p>を</p>
-
-<pre class="brush: php; first-line: 305; html-script: true; title: ; notranslate" title="">$return_output .='&lt;div style="clear:both;"&gt;&lt;/div&gt;&lt;div id="pqp-container" class="pQp tallDetails" style="display:block;position:inherit;"&gt;';</pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$return_output .=&#39;&lt;div style=&#34;clear:both;&#34;&gt;&lt;/div&gt;&lt;div id=&#34;pqp-container&#34; class=&#34;pQp tallDetails&#34; style=&#34;display:block;position:inherit;&#34;&gt;&#39;;</code></pre></td></tr></table>
+</div>
+</div>
 <p>にします。</p>
 
 <p>（display:none;をdisplay:block;に変更。）</p>
 
 <p>661行目の</p>
-
-<pre class="brush: php; first-line: 661; html-script: true; title: ; notranslate" title="">$return_output .='&lt;/div&gt;&lt;/div&gt;&lt;div id="openProfiler"&gt;&lt;a href="#" onclick="openProfiler();return false" title="Open Code Profiler"&gt;Code Profiler&lt;/a&gt;&lt;/div&gt;';</pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$return_output .=&#39;&lt;/div&gt;&lt;/div&gt;&lt;div id=&#34;openProfiler&#34;&gt;&lt;a href=&#34;#&#34; onclick=&#34;openProfiler();return false&#34; title=&#34;Open Code Profiler&#34;&gt;Code Profiler&lt;/a&gt;&lt;/div&gt;&#39;;</code></pre></td></tr></table>
+</div>
+</div>
 <p>を</p>
-
-<pre class="brush: php; first-line: 661; html-script: true; title: ; notranslate" title="">$return_output .='&lt;/div&gt;&lt;/div&gt;&lt;div id="openProfiler" style="display: none; "&gt;&lt;a href="#" onclick="openProfiler();return false" title="Open Code Profiler"&gt;Code Profiler&lt;/a&gt;&lt;/div&gt;';</pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$return_output .=&#39;&lt;/div&gt;&lt;/div&gt;&lt;div id=&#34;openProfiler&#34; style=&#34;display: none; &#34;&gt;&lt;a href=&#34;#&#34; onclick=&#34;openProfiler();return false&#34; title=&#34;Open Code Profiler&#34;&gt;Code Profiler&lt;/a&gt;&lt;/div&gt;&#39;;</code></pre></td></tr></table>
+</div>
+</div>
 <p>にします。</p>
 
 <p>（ style=&#8221;display: none; &#8220;の追記。）</p>

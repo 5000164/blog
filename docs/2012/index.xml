@@ -17,7 +17,7 @@
       <pubDate>Wed, 28 Nov 2012 00:29:41 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_elite/</guid>
-      <description>このサイトのデザインについて考える。 Welcome to Elite Premium WordPress Theme http://mythemepreviews.com/elite-wp/ 色 トップのテクスチャと写真の色使いが絶妙に渋くてお洒落な雰囲気を醸し出している。 全体的にコントラスト差がなくて落ち着きが得られる色使いとなっている。 全体 これはWordPressのテーマだそうで、もっとデザインのスキルを身につけなければと感じる。</description>
+      <description>このサイトのデザインについて考える。 Welcome to Elite Premium WordPress Theme 色 トップのテクスチャと写真の色使いが絶妙に渋くてお洒落な雰囲気を醸し出している。 全体的にコントラスト差がなくて落ち着きが得られる色使いとなっている。 全体 これはWordPressのテーマだそうで、もっとデザインのスキルを身につけなければと感じる。</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Tue, 27 Nov 2012 00:39:29 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_buffalo/</guid>
-      <description>このサイトのデザインについて考える。 Buffalo &amp;#8211; Web Development, E-Commerce &amp;amp; Web Design &amp;#8211; Brighton UK http://builtbybuffalo.com/ ナビゲーションについて ナビゲーションの形が六角形で特徴的である。 どうやらパララックスデザインの次は六角形ナビゲーションが流行するという話もあるようである。 六角形の実現方法 このサイトでは下記の図のように3つの長方形を組み合わせることで実現している。 こうすることによってマウスの判定も見た目と同様となりUXが向上すると思われる。</description>
+      <description>このサイトのデザインについて考える。 Buffalo &amp;#8211; Web Development, E-Commerce &amp;amp; Web Design &amp;#8211; Brighton UK ナビゲーションについて ナビゲーションの形が六角形で特徴的である。 どうやらパララックスデザインの次は六角形ナビゲーションが流行するという話もあるようである。 六角形の実現方法 このサイトでは下記の図のように3つの長方形を組み合わせることで実現している。 こうすることによってマウスの判定も見た目と同様となりUXが向上すると思われる。</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Mon, 26 Nov 2012 01:24:33 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_laurent_millet/</guid>
-      <description>このサイトのデザインについて考える。 Laurent Millet http://www.laurent-millet.com/ コンテンツの並べ方 コンテンツが理路整然と並べられていて、写真が映えている。 写真のプロダクトの紹介がメインのサイトだとわかる。 コンテンツの見せ方 アイテムをクリックすることでコンテンツが展開する。 展開されたサイズは横幅が並べられているコンテンツの3つ分となり、この画面のまま展開される。 展開された後も理路整然としていてストレスなくきれいにコンテンツの中身を見ることができる。 やはりページ遷移はできるだけない方がストレスはかからなくてすむ。</description>
+      <description>このサイトのデザインについて考える。 Laurent Millet コンテンツの並べ方 コンテンツが理路整然と並べられていて、写真が映えている。 写真のプロダクトの紹介がメインのサイトだとわかる。 コンテンツの見せ方 アイテムをクリックすることでコンテンツが展開する。 展開されたサイズは横幅が並べられているコンテンツの3つ分となり、この画面のまま展開される。 展開された後も理路整然としていてストレスなくきれいにコンテンツの中身を見ることができる。 やはりページ遷移はできるだけない方がストレスはかからなくてすむ。</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       <pubDate>Sun, 25 Nov 2012 03:55:43 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_genelu/</guid>
-      <description>このサイトのデザインについて考える。 Gene Lu. User Experience/Interaction Designer. Welcome. http://genelu.com/ 全体 背景色と文字色のバランスがちょうどいい。 テクスチャなどを使わないとのペッとしがちだが、背景色と文字色のバランスのおかげでシックでマットなデザインに見える。</description>
+      <description>このサイトのデザインについて考える。 Gene Lu. User Experience/Interaction Designer. Welcome. 全体 背景色と文字色のバランスがちょうどいい。 テクスチャなどを使わないとのペッとしがちだが、背景色と文字色のバランスのおかげでシックでマットなデザインに見える。</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@
       <pubDate>Sat, 24 Nov 2012 03:26:12 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_half-moon/</guid>
-      <description>このサイトのデザインについて考える。 歯科ハーフムーン｜仙台市 インプラント 無痛治療｜トップページ http://www.half-moon.or.jp/ タイトル画像 Webデザインではタイトル画像をクリックしたらトップページへ戻るというデザインが一般的だが、このサイトではタイトル画像にマウスをホバーした際に文字として「ホームページへ」と表示される。 対象とするユーザ層によっては、このように文字を表示するのも有効だと思える。 参考 ロゴマークの暗黙知について &amp;#8211; Webサイトの上部にリンクは必要か？ -｜Web Design KOJIKA17 http://kojika17.com/2011/09/implicit-knowledge-for-logo.html</description>
+      <description>このサイトのデザインについて考える。 歯科ハーフムーン｜仙台市 インプラント 無痛治療｜トップページ タイトル画像 Webデザインではタイトル画像をクリックしたらトップページへ戻るというデザインが一般的だが、このサイトではタイトル画像にマウスをホバーした際に文字として「ホームページへ」と表示される。 対象とするユーザ層によっては、このように文字を表示するのも有効だと思える。 参考 ロゴマークの暗黙知について &amp;#8211; Webサイトの上部にリンクは必要か？ -｜Web Design KOJIKA17</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@
       <pubDate>Fri, 23 Nov 2012 01:12:53 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_sickdesigner/</guid>
-      <description>このサイトのデザインについて考える。 Sickdesigner.com › The work and play of Radu Chelariu http://sickdesigner.com/ 全体 1つ1つの画像の作りこみがとても繊細でサイト全体の質感がとても高級なものに仕上がっている。 これだけの画像を作れたらそれだけで相当なアピールになると思われる。 また、腕時計が現在時刻を示していたり、iPhoneのホームボタンが押せるなど遊び心も散りばめられている。 ただ、画像を多用しているせいかページの読み込みに若干の時間がかかった点だけが唯一気になった。</description>
+      <description>このサイトのデザインについて考える。 Sickdesigner.com › The work and play of Radu Chelariu 全体 1つ1つの画像の作りこみがとても繊細でサイト全体の質感がとても高級なものに仕上がっている。 これだけの画像を作れたらそれだけで相当なアピールになると思われる。 また、腕時計が現在時刻を示していたり、iPhoneのホームボタンが押せるなど遊び心も散りばめられている。 ただ、画像を多用しているせいかページの読み込みに若干の時間がかかった点だけが唯一気になった。</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@
       <pubDate>Thu, 22 Nov 2012 00:55:30 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_alcepixel/</guid>
-      <description>このサイトのデザインについて考える。 alcePixel http://alcepixel.com/ 全体 トップ画像が自然をぼかして奥行きがあってきれい。 文字の配置のバランスがきれい。 といったことはあるのですが、一番素敵だと思ったのはこのサイトのスクロールです。 一回スクロールするだけでちょうどいいスクロール位置までナビゲーションしてくれます。 パララックスサイトなどを見てる時に、スクロールがやりづらいなあと常々思っていたのですが、このサイトでは気付いたらスムーズにスクロールしていて、最初は自動でスクロール位置を合わせているということに気付きませんでした。 気持よくスクロールできるおかげでサイトのUXが格段に向上していると思います。</description>
+      <description>このサイトのデザインについて考える。 alcePixel 全体 トップ画像が自然をぼかして奥行きがあってきれい。 文字の配置のバランスがきれい。 といったことはあるのですが、一番素敵だと思ったのはこのサイトのスクロールです。 一回スクロールするだけでちょうどいいスクロール位置までナビゲーションしてくれます。 パララックスサイトなどを見てる時に、スクロールがやりづらいなあと常々思っていたのですが、このサイトでは気付いたらスムーズにスクロールしていて、最初は自動でスクロール位置を合わせているということに気付きませんでした。 気持よくスクロールできるおかげでサイトのUXが格段に向上していると思います。</description>
     </item>
     
     <item>
@@ -80,7 +80,7 @@
       <pubDate>Wed, 21 Nov 2012 00:44:26 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_grand/</guid>
-      <description>このサイトのデザインについて考える。 GRAND : 416.977.3831 &amp;#8211; Digital, Interactive, Mobile &amp;amp; Social http://www.wearegrand.com/ テクスチャ ヘッダとトップにはザラザラとした質感のテクスチャが。 次は線が交差したテクスチャが。 そしてまたザラザラしたテクスチャを使用。 フッタには等高線のようなテクスチャが。 テクスチャを複数種類使うことでサイト全体に質感が生まれている。 それでいて主張しすぎないように白黒のテクスチャ使用していて全体の調和は保たれている。 アイコン 丸いアイコンと彩度が高めの色を用いることでアイコンを際立たせている。 アイコンには斜線とノイズが入ったテクスチャを使用して質感を出している。 影 ヘッダの下に影がついている。 文字にも影がついている。 アイコンにも影がついている。 画像の下にも影がついている。 影をつけることでサイトに奥行きが生まれている。 全体 全体的に細部に渡ってディティールにこだわっているのでサイトに雰囲気が生まれている。 マーケティングから開発まで請け負うとのこ</description>
+      <description>このサイトのデザインについて考える。 GRAND : 416.977.3831 &amp;#8211; Digital, Interactive, Mobile &amp;amp; Social テクスチャ ヘッダとトップにはザラザラとした質感のテクスチャが。 次は線が交差したテクスチャが。 そしてまたザラザラしたテクスチャを使用。 フッタには等高線のようなテクスチャが。 テクスチャを複数種類使うことでサイト全体に質感が生まれている。 それでいて主張しすぎないように白黒のテクスチャ使用していて全体の調和は保たれている。 アイコン 丸いアイコンと彩度が高めの色を用いることでアイコンを際立たせている。 アイコンには斜線とノイズが入ったテクスチャを使用して質感を出している。 影 ヘッダの下に影がついている。 文字にも影がついている。 アイコンにも影がついている。 画像の下にも影がついている。 影をつけることでサイトに奥行きが生まれている。 全体 全体的に細部に渡ってディティールにこだわっているのでサイトに雰囲気が生まれている。 マーケティングから開発まで請け負うとのこと</description>
     </item>
     
     <item>
@@ -89,7 +89,7 @@
       <pubDate>Tue, 20 Nov 2012 01:44:22 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_jaypeg/</guid>
-      <description>このサイトのデザインについて考える。 JAYPEG https://jypg.net/ トップ画像 背景に様々な画像をタイル状に配置している。 ここで様々な作品の上に成り立つものだと伝えている。 ホワイトスペースとテクスチャ サイトに空白が多いおかげですっきりしたスタイリッシュな印象を受ける。 テクスチャでのあっさりとした質感もあいまっておしゃれな感じが演出できている。 モノクロベースの色合い 全体的にモノクロベースのカラーとなっており、コンテンツに色がついている。 これはコンテンツが主役だということを意味しているように思える。</description>
+      <description>このサイトのデザインについて考える。 JAYPEG トップ画像 背景に様々な画像をタイル状に配置している。 ここで様々な作品の上に成り立つものだと伝えている。 ホワイトスペースとテクスチャ サイトに空白が多いおかげですっきりしたスタイリッシュな印象を受ける。 テクスチャでのあっさりとした質感もあいまっておしゃれな感じが演出できている。 モノクロベースの色合い 全体的にモノクロベースのカラーとなっており、コンテンツに色がついている。 これはコンテンツが主役だということを意味しているように思える。</description>
     </item>
     
     <item>
@@ -116,7 +116,7 @@
       <pubDate>Mon, 15 Oct 2012 22:33:16 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-10-input_type/</guid>
-      <description>iOSのブラウザにおいて数字のみのキーボードを出したいときがあります。 しかし、input type=&amp;#8221;number&amp;#8221;ってやっても数字以外のキーがでてきてしまう。 そうだ、input type=&amp;#8221;tel&amp;#8221;ってやれば数字のみになる、しかしセマンティックではない。 そこで、input type=&amp;#8221;text&amp;#8221; pattern=&amp;#8221;\d*&amp;#8221; HTML5からは入力文字をpatternで正規表現を利用して制御できるようになりました。 そこで入力可能文字を数字のみにするとiOSで数字のみのキーボードを出してくれるというものです。 賢いですね。 というわけで、実演 &amp;lt;input type=&amp;quot;number&amp;quot;&amp;gt; &amp;lt;input type=&amp;quot;tel&amp;quot;&amp;gt; &amp;lt;input type=&amp;quot;text&amp;quot; pattern=&amp;quot;\d*&amp;quot;&amp;gt; 以下、参考 少しのコードで実装可能な15のスマートフォンサイト用小技集 | Webクリエイターボックス http://www.webcreatorbox.com/tech/smartphone-snippets/ input 要素 &amp;#8211; フォーム &amp;#8211; HTML要素 &amp;#8211; HTML5 タグリファレンス &amp;#8211; HTML5.JP http://www.html5.jp/tag/elements/input.html JavaScript講座 15章 JavaScriptでの正規表現 http://www.site-cooler.com/kwl/javascript/15.htm</description>
+      <description>iOSのブラウザにおいて数字のみのキーボードを出したいときがあります。 しかし、input type=&amp;#8221;number&amp;#8221;ってやっても数字以外のキーがでてきてしまう。 そうだ、input type=&amp;#8221;tel&amp;#8221;ってやれば数字のみになる、しかしセマンティックではない。 そこで、input type=&amp;#8221;text&amp;#8221; pattern=&amp;#8221;\d*&amp;#8221; HTML5からは入力文字をpatternで正規表現を利用して制御できるようになりました。 そこで入力可能文字を数字のみにするとiOSで数字のみのキーボードを出してくれるというものです。 賢いですね。 というわけで、実演 1 &amp;lt;input type=&amp;#34;number&amp;#34;&amp;gt; 1 &amp;lt;input type=&amp;#34;tel&amp;#34;&amp;gt; 1 &amp;lt;input type=&amp;#34;text&amp;#34; pattern=&amp;#34;\d*&amp;#34;&amp;gt; 以下、参考 少しのコードで実装可能な15のスマートフォンサイト用小技集 | Webクリエイターボックス input 要素 &amp;#8211; フォーム &amp;#8211; HTML要素 &amp;#8211; HTML5 タグリファレンス &amp;#8211; HTML5.JP JavaScript講座 15章 JavaScriptでの正規表現</description>
     </item>
     
     <item>
@@ -134,7 +134,7 @@
       <pubDate>Mon, 15 Oct 2012 01:50:10 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-10-fuelphp/</guid>
-      <description>最近FuelPHPを使っています。 バージョン1.2.1を使っていたのですが、1.3がでたということで1.3を使い始めました。 そこでデバッグをするときに、&amp;#8217;profiling&amp;#8217; =&amp;gt; true,とかしてプロファイラを表示させるんですが、プロファイラが最小化状態で表示されます。 1.2.1のプロファイラは展開した状態で表示されてたのに。 trueってしたらプロファイラは常に表示されてて欲しいです。 ということで、常に表示されるようにします。 fuel/core/vendor/phpquickprofiler/display.php を開きます。 305行目の $return_output .=&#39;&amp;lt;div style=&#34;clear:both;&#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div id=&#34;pqp-container&#34; class=&#34;pQp tallDetails&#34; style=&#34;display:none;position:inherit;&#34;&amp;gt;&#39;; を $return_output .=&#39;&amp;lt;div style=&#34;clear:both;&#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div id=&#34;pqp-container&#34; class=&#34;pQp tallDetails&#34; style=&#34;display:block;position:inherit;&#34;&amp;gt;&#39;; にします。 （display:none;をdisplay:block;に変更。） 661行目の $return_output .=&#39;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div id=&#34;openProfiler&#34;&amp;gt;&amp;lt;a href=&#34;#&#34; onclick=&#34;openProfiler();return false&#34; title=&#34;Open Code Profiler&#34;&amp;gt;Code Profiler&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&#39;; を $return_output .=&#39;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div id=&#34;openProfiler&#34; style=&#34;display: none; &#34;&amp;gt;&amp;lt;a href=&#34;#&#34; onclick=&#34;openProfiler();return false&#34; title=&#34;Open Code Profiler&#34;&amp;gt;Code Profiler&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&#39;; にします。 （ style=&amp;#8221;display: none; &amp;#8220;の追記。） 以上で常時表示されるようになったはずです。 検索して見つけた要素のスタイルを適当に変更してるだけなので、なんか他に方</description>
+      <description>最近FuelPHPを使っています。 バージョン1.2.1を使っていたのですが、1.3がでたということで1.3を使い始めました。 そこでデバッグをするときに、&amp;#8217;profiling&amp;#8217; =&amp;gt; true,とかしてプロファイラを表示させるんですが、プロファイラが最小化状態で表示されます。 1.2.1のプロファイラは展開した状態で表示されてたのに。 trueってしたらプロファイラは常に表示されてて欲しいです。 ということで、常に表示されるようにします。 1 fuel/core/vendor/phpquickprofiler/display.php を開きます。 305行目の 1 $return_output .=&amp;#39;&amp;lt;div style=&amp;#34;clear:both;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div id=&amp;#34;pqp-container&amp;#34; class=&amp;#34;pQp tallDetails&amp;#34; style=&amp;#34;display:none;position:inherit;&amp;#34;&amp;gt;&amp;#39;; を 1 $return_output .=&amp;#39;&amp;lt;div style=&amp;#34;clear:both;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div id=&amp;#34;pqp-container&amp;#34; class=&amp;#34;pQp tallDetails&amp;#34; style=&amp;#34;display:block;position:inherit;&amp;#34;&amp;gt;&amp;#39;; にします。 （display:none;をdisplay:block;に変更。） 661行目の 1 $return_output .=&amp;#39;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div id=&amp;#34;openProfiler&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;#&amp;#34; onclick=&amp;#34;openProfiler();return false&amp;#34; title=&amp;#34;Open Code Profiler&amp;#34;&amp;gt;Code Profiler&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;#39;; を 1 $return_output .=&amp;#39;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div id=&amp;#34;openProfiler&amp;#34; style=&amp;#34;display: none; &amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;#&amp;#34; onclick=&amp;#34;openProfiler();return false&amp;#34; title=&amp;#34;Open Code Profiler&amp;#34;&amp;gt;Code Profiler&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;#39;; にします。 （ style=&amp;#8221;display: none; &amp;#8220;の追記。） 以上で常時表示されるようになったはずです。 検索して見つけた要素のスタイルを適当に変更してるだけなので、な</description>
     </item>
     
     <item>
@@ -152,7 +152,7 @@
       <pubDate>Wed, 19 Sep 2012 00:51:47 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-09-vocaloid_ranking_20120918/</guid>
-      <description>突然ですが新企画です。 おれの独自のVOCALOIDランキングを発表します。 今、おれの中でこれが熱い！と思う曲をBEST3形式で紹介したいと思います。 ジャンルが非常に偏っていますが、それはおれの好みなのでしょうがないです。 VOCALOID以外の曲も入ってたりするのでその辺はご了承を。 機械音声が苦手だと言う人はご注意を。 やろうと思った理由 VOCALOID文化を理解してもらい広げていくという「大義名分」 今の自分がどういう曲を聴いていたのかという「備忘録」 こんなことやったら面白そうという「実験」 が主な理由です。 ランキング では早速ランキングを発表します。 第3位 [nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;320&amp;#8243; height=&amp;#8221;180&amp;#8243;]sm18408895[/nicodo] 今、おれの中でこれが熱い！VOCALOIDランキング第3位は「CRYSTAL MICROPHONE UNDERGROUND／tysP」です。 ラップの曲でリズム感がいいです。 音もかっこいいしボーカルもきれいです。 かっこよくてノリノリな感じでとてもいい曲です。 こ</description>
+      <description>突然ですが新企画です。 おれの独自のVOCALOIDランキングを発表します。 今、おれの中でこれが熱い！と思う曲をBEST3形式で紹介したいと思います。 ジャンルが非常に偏っていますが、それはおれの好みなのでしょうがないです。 VOCALOID以外の曲も入ってたりするのでその辺はご了承を。 機械音声が苦手だと言う人はご注意を。 やろうと思った理由 VOCALOID文化を理解してもらい広げていくという「大義名分」 今の自分がどういう曲を聴いていたのかという「備忘録」 こんなことやったら面白そうという「実験」 が主な理由です。 ランキング では早速ランキングを発表します。 12345 ## 第3位 [nicodo display=”player” width=”320″ height=”180″]sm18408895[/nicodo] 今、おれの中でこれが熱い！VOCALOIDランキング第3位は「[CRYSTAL MICROPHONE UNDERGROUND／tysP](ht</description>
     </item>
     
     <item>
@@ -161,7 +161,7 @@
       <pubDate>Tue, 18 Sep 2012 03:16:41 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-09-speech/</guid>
-      <description>スピーチをやるので原稿を書きました。 時間は3分間です。 やりたいことをやるために時間をつくる おはようございます。 今日は時間について話をしようと思います。 みなさんは、たくさんやりたいことがあると思います。 例えば、楽器などの趣味に没頭する。 スキルアップのために勉強する。 会社の業務を改善するためにプロジェクトを立ち上げる。 しかし、これらのことをするためには、時間が必要になってきます。 なにか行動するためには時間が必要なのです。 時間がなければなにもすることができません。 じゃあ時間を作ればいい、と思うかも知れませんが、これが非常に難しいことですね。 なので、時間を作るポイントを3つ紹介したいと思います。 1つ目は、常に作業効率の改善を考える、ということです。 例えば、テキストをコピーするときにも、 右クリック、コピー とやるよりは Ctrl+C とやる方が早いですよね。 他にも、画面をキャプチャするときにはツールを使った方が早い</description>
+      <description>スピーチをやるので原稿を書きました。 時間は3分間です。 やりたいことをやるために時間をつくる おはようございます。 今日は時間について話をしようと思います。 みなさんは、たくさんやりたいことがあると思います。 例えば、楽器などの趣味に没頭する。 スキルアップのために勉強する。 会社の業務を改善するためにプロジェクトを立ち上げる。 しかし、これらのことをするためには、時間が必要になってきます。 なにか行動するためには時間が必要なのです。 時間がなければなにもすることができません。 じゃあ時間を作ればいい、と思うかも知れませんが、これが非常に難しいことですね。 なので、時間を作るポイントを3つ紹介したいと思います。 1分 1つ目は、常に作業効率の改善を考える、ということです。 例えば、テキストをコピーするときにも、 右クリック、コピー とやるよりは Ctrl+C とやる方が早いですよね。 他にも、画面をキャプチャするときにはツールを使った方が</description>
     </item>
     
     <item>
@@ -305,7 +305,7 @@
       <pubDate>Thu, 26 Jul 2012 20:58:04 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120725/</guid>
-      <description>ガレキが宝の山になる「コドモのチカラ展」 | The Power of Kids : monogocoro ものごころ これなんかよくわかんないけどすごい。 なんかすごい力がある。 衝撃がきた。 他の作品は[こちら](http://www.watanohasmile.jp/)から見れます。 展示会の情報は[こちら](http://www.muji.net/lab/ateliermuji/exhibition/exhibition120615.html)。 Rriver » レスポンシブWebの時代だからこそ見直すべき、3つの「ウェブの哲学」 なるほど。 でもこれは理解できても理解してもらうのが難しい。</description>
+      <description>ガレキが宝の山になる「コドモのチカラ展」 | The Power of Kids : monogocoro ものごころ これなんかよくわかんないけどすごい。 なんかすごい力がある。 衝撃がきた。 他の作品はこちらから見れます。 展示会の情報はこちら。 Rriver » レスポンシブWebの時代だからこそ見直すべき、3つの「ウェブの哲学」 なるほど。 でもこれは理解できても理解してもらうのが難しい。</description>
     </item>
     
     <item>
@@ -368,7 +368,7 @@
       <pubDate>Thu, 19 Jul 2012 12:16:49 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120718/</guid>
-      <description>東北大教授による大学新入生への助言 &amp;#8211; Togetter これは非常にためになる。 大学に行きたくなってきた。 おっさんへ(パロディ) &amp;#8211; ひがやすを blog なんかちょっとすっきりした。 説教ってよくわからんかったけど、あれは「お話を聞かせてください」といくものであって、「聞きたくもないのに聞かされるもの」ではないですよね。 ちなみに記事中にも出てますが、元ネタは[これ](http://d.hatena.ne.jp/shi3z/20120715/1342320729)だそうです。</description>
+      <description>東北大教授による大学新入生への助言 &amp;#8211; Togetter これは非常にためになる。 大学に行きたくなってきた。 おっさんへ(パロディ) &amp;#8211; ひがやすを blog なんかちょっとすっきりした。 説教ってよくわからんかったけど、あれは「お話を聞かせてください」といくものであって、「聞きたくもないのに聞かされるもの」ではないですよね。 ちなみに記事中にも出てますが、元ネタはこれだそうです。</description>
     </item>
     
     <item>
@@ -386,7 +386,7 @@
       <pubDate>Mon, 16 Jul 2012 14:58:35 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120715/</guid>
-      <description>高校生になって初めてスクラムを始めました～「ストーリー」で何を作るかまとめよう (1/3) &amp;#8211; ＠IT 連載一回目。 この連載わかりやすい。 スプリントと“かんばん”でチームのビートを刻め!! ～スクラム開発で使う手法とツール～ (1/3) &amp;#8211; ＠IT 連載二回目。 スクラムやるならRedmineとALMinium！ ～新キャラ登場！無表情なあの人が笑う日は来るのか？～ (1/3) &amp;#8211; ＠IT 連載三回目。 ALMiniumって便利そうだな。 Redmineでスクラム実践！～アジャイル開発始めました～ (1/3) &amp;#8211; ＠IT 連載四回目。 「うわっ…私のバージョン管理、ダメ過ぎ…？」を解決するGitの使い方“超”入門 (1/3) &amp;#8211; ＠IT 連載五回目。</description>
+      <description>高校生になって初めてスクラムを始めました～「ストーリー」で何を作るかまとめよう (1&amp;frasl;3) &amp;#8211; ＠IT 連載一回目。 この連載わかりやすい。 スプリントと“かんばん”でチームのビートを刻め!! ～スクラム開発で使う手法とツール～ (1&amp;frasl;3) &amp;#8211; ＠IT 連載二回目。 スクラムやるならRedmineとALMinium！ ～新キャラ登場！無表情なあの人が笑う日は来るのか？～ (1&amp;frasl;3) &amp;#8211; ＠IT 連載三回目。 ALMiniumって便利そうだな。 Redmineでスクラム実践！～アジャイル開発始めました～ (1&amp;frasl;3) &amp;#8211; ＠IT 連載四回目。 「うわっ…私のバージョン管理、ダメ過ぎ…？」を解決するGitの使い方“超”入門 (1&amp;frasl;3) &amp;#8211; ＠IT 連載五回目。</description>
     </item>
     
     <item>
@@ -404,7 +404,7 @@
       <pubDate>Sun, 15 Jul 2012 02:36:00 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120713/</guid>
-      <description>スタートアップにおけるソフトウェア開発の無駄をなくす大事な３つの考えかた &amp;#8211; Social Change! 機能やソースコードは資産ではなく負債だと考えるべきです。どれだけ速いスピードで作れたとして、それが誰にとっても価値を産まないのだとすれば、意味がないだけでなく、メンテナンスにかかるコストもあがりますし、運用するコストにも影響が出るでしょう。 この考え方には「なるほど」と思った。 iPhoneはなぜ気持ちがよいのか？ (1/5) | Telescope Magazine これは非常に参考になる。 ぬるぬるしたアニメーションがいいんじゃなくて、思った通りに思ったレスポンスを返してくれるのが気持ちいいのか。 だからWindows Phoneのパタパタした遷移アニメーションはなんか気持ち悪いのか。 あれはすごく不自然なアニメーションで、iPhoneみたいに選択したアプリが広がったり、横にスライドするのは自然な動きだと感じる。 それと記事中に紹介されているマウスポインタの体験がやや衝</description>
+      <description>スタートアップにおけるソフトウェア開発の無駄をなくす大事な３つの考えかた &amp;#8211; Social Change! 機能やソースコードは資産ではなく負債だと考えるべきです。どれだけ速いスピードで作れたとして、それが誰にとっても価値を産まないのだとすれば、意味がないだけでなく、メンテナンスにかかるコストもあがりますし、運用するコストにも影響が出るでしょう。 この考え方には「なるほど」と思った。 iPhoneはなぜ気持ちがよいのか？ (1&amp;frasl;5) | Telescope Magazine これは非常に参考になる。 ぬるぬるしたアニメーションがいいんじゃなくて、思った通りに思ったレスポンスを返してくれるのが気持ちいいのか。 だからWindows Phoneのパタパタした遷移アニメーションはなんか気持ち悪いのか。 あれはすごく不自然なアニメーションで、iPhoneみたいに選択したアプリが広がったり、横にスライドするのは自然な動きだと感じる。 それと記事中に紹介されているマウスポインタの体験がやや衝</description>
     </item>
     
     <item>
@@ -476,7 +476,7 @@
       <pubDate>Thu, 05 Jul 2012 01:02:05 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-opera_url/</guid>
-      <description>Operaのmenu.iniを編集して実現します。 まずファイルの [Document Popup Menu] の部分を探します。 見つけたら下に ++++++++++++++++++--9 ; get URL &amp; Link Item, &#34;Copy URL&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, document.title+&#39;\n&#39;+location.href);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel Item, &#34;Create Link&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;\n\n&amp;lt;section&amp;gt;\n&amp;lt;div&amp;gt;&amp;lt;a href=\u0022&#39;+location.href+&#39;\u0022&amp;gt;&#39;+document.title+&#39;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;\n&amp;lt;p&amp;gt;\n\n&amp;lt;/p&amp;gt;\n&amp;lt;/section&amp;gt;\n\n&#39;);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel Item, &#34;Reference Link&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;&amp;lt;div&amp;gt;&amp;lt;a href=\u0022&#39;+location.href+&#39;\u0022&amp;gt;&#39;+document.title+&#39;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;\n\n&#39;);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel と追加します。 これでOperaを再起動すれば完了です。 これは単純にJavaScriptを利用しています。 実装するときにダブルコーテーションのところで一回ハマりました。 ダブルコーテーションをエスケープしてなかったのが動かない原因かと思いきや、Operaの設定を解釈する側でダブルコーテーションを使用してはいけなかったみたいです。 なのでダブルコーテーションをUnicodeの「0022」で表現して回避しています。 実際にこれを使ってみるとこんな感じになります。 カスタマイズは簡単なので、自分の環境に合わせて使ってください。 「Copy URL」 生きるためのブログ http://5000164.jp/ 「Create Link」 &amp;lt;section&amp;gt; &amp;lt;div&amp;gt;&amp;lt;a hr</description>
+      <description>Operaのmenu.iniを編集して実現します。 まずファイルの 1 [Document Popup Menu] の部分を探します。 見つけたら下に 12345 ++++++++++++++++++--9 ; get URL &amp;amp; Link Item, &amp;#34;Copy URL&amp;#34; = Go to page, &amp;#34;javascript:(function(){window.prompt(&amp;#39;&amp;#39;, document.title+&amp;#39;\n&amp;#39;+location.href);})();&amp;#34; &amp;amp; Delay, 100 &amp;amp; Cut &amp;amp; Cancel Item, &amp;#34;Create Link&amp;#34; = Go to page, &amp;#34;javascript:(function(){window.prompt(&amp;#39;&amp;#39;, &amp;#39;\n\n&amp;lt;section&amp;gt;\n&amp;lt;div&amp;gt;&amp;lt;a href=\u0022&amp;#39;+location.href+&amp;#39;\u0022&amp;gt;&amp;#39;+document.title+&amp;#39;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;\n&amp;lt;p&amp;gt;\n\n&amp;lt;/p&amp;gt;\n&amp;lt;/section&amp;gt;\n\n&amp;#39;);})();&amp;#34; &amp;amp; Delay, 100 &amp;amp; Cut &amp;amp; Cancel Item, &amp;#34;Reference Link&amp;#34; = Go to page, &amp;#34;javascript:(function(){window.prompt(&amp;#39;&amp;#39;, &amp;#39;&amp;lt;div&amp;gt;&amp;lt;a href=\u0022&amp;#39;+location.href+&amp;#39;\u0022&amp;gt;&amp;#39;+document.title+&amp;#39;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;\n\n&amp;#39;);})();&amp;#34; &amp;amp; Delay, 100 &amp;amp; Cut &amp;amp; Cancel と追加します。 これでOperaを再起動すれば完了です。 これは単純にJavaScriptを利用しています。 実装するときにダブルコーテーションのところで一回ハマりました。 ダブルコーテーションをエスケープしてなかったのが動かない原因かと思いきや、Operaの設定を解釈する側でダブルコーテーションを使用してはいけなかったみたいです。 なのでダブルコーテーションをUnicodeの「0022」で表現して回避しています。 実際にこれを使ってみるとこんな感じになります。 カスタマイズは簡単なので、自分の環境に合わせて使ってください。 「Copy URL」 12 生きるためのブログ http://5000164.jp/ 「Create Link」 123456</description>
     </item>
     
     <item>
@@ -485,7 +485,7 @@
       <pubDate>Sun, 01 Jul 2012 02:40:42 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-food_20120630/</guid>
-      <description>歴史のフィードバック。またはコンピュータ史を学ぶ価値 &amp;#8211; UEI/ARC shi3zの日記 ただ技術を習得するだけでは、先に進めない。 為末氏「成長を阻害するどうでもいい事」 &amp;#8211; Togetter 自分がどう見られたいかではなく、自分はどんな目的を達したいかが大事。 フリーランス向け嫌な仕事の断り方・交渉の仕方 | たけのおしごと 物理的な物ができあがるわけではないので、理解を得るのは難しいですよね。全員がソフトウェアを作ったことがあればいいんですけど。お金をもらうということは、それだけの価値があるということです。 CSS3 Lasers! うまいことタイミングを合わせればこんなこともできるのか。もっと柔軟に考えないと。 Georgia ProとVerdana Proの深い話 – フォントブログ いろいろ使ってみたい。 [CSS]CSS3を使うとこんなこともできる！紙を折ったり反らしたするかっこいいエフェクト | コリス これもすごい。 もっと厚みが欲しいな。 ゲーム感覚でレイアウトを組み立てる、</description>
+      <description>歴史のフィードバック。またはコンピュータ史を学ぶ価値 &amp;#8211; UEI/ARC shi3zの日記 ただ技術を習得するだけでは、先に進めない。 1 [為末氏「成長を阻害するどうでもいい事」 – Togetter](http://togetter.com/li/327867) 自分がどう見られたいかではなく、自分はどんな目的を達したいかが大事。 1 [フリーランス向け嫌な仕事の断り方・交渉の仕方 | たけのおしごと](http://take-a-job.info/archives/924) 物理的な物ができあがるわけではないので、理解を得るのは難しいですよね。全員がソフトウェアを作ったことがあればいいんですけど。お金をもらうということは、それだけの価値があるということです。 1 CSS3 Lasers! うまいことタイミングを合わせればこんなこともできるのか。もっと柔軟に考えないと。 1 [Georgia ProとVerdana Proの深い話 – フォントブログ](http://blog.petitboys.com/archives/georgiaverdana.</description>
     </item>
     
     <item>
@@ -503,7 +503,7 @@
       <pubDate>Fri, 29 Jun 2012 01:52:41 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-wordpress_twentyeleven_edit/</guid>
-      <description>デザインをいろいろと変更しました。 作業の途中で元ファイルがわからなくなりテーマをまるごと再インストールしたりもしました。 設定情報とかも一緒に消しちゃって記事が見れなくなった時は焦った。 でもなんとか元に戻りました。 以下は変更内容です。 あんまり詳しく調べずに、それっぽいファイルをそれっぽく修正したらそれっぽい動きになっただけなので、参考にする時は注意してください。 まず、出したくないものを消します。 メニューバー（ナビゲーションバー）と検索ボックスを消します。 今のところ使用していないので。 header.phpの114行目以降 &amp;amp;lt;?php // Has the text been hidden? if ( &#39;blank&#39; == get_header_textcolor() ) : ?&amp;amp;gt; &amp;amp;lt;div&amp;amp;gt; &amp;amp;lt;?php get_search_form(); ?&amp;amp;gt; &amp;amp;lt;/div&amp;amp;gt; &amp;amp;lt;?php else : ?&amp;amp;gt; &amp;amp;lt;?php get_search_form(); ?&amp;amp;gt; &amp;amp;lt;?php endif; ?&amp;amp;gt; &amp;amp;lt;nav id=&amp;amp;quot;access&amp;amp;quot; role=&amp;amp;quot;navigation&amp;amp;quot;&amp;amp;gt; &amp;amp;lt;h3&amp;amp;gt;&amp;amp;lt;?php _e( &#39;Main menu&#39;, &#39;twentyeleven&#39; ); ?&amp;amp;gt;&amp;amp;lt;/h3&amp;amp;gt; &amp;amp;lt;?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?&amp;amp;gt; &amp;amp;lt;div&amp;amp;gt;&amp;amp;lt;a href=&amp;amp;quot;#content&amp;amp;quot; title=&amp;amp;quot;&amp;amp;lt;?php esc_attr_e( &#39;Skip to primary content&#39;, &#39;twentyeleven&#39; ); ?&amp;amp;gt;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;?php _e( &#39;Skip to primary content&#39;, &#39;twentyeleven&#39; ); ?&amp;amp;gt;&amp;amp;lt;/a&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt; &amp;amp;lt;div&amp;amp;gt;&amp;amp;lt;a href=&amp;amp;quot;#secondary&amp;amp;quot; title=&amp;amp;quot;&amp;amp;lt;?php esc_attr_e( &#39;Skip to secondary content&#39;, &#39;twentyeleven&#39; ); ?&amp;amp;gt;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;?php _e( &#39;Skip to secondary content&#39;, &#39;twentyeleven&#39; ); ?&amp;amp;gt;&amp;amp;lt;/a&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt; &amp;amp;lt;?php /* Our navigation menu. If one isn&#39;t filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn&#39;t assigned, the menu with the lowest ID is used. */</description>
+      <description>デザインをいろいろと変更しました。 作業の途中で元ファイルがわからなくなりテーマをまるごと再インストールしたりもしました。 設定情報とかも一緒に消しちゃって記事が見れなくなった時は焦った。 でもなんとか元に戻りました。 以下は変更内容です。 あんまり詳しく調べずに、それっぽいファイルをそれっぽく修正したらそれっぽい動きになっただけなので、参考にする時は注意してください。 まず、出したくないものを消します。 メニューバー（ナビゲーションバー）と検索ボックスを消します。 今のところ使用していないので。 header.phpの114行目以降 123456789101112131415161718192021222324 &amp;amp;lt;?php // Has the text been hidden? if ( &amp;#39;blank&amp;#39; == get_header_textcolor() ) : ?&amp;amp;gt; &amp;amp;lt;div&amp;amp;gt; &amp;amp;lt;?php get_search_form(); ?&amp;amp;gt; &amp;amp;lt;/div&amp;amp;gt; &amp;amp;lt;?php else : ?&amp;amp;gt; &amp;amp;lt;?php get_search_form(); ?&amp;amp;gt; &amp;amp;lt;?php endif; ?&amp;amp;gt; &amp;amp;lt;nav id=&amp;amp;quot;access&amp;amp;quot; role=&amp;amp;quot;navigation&amp;amp;quot;&amp;amp;gt; &amp;amp;lt;h3&amp;amp;gt;&amp;amp;lt;?php _e( &amp;#39;Main menu&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); ?&amp;amp;gt;&amp;amp;lt;/h3&amp;amp;gt; &amp;amp;lt;?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?&amp;amp;gt; &amp;amp;lt;div&amp;amp;gt;&amp;amp;lt;a href=&amp;amp;quot;#content&amp;amp;quot; title=&amp;amp;quot;&amp;amp;lt;?php esc_attr_e( &amp;#39;Skip to primary content&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); ?&amp;amp;gt;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;?php _e( &amp;#39;Skip to primary content&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); ?&amp;amp;gt;&amp;amp;lt;/a&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt; &amp;amp;lt;div&amp;amp;gt;&amp;amp;lt;a href=&amp;amp;quot;#secondary&amp;amp;quot; title=&amp;amp;quot;&amp;amp;lt;?php esc_attr_e( &amp;#39;Skip to secondary content&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); ?&amp;amp;gt;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;?php _e( &amp;#39;Skip to secondary content&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); ?&amp;amp;gt;&amp;amp;lt;/a&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt; &amp;amp;lt;?php /* Our navigation menu. If one isn&amp;#39;t filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn&amp;#39;t assigned, the menu with the lowest ID is used.</description>
     </item>
     
     <item>
@@ -512,7 +512,7 @@
       <pubDate>Tue, 26 Jun 2012 01:47:45 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-wordpress_twentyeleven_display_none/</guid>
-      <description>テーマのフォルダにある content-single.php を編集します。 34～40行目の if ( &amp;ldquo; != $tag_list ) { $utility_text = __( &amp;lsquo;This entry was posted in %1$s and tagged %2$s by &amp;lt;a href=&amp;quot;%6$s&amp;quot;&amp;gt;%5$s&amp;lt;/a&amp;gt;. Bookmark the &amp;lt;a href=&amp;quot;%3$s&amp;quot; title=&amp;quot;Permalink to %4$s&amp;quot; rel=&amp;quot;bookmark&amp;quot;&amp;gt;permalink&amp;lt;/a&amp;gt;.&amp;lsquo;, &amp;lsquo;twentyeleven&amp;rsquo; ); } elseif ( &amp;ldquo; != $categories_list ) { $utility_text = __( &amp;lsquo;This entry was posted in %1$s by &amp;lt;a href=&amp;quot;%6$s&amp;quot;&amp;gt;%5$s&amp;lt;/a&amp;gt;. Bookmark the &amp;lt;a href=&amp;quot;%3$s&amp;quot; title=&amp;quot;Permalink to %4$s&amp;quot; rel=&amp;quot;bookmark&amp;quot;&amp;gt;permalink&amp;lt;/a&amp;gt;.&amp;lsquo;, &amp;lsquo;twentyeleven&amp;rsquo; ); } else { $utility_text = __( &amp;lsquo;This entry was posted by &amp;lt;a href=&amp;quot;%6$s&amp;quot;&amp;gt;%5$s&amp;lt;/a&amp;gt;. Bookmark the &amp;lt;a href=&amp;quot;%3$s&amp;quot; title=&amp;quot;Permalink to %4$s&amp;quot; rel=&amp;quot;bookmark&amp;quot;&amp;gt;permalink&amp;lt;/a&amp;gt;.&amp;lsquo;, &amp;lsquo;twentyeleven&amp;rsquo; ); } の部分を if ( &amp;ldquo; != $tag_list ) { $utility_text = __( &amp;lsquo;category %1$s and tag %2$s&amp;rsquo;, &amp;lsquo;twentyeleven&amp;rsquo; ); } elseif ( &amp;ldquo; != $categories_list ) { $utility_text = __( &amp;lsquo;category %1$s&amp;rsquo;, &amp;lsquo;twentyeleven&amp;rsquo; ); } else { $utility_text = __( &amp;ldquo;, &amp;lsquo;twentyeleven&amp;rsquo; ); } と変更します。 おそらく、単一記事表示時にカテゴリやタグを表示する部分での処理だと思われます。 全体表示時の対処はまだ不明。 作成者とパーマリンクは表示されないので保留にします。 参考サイト WordPressのTwentyElevenで作成者を非表示にする方法 | 沖縄なんくるウェブブログ</description>
+      <description>テーマのフォルダにある 1 content-single.php を編集します。 34～40行目の 1234567 if ( &amp;#39;&amp;#39; != $tag_list ) { $utility_text = __( &amp;#39;This entry was posted in %1$s and tagged %2$s by &amp;lt;a href=&amp;#34;%6$s&amp;#34;&amp;gt;%5$s&amp;lt;/a&amp;gt;. Bookmark the &amp;lt;a href=&amp;#34;%3$s&amp;#34; title=&amp;#34;Permalink to %4$s&amp;#34; rel=&amp;#34;bookmark&amp;#34;&amp;gt;permalink&amp;lt;/a&amp;gt;.&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } elseif ( &amp;#39;&amp;#39; != $categories_list ) { $utility_text = __( &amp;#39;This entry was posted in %1$s by &amp;lt;a href=&amp;#34;%6$s&amp;#34;&amp;gt;%5$s&amp;lt;/a&amp;gt;. Bookmark the &amp;lt;a href=&amp;#34;%3$s&amp;#34; title=&amp;#34;Permalink to %4$s&amp;#34; rel=&amp;#34;bookmark&amp;#34;&amp;gt;permalink&amp;lt;/a&amp;gt;.&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } else { $utility_text = __( &amp;#39;This entry was posted by &amp;lt;a href=&amp;#34;%6$s&amp;#34;&amp;gt;%5$s&amp;lt;/a&amp;gt;. Bookmark the &amp;lt;a href=&amp;#34;%3$s&amp;#34; title=&amp;#34;Permalink to %4$s&amp;#34; rel=&amp;#34;bookmark&amp;#34;&amp;gt;permalink&amp;lt;/a&amp;gt;.&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } の部分を 1234567 if ( &amp;#39;&amp;#39; != $tag_list ) { $utility_text = __( &amp;#39;category %1$s and tag %2$s&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } elseif ( &amp;#39;&amp;#39; != $categories_list ) { $utility_text = __( &amp;#39;category %1$s&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } else { $utility_text = __( &amp;#39;&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } と変更します。 おそらく、単一記事表示時にカテゴリやタグを表示する部分での処理だと思われます。 全体表示時の対処はまだ不明。 作成者とパーマリンクは表示されないので保留にします。 参考サイト 1 WordPressのTwentyElevenで作成者を非表示にする方法 | 沖縄なんくるウェブブログ</description>
     </item>
     
     <item>
@@ -521,7 +521,7 @@
       <pubDate>Tue, 26 Jun 2012 01:26:39 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-windows_trash/</guid>
-      <description>2014/03/06 追記 ここではタスクバーにごみ箱を設置する手順を示していますが、設置する目的は「より便利にごみ箱にアクセスしたい」というものです。 より便利にアクセスできる方法を見つけたので追記します。 「Windowsロゴ」キー + 「R」キーで「ファイル名を指定して実行」を起動 「shell:RecycleBinFolder」と入力して実行 以上です。 一度入力すると履歴に残るので、2回目以降は履歴から簡単にアクセスできます。 参考 Shell コマンドで開く特殊フォルダー一覧（Windows 7,8） デスクトップをきれいにするために 私はデスクトップにアイコンを1つも表示しないので、ごみ箱にアクセスするのがとても面倒です。 常にごみ箱にアクセスできる方法の1つとして、Windows7のタスクバーにごみ箱を表示する方法を書いていきます。 1.フォルダの作成 まず、どこか適当な場所に適当なフォルダを作成します。 ここでは C:\Users\（ユ</description>
+      <description>2014/03/06 追記 ここではタスクバーにごみ箱を設置する手順を示していますが、設置する目的は「より便利にごみ箱にアクセスしたい」というものです。 より便利にアクセスできる方法を見つけたので追記します。 「Windowsロゴ」キー + 「R」キーで「ファイル名を指定して実行」を起動 「shell:RecycleBinFolder」と入力して実行 以上です。 一度入力すると履歴に残るので、2回目以降は履歴から簡単にアクセスできます。 参考 Shell コマンドで開く特殊フォルダー一覧（Windows 7,8） デスクトップをきれいにするために 私はデスクトップにアイコンを1つも表示しないので、ごみ箱にアクセスするのがとても面倒です。 常にごみ箱にアクセスできる方法の1つとして、Windows7のタスクバーにごみ箱を表示する方法を書いていきます。 1.フォルダの作成 まず、どこか適当な場所に適当なフォルダを作成します。 ここでは 1 C:\Users\（</description>
     </item>
     
     <item>
@@ -530,7 +530,7 @@
       <pubDate>Tue, 26 Jun 2012 01:01:16 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-windows_font/</guid>
-      <description>※下記内容については自己責任でお願いします。 Windowsの汚いフォントを少しだけマシにします。 筆者実行環境：Windows 7 Home Premium SP1 32bit まずこのサイト Downloads &amp;#8211; gdipp &amp;#8211; Customizable Windows text renderers &amp;#8211; Google Project Hosting から gdipp_x86_0.9.1.msi という名前のファイルをダウンロードします。 ダウンロードしたら起動してインストールします。 基本的にそのままの設定で大丈夫です。 インストールが完了したら再起動します。 （サービスの起動でもいけるそうですが、なんとなく。） これでフォントが多少きれいに表示されるはずです。 表示を戻したかったら、gdippのサービスを切るか、アンインストールすることで戻ります。 なお、表示が崩れる場合や文字が表示されない場合もあります。 参考サイト Windowsのフォントをより美しく出来る「gdipp」とその設定 gdipp &amp;#8211; ｋ本的に無料ソフト・フリーソフト gdipp &amp;#8211; Customizable Windows text renderers &amp;#8211; Google Project Hosting</description>
+      <description>※下記内容については自己責任でお願いします。 Windowsの汚いフォントを少しだけマシにします。 筆者実行環境：Windows 7 Home Premium SP1 32bit まずこのサイト Downloads &amp;#8211; gdipp &amp;#8211; Customizable Windows text renderers &amp;#8211; Google Project Hosting から 1 gdipp_x86_0.9.1.msi という名前のファイルをダウンロードします。 ダウンロードしたら起動してインストールします。 基本的にそのままの設定で大丈夫です。 インストールが完了したら再起動します。 （サービスの起動でもいけるそうですが、なんとなく。） これでフォントが多少きれいに表示されるはずです。 表示を戻したかったら、gdippのサービスを切るか、アンインストールすることで戻ります。 なお、表示が崩れる場合や文字が表示されない場合もあります。 参考サイト Windowsのフォントをより美しく出来る「gdipp」とその設定 gdipp &amp;#8211; ｋ本的に無料ソフト・フリーソフト gdipp &amp;#8211; Customizable Windows text renderers &amp;#8211; Google Project Hosting</description>
     </item>
     
     <item>
@@ -539,7 +539,7 @@
       <pubDate>Tue, 26 Jun 2012 00:55:37 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-eclipse_setting/</guid>
-      <description>毎回毎回Eclipseの設定を思い出すのがめんどくさくなったのでついにメモった。 とりあえず最低限の設定だけ。 Eclipse Market Place Eclipse Color Themeで検索する。 Eclipse Color ThemeをInstallする。 環境設定 &amp;gt;General Show heap status check &amp;gt;Appearance -Color Theme Obsidian -Color and Fonts Basic Text Font Ricty 13 &amp;gt;ContentTypes Text CSS Add *.scss &amp;gt;Editors -FIle Associations File types Add *.css *.scss Associated editors *.cssと*.scssどちらも CSS Editor Text Editor &amp;gt;Text Editors Show line numbers check Show whitespace characters check -Keys Content Assist command + return &amp;gt;Workspace Text file encoding Other : UTF-8 New text file line delimiter Other : Unix &amp;gt;Web &amp;gt;CSS Files Encoding ISO 10646/Unicode(UTF-8) 設定ファイル Eclipse.appのパッケージの内容を表示。 /Contents/MacOS/eclipse.iniを開く。 下記内容に変更。 -vmargs -XX:MaxPermSize=256m -Xss2m -Xms256m -Xmx1024m これで設定をとりあえずエクスポートして完了。 あとはDropboxで共有するなりなんなり。 参考サイト livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと Eclipse Color Themeを使ってみよう 設定のインポート・エクスポート &amp;#8211; devillikeaangelの日記</description>
+      <description>毎回毎回Eclipseの設定を思い出すのがめんどくさくなったのでついにメモった。 とりあえず最低限の設定だけ。 Eclipse Market Place Eclipse Color Themeで検索する。 Eclipse Color ThemeをInstallする。 環境設定 &amp;gt;General Show heap status check &amp;gt;Appearance -Color Theme Obsidian -Color and Fonts Basic Text Font Ricty 13 &amp;gt;ContentTypes Text CSS Add *.scss &amp;gt;Editors -FIle Associations File types Add *.css *.scss Associated editors *.cssと*.scssどちらも CSS Editor Text Editor &amp;gt;Text Editors Show line numbers check Show whitespace characters check -Keys Content Assist command + return &amp;gt;Workspace Text file encoding Other : UTF-8 New text file line delimiter Other : Unix &amp;gt;Web &amp;gt;CSS Files Encoding ISO 10646/Unicode(UTF-8) 設定ファイル Eclipse.appのパッケージの内容を表示。 /Contents/MacOS/eclipse.iniを開く。 下記内容に変更。 12345 -vmargs -XX:MaxPermSize=256m -Xss2m -Xms256m -Xmx1024m これで設定をとりあえずエクスポートして完了。 あとはDropboxで共有するなりなんなり。 参考サイト livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと Eclipse Color Themeを使ってみよう 設定のインポート・エクスポート &amp;#8211; devillikeaangelの日記</description>
     </item>
     
     <item>
@@ -548,7 +548,7 @@
       <pubDate>Tue, 26 Jun 2012 00:12:55 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-mac_smb/</guid>
-      <description>Macから認証がかかってるサーバへ接続する際は、サーバアドレス入力後にユーザ名とパスワードを入力します。 この時に、Macにログインしてるユーザ名を初期入力してくれてるのですが、必ずしもサーバのユーザ名と一致しているわけではありません。 下記のようにサーバアドレスを入力することで、任意のユーザ名を初期入力させておくことができます。 今まで接続していたアドレス smb://ServerName/ShareName ユーザ名を初期入力させて接続するアドレス smb://ドメイン名;ユーザ名@ServerName/ShareName 参考 Mac OS X：Windows ファイル共有 (SMB) に接続する方法 ログインした時に自動接続する方法もあるらしいです。 Mac OS X：ログインしたときに自動的にサーバに接続する方法</description>
+      <description>Macから認証がかかってるサーバへ接続する際は、サーバアドレス入力後にユーザ名とパスワードを入力します。 この時に、Macにログインしてるユーザ名を初期入力してくれてるのですが、必ずしもサーバのユーザ名と一致しているわけではありません。 下記のようにサーバアドレスを入力することで、任意のユーザ名を初期入力させておくことができます。 今まで接続していたアドレス 1 smb://ServerName/ShareName ユーザ名を初期入力させて接続するアドレス 1 smb://ドメイン名;ユーザ名@ServerName/ShareName 参考 Mac OS X：Windows ファイル共有 (SMB) に接続する方法 ログインした時に自動接続する方法もあるらしいです。 Mac OS X：ログインしたときに自動的にサーバに接続する方法</description>
     </item>
     
     <item>
@@ -557,7 +557,7 @@
       <pubDate>Mon, 25 Jun 2012 23:09:21 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-mobile_safari_link/</guid>
-      <description>Mobile Safariでは数字を電話番号だとみなして、勝手に電話番号のリンクを貼ることがあります。 これを防ぐためには勝手にリンクを貼る機能を無効化し、telto:で明示的にリンクを貼りましょう。 機能を無効化するには、ヘッダに下記のmetaタグを追加します。 &amp;lt;meta name=&#34;format-detection&#34; content=&#34;telephone=no&#34;&amp;gt; telto:でのリンクの貼り方は下記になります。 &amp;lt;a href=&#34;telto:000-0000-0000&#34;&amp;gt;000-0000-0000&amp;lt;/a&amp;gt; 参考サイト jQueryMobileを使ってのスマートフォンサイトの構築メモ at HouseTect, JavaScriptな情報をあなたに</description>
+      <description>Mobile Safariでは数字を電話番号だとみなして、勝手に電話番号のリンクを貼ることがあります。 これを防ぐためには勝手にリンクを貼る機能を無効化し、telto:で明示的にリンクを貼りましょう。 機能を無効化するには、ヘッダに下記のmetaタグを追加します。 1 &amp;lt;meta name=&amp;#34;format-detection&amp;#34; content=&amp;#34;telephone=no&amp;#34;&amp;gt; telto:でのリンクの貼り方は下記になります。 1 &amp;lt;a href=&amp;#34;telto:000-0000-0000&amp;#34;&amp;gt;000-0000-0000&amp;lt;/a&amp;gt; 参考サイト jQueryMobileを使ってのスマートフォンサイトの構築メモ at HouseTect, JavaScriptな情報をあなたに</description>
     </item>
     
     <item>

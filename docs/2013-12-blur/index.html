@@ -12,10 +12,10 @@ ga('send', 'pageview');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=640">
     <title>スクロールしてコンテンツが重なった部分にだけぼかしをかけているように見せる | 5000164 is here</title>
-    <meta name="description" content="きっかけ iOS7って半透明のレイヤーの透過した部分だけぼかしがかかりますよね。 CSSでも同じことができないかなと思って調べました。 結論 現在のCSSではできない模様。 擬似的に実現 CSSにはblurというプロパティがあるのですが、このblurはコンテンツ全体にぼかしをかけます。 重なったレイヤーの透過した部分にだけぼかしをかける、といったことはできません。 なので、このblurをうまく使って一部だけのぼかしを擬似的に実現します。 デモ See the Pen スクロールして重なった部分だけぼかし by SUGAWARA Hiroshi (@5000164) on CodePen 12345678910111213141516171819 &lt;p&gt; このデモは-webkit-のベンダープレフィックスがついているのであしからず。 &lt;/p&gt; &lt;h1&gt; 実装方法 &lt;/h1&gt; &lt;p&gt; まず、HTMLで同じ内容のコンテンツを2つ用意します。&lt;br /&gt; 次に、CSSで2つのコンテンツがきれいにくっつくように指定します。&lt;br /&gt; ポイントはoverflow-x: hidden;とoverflow-y: s">
+    <meta name="description" content="きっかけ iOS7って半透明のレイヤーの透過した部分だけぼかしがかかりますよね。 CSSでも同じことができないかなと思って調べました。 結論 現在のCSSではできない模様。 擬似的に実現 CSSにはblurというプロパティがあるのですが、このblurはコンテンツ全体にぼかしをかけます。 重なったレイヤーの透過した部分にだけぼかしをかける、といったことはできません。 なので、このblurをうまく使って一部だけのぼかしを擬似的に実現します。 デモ 1 See the Pen スクロールして重なった部分だけぼかし by SUGAWARA Hiroshi (@5000164) on CodePen このデモは-webkit-のベンダープレフィックスがついているのであしからず。 実装方法 1 まず、HTMLで同じ内容のコンテンツを2つ用意します。 次に、CSSで2つのコンテンツがきれいにくっつくように指定します。 ポイントはoverflow-x: hidden;とoverflow-y: scroll;です。 そうしたら、同じ内">
     <link href="http://blog.5000164.jp/2013-12-blur/" rel="canonical">
     <meta property="og:title" content="スクロールしてコンテンツが重なった部分にだけぼかしをかけているように見せる | 5000164 is here">
-    <meta property="og:description" content="きっかけ iOS7って半透明のレイヤーの透過した部分だけぼかしがかかりますよね。 CSSでも同じことができないかなと思って調べました。 結論 現在のCSSではできない模様。 擬似的に実現 CSSにはblurというプロパティがあるのですが、このblurはコンテンツ全体にぼかしをかけます。 重なったレイヤーの透過した部分にだけぼかしをかける、といったことはできません。 なので、このblurをうまく使って一部だけのぼかしを擬似的に実現します。 デモ See the Pen スクロールして重なった部分だけぼかし by SUGAWARA Hiroshi (@5000164) on CodePen 12345678910111213141516171819 &lt;p&gt; このデモは-webkit-のベンダープレフィックスがついているのであしからず。 &lt;/p&gt; &lt;h1&gt; 実装方法 &lt;/h1&gt; &lt;p&gt; まず、HTMLで同じ内容のコンテンツを2つ用意します。&lt;br /&gt; 次に、CSSで2つのコンテンツがきれいにくっつくように指定します。&lt;br /&gt; ポイントはoverflow-x: hidden;とoverflow-y: s">
+    <meta property="og:description" content="きっかけ iOS7って半透明のレイヤーの透過した部分だけぼかしがかかりますよね。 CSSでも同じことができないかなと思って調べました。 結論 現在のCSSではできない模様。 擬似的に実現 CSSにはblurというプロパティがあるのですが、このblurはコンテンツ全体にぼかしをかけます。 重なったレイヤーの透過した部分にだけぼかしをかける、といったことはできません。 なので、このblurをうまく使って一部だけのぼかしを擬似的に実現します。 デモ 1 See the Pen スクロールして重なった部分だけぼかし by SUGAWARA Hiroshi (@5000164) on CodePen このデモは-webkit-のベンダープレフィックスがついているのであしからず。 実装方法 1 まず、HTMLで同じ内容のコンテンツを2つ用意します。 次に、CSSで2つのコンテンツがきれいにくっつくように指定します。 ポイントはoverflow-x: hidden;とoverflow-y: scroll;です。 そうしたら、同じ内">
     <meta property="og:url" content="http://blog.5000164.jp/2013-12-blur/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@5000164">
@@ -64,39 +64,40 @@ ga('send', 'pageview');
 <p>なので、このblurをうまく使って一部だけのぼかしを擬似的に実現します。</p>
 
 <h2 id="デモ">デモ</h2>
-
-<div class="codepen">
-  <p data-height="350" data-theme-id="2816" data-slug-hash="CIGyt" data-user="5000164" data-default-tab="result" class='codepen'>
-    See the Pen <a href='http://codepen.io/5000164/pen/CIGyt'>スクロールして重なった部分だけぼかし</a> by SUGAWARA Hiroshi (<a href='http://codepen.io/5000164'>@5000164</a>) on <a href='http://codepen.io'>CodePen</a>
-  </p>
-
-  <p>
-    </div> 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">16</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">17</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">18</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">19</span></pre></td>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></pre></td>
 <td style=";vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;p&gt;
-  このデモは-webkit-のベンダープレフィックスがついているのであしからず。
-&lt;/p&gt;
-
-&lt;h1&gt;
-  実装方法
-&lt;/h1&gt;
-
-&lt;p&gt;
-  まず、HTMLで同じ内容のコンテンツを2つ用意します。&lt;br /&gt; 次に、CSSで2つのコンテンツがきれいにくっつくように指定します。&lt;br /&gt; ポイントはoverflow-x: hidden;とoverflow-y: scroll;です。&lt;br /&gt; そうしたら、同じ内容のコンテンツの片方にblurをかけます。&lt;br /&gt; その次は、2つのコンテンツの表示位置を同じ高さに合わせます。&lt;br /&gt; ここではbeforeの擬似要素を使って高さを合わせています。&lt;br /&gt; 最後に、JavaScriptでスクロールを同期すれば完了です。
-&lt;/p&gt;
-
-&lt;h1&gt;
-  まとめ
-&lt;/h1&gt;
-
-&lt;p&gt;
-  スクロールの制御もJavaScriptでやってしまうと相性がいいのかも知れないと思いました。&lt;br /&gt; とりあえず、半透明のレイヤーの透過した部分にだけぼかしをかけるというCSSのプロパティが欲しいです。
-&lt;/p&gt;</pre></td></tr></table>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">See the Pen スクロールして重なった部分だけぼかし by SUGAWARA Hiroshi (@5000164) on CodePen</pre></td></tr></table>
 </div>
 </div>
+<p>このデモは-webkit-のベンダープレフィックスがついているのであしからず。</p>
+
+<p>実装方法</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">  まず、HTMLで同じ内容のコンテンツを2つ用意します。</pre></td></tr></table>
+</div>
+</div>
+<p>次に、CSSで2つのコンテンツがきれいにくっつくように指定します。<br />
+ ポイントはoverflow-x: hidden;とoverflow-y: scroll;です。<br />
+ そうしたら、同じ内容のコンテンツの片方にblurをかけます。<br />
+ その次は、2つのコンテンツの表示位置を同じ高さに合わせます。<br />
+ ここではbeforeの擬似要素を使って高さを合わせています。<br />
+最後に、JavaScriptでスクロールを同期すれば完了です。</p>
+
+<p>まとめ</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">  スクロールの制御もJavaScriptでやってしまうと相性がいいのかも知れないと思いました。</pre></td></tr></table>
+</div>
+</div>
+<p>とりあえず、半透明のレイヤーの透過した部分にだけぼかしをかけるというCSSのプロパティが欲しいです。</p>
+
     </div>
 </article>
 <footer>

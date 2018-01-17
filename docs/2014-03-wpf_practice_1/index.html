@@ -12,10 +12,10 @@ ga('send', 'pageview');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=640">
     <title>WPFで枠のないウィンドウを作る | 5000164 is here</title>
-    <meta name="description" content="実際に作ったものはこんな感じです ソースコードはこちら。 5000164/wpf-practice-1 実装するにあたって参考にしたサイト こちらの記事を参考にさせていただきました。 WPF で Zune のようなウィンドウを作る | grabacr.nét この記事に沿っていったらできました。 これを追記するだけ。 &lt;WindowChrome.WindowChrome&gt; &lt;WindowChrome CaptionHeight=&#34;23&#34; ResizeBorderThickness=&#34;100&#34; /&gt; &lt;/WindowChrome.WindowChrome&gt; 枠なしには出来たけどウィンドウの影が気になる ウィンドウの枠がなくなってかっこよくなったのに、影が主張し過ぎで気になります。 この影も消したい。 影を消す方法を調べていたら、先ほどと同じブログのこちらの記事にたどり着きました。 WPF で Visual Studio 2012 のような光るウィンドウを作る | grabacr.nét なるほど、よくわからん。 WPF初心者の私には無理だと判断したので、この記事の冒頭で紹介されていた簡易版で実装します。 影をいい感じにつける &lt;Window x:Class=&#34;練習1.MainWindow&#34; xmlns=&#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&#34; xmlns:x=&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34; Title=&#34;MainWindow&#34; Width=&#34;700&#34; Height=&#34;700&#34; WindowStyle=&#34;None&#34; AllowsTransparency=&#34;True&#34; WindowStartupLocation=&#34;CenterScreen&#34; Background=&#34;Transparent&#34;&gt; ～中略～ &lt;Border BorderBrush=&#34;#222222&#34; Background=&#34;#222222&#34; BorderThickness=&#34;1&#34; Margin=&#34;100&#34;&gt; &lt;Border.Effect&gt; &lt;DropShadowEffect ShadowDepth=&#34;0&#34; BlurRadius=&#34;100&#34; Color=&#34;#000000&#34; Opacity=&#34;0.7&#34; /&gt; &lt;/Border.Effect&gt; ～中略～ &lt;/Border&gt; &lt;/Window&gt; Windowに">
+    <meta name="description" content="実際に作ったものはこんな感じです ソースコードはこちら。 5000164/wpf-practice-1 実装するにあたって参考にしたサイト こちらの記事を参考にさせていただきました。 WPF で Zune のようなウィンドウを作る | grabacr.nét この記事に沿っていったらできました。 これを追記するだけ。 123 &lt;WindowChrome.WindowChrome&gt; &lt;WindowChrome CaptionHeight=&#34;23&#34; ResizeBorderThickness=&#34;100&#34; /&gt; &lt;/WindowChrome.WindowChrome&gt; 枠なしには出来たけどウィンドウの影が気になる ウィンドウの枠がなくなってかっこよくなったのに、影が主張し過ぎで気になります。 この影も消したい。 影を消す方法を調べていたら、先ほどと同じブログのこちらの記事にたどり着きました。 WPF で Visual Studio 2012 のような光るウィンドウを作る | grabacr.nét なるほど、よくわからん。 WPF初心者の私には無理だと判断したので、この記事の冒頭で紹介されていた簡易版で実装します。 影をいい感じにつける 123456789101112131415161718 &lt;Window x:Class=&#34;練習1.MainWindow&#34; xmlns=&#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&#34; xmlns:x=&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34; Title=&#34;MainWindow&#34; Width=&#34;700&#34; Height=&#34;700&#34; WindowStyle=&#34;None&#34; AllowsTransparency=&#34;True&#34; WindowStartupLocation=&#34;CenterScreen&#34; Background=&#34;Transparent&#34;&gt; ～中略～ &lt;Border BorderBrush=&#34;#222222&#34; Background=&#34;#222222&#34; BorderThickness=&#34;1&#34; Margin=&#34;100&#34;&gt; &lt;Border.Effect&gt; &lt;DropShadowEffect ShadowDepth=&#34;0&#34; BlurRadius=&#34;100&#34; Color=&#34;#000000&#34; Opacity=&#34;0.7&#34; /&gt; &lt;/Border.Effect&gt; ～中略">
     <link href="http://blog.5000164.jp/2014-03-wpf_practice_1/" rel="canonical">
     <meta property="og:title" content="WPFで枠のないウィンドウを作る | 5000164 is here">
-    <meta property="og:description" content="実際に作ったものはこんな感じです ソースコードはこちら。 5000164/wpf-practice-1 実装するにあたって参考にしたサイト こちらの記事を参考にさせていただきました。 WPF で Zune のようなウィンドウを作る | grabacr.nét この記事に沿っていったらできました。 これを追記するだけ。 &lt;WindowChrome.WindowChrome&gt; &lt;WindowChrome CaptionHeight=&#34;23&#34; ResizeBorderThickness=&#34;100&#34; /&gt; &lt;/WindowChrome.WindowChrome&gt; 枠なしには出来たけどウィンドウの影が気になる ウィンドウの枠がなくなってかっこよくなったのに、影が主張し過ぎで気になります。 この影も消したい。 影を消す方法を調べていたら、先ほどと同じブログのこちらの記事にたどり着きました。 WPF で Visual Studio 2012 のような光るウィンドウを作る | grabacr.nét なるほど、よくわからん。 WPF初心者の私には無理だと判断したので、この記事の冒頭で紹介されていた簡易版で実装します。 影をいい感じにつける &lt;Window x:Class=&#34;練習1.MainWindow&#34; xmlns=&#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&#34; xmlns:x=&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34; Title=&#34;MainWindow&#34; Width=&#34;700&#34; Height=&#34;700&#34; WindowStyle=&#34;None&#34; AllowsTransparency=&#34;True&#34; WindowStartupLocation=&#34;CenterScreen&#34; Background=&#34;Transparent&#34;&gt; ～中略～ &lt;Border BorderBrush=&#34;#222222&#34; Background=&#34;#222222&#34; BorderThickness=&#34;1&#34; Margin=&#34;100&#34;&gt; &lt;Border.Effect&gt; &lt;DropShadowEffect ShadowDepth=&#34;0&#34; BlurRadius=&#34;100&#34; Color=&#34;#000000&#34; Opacity=&#34;0.7&#34; /&gt; &lt;/Border.Effect&gt; ～中略～ &lt;/Border&gt; &lt;/Window&gt; Windowに">
+    <meta property="og:description" content="実際に作ったものはこんな感じです ソースコードはこちら。 5000164/wpf-practice-1 実装するにあたって参考にしたサイト こちらの記事を参考にさせていただきました。 WPF で Zune のようなウィンドウを作る | grabacr.nét この記事に沿っていったらできました。 これを追記するだけ。 123 &lt;WindowChrome.WindowChrome&gt; &lt;WindowChrome CaptionHeight=&#34;23&#34; ResizeBorderThickness=&#34;100&#34; /&gt; &lt;/WindowChrome.WindowChrome&gt; 枠なしには出来たけどウィンドウの影が気になる ウィンドウの枠がなくなってかっこよくなったのに、影が主張し過ぎで気になります。 この影も消したい。 影を消す方法を調べていたら、先ほどと同じブログのこちらの記事にたどり着きました。 WPF で Visual Studio 2012 のような光るウィンドウを作る | grabacr.nét なるほど、よくわからん。 WPF初心者の私には無理だと判断したので、この記事の冒頭で紹介されていた簡易版で実装します。 影をいい感じにつける 123456789101112131415161718 &lt;Window x:Class=&#34;練習1.MainWindow&#34; xmlns=&#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&#34; xmlns:x=&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34; Title=&#34;MainWindow&#34; Width=&#34;700&#34; Height=&#34;700&#34; WindowStyle=&#34;None&#34; AllowsTransparency=&#34;True&#34; WindowStartupLocation=&#34;CenterScreen&#34; Background=&#34;Transparent&#34;&gt; ～中略～ &lt;Border BorderBrush=&#34;#222222&#34; Background=&#34;#222222&#34; BorderThickness=&#34;1&#34; Margin=&#34;100&#34;&gt; &lt;Border.Effect&gt; &lt;DropShadowEffect ShadowDepth=&#34;0&#34; BlurRadius=&#34;100&#34; Color=&#34;#000000&#34; Opacity=&#34;0.7&#34; /&gt; &lt;/Border.Effect&gt; ～中略">
     <meta property="og:url" content="http://blog.5000164.jp/2014-03-wpf_practice_1/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@5000164">
@@ -69,12 +69,15 @@ ga('send', 'pageview');
 <p>この記事に沿っていったらできました。</p>
 
 <p>これを追記するだけ。</p>
-
-<pre class="brush: xml; title: ; notranslate" title="">&lt;WindowChrome.WindowChrome&gt;
-        &lt;WindowChrome CaptionHeight="23" ResizeBorderThickness="100" /&gt;
-    &lt;/WindowChrome.WindowChrome&gt;
-</pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;WindowChrome.WindowChrome&gt;
+        &lt;WindowChrome CaptionHeight=&#34;23&#34; ResizeBorderThickness=&#34;100&#34; /&gt;
+    &lt;/WindowChrome.WindowChrome&gt;</pre></td></tr></table>
+</div>
+</div>
 <h2 id="枠なしには出来たけどウィンドウの影が気になる">枠なしには出来たけどウィンドウの影が気になる</h2>
 
 <p>ウィンドウの枠がなくなってかっこよくなったのに、影が主張し過ぎで気になります。</p>
@@ -90,27 +93,30 @@ ga('send', 'pageview');
 <p>WPF初心者の私には無理だと判断したので、この記事の冒頭で紹介されていた簡易版で実装します。</p>
 
 <h2 id="影をいい感じにつける">影をいい感じにつける</h2>
-
-<pre class="brush: xml; title: ; notranslate" title="">&lt;Window x:Class="練習1.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow"
-        Width="700"
-        Height="700"
-        WindowStyle="None"
-        AllowsTransparency="True"
-        WindowStartupLocation="CenterScreen"
-        Background="Transparent"&gt;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">16</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">17</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">18</span></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;Window x:Class=&#34;練習1.MainWindow&#34;
+        xmlns=&#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&#34;
+        xmlns:x=&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34;
+        Title=&#34;MainWindow&#34;
+        Width=&#34;700&#34;
+        Height=&#34;700&#34;
+        WindowStyle=&#34;None&#34;
+        AllowsTransparency=&#34;True&#34;
+        WindowStartupLocation=&#34;CenterScreen&#34;
+        Background=&#34;Transparent&#34;&gt;
 ～中略～
-    &lt;Border BorderBrush="#222222" Background="#222222" BorderThickness="1" Margin="100"&gt;
+    &lt;Border BorderBrush=&#34;#222222&#34; Background=&#34;#222222&#34; BorderThickness=&#34;1&#34; Margin=&#34;100&#34;&gt;
         &lt;Border.Effect&gt;
-            &lt;DropShadowEffect ShadowDepth="0" BlurRadius="100" Color="#000000" Opacity="0.7" /&gt;
+            &lt;DropShadowEffect ShadowDepth=&#34;0&#34; BlurRadius=&#34;100&#34; Color=&#34;#000000&#34; Opacity=&#34;0.7&#34; /&gt;
         &lt;/Border.Effect&gt;
 ～中略～
     &lt;/Border&gt;
-&lt;/Window&gt;
-</pre>
-
+&lt;/Window&gt;</pre></td></tr></table>
+</div>
+</div>
 <p>WindowにWindowStyle=&ldquo;None&rdquo;、AllowsTransparency=&ldquo;True&rdquo;、Background=&ldquo;Transparent&rdquo;を指定することで、枠を消して透明にしています。</p>
 
 <p>アプリが描画できる範囲がWindowの700&#215;700の内側のみで、その内側にさらに影とウィンドウを描画する、という認識です。</p>

@@ -215,7 +215,7 @@
       <pubDate>Tue, 01 Apr 2014 02:03:09 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-03-dxlib_practice_2/</guid>
-      <description>実行結果 これが。 こうなって。 こうなってって。 最終的にはこうなります。 正直こんなに長くする必要はなかった。 ソースコードはこちら。 5000164/dxlib-practice-2 ゲームなんだから入力できるようにしなくては {#ゲームなんだから入力できるようにしなくては} 前回はDXライブラリで文字を表示するだけでしたが、こんどは入力を受け付けるようにします。 とりあえずエンターキーを押したら単純に表示するだけ。 表示するテキストをファイルから読み込むようにした {#表示するテキストをファイルから読み込むようにした} ついでに、表示するテキストを外部から読み込んでいます。 最初はUTF-8でテキストを書いていたら、文字化けをしてうまく読み込めません。 DXライブラリはShift_JISとCRLFで書かれているので、テキストもShift_JISとCRLFで書いたらうまくいきました。 プロジェクト全体の設定も、DXライブラリに合わせてShift_JISとCRLF</description>
+      <description>実行結果 これが。 こうなって。 こうなってって。 最終的にはこうなります。 正直こんなに長くする必要はなかった。 ソースコードはこちら。 5000164/dxlib-practice-2 ゲームなんだから入力できるようにしなくては 前回 はDXライブラリで文字を表示するだけでしたが、こんどは入力を受け付けるようにします。 とりあえずエンターキーを押したら単純に表示するだけ。 表示するテキストをファイルから読み込むようにした ついでに、表示するテキストを外部から読み込んでいます。 最初はUTF-8でテキストを書いていたら、文字化けをしてうまく読み込めません。 DXライブラリはShift_JISとCRLFで書かれているので、テキストもShift_JISとCRLFで書いたらうまくいきました。 プロジェクト全体の設定も、DXライブラリに合わせてShift_JISとCRLFで統一するのがいいと思います。 個人的にはUTF-8のLFが安心するのですが、DXライブラリを使っている</description>
     </item>
     
     <item>
@@ -233,7 +233,7 @@
       <pubDate>Sun, 16 Mar 2014 03:20:28 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-03-dxlib_practice_1/</guid>
-      <description>早速見ていただきましょう ソースコードはこちら。 5000164/dxlib-practice-1 DXライブラリで1番最初に確認したのがフォントの表示 ゲームのようなものを作りたいなと考えていて、知人に教えてもらったDXライブラリを使うことにしました。 ＤＸライブラリ置き場 ＨＯＭＥ その際に、1番初めに確認したことがフォントの表示でした。 フォントの美しさはモチベーションに直結します。 結果はごらんの通り 美しいフォントを表示させることができました。 ちなみに比較対象として、デフォルト設定でのフォントを下部に表示しています。 フォントをきれいに表示するには1行追加するだけ ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8); この文を追加するだけです。 この文を追加することでフォントにアンチエイリアスをかけてくれます。 ＤＸライブラリ置き場 リファレンスページ よりうつくしい表示のために若干の影をつけています アンチエイリアスをかけるだけで十分きれいに表示されます。 ですが、ここではよりフォントを際立たせるために、若干</description>
+      <description>早速見ていただきましょう ソースコードはこちら。 5000164/dxlib-practice-1 DXライブラリで1番最初に確認したのがフォントの表示 ゲームのようなものを作りたいなと考えていて、知人に教えてもらったDXライブラリを使うことにしました。 ＤＸライブラリ置き場 ＨＯＭＥ その際に、1番初めに確認したことがフォントの表示でした。 フォントの美しさはモチベーションに直結します。 結果はごらんの通り 美しいフォントを表示させることができました。 ちなみに比較対象として、デフォルト設定でのフォントを下部に表示しています。 フォントをきれいに表示するには1行追加するだけ 1 ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8); この文を追加するだけです。 この文を追加することでフォントにアンチエイリアスをかけてくれます。 ＤＸライブラリ置き場 リファレンスページ よりうつくしい表示のために若干の影をつけています アンチエイリアスをかけるだけで十分きれいに表示されます。 ですが、ここではよりフォントを際立たせるために、若</description>
     </item>
     
     <item>
@@ -242,7 +242,7 @@
       <pubDate>Thu, 13 Mar 2014 04:21:42 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-03-wpf_practice_2/</guid>
-      <description>実際に作ったものはこんな感じです 方向キーの入力した方向へで赤い点が動きます。 ソースコードはこちら。 5000164/wpf-practice-2 画面に動かすものを表示する とりあえずなんでもよかったので、Rectangleタグで四角形を表示します。 そして、位置を指定するためにCanvasタグで囲みます。 &amp;lt;Canvas&amp;gt; &amp;lt;Rectangle Name=&#34;pointer&#34; Width=&#34;10&#34; Height=&#34;10&#34; Fill=&#34;Red&#34; Canvas.Left=&#34;0&#34; Canvas.Top=&#34;0&#34; /&amp;gt; &amp;lt;/Canvas&amp;gt; これでXAML側はほぼ完成。 あとは動かすだけ。 キーボードの入力を取得します WindowにPreviewKeyDownをつけます。 これでキーが押されたらイベントが発生します。 WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&amp;#8217;s C# Dev Notes C#側で座標を取得するために まずは四角にNameをつけます。 これでC#側で変数として扱えます。 XAML とプログラムコード（WPF） (.NET Framework) 四角の現在位置を取得する C#側で四角につけた名前から座標を取得します。 // 現在地を取得 Double leftPosition = Canvas.GetLeft(this.pointer); Double topPosition =</description>
+      <description>実際に作ったものはこんな感じです 方向キーの入力した方向へで赤い点が動きます。 ソースコードはこちら。 5000164/wpf-practice-2 画面に動かすものを表示する とりあえずなんでもよかったので、Rectangleタグで四角形を表示します。 そして、位置を指定するためにCanvasタグで囲みます。 123 &amp;lt;Canvas&amp;gt; &amp;lt;Rectangle Name=&amp;#34;pointer&amp;#34; Width=&amp;#34;10&amp;#34; Height=&amp;#34;10&amp;#34; Fill=&amp;#34;Red&amp;#34; Canvas.Left=&amp;#34;0&amp;#34; Canvas.Top=&amp;#34;0&amp;#34; /&amp;gt; &amp;lt;/Canvas&amp;gt; これでXAML側はほぼ完成。 あとは動かすだけ。 キーボードの入力を取得します WindowにPreviewKeyDownをつけます。 これでキーが押されたらイベントが発生します。 WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&amp;#8217;s C# Dev Notes C#側で座標を取得するために まずは四角にNameをつけます。 これでC#側で変数として扱えます。 XAML とプログラムコード（WPF） (.NET Framework) 四角の現在位置を取得する C#側で四角につけた名前から座標を取得します。 123 // 現在地を取得 Double leftPosition = Canvas.GetLeft(this.pointer); Double</description>
     </item>
     
     <item>
@@ -251,7 +251,7 @@
       <pubDate>Tue, 11 Mar 2014 23:17:38 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-03-wpf_practice_1/</guid>
-      <description>実際に作ったものはこんな感じです ソースコードはこちら。 5000164/wpf-practice-1 実装するにあたって参考にしたサイト こちらの記事を参考にさせていただきました。 WPF で Zune のようなウィンドウを作る | grabacr.nét この記事に沿っていったらできました。 これを追記するだけ。 &amp;lt;WindowChrome.WindowChrome&amp;gt; &amp;lt;WindowChrome CaptionHeight=&#34;23&#34; ResizeBorderThickness=&#34;100&#34; /&amp;gt; &amp;lt;/WindowChrome.WindowChrome&amp;gt; 枠なしには出来たけどウィンドウの影が気になる ウィンドウの枠がなくなってかっこよくなったのに、影が主張し過ぎで気になります。 この影も消したい。 影を消す方法を調べていたら、先ほどと同じブログのこちらの記事にたどり着きました。 WPF で Visual Studio 2012 のような光るウィンドウを作る | grabacr.nét なるほど、よくわからん。 WPF初心者の私には無理だと判断したので、この記事の冒頭で紹介されていた簡易版で実装します。 影をいい感じにつける &amp;lt;Window x:Class=&#34;練習1.MainWindow&#34; xmlns=&#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&#34; xmlns:x=&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34; Title=&#34;MainWindow&#34; Width=&#34;700&#34; Height=&#34;700&#34; WindowStyle=&#34;None&#34; AllowsTransparency=&#34;True&#34; WindowStartupLocation=&#34;CenterScreen&#34; Background=&#34;Transparent&#34;&amp;gt; ～中略～ &amp;lt;Border BorderBrush=&#34;#222222&#34; Background=&#34;#222222&#34; BorderThickness=&#34;1&#34; Margin=&#34;100&#34;&amp;gt; &amp;lt;Border.Effect&amp;gt; &amp;lt;DropShadowEffect ShadowDepth=&#34;0&#34; BlurRadius=&#34;100&#34; Color=&#34;#000000&#34; Opacity=&#34;0.7&#34; /&amp;gt; &amp;lt;/Border.Effect&amp;gt; ～中略～ &amp;lt;/Border&amp;gt; &amp;lt;/Window&amp;gt; Windowに</description>
+      <description>実際に作ったものはこんな感じです ソースコードはこちら。 5000164/wpf-practice-1 実装するにあたって参考にしたサイト こちらの記事を参考にさせていただきました。 WPF で Zune のようなウィンドウを作る | grabacr.nét この記事に沿っていったらできました。 これを追記するだけ。 123 &amp;lt;WindowChrome.WindowChrome&amp;gt; &amp;lt;WindowChrome CaptionHeight=&amp;#34;23&amp;#34; ResizeBorderThickness=&amp;#34;100&amp;#34; /&amp;gt; &amp;lt;/WindowChrome.WindowChrome&amp;gt; 枠なしには出来たけどウィンドウの影が気になる ウィンドウの枠がなくなってかっこよくなったのに、影が主張し過ぎで気になります。 この影も消したい。 影を消す方法を調べていたら、先ほどと同じブログのこちらの記事にたどり着きました。 WPF で Visual Studio 2012 のような光るウィンドウを作る | grabacr.nét なるほど、よくわからん。 WPF初心者の私には無理だと判断したので、この記事の冒頭で紹介されていた簡易版で実装します。 影をいい感じにつける 123456789101112131415161718 &amp;lt;Window x:Class=&amp;#34;練習1.MainWindow&amp;#34; xmlns=&amp;#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&amp;#34; xmlns:x=&amp;#34;http://schemas.microsoft.com/winfx/2006/xaml&amp;#34; Title=&amp;#34;MainWindow&amp;#34; Width=&amp;#34;700&amp;#34; Height=&amp;#34;700&amp;#34; WindowStyle=&amp;#34;None&amp;#34; AllowsTransparency=&amp;#34;True&amp;#34; WindowStartupLocation=&amp;#34;CenterScreen&amp;#34; Background=&amp;#34;Transparent&amp;#34;&amp;gt; ～中略～ &amp;lt;Border BorderBrush=&amp;#34;#222222&amp;#34; Background=&amp;#34;#222222&amp;#34; BorderThickness=&amp;#34;1&amp;#34; Margin=&amp;#34;100&amp;#34;&amp;gt; &amp;lt;Border.Effect&amp;gt; &amp;lt;DropShadowEffect ShadowDepth=&amp;#34;0&amp;#34; BlurRadius=&amp;#34;100&amp;#34; Color=&amp;#34;#000000&amp;#34; Opacity=&amp;#34;0.7&amp;#34; /&amp;gt; &amp;lt;/Border.Effect&amp;gt; ～中略</description>
     </item>
     
     <item>
@@ -296,7 +296,7 @@
       <pubDate>Wed, 22 Jan 2014 17:10:00 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-01-hover/</guid>
-      <description>リンクとかをホバーしたら背景色を変えたりしますよね リンクをホバーしたら文字色と背景色が変わるという実装はよくあります。 このコンテンツはクリッカブルですよ、と知らせるためですね。 でもリンクの中に画像が含まれている時は画像だけ変わらなかったりします。 これはちょっと違和感です。 そこですべてに覆いかぶさっているように見せます。 まずはデモをどうぞ See the Pen hoverした要素の上に色をかぶせる by SUGAWARA Hiroshi (@5000164) on CodePen. 123456789 &amp;lt;h1&amp;gt; 実装の解説です &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; 非常に簡単です。&amp;lt;br /&amp;gt; 今までhoverの擬似クラスにしていた部分をhoverの擬似クラスのafter擬似要素にします。&amp;lt;br /&amp;gt; 文章だとちょっとわかりづらいのでコードで書くと、 &amp;lt;/p&amp;gt; &amp;lt;pre class=&amp;#34;brush: css; title: ; notranslate&amp;#34; title=&amp;#34;&amp;#34;&amp;gt; a:hover { ・・・ } 12345 &amp;lt;p&amp;gt; これを &amp;lt;/p&amp;gt; &amp;lt;pre class=&amp;#34;brush: css; title: ; notranslate&amp;#34; title=&amp;#34;&amp;#34;&amp;gt; a:hover::after { ・・・ } 1234567891011 &amp;lt;p&amp;gt; こうします。&amp;lt;br /&amp;gt; あとはちょっと装飾してやれば簡単に実現できます。 &amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt; まとめ &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; hoverした時に画像にハイライトがつい</description>
+      <description>リンクとかをホバーしたら背景色を変えたりしますよね リンクをホバーしたら文字色と背景色が変わるという実装はよくあります。 このコンテンツはクリッカブルですよ、と知らせるためですね。 でもリンクの中に画像が含まれている時は画像だけ変わらなかったりします。 これはちょっと違和感です。 そこですべてに覆いかぶさっているように見せます。 まずはデモをどうぞ 1 See the Pen hoverした要素の上に色をかぶせる by SUGAWARA Hiroshi (@5000164) on CodePen. 実装の解説です 1 非常に簡単です。 今までhoverの擬似クラスにしていた部分をhoverの擬似クラスのafter擬似要素にします。 文章だとちょっとわかりづらいのでコードで書くと、 123 a:hover { ・・・ } これを 123 a:hover::after { ・・・ } 1 こうします。 あとはちょっと装飾してやれば簡単に実現できます。 まとめ 1 hoverした時に画像にハイライトがついていないのが個人的にすごく気になっていたので、簡単に実装できてよかったです。 ちょっと応</description>
     </item>
     
     <item>
@@ -305,7 +305,7 @@
       <pubDate>Tue, 21 Jan 2014 13:15:09 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-01-portfolio/</guid>
-      <description>就職のためにポートフォリオサイトを作りました Webデザイナーになりたいなら就職活動をするにあたってポートフォリオサイトは必須という情報を得ましたので作りました。 ポートフォリオサイトはこちらです。 正直よくわかりませんでした とりあえず作ったは作ったんですが、内容をどうすればいいのかさっぱりわかりませんでした。 それは私に実績がないからですね。 実績を紹介して自分のスキルを証明するためにポートフォリオサイトを作ると思うのですが、実績がないとなにを書けばいいのかわかりません。 だから「すごいぽーとふぉりおさいと」を作ればアピールできるのかなと考えていました。 「すごいぽーとふぉりおさいと」は簡単にはできない 簡単にはできないことばっかりやろうとしてると全然前に進めません。 ポートフォリオサイトを作るためにかなり時間をかけましたが、全然完成の目処が立ちませんでした。 そこでポートフォリオサイトに時間をかけるならで</description>
+      <description>就職のためにポートフォリオサイトを作りました Webデザイナーになりたいなら就職活動をするにあたってポートフォリオサイトは必須という情報を得ましたので作りました。 正直よくわかりませんでした とりあえず作ったは作ったんですが、内容をどうすればいいのかさっぱりわかりませんでした。 それは私に実績がないからですね。 実績を紹介して自分のスキルを証明するためにポートフォリオサイトを作ると思うのですが、実績がないとなにを書けばいいのかわかりません。 だから「すごいぽーとふぉりおさいと」を作ればアピールできるのかなと考えていました。 「すごいぽーとふぉりおさいと」は簡単にはできない 簡単にはできないことばっかりやろうとしてると全然前に進めません。 ポートフォリオサイトを作るためにかなり時間をかけましたが、全然完成の目処が立ちませんでした。 そこでポートフォリオサイトに時間をかけるならできることからやろうと思い、とりあえ</description>
     </item>
     
     <item>

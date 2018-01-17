@@ -12,10 +12,10 @@ ga('send', 'pageview');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=640">
     <title>iOSのブラウザで数字のみのキーボードを出す | 5000164 is here</title>
-    <meta name="description" content="iOSのブラウザにおいて数字のみのキーボードを出したいときがあります。 しかし、input type=&#8221;number&#8221;ってやっても数字以外のキーがでてきてしまう。 そうだ、input type=&#8221;tel&#8221;ってやれば数字のみになる、しかしセマンティックではない。 そこで、input type=&#8221;text&#8221; pattern=&#8221;\d*&#8221; HTML5からは入力文字をpatternで正規表現を利用して制御できるようになりました。 そこで入力可能文字を数字のみにするとiOSで数字のみのキーボードを出してくれるというものです。 賢いですね。 というわけで、実演 &lt;input type=&quot;number&quot;&gt; &lt;input type=&quot;tel&quot;&gt; &lt;input type=&quot;text&quot; pattern=&quot;\d*&quot;&gt; 以下、参考 少しのコードで実装可能な15のスマートフォンサイト用小技集 | Webクリエイターボックス http://www.webcreatorbox.com/tech/smartphone-snippets/ input 要素 &#8211; フォーム &#8211; HTML要素 &#8211; HTML5 タグリファレンス &#8211; HTML5.JP http://www.html5.jp/tag/elements/input.html JavaScript講座 15章 JavaScriptでの正規表現 http://www.site-cooler.com/kwl/javascript/15.htm">
+    <meta name="description" content="iOSのブラウザにおいて数字のみのキーボードを出したいときがあります。 しかし、input type=&#8221;number&#8221;ってやっても数字以外のキーがでてきてしまう。 そうだ、input type=&#8221;tel&#8221;ってやれば数字のみになる、しかしセマンティックではない。 そこで、input type=&#8221;text&#8221; pattern=&#8221;\d*&#8221; HTML5からは入力文字をpatternで正規表現を利用して制御できるようになりました。 そこで入力可能文字を数字のみにするとiOSで数字のみのキーボードを出してくれるというものです。 賢いですね。 というわけで、実演 1 &lt;input type=&#34;number&#34;&gt; 1 &lt;input type=&#34;tel&#34;&gt; 1 &lt;input type=&#34;text&#34; pattern=&#34;\d*&#34;&gt; 以下、参考 少しのコードで実装可能な15のスマートフォンサイト用小技集 | Webクリエイターボックス input 要素 &#8211; フォーム &#8211; HTML要素 &#8211; HTML5 タグリファレンス &#8211; HTML5.JP JavaScript講座 15章 JavaScriptでの正規表現">
     <link href="http://blog.5000164.jp/2012-10-input_type/" rel="canonical">
     <meta property="og:title" content="iOSのブラウザで数字のみのキーボードを出す | 5000164 is here">
-    <meta property="og:description" content="iOSのブラウザにおいて数字のみのキーボードを出したいときがあります。 しかし、input type=&#8221;number&#8221;ってやっても数字以外のキーがでてきてしまう。 そうだ、input type=&#8221;tel&#8221;ってやれば数字のみになる、しかしセマンティックではない。 そこで、input type=&#8221;text&#8221; pattern=&#8221;\d*&#8221; HTML5からは入力文字をpatternで正規表現を利用して制御できるようになりました。 そこで入力可能文字を数字のみにするとiOSで数字のみのキーボードを出してくれるというものです。 賢いですね。 というわけで、実演 &lt;input type=&quot;number&quot;&gt; &lt;input type=&quot;tel&quot;&gt; &lt;input type=&quot;text&quot; pattern=&quot;\d*&quot;&gt; 以下、参考 少しのコードで実装可能な15のスマートフォンサイト用小技集 | Webクリエイターボックス http://www.webcreatorbox.com/tech/smartphone-snippets/ input 要素 &#8211; フォーム &#8211; HTML要素 &#8211; HTML5 タグリファレンス &#8211; HTML5.JP http://www.html5.jp/tag/elements/input.html JavaScript講座 15章 JavaScriptでの正規表現 http://www.site-cooler.com/kwl/javascript/15.htm">
+    <meta property="og:description" content="iOSのブラウザにおいて数字のみのキーボードを出したいときがあります。 しかし、input type=&#8221;number&#8221;ってやっても数字以外のキーがでてきてしまう。 そうだ、input type=&#8221;tel&#8221;ってやれば数字のみになる、しかしセマンティックではない。 そこで、input type=&#8221;text&#8221; pattern=&#8221;\d*&#8221; HTML5からは入力文字をpatternで正規表現を利用して制御できるようになりました。 そこで入力可能文字を数字のみにするとiOSで数字のみのキーボードを出してくれるというものです。 賢いですね。 というわけで、実演 1 &lt;input type=&#34;number&#34;&gt; 1 &lt;input type=&#34;tel&#34;&gt; 1 &lt;input type=&#34;text&#34; pattern=&#34;\d*&#34;&gt; 以下、参考 少しのコードで実装可能な15のスマートフォンサイト用小技集 | Webクリエイターボックス input 要素 &#8211; フォーム &#8211; HTML要素 &#8211; HTML5 タグリファレンス &#8211; HTML5.JP JavaScript講座 15章 JavaScriptでの正規表現">
     <meta property="og:url" content="http://blog.5000164.jp/2012-10-input_type/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@5000164">
@@ -51,9 +51,13 @@ ga('send', 'pageview');
 <p>賢いですね。</p>
 
 <h2 id="というわけで-実演">というわけで、実演</h2>
-
-<pre class="brush: xml; gutter: false; title: ; notranslate" title="">&lt;input type=&quot;number&quot;&gt;</pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;number&#34;</span>&gt;</code></pre></td></tr></table>
+</div>
+</div>
 
 <figure >
     
@@ -62,9 +66,13 @@ ga('send', 'pageview');
     
 </figure>
 
-
-<pre class="brush: xml; gutter: false; title: ; notranslate" title="">&lt;input type=&quot;tel&quot;&gt;</pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tel&#34;</span>&gt;</code></pre></td></tr></table>
+</div>
+</div>
 
 <figure >
     
@@ -73,9 +81,13 @@ ga('send', 'pageview');
     
 </figure>
 
-
-<pre class="brush: xml; gutter: false; title: ; notranslate" title="">&lt;input type=&quot;text&quot; pattern=&quot;\d*&quot;&gt;</pre>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">pattern</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;\d*&#34;</span>&gt;</code></pre></td></tr></table>
+</div>
+</div>
 
 <figure >
     
@@ -87,17 +99,11 @@ ga('send', 'pageview');
 
 <h2 id="以下-参考">以下、参考</h2>
 
-<p>少しのコードで実装可能な15のスマートフォンサイト用小技集 | Webクリエイターボックス</p>
+<p><a href="http://www.webcreatorbox.com/tech/smartphone-snippets/">少しのコードで実装可能な15のスマートフォンサイト用小技集 | Webクリエイターボックス</a></p>
 
-<p><a href="http://www.webcreatorbox.com/tech/smartphone-snippets/">http://www.webcreatorbox.com/tech/smartphone-snippets/</a></p>
+<p><a href="http://www.html5.jp/tag/elements/input.html">input 要素 &#8211; フォーム &#8211; HTML要素 &#8211; HTML5 タグリファレンス &#8211; HTML5.JP</a></p>
 
-<p>input 要素 &#8211; フォーム &#8211; HTML要素 &#8211; HTML5 タグリファレンス &#8211; HTML5.JP</p>
-
-<p><a href="http://www.html5.jp/tag/elements/input.html">http://www.html5.jp/tag/elements/input.html</a></p>
-
-<p>JavaScript講座　15章　JavaScriptでの正規表現</p>
-
-<p><a href="http://www.site-cooler.com/kwl/javascript/15.htm">http://www.site-cooler.com/kwl/javascript/15.htm</a></p>
+<p><a href="http://www.site-cooler.com/kwl/javascript/15.htm">JavaScript講座　15章　JavaScriptでの正規表現</a></p>
 
     </div>
 </article>

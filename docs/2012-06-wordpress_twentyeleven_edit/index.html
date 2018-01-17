@@ -12,10 +12,10 @@ ga('send', 'pageview');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=640">
     <title>WordPressのテーマ「TwentyEleven」でいろいろ消したり幅広げたり色変えたりした | 5000164 is here</title>
-    <meta name="description" content="デザインをいろいろと変更しました。 作業の途中で元ファイルがわからなくなりテーマをまるごと再インストールしたりもしました。 設定情報とかも一緒に消しちゃって記事が見れなくなった時は焦った。 でもなんとか元に戻りました。 以下は変更内容です。 あんまり詳しく調べずに、それっぽいファイルをそれっぽく修正したらそれっぽい動きになっただけなので、参考にする時は注意してください。 まず、出したくないものを消します。 メニューバー（ナビゲーションバー）と検索ボックスを消します。 今のところ使用していないので。 header.phpの114行目以降 &amp;lt;?php // Has the text been hidden? if ( &#39;blank&#39; == get_header_textcolor() ) : ?&amp;gt; &amp;lt;div&amp;gt; &amp;lt;?php get_search_form(); ?&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;?php else : ?&amp;gt; &amp;lt;?php get_search_form(); ?&amp;gt; &amp;lt;?php endif; ?&amp;gt; &amp;lt;nav id=&amp;quot;access&amp;quot; role=&amp;quot;navigation&amp;quot;&amp;gt; &amp;lt;h3&amp;gt;&amp;lt;?php _e( &#39;Main menu&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;lt;/h3&amp;gt; &amp;lt;?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?&amp;gt; &amp;lt;div&amp;gt;&amp;lt;a href=&amp;quot;#content&amp;quot; title=&amp;quot;&amp;lt;?php esc_attr_e( &#39;Skip to primary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;quot;&amp;gt;&amp;lt;?php _e( &#39;Skip to primary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;a href=&amp;quot;#secondary&amp;quot; title=&amp;quot;&amp;lt;?php esc_attr_e( &#39;Skip to secondary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;quot;&amp;gt;&amp;lt;?php _e( &#39;Skip to secondary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;?php /* Our navigation menu. If one isn&#39;t filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn&#39;t assigned, the menu with the lowest ID is used. */">
+    <meta name="description" content="デザインをいろいろと変更しました。 作業の途中で元ファイルがわからなくなりテーマをまるごと再インストールしたりもしました。 設定情報とかも一緒に消しちゃって記事が見れなくなった時は焦った。 でもなんとか元に戻りました。 以下は変更内容です。 あんまり詳しく調べずに、それっぽいファイルをそれっぽく修正したらそれっぽい動きになっただけなので、参考にする時は注意してください。 まず、出したくないものを消します。 メニューバー（ナビゲーションバー）と検索ボックスを消します。 今のところ使用していないので。 header.phpの114行目以降 123456789101112131415161718192021222324 &amp;lt;?php // Has the text been hidden? if ( &#39;blank&#39; == get_header_textcolor() ) : ?&amp;gt; &amp;lt;div&amp;gt; &amp;lt;?php get_search_form(); ?&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;?php else : ?&amp;gt; &amp;lt;?php get_search_form(); ?&amp;gt; &amp;lt;?php endif; ?&amp;gt; &amp;lt;nav id=&amp;quot;access&amp;quot; role=&amp;quot;navigation&amp;quot;&amp;gt; &amp;lt;h3&amp;gt;&amp;lt;?php _e( &#39;Main menu&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;lt;/h3&amp;gt; &amp;lt;?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?&amp;gt; &amp;lt;div&amp;gt;&amp;lt;a href=&amp;quot;#content&amp;quot; title=&amp;quot;&amp;lt;?php esc_attr_e( &#39;Skip to primary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;quot;&amp;gt;&amp;lt;?php _e( &#39;Skip to primary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;a href=&amp;quot;#secondary&amp;quot; title=&amp;quot;&amp;lt;?php esc_attr_e( &#39;Skip to secondary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;quot;&amp;gt;&amp;lt;?php _e( &#39;Skip to secondary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;?php /* Our navigation menu. If one isn&#39;t filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn&#39;t assigned, the menu with the lowest ID is used.">
     <link href="http://blog.5000164.jp/2012-06-wordpress_twentyeleven_edit/" rel="canonical">
     <meta property="og:title" content="WordPressのテーマ「TwentyEleven」でいろいろ消したり幅広げたり色変えたりした | 5000164 is here">
-    <meta property="og:description" content="デザインをいろいろと変更しました。 作業の途中で元ファイルがわからなくなりテーマをまるごと再インストールしたりもしました。 設定情報とかも一緒に消しちゃって記事が見れなくなった時は焦った。 でもなんとか元に戻りました。 以下は変更内容です。 あんまり詳しく調べずに、それっぽいファイルをそれっぽく修正したらそれっぽい動きになっただけなので、参考にする時は注意してください。 まず、出したくないものを消します。 メニューバー（ナビゲーションバー）と検索ボックスを消します。 今のところ使用していないので。 header.phpの114行目以降 &amp;lt;?php // Has the text been hidden? if ( &#39;blank&#39; == get_header_textcolor() ) : ?&amp;gt; &amp;lt;div&amp;gt; &amp;lt;?php get_search_form(); ?&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;?php else : ?&amp;gt; &amp;lt;?php get_search_form(); ?&amp;gt; &amp;lt;?php endif; ?&amp;gt; &amp;lt;nav id=&amp;quot;access&amp;quot; role=&amp;quot;navigation&amp;quot;&amp;gt; &amp;lt;h3&amp;gt;&amp;lt;?php _e( &#39;Main menu&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;lt;/h3&amp;gt; &amp;lt;?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?&amp;gt; &amp;lt;div&amp;gt;&amp;lt;a href=&amp;quot;#content&amp;quot; title=&amp;quot;&amp;lt;?php esc_attr_e( &#39;Skip to primary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;quot;&amp;gt;&amp;lt;?php _e( &#39;Skip to primary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;a href=&amp;quot;#secondary&amp;quot; title=&amp;quot;&amp;lt;?php esc_attr_e( &#39;Skip to secondary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;quot;&amp;gt;&amp;lt;?php _e( &#39;Skip to secondary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;?php /* Our navigation menu. If one isn&#39;t filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn&#39;t assigned, the menu with the lowest ID is used. */">
+    <meta property="og:description" content="デザインをいろいろと変更しました。 作業の途中で元ファイルがわからなくなりテーマをまるごと再インストールしたりもしました。 設定情報とかも一緒に消しちゃって記事が見れなくなった時は焦った。 でもなんとか元に戻りました。 以下は変更内容です。 あんまり詳しく調べずに、それっぽいファイルをそれっぽく修正したらそれっぽい動きになっただけなので、参考にする時は注意してください。 まず、出したくないものを消します。 メニューバー（ナビゲーションバー）と検索ボックスを消します。 今のところ使用していないので。 header.phpの114行目以降 123456789101112131415161718192021222324 &amp;lt;?php // Has the text been hidden? if ( &#39;blank&#39; == get_header_textcolor() ) : ?&amp;gt; &amp;lt;div&amp;gt; &amp;lt;?php get_search_form(); ?&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;?php else : ?&amp;gt; &amp;lt;?php get_search_form(); ?&amp;gt; &amp;lt;?php endif; ?&amp;gt; &amp;lt;nav id=&amp;quot;access&amp;quot; role=&amp;quot;navigation&amp;quot;&amp;gt; &amp;lt;h3&amp;gt;&amp;lt;?php _e( &#39;Main menu&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;lt;/h3&amp;gt; &amp;lt;?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?&amp;gt; &amp;lt;div&amp;gt;&amp;lt;a href=&amp;quot;#content&amp;quot; title=&amp;quot;&amp;lt;?php esc_attr_e( &#39;Skip to primary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;quot;&amp;gt;&amp;lt;?php _e( &#39;Skip to primary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;a href=&amp;quot;#secondary&amp;quot; title=&amp;quot;&amp;lt;?php esc_attr_e( &#39;Skip to secondary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;quot;&amp;gt;&amp;lt;?php _e( &#39;Skip to secondary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;?php /* Our navigation menu. If one isn&#39;t filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn&#39;t assigned, the menu with the lowest ID is used.">
     <meta property="og:url" content="http://blog.5000164.jp/2012-06-wordpress_twentyeleven_edit/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@5000164">
@@ -34,49 +34,32 @@ ga('send', 'pageview');
         <h1>WordPressのテーマ「TwentyEleven」でいろいろ消したり幅広げたり色変えたりした</h1>
     </div>
     <div class="content">
-        <div>
-  デザインをいろいろと変更しました。
-</div>
+        <p>デザインをいろいろと変更しました。</p>
 
-<div>
-  作業の途中で元ファイルがわからなくなりテーマをまるごと再インストールしたりもしました。
-</div>
+<p>作業の途中で元ファイルがわからなくなりテーマをまるごと再インストールしたりもしました。</p>
 
-<div>
-  設定情報とかも一緒に消しちゃって記事が見れなくなった時は焦った。
-</div>
+<p>設定情報とかも一緒に消しちゃって記事が見れなくなった時は焦った。</p>
 
-<div>
-  でもなんとか元に戻りました。
-</div>
+<p>でもなんとか元に戻りました。</p>
 
-<div>
-  以下は変更内容です。
-</div>
+<p>以下は変更内容です。</p>
 
-<div>
-  あんまり詳しく調べずに、それっぽいファイルをそれっぽく修正したらそれっぽい動きになっただけなので、参考にする時は注意してください。
-</div>
+<p>あんまり詳しく調べずに、それっぽいファイルをそれっぽく修正したらそれっぽい動きになっただけなので、参考にする時は注意してください。</p>
 
-<div>
-  まず、出したくないものを消します。
-</div>
+<p>まず、出したくないものを消します。</p>
 
-<div>
-  メニューバー（ナビゲーションバー）と検索ボックスを消します。
-</div>
+<p>メニューバー（ナビゲーションバー）と検索ボックスを消します。</p>
 
-<div>
-  今のところ使用していないので。
-</div>
+<p>今のところ使用していないので。</p>
 
-<div>
-  header.phpの114行目以降
-</div>
-
-<pre class="brush: php; title: ; notranslate" title="">&amp;lt;?php
+<p>header.phpの114行目以降</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">16</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">17</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">18</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">19</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">20</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">21</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">22</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">23</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">24</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">&amp;lt;?php
                      // Has the text been hidden?
-                     if ( 'blank' == get_header_textcolor() ) :
+                     if ( &#39;blank&#39; == get_header_textcolor() ) :
                 ?&amp;gt;
                      &amp;lt;div&amp;gt;
                      &amp;lt;?php get_search_form(); ?&amp;gt;
@@ -88,25 +71,26 @@ ga('send', 'pageview');
                 &amp;lt;?php endif; ?&amp;gt;
 
                 &amp;lt;nav id=&amp;quot;access&amp;quot; role=&amp;quot;navigation&amp;quot;&amp;gt;
-                     &amp;lt;h3&amp;gt;&amp;lt;?php _e( 'Main menu', 'twentyeleven' ); ?&amp;gt;&amp;lt;/h3&amp;gt;
+                     &amp;lt;h3&amp;gt;&amp;lt;?php _e( &#39;Main menu&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;lt;/h3&amp;gt;
                      &amp;lt;?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?&amp;gt;
-                     &amp;lt;div&amp;gt;&amp;lt;a href=&amp;quot;#content&amp;quot; title=&amp;quot;&amp;lt;?php esc_attr_e( 'Skip to primary content', 'twentyeleven' ); ?&amp;gt;&amp;quot;&amp;gt;&amp;lt;?php _e( 'Skip to primary content', 'twentyeleven' ); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
-                     &amp;lt;div&amp;gt;&amp;lt;a href=&amp;quot;#secondary&amp;quot; title=&amp;quot;&amp;lt;?php esc_attr_e( 'Skip to secondary content', 'twentyeleven' ); ?&amp;gt;&amp;quot;&amp;gt;&amp;lt;?php _e( 'Skip to secondary content', 'twentyeleven' ); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
-                     &amp;lt;?php /* Our navigation menu. If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn't assigned, the menu with the lowest ID is used. */ ?&amp;gt;
-                     &amp;lt;?php wp_nav_menu( array( 'theme_location' =&amp;gt; 'primary' ) ); ?&amp;gt;
+                     &amp;lt;div&amp;gt;&amp;lt;a href=&amp;quot;#content&amp;quot; title=&amp;quot;&amp;lt;?php esc_attr_e( &#39;Skip to primary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;quot;&amp;gt;&amp;lt;?php _e( &#39;Skip to primary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
+                     &amp;lt;div&amp;gt;&amp;lt;a href=&amp;quot;#secondary&amp;quot; title=&amp;quot;&amp;lt;?php esc_attr_e( &#39;Skip to secondary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;quot;&amp;gt;&amp;lt;?php _e( &#39;Skip to secondary content&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
+                     &amp;lt;?php /* Our navigation menu. If one isn&#39;t filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn&#39;t assigned, the menu with the lowest ID is used. */ ?&amp;gt;
+                     &amp;lt;?php wp_nav_menu( array( &#39;theme_location&#39; =&amp;gt; &#39;primary&#39; ) ); ?&amp;gt;
                 &amp;lt;/nav&amp;gt;&amp;lt;!-- #access --&amp;gt;
       &amp;lt;/header&amp;gt;&amp;lt;!-- #branding --&amp;gt;
 
-      &amp;lt;div id=&amp;quot;main&amp;quot;&amp;gt;
-</pre>
-
-<div>
-  を下記に変更します。
+      &amp;lt;div id=&amp;quot;main&amp;quot;&amp;gt;</code></pre></td></tr></table>
 </div>
-
-<pre class="brush: php; title: ; notranslate" title="">&amp;lt;?php
+</div>
+<p>を下記に変更します。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">&amp;lt;?php
                      // Has the text been hidden?
-                     if ( 'blank' == get_header_textcolor() ) :
+                     if ( &#39;blank&#39; == get_header_textcolor() ) :
                 ?&amp;gt;
                      &amp;lt;div&amp;gt;
                      &amp;lt;/div&amp;gt;
@@ -117,68 +101,63 @@ ga('send', 'pageview');
 
       &amp;lt;/header&amp;gt;&amp;lt;!-- #branding --&amp;gt;
 
-      &amp;lt;div id=&amp;quot;main&amp;quot;&amp;gt;
-</pre>
-
-<div>
-  これでヘッダがすっきりしました。
+      &amp;lt;div id=&amp;quot;main&amp;quot;&amp;gt;</code></pre></td></tr></table>
 </div>
-
-<div>
-  次にフッタの「Proudly powered by WordPress」を消したいのでフッダまるごと消します。
 </div>
+<p>これでヘッダがすっきりしました。</p>
 
-<div>
-  footer.phpの15行～29行
-</div>
+<p>次にフッタの「Proudly powered by WordPress」を消したいのでフッダまるごと消します。</p>
 
-<pre class="brush: php; title: ; notranslate" title="">&amp;lt;footer id=&amp;quot;colophon&amp;quot; role=&amp;quot;contentinfo&amp;quot;&amp;gt;
+<p>footer.phpの15行～29行</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">&amp;lt;footer id=&amp;quot;colophon&amp;quot; role=&amp;quot;contentinfo&amp;quot;&amp;gt;
 
                 &amp;lt;?php
                      /* A sidebar in the footer? Yep. You can can customize
                      * your footer with three columns of widgets.
                      */
                      if ( ! is_404() )
-                          get_sidebar( 'footer' );
+                          get_sidebar( &#39;footer&#39; );
                 ?&amp;gt;
 
                 &amp;lt;div id=&amp;quot;site-generator&amp;quot;&amp;gt;
-                     &amp;lt;?php do_action( 'twentyeleven_credits' ); ?&amp;gt;
-                     &amp;lt;a href=&amp;quot;&amp;lt;?php echo esc_url( __( 'http://wordpress.org/', 'twentyeleven' ) ); ?&amp;gt;&amp;quot; title=&amp;quot;&amp;lt;?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentyeleven' ); ?&amp;gt;&amp;quot; rel=&amp;quot;generator&amp;quot;&amp;gt;&amp;lt;?php printf( __( 'Proudly powered by %s', 'twentyeleven' ), 'WordPress' ); ?&amp;gt;&amp;lt;/a&amp;gt;
+                     &amp;lt;?php do_action( &#39;twentyeleven_credits&#39; ); ?&amp;gt;
+                     &amp;lt;a href=&amp;quot;&amp;lt;?php echo esc_url( __( &#39;http://wordpress.org/&#39;, &#39;twentyeleven&#39; ) ); ?&amp;gt;&amp;quot; title=&amp;quot;&amp;lt;?php esc_attr_e( &#39;Semantic Personal Publishing Platform&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;quot; rel=&amp;quot;generator&amp;quot;&amp;gt;&amp;lt;?php printf( __( &#39;Proudly powered by %s&#39;, &#39;twentyeleven&#39; ), &#39;WordPress&#39; ); ?&amp;gt;&amp;lt;/a&amp;gt;
                 &amp;lt;/div&amp;gt;
-      &amp;lt;/footer&amp;gt;&amp;lt;!-- #colophon --&amp;gt;
-</pre>
-
-<div>
-  を下記に変更します。
+      &amp;lt;/footer&amp;gt;&amp;lt;!-- #colophon --&amp;gt;</code></pre></td></tr></table>
 </div>
-
-<pre class="brush: php; title: ; notranslate" title="">&amp;lt;footer id=&amp;quot;colophon&amp;quot; role=&amp;quot;contentinfo&amp;quot;&amp;gt;
+</div>
+<p>を下記に変更します。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">&amp;lt;footer id=&amp;quot;colophon&amp;quot; role=&amp;quot;contentinfo&amp;quot;&amp;gt;
 
                 &amp;lt;?php
                      /* A sidebar in the footer? Yep. You can can customize
                      * your footer with three columns of widgets.
                      */
                      if ( ! is_404() )
-                          get_sidebar( 'footer' );
+                          get_sidebar( &#39;footer&#39; );
                 ?&amp;gt;
 
-      &amp;lt;/footer&amp;gt;&amp;lt;!-- #colophon --&amp;gt;
-</pre>
-
-<div>
-  これでフッダが表示されなくなりました。
+      &amp;lt;/footer&amp;gt;&amp;lt;!-- #colophon --&amp;gt;</code></pre></td></tr></table>
 </div>
-
-<div>
-  次は、トップページ表示時に記事の内容を表示したくないので、タイトルのみ表示されるようにします。
 </div>
+<p>これでフッダが表示されなくなりました。</p>
 
-<div>
-  content.phpを下記にします。（長いのをごっそり消してるので元ファイルは割愛）
-</div>
+<p>次は、トップページ表示時に記事の内容を表示したくないので、タイトルのみ表示されるようにします。</p>
 
-<pre class="brush: php; title: ; notranslate" title="">&amp;lt;?php
+<p>content.phpを下記にします。（長いのをごっそり消してるので元ファイルは割愛）</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">16</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">17</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">18</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">19</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">20</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">21</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">22</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">&amp;lt;?php
  /**
  * The default template for displaying content
  *
@@ -192,184 +171,142 @@ ga('send', 'pageview');
            &amp;lt;header&amp;gt;
                 &amp;lt;?php if ( is_sticky() ) : ?&amp;gt;
                      &amp;lt;hgroup&amp;gt;
-                          &amp;lt;h2&amp;gt;&amp;lt;a href=&amp;quot;&amp;lt;?php the_permalink(); ?&amp;gt;&amp;quot; title=&amp;quot;&amp;lt;?php printf( esc_attr__( 'Permalink to %s', 'twentyeleven' ), the_title_attribute( 'echo=0' ) ); ?&amp;gt;&amp;quot; rel=&amp;quot;bookmark&amp;quot;&amp;gt;&amp;lt;?php the_title(); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt;
-                          &amp;lt;h3&amp;gt;&amp;lt;?php _e( 'Featured', 'twentyeleven' ); ?&amp;gt;&amp;lt;/h3&amp;gt;
+                          &amp;lt;h2&amp;gt;&amp;lt;a href=&amp;quot;&amp;lt;?php the_permalink(); ?&amp;gt;&amp;quot; title=&amp;quot;&amp;lt;?php printf( esc_attr__( &#39;Permalink to %s&#39;, &#39;twentyeleven&#39; ), the_title_attribute( &#39;echo=0&#39; ) ); ?&amp;gt;&amp;quot; rel=&amp;quot;bookmark&amp;quot;&amp;gt;&amp;lt;?php the_title(); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt;
+                          &amp;lt;h3&amp;gt;&amp;lt;?php _e( &#39;Featured&#39;, &#39;twentyeleven&#39; ); ?&amp;gt;&amp;lt;/h3&amp;gt;
                      &amp;lt;/hgroup&amp;gt;
                 &amp;lt;?php else : ?&amp;gt;
-                &amp;lt;h1&amp;gt;&amp;lt;a href=&amp;quot;&amp;lt;?php the_permalink(); ?&amp;gt;&amp;quot; title=&amp;quot;&amp;lt;?php printf( esc_attr__( 'Permalink to %s', 'twentyeleven' ), the_title_attribute( 'echo=0' ) ); ?&amp;gt;&amp;quot; rel=&amp;quot;bookmark&amp;quot;&amp;gt;&amp;lt;?php the_title(); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;
+                &amp;lt;h1&amp;gt;&amp;lt;a href=&amp;quot;&amp;lt;?php the_permalink(); ?&amp;gt;&amp;quot; title=&amp;quot;&amp;lt;?php printf( esc_attr__( &#39;Permalink to %s&#39;, &#39;twentyeleven&#39; ), the_title_attribute( &#39;echo=0&#39; ) ); ?&amp;gt;&amp;quot; rel=&amp;quot;bookmark&amp;quot;&amp;gt;&amp;lt;?php the_title(); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;
                 &amp;lt;?php endif; ?&amp;gt;
            &amp;lt;/header&amp;gt;&amp;lt;!-- .entry-header --&amp;gt;
-      &amp;lt;/article&amp;gt;&amp;lt;!-- #post-&amp;lt;?php the_ID(); ?&amp;gt; --&amp;gt;
-</pre>
-
-<div>
-  21行～32行のヘッダのmeta情報を削除し、
+      &amp;lt;/article&amp;gt;&amp;lt;!-- #post-&amp;lt;?php the_ID(); ?&amp;gt; --&amp;gt;</code></pre></td></tr></table>
 </div>
-
-<div>
-  34行～81行のコンテント情報を削除します。
 </div>
+<p>21行～32行のヘッダのmeta情報を削除し、</p>
 
-<div>
-  あとはデザインを変更します。
+<p>34行～81行のコンテント情報を削除します。</p>
+
+<p>あとはデザインを変更します。</p>
+
+<p>まずはコンテント幅の変更から。</p>
+
+<p>style.cssの196行目前後</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* One column */</span>
+ .<span style="color:#a6e22e">one-column</span> #page {
+      <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">690</span><span style="color:#66d9ef">px</span>;
+}</code></pre></td></tr></table>
 </div>
-
-<div>
-  まずはコンテント幅の変更から。
 </div>
-
-<div>
-  style.cssの196行目前後
+<p>を下記に変更します。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* One column */</span>
+ .<span style="color:#a6e22e">one-column</span> #page {
+      <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">980</span><span style="color:#66d9ef">px</span>;
+}</code></pre></td></tr></table>
 </div>
-
-<pre class="brush: css; title: ; notranslate" title="">/* One column */
- .one-column #page {
-      max-width: 690px;
- }
-</pre>
-
-<div>
-  を下記に変更します。
 </div>
+<p>これでコンテント幅が変わったはずです。</p>
 
-<pre class="brush: css; title: ; notranslate" title="">/* One column */
- .one-column #page {
-      width: 980px;
- }
-</pre>
+<p>コンテント幅の980pxはAppleのサイトを参考にしています。</p>
 
-<div>
-  これでコンテント幅が変わったはずです。
-</div>
+<p>次は背景色と文字色を変更します。</p>
 
-<div>
-  コンテント幅の980pxはAppleのサイトを参考にしています。
-</div>
+<p>おそらく暗い背景に設定しているのでdark.cssというものを読み込んでおり、このファイルを編集します。</p>
 
-<div>
-  次は背景色と文字色を変更します。
-</div>
+<p>普通は普通にstyle.cssを編集すれば反映される気がします。</p>
 
-<div>
-  おそらく暗い背景に設定しているのでdark.cssというものを読み込んでおり、このファイルを編集します。
-</div>
-
-<div>
-  普通は普通にstyle.cssを編集すれば反映される気がします。
-</div>
-
-<div>
-  dark.cssの10行目前後
-</div>
-
-<pre class="brush: css; title: ; notranslate" title="">body {
-      background: #1d1d1d;
-      color: #bbb;
- }
+<p>dark.cssの10行目前後</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">7</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">body</span> {
+      <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#1d1d1d</span>;
+      <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#bbb</span>;
+}
  #page {
-      background: #0f0f0f;
- }
-</pre>
-
-<div>
-  を下記に変更します。
+      <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#0f0f0f</span>;
+}</code></pre></td></tr></table>
 </div>
-
-<pre class="brush: css; title: ; notranslate" title="">body {
-      background: rgb(25, 25, 25);
-      color: rgb(250, 250, 250);
- }
+</div>
+<p>を下記に変更します。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">7</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">body</span> {
+      <span style="color:#66d9ef">background</span>: rgb(<span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">25</span>);
+      <span style="color:#66d9ef">color</span>: rgb(<span style="color:#ae81ff">250</span>, <span style="color:#ae81ff">250</span>, <span style="color:#ae81ff">250</span>);
+}
  #page {
-      background: rgb(50, 50, 50);
- }
-</pre>
-
-<div>
-  これで色情報が反映されると思いきや反映されません。
+      <span style="color:#66d9ef">background</span>: rgb(<span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">50</span>);
+}</code></pre></td></tr></table>
 </div>
-
-<div>
-  インスペクタで調べたところ、headタグの中にstyleが直接書かれていたのが原因でした。
 </div>
+<p>これで色情報が反映されると思いきや反映されません。</p>
 
-<div>
-  なのでこの直接指定している出力を切ります。
-</div>
+<p>インスペクタで調べたところ、headタグの中にstyleが直接書かれていたのが原因でした。</p>
 
-<div>
-  functions.phpの106行～111行の
-</div>
+<p>なのでこの直接指定している出力を切ります。</p>
 
-<pre class="brush: php; title: ; notranslate" title="">functions.phpの106行～111行の
-      // Add support for custom backgrounds.
-      add_theme_support( 'custom-background', array(
+<p>functions.phpの106行～111行の</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">6</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">      // Add support for custom backgrounds.
+      add_theme_support( &#39;custom-background&#39;, array(
            // Let WordPress know what our default background color is.
            // This is dependent on our current color scheme.
-           'default-color' =&amp;gt; $default_background_color,
-      ) );
-</pre>
-
-<div>
-  の記述を削除します。
+           &#39;default-color&#39; =&amp;gt; $default_background_color,
+      ) );</code></pre></td></tr></table>
 </div>
-
-<div>
-  そして144行目の
 </div>
+<p>の記述を削除します。</p>
 
-<pre class="brush: php; title: ; notranslate" title="">          add_custom_background();
-</pre>
-
-<div>
-  の記述を削除します。
+<p>そして144行目の</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">          add_custom_background();</code></pre></td></tr></table>
 </div>
-
-<div>
-  おそらく102行目の
 </div>
+<p>の記述を削除します。</p>
 
-<pre class="brush: php; title: ; notranslate" title="">$default_background_color = '1d1d1d';
-</pre>
-
-<div>
-  とかの指定を変えてあげれば色が変わるんでしょうけど、スタイルの指定はcssで一括で管理したいので削除します。
+<p>おそらく102行目の</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$default_background_color = &#39;1d1d1d&#39;;</code></pre></td></tr></table>
 </div>
-
-<div>
-  以上で設定終了です。
 </div>
+<p>とかの指定を変えてあげれば色が変わるんでしょうけど、スタイルの指定はcssで一括で管理したいので削除します。</p>
 
-<div>
-  多少は人様にみせられるような形になってきたかなと思います。
-</div>
+<p>以上で設定終了です。</p>
 
-<div>
-  今後はもっとスタイルをいじっていきたいですね。
-</div>
+<p>多少は人様にみせられるような形になってきたかなと思います。</p>
 
-<div>
-  参考
-</div>
+<p>今後はもっとスタイルをいじっていきたいですね。</p>
 
-<div>
-  WordPressのテーマ作成（１）：ファイル構成 &#8211; 基礎編 | Lovelog+* &#8211; WordPressリファレンス
-</div>
+<p>参考</p>
 
-<div>
-  WordPressのテーマとなるファイル構成 | プログラミングアフィリエイトで集客する方法
-</div>
+<p>WordPressのテーマ作成（１）：ファイル構成 &#8211; 基礎編 | Lovelog+* &#8211; WordPressリファレンス</p>
 
-<div>
-  WordPressカスタマイズ－カスタムヘッダーで背景を変更する－ | remember-it
-</div>
+<p>WordPressのテーマとなるファイル構成 | プログラミングアフィリエイトで集客する方法</p>
 
-<div>
-  <a title="E BISUCOM TECH LAB : WordPress 3.3.xにおけるカスタム背景の表示 （WordPressレッスンブックのサンプルで背景画像が表示されない問題に関して）" href="http://ebisu.com/memo/custom_background/" target="_blank">E BISUCOM TECH LAB : WordPress 3.3.xにおけるカスタム背景の表示 （WordPressレッスンブックのサンプルで背景画像が表示されない問題に関して）</a>
-</div>
+<p>WordPressカスタマイズ－カスタムヘッダーで背景を変更する－ | remember-it</p>
 
-<div>
-  <a title="WordPress3.4のテーマカスタマイザーで自由度の高いテーマを作ろう | webOpixel" href="http://www.webopixel.net/wordpress/586.html" target="_blank">WordPress3.4のテーマカスタマイザーで自由度の高いテーマを作ろう | webOpixel</a>
-</div>
+<p><a href="http://ebisu.com/memo/custom_background/">E BISUCOM TECH LAB : WordPress 3.3.xにおけるカスタム背景の表示 （WordPressレッスンブックのサンプルで背景画像が表示されない問題に関して）</a></p>
+
+<p><a href="http://www.webopixel.net/wordpress/586.html">WordPress3.4のテーマカスタマイザーで自由度の高いテーマを作ろう | webOpixel</a></p>
 
     </div>
 </article>
