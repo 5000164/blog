@@ -16,5 +16,7 @@ googleAnalytics = "UA-51024599-1"
 
 [Params]
 description = "菅原 浩 のブログ"
+icon = "icon.png"
 twitter_card = "summary"
 twitter_site = "@5000164"
+twitter_creator = "@5000164"
