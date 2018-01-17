@@ -6,10 +6,6 @@ url = "2013-10-space_delete"
 
 {{< figure src="/images/2013/10/20131023_space_delete_thumb.png" title="" >}}
 
-## 作ったもの
-
-[空白改行削除 | 5000164 here.](http://5000164.jp/space_delete/ "空白改行削除 | 5000164 here.")
-
 ## 作ったものの概要
 
 半角スペース、全角スペース、タブ、改行を削除します。
