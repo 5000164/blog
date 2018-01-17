@@ -4,18 +4,12 @@ date = 2012-11-23T01:12:53+00:00
 url = "2012-11-webdesign_sickdesigner"
 +++
 
-&nbsp;
-
 このサイトのデザインについて考える。
 
-&nbsp;
-
-Sickdesigner.com › The work and play of Radu Chelariu  
+Sickdesigner.com › The work and play of Radu Chelariu
 http://sickdesigner.com/
 
 {{< figure src="/images/2012/11/Sickdesigner.com_.png" title="" >}}
-
-&nbsp;
 
 ## 全体
 

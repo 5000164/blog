@@ -11,7 +11,7 @@ url = "2014-03-dxlib_practice_1"
 {{< figure src="/images/2014/03/20140315_practice1.png" title="" >}}
 
 ソースコードはこちら。
-  
+
 [5000164/dxlib-practice-1](https://github.com/5000164/dxlib-practice-1)
 
 ## DXライブラリで1番最初に確認したのがフォントの表示
@@ -21,7 +21,7 @@ url = "2014-03-dxlib_practice_1"
 [ＤＸライブラリ置き場　ＨＯＭＥ](http://homepage2.nifty.com/natupaji/DxLib/index.html)
 
 その際に、1番初めに確認したことがフォントの表示でした。
-  
+
 フォントの美しさはモチベーションに直結します。
 
 ## 結果はごらんの通り
@@ -29,7 +29,7 @@ url = "2014-03-dxlib_practice_1"
 {{< figure src="/images/2014/03/20140315_practice1_zoom-300x300.png" title="" >}}
 
 美しいフォントを表示させることができました。
-  
+
 ちなみに比較対象として、デフォルト設定でのフォントを下部に表示しています。
 
 ## フォントをきれいに表示するには1行追加するだけ
@@ -38,7 +38,7 @@ url = "2014-03-dxlib_practice_1"
 </pre>
 
 この文を追加するだけです。
-  
+
 この文を追加することでフォントにアンチエイリアスをかけてくれます。
 
 [ＤＸライブラリ置き場　リファレンスページ](http://homepage2.nifty.com/natupaji/DxLib/function/dxfunc_graph2.html#R17N24)
@@ -46,11 +46,11 @@ url = "2014-03-dxlib_practice_1"
 ## よりうつくしい表示のために若干の影をつけています
 
 アンチエイリアスをかけるだけで十分きれいに表示されます。
-  
+
 ですが、ここではよりフォントを際立たせるために、若干の影をつけています。
-  
+
 まずは背景に影を描画。
-  
+
 フォントを描画したあとにガウシアンフィルタをかけるのがポイント。
 
 <pre class="brush: cpp; title: ; notranslate" title="">// 影の表示開始位置

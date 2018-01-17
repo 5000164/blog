@@ -8,13 +8,7 @@ Adobeから新しいプログラミング用フォントがリリースされた
 
 表示しているフォントの大きさは全て12pt、表示している環境はMacType使用中のWindows7です。 
 
-&nbsp; 
-
-&nbsp; 
-
 ## 早速比較する
-
-&nbsp; 
 
 ## Inconsolata
 
@@ -26,10 +20,6 @@ Adobeから新しいプログラミング用フォントがリリースされた
 
 画面に表示できる文字数が多いほうが何かと有利ですよね。 
 
-&nbsp; 
-
-&nbsp; 
-
 ## Consolas
 
 次にWindowsにプリインストールされているConsolas。 
@@ -40,10 +30,6 @@ Adobeから新しいプログラミング用フォントがリリースされた
 
 Windowsにプリインストールされているので、とりあえず表示するフォントはこれにしておきましょう。 
 
-&nbsp; 
-
-&nbsp; 
-
 ## Source Code Pro
 
 そして新しくリリースされたSource Code Pro。 
@@ -53,10 +39,6 @@ Windowsにプリインストールされているので、とりあえず表示�
 他の2つに比べて少し大きく文字間と行間が広めなのが特徴だと思います。 
 
 スペースがしっかりとられていて可読性ではこの3つの中では一番ではないでしょうか。 
-
-&nbsp; 
-
-&nbsp; 
 
 ## 比較した感想
 
@@ -70,27 +52,17 @@ Windowsにプリインストールされているので、とりあえず表示�
 
 とりあえず私はRictyをこれからも使用する予定です。 
 
-&nbsp; 
-
-&nbsp; 
-
 ## おまけ
 
 以下歴代のWindowsでソースを表示する際に（たぶん）使われていたデフォルトのフォントたちです。 
-
-&nbsp; 
 
 ## MS UI Gothic
 
 {{< figure src="/images/2012/09/MS_UI_Gothic.png" title="" >}}
 
-&nbsp; 
-
 ## Meiryo UI
 
 {{< figure src="/images/2012/09/Meiryo_UI.png" title="" >}}
-
-&nbsp; 
 
 ## Segoe UI
 

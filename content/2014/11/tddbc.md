@@ -8,10 +8,10 @@ url = "2014-11-tddbc"
 
 イベントの詳細はこちら。  
 [TDDBC in Tokyo 2014-11 - TDDBC | Doorkeeper](http://tddbc.doorkeeper.jp/events/17353)  
-  
+
 課題はこちら。  
 [TDD演習課題 - TODOリストアプリ](https://gist.github.com/kyonmm/6102436)  
-  
+
 私の組の実装はこちら。  
 [5000164/tddbc-tokyo_2014-11](https://github.com/5000164/tddbc-tokyo_2014-11)
 

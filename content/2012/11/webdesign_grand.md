@@ -4,22 +4,12 @@ date = 2012-11-21T00:44:26+00:00
 url = "2012-11-webdesign_grand"
 +++
 
-&nbsp;
-
 このサイトのデザインについて考える。
-
-&nbsp;
 
 GRAND : 416.977.3831 &#8211; Digital, Interactive, Mobile & Social  
 http://www.wearegrand.com/
 
-&nbsp;
-
 {{< figure src="/images/2012/11/20121120.png" title="" >}}
-
-&nbsp;
-
-&nbsp;
 
 ## テクスチャ
 
@@ -35,15 +25,11 @@ http://www.wearegrand.com/
 
 それでいて主張しすぎないように白黒のテクスチャ使用していて全体の調和は保たれている。
 
-&nbsp;
-
 ## アイコン
 
 丸いアイコンと彩度が高めの色を用いることでアイコンを際立たせている。
 
 アイコンには斜線とノイズが入ったテクスチャを使用して質感を出している。
-
-&nbsp;
 
 ## 影
 
@@ -56,8 +42,6 @@ http://www.wearegrand.com/
 画像の下にも影がついている。
 
 影をつけることでサイトに奥行きが生まれている。
-
-&nbsp;
 
 ## 全体
 

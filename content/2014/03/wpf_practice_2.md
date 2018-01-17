@@ -11,15 +11,15 @@ url = "2014-03-wpf_practice_2"
 {{< figure src="/images/2014/03/20140312_practice2-300x200.png" title="" >}}
 
 方向キーの入力した方向へで赤い点が動きます。
-  
+
 ソースコードはこちら。
-  
+
 [5000164/wpf-practice-2](https://github.com/5000164/wpf-practice-2)
 
 ## 画面に動かすものを表示する
 
 とりあえずなんでもよかったので、Rectangleタグで四角形を表示します。
-  
+
 そして、位置を指定するためにCanvasタグで囲みます。
 
 <pre class="brush: xml; title: ; notranslate" title="">&lt;Canvas&gt;
@@ -28,13 +28,13 @@ url = "2014-03-wpf_practice_2"
 </pre>
 
 これでXAML側はほぼ完成。
-  
+
 あとは動かすだけ。
 
 ## キーボードの入力を取得します
 
 WindowにPreviewKeyDownをつけます。
-  
+
 これでキーが押されたらイベントが発生します。
 
 [WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&#8217;s C# Dev Notes](http://gushwell.ldblog.jp/archives/52318833.html)
@@ -42,7 +42,7 @@ WindowにPreviewKeyDownをつけます。
 ## C#側で座標を取得するために
 
 まずは四角にNameをつけます。
-  
+
 これでC#側で変数として扱えます。
 
 [XAML とプログラムコード（WPF） (.NET Framework)](http://ufcpp.net/study/dotnet/wpf_xamlcode.html)
@@ -95,7 +95,7 @@ C#側で四角につけた名前から座標を取得します。
 ## 完成
 
 これで、キーボードの方向キーを入力した方向へ移動することができました。
-  
+
 ただ、ゲームのようなものを作ろうと思っていたのですが、これだと実装が大変そうです。
-  
+
 他の方法も調べてみようと思います。

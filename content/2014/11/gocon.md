@@ -9,7 +9,7 @@ url = "2014-11-gocon"
 イベントの詳細はこちら。  
 [Go Conference 2014 autumn - connpass](http://gocon.connpass.com/event/9748/)  
 [GoCon/2014autumn.rst at master · GoCon/GoCon](https://github.com/GoCon/GoCon/blob/master/2014autumn.rst)  
-  
+
 内容についてはこちら。  
 [#goconに関するツイート](https://twitter.com/hashtag/gocon)  
 [Go Conference 2014 autumn - Togetterまとめ](http://togetter.com/li/751700)

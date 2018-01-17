@@ -5,7 +5,7 @@ url = "2012-06-mobile_safari_link"
 +++
 
 Mobile Safariでは数字を電話番号だとみなして、勝手に電話番号のリンクを貼ることがあります。
-  
+
 これを防ぐためには勝手にリンクを貼る機能を無効化し、telto:で明示的にリンクを貼りましょう。
 
 機能を無効化するには、ヘッダに下記のmetaタグを追加します。
@@ -19,5 +19,5 @@ telto:でのリンクの貼り方は下記になります。
 </pre>
 
 参考サイト
-  
+
 <a title="jQueryMobileを使ってのスマートフォンサイトの構築メモ at HouseTect, JavaScriptな情報をあなたに" href="http://hisasann.com/housetect/2011/02/jquerymobile.html" target="_blank">jQueryMobileを使ってのスマートフォンサイトの構築メモ at HouseTect, JavaScriptな情報をあなたに</a>

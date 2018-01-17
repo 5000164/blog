@@ -8,11 +8,11 @@ url = "2012-07-opera_url"
   <div>
     Operaのmenu.iniを編集して実現します。
   </div>
-  
+
   <div>
     まずファイルの
   </div>
-  
+
   <pre class="brush: jscript; title: ; notranslate" title="">
 [Document Popup Menu]
 </pre>

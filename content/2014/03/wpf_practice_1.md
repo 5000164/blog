@@ -11,7 +11,7 @@ url = "2014-03-wpf_practice_1"
 {{< figure src="/images/2014/03/20140311_practice1-300x300.png" title="" >}}
 
 ソースコードはこちら。
-  
+
 [5000164/wpf-practice-1](https://github.com/5000164/wpf-practice-1)
 
 ## 実装するにあたって参考にしたサイト
@@ -21,7 +21,7 @@ url = "2014-03-wpf_practice_1"
 [WPF で Zune のようなウィンドウを作る | grabacr.nét](http://grabacr.net/archives/480)
 
 この記事に沿っていったらできました。
-  
+
 これを追記するだけ。
 
 <pre class="brush: xml; title: ; notranslate" title="">&lt;WindowChrome.WindowChrome&gt;
@@ -32,15 +32,15 @@ url = "2014-03-wpf_practice_1"
 ## 枠なしには出来たけどウィンドウの影が気になる
 
 ウィンドウの枠がなくなってかっこよくなったのに、影が主張し過ぎで気になります。
-  
+
 この影も消したい。
-  
+
 影を消す方法を調べていたら、先ほどと同じブログのこちらの記事にたどり着きました。
 
 [WPF で Visual Studio 2012 のような光るウィンドウを作る | grabacr.nét](http://grabacr.net/archives/507)
 
 なるほど、よくわからん。
-  
+
 WPF初心者の私には無理だと判断したので、この記事の冒頭で紹介されていた簡易版で実装します。
 
 ## 影をいい感じにつける
@@ -68,23 +68,23 @@ WPF初心者の私には無理だと判断したので、この記事の冒頭�
 WindowにWindowStyle="None"、AllowsTransparency="True"、Background="Transparent"を指定することで、枠を消して透明にしています。
 
 アプリが描画できる範囲がWindowの700&#215;700の内側のみで、その内側にさらに影とウィンドウを描画する、という認識です。
-  
+
 内側のBorderにMarginを設けて、影をつけています。
 
 ## WindowStyle="None"だと移動やリサイズができない
 
 しかし、この方法だと移動がリサイズができなくなるらしいです。
-  
+
 こちらの記事などで、WindowStyle="None"を使用した時の対策が書かれていました。
 
 [とんがれ！ ほげたん WPFでリサイズ可能な枠なしウィンドウを作成する](http://hogetan.blog24.fc2.com/blog-entry-7.html)
 
 よくわからない、できればやりたくない。
-  
+
 と思っていたら、前述のWindowChromeのおかげか、特に何もせずに移動もリサイズもできました。
 
 ## よくわからないけど動いたので完成
 
 というわけで、枠なしのウィンドウを作りたい、という目的は達成しました。
-  
+
 ただ、ウィンドウの影はOS側に任せるべき処理であって、アプリ側でいじるべきではないと感じました。

@@ -6,8 +6,6 @@ url = "2013-03-click"
 
 {{< figure src="/images/2013/03/de_20130319_click.jpg" title="" >}}
 
-&nbsp;
-
 ## clickイベントを取得したい
 
 DOMに要素を追加するとjQueryのclickイベントって効かなくなるんですね
@@ -23,8 +21,6 @@ Chromeで動作確認
 iOSで見てみる
 
 動かない
-
-&nbsp;
 
 ## iOSでonのclickイベントが取得できない
 
@@ -46,26 +42,16 @@ iOSのlabel要素と同じ対処法ですね
 
 動かないのは同じような理由なのでしょうか
 
-&nbsp;
-
 ## デモ
-
-&nbsp;
-
-&nbsp;
 
 ## まとめ
 
 iOSのDOMに追加したdiv要素のclickイベントを取得したかったらonclick=&#8221;&#8221;をつけること
 
-&nbsp;
-
 ## 参考
 
 スマートフォンブラウザのjQuery Clickイベントに関すること &#8211; くらげだらけ  
 <http://kudakurage.hatenadiary.com/entry/20120502/1335920244>
-
-&nbsp;
 
 guess what?: JQueryのliveイベントがiPhoneのSafariで登録できない  
 <http://aqubiblog.blogspot.jp/2011/04/jqueryliveiphonesafari.html>

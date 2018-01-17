@@ -5,7 +5,7 @@ url = "2012-06-eclipse_setting"
 +++
 
 毎回毎回Eclipseの設定を思い出すのがめんどくさくなったのでついにメモった。
-  
+
 とりあえず最低限の設定だけ。
 
 - Eclipse Market Place
@@ -58,11 +58,11 @@ url = "2012-06-eclipse_setting"
             - ISO 10646/Unicode(UTF-8)
 
 設定ファイル
-  
+
 Eclipse.appのパッケージの内容を表示。
-  
+
 /Contents/MacOS/eclipse.iniを開く。
-  
+
 下記内容に変更。
 
 <pre class="brush: plain; title: ; notranslate" title="">-vmargs
@@ -73,13 +73,13 @@ Eclipse.appのパッケージの内容を表示。
 </pre>
 
 これで設定をとりあえずエクスポートして完了。
-  
+
 あとはDropboxで共有するなりなんなり。
 
 参考サイト
-  
+
 <a title="livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと" href="http://blog.livedoor.jp/techblog/archives/65399350.html" target="_blank">livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと</a>
-  
+
 Eclipse Color Themeを使ってみよう
-  
+
 設定のインポート・エクスポート &#8211; devillikeaangelの日記
