@@ -25,9 +25,8 @@ Slack の bot に投げた内容をツイートする。
 
 build.sbt で slack-scala-client は追加できるのに twitter4j-core は追加できないと悩んでいたら、 % と %% が違うことを知った。
 
-> groupID % artifactID % revision のかわりに、 groupID %% artifactID % revision を使うと（違いは groupID の後ろの二つ連なった %%）、 sbt はプロジェクトの Scala のバイナリバージョンをアーティファクト名に追加する。 これはただの略記法なので %% 無しで書くこともできる:
-
-[sbt Reference Manual — ライブラリ依存性](http://www.scala-sbt.org/1.x/docs/ja/Library-Dependencies.html)
+> groupID % artifactID % revision のかわりに、 groupID %% artifactID % revision を使うと（違いは groupID の後ろの二つ連なった %%）、 sbt はプロジェクトの Scala のバイナリバージョンをアーティファクト名に追加する。 これはただの略記法なので %% 無しで書くこともできる:  
+> [sbt Reference Manual — ライブラリ依存性](http://www.scala-sbt.org/1.x/docs/ja/Library-Dependencies.html)
 
 slack-scala-client は Scala のライブラリなので略記法でいける、 twitter4j-core は Java のライブラリなので略記法ではいけない、ということだった。
 
