@@ -7,54 +7,54 @@ url = "2012-06-eclipse_setting"
   
 とりあえず最低限の設定だけ。
 
-  * Eclipse Market Place 
-      * Eclipse Color Themeで検索する。 
-          * Eclipse Color ThemeをInstallする。
+- Eclipse Market Place
+    - Eclipse Color Themeで検索する。
+        - Eclipse Color ThemeをInstallする。
 
 環境設定
 
-  * >General 
-      * Show heap status 
-          * check
-      * >Appearance 
-          * -Color Theme 
-              * Obsidian
-          * -Color and Fonts 
-              * Basic 
-                  * Text Font 
-                      * Ricty 13
-      * >ContentTypes 
-          * Text 
-              * CSS 
-                  * Add 
-                      * *.scss
-      * >Editors 
-          * -FIle Associations 
-              * File types 
-                  * Add 
-                      * *.css
-                      * *.scss
-              * Associated editors 
-                  * \*.cssと\*.scssどちらも 
-                      * CSS Editor
-                      * Text Editor
-          * >Text Editors 
-              * Show line numbers 
-                  * check
-              * Show whitespace characters 
-                  * check
-      * -Keys 
-          * Content Assist 
-              * command + return
-      * >Workspace 
-          * Text file encoding 
-              * Other : UTF-8
-          * New text file line delimiter 
-              * Other : Unix
-  * >Web 
-      * >CSS Files 
-          * Encoding 
-              * ISO 10646/Unicode(UTF-8)
+- >General
+    - Show heap status
+        - check
+    - >Appearance
+        - -Color Theme
+            - Obsidian
+        - -Color and Fonts
+            - Basic
+                - Text Font
+                    - Ricty 13
+    - >ContentTypes
+        - Text
+            - CSS
+                - Add
+                    - *.scss
+    - >Editors
+        - -FIle Associations
+            - File types
+                - Add
+                    - *.css
+                    - *.scss
+            - Associated editors
+                - \*.cssと\*.scssどちらも
+                    - CSS Editor
+                    - Text Editor
+        - >Text Editors
+            - Show line numbers
+                - check
+            - Show whitespace characters
+                - check
+    - -Keys
+        - Content Assist
+            - command + return
+    - >Workspace
+        - Text file encoding
+            - Other : UTF-8
+        - New text file line delimiter
+            - Other : Unix
+- >Web
+    - >CSS Files
+        - Encoding
+            - ISO 10646/Unicode(UTF-8)
 
 設定ファイル
   

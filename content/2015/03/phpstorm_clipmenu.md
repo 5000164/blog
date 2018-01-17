@@ -21,4 +21,4 @@ url = "2015-03-phpstorm_clipmenu"
 
 ## 参考
 
-* [PHPStormとTextExpanderとの相性が悪いので対処方法を探してみました | matomerge.com](http://matomerge.com/phpstorm-is-incompatible-with-textexpander/)
+- [PHPStormとTextExpanderとの相性が悪いので対処方法を探してみました | matomerge.com](http://matomerge.com/phpstorm-is-incompatible-with-textexpander/)

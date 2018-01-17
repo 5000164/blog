@@ -41,8 +41,8 @@ url = "2015-08-laputa"
 目の前のことがどんなことに繋がっていくのか。  
 これを作った先に、どんな光景が待っているのか考えないとだめだ。
 
-* [Amazon.co.jp： SANYO ICレコーダー ポータブルラジオレコーダー ICR-RS110MF(S)の 北川泰弘 "ヤスさん"さんのレビュー](http://www.amazon.co.jp/review/RNZKSHX0F36T/)
-* [Amazon.co.jp： DRETEC デジタル温湿度計 「オプシス」 ホワイト O-230WTの agehaさんのレビュー](http://www.amazon.co.jp/review/R3CAWGGE4AGLX/)
+- [Amazon.co.jp： SANYO ICレコーダー ポータブルラジオレコーダー ICR-RS110MF(S)の 北川泰弘 "ヤスさん"さんのレビュー](http://www.amazon.co.jp/review/RNZKSHX0F36T/)
+- [Amazon.co.jp： DRETEC デジタル温湿度計 「オプシス」 ホワイト O-230WTの agehaさんのレビュー](http://www.amazon.co.jp/review/R3CAWGGE4AGLX/)
 
 ## まとめ
 

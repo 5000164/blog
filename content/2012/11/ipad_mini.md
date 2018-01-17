@@ -61,17 +61,17 @@ iPhone5風の質感。
 
 ## 値段
 
-  * iPad 4th gen（16GB Wi-Fi）  
+- iPad 4th gen（16GB Wi-Fi）  
     4万2800円
 
 &nbsp;
 
-  * iPad mini（16GB Wi-Fi）  
+- iPad mini（16GB Wi-Fi）  
     2万8800円
 
 &nbsp;
 
-  * Nexus 7（16GB Wi-Fi）  
+- Nexus 7（16GB Wi-Fi）  
     1万9800円
 
 &nbsp;

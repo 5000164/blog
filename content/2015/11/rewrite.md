@@ -12,5 +12,5 @@ innerText が Firefox で使えないの初めて知った。
 
 ## 参考
 
-* [Node.textContent - Web API インターフェイス | MDN](https://developer.mozilla.org/ja/docs/Web/API/Node/textContent)
-* [Node.innerText - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Node/innerText)
+- [Node.textContent - Web API インターフェイス | MDN](https://developer.mozilla.org/ja/docs/Web/API/Node/textContent)
+- [Node.innerText - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Node/innerText)

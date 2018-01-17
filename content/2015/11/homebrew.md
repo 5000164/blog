@@ -10,5 +10,5 @@ url = "2015-11-homebrew"
 
 ## 参考
 
-* [MacportsやHomebrewのアップデート - Qiita](http://qiita.com/NatsukiLab/items/7c5aed26a888fe725f71)
-* [homebrew-cask - brew caskのappどもをupgradeする - Qiita](http://qiita.com/2k0ri/items/9fe8d33a72dbfb15fe6b)
+- [MacportsやHomebrewのアップデート - Qiita](http://qiita.com/NatsukiLab/items/7c5aed26a888fe725f71)
+- [homebrew-cask - brew caskのappどもをupgradeする - Qiita](http://qiita.com/2k0ri/items/9fe8d33a72dbfb15fe6b)

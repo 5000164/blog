@@ -53,5 +53,5 @@ npm で TypeScript をインストールして PhpStorm で自動コンパイル
 
 ## 参考
 
-* [Sample Extensions - Google Chrome](https://developer.chrome.com/extensions/samples#search:catblock)  
+- [Sample Extensions - Google Chrome](https://developer.chrome.com/extensions/samples#search:catblock)
     - この CatBlock というサンプルがとても参考になった

@@ -6,8 +6,8 @@ url = "2015-11-coubic"
 
 ## Coubic と作った拡張機能
 
-* [予約システム「Coubic (クービック)」| 無料で予約管理](https://coubic.com/)
-* [5000164/coubic-reserve-blocker](https://github.com/5000164/coubic-reserve-blocker)
+- [予約システム「Coubic (クービック)」| 無料で予約管理](https://coubic.com/)
+- [5000164/coubic-reserve-blocker](https://github.com/5000164/coubic-reserve-blocker)
 
 ## Coubic とは
 

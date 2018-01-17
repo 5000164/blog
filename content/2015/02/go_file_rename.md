@@ -22,7 +22,7 @@ go fmt があるのはいい。
 
 ## 参考
 
-* [Golangの変数とか関数とか[基礎] - Qiita](http://qiita.com/mackiso/items/e435e154e3376a68dcca)
-* [golangを基礎から学ぶ　制御構造編 - Qiita](http://qiita.com/high5/items/3fe34d2feeff2c11f5ca)
-* [Go言語: いろいろなマップの作り方まとめ - Qiita](http://qiita.com/suin/items/7225ab9f2aeb6f55c606)
-* [golang - Go言語入門(ファイル・ディレクトリ操作) - Qiita](http://qiita.com/knt45/items/557ee65c46a685ea4f59)
+- [Golangの変数とか関数とか[基礎] - Qiita](http://qiita.com/mackiso/items/e435e154e3376a68dcca)
+- [golangを基礎から学ぶ　制御構造編 - Qiita](http://qiita.com/high5/items/3fe34d2feeff2c11f5ca)
+- [Go言語: いろいろなマップの作り方まとめ - Qiita](http://qiita.com/suin/items/7225ab9f2aeb6f55c606)
+- [golang - Go言語入門(ファイル・ディレクトリ操作) - Qiita](http://qiita.com/knt45/items/557ee65c46a685ea4f59)

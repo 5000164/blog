@@ -88,7 +88,7 @@ var_dump($transposed_matrix);
 
 ## 参考
 
-* [PHPのarray_columnが便利 - Qiita](http://qiita.com/harukasan/items/a0773aef27d838852e44)
-* [【php】配列の縦横入れ替え的な操作 at softelメモ](https://www.softel.co.jp/blogs/tech/archives/2576)
-* [PHPで二次元配列の転置行列を得る方法 - かなりすごいブログ](http://blog.supermomonga.com/articles/php/array-to-transverse-matrix.html)
+- [PHPのarray_columnが便利 - Qiita](http://qiita.com/harukasan/items/a0773aef27d838852e44)
+- [【php】配列の縦横入れ替え的な操作 at softelメモ](https://www.softel.co.jp/blogs/tech/archives/2576)
+- [PHPで二次元配列の転置行列を得る方法 - かなりすごいブログ](http://blog.supermomonga.com/articles/php/array-to-transverse-matrix.html)
     - 難しくて理解できなかった
