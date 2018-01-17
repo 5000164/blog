@@ -12,10 +12,10 @@ ga('send', 'pageview');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=640">
     <title>高速化のために Hugo で CSS を HTML に埋め込む | 5000164 is here</title>
-    <meta name="description" content="速い is 正義 CSS は HTML に埋め込んだ方が速いらしい。 では Hugo でどうやってそれを実現するのか。 partial を使えばできそうだと思ってぐぐったらあった。 [Feature request] Partial CSS files ·">
+    <meta name="description" content="速い is 正義 CSS は HTML に埋め込んだ方が速いらしい。 では Hugo でどうやってそれを実現するのか。 partial を使えばできそうだと思ってぐぐったらあった。 [Feature request] Partial CSS files · Issue #3186 · gohugoio/hugo これに従って下記のように修正する。 1&lt;style type=&quot;text/css&quot;&gt;{{ partial &quot;css/main.css&quot; . | print | safeCSS }}{{ partial &quot;css/monokai.css&quot; . | print | safeCSS }}&lt;/style&gt; これでできた。 コードはここ。 高速化のために Web フォントをやめて CSS を HTML への埋め込みにした · 5000164/divided@0f3132d Minify はまだできてない 簡単にやる方法あるのかな。">
     <link href="http://blog.5000164.jp/2017-11-speed/" rel="canonical">
     <meta property="og:title" content="高速化のために Hugo で CSS を HTML に埋め込む | 5000164 is here">
-    <meta property="og:description" content="速い is 正義 CSS は HTML に埋め込んだ方が速いらしい。 では Hugo でどうやってそれを実現するのか。 partial を使えばできそうだと思ってぐぐったらあった。 [Feature request] Partial CSS files ·">
+    <meta property="og:description" content="速い is 正義 CSS は HTML に埋め込んだ方が速いらしい。 では Hugo でどうやってそれを実現するのか。 partial を使えばできそうだと思ってぐぐったらあった。 [Feature request] Partial CSS files · Issue #3186 · gohugoio/hugo これに従って下記のように修正する。 1&lt;style type=&quot;text/css&quot;&gt;{{ partial &quot;css/main.css&quot; . | print | safeCSS }}{{ partial &quot;css/monokai.css&quot; . | print | safeCSS }}&lt;/style&gt; これでできた。 コードはここ。 高速化のために Web フォントをやめて CSS を HTML への埋め込みにした · 5000164/divided@0f3132d Minify はまだできてない 簡単にやる方法あるのかな。">
     <meta property="og:url" content="http://blog.5000164.jp/2017-11-speed/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@5000164">

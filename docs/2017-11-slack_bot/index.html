@@ -12,10 +12,10 @@ ga('send', 'pageview');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=640">
     <title>Scala で Slack bot | 5000164 is here</title>
-    <meta name="description" content="動機 Scala の勉強をするにあたって題材をどうしようか考えた。 Twitter のことを最近いいなと感じ始めていたのだけれど投稿するのが面倒くさくて、簡単に投稿でき">
+    <meta name="description" content="動機 Scala の勉強をするにあたって題材をどうしようか考えた。 Twitter のことを最近いいなと感じ始めていたのだけれど投稿するのが面倒くさくて、簡単に投稿できるようにしたかったので普段よく使っている Slack から投稿できるようにすることにした。 概要 Slack の bot に投げた内容をツイートする。 コード ここです。 5000164/scala-bot 技術的なところ Scala のライブラリと Java のライブラリ build.sbt で slack-scala-client は追加できるのに twitter4j-core は追加できないと悩んでいたら、 % と %% が違うことを知った。 groupID % artifactID % revision のかわりに、 groupID %% artifactID % revision を使うと（違いは groupID の後ろの二つ連なった %%）、 sbt はプロジェクトの Scala のバイナリバージョンをアーティファクト名に追加する。 これはただの略記法なので %% 無しで書くこともできる: sbt Reference Manual — ライブラリ依存性 slack-scala-client は Scala のライブラリなので略記法でいける、 twitter4j-core は Java のライブラリなので略記法ではいけない、ということだった。 モックを使ったテスト コントローラーのテストを書く時に、副作用が出る部分をモッ">
     <link href="http://blog.5000164.jp/2017-11-slack_bot/" rel="canonical">
     <meta property="og:title" content="Scala で Slack bot | 5000164 is here">
-    <meta property="og:description" content="動機 Scala の勉強をするにあたって題材をどうしようか考えた。 Twitter のことを最近いいなと感じ始めていたのだけれど投稿するのが面倒くさくて、簡単に投稿でき">
+    <meta property="og:description" content="動機 Scala の勉強をするにあたって題材をどうしようか考えた。 Twitter のことを最近いいなと感じ始めていたのだけれど投稿するのが面倒くさくて、簡単に投稿できるようにしたかったので普段よく使っている Slack から投稿できるようにすることにした。 概要 Slack の bot に投げた内容をツイートする。 コード ここです。 5000164/scala-bot 技術的なところ Scala のライブラリと Java のライブラリ build.sbt で slack-scala-client は追加できるのに twitter4j-core は追加できないと悩んでいたら、 % と %% が違うことを知った。 groupID % artifactID % revision のかわりに、 groupID %% artifactID % revision を使うと（違いは groupID の後ろの二つ連なった %%）、 sbt はプロジェクトの Scala のバイナリバージョンをアーティファクト名に追加する。 これはただの略記法なので %% 無しで書くこともできる: sbt Reference Manual — ライブラリ依存性 slack-scala-client は Scala のライブラリなので略記法でいける、 twitter4j-core は Java のライブラリなので略記法ではいけない、ということだった。 モックを使ったテスト コントローラーのテストを書く時に、副作用が出る部分をモッ">
     <meta property="og:url" content="http://blog.5000164.jp/2017-11-slack_bot/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@5000164">

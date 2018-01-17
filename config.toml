@@ -5,6 +5,7 @@ languageCode = "ja"
 title = "5000164 is here"
 theme = "divided"
 publishDir = "docs"
+summaryLength = 400
 
 pygmentsUseClassic = true
 pygmentscodefences = true

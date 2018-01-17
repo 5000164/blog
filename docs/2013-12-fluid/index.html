@@ -12,10 +12,10 @@ ga('send', 'pageview');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=640">
     <title>コンテンツを横に2つ並べた時に片方だけコンテンツ幅がウィンドウ幅に追従するようにする | 5000164 is here</title>
-    <meta name="description" content="デモ 文章では説明しづらいので、なんだかよくわからないタイトルになってしまいました。 まずは実際に見てもらった方が早いと思います。 See the Pen qxgIF by SUGAWARA Hiroshi">
+    <meta name="description" content="デモ 文章では説明しづらいので、なんだかよくわからないタイトルになってしまいました。 まずは実際に見てもらった方が早いと思います。 See the Pen qxgIF by SUGAWARA Hiroshi (@5000164) on CodePen 1 2 3 4 5 6 7 8 9 10 11 12 13&lt;p&gt; ここではデモのために、ウィンドウの幅ではなくdivの幅を変更するようにしています。&lt;br /&gt; divの幅を変更してみると、左側のテーブルの幅は変わらずに右側の文章の幅だけが変わっているのが確認できます。 &lt;/p&gt; &lt;h1&gt; 実装方法 &lt;/h1&gt; &lt;p&gt; cssはこのようになっています。（関係のないプロパティは省略しています。） &lt;/p&gt; &lt;pre class=&quot;brush: css; title: ; notranslate&quot; title=&quot;&quot;&gt; div { position: relative; } table { position: absolute; top: 0; left: 0; width: 250px; } p { margin: 0 0 0 250px; } 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19&lt;p&gt; 非常に簡単です。&lt;br /&gt; まず、tableをposition: absolute;で固定することを考えます。&lt;br /&gt; そのために親要素にposition: relative;を指定します。&lt;br /&gt; これでtableの位置が固">
     <link href="http://blog.5000164.jp/2013-12-fluid/" rel="canonical">
     <meta property="og:title" content="コンテンツを横に2つ並べた時に片方だけコンテンツ幅がウィンドウ幅に追従するようにする | 5000164 is here">
-    <meta property="og:description" content="デモ 文章では説明しづらいので、なんだかよくわからないタイトルになってしまいました。 まずは実際に見てもらった方が早いと思います。 See the Pen qxgIF by SUGAWARA Hiroshi">
+    <meta property="og:description" content="デモ 文章では説明しづらいので、なんだかよくわからないタイトルになってしまいました。 まずは実際に見てもらった方が早いと思います。 See the Pen qxgIF by SUGAWARA Hiroshi (@5000164) on CodePen 1 2 3 4 5 6 7 8 9 10 11 12 13&lt;p&gt; ここではデモのために、ウィンドウの幅ではなくdivの幅を変更するようにしています。&lt;br /&gt; divの幅を変更してみると、左側のテーブルの幅は変わらずに右側の文章の幅だけが変わっているのが確認できます。 &lt;/p&gt; &lt;h1&gt; 実装方法 &lt;/h1&gt; &lt;p&gt; cssはこのようになっています。（関係のないプロパティは省略しています。） &lt;/p&gt; &lt;pre class=&quot;brush: css; title: ; notranslate&quot; title=&quot;&quot;&gt; div { position: relative; } table { position: absolute; top: 0; left: 0; width: 250px; } p { margin: 0 0 0 250px; } 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19&lt;p&gt; 非常に簡単です。&lt;br /&gt; まず、tableをposition: absolute;で固定することを考えます。&lt;br /&gt; そのために親要素にposition: relative;を指定します。&lt;br /&gt; これでtableの位置が固">
     <meta property="og:url" content="http://blog.5000164.jp/2013-12-fluid/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@5000164">

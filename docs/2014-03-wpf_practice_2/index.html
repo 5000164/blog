@@ -12,10 +12,10 @@ ga('send', 'pageview');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=640">
     <title>WPFで方向キーを入力した方向へ四角形を動かす | 5000164 is here</title>
-    <meta name="description" content="実際に作ったものはこんな感じです 方向キーの入力した方向へで赤い点が動きます。 ソースコードはこちら。 5000164/wpf-practice-2 画面に動かすものを表示する とりあえずなん">
+    <meta name="description" content="実際に作ったものはこんな感じです 方向キーの入力した方向へで赤い点が動きます。 ソースコードはこちら。 5000164/wpf-practice-2 画面に動かすものを表示する とりあえずなんでもよかったので、Rectangleタグで四角形を表示します。 そして、位置を指定するためにCanvasタグで囲みます。 &lt;Canvas&gt; &lt;Rectangle Name=&#34;pointer&#34; Width=&#34;10&#34; Height=&#34;10&#34; Fill=&#34;Red&#34; Canvas.Left=&#34;0&#34; Canvas.Top=&#34;0&#34; /&gt; &lt;/Canvas&gt; これでXAML側はほぼ完成。 あとは動かすだけ。 キーボードの入力を取得します WindowにPreviewKeyDownをつけます。 これでキーが押されたらイベントが発生します。 WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&#8217;s C# Dev Notes C#側で座標を取得するために まずは四角にNameをつけます。 これでC#側で変数として扱えます。 XAML とプログラムコード（WPF） (.NET Framework) 四角の現在位置を取得する C#側で四角につけた名前から座標を取得します。 // 現在地を取得 Double leftPosition = Canvas.GetLeft(this.pointer); Double topPosition =">
     <link href="http://blog.5000164.jp/2014-03-wpf_practice_2/" rel="canonical">
     <meta property="og:title" content="WPFで方向キーを入力した方向へ四角形を動かす | 5000164 is here">
-    <meta property="og:description" content="実際に作ったものはこんな感じです 方向キーの入力した方向へで赤い点が動きます。 ソースコードはこちら。 5000164/wpf-practice-2 画面に動かすものを表示する とりあえずなん">
+    <meta property="og:description" content="実際に作ったものはこんな感じです 方向キーの入力した方向へで赤い点が動きます。 ソースコードはこちら。 5000164/wpf-practice-2 画面に動かすものを表示する とりあえずなんでもよかったので、Rectangleタグで四角形を表示します。 そして、位置を指定するためにCanvasタグで囲みます。 &lt;Canvas&gt; &lt;Rectangle Name=&#34;pointer&#34; Width=&#34;10&#34; Height=&#34;10&#34; Fill=&#34;Red&#34; Canvas.Left=&#34;0&#34; Canvas.Top=&#34;0&#34; /&gt; &lt;/Canvas&gt; これでXAML側はほぼ完成。 あとは動かすだけ。 キーボードの入力を取得します WindowにPreviewKeyDownをつけます。 これでキーが押されたらイベントが発生します。 WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&#8217;s C# Dev Notes C#側で座標を取得するために まずは四角にNameをつけます。 これでC#側で変数として扱えます。 XAML とプログラムコード（WPF） (.NET Framework) 四角の現在位置を取得する C#側で四角につけた名前から座標を取得します。 // 現在地を取得 Double leftPosition = Canvas.GetLeft(this.pointer); Double topPosition =">
     <meta property="og:url" content="http://blog.5000164.jp/2014-03-wpf_practice_2/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@5000164">

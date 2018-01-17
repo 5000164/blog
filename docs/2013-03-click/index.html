@@ -12,10 +12,10 @@ ga('send', 'pageview');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=640">
     <title>iOSでDOMに要素追加してjQueryでclickイベントを取得する | 5000164 is here</title>
-    <meta name="description" content="clickイベントを取得したい DOMに要素を追加するとjQueryのclickイベントって効かなくなるんですね 知らなかった そういう時はjQu">
+    <meta name="description" content="clickイベントを取得したい DOMに要素を追加するとjQueryのclickイベントって効かなくなるんですね 知らなかった そういう時はjQueryのonを使えばclickイベントも取得できるってことで実装 Chromeで動作確認 動いた iOSで見てみる 動かない iOSでonのclickイベントが取得できない iOSで動かなくていろいろ調べてみました でもサンプルが動いてるサイトもある うーん そこで手元でちょっとずつ変更を加えながら調べてみたところ サンプルのaタグをdivタグに変えると動かなくなるということが判明 そこでonlick=&#8221;&#8221;を追加すれば動くようになるという記事を発見 divタグにonclick=&#8221;&#8221;を追加することでiOSでも無事にclickイベントを拾うことができました iOSのlabel要素と同じ対処法ですね 動かないのは同じような理由なのでしょう">
     <link href="http://blog.5000164.jp/2013-03-click/" rel="canonical">
     <meta property="og:title" content="iOSでDOMに要素追加してjQueryでclickイベントを取得する | 5000164 is here">
-    <meta property="og:description" content="clickイベントを取得したい DOMに要素を追加するとjQueryのclickイベントって効かなくなるんですね 知らなかった そういう時はjQu">
+    <meta property="og:description" content="clickイベントを取得したい DOMに要素を追加するとjQueryのclickイベントって効かなくなるんですね 知らなかった そういう時はjQueryのonを使えばclickイベントも取得できるってことで実装 Chromeで動作確認 動いた iOSで見てみる 動かない iOSでonのclickイベントが取得できない iOSで動かなくていろいろ調べてみました でもサンプルが動いてるサイトもある うーん そこで手元でちょっとずつ変更を加えながら調べてみたところ サンプルのaタグをdivタグに変えると動かなくなるということが判明 そこでonlick=&#8221;&#8221;を追加すれば動くようになるという記事を発見 divタグにonclick=&#8221;&#8221;を追加することでiOSでも無事にclickイベントを拾うことができました iOSのlabel要素と同じ対処法ですね 動かないのは同じような理由なのでしょう">
     <meta property="og:url" content="http://blog.5000164.jp/2013-03-click/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@5000164">

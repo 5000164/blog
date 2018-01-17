@@ -17,7 +17,7 @@
       <pubDate>Mon, 15 Jan 2018 20:35:10 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2018-01-scala_javafx_save_image/</guid>
-      <description>昨日の記事 の続きのようなもの。 Canvas で表示できるようになったから画像として保存する。 コードはこんな感じ。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18val c =</description>
+      <description>昨日の記事 の続きのようなもの。 Canvas で表示できるようになったから画像として保存する。 コードはこんな感じ。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18val c = new Canvas(300, 300) val gc = c.getGraphicsContext2D gc.setFill(Color.GRAY) gc.setFont(Font.font(&amp;quot;Hiragino Sans&amp;quot;, 20)) gc.fillText(&amp;quot;テキスト&amp;quot;, 50, 50) val wi = new WritableImage(300, 300) c.snapshot(null, wi) val ri = SwingFXUtils.fromFXImage(wi, null) val f = new File(&amp;quot;test.png&amp;quot;) ImageIO.write(ri, &amp;quot;png&amp;quot;, f) val root = new StackPane() root.getChildren.add(c) val scene = new Scene(root, 350, 350) primaryStage.setTitle(&amp;quot;test&amp;quot;) primaryStage.setScene(scene) primaryStage.show() これを実行するとこういう画像ファイルが生成される。 生成された画像 ざっくり説明 Canvas の内容を WritableImage に変換する。 これが Canvas が持ってる snapshot というメソッドでできるっぽい。 その後は RenderedImage に変換してファイルに保存する。 参考 Java-Buddy: Save Canvas to PNG file JavaFX 2 Snapshot as PNG Image | code.makery.ch ついでに保存場所選択 下記のコードを追加することで保存する場所を選べるようになった。 1 2val fc = new FileChooser val f = fc.showSaveDialog(primaryStage)</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Sun, 14 Jan 2018 08:53:55 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2018-01-scala_javafx_generate_image/</guid>
-      <description>昨日の記事 ではすでに存在する画像を表示したが、やりたいことは生成したテキストを画像にするということだったので、まずはテキストを表示できるよう</description>
+      <description>昨日の記事 ではすでに存在する画像を表示したが、やりたいことは生成したテキストを画像にするということだったので、まずはテキストを表示できるようにする。 最終的には画像にしたいので、画像に変換できる Canvas を利用する。 コードはこんな感じ。 1 2 3 4 5 6 7 8 9 10 11val c = new Canvas(300, 300) val gc = c.getGraphicsContext2D gc.setFill(Color.GRAY) gc.setFont(Font.font(&amp;quot;Hiragino Sans&amp;quot;, 20)) gc.fillText(&amp;quot;テキスト&amp;quot;, 50, 50) val root = new StackPane() root.getChildren.add(c) val scene = new Scene(root, 350, 350) primaryStage.setTitle(&amp;quot;test&amp;quot;) primaryStage.setScene(scene) primaryStage.show() このコードで下記のような実行結果になる。 実行結果 参考 JavaFX 図形・Canvas｜軽Lab canvas - JavaFX GraphicsContext change text size - Stack Overflow 試行錯誤メモ 調べていたら WritableImage というもので画像を生成できると見かけたので最初は WritableImage で画像を表示してみたのだが、テキストを描画する方法がわからず、さらに調べていたら Canvas を発見したので Canvas を使用するようにした。 試行錯誤中に参考にしたもの Java-Buddy: Draw something on WritableImage Java Code Example javafx.scene.image.WritableImage</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Sat, 13 Jan 2018 20:59:55 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2018-01-scala_javafx_image/</guid>
-      <description>こんな感じ。 1 2 3 4 5 6 7 8val image = new Image(getClass.getResource(&amp;quot;/test.png&amp;quot;).toString) val imageView = new ImageView(image) val root = new StackPane() root.getChildren.add(imageView) val scene = new Scene(root, 350, 350) primaryStage.setTitle(&amp;quot;test&amp;quot;) primaryStage.setScene(scene) primaryStage.show() ポイント 画像を下記のパスに配置して getClass.getResource(&amp;quot;/test.png&amp;quot;).toString でパスを取得すること。 1 2</description>
+      <description>こんな感じ。 1 2 3 4 5 6 7 8val image = new Image(getClass.getResource(&amp;quot;/test.png&amp;quot;).toString) val imageView = new ImageView(image) val root = new StackPane() root.getChildren.add(imageView) val scene = new Scene(root, 350, 350) primaryStage.setTitle(&amp;quot;test&amp;quot;) primaryStage.setScene(scene) primaryStage.show() ポイント 画像を下記のパスに配置して getClass.getResource(&amp;quot;/test.png&amp;quot;).toString でパスを取得すること。 1 2 3 4 5. └── src └── main └── resources └── test.png 参考 java - JavaFx Images Path - Stack Overflow</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       <pubDate>Fri, 05 Jan 2018 17:48:03 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2018-01-view_scala_traffic/</guid>
-      <description>Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通</description>
+      <description>Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy(&amp;quot;localhost&amp;quot;, 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信頼したキーストアを生成する 生成したキーストアをアプリケーションから読み込む Charles の SSL Proxy を有効にする となる。 Charles の証明書を信頼したキーストアを生成する まず Charles の証明書を取得する。 これはアプリケーションのメニューの Help &amp;gt; SSL Proxying &amp;gt; Save Charles Root Certificate... から取得できる</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@
       <pubDate>Sun, 31 Dec 2017 17:57:13 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-12-adopt_2017/</guid>
-      <description>人生をよりよいものにするために 2017 年もいろいろなものを取り入れた。 その中でもよかったと思うものを振り返る。 前提 2017 年に新しく導入したもののみを取</description>
+      <description>人生をよりよいものにするために 2017 年もいろいろなものを取り入れた。 その中でもよかったと思うものを振り返る。 前提 2017 年に新しく導入したもののみを取り上げる 導入してよかったと感じているのは 28 歳 男性 プログラマー 学習編 ポモドーロテクニック 2017 年に導入して 1 番よかったものはこれ。 今まで存在とやり方は知っていたが、自分には合わないだろうという偏見で 1 度も試したことがなかった。 リモートワークを行うようになったこと、勉強のタスクをうまく区切れなくて手をつけるのに億劫になってしまっていたことを解消するために導入した。 導入して 1 番よかったことは、今までの「このタスクをやるのに何分」という考え方から「25 分でここまでできる」という考え方に変わったこと。 目標の設定もしやすいし、振り返りもできるし、達成感も得られるし、非常におすすめ。 KPT による振り返り 改善を進めていくために振り返りを導入した。 その振り返り手法として KPT を使っ</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@
       <pubDate>Sun, 31 Dec 2017 17:17:03 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-12-scala_study_group_2/</guid>
-      <description>Scala の勉強会 詳細 【再増席】教養としてのScala ~ そろそろ始めてみたい2017冬 - connpass スライド 【再増席】教養としてのScala ~ そろそろ始めてみ</description>
+      <description>Scala の勉強会 詳細 【再増席】教養としてのScala ~ そろそろ始めてみたい2017冬 - connpass スライド 【再増席】教養としてのScala ~ そろそろ始めてみたい2017冬 - Media List - connpass 関連ブログ 教養としてのScala勉強会に参加しました - たけぞう瀕死ブログ 各発表のメモ 頑張りすぎないScala 楽しんでスカラやる 無理しなくていい でもやるからには関数型プログラミングを積極的に取り入れていくべき 手続き型のオブジェクト指向プログラミングから関数型プログラミングが地続きになっているのが Scala の特徴 次回教養としてのモナド 気になる 今日から始めるスカライフ~MajiでKoiする5秒前~ 参考になる資料 Introduction · Scala研修テキスト S-99: Ninety-Nine Scala Problems Scalaスケーラブルプログラミング第3版 | Martin Odersky, Lex Spoon, Bill Venners, 長尾 高弘, 羽生田 栄一, 水島 宏太 | 工学 | Kindleストア | Amazon Scalaメモ(Hishidama&amp;rsquo;s Scala Memo) List クラスを再実装すると勉強になる</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@
       <pubDate>Thu, 14 Dec 2017 20:27:37 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-12-scala_study_group/</guid>
-      <description>Scala の勉強会 詳細はこれ。 青山エンジニア勉強交流会～Scala勉強会～｜IT勉強会・セミナーなどのイベント情報検索サービス - TECH PLAY［テックプ</description>
+      <description>Scala の勉強会 詳細はこれ。 青山エンジニア勉強交流会～Scala勉強会～｜IT勉強会・セミナーなどのイベント情報検索サービス - TECH PLAY［テックプレイ］ スライドはこれ。 イベントレポート｜青山エンジニア勉強交流会～Scala勉強会～ - TECH PLAY［テックプレイ］ イベントレポートはこれ。 大盛況！ミニScalaまつり＠青山 | F@N Communications&amp;rsquo; Blog 各発表のメモ PHPエンジニアが始めるScala 型エイリアス 知らなかった便利そう Either って アイザー って読むの？ 調べたら イーザー でも アイザー でもいいらしい for yield わからない flatMap わからない &amp;ldquo;cats&amp;rdquo; in practice. 関数型ライブラリcatsの紹介と アドテクシステムにおける使用例 モナドわからない 圏論もわからない for yield わからない cats 使ってみたい Try 型わからない ScalaのDIパターンについて Cake Pattern 初めてふわっと理解できたかも でもやばい今もう忘れてる テスト書く時それぞれでどうなるのか知りたい Futureのおまじないを理解する Future わ</description>
     </item>
     
     <item>
@@ -80,7 +80,7 @@
       <pubDate>Wed, 29 Nov 2017 13:53:55 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-11-slack_bot/</guid>
-      <description>動機 Scala の勉強をするにあたって題材をどうしようか考えた。 Twitter のことを最近いいなと感じ始めていたのだけれど投稿するのが面倒くさくて、簡単に投稿でき</description>
+      <description>動機 Scala の勉強をするにあたって題材をどうしようか考えた。 Twitter のことを最近いいなと感じ始めていたのだけれど投稿するのが面倒くさくて、簡単に投稿できるようにしたかったので普段よく使っている Slack から投稿できるようにすることにした。 概要 Slack の bot に投げた内容をツイートする。 コード ここです。 5000164/scala-bot 技術的なところ Scala のライブラリと Java のライブラリ build.sbt で slack-scala-client は追加できるのに twitter4j-core は追加できないと悩んでいたら、 % と %% が違うことを知った。 groupID % artifactID % revision のかわりに、 groupID %% artifactID % revision を使うと（違いは groupID の後ろの二つ連なった %%）、 sbt はプロジェクトの Scala のバイナリバージョンをアーティファクト名に追加する。 これはただの略記法なので %% 無しで書くこともできる: sbt Reference Manual — ライブラリ依存性 slack-scala-client は Scala のライブラリなので略記法でいける、 twitter4j-core は Java のライブラリなので略記法ではいけない、ということだった。 モックを使ったテスト コントローラーのテストを書く時に、副作用が出る部分をモッ</description>
     </item>
     
     <item>
@@ -89,7 +89,7 @@
       <pubDate>Mon, 20 Nov 2017 13:26:39 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-11-speed/</guid>
-      <description>速い is 正義 CSS は HTML に埋め込んだ方が速いらしい。 では Hugo でどうやってそれを実現するのか。 partial を使えばできそうだと思ってぐぐったらあった。 [Feature request] Partial CSS files ·</description>
+      <description>速い is 正義 CSS は HTML に埋め込んだ方が速いらしい。 では Hugo でどうやってそれを実現するのか。 partial を使えばできそうだと思ってぐぐったらあった。 [Feature request] Partial CSS files · Issue #3186 · gohugoio/hugo これに従って下記のように修正する。 1&amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt;{{ partial &amp;quot;css/main.css&amp;quot; . | print | safeCSS }}{{ partial &amp;quot;css/monokai.css&amp;quot; . | print | safeCSS }}&amp;lt;/style&amp;gt; これでできた。 コードはここ。 高速化のために Web フォントをやめて CSS を HTML への埋め込みにした · 5000164/divided@0f3132d Minify はまだできてない 簡単にやる方法あるのかな。</description>
     </item>
     
     <item>
@@ -98,7 +98,7 @@
       <pubDate>Fri, 17 Nov 2017 13:13:43 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-11-hatebu/</guid>
-      <description>コード 1javascript:(function(){location=(&amp;#39;http://b.hatena.ne.jp/entry/&amp;#39;+(location.protocol==&amp;#39;https:&amp;#39;?&amp;#39;s/&amp;#39;:&amp;#39;&amp;#39;)+location.host+location.pathname+location.search)}()); 背景 はてなブックマークの人気エントリーを RSS で購読しているが、なんでこれが人気エントリーになっているんだろう？と思う時がある。 その時に</description>
+      <description>コード 1javascript:(function(){location=(&amp;#39;http://b.hatena.ne.jp/entry/&amp;#39;+(location.protocol==&amp;#39;https:&amp;#39;?&amp;#39;s/&amp;#39;:&amp;#39;&amp;#39;)+location.host+location.pathname+location.search)}()); 背景 はてなブックマークの人気エントリーを RSS で購読しているが、なんでこれが人気エントリーになっているんだろう？と思う時がある。 その時に毎回はてなブックマークを検索して、そこからさらに URL を入力して、とやっていたが、それが手間だったのでブックマークレットで遷移できるようにした。 参考 エントリーページの URL 変更について - はてなブックマーク日記 - 機能変更、お知らせなど</description>
     </item>
     
     <item>
@@ -107,7 +107,7 @@
       <pubDate>Tue, 14 Nov 2017 20:55:51 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-11-irrationality/</guid>
-      <description>人間は合理的な判断を下せない 人間はさまざまな認知バイアスがかかり、合理的な判断を下すことができない。 この本では、簡単に認識が歪んでしまうこと</description>
+      <description>人間は合理的な判断を下せない 人間はさまざまな認知バイアスがかかり、合理的な判断を下すことができない。 この本では、簡単に認識が歪んでしまうことをさまざまな事実と実験から教えてくれる。 そして、合理的な判断を下せない理由と対策を示してくれる。 知る価値がある 認知バイアスの存在は知っていたし、気をつけていたつもりだったが、想像以上に影響が大きいものだと知った。 物事に対する認識が変わるほど非常に価値がある本。 どこかのタイミングでもう一度読むと思う。</description>
     </item>
     
     <item>
@@ -116,7 +116,7 @@
       <pubDate>Mon, 13 Nov 2017 10:24:04 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-11-profile/</guid>
-      <description>実際に作成したプロフィールはこちら。 5000164/profile GitHub に公開するためにいろいろ情報を整理できた 今まで職務経歴書はテンプレートを埋めるだけという感じだったが</description>
+      <description>実際に作成したプロフィールはこちら。 5000164/profile GitHub に公開するためにいろいろ情報を整理できた 今まで職務経歴書はテンプレートを埋めるだけという感じだったが、 GitHub で公開するにあたって情報をどのように見せればいいかと考えることでいろいろと整理することができてためになった。 特に文章をたくさん追加したことがこれまでとの大きな違いになる。 項目があってそれに答えるだけではなく、自分の価値をどうやって伝えればいいのかを考えた結果文章を追加する形になった。 そしてなによりも公開することで誰の目に触れるかわからないのでビビって推敲を重ねることができた。 転職活動をするにあたって職務経歴書を書いていた 職務経歴書をどうやって管理しようかなと考えていた時に、職務経歴書を GitHub にあげるという記事を見てなるほど便利だと思ったのでやってみた。 これを機に職務経歴書の書き方とかも整理できてよかった。 これから編集していくのも楽しそう 考えが変わった時</description>
     </item>
     
     <item>
@@ -125,7 +125,7 @@
       <pubDate>Thu, 02 Nov 2017 13:05:43 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-11-search/</guid>
-      <description>コード 1javascript:(function(){location=(location.href+&amp;#39;&amp;amp;hl=ja&amp;#39;)}()); 背景 Google 検索の設定を英語にしているが、まだ読めないことがたくさんあるので日本語で検索したくなる。 URL に hl=ja というパラメーターをつけることで</description>
+      <description>コード 1javascript:(function(){location=(location.href+&amp;#39;&amp;amp;hl=ja&amp;#39;)}()); 背景 Google 検索の設定を英語にしているが、まだ読めないことがたくさんあるので日本語で検索したくなる。 URL に hl=ja というパラメーターをつけることで言語設定を日本語にして検索することができるのでそれを簡略するためにブックマークレットを使う。</description>
     </item>
     
     <item>
@@ -143,7 +143,7 @@
       <pubDate>Sat, 14 Oct 2017 22:10:57 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-10-rust/</guid>
-      <description>Rust入門者向けハンズオンに参加した Rust入門者向けハンズオン #4 - connpass Rust に興味はあったけど触ったことなかったからよさそうと思って参加した。</description>
+      <description>Rust入門者向けハンズオンに参加した Rust入門者向けハンズオン #4 - connpass Rust に興味はあったけど触ったことなかったからよさそうと思って参加した。 触れてよかった。 これからも機会があれば触りたい。 言語に抱いたイメージ 現実的な言語だと思った。 ちゃんと実戦で使えるもの、という現実解としてこの形になったという感じ。 人間は信用できない、安全側に倒している、というのもよい。 メモリー周りの問題を解決することに興味が向いていると思うと納得するところもある。 関数型言語に影響を強く受けているということで触りやすかった。 基本的にイミュータブルとか。 でも参照とかを意識的にたくさん書いてる気配があるあたり、厳密にイミュータブルにするんじゃなくて処理の高速化のためとのバランスを取っている感じ。 結論 現時点でメインで触ることはない。 でも次ツールを書こうと思ったら Go じゃなくて Rust を選択すると思う。</description>
     </item>
     
     <item>
@@ -152,7 +152,7 @@
       <pubDate>Sun, 24 Sep 2017 20:53:36 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-09-layout/</guid>
-      <description>デスクの向きを窓に向けたら気持ちよかった 今までデスクは壁にしか向けたことがなかった。 何回か部屋の内側に向けるレイアウトを考えたことはあったけ</description>
+      <description>デスクの向きを窓に向けたら気持ちよかった 今までデスクは壁にしか向けたことがなかった。 何回か部屋の内側に向けるレイアウトを考えたことはあったけど、やっぱりなんかしっくりこない気がしてやめていた。 でも今回やるだけやってみて嫌だったらまた直そうと思ってやってみた。 そしたらとてもよかった。 外の景色とかが見れて気持ちがいい。 おすすめ。 デスクを窓に向けた様子</description>
     </item>
     
     <item>
@@ -161,7 +161,7 @@
       <pubDate>Sun, 10 Sep 2017 23:10:48 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-09-cable/</guid>
-      <description>ケーブルをまとめるチューブが便利 ケーブルをまとめるチューブを買った。 ケーブルをまとめられて便利。 Amazon | ELECOM ゴチャゴチャなケーブルを整理するチュー</description>
+      <description>ケーブルをまとめるチューブが便利 ケーブルをまとめるチューブを買った。 ケーブルをまとめられて便利。 Amazon | ELECOM ゴチャゴチャなケーブルを整理するチューブ 内径20mm 長さ5.0m ブラック BST-20BK | ELECOM(エレコム) | パソコン・周辺機器 通販</description>
     </item>
     
     <item>
@@ -170,7 +170,7 @@
       <pubDate>Mon, 14 Aug 2017 23:04:38 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-08-line_bot/</guid>
-      <description>目的 LINE Bot を使って生活を少し便利にしたい。 背景 最近 LINE をよく使ってるから。 なんかちょっとしたメモとか簡単に確認したいなーと思ったから。 たまたま AWS</description>
+      <description>目的 LINE Bot を使って生活を少し便利にしたい。 背景 最近 LINE をよく使ってるから。 なんかちょっとしたメモとか簡単に確認したいなーと思ったから。 たまたま AWS Lambda の料金を調べたら思っていたよりも安かったので使ってみたくなったから。 この記事のスタートとゴール スタートは、 LINE をすでに使っているが、 API などは使ったことがないところ。 ゴールは、 LINE のグループチャットで特定の発言をしたら特定の内容を返してくれるところ。 LINE Bot を使えるように登録する Messaging API の登録をする。 Messaging APIのご紹介 | LINE Business Center Developer Trial を選ぶ。 LINE BOTの作り方を世界一わかりやすく解説（１）【アカウント準備編】 - Qiita LINE Bot を使えるように設定する LINE@ MANAGER から以下の感じに Bot を設定する。 API を利用する Webhook を利用する グループトーク参加を利用する 自動応答メッセージを利用しない 友だち追加時あいさつを利用しない 基本設定アカウントページメニュー非表示 LINE Bot と友だちになってグループトークを作成 QR コードから</description>
     </item>
     
     <item>
@@ -179,7 +179,7 @@
       <pubDate>Mon, 14 Aug 2017 22:44:23 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-08-syntax_highlighting/</guid>
-      <description>結論 シンタックスハイライト用の css をテーマで読み込んでおく config.toml に下記の設定を追加 1 2 3 4 5pygmentscodefences = true pygmentsCodeFencesGuessSyntax = true pygmentsStyle = &amp;quot;monokai&amp;quot; pygmentsUseClasses = true pygmentsoptions = &amp;quot;linenos=inline&amp;quot; 背景 コードを見やすくしたい</description>
+      <description>結論 シンタックスハイライト用の css をテーマで読み込んでおく config.toml に下記の設定を追加 1 2 3 4 5pygmentscodefences = true pygmentsCodeFencesGuessSyntax = true pygmentsStyle = &amp;quot;monokai&amp;quot; pygmentsUseClasses = true pygmentsoptions = &amp;quot;linenos=inline&amp;quot; 背景 コードを見やすくしたいからシンタックスハイライトを使おうと思った。 やってみたら思ったよりもできなかった。 なんか疲れたのでメモ。 手順 Pygments をインストールする シンタックスハイライトするのに必要なやつ。 何も考えずに入れる。 1sudo easy_install Pygments シンタックスハイライト用の css を生成する カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。 クラスで指定する場合は css を事前に生成しておいて読むこんでおく必要がある。 下記のコマンドで css を生成する。 デフォルトで用意されていないカラースキーマの使い方がわからなかったので今回は monokai を使う。 1pygmentize -f html -S monokai -a .highlight &amp;gt; monokai.css 生成した css をテーマで読み込む テーマの static ディレクトリに css を置いて header で読み込む。 シンタックスハイライトを使うように設定する</description>
     </item>
     
     <item>
@@ -188,7 +188,7 @@
       <pubDate>Sun, 13 Aug 2017 05:17:55 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-08-import/</guid>
-      <description>背景 WordPress から Jekyll に移行した時に記事の移行が面倒で放っておいた。 Hugo に移行することにしたから Jekyll の記事と WordPress の記事を Hugo にインポートすることになった。 つら</description>
+      <description>背景 WordPress から Jekyll に移行した時に記事の移行が面倒で放っておいた。 Hugo に移行することにしたから Jekyll の記事と WordPress の記事を Hugo にインポートすることになった。 つらい。 Hugo に合わせた最終的な形式 こんな感じに統一することを目指す。 記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。 1 2 3 4 5 6 7 8 9+++ title = &amp;quot;Jekyll の記事と WordPress の記事を Hugo にインポートする&amp;quot; date = 2017-08-13T04:26:50+09:00 url = &amp;quot;2017-08-import&amp;quot; +++ ## 記事内容 つらつら 手順 実際に行ったインポート作業の内容はこちら。 Feature import article by 5000164 · Pull Request #2 · 5000164/blog WordPress の記事を Markdown 形式に変換する 最初は Jekyll に移行しようと思ってたのでこれを使いました。 benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll ファイル名を調整する なんか日付がたくさんついてたので年と月でディレクトリを分けてからファイル名をきれいにした。 1 2brew install rename find . -name &amp;quot;*.md&amp;quot; | xargs rename &amp;#39;s/\d\d\d\d-\d\d-\d\d-\d\d\d\d-\d\d-//&amp;#39; Jekyll の記事の URL はファイル名に依存してたのでファイルの中に書き込む ファ</description>
     </item>
     
     <item>
@@ -197,7 +197,7 @@
       <pubDate>Sun, 13 Aug 2017 04:19:22 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-08-blog/</guid>
-      <description>管理しやすいブログにしたかった 前は Jekyll で GitHub の機能を使ってブログを公開していたが、パソコンを変えたら環境構築が面倒でブログの環境を作ってなかった</description>
+      <description>管理しやすいブログにしたかった 前は Jekyll で GitHub の機能を使ってブログを公開していたが、パソコンを変えたら環境構築が面倒でブログの環境を作ってなかった。 だからもっとシンプルな構成で管理したくて興味があった Hugo に乗り換えた。 ついでに過去の記事をインポートした Jekyll に移行した時に、その前の WordPress の記事をインポートしていなかった。 それをサボっていたせいで WordPress と Jekyll の両方の記事をインポートしなきゃいけなくて手間だった。 やっとブログ環境を手に入れた これで更新し放題や。</description>
     </item>
     
     <item>
@@ -206,7 +206,7 @@
       <pubDate>Sun, 11 Dec 2016 01:52:56 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2016-12-profiler_memo/</guid>
-      <description>プロファイラーを調べた PHP のパフォーマンスを向上させたくてプロファイリングすればなにかわかるのでは？と思ったので、プロファイリングしてくれるツ</description>
+      <description>プロファイラーを調べた PHP のパフォーマンスを向上させたくてプロファイリングすればなにかわかるのでは？と思ったので、プロファイリングしてくれるツールを調べた。 New Relic は無料のプランがなくなっていた？ので除外。 結論 テスト流す時に Xdebug でプロファイリングして、開発環境で XHProf でプロファイリングすればいいのかなと思った。 XHProf は fork したプロセスのプロファイリングもできるみたいなことを見かけたため。 実現性についてはこれから調べる。 調べたプロファイラーのメモ Xdebug - Debugger and Profiler Tool for PHP phacility/xhprof: XHProf is a function-level hierarchical profiler for PHP and has a simple HTML based user interface. PHP profiling tools - Z-Ray, Blackfire, Tideways, XHProf, XHGui - Blog by Sandro Keil PHPプロファイラーのblackfireを使う - Qiita fork - php xdebug: How to profile forked process - Stack Overflow PhpStorm 2016.3 Help :: Analyzing Xdebug Profiling Data PhpStorm 2016.3 Help :: Enabling Profiling with Xdebug PhpStorm で PHPスクリプトの実行を解析する(Xdebugのプロファイラの結果を表示する) | バシャログ。 PHPのプロファイラであるZ-RayのPreview版を試しました - uzullaがブログ</description>
     </item>
     
     <item>
@@ -215,7 +215,7 @@
       <pubDate>Thu, 15 Sep 2016 03:01:06 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2016-09-test_driven_development_by_example/</guid>
-      <description>やっと読むことができた 本はだいぶ前に買ったのだけど、買った当時は理解できなくて最後まで読むことができなかった。 テスト駆動開発入門なのであって</description>
+      <description>やっと読むことができた 本はだいぶ前に買ったのだけど、買った当時は理解できなくて最後まで読むことができなかった。 テスト駆動開発入門なのであって、テスト入門ではない。 テストを書いたことがないと理解できないと思う。 もっとテストのことを考えられるようになった どういう考えでテストしていくのかを、なんとなく感じ取ることができた。 正しいテストとは、といったことを考えていたので、この本を読むことでもっとテストのことを考えられるようになった。 テストについてもっと勉強したい 読むことはできたけど、まだわからないことが多かった。 テストについてもっと勉強したい。 次は実戦テスト駆動開発を読む。</description>
     </item>
     
     <item>
@@ -224,7 +224,7 @@
       <pubDate>Mon, 21 Dec 2015 02:14:52 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-12-20/</guid>
-      <description>早く寝ようと思ってもうまくいかない ずっと早く寝ようとは思っているのにな。 なんでうまくいかないんだろ。 対症療法的な方法じゃなくて、もっと根本的</description>
+      <description>早く寝ようと思ってもうまくいかない ずっと早く寝ようとは思っているのにな。 なんでうまくいかないんだろ。 対症療法的な方法じゃなくて、もっと根本的な原因を探した方がいいかも。</description>
     </item>
     
     <item>
@@ -233,7 +233,7 @@
       <pubDate>Sun, 20 Dec 2015 05:17:35 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-12-19/</guid>
-      <description>今日は書道に行く予定だったのに行けなかった 寝坊してしまった。 迷惑をかけたし、書道にいけなくて悲しい。 先週の書道が今年最後の書道だったか。 もっ</description>
+      <description>今日は書道に行く予定だったのに行けなかった 寝坊してしまった。 迷惑をかけたし、書道にいけなくて悲しい。 先週の書道が今年最後の書道だったか。 もっときりいい形で終わらせたかった。 予定があるってわかってるんだから、前日はちゃんと早く寝なきゃだめだ。 反省。</description>
     </item>
     
     <item>
@@ -242,7 +242,7 @@
       <pubDate>Sun, 20 Dec 2015 05:17:29 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-12-18/</guid>
-      <description>仕事が思ったよりもうまく進まなかった もっとちゃんとした形できり良くしようと思ってたけどだめだった。 月曜日に頑張る。 焦ってもうまくいかないし落</description>
+      <description>仕事が思ったよりもうまく進まなかった もっとちゃんとした形できり良くしようと思ってたけどだめだった。 月曜日に頑張る。 焦ってもうまくいかないし落ち着こう。</description>
     </item>
     
     <item>
@@ -278,7 +278,7 @@
       <pubDate>Tue, 15 Dec 2015 01:55:02 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-12-14/</guid>
-      <description>部屋をちゃんとすると気分がいい お金と手間をかけると部屋の居心地がよくなる。 自分がリラックスできる環境をつくることは大事だ。 楽しいし。 もう少し</description>
+      <description>部屋をちゃんとすると気分がいい お金と手間をかけると部屋の居心地がよくなる。 自分がリラックスできる環境をつくることは大事だ。 楽しいし。 もう少しインテリアとか知りたいな。</description>
     </item>
     
     <item>
@@ -296,7 +296,7 @@
       <pubDate>Sun, 13 Dec 2015 16:51:18 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-12-12/</guid>
-      <description>書道に行った 今日の成果。 草書 楷書 楷書難しい。 でも線質の違いとかがだんだんわかってきた。 もっとかっこいい線を書けるようになりたい。 クリスマス雑</description>
+      <description>書道に行った 今日の成果。 草書 楷書 楷書難しい。 でも線質の違いとかがだんだんわかってきた。 もっとかっこいい線を書けるようになりたい。 クリスマス雑貨難しい クリスマス感を出しつつコスパよく。 難しい。 クリスマスの楽しみ方とは。 話し合い大事 解決しなかったとしても、構造が理解できれば改善につながる。 まずは理解するところから。 そのためにはなにを考えてるのかを言語化するのが大事だ。 思ってるだけじゃ伝わらない。 伝わっただけじゃ形にならない。 もっと発信して、もっと手を動かす。</description>
     </item>
     
     <item>
@@ -305,7 +305,7 @@
       <pubDate>Sat, 12 Dec 2015 01:40:35 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-12-11/</guid>
-      <description>今日は悔しい思いをした 自分の無力さを久しぶりに感じた。 おれはもっとできることがあるはず。 しっかり目を向けていく必要がある。 とりあえずもっとプ</description>
+      <description>今日は悔しい思いをした 自分の無力さを久しぶりに感じた。 おれはもっとできることがあるはず。 しっかり目を向けていく必要がある。 とりあえずもっとプログラミングしないといけない。 もっと書かないといけない。 もっと読まないといけない。 勉強だ。</description>
     </item>
     
     <item>
@@ -314,7 +314,7 @@
       <pubDate>Fri, 11 Dec 2015 01:24:39 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-12-10/</guid>
-      <description>対話すること 対話することは大事。 人間は言語を介して意思疎通するから。 自分から発信することも大事。 今日は自分から話しかけることを意識してみた。</description>
+      <description>対話すること 対話することは大事。 人間は言語を介して意思疎通するから。 自分から発信することも大事。 今日は自分から話しかけることを意識してみた。 考えを整理することも大事。 自分がなにをどう感じるのか知ることでより自分に適した選択ができるから。 社会的なコミュニケーションと個人的なコミュニケーションは違う。 特にコミュニケーションを頑張ろうとは思っていないが、軽視しないで大事にしていきたい。 改善するためにはまずは知ることから。 自分のことも相手のことも。</description>
     </item>
     
     <item>
@@ -323,7 +323,7 @@
       <pubDate>Wed, 09 Dec 2015 23:41:00 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-12-09/</guid>
-      <description>環境大事 デスクがきてとりあえずスペースができた。 このスペースが大事だ。 安くてもしょぼくても、あるだけでかなり効率が違う。 スペースがあるとタス</description>
+      <description>環境大事 デスクがきてとりあえずスペースができた。 このスペースが大事だ。 安くてもしょぼくても、あるだけでかなり効率が違う。 スペースがあるとタスクにも手を出しやすくなる。 やっぱり最初からいきなり完璧にしようとしないで、とりあえずの環境を作ることが大事だ。</description>
     </item>
     
     <item>
@@ -332,7 +332,7 @@
       <pubDate>Wed, 09 Dec 2015 02:46:51 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-12-08/</guid>
-      <description>タスクにとりあえず手を付ける タスクにとりあえず手を付けるのは大事。 やってしまうとそんなに抵抗なくやれる。 でもそれがわかってても後回しにしてし</description>
+      <description>タスクにとりあえず手を付ける タスクにとりあえず手を付けるのは大事。 やってしまうとそんなに抵抗なくやれる。 でもそれがわかってても後回しにしてしまう。 いかにしてちょっとだけ触るか。 目につくところにおいといても、触らなかったら目に入ってストレス溜まるし。 とりあえず触る、って癖をつけて置きたい。</description>
     </item>
     
     <item>
@@ -341,7 +341,7 @@
       <pubDate>Tue, 08 Dec 2015 03:07:57 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-12-07/</guid>
-      <description>ベストの尽くし方 今まではとにかく今日を頑張ろうと思っていた。 今日中に頑張ってタスク終わらせてやろうと思っていた。 でも、そうじゃない考え方もあ</description>
+      <description>ベストの尽くし方 今まではとにかく今日を頑張ろうと思っていた。 今日中に頑張ってタスク終わらせてやろうと思っていた。 でも、そうじゃない考え方もあるなと思った。 今日ベストを尽くすんじゃなくて、今週ベストを尽くす。 そう思うと、考え方も変わってくる。 今日はもう遅いし、このタスクは明日に回そう。 明日楽するために、今日もっとタスクこなそう。 そういう考え方ができるようになる。 これが 1 ヶ月、1 年とどんどん広がっていけば、どういう方向に進みたいのか見えてくるかも知れない。 ベストを尽くす期間を考えるというのは、自分にとっては新しい価値観だったので、気づけてよかった。</description>
     </item>
     
     <item>
@@ -359,7 +359,7 @@
       <pubDate>Sun, 06 Dec 2015 06:24:15 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-12-05/</guid>
-      <description>書道に行った 今日の成果。 楷書 行書 温故知新 2 ヶ月ぶりに筆を持ったわりにはそれっぽい字をかけた。 少しは落ち着いてきたからまた通える。 やっぱ書道は</description>
+      <description>書道に行った 今日の成果。 楷書 行書 温故知新 2 ヶ月ぶりに筆を持ったわりにはそれっぽい字をかけた。 少しは落ち着いてきたからまた通える。 やっぱ書道は楽しいな。 スター・ウォーズ エピソード4/新たなる希望を見た スターウォーズを見るのは初めてだった。 おもしろかった。 感想は感想で軽く違う記事に書こう。</description>
     </item>
     
     <item>
@@ -368,7 +368,7 @@
       <pubDate>Sat, 05 Dec 2015 04:27:49 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-12-04/</guid>
-      <description>マルチターミナルプレクサ tmux を勉強したって言ったら byobu ってやつを教えてもらった。 こっちも少し触ってみよう。 tmux も触ってどっちがいいか考えよう。 とり</description>
+      <description>マルチターミナルプレクサ tmux を勉強したって言ったら byobu ってやつを教えてもらった。 こっちも少し触ってみよう。 tmux も触ってどっちがいいか考えよう。 とりあえず byobu のスクロールがうまくいかないと、tmux になりそう。 環境が整ってきた 環境がちゃんと整ったらまとめよう。 楽しみだ。</description>
     </item>
     
     <item>
@@ -377,7 +377,7 @@
       <pubDate>Fri, 04 Dec 2015 02:08:39 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-12-03/</guid>
-      <description>ドットインストールで tmux を勉強した 便利っぽい噂はずっと聞いてたので、やっと勉強した。 複数のウィンドウで ssh するのだるいと思ってたので、それを解消</description>
+      <description>ドットインストールで tmux を勉強した 便利っぽい噂はずっと聞いてたので、やっと勉強した。 複数のウィンドウで ssh するのだるいと思ってたので、それを解消できそうでよかった。 最初は pane 分割しても結局 ssh しなきゃだめじゃん、とか思ったけど、ssh してから tmux 使えばいいのだった。 早速明日から使ってみよう。</description>
     </item>
     
     <item>
@@ -386,7 +386,7 @@
       <pubDate>Thu, 03 Dec 2015 00:53:20 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-12-02/</guid>
-      <description>肌が乾燥してかゆい ボディソープを変えてみようかな。 ボディローションには今これを使ってて、これには結構満足していた。 ボディソープを変えてもだめ</description>
+      <description>肌が乾燥してかゆい ボディソープを変えてみようかな。 ボディローションには今これを使ってて、これには結構満足していた。 ボディソープを変えてもだめだったらまた考えよう。 寝不足かつタスクがなかなか消化できない いろいろと諦めないと。 諦めるって言葉はよくない言葉だと思っていた。 前までは。 でもある時から、そんなに悪い言葉でもないなと思うようになった。 いい意味で諦めは大事だ。 諦観って感じに近いのかも。 望むものすべてを手に入れることはできない。 取捨選択する必要がある。 なにかを諦めるってことは、なにかを得るってことだ。</description>
     </item>
     
     <item>
@@ -395,7 +395,7 @@
       <pubDate>Wed, 02 Dec 2015 01:33:36 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-12-01/</guid>
-      <description>雪が凍ってすべる エア マックスの滑りやすさはやばい。 早く靴なんとかしないと転ぶのは時間の問題。 問題の切り分け方 なにか問題があった時に、ひとつひ</description>
+      <description>雪が凍ってすべる エア マックスの滑りやすさはやばい。 早く靴なんとかしないと転ぶのは時間の問題。 問題の切り分け方 なにか問題があった時に、ひとつひとつ追っていくんじゃなくて、もっと大雑把に追った方が効率がいい。 バブルソートじゃなくてクイックソートみたいな。 意識しよう。</description>
     </item>
     
     <item>
@@ -404,7 +404,7 @@
       <pubDate>Tue, 01 Dec 2015 04:25:15 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-30/</guid>
-      <description>今日はいろいろ買った 買い物の調べ物ですごい時間をとられていた。 でも今日で一区切りついたので落ち着きそう。 買ったものはまた改めてリストにしよう</description>
+      <description>今日はいろいろ買った 買い物の調べ物ですごい時間をとられていた。 でも今日で一区切りついたので落ち着きそう。 買ったものはまた改めてリストにしよう。 睡眠不足はよくない 早めに買った方がいいものを調べていて慢性的に睡眠不足。 とてもよくない。 どうにかしてうまい仕組みを作れないものか。</description>
     </item>
     
     <item>
@@ -413,7 +413,7 @@
       <pubDate>Mon, 30 Nov 2015 04:57:47 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-29/</guid>
-      <description>洗濯機が思ってたよりも静か 洗濯機ってこんなものなのか、足場がよかったのか。 とりあえずたしかに聞いていた通り掃除はしやすい。 よかった。 組み合わ</description>
+      <description>洗濯機が思ってたよりも静か 洗濯機ってこんなものなのか、足場がよかったのか。 とりあえずたしかに聞いていた通り掃除はしやすい。 よかった。 組み合わせはこんな感じ。 ハイアール 5.0kg 全自動洗濯機 ブラックHaier JW-K50K-K 因幡電工 洗濯機用防振かさ上げ台 ふんばるマン 1セット(4個入) OP-SG600 机と椅子が案の定難しい グレードが分かれる価格帯がいまいちわからんから、適切な予算が設定できてるかわからん。 机と椅子は難しくて大変だ。 とりあえず金を出せば良い物が買えるってことは間違いない。</description>
     </item>
     
     <item>
@@ -422,7 +422,7 @@
       <pubDate>Sun, 29 Nov 2015 06:21:44 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-28/</guid>
-      <description>ダイニングテーブルを探している 探しまわった結果、現状はこんな感じ。 候補 KeLT シリーズ KeLT ケルト カフェテーブル チェア 3点セット 北欧風 ダイニング コーヒ</description>
+      <description>ダイニングテーブルを探している 探しまわった結果、現状はこんな感じ。 候補 KeLT シリーズ KeLT ケルト カフェテーブル チェア 3点セット 北欧風 ダイニング コーヒーテーブル カフェ パイン材 天然木 古木風 レトロ【大東店に展示有り】【レビューで500円分のQUOカード】 【レビュー特別価格！】【送料無料】 ダイニングテーブルセット ダイニングテーブル3点セット カフェテーブル テーブル kelt ケルト 椅子 チェア セット 無垢 古木 レトロ モダン 北欧 ★kelt ケルト カフェテーブル・ケルト チェア2脚セット セール sale ％OFF BAMBI シリーズ AZUMAYA バンビ テーブル CL-786TNA CL-786TNA AZUMAYA バンビスツール レッド色 CL-785CRD 見送り RIVER シリーズ かっこいいけど予算オーバー emo. シリーズ シックでいいけどもっと普通じゃないのがいい BOCCA シリーズ イカしてるけど今回作りたい部屋の方向性とは違う Delicat シリーズ コストパフォーマンスいいけど高くてもいいことにした LEWIS シリーズ かっこいいけど KeLT シリーズの方が好み CORONA シリーズ 椅子とかかっこ</description>
     </item>
     
     <item>
@@ -431,7 +431,7 @@
       <pubDate>Sat, 28 Nov 2015 04:01:59 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-27/</guid>
-      <description>今日は昨日わからなかったことがわかってよかった すっきりした。 これでぐっすり寝れるはず。 久しぶりにジムで泳いだ やっぱり泳ぐの下手になってる。 で</description>
+      <description>今日は昨日わからなかったことがわかってよかった すっきりした。 これでぐっすり寝れるはず。 久しぶりにジムで泳いだ やっぱり泳ぐの下手になってる。 でも前より泳ぐの楽になった気もする。 もっとちゃんと行くようにしないと。 パズドラの協力プレイが思ってたよりおもしろい パズドラの協力プレイとか交互にやるだけでしょ、とか思ってたけど、思ってたよりもおもしろい。 この盤面に対して相手がどう動かすのか見れて楽しいし、相手に見られてると思うと頑張ってコンボ決めたくなる。 でもそれでテンパッて意味分かんない感じに組んじゃったりする。 おもしろい。</description>
     </item>
     
     <item>
@@ -440,7 +440,7 @@
       <pubDate>Sat, 28 Nov 2015 02:55:39 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-ansible_sudo/</guid>
-      <description>先に簡単な結論 /etc/sudoers.d/ の下にパスワードなしで sudo できる設定を追加する。 Vagrant の VM に Ansible で環境を構築する いつもは vagrant ユーザーをそのまま使っていたのだが、ユーザ</description>
+      <description>先に簡単な結論 /etc/sudoers.d/ の下にパスワードなしで sudo できる設定を追加する。 Vagrant の VM に Ansible で環境を構築する いつもは vagrant ユーザーをそのまま使っていたのだが、ユーザー名を変えておいた方がなんとなくよさそう、と思ってユーザー名を変えることにした。 ユーザーの追加は user モジュールを使って簡単にできる。 問題は作成したユーザーで sudo できないことだった。 一応オプションをつけて毎回パスワードを入力すれば回避できる 1ansible-playbook playbook.yml --ask-sudo-pass ってやって、毎回パスワードを入れれば動く。 でもだるい。 vagrant ユーザーはなんでパスワードなしで sudo できるのか なぜ、どうして。 全然仕組みを理解できていなかった。 そして今日たまたまこの記事を見る。 suとsudoの違い - Qiita 「suは切替先ユーザー（root）のパスワードが要求されるのに対し、sudoは元のユーザーのパスワードが要求される。」 なるほど、もしかしてこれでは？ 「ansible sudoers」でググる。 Ansibleでユーザ</description>
     </item>
     
     <item>
@@ -449,7 +449,7 @@
       <pubDate>Fri, 27 Nov 2015 02:07:46 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-26/</guid>
-      <description>体調不良 今日は具合悪くてずっと寝てた。 やっぱ普段からちゃんとした生活を送らないとだめだな。 無理をしたのがたたったか。 布団が寒い なんか暖かい毛</description>
+      <description>体調不良 今日は具合悪くてずっと寝てた。 やっぱ普段からちゃんとした生活を送らないとだめだな。 無理をしたのがたたったか。 布団が寒い なんか暖かい毛布が欲しい。 布団関係のこととか全然調べたことないから全然わからんな。 Ansible を勉強してる 環境構築として Ansible を使ってる。 Chef よりも簡単でわかりやすい感じ。 でもそもそもサーバーのことでわからないことが多すぎて困ってる。 どうすれば解決するのか検討がつかないから調べるのに時間かかる。 よくわかってないけどとりあえず動いてて、とりあえず動いてるからよしとするべきか、ちゃんと理由を調べるべきか。 アプリ開発が目的ではあるんだけど、ちゃんと調べたらそれはそれで力になりそうなんだよな。 悩み。</description>
     </item>
     
     <item>
@@ -458,7 +458,7 @@
       <pubDate>Thu, 26 Nov 2015 00:11:18 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-25/</guid>
-      <description>今日は引っ越しの手続きをいろいろとした 引っ越しすると手続き多くて大変だ。 手続きについては別の記事にまとめよう。 滑って転びそう 雪が積もってて歩</description>
+      <description>今日は引っ越しの手続きをいろいろとした 引っ越しすると手続き多くて大変だ。 手続きについては別の記事にまとめよう。 滑って転びそう 雪が積もってて歩きにくい。 エアマックスはとても滑る。 なんらかの対処をしないと転ぶのは時間の問題。 百均でパズドラ用にスタイラスペンを買った 使ってたやつが壊れたから先端のゴムだけないかと思ったけど、ワコムの公式サイトにしかなさそうだったのでやめた。 とりあえず百均のやつでいいやと思って買ってみた。 先端が導電性繊維とかいうやつ。 たしかこっちの方が滑りがよかったはずだから。 やっぱスタイラスペンがあった方が全然やりやすい。 買ってよかった。</description>
     </item>
     
     <item>
@@ -467,7 +467,7 @@
       <pubDate>Wed, 25 Nov 2015 04:44:03 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-24/</guid>
-      <description>引っ越しは手続きがたくさんあって大変だ 一回でちゃんと滞り無く終わらせるためにタスク洗い出したりしてたら 5 時。 つらい。 ユニットテストでモックが</description>
+      <description>引っ越しは手続きがたくさんあって大変だ 一回でちゃんと滞り無く終わらせるためにタスク洗い出したりしてたら 5 時。 つらい。 ユニットテストでモックが使えるようになりたい 全然使ってこなかったから、少しずつでも使っていこう。 セイコーマートにダンボール持ってけるのいいね 少し遠いけど、捨てるタイミングを自分で制御できるってのは気持ちが楽だ。 書類の管理が難しい うまいこと管理する方法はないものか。</description>
     </item>
     
     <item>
@@ -476,7 +476,7 @@
       <pubDate>Tue, 24 Nov 2015 00:25:10 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-23/</guid>
-      <description>和食のランチを食べてきた 1 人 1 食 2,000 円くらいの。 おいしかった。 ほんと飲み会とかでお金使うくらいなら、こういうところにお金使っておいしいもの食べ</description>
+      <description>和食のランチを食べてきた 1 人 1 食 2,000 円くらいの。 おいしかった。 ほんと飲み会とかでお金使うくらいなら、こういうところにお金使っておいしいもの食べたい。 かっちりした服を買い始めている やっぱり服の好みは変わっていくもので、最近かっちりした服に興味がある。 でもしっかりした格好とかしたことないからなにをどうすればいいのかわからない。 とりあえずユニクロで少しずつ買いながら勉強中。 対話をするのは難しい 相手に求める部分が大きすぎてる気がする。 これくらい理解できるだろ、みたいな。 この記事を思い出した。 IT業界でありがちな説明下手について - 文系プログラマによるTIPSブログ ハイコンテクストな話はよくない。 説明責任を果たせてないのに話の聞き手のせいにするのよくない。</description>
     </item>
     
     <item>
@@ -494,7 +494,7 @@
       <pubDate>Mon, 23 Nov 2015 20:22:14 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-coubic/</guid>
-      <description>Coubic と作った拡張機能 予約システム「Coubic (クービック)」| 無料で予約管理 5000164/coubic-reserve-blocker Coubic とは 無料でも使える予約システム。 無料の予約システムを軽く調べ</description>
+      <description>Coubic と作った拡張機能 予約システム「Coubic (クービック)」| 無料で予約管理 5000164/coubic-reserve-blocker Coubic とは 無料でも使える予約システム。 無料の予約システムを軽く調べたけど、1 番良さそうだった。 Coubic では休憩時間が設定できない Coubic では休憩時間が設定できなかった。 定休日と営業時間は設定できるのに。 なにか良い方法はないかと調べたら、予約ブロック機能というものがあった。 しかし 1 つずつしか予約をブロックできない。 すべての営業日に予約ブロックを入れるのはとてもだるい。 指定した期間の予約をブロックできるようにしたい だから指定した期間の予約をブロックする拡張機能を作った。 Chrome 拡張機能で作った そんなに調べてないけど、API とかなさそうだったし、画面の操作を自動化すればそれでいいやと思った。 最初はブックマークレットでいけるかなと思った。 DOM の操作を自動化できるようにして、さあ期間内で連続して予約ブロックするぞ、と思ったら、ブックマークレットで</description>
     </item>
     
     <item>
@@ -503,7 +503,7 @@
       <pubDate>Mon, 23 Nov 2015 19:03:22 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-xhr/</guid>
-      <description>Firefox で API からデータが取得できない サーバー側に API を実装して、Chrome では値が取得できてるのに、Firefox では値が取得できていなかった。 ち</description>
+      <description>Firefox で API からデータが取得できない サーバー側に API を実装して、Chrome では値が取得できてるのに、Firefox では値が取得できていなかった。 ちゃんと Access-Control-Allow-Origin: * って感じにしてたのに、許可されていませんって感じのエラーメッセージが出ていた。 開発ツールのネットワークの履歴を見てたら、メソッドのところが OPTIONS って出てたので、OPTIONS メソッドの時にも Access-Control-Allow-Origin: * を返してあげるようにした。 FuelPHP のコントローラーにどうやって書くのだろと思って試しに書いてみたら動いた。 1 2 3 4 5 6 7/** * プリフライトリクエスト用のコントローラー */ public function options_index() { $this-&amp;gt;response-&amp;gt;set_header(&amp;#39;Access-Control-Allow-Origin&amp;#39;, &amp;#39;*&amp;#39;); } こんな感じ。 どうやら、XHR ではプリフライトリクエストってやつを送るらしくて、その時にアクセスが許可されていないから API からデータを持ってきていなかったらしい。(現時点の Chrome では送ってなかった) なるほどな。</description>
     </item>
     
     <item>
@@ -512,7 +512,7 @@
       <pubDate>Mon, 23 Nov 2015 18:55:15 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-rewrite/</guid>
-      <description>Firefox で innerText が動かない Chrome でばっかり見てて、Chrome では普通に動くから気付かなかった。 textContent が標準なのか。 innerText が Firefox で使えないの初めて知った。 参考 Node.textContent - Web</description>
+      <description>Firefox で innerText が動かない Chrome でばっかり見てて、Chrome では普通に動くから気付かなかった。 textContent が標準なのか。 innerText が Firefox で使えないの初めて知った。 参考 Node.textContent - Web API インターフェイス | MDN Node.innerText - Web APIs | MDN</description>
     </item>
     
     <item>
@@ -521,7 +521,7 @@
       <pubDate>Mon, 23 Nov 2015 04:23:57 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-22/</guid>
-      <description>そういえば昨日髪を染めた またくすんだ。 満足。 頭皮が赤かったらしい。 最近たまにかゆい。 頭皮をマッサージするといいと教えてもらった。 爪が当たらな</description>
+      <description>そういえば昨日髪を染めた またくすんだ。 満足。 頭皮が赤かったらしい。 最近たまにかゆい。 頭皮をマッサージするといいと教えてもらった。 爪が当たらないように指の腹で。 あとブラシでゴシゴシし過ぎない方がいいらしい。 意識してみよう。 今日は飲み会だった 自分と意識が違う価値観に触れるのは勉強になる。 いかに自分の考え方が押し付けがましいかわかる。 人間ってのは生きてるんだよなー。 難しい。 そもそもどうありたいのかありきなのかな。 おれは自分がどう思われたいのか考えてないから、どうにかしてうまく振る舞おうとした時にできないのか。 うまく振る舞おうと思わないか、自分がどう思われたいのか考えて行動するかのどちらかか。 最近うまく話し合えない 毎日少しでもプログラミングするようにして、それにはとても満足してるんだけど、時間がずれるようになってしまった。 うまいこと仕組みを作らなければ。</description>
     </item>
     
     <item>
@@ -530,7 +530,7 @@
       <pubDate>Sun, 22 Nov 2015 04:57:48 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-21/</guid>
-      <description>人間いつ死ぬかわからんよなあ 常に思想を残しておかねば。 洗濯機を買った コジマでこの洗濯機を買った。 在庫なかったけど問い合わせたらオンラインショ</description>
+      <description>人間いつ死ぬかわからんよなあ 常に思想を残しておかねば。 洗濯機を買った コジマでこの洗濯機を買った。 在庫なかったけど問い合わせたらオンラインショップと同じ値段で売ってくれた。 送料と設置料無料だし。 あと、おれは保証とかあんまり入らないんだけど、ハイアールさんだから入るのがおすすめだって教えてくれた。 当たり外れがあるらしい。 中国産だしたしかになと思って保証に入った。 店員さんの対応も良くて好感度高い。 納得できる買い物をした。</description>
     </item>
     
     <item>
@@ -539,7 +539,7 @@
       <pubDate>Sat, 21 Nov 2015 04:45:59 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-20/</guid>
-      <description>価格の違いがわからない 洗濯機が思ってたよりも高い。 もっと覚悟を決めないと。 自分が少しは知っているパソコンの価格とか、条件をしっかり洗い出せば</description>
+      <description>価格の違いがわからない 洗濯機が思ってたよりも高い。 もっと覚悟を決めないと。 自分が少しは知っているパソコンの価格とか、条件をしっかり洗い出せば違いが出てくる賃貸物件とかなら、価格の違いが理解できる。 値段の差分を理解した上で選択できる。 でも洗濯機がとてもわかりづらい。 新品で容量が同じなのに 25,000 円と 45,000 円の商品があるっていう価格の差が理解できない。 とても判断に困る。 Chrome 拡張機能を作っている もう少しでできそうだー、と思ってたら壁にぶつかって、全然理解できなくて、もうだめかなーって思った。 そしてもう一回 1 から試してみて、ここってどうなってるんだろう？ってところがあったから、そこをもう少し調べたら解決できそうだった。 遠回りしたけどそこそこ理解も深まってよかった。 もう少しで形になるかなー。</description>
     </item>
     
     <item>
@@ -548,7 +548,7 @@
       <pubDate>Fri, 20 Nov 2015 04:50:40 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-19/</guid>
-      <description>至急対応お願いしますって言われた そして頑張ったら朝の 5 時だった。 つらい。 どうやったら回避できたのだろうか。 悩み。 テスト自動化する仕組み欲しい</description>
+      <description>至急対応お願いしますって言われた そして頑張ったら朝の 5 時だった。 つらい。 どうやったら回避できたのだろうか。 悩み。 テスト自動化する仕組み欲しい。</description>
     </item>
     
     <item>
@@ -557,7 +557,7 @@
       <pubDate>Thu, 19 Nov 2015 00:28:31 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-18/</guid>
-      <description>仕事の進め方が納得いかない サーバー vs クライアントみたいな構図が嫌い。 チームなんだからさ。 問題 vs サーバー &amp;amp; クライアントってしようよ。 陰口じゃな</description>
+      <description>仕事の進め方が納得いかない サーバー vs クライアントみたいな構図が嫌い。 チームなんだからさ。 問題 vs サーバー &amp;amp; クライアントってしようよ。 陰口じゃなくて、不満があるなら全部言い合って、その上で協力して仕事にあたるべき。 チームなんだからさ。 いろいろと買うものがある できるだけ荷物は最小限にしようと思っていて、物はできるだけ買わないようにしていたんだけど、今回は少し快適にしようと思っていて、出費がかさむ。 細かいものでもたくさん買うとお金かかるね。 もっとざっくり全体としていくら、って予算決めた方がよさそう。</description>
     </item>
     
     <item>
@@ -566,7 +566,7 @@
       <pubDate>Thu, 19 Nov 2015 00:24:30 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-17/</guid>
-      <description>洗濯機を調べていた 洗濯機を調べてたけど高い。 そこまで長期間使うつもりもないしな。 中国製のやつにしようかな。 爆発しないことを祈って。 洗濯機を置</description>
+      <description>洗濯機を調べていた 洗濯機を調べてたけど高い。 そこまで長期間使うつもりもないしな。 中国製のやつにしようかな。 爆発しないことを祈って。 洗濯機を置く場所についてるやつ 防水パンって言うらしい。 部屋についてなかったのだけど、いいのだろうかと思って気になって調べたら、水漏れとかなんかあった時のためのものらしい。 最近の洗濯機は水漏れしないしいらないという意見もあれば、2 階以上だったらつけるべきという意見もある。 防水パンをつけると掃除しにくくなるという話もあったけど、ついてなくても掃除しやすそうには見えない。 ちゃんと防水パンをつけるには工事の段階からついてないと無理そうだし、今回は足場を置いてみることにする。 排水口の上にも置けてスペース節約できるし、洗濯機の下が掃除しやすくなりそうだから。</description>
     </item>
     
     <item>
@@ -575,7 +575,7 @@
       <pubDate>Tue, 17 Nov 2015 00:56:55 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-11-16/</guid>
-      <description>洗濯機が欲しい 最近引っ越した。 洗濯機がまだないのでコインランドリーに行った。 コインランドリーデビュー。 業務用っぽい洗濯機で時間も短かったしす</description>
+      <description>洗濯機が欲しい 最近引っ越した。 洗濯機がまだないのでコインランドリーに行った。 コインランドリーデビュー。 業務用っぽい洗濯機で時間も短かったしすごかったけど、やっぱ近くに洗濯機があるって楽だ。 そこそこに調べて買わないと。 時間がないって言われるのがすごくつらいことに気付いた 自分はどうやら時間のことを言われるのがすごく嫌なことに気付いた。 でも実際時間管理が下手で言われるのは仕方ないところ。 受け入れていくしかない。 今日「もうこんな時間」って言われてとても暗い気持ちになった。 時間の見積もりうまくなりたい。</description>
     </item>
     
     <item>
@@ -584,7 +584,7 @@
       <pubDate>Sat, 12 Sep 2015 22:12:08 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-09-go_string/</guid>
-      <description>golang でダブルコーテーションや改行を string 型の変数に入れる go では &amp;ldquo; (ダブルコーテーション) で文字列を表します。 文字列の中にダブルコーテーションを入れ</description>
+      <description>golang でダブルコーテーションや改行を string 型の変数に入れる go では &amp;ldquo; (ダブルコーテーション) で文字列を表します。 文字列の中にダブルコーテーションを入れるには \ (バックスラッシュ) でエスケープすればよかった。 1test := &amp;quot;test\&amp;quot;test&amp;quot; 改行を入れるには \n で入れられる。 1newline := &amp;quot;a\nb\nc&amp;quot; また、` (バッククオート) を使用することでヒアドキュメントのように書けた。 1 2 3here := `like a here document` 参考 Go 言語で複数行にまたがる文字列を作る - nise_nabeの日記 The Go Programming Language Specification - The Go Programming Language</description>
     </item>
     
     <item>
@@ -602,7 +602,7 @@
       <pubDate>Mon, 10 Aug 2015 00:20:39 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-08-laputa/</guid>
-      <description>※ネタバレ注意 おもしろかった 展開が早い。 とてもテンポがいいまんま物語が進んでいった。 見せたい部分じゃなくて、見たい部分を見せてくれた感じ。 い</description>
+      <description>※ネタバレ注意 おもしろかった 展開が早い。 とてもテンポがいいまんま物語が進んでいった。 見せたい部分じゃなくて、見たい部分を見せてくれた感じ。 いろんな考えが詰まっていると思った 少年の成長。 特殊な力を持った少女。 不思議な石。 海賊。 敵対勢力。 古の力。 伝説の島。 そしてこれらの考えが繋がっている ただ繋がるだけじゃなく、それぞれが豊かに繋がっている。 石と島と力。 島と海賊。 力と敵対勢力。 それらすべてを横断する少年と少女と石。 もっと考えを広げなくてはだめだ もっと妄想することが必要だ。 目の前のことだけを考えていてはいけない。 目の前のことがどんなことに繋がっていくのか。 これを作った先に、どんな光景が待っているのか考えないとだめだ。 Amazon.co.jp： SANYO ICレコーダー ポータブルラジオレコーダー ICR-RS110MF(S)の 北川泰弘 &amp;ldquo;ヤスさん&amp;rdquo;さんのレビュー Amazon.co.jp： DRETEC</description>
     </item>
     
     <item>
@@ -620,7 +620,7 @@
       <pubDate>Sat, 25 Jul 2015 05:53:50 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-07-indebted/</guid>
-      <description>誰に 1 番恩を返したいですか？ 私は多くの人に助けられて生きている。 ありがたい。 受けた恩は返したい。 大小に関わらず。 でも全員に返すことはできない</description>
+      <description>誰に 1 番恩を返したいですか？ 私は多くの人に助けられて生きている。 ありがたい。 受けた恩は返したい。 大小に関わらず。 でも全員に返すことはできない。 その時に、誰に 1 番恩を返したいと考えるか。 それはつまり自分がなにを大事に思っているのか 誰に返したいと思うのかは人それぞれでしょう。 多くの人にお世話になった。 私のことを後押ししてくれた人や、私に新しい道を示してくれた人。 でも 1 番と考えたら、私を期待してくれた人のことを考えました。 なぜその人が 1 番なのか その人にしてもらったことが、もらった恩が、自分にとって大きなものだからです。 してもらったことを考えると、自分はどんなことに影響を受けるのか、どういうことをよしと思うのか、知ることができます。 マイナスからプラスになる転機をもらった 私はマイナスの方向を向いてました。 でも、期待してもらって、プラスの方向を向くことができた。 それが私の人生でとても大きなことだった。</description>
     </item>
     
     <item>
@@ -629,7 +629,7 @@
       <pubDate>Thu, 23 Jul 2015 00:15:30 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-07-array_column/</guid>
-      <description>PHP の二次元配列から同じキーの値だけで新しい配列を生成する関数 array_column 他の人のコードを読んでたらたまたま見つけた便利な関数 array_column。</description>
+      <description>PHP の二次元配列から同じキーの値だけで新しい配列を生成する関数 array_column 他の人のコードを読んでたらたまたま見つけた便利な関数 array_column。 二次元配列から同じキーの値だけで新しい配列を生成する。 PHP: array_column - Manual 同じキーの値だけで新しい配列を作るサンプル 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30&amp;lt;?php $data = [ [ &amp;#39;id&amp;#39; =&amp;gt; 1, &amp;#39;name&amp;#39; =&amp;gt; &amp;#39;aaa&amp;#39;, ], [ &amp;#39;id&amp;#39; =&amp;gt; 2, &amp;#39;name&amp;#39; =&amp;gt; &amp;#39;bbb&amp;#39;, ], ]; $id_list = array_column($data, &amp;#39;id&amp;#39;); $name_list = array_column($data, &amp;#39;name&amp;#39;); var_dump($id_list); // array(2) { // [0]=&amp;gt; // int(1) // [1]=&amp;gt; // int(2) // } var_dump($name_list); // array(2) { // [0]=&amp;gt; // string(3) &amp;quot;aaa&amp;quot; // [1]=&amp;gt; // string(3) &amp;quot;bbb&amp;quot; // } 二次元配列の縦横を入れ替える (転置行列を得る) サンプル 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34&amp;lt;?php $data = [ [ &amp;#39;id&amp;#39; =&amp;gt; 1, &amp;#39;name&amp;#39; =&amp;gt; &amp;#39;aaa&amp;#39;, ], [ &amp;#39;id&amp;#39; =&amp;gt; 2, &amp;#39;name&amp;#39; =&amp;gt; &amp;#39;bbb&amp;#39;, ], ]; $transposed_matrix = []; foreach ($data[0] as $key =&amp;gt; $value) { $transposed_matrix[$key] = array_column($data, $key); } var_dump($transposed_matrix); // array(2) { // [&amp;quot;id&amp;quot;]=&amp;gt; // array(2) { // [0]=&amp;gt; // int(1) // [1]=&amp;gt; // int(2) // } // [&amp;quot;name&amp;quot;]=&amp;gt; // array(2) { // [0]=&amp;gt; // string(3) &amp;quot;aaa&amp;quot; // [1]=&amp;gt; // string(3) &amp;quot;bbb&amp;quot; // } // } 参考 PHPのarray_columnが便利 - Qiita 【php】配列の縦横入れ替え的な操作 at softelメモ PHPで二次</description>
     </item>
     
     <item>
@@ -638,7 +638,7 @@
       <pubDate>Tue, 21 Jul 2015 23:13:34 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-07-porco_rosso/</guid>
-      <description>※ネタバレ注意 海と空がきれいで、光の使い方が心地よい 海がきれい。 空がきれい。 光がきれい。 いろんな青があって、見てて楽しい。 映像の持つ質感と空</description>
+      <description>※ネタバレ注意 海と空がきれいで、光の使い方が心地よい 海がきれい。 空がきれい。 光がきれい。 いろんな青があって、見てて楽しい。 映像の持つ質感と空気感と肌触りが気持ちいい。 たぶん音がなくても満足できる。 ウイスキーが飲みたくなる。 だからウイスキーを飲んだ。 気持ちいい。 かっこよさとは 個々人には各々が考えるかっこよさがあって、それは人それぞれで、とても多様である。 紅の豚の面白さの核は、登場人物がみんな自らのかっこよさを追求しているところにある、と感じた。 マルコしかり、フィオしかり、ジーナしかり。 みんなかっこいい。 空賊のかっこよさ +++- まっとうに生きることには失敗しているが、飛行機乗りであることに誇りを持っている。 おそらく、襲撃する船は金持ちだけに限定しているはずだ。 その方が効率がいいのはもちろんだが、そこには自分の生き方に対するこだわりがあるだろう。 少女を誘拐する際に仲間はずれを作らないところがわかりやす</description>
     </item>
     
     <item>
@@ -647,7 +647,7 @@
       <pubDate>Sat, 02 May 2015 05:22:31 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-05-owarimonogatari_volume_2/</guid>
-      <description>※ ネタバレ注意 自分の価値は誰が決めるのか 自分とは自分 1 人なのか。 A さんが見る自分と B さんが見る自分は同一人物なのか。 自分が見る自分はどうなの</description>
+      <description>※ ネタバレ注意 自分の価値は誰が決めるのか 自分とは自分 1 人なのか。 A さんが見る自分と B さんが見る自分は同一人物なのか。 自分が見る自分はどうなのか。 自分にとっての価値とはどこにあるのか。 条件がいい男がいたら乗り換えろ 盲目的に縛り合うことは恐怖でしかない。 なにが起きても身動きがとれない。 柔軟性がない。 変化についていけない。 過ごした時間も、投資した努力も、意味がある すべて含めての価値だ。 誰かのために努力したならば、その誰かにとってそれは価値だ。 それでもなお価値が劣るというのであれば、それは方向性を誤っている。 全員の特別にはなれないが、誰かの特別にはなれる 時間は有限であり、行動は有限である。 誰のためにいたいのか、在りたいのか、判断しなければならない。 阿良々木くんは信じられたから任せられた 今までは全部自分で背負い込もうとしていた。 そして目の前のことに突っ込んだ。 でも今は違う。 信じられたからこそ、目の前</description>
     </item>
     
     <item>
@@ -656,7 +656,7 @@
       <pubDate>Wed, 29 Apr 2015 22:13:23 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-04-owarimonogatari_volume_1/</guid>
-      <description>※ ネタバレ注意 久しぶりに物語シリーズを読んだ 阿良々木くんがいろいろだめだったけど、阿良々木くんはかっこいいと再認識した。 忍野扇がキーになるの</description>
+      <description>※ ネタバレ注意 久しぶりに物語シリーズを読んだ 阿良々木くんがいろいろだめだったけど、阿良々木くんはかっこいいと再認識した。 忍野扇がキーになるのはだいぶ前からわかっていたことなので、それをどう掘り下げていくのかなという感じ。 今作では、認知をねじ曲げてしまうような、あるいは無理矢理正してしまうような気持ち悪さを感じさせた。 老倉の手紙にはなんて書いてあったのだろうか 個人的には、メールアドレスが書いてあって欲しい。 2 人で紡げる物語がきっとあるはずだと思う。 まとめ まだ上巻なので、中巻と下巻が楽しみ。</description>
     </item>
     
     <item>
@@ -665,7 +665,7 @@
       <pubDate>Wed, 29 Apr 2015 20:00:44 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-04-gurren_lagann/</guid>
-      <description>※ ネタバレ注意 グレンラガンを見た 少し前だけど、グレンラガンを見ました。 おもしろい。 これはいいものだ、と思って 2 週目を見てから感想を書こうと思</description>
+      <description>※ ネタバレ注意 グレンラガンを見た 少し前だけど、グレンラガンを見ました。 おもしろい。 これはいいものだ、と思って 2 週目を見てから感想を書こうと思ってたけど、けっこー時間が経ってしまったのでとりあえず 1 回記事にしておく。 言いたいことはいろいろあるが、2 週目を見たらちゃんと書く。 まとめ あつい。 かっこいい。</description>
     </item>
     
     <item>
@@ -674,7 +674,7 @@
       <pubDate>Sun, 26 Apr 2015 02:09:03 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-04-shower/</guid>
-      <description>シャワーは生活の満足度を上げるために大切 シャワー大事です。 時間が限られていたり、水圧が一定じゃなかったり、温度が一定じゃなかったり、水圧が低</description>
+      <description>シャワーは生活の満足度を上げるために大切 シャワー大事です。 時間が限られていたり、水圧が一定じゃなかったり、温度が一定じゃなかったり、水圧が低いとストレスが溜まります。 今回はシャワーの水圧が低くてストレスが溜まったのでシャワーの水圧を上げます。 シャワーヘッドを買う Amazon.co.jp: TOTO 低水圧用シャワーヘッド THY731: DIY・工具 シャワーホースを買う Amazon.co.jp: カクダイ 大口径シャワーホース1.6M 3672C クリーム: DIY・工具 結果 水圧が少し上がって少し幸せになりました。 もっと強い水勢が欲しい時もあるのですが、そういった場合は 5,000 円くらいのもうちょっとランクが高いシャワーヘッドでマッサージモードとかが付いているものを購入する必要がありそうです。 とりあえず少ない投資で結果が出たので現時点では現状で満足しています。</description>
     </item>
     
     <item>
@@ -683,7 +683,7 @@
       <pubDate>Thu, 26 Mar 2015 23:37:41 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-03-redirect_to_mobile_wikipedia/</guid>
-      <description>Wikipedia はモバイル版の方が見やすいと思うのでモバイル版を表示する拡張機能を作った ソースはこちら。 5000164/redirect-to-mobile-wikipedia 実装について 作り方 +++- Chrome 拡張機能の作り方がわからな</description>
+      <description>Wikipedia はモバイル版の方が見やすいと思うのでモバイル版を表示する拡張機能を作った ソースはこちら。 5000164/redirect-to-mobile-wikipedia 実装について 作り方 +++- Chrome 拡張機能の作り方がわからなかったので調べていたらドットインストールがあったのでここで勉強。 Google Chrome拡張機能入門 (全20回) - プログラミングならドットインストール 概要を把握。 思ってたよりさっくり作れそう。 TypeScript を使いたい +++- TypeScript を試したかった。 npm で TypeScript をインストールして PhpStorm で自動コンパイルするところまではすぐできた。 でも Chrome の API を認識させることができなくて困った。 ライブラリをダウンロードすればいけるよって書いてあったけど、それだけだと chrome なんてないよと怒られてしまう。 だから手動でインストールしてパスを通したら、今度は定義が複数あるって言われた。 最終的に、PhpStorm 側でダウンロードしたものを消して、tsd でダウンロードしたやつを PhpStorm 側に設定することで落ち着いた。 Transpiling TypeScript to JavaScript TypeScript での Chrome 拡張機能開</description>
     </item>
     
     <item>
@@ -692,7 +692,7 @@
       <pubDate>Sun, 22 Mar 2015 17:10:34 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-03-phpstorm_clipmenu/</guid>
-      <description>ClipMenu が PhpStorm でうまく動かない つらい。 ClipMenu が PhpStorm でうごくようにする PhpStorm で command + shift + A か Help &amp;gt; Find Actoin&amp;hellip; で検索窓の表示 Registry と検索し return か ダブルクリックで Registry の表示 ide.mac.useNativeClipboard にチェッ</description>
+      <description>ClipMenu が PhpStorm でうまく動かない つらい。 ClipMenu が PhpStorm でうごくようにする PhpStorm で command + shift + A か Help &amp;gt; Find Actoin&amp;hellip; で検索窓の表示 Registry と検索し return か ダブルクリックで Registry の表示 ide.mac.useNativeClipboard にチェックを入れる use くらいまで打つと検索結果に出てくる 結果 良好。 参考 PHPStormとTextExpanderとの相性が悪いので対処方法を探してみました | matomerge.com</description>
     </item>
     
     <item>
@@ -701,7 +701,7 @@
       <pubDate>Thu, 19 Mar 2015 00:05:37 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-03-fuelphp_db/</guid>
-      <description>データを YAML で管理する DB のデータを YAML で管理すると楽です。 テストデータの状態を保てるし、バージョン管理ができる。 だからデータをインポート／エクス</description>
+      <description>データを YAML で管理する DB のデータを YAML で管理すると楽です。 テストデータの状態を保てるし、バージョン管理ができる。 だからデータをインポート／エクスポートするタスクを作りました。 動作を確認した環境は FuelPHP 1.7.2 と MySQL 5.6 です。 FuelPHP でデータを YAML 形式でインポート／エクスポートするタスク 注意点 FuelPHP の DB 接続は PDO じゃなくて MySQLi じゃないと動きません。 接続しているデータベースのテーブル一覧を取得したかったのだが、取得する方法がわからなかった。 そういえば ORM のドキュメントに、プロパティをちゃんと設定しないと毎回アクセスして情報を取得するって書いてあったなと思い出して、core の DB クラスになんかないかなと眺めてたら list_tables というメソッドがあった。 list_tables でテーブル一覧が取れるかなと思ったら動作せず、PDO はサポートしていないと表示された。 なので MySQLi で接続して DB::list_tables() でテーブルの一覧を取得して利用しているが、PDO の場合のテーブル一覧の取得方法がわからない</description>
     </item>
     
     <item>
@@ -710,7 +710,7 @@
       <pubDate>Fri, 06 Mar 2015 00:25:25 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-03-fuelphp_log/</guid>
-      <description>FuelPHP のログレベルは INFO の方が DEBUG よりも上 Fuel の Core の Log クラスに $levels が定義されています。 FuelPHP 1.7.2 で INFO は 200、DEBUG は 100。 なぜ疑問に思ったのか FuelPHP の config.php の</description>
+      <description>FuelPHP のログレベルは INFO の方が DEBUG よりも上 Fuel の Core の Log クラスに $levels が定義されています。 FuelPHP 1.7.2 で INFO は 200、DEBUG は 100。 なぜ疑問に思ったのか FuelPHP の config.php の出力するログレベルの設定のところに、 1 2 3 4 5 6 7 8 9 10/** * Logging Threshold. Can be set to any of the following: * * Fuel::L_NONE * Fuel::L_ERROR * Fuel::L_WARNING * Fuel::L_DEBUG * Fuel::L_INFO * Fuel::L_ALL */ このように書いてあるので、「INFO に設定したら DEBUG ログも出るのかー」と勝手に思い込んでいたからでした。 実際に動かせばわかる 実際に動かしたら、設定が DEBUG の時はログレベル INFO も DEBUG も出力されたが、設定が INFO の時は INFO が出力されて DEBUG は出力されなかった。 結論 調べるためにドキュメントを読んでいたら、Log::write() で任意のレベルをつけられること、logger() というエイリアスの関数があることがわかった。 この前 l() って関数でログ出力できるようにしたばっかりだったのに、すでに似たようなものがあったとは。 ドキュメントを読むのは大事ですね。</description>
     </item>
     
     <item>
@@ -719,7 +719,7 @@
       <pubDate>Thu, 05 Mar 2015 02:41:53 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-03-fuelphp_autocomplete/</guid>
-      <description>IDE に FuelPHP の補完を効かせたい 補完効かないのだるいなーと思ってぐぐったらあった。 Eclipse で FuelPHP のコード補完を行わせる冴えたやり方 - A Day in Serenity @ kenjis これで生成し</description>
+      <description>IDE に FuelPHP の補完を効かせたい 補完効かないのだるいなーと思ってぐぐったらあった。 Eclipse で FuelPHP のコード補完を行わせる冴えたやり方 - A Day in Serenity @ kenjis これで生成して自動補完させることができた。 Core を拡張していたからクラス名が重複してしまった Core を拡張したクラスと _autocomplete.php のクラスがだぶってしまって、IDE が警告を出してきた。 でも手作業でコメントアウトするのはだるい。 というわけで生成処理を変更した。 FuelPHP 1.7.2 で動作確認してます。 IDE で FuelPHP の補完を効かせるための _autocomplete.php を生成するタスク MIT ライセンスのソースを初めて変更して公開した MIT ライセンスなので、原著作者のライセンス表記があればライセンス違反にはならないはずだが、変更して公開するのは初めてなのでこの書き方で正しいのか不安になる。 結果 自動補完便利。 PhpStorm 賢い。</description>
     </item>
     
     <item>
@@ -728,7 +728,7 @@
       <pubDate>Sun, 01 Mar 2015 22:19:02 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-03-fuelphp_debug/</guid>
-      <description>FuelPHP で Debug::dump() とか Log::debug() とかうつのがだるかった e() という関数があったから、同じ感じで d() とか l() にしたいなって思った。 引数をただダンプするだけのようなやつを作</description>
+      <description>FuelPHP で Debug::dump() とか Log::debug() とかうつのがだるかった e() という関数があったから、同じ感じで d() とか l() にしたいなって思った。 引数をただダンプするだけのようなやつを作った ソースはこちら。 FuelPHP 1.7.2 で動作確認してます。 FuelPHP で Debug::dump() と Log::debug() を簡単に使えるようにする 配置方法 e() という関数を追ったら core 直下の base.php に書いてあったので、同じような感じで app の下に base.php というファイルを作って bootstrap.php で require する。 結果 d() とか l() で表示できるようになって楽になった。</description>
     </item>
     
     <item>
@@ -737,7 +737,7 @@
       <pubDate>Fri, 13 Feb 2015 01:29:47 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-02-go_file_rename/</guid>
-      <description>Go の練習をしたかったのでファイル名を変更するツールを作った ソースはこちら。 5000164/go-file-rename 内容 map で変更前と変更後のファイル名を指定して、ターミナルから実行</description>
+      <description>Go の練習をしたかったのでファイル名を変更するツールを作った ソースはこちら。 5000164/go-file-rename 内容 map で変更前と変更後のファイル名を指定して、ターミナルから実行する。 ディレクトリも指定できる。 Go を触ってみて なんか楽しいかも。 go fmt があるのはいい。 個人的にはスペース派だけど言語としてフォーマッタが用意されてるからおとなしく従える。 参考 Golangの変数とか関数とか[基礎] - Qiita golangを基礎から学ぶ 制御構造編 - Qiita Go言語: いろいろなマップの作り方まとめ - Qiita golang - Go言語入門(ファイル・ディレクトリ操作) - Qiita</description>
     </item>
     
     <item>
@@ -746,7 +746,7 @@
       <pubDate>Tue, 03 Feb 2015 23:13:39 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-02-windows_tools/</guid>
-      <description>最近 Windows で PHP の開発をする機会があったので、使用したツールをまとめます Atom エディタ Chocolatey Gallery パッケージ管理 Clibor | amuns:code クリップボード Clover Brings Chrome-Style Tabs to Windows Explorer. | 易捷科技 EJIE</description>
+      <description>最近 Windows で PHP の開発をする機会があったので、使用したツールをまとめます Atom エディタ Chocolatey Gallery パッケージ管理 Clibor | amuns:code クリップボード Clover Brings Chrome-Style Tabs to Windows Explorer. | 易捷科技 EJIE Technology エクスプローラー conemu-maximus5 - Windows Console Emulator, Far Manager plugins - Google Project Hosting ターミナル 無料圧縮・解凍フリーソフト CubeICE - CubeSoft アーカイバ Devas - namespace gimite 検索 Dual Monitor Taskbar | SourceForge.net タスクバー 大切な仕事のためのワークスペース | Evernote 情報蓄積 Everything Search Engine 検索 Git バージョン管理 Chrome ブラウザ ブラウザ Chrome ブラウザ ブラウザ Google 日本語入力 IME Hosts File Manager ユーティリティ Just Color Picker 4.2 - the best colour tool for Windows and Mac OS ユーティリティ 文字コード変換ツール「KanjiTranslator」(フリーソフト) 変換 KeySwapについて キーボード PHP IDE :: JetBrains PhpStorm IDE MinGW | Minimalist GNU for Windows 開発 mintty - Terminal window for Cygwin and MSYS - Google Project Hosting ターミナル NYAOS.ORG - NYAGOS ターミナル Oracle VM VirtualBox VM オフィス・ネオ（office-neo） ユーティリティ About - Rapid Environment Editor ユーティリティ Revo Uninstaller Pro - Uninstall Software, Remove Programs easily, Forced Uninstall, Leftovers Uninstaller, Portable Uninstaller アンインストーラー yascentur/RictyDiminished フォント サクラエディタ エディタ Free Mercurial</description>
     </item>
     
     <item>
@@ -755,7 +755,7 @@
       <pubDate>Fri, 23 Jan 2015 03:32:18 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-01-fuelphp_profiler/</guid>
-      <description>FuelPHP のログにプロファイラの情報を出力できるパッケージをインストールしてみる FuelPHP のバージョンは 1.7.2。 インストールするパッケージはこちら。 MiuraKatsu/fuelphp-profiler-log 手</description>
+      <description>FuelPHP のログにプロファイラの情報を出力できるパッケージをインストールしてみる FuelPHP のバージョンは 1.7.2。 インストールするパッケージはこちら。 MiuraKatsu/fuelphp-profiler-log 手順を見ると、Core を直接いじってるので、Core をいじらないで拡張する。 手順 fuel/packages で下記コマンド実行してパッケージの取得 git clone --recursive git://github.com/MiuraKatsu/fuelphp-profiler-log.git profiler-log config の packages に profiler-log を追加 packages/profiler-log/core/class/profiler.php を app/classes/profiler.php にコピーして編集 namespace と use を削除 class Profiler extends \Fuel\Core\Profiler として継承 app/bootstrap.php を編集 Autoloader::add_classes に &#39;Profiler&#39; =&amp;gt; APPPATH . &#39;classes/profiler.php&#39;, を追加 packages/profiler-log/config/profiler.php を app/config/profiler.php にコピーして編集 output の値を false から true に変更 動作確認 画面の右下にプロファイラが表示されていて、ログにプロファイラの情報が出力されていれば成功。 まとめ とりあえず使ってみる。 参考 FuelPHPで３種のprofilerを使ってみた</description>
     </item>
     
     <item>
@@ -764,7 +764,7 @@
       <pubDate>Wed, 21 Jan 2015 01:50:16 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2015-01-install_go/</guid>
-      <description>Go をやろうと思ったのでインストール homebrew を使ってインストールした。 Golang Macへのインストール〜Homebrewを使って〜 - Qiita 最初古いバージョンの Go</description>
+      <description>Go をやろうと思ったのでインストール homebrew を使ってインストールした。 Golang Macへのインストール〜Homebrewを使って〜 - Qiita 最初古いバージョンの Go がインストールされたのだが、brew uninstall go して brew update してからもういっかい brew install go したら最新バージョンがインストールされた。</description>
     </item>
     
     <item>
@@ -773,7 +773,7 @@
       <pubDate>Wed, 31 Dec 2014 19:35:46 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-12-2014/</guid>
-      <description>2014 年を振り返ってみる 長い時間を生きていく中で、節目節目にキリをつけて振り返ることは大事。 年末というのはちょうどいいチャンスなので、1 年間を振</description>
+      <description>2014 年を振り返ってみる 長い時間を生きていく中で、節目節目にキリをつけて振り返ることは大事。 年末というのはちょうどいいチャンスなので、1 年間を振り返る。 プログラマとして生きていくと決めた 今年はプログラマとしての仕事を再開して、プログラマとして生きていくと決めた。 これに尽きる。 去年は目標を立てなかった なにか振り返りをしようと思って、いろいろ見返して、いろんなことがあったなーと思ったけど、目標がなかったから目標に対する振り返りができなかった。 来年の目標を立てる 来年の目標を立てようと思う。 今年のだめなところ 目標を立てるためにまずはだめだったところを考える。 アウトプットが少なかった。 ビビってる。 来年の目標 なので、来年の目標はアウトプットすること。 個人のプロジェクトを立てて、仕事とは別に進める。 まとめ もっと気楽に生きること。 生きづらいと感じたら、生き方を変えること。</description>
     </item>
     
     <item>
@@ -782,7 +782,7 @@
       <pubDate>Mon, 01 Dec 2014 23:55:30 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-12-atom/</guid>
-      <description>結論 Windows の Atom はセンタークリックのドラッグで矩形選択できる。 Windows の Atom で矩形選択するやり方です まず、Atom はこれ。 Atom んで、このプラグインを入れる。</description>
+      <description>結論 Windows の Atom はセンタークリックのドラッグで矩形選択できる。 Windows の Atom で矩形選択するやり方です まず、Atom はこれ。 Atom んで、このプラグインを入れる。 sublime-style-column-selection Mac なら option を押しながら左クリックのドラッグで矩形選択できる。 でも Windows だと Alt キーを押しながら左クリックでドラッグしても矩形選択できない。 Windows はセンタークリックのドラッグで矩形選択できる。 Mac でも Windows でも全角文字は選択範囲がずれる。</description>
     </item>
     
     <item>
@@ -791,7 +791,7 @@
       <pubDate>Mon, 01 Dec 2014 23:35:03 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-12-video/</guid>
-      <description>「「動画」にまつわる技術・物語 〜我々はどのように動画と関わっていくのか〜」に参加しました 詳細はこちら。 「動画」にまつわる技術・物語 〜我々はど</description>
+      <description>「「動画」にまつわる技術・物語 〜我々はどのように動画と関わっていくのか〜」に参加しました 詳細はこちら。 「動画」にまつわる技術・物語 〜我々はどのように動画と関わっていくのか〜 - DevLOVE | Doorkeeper 配信と再生と企画の話 動画に対して異なる立場からの話が聞けた。 配信の話 インフラにもっと興味を持とうと思った。 明日会社に行ったらインフラがどういう構成なのか聞こう。 どんどん変わっていく環境にどんどん対応していくのが大事。 再生の話 動画の仕組みがなんとなくわかった。 おもしろかった。 音と絵を同期させるのが大変らしい。 企画の話 今まではサービスの開発といったら実装のことを考えていた。 でも、サービスのことを考えるのも、実際に使ってもらって声を聞くのも開発だと思った。 まとめ おもしろかった。 明日から現場に持ち込むものとして、インフラに興味を持つこと。 明日インフラの構成聞く。</description>
     </item>
     
     <item>
@@ -800,7 +800,7 @@
       <pubDate>Sun, 30 Nov 2014 23:04:02 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-11-gocon/</guid>
-      <description>「Go Conference 2014 autumn」に参加しました イベントの詳細はこちら。 Go Conference 2014 autumn - connpass GoCon/2014autumn.rst at master · GoCon/GoCon 内容についてはこちら。 #goconに関するツイート Go Conference 2014</description>
+      <description>「Go Conference 2014 autumn」に参加しました イベントの詳細はこちら。 Go Conference 2014 autumn - connpass GoCon/2014autumn.rst at master · GoCon/GoCon 内容についてはこちら。 #goconに関するツイート Go Conference 2014 autumn - Togetterまとめ わからないことが多かった Go に興味があって参加した。 けど、触ったことがなかったので、わからない部分が多かった。 でも刺激はもらえた。 シンプル Go はシンプルさを大事にしているとのことだった。 楽に書くのと、読みやすく書くのはトレードオフで、読みやすさに重点を置くべき、とどこかで言っていた気がする。 最近どこかで、プログラマはプログラムを書いてる時間よりも読んでいる時間の方が圧倒的に長いのだから読みやすさを大事にするべき、と聞いた気がする。 これにはとても納得しているし、私自身も読んで理解するのにかかる時間が短いコードがいいコードだと考えているので、Go の思想は魅力的に感じた。 複雑さを隠してシンプルに見せる Go はシンプルに使えるように難しいこと</description>
     </item>
     
     <item>
@@ -809,7 +809,7 @@
       <pubDate>Sun, 23 Nov 2014 15:05:42 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-11-welcome_to_kanya_festa/</guid>
-      <description>※ ネタバレ注意 谷くんの立場がよくわからなかった 谷くんはなにがしたかったんだろう。 動機がしっくりこない 氷菓もそうだったけど、ストーリーがすっき</description>
+      <description>※ ネタバレ注意 谷くんの立場がよくわからなかった 谷くんはなにがしたかったんだろう。 動機がしっくりこない 氷菓もそうだったけど、ストーリーがすっきりまとまってない気がする。 クが既に失われてたとして、そのメッセージが伝わったとして、それでどうなるっていうんだろう。 表向きは文化祭を盛り上げたくて、実はメッセージが、って方がしっくりくる。 コストとリターンが見合ってないなー。 「〈古典部〉シリーズ」 読む。 トランプの柄で 4 人が表現されてたのはけっこーしっくりきた。 ホータローの姉はジョーカーだな。</description>
     </item>
     
     <item>
@@ -818,7 +818,7 @@
       <pubDate>Sat, 22 Nov 2014 23:08:52 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-11-tddbc/</guid>
-      <description>「TDDBC in Tokyo 2014-11」に参加しました イベントの詳細はこちら。 TDDBC in Tokyo 2014-11 - TDDBC | Doorkeeper 課題はこちら。 TDD演習課題 - TODOリストアプリ 私の</description>
+      <description>「TDDBC in Tokyo 2014-11」に参加しました イベントの詳細はこちら。 TDDBC in Tokyo 2014-11 - TDDBC | Doorkeeper 課題はこちら。 TDD演習課題 - TODOリストアプリ 私の組の実装はこちら。 5000164/tddbc-tokyo_2014-11 理解しやすいテストを書く 基調講演は xUnit Test Patterns の著者である Gerard Meszaros さんの「Refactoring a Test」だった。 単体テストはわかりやすく書く。 悪いコードが示されて、ここはこうする、次はこうする、と話してくれた。 1 つのテストコードは 5 行に抑える、7 行を超えると理解しづらくなる。 カスタムアサーションというものを知った。 すっきり書けるようになっててよかった。 なにをテストしたいのか？ このテストケースではなにをテストしたいのかを明確にする。 重要でないセットアップは 1 つのメソッドにまとめてしまう。 こうすることで、どこにフォーカスしたいテストなのかがわかりやすくなる。 やっぱ英語はできないとだめだ リアルタイムのヒアリングだとほとんど理解できなかった。 単体</description>
     </item>
     
     <item>
@@ -827,7 +827,7 @@
       <pubDate>Sat, 22 Nov 2014 00:12:40 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-11-hoping_invites/</guid>
-      <description>ひとりでも多くの子どもたちが、可能性を奪われなくなったらいいなぁ 植松さんは講演の中でこう言っていた。 この言葉にとても共感した。 少しでも多くの</description>
+      <description>ひとりでも多くの子どもたちが、可能性を奪われなくなったらいいなぁ 植松さんは講演の中でこう言っていた。 この言葉にとても共感した。 少しでも多くの可能性を持っていて欲しい。 周りの大人が可能性を奪ってしまう 子供に向かって、どーせ無理と言う。 やったことがない大人が、自分がしなかった理由を子供に押し付ける。 夢を見る子供を脅す。 子供の可能性が潰されてしまう。 悲しい。 可能性を奪わないために どーせ無理は言わない。 だったらこうしてみたら？を言う。 教育というものは、死に至らない失敗を安全に経験させるためのもの 失敗は悪いものではない。 可能性と自信を失うものではない。 失敗はよりよくするためのデータである。 なにもないところから踏み出した一歩目である。 そこに自信を持つ。 植松さんにとって宇宙開発は手段 どーせ無理だと思われがちな宇宙開発をやることで、無理じゃないと示している。 子どもたちに無理じゃないって思って欲しい。 そうい</description>
     </item>
     
     <item>
@@ -836,7 +836,7 @@
       <pubDate>Tue, 18 Nov 2014 01:23:43 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-11-why_didnt_she_ask_eba/</guid>
-      <description>※ ネタバレ注意 米澤 穂信さんはミステリーが好きなんだろうなと思った なんというか、ミステリーへの愛に溢れている作品だと思った。 感情の込もった作品</description>
+      <description>※ ネタバレ注意 米澤 穂信さんはミステリーが好きなんだろうなと思った なんというか、ミステリーへの愛に溢れている作品だと思った。 感情の込もった作品は読んでて気持ちいい。 内容には、してやられた 全員実現できない、じゃあカメラマンだろ、と思っていた。 伊原がカメラワークに対して物足りないと言っていたし。 でもそれは作者の思惑通りだった。 まんまとひっかかってしまった。 正直、これはやられたと思った。 「〈古典部〉シリーズ」は今後も読む これからどうなるのか楽しみ。</description>
     </item>
     
     <item>
@@ -845,7 +845,7 @@
       <pubDate>Tue, 18 Nov 2014 01:02:24 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-11-the_niece_of_time/</guid>
-      <description>※ ネタバレ注意 電車で読む本が欲しかった 電車に 30 分くらい乗り続ける時間があった。 手持ち無沙汰だなと思って電子書籍を買うことにした。 米澤 穂信さん</description>
+      <description>※ ネタバレ注意 電車で読む本が欲しかった 電車に 30 分くらい乗り続ける時間があった。 手持ち無沙汰だなと思って電子書籍を買うことにした。 米澤 穂信さんの作品がおもしろいと見かけた記憶があった なにを買おうかなと思った時に、氷菓を思い出した。 いつか読んでみたいと思っていたので買った。 その場で買ってその場で読めるのはいい。 話に置いて行かれるところがあった たまに作品に置いて行かれるところがあった。 私の知らない言い回しなどがよく出てくるので、そのせいかもしれない。 結末はあんまりすっきりしなかった おれにできることはこれくらいしかない、と言っていたわりには回りくどすぎる。 叫ぶ強さを持て、という点は大いに同意だが、それを I scream に込めるのはどうだろうか。 もうちょっとなんとかならなかったのかなと思う。 「〈古典部〉シリーズ」は読んでみようと思う 興味があるので読む。</description>
     </item>
     
     <item>
@@ -854,7 +854,7 @@
       <pubDate>Tue, 18 Nov 2014 00:24:39 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-11-blog/</guid>
-      <description>Octopress をインストールしているディレクトリに移動 cd Blog/ ブログの記事を生成 bundle exec rake new_post[&#39;URL にする文字列&#39;] 日付のプレフィックスは自動で付与されるので「blog</description>
+      <description>Octopress をインストールしているディレクトリに移動 cd Blog/ ブログの記事を生成 bundle exec rake new_post[&#39;URL にする文字列&#39;] 日付のプレフィックスは自動で付与されるので「blog」などだけでよい 生成された記事のマークダウンファイルをハイフンつなぎからアンダーバーつなぎに変える アンダーバーで入力してもハイフンにされるため 生成された記事を開いて書く title を記事のタイトルに変える 記事を書いたらプレビュー bundle exec rake preview http://localhost:4000/ プレビューして問題なかったら公開 bundle exec rake gen_deploy 公開したらバージョン管理 SourceTree でコミット コミットメッセージは「記事追加」とか適宜入力 本番環境で動作確認、文章見直し 5000164 is here</description>
     </item>
     
     <item>
@@ -863,7 +863,7 @@
       <pubDate>Fri, 14 Nov 2014 20:39:16 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-11-sqlite/</guid>
-      <description>結論 1 2 3 4adb shell run-as {パッケージ名} cat databases/{DB 名} &amp;gt; /sdcard/{DB 名} exit adb pull /sdcard/{DB 名} ~/Downloads/{DB 名} 解説 adb pull ではパッケージの権限がないため直接ファイルを取得できない なので run-as コ</description>
+      <description>結論 1 2 3 4adb shell run-as {パッケージ名} cat databases/{DB 名} &amp;gt; /sdcard/{DB 名} exit adb pull /sdcard/{DB 名} ~/Downloads/{DB 名} 解説 adb pull ではパッケージの権限がないため直接ファイルを取得できない なので run-as コマンドを使いパッケージの権限があるユーザーで adb pull できる領域にファイルをコピー Android は cp コマンドがないので cat コマンドの出力をリダイレクトして同じ内容のファイルを生成している ファイルが adb pull できる領域にコピーできたので adb pull あとはローカルで好きにできる 好きな GUI で簡単に見られる 継続的に繰り返すのは大変だけど、手軽に見られるのは楽 DB Browser for SQLite SQLite Manager :: Add-ons for Firefox まとめ 1 2adb -d shell &amp;quot;run-as {パッケージ名} cat databases/{DB 名} &amp;gt; /sdcard/{DB 名}&amp;quot; adb pull /sdcard/{DB 名} ~/Downloads/{DB 名} ってやれば 2 行でいけるかも知れないけど未検証 参考 Android端末の開発中データベース(SQlite)を見る方法 #Pistatium [Android]実機デバッグでdata/dataに保存したファイルを取得する方法 | Memorandum blog</description>
     </item>
     
     <item>
@@ -872,7 +872,7 @@
       <pubDate>Wed, 12 Nov 2014 04:52:21 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-11-processing_practice_1/</guid>
-      <description>Processing がおもしろそうだった このあたりのブログを見ていておもしろそうだった インタラクティブ・プログラミング勉強会 第1回 乱数 | fladdict 標本002 三角関数 |</description>
+      <description>Processing がおもしろそうだった このあたりのブログを見ていておもしろそうだった インタラクティブ・プログラミング勉強会 第1回 乱数 | fladdict 標本002 三角関数 | fladdict インタラクティブデザイン勉強会 第1回「ランダム」 — フニフニ微生物ができるまで | ここぽんのーと インタラクティブデザイン勉強会 第2回「三角関数」でプロペラを回す | ここぽんのーと インタラクティブデザイン勉強会 第3回「パーティクル」で爆発四散 | ここぽんのーと どうやら Processing というものを使うとできるらしい Processing 触ってみた 勉強会の課題を勝手にやってみました こんなんができました 実行結果 ソースはここにあります 5000164/processing-practice-1 まとめ 楽しい</description>
     </item>
     
     <item>
@@ -881,7 +881,7 @@
       <pubDate>Sat, 11 Oct 2014 22:28:33 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-10-tddbc/</guid>
-      <description>「TDDBC仙台 4th」に参加しました イベントの詳細はこちら。 TDDBC仙台 4th - TDDBC | Doorkeeper 今回の課題と私の組の実装はこちら。 TDD Boot Camp(TDDBC) - TDDBC仙</description>
+      <description>「TDDBC仙台 4th」に参加しました イベントの詳細はこちら。 TDDBC仙台 4th - TDDBC | Doorkeeper 今回の課題と私の組の実装はこちら。 TDD Boot Camp(TDDBC) - TDDBC仙台04/課題 5000164/tddbc-sendai04 参加してよかった 初めて TDD &amp;amp; ペアプロ をやった。 TDD というものを知ってはいたものの、ちゃんとやったことはなかった。 どころかまともにテストコードも書けないので、自分にはまだ早いと決めつけていた。 でもイベントを知った時からすごい良さそうな雰囲気を感じて参加してみた。 参加してよかった。 TDD は開発者を後押しするためのもの テストという言葉にはいろいろな意味が含まれてしまう。 お互いの共通言語になりにくい。 だから、一度意味をリセットする。 TDD の T とはなにか。 T は Test の T だが、意味合いとしては Checking に近い。 テストを目的毎に区切る。 TDD は開発者をサポートするものである。 ペアプロで助けてもらった ペアプロも初めてだったけど、思ってたよりもいいものだった。 コードを通してお互いの知</description>
     </item>
     
     <item>
@@ -890,7 +890,7 @@
       <pubDate>Sun, 14 Sep 2014 00:57:37 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-09-sukusuku/</guid>
-      <description>「DDD勉強会×すくすくスクラム仙台」に参加しました イベントの詳細はこちら。 DDD勉強会×すくすくスクラム仙台 コラボ企画 「Scrum でモデリ</description>
+      <description>「DDD勉強会×すくすくスクラム仙台」に参加しました イベントの詳細はこちら。 DDD勉強会×すくすくスクラム仙台 コラボ企画 「Scrum でモデリングってどうしよう。プロダクトバックログとモデリングのいい関係」 - すくすくスクラム仙台 | Doorkeeper わからないことがわかった DDD も、Scrum も、全然わかってないけど興味があった。 どんなものか知りたかった。 だから参加した。 その結果、自分がわからないことがわかった。 いや、当たり前のことなんですけど、厳然と事実として目の前につきつけられた。 わからないことがわかることが改善の一歩目 自分が開発する時に、この機能はこういうように実装しよう、と考える。 そこには明確な基準がない。 自分が楽に実装できそうなこと、が基準だけど、その「楽」の基準がない。 なんとなく作ってる。 だから、ごちゃごちゃになる。 ここに、基準が作れそうだと感じた。 優先順位を付けて最小で回す 機能を洗い出す。 優先順位を</description>
     </item>
     
     <item>
@@ -899,7 +899,7 @@
       <pubDate>Sat, 05 Jul 2014 10:24:22 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-07-yojouhan_shinwa_taikei/</guid>
-      <description>※ネタバレ注意 アニメを見たので、小説を読んだ この記事でアニメの感想を書きましたが、アニメを見たら原作が気になったので小説を読みました。 アニメ</description>
+      <description>※ネタバレ注意 アニメを見たので、小説を読んだ この記事でアニメの感想を書きましたが、アニメを見たら原作が気になったので小説を読みました。 アニメはよくできている 原作を読んで思ったのは、アニメはよくできてるなー、ということでした。 原作をうまく解釈してアニメという形に合わせた感じがします。 やや間延びした印象を受けたのも、1話30分で1クールという決まったものがある以上しょうがないのかなと思います。 よく30分でうまく区切りをつけたと思います。 ただ、アニメだと時計の演出があってタイムリープもののように感じられましたが、実際はそうではないと思ったのが残念なところ。 森見登美彦らしい表現が楽しい 随所に森見登美彦らしい言葉づかいが感じられて、楽しめました。 代わり映えのない二年間 どの世界の「私」も、明石さんとはうまくいくことができた。 小津とも親友であった。 どの世界でも代わり映えのない二年間であった。 人生は選択の</description>
     </item>
     
     <item>
@@ -908,7 +908,7 @@
       <pubDate>Tue, 01 Jul 2014 23:25:42 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-07-yojouhan/</guid>
-      <description>※ネタバレ注意 友人におすすめされました おすすめのアニメを友人に聞いたところ、四畳半神話大系をおすすめされたので見ました。 原作が森見登美彦との</description>
+      <description>※ネタバレ注意 友人におすすめされました おすすめのアニメを友人に聞いたところ、四畳半神話大系をおすすめされたので見ました。 原作が森見登美彦とのことで、「太陽の塔」と「夜は短し歩けよ乙女」がおもしろかったので期待。 森見登美彦っぽくておもしろかった 全体的に非常に雰囲気がよかったです。 キャラクター原案が中村佑介で、うまいことキャラが動いているなと感じました。 初めて森見登美彦を読んだきっかけが中村佑介の表紙で、登場人物のどこか浮世離れしたところが絵のイメージとしっくりくるなと思っていたので、中村佑介っぽい絵が動いてるのは楽しかったです。 また、主人公のナレーションを含め、メインキャストの声に違和感がないのがよかった。 森見登美彦作品の雰囲気がうまく出ていて、おもしろかったです。 アニメには合っていない気がした 作品自体はおもしろかったのですが、中盤やや間延びした印象を受けました。 アニメの30分区切りという性</description>
     </item>
     
     <item>
@@ -917,7 +917,7 @@
       <pubDate>Fri, 27 Jun 2014 22:54:42 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-06-agilejapan/</guid>
-      <description>Agile Japan 2014 仙台サテライトに参加しました イベントの詳細はこちら。 イベント案内 | 2014-06-27 (金) Agile Japan 2014 仙台サテライト 「ひとりぼっちは、寂しいもんな」 #AgileJapan - 東北</description>
+      <description>Agile Japan 2014 仙台サテライトに参加しました イベントの詳細はこちら。 イベント案内 | 2014-06-27 (金) Agile Japan 2014 仙台サテライト 「ひとりぼっちは、寂しいもんな」 #AgileJapan - 東北デベロッパーズコミュニティ 柔軟な考え方をもらいました ためになる話をいくつも聞けて、自分の中にはなかった新しい考え方をもらいました。 今まで自分の中にあったものよりも、もっともっと柔軟な考え方をもらいました。 以下、自分の解釈です。 アジャイルを導入するために、アジャイルを説明しない アジャイルとは、ソフトウェア価値の最大化であり、利益を最大化する姿勢である。 その手法として Scrum や XP があるのであり、それ自体はアジャイルではない。 このアジャイルというものを説明するのが非常に難しい。 やってみるのが一番わかりやすい。 じゃあやってみるためにはどうするか。 アジャイルを説明しないで、プラクティスを1つ1つ試してみる。 まずは KPT によるふりかえりだけ試してみる、など。 それで、これいい</description>
     </item>
     
     <item>
@@ -926,7 +926,7 @@
       <pubDate>Sat, 14 Jun 2014 22:46:26 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-06-junit/</guid>
-      <description>Ubuntuのバージョン ubuntu 14.04 LTS 64bit Javaのインストール 1 2 3 4 5 6sudo apt-get update sudo apt-get install -y python-software-properties sudo add-apt-repository ppa:webupd8team/java sudo apt-get update sudo apt-get install -y oracle-java8-installer sudo update-java-alternatives -s java-7-oracle 参考 Ubuntu 12.04 LTS に Java (Oracle JDK) をインストー</description>
+      <description>Ubuntuのバージョン ubuntu 14.04 LTS 64bit Javaのインストール 1 2 3 4 5 6sudo apt-get update sudo apt-get install -y python-software-properties sudo add-apt-repository ppa:webupd8team/java sudo apt-get update sudo apt-get install -y oracle-java8-installer sudo update-java-alternatives -s java-7-oracle 参考 Ubuntu 12.04 LTS に Java (Oracle JDK) をインストールする - xykのブログ IntelliJ IDEAのインストール 公式サイトからダウンロードする IntelliJ IDEA — The Best Java and Polyglot IDE 任意のディレクトリに配置 IntelliJ IDEAの起動 解凍したディレクトリ内のbin/idea.shを実行 プロジェクトの作成 Java を選択 Project SDK で New -&amp;gt; JDK を選択 /usr/lib/jvm/java-8-oracleを選択してOK JUnitをインストール GitHub のリンクからjunit.jarとhamcrest-core.jarをダウンロード junit-team/junit junit.jarとhamcrest-core.jarをプロジェクトにコピー junit.jarとhamcrest-core.jarをライブラリに追加 参考 junit-4.11.jar が単独で使えない - 日々常々 試してみる プロジェクトの直下にtestディレクトリを作成 testディレクトリ</description>
     </item>
     
     <item>
@@ -935,7 +935,7 @@
       <pubDate>Mon, 19 May 2014 22:30:02 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-05-yotsubato/</guid>
-      <description>最近よつばと！を読んでいます よつばと！面白いですよね。 何回読んでも面白い。 気分が悪くなる時ってありますよね なんだか気に食わないことが連続して</description>
+      <description>最近よつばと！を読んでいます よつばと！面白いですよね。 何回読んでも面白い。 気分が悪くなる時ってありますよね なんだか気に食わないことが連続しておこったり。 特に意味もなくイライラしたり。 そういう時がありますよね。 私はよくあります。 この前も気分が悪くなった この前は特に意味もなく気分が悪くなりました。 そういう時って他人の一挙手一投足がやけに目について不快感を覚えてしまいます。 いつもの感じでよつばと！を読んだ 最近よつばと！を読んでいるので、いつもの感じで読みました。 読んでたら気分がよくなった さっきまで感じてたいやな気分を感じなくなりました。 むしろいい気分になりました。 理由はよくわからないけど、救われた なぜ気分がよくなったのか、それはまだよくわかっていません。 よつばと！については考える余地が多く残っていそうです。 でも結果はよくわかりました。 暗澹とした気持ちを救ってくれたのです。 気分が悪くなったらよつば</description>
     </item>
     
     <item>
@@ -944,7 +944,7 @@
       <pubDate>Thu, 15 May 2014 23:07:13 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-05-sick/</guid>
-      <description>なんだか突然具合が悪くなった 朝はなんともなかったのに、昼過ぎくらいから急に体調が悪くなったので早退しました。 症状としては、頭が重いのと、吐き</description>
+      <description>なんだか突然具合が悪くなった 朝はなんともなかったのに、昼過ぎくらいから急に体調が悪くなったので早退しました。 症状としては、頭が重いのと、吐き気ですかね。 具合が悪くなった時は余計な心配をせずに帰りたい ただでさえ具合が悪い状態の時に、余計な心配はしたくない。 帰ったら迷惑になるんじゃないか、とかそんなことは考えたくない。 頭脳労働で頭がうまく働かないのは致命的 そもそも頭がうまく働いてない時点で生産性はガタ落ちである。 そんな状態で無理に作業するよりも、さっさと体調を治してから作業を再開した方がいい。 目先の進捗に気を取られると、体調不良がずるずると長引いてしまう。 もし風邪だったら周りに風邪をうつしてしまうリスクがある もし体調不良の原因がウイルス性のものだった場合、自分がその場に居続けるだけで周りの人にリスクを負わせ続けることになる。 風邪を完全に防ぐことはできないので、具合が悪かったらおとなしく隔離され</description>
     </item>
     
     <item>
@@ -953,7 +953,7 @@
       <pubDate>Wed, 14 May 2014 22:48:40 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-05-calm/</guid>
-      <description>僭越ながら合コンに参加させていただきました この度、ありがたいことにご縁がありまして、合コンに参加させていただきました。 合コンに参加するのは4</description>
+      <description>僭越ながら合コンに参加させていただきました この度、ありがたいことにご縁がありまして、合コンに参加させていただきました。 合コンに参加するのは4ヶ月ぶり2度目になります。 それ以来、なかなかに心の中がもやもやと落ち着かないので、現在の心境などを言語化してみようと思います。 なにはともあれまずはこのような機会を与えていただいたことに感謝です。 内容については特筆しません 私が書こうとしていることは、合コンが終わってからの話なので、内容について特に触れません。 ただ、非常にありがたかったこと、非常に楽しかったこと、非常に魅力的であったことはここに記します。 合コンが終わってから心が落ち着かない なんだか心がフワフワしています。 慣れないことをしたからかも知れません。 合コンのことを思い返したり、他の女性のことを考えたり。 なんだか女性のことばかりを考えてしまいます。 初めて合コンに参加した時も舞い上がった 初めて合コンに</description>
     </item>
     
     <item>
@@ -962,7 +962,7 @@
       <pubDate>Tue, 13 May 2014 00:11:23 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2014-05-blog_moved/</guid>
-      <description>WordPressからOctopressへ タイトルにもありますが、ブログを移転しました。 ブログの管理をWordPressからOctopres</description>
+      <description>WordPressからOctopressへ タイトルにもありますが、ブログを移転しました。 ブログの管理をWordPressからOctopressへ変えました。 WordPressからOctopressへ変えた理由 一番の理由としては、サーバーに公開するのが静的ファイルである、という点です。 速さという面でもセキュリティという面でも有利だと判断しました。 5000164.jpからblog.5000164.jpへ ついでにドメインも変えました。 最初は5000164.jpを私のブログのドメインとして位置づけていたのですが、5000164.jpを私のドメインとして、それに付随する形でブログのドメインを作りたいと思ったのがきっかけでした。 ドメインを変更するとそれなりに影響が出るのですが、そのあたりはせっかくの機会なので勉強したいと思います。 Windows 7からUbuntu 14へ 普段からWindowsには不満を持っていたので</description>
     </item>
     
     <item>
@@ -971,7 +971,7 @@
       <pubDate>Tue, 01 Apr 2014 02:03:09 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-03-dxlib_practice_2/</guid>
-      <description>実行結果 これが。 こうなって。 こうなってって。 最終的にはこうなります。 正直こんなに長くする必要はなかった。 ソースコードはこちら。 5000164/dxlib-practice-2 ゲームなんだ</description>
+      <description>実行結果 これが。 こうなって。 こうなってって。 最終的にはこうなります。 正直こんなに長くする必要はなかった。 ソースコードはこちら。 5000164/dxlib-practice-2 ゲームなんだから入力できるようにしなくては {#ゲームなんだから入力できるようにしなくては} 前回はDXライブラリで文字を表示するだけでしたが、こんどは入力を受け付けるようにします。 とりあえずエンターキーを押したら単純に表示するだけ。 表示するテキストをファイルから読み込むようにした {#表示するテキストをファイルから読み込むようにした} ついでに、表示するテキストを外部から読み込んでいます。 最初はUTF-8でテキストを書いていたら、文字化けをしてうまく読み込めません。 DXライブラリはShift_JISとCRLFで書かれているので、テキストもShift_JISとCRLFで書いたらうまくいきました。 プロジェクト全体の設定も、DXライブラリに合わせてShift_JISとCRLF</description>
     </item>
     
     <item>
@@ -980,7 +980,7 @@
       <pubDate>Wed, 26 Mar 2014 23:03:14 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-03-engineer/</guid>
-      <description>「君は変えられるエンジニアか？変えられないエンジニアか？」 下記リンクから引用 PHPerのためのJenkins | アライドアーキテクツ エンジニア</description>
+      <description>「君は変えられるエンジニアか？変えられないエンジニアか？」 下記リンクから引用 PHPerのためのJenkins | アライドアーキテクツ エンジニアブログ 私は変えられないエンジニアだった。 そして逃げ出してしまった。 逃げ出した判断は間違っていなかったと今でも思う。 ただ、何も変えられなかったことを後悔している。 今でも、中途半端に干渉しては無力感を感じている。 私はなぜ変えられないエンジニアだったのか 原因がわからなければ対策もできない。 全員が必ず変えられるエンジニアになる必要はないが、私は変えられるエンジニアになりたい。 そのために変えられなかった原因を考える。 自分では「良い」と思ってるこの「良さ」を共有できていない 改善はなぜ存在するのか。 そこに問題があるからである。 問題からストレスが生まれ、このストレスを消すために改善する。 この「ストレスを消す」ことが良さである。 しかし、ストレスが共有できなかった。 ストレ</description>
     </item>
     
     <item>
@@ -989,7 +989,7 @@
       <pubDate>Sun, 16 Mar 2014 03:20:28 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-03-dxlib_practice_1/</guid>
-      <description>早速見ていただきましょう ソースコードはこちら。 5000164/dxlib-practice-1 DXライブラリで1番最初に確認したのがフォントの表示 ゲームのようなものを作りたいなと考えてい</description>
+      <description>早速見ていただきましょう ソースコードはこちら。 5000164/dxlib-practice-1 DXライブラリで1番最初に確認したのがフォントの表示 ゲームのようなものを作りたいなと考えていて、知人に教えてもらったDXライブラリを使うことにしました。 ＤＸライブラリ置き場 ＨＯＭＥ その際に、1番初めに確認したことがフォントの表示でした。 フォントの美しさはモチベーションに直結します。 結果はごらんの通り 美しいフォントを表示させることができました。 ちなみに比較対象として、デフォルト設定でのフォントを下部に表示しています。 フォントをきれいに表示するには1行追加するだけ ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8); この文を追加するだけです。 この文を追加することでフォントにアンチエイリアスをかけてくれます。 ＤＸライブラリ置き場 リファレンスページ よりうつくしい表示のために若干の影をつけています アンチエイリアスをかけるだけで十分きれいに表示されます。 ですが、ここではよりフォントを際立たせるために、若干</description>
     </item>
     
     <item>
@@ -998,7 +998,7 @@
       <pubDate>Thu, 13 Mar 2014 04:21:42 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-03-wpf_practice_2/</guid>
-      <description>実際に作ったものはこんな感じです 方向キーの入力した方向へで赤い点が動きます。 ソースコードはこちら。 5000164/wpf-practice-2 画面に動かすものを表示する とりあえずなん</description>
+      <description>実際に作ったものはこんな感じです 方向キーの入力した方向へで赤い点が動きます。 ソースコードはこちら。 5000164/wpf-practice-2 画面に動かすものを表示する とりあえずなんでもよかったので、Rectangleタグで四角形を表示します。 そして、位置を指定するためにCanvasタグで囲みます。 &amp;lt;Canvas&amp;gt; &amp;lt;Rectangle Name=&#34;pointer&#34; Width=&#34;10&#34; Height=&#34;10&#34; Fill=&#34;Red&#34; Canvas.Left=&#34;0&#34; Canvas.Top=&#34;0&#34; /&amp;gt; &amp;lt;/Canvas&amp;gt; これでXAML側はほぼ完成。 あとは動かすだけ。 キーボードの入力を取得します WindowにPreviewKeyDownをつけます。 これでキーが押されたらイベントが発生します。 WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&amp;#8217;s C# Dev Notes C#側で座標を取得するために まずは四角にNameをつけます。 これでC#側で変数として扱えます。 XAML とプログラムコード（WPF） (.NET Framework) 四角の現在位置を取得する C#側で四角につけた名前から座標を取得します。 // 現在地を取得 Double leftPosition = Canvas.GetLeft(this.pointer); Double topPosition =</description>
     </item>
     
     <item>
@@ -1007,7 +1007,7 @@
       <pubDate>Tue, 11 Mar 2014 23:17:38 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-03-wpf_practice_1/</guid>
-      <description>実際に作ったものはこんな感じです ソースコードはこちら。 5000164/wpf-practice-1 実装するにあたって参考にしたサイト こちらの記事を参考にさせていただきました。 WPF で Zune の</description>
+      <description>実際に作ったものはこんな感じです ソースコードはこちら。 5000164/wpf-practice-1 実装するにあたって参考にしたサイト こちらの記事を参考にさせていただきました。 WPF で Zune のようなウィンドウを作る | grabacr.nét この記事に沿っていったらできました。 これを追記するだけ。 &amp;lt;WindowChrome.WindowChrome&amp;gt; &amp;lt;WindowChrome CaptionHeight=&#34;23&#34; ResizeBorderThickness=&#34;100&#34; /&amp;gt; &amp;lt;/WindowChrome.WindowChrome&amp;gt; 枠なしには出来たけどウィンドウの影が気になる ウィンドウの枠がなくなってかっこよくなったのに、影が主張し過ぎで気になります。 この影も消したい。 影を消す方法を調べていたら、先ほどと同じブログのこちらの記事にたどり着きました。 WPF で Visual Studio 2012 のような光るウィンドウを作る | grabacr.nét なるほど、よくわからん。 WPF初心者の私には無理だと判断したので、この記事の冒頭で紹介されていた簡易版で実装します。 影をいい感じにつける &amp;lt;Window x:Class=&#34;練習1.MainWindow&#34; xmlns=&#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&#34; xmlns:x=&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34; Title=&#34;MainWindow&#34; Width=&#34;700&#34; Height=&#34;700&#34; WindowStyle=&#34;None&#34; AllowsTransparency=&#34;True&#34; WindowStartupLocation=&#34;CenterScreen&#34; Background=&#34;Transparent&#34;&amp;gt; ～中略～ &amp;lt;Border BorderBrush=&#34;#222222&#34; Background=&#34;#222222&#34; BorderThickness=&#34;1&#34; Margin=&#34;100&#34;&amp;gt; &amp;lt;Border.Effect&amp;gt; &amp;lt;DropShadowEffect ShadowDepth=&#34;0&#34; BlurRadius=&#34;100&#34; Color=&#34;#000000&#34; Opacity=&#34;0.7&#34; /&amp;gt; &amp;lt;/Border.Effect&amp;gt; ～中略～ &amp;lt;/Border&amp;gt; &amp;lt;/Window&amp;gt; Windowに</description>
     </item>
     
     <item>
@@ -1016,7 +1016,7 @@
       <pubDate>Fri, 28 Feb 2014 00:14:30 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-02-musyoku/</guid>
-      <description>私は無職で約4ヶ月間過ごしました せっかく無職で4ヶ月も過ごしたので、その感想を書いてみたいと思います。 あんまりこういう機会もないことですし。</description>
+      <description>私は無職で約4ヶ月間過ごしました せっかく無職で4ヶ月も過ごしたので、その感想を書いてみたいと思います。 あんまりこういう機会もないことですし。 最初は不安で仕方がなかった 辞めて最初のうちは不安でした。 不安で不安で、早くなんとかしなきゃとずっと思っていました。 そうしたらすごく疲れました。 不安ばっかりなのはよくないです。 なるべく気楽に考えるようにしてたらすごい楽しくなってきた すごい疲れてしまったので、なるべく気楽に考えるようにしました。 大丈夫なんとかなるさ、と。 気楽に気楽に考えていたら、すごい楽しくなってきました。 お金こそあんまり使えないものの時間がたくさんある。 開発したいときに開発したり、麻雀したい時に麻雀したり。 気分が乗ったら好きなだけ好きなことできるのはすごい楽しかった。 物事を楽しく感じる気持ちの余裕を持ち続けることが大事ですね。 そして1番びっくりしたのがたくさん助けがあること 仕事は自分で見</description>
     </item>
     
     <item>
@@ -1025,7 +1025,7 @@
       <pubDate>Wed, 12 Feb 2014 00:27:55 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-02-presentationzen/</guid>
-      <description>プレゼンテーションzen／ガー・レイノルズ、熊谷小百合訳 そのプレゼンはなんのため？ つまらないプレゼンが溢れかえっている。 資料をただ読み上げる</description>
+      <description>プレゼンテーションzen／ガー・レイノルズ、熊谷小百合訳 そのプレゼンはなんのため？ つまらないプレゼンが溢れかえっている。 資料をただ読み上げるだけ？ やらされてやる？ そういった悲劇をなくすためにはどうすればいいのか。 プレゼンとは、伝えたい想いがあり、聞き手を説得するために行う手段の1つである。 プレゼンの見せ方 スライドはドキュメントではない。 主役はスライドではなく発表者である。 スライドは引き立て役。 発表者を引き立てるためにはどんなスライドがいいのか。 デザインの知識がなくてもわかりやすいように書いてある。 プレゼンについての全般的なことをわかりやすく教えてくれる なんのためにプレゼンをするのか。 その準備から発表の心構えまで。 想いを伝える方法や資料をデザインする方法まで簡潔にまとめられていてわかりやすい。 プレゼンの資料がたくさん載ってるのも参考になっていい。 プレゼンがうまくなるためには、いいプレゼンを知</description>
     </item>
     
     <item>
@@ -1034,7 +1034,7 @@
       <pubDate>Tue, 11 Feb 2014 23:47:53 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-02-the_design_of_everyday_things/</guid>
-      <description>誰のためのデザイン？／D.A.ノーマン、野島久雄訳 非常にわかりやすかった 具体的な例が多く出てきて非常にわかりやすかった。 使いやすいデザインと</description>
+      <description>誰のためのデザイン？／D.A.ノーマン、野島久雄訳 非常にわかりやすかった 具体的な例が多く出てきて非常にわかりやすかった。 使いやすいデザインとはなにか。 どのようなデザインが使いにくいのか。 どのようにデザインすれば使いやすくなるのか。 読むのに半年くらいかかった 読み始めるのにそれほど抵抗はないのだけれど、読み進めるのが遅かった。 事前に読みやすい読みやすいという評判を聞いていたせいで、私が誤ったメンタルモデルを構築してしまったのかも知れない。 ユーザーよりも開発者を優先したことがある なにかを作る時に、「作るのが簡単だから」という理由で決定したことがある。 もちろん開発工数を抑えることは大事だけれど、それで安物買いの銭失いになってしまっては本末転倒である。 デザインをもっと考えるべきであった。 わかりやすさよりも見た目の簡単さを優先したことがある 具体例としても出てきたボタンの配置について、なんとなくすべてを</description>
     </item>
     
     <item>
@@ -1043,7 +1043,7 @@
       <pubDate>Mon, 27 Jan 2014 01:29:02 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-01-emoji/</guid>
-      <description>HTC J Oneって絵文字が表示されないんですね HTC J Oneを使い始めて半年ほどですが、最近になって絵文字が表示されないということに気づきました。 と</description>
+      <description>HTC J Oneって絵文字が表示されないんですね HTC J Oneを使い始めて半年ほどですが、最近になって絵文字が表示されないということに気づきました。 というわけで表示するためにはどうすればいいのか調べました。 HTC J Oneには絵文字のフォントが入っていないから絵文字は表示できない 結論から言うと表示できません。 rootをとって絵文字のフォントを入れれば表示することもできるらしいですが、リターンに対してリスクが大きすぎます。 半年間気付かなかったくらい使っていませんし。 そこで簡単にできる臨時的な対処法 表示されない絵文字を完全に確認することはできないですが、一部の絵文字なら簡単に確認できる方法を見つけました。 例えばLINEで絵文字が送られてきた場合 絵文字をコピーします。 Eメールアプリを起動して絵文字を貼り付けます。 絵文字が表示されます。 どうやらEメールアプリはアプリ側で解釈してくれているらしい Eメールアプリでは絵</description>
     </item>
     
     <item>
@@ -1052,7 +1052,7 @@
       <pubDate>Wed, 22 Jan 2014 17:10:00 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-01-hover/</guid>
-      <description>リンクとかをホバーしたら背景色を変えたりしますよね リンクをホバーしたら文字色と背景色が変わるという実装はよくあります。 このコンテンツはクリッ</description>
+      <description>リンクとかをホバーしたら背景色を変えたりしますよね リンクをホバーしたら文字色と背景色が変わるという実装はよくあります。 このコンテンツはクリッカブルですよ、と知らせるためですね。 でもリンクの中に画像が含まれている時は画像だけ変わらなかったりします。 これはちょっと違和感です。 そこですべてに覆いかぶさっているように見せます。 まずはデモをどうぞ See the Pen hoverした要素の上に色をかぶせる by SUGAWARA Hiroshi (@5000164) on CodePen. 1 2 3 4 5 6 7 8 9&amp;lt;h1&amp;gt; 実装の解説です &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; 非常に簡単です。&amp;lt;br /&amp;gt; 今までhoverの擬似クラスにしていた部分をhoverの擬似クラスのafter擬似要素にします。&amp;lt;br /&amp;gt; 文章だとちょっとわかりづらいのでコードで書くと、 &amp;lt;/p&amp;gt; &amp;lt;pre class=&amp;quot;brush: css; title: ; notranslate&amp;quot; title=&amp;quot;&amp;quot;&amp;gt; a:hover { ・・・ } 1 2 3 4 5&amp;lt;p&amp;gt; これを &amp;lt;/p&amp;gt; &amp;lt;pre class=&amp;quot;brush: css; title: ; notranslate&amp;quot; title=&amp;quot;&amp;quot;&amp;gt; a:hover::after { ・・・ } 1 2 3 4 5 6 7 8 9 10 11&amp;lt;p&amp;gt; こうします。&amp;lt;br /&amp;gt; あとはちょっと装飾してやれば簡単に実現できます。 &amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt; まとめ &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; h</description>
     </item>
     
     <item>
@@ -1061,7 +1061,7 @@
       <pubDate>Tue, 21 Jan 2014 13:15:09 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-01-portfolio/</guid>
-      <description>就職のためにポートフォリオサイトを作りました Webデザイナーになりたいなら就職活動をするにあたってポートフォリオサイトは必須という情報を得ま</description>
+      <description>就職のためにポートフォリオサイトを作りました Webデザイナーになりたいなら就職活動をするにあたってポートフォリオサイトは必須という情報を得ましたので作りました。 ポートフォリオサイトはこちらです。 正直よくわかりませんでした とりあえず作ったは作ったんですが、内容をどうすればいいのかさっぱりわかりませんでした。 それは私に実績がないからですね。 実績を紹介して自分のスキルを証明するためにポートフォリオサイトを作ると思うのですが、実績がないとなにを書けばいいのかわかりません。 だから「すごいぽーとふぉりおさいと」を作ればアピールできるのかなと考えていました。 「すごいぽーとふぉりおさいと」は簡単にはできない 簡単にはできないことばっかりやろうとしてると全然前に進めません。 ポートフォリオサイトを作るためにかなり時間をかけましたが、全然完成の目処が立ちませんでした。 そこでポートフォリオサイトに時間をかけるならで</description>
     </item>
     
     <item>
@@ -1070,7 +1070,7 @@
       <pubDate>Sun, 05 Jan 2014 03:33:09 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-01-5cm_per_sec/</guid>
-      <description>秒速5センチメートル ※ネタバレ注意 秒速5センチメートルを見ました Appleの12 DAYS プレゼントでレンタルが無料だったので見ました。 どこかで聞い</description>
+      <description>秒速5センチメートル ※ネタバレ注意 秒速5センチメートルを見ました Appleの12 DAYS プレゼントでレンタルが無料だったので見ました。 どこかで聞いたことがあるタイトルなのできっと有名なのだと思います。 とりあえずざっくりとした感想を 映像がきれい 映像がすごいきれいですね。 特に光の描写がきれいだと思いました。 現実とは異なる描写が多いように感じたので、そこがアニメの表現の良さなのかなと思います。 遠野くんかっこいい 遠野くんはかっこいいですね。 花苗ちゃんがかわいかったです。 花苗ちゃんの声優がいいなと思いました。 他の人の声はちょっと浮いてる感じがしたけど、花苗ちゃんの声は花苗ちゃんがしゃべってるように感じました。 その他もろもろ 遠野くんが見た夢の中で出てきた銀河ってMacの壁紙の銀河と同じですかね？（調べたらアンドロメダ銀河だった） それがちょっと「おっ？」ってなった。 あとは遠野くんのパソコンがiMacっぽかった</description>
     </item>
     
     <item>
@@ -1079,7 +1079,7 @@
       <pubDate>Wed, 01 Jan 2014 19:53:50 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-01-2013/</guid>
-      <description>TwitterとかFacebookとか自分のブログを見て2013年を振り返った 2013年が終わったので1年の振り返りをしたいと思います。 こう</description>
+      <description>TwitterとかFacebookとか自分のブログを見て2013年を振り返った 2013年が終わったので1年の振り返りをしたいと思います。 こういう時にログがちゃんと残ってて振り返れるのはいいですね。 たくさんのボカロ曲を聴いていい曲とたくさん出会えた 2013年もたくさんボカロ曲を聴きました。 Twitterを見てても気に入った曲のツイートがすごい多かったです。 2014年もたくさん聴くと思います。 自分の好みもどんどん変わっていったりしているので、どういう曲を聴くようになるのか楽しみです。 Webのことをいろいろ勉強した Webの勉強は常に欠かさないようにしていました。 どう考えても去年より力がついてます。 常に成長できるようにこれからもがんばっていきます。 小説をそこそこ読んだ 今までは小説は読んで終わりだったのですが、今年から小説の感想をブログに書くようにしました。 感想を書くというアウトプットが面白かったの</description>
     </item>
     
     <item>
@@ -1088,7 +1088,7 @@
       <pubDate>Wed, 01 Jan 2014 17:44:17 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-01-lifelog/</guid>
-      <description>きっかけ なんかうまく睡眠をとれている気がしません。 ということで睡眠のログをとろうと思ってライフログガジェットを調べました。 リストバンド型が楽</description>
+      <description>きっかけ なんかうまく睡眠をとれている気がしません。 ということで睡眠のログをとろうと思ってライフログガジェットを調べました。 リストバンド型が楽そうだなと思ったので、リストバンド型だけ調べてます。 Jawbone UP いきなりですが、これを買いました。 慣れてきたら使用感をレビューしたいと思います。 メモ 同期する際にスマートフォンに接続する必要がある。 Androidだと対応していない端末もある。 Bluetoothで接続できるUP24が発売されたが、日本では未発売。 UP24が日本で発売されるまで様子を見るか、UPを買うか。 参考 Jawbone UPを1ヵ月使ってわかったこと | absorbed in&amp;#8230; Bluetooth対応！ Jawbone、新型ライフログリストバンド「UP24」を発表 : ギズモード・ジャパン Jawbone UP24 : Jawboneから次のUPが発表！今度はBluetooth機能が追加！ | favLife with iPhone Nike+ FuelBand SE メモ 運動×ソーシャルというイメージ。 睡眠のトラッキングやライフ</description>
     </item>
     
     <item>
@@ -1097,7 +1097,7 @@
       <pubDate>Wed, 01 Jan 2014 15:44:14 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014-01-vocaloid_2013/</guid>
-      <description>イントロ 2013年が終わり、2014年になりました。 2013年もたくさんのVOCALOID曲が生まれました。 私が聴いた曲はその中のほんとにご</description>
+      <description>イントロ 2013年が終わり、2014年になりました。 2013年もたくさんのVOCALOID曲が生まれました。 私が聴いた曲はその中のほんとにごく一部ですが、その中でも出会えてよかったという曲を紹介します。 そんなわけで2013年出会えてよかったVOCALOID曲5選です。 キアゲハ・プリケノート &amp;#8211; 初音ミク &amp;#8211; あえる [nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;640&amp;#8243; height=&amp;#8221;360&amp;#8243;]sm20271398[/nicodo] あえるさんのキアゲハ・プリケノート。 音がすごい気持よくてすぐにはまりました。 ミクの声も素敵です。 きれいな音がたくさん詰まってて、でもそれでもうるさくなくて、ゆったりのびのび聴いてて楽しいです。 あえるさんの曲はみんな素敵な音です。 Mermaid &amp;#8211; MC : MIKU RIN GUMI LUKA &amp;#038; DJ : LEN &amp;#8211; Torero [nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;640&amp;#8243; height=&amp;#8221;360&amp;#8243;]sm20624241[/nicodo] ToreroさんのMermaid。 Toreroさんを知ったのはLeviathanでした。 それから追いかけてますけど、どの曲もすごいかっこいいです。 絵もかわいくて好きです。 Toreroさんの曲の中でもMermaidが今のと</description>
     </item>
     
     <item>
@@ -1106,7 +1106,7 @@
       <pubDate>Tue, 24 Dec 2013 12:24:43 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-12-majonoie/</guid>
-      <description>※ネタバレ注意 ニコニコで有名らしい魔女の家をプレイしてみた 魔女の家ver1.07 公式サイト 魔女の家というゲームがあるらしい。 前回に引き続き、</description>
+      <description>※ネタバレ注意 ニコニコで有名らしい魔女の家をプレイしてみた 魔女の家ver1.07 公式サイト 魔女の家というゲームがあるらしい。 前回に引き続き、ニコニコ動画ではVOCALOID界隈に生息しているのでその存在を知らなったのですが、興味本位でやってみました。 この時はまだなにも知らなかった。 私は学習ってものを知らないんですかね。 学習はしていなくてもプレイに成長は見られた とりあえずプレイ。 青鬼をクリアした実績から多少の自信がついた私は多少ノリノリですらあった。 今から考えると非常に滑稽である。 前回よりは抵抗なくゲームを進める。 調子に乗ってゲーム実況者風にプレイする どうせだから実況しながらプレイしようと思い立ち、ゲームの予測をしゃべりながらプレイする。 今から考えると非常に滑稽である。 最初の初見殺しでも「あーなるほど、血には近づいちゃだめなんですね」とか言ってみる。 ゲーム実況者風にプレイしてたせいでゲームに</description>
     </item>
     
     <item>
@@ -1115,7 +1115,7 @@
       <pubDate>Tue, 24 Dec 2013 05:42:34 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-12-aooni/</guid>
-      <description>※ネタバレ注意 ニコニコで有名らしい青鬼をプレイしてみた 青鬼 / Aooni 青鬼というゲームがあるらしい。 ニコニコ動画ではVOCALOID界隈に生息してい</description>
+      <description>※ネタバレ注意 ニコニコで有名らしい青鬼をプレイしてみた 青鬼 / Aooni 青鬼というゲームがあるらしい。 ニコニコ動画ではVOCALOID界隈に生息しているのでその存在を知らなったのですが、興味本位でやってみました。 この時はまだなにも知らなかった。 ビビりすぎてとてもプレイできたものじゃなかった とりあえずやってみようということになりプレイしたのも束の間、始めて10分でギブアップしました。 理由は怖すぎて操作できなくなったから。 最初はおどおどしながら操作できていたんですが、最初に青鬼と接触してからコントローラー持てなくなりました。 青鬼怖すぎんよ。 なんでこんなに怖かったのか考えた ゲームだからだ。 この「自分で操作する」っていう動作がゲームへの感情移入を非常に高めている。 感情を移入しすぎた結果、怖くなりすぎて一歩も動けなかったというわけです。 自分では操作できないけど、プレイ動画なら見れる というわけでプレイ動画を見漁</description>
     </item>
     
     <item>
@@ -1124,7 +1124,7 @@
       <pubDate>Sun, 08 Dec 2013 05:40:29 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-12-blur/</guid>
-      <description>きっかけ iOS7って半透明のレイヤーの透過した部分だけぼかしがかかりますよね。 CSSでも同じことができないかなと思って調べました。 結論 現在の</description>
+      <description>きっかけ iOS7って半透明のレイヤーの透過した部分だけぼかしがかかりますよね。 CSSでも同じことができないかなと思って調べました。 結論 現在のCSSではできない模様。 擬似的に実現 CSSにはblurというプロパティがあるのですが、このblurはコンテンツ全体にぼかしをかけます。 重なったレイヤーの透過した部分にだけぼかしをかける、といったことはできません。 なので、このblurをうまく使って一部だけのぼかしを擬似的に実現します。 デモ See the Pen スクロールして重なった部分だけぼかし by SUGAWARA Hiroshi (@5000164) on CodePen 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19&amp;lt;p&amp;gt; このデモは-webkit-のベンダープレフィックスがついているのであしからず。 &amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt; 実装方法 &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; まず、HTMLで同じ内容のコンテンツを2つ用意します。&amp;lt;br /&amp;gt; 次に、CSSで2つのコンテンツがきれいにくっつくように指定します。&amp;lt;br /&amp;gt; ポイントはoverflow-x: hid</description>
     </item>
     
     <item>
@@ -1133,7 +1133,7 @@
       <pubDate>Tue, 03 Dec 2013 00:50:28 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-12-ted_simon/</guid>
-      <description>動画について 私が今回見た動画はこちらです。 ゴールデンサークルについて このゴールデンサークルという考え方は非常にわかりやすい。 シンプルでいて強</description>
+      <description>動画について 私が今回見た動画はこちらです。 ゴールデンサークルについて このゴールデンサークルという考え方は非常にわかりやすい。 シンプルでいて強力だ。 人は「なぜ」に動かされる。 ではどうして「なぜ」に動かされるのか。 それは自らの信じることを行動で示すため。 世界を変えたい、という思いを信じ、私も世界を変えたいと信じている、という自分を示すために行動する。 まとめ 行動は自分のために行うもの。 他人のために行うものではない。 自分の思いを伝えたければ「なぜ」から始めること。 その「なぜ」に共感してくれれば動いてくれる人もいる。 おまけ ゴールデンサークルをCSSで実装したので載せておきますね。 See the Pen ゴールデンサークル by SUGAWARA Hiroshi (@5000164) on CodePen</description>
     </item>
     
     <item>
@@ -1142,7 +1142,7 @@
       <pubDate>Sun, 01 Dec 2013 23:18:10 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-12-css_nite/</guid>
-      <description>CSS Nite in SENDAIについて Web制作関係者のためのセミナー、それの仙台版です。 詳しくは下記を。 CSS Nite in SENDAI, Vol.7 | CSS Nite in SENDAI CSS Nite in SENDAI, Vol.7に参加し</description>
+      <description>CSS Nite in SENDAIについて Web制作関係者のためのセミナー、それの仙台版です。 詳しくは下記を。 CSS Nite in SENDAI, Vol.7 | CSS Nite in SENDAI CSS Nite in SENDAI, Vol.7に参加しました 開催されたのが10月19日（土）なのでだいぶ間が空いてしまいました。 セミナーの内容ではなく、セミナーから感じたことを書いていきます。 安心感をもらいました セミナーに参加するのは久しぶりでした。 このしばらく参加していなかった間に、自分でも気づかないうちに、現在の自分に対する不安が大きくなっていたようです。 私の考えは合っているのか、方向性は間違っていないのか。 もちろん答えがあるわけでもないのですが、周りに同感できる人がいないというのが事実でした。 1人でHTMLやCSS、JavaScriptを勉強して、このタグは意味合い的にこのようにマークアップするべき、ここはCSSで表現できるので画像リソースを削減する、JavaScriptは今後もっと重要になるはずだ</description>
     </item>
     
     <item>
@@ -1151,7 +1151,7 @@
       <pubDate>Sun, 01 Dec 2013 04:40:56 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-12-fluid/</guid>
-      <description>デモ 文章では説明しづらいので、なんだかよくわからないタイトルになってしまいました。 まずは実際に見てもらった方が早いと思います。 See the Pen qxgIF by SUGAWARA Hiroshi</description>
+      <description>デモ 文章では説明しづらいので、なんだかよくわからないタイトルになってしまいました。 まずは実際に見てもらった方が早いと思います。 See the Pen qxgIF by SUGAWARA Hiroshi (@5000164) on CodePen 1 2 3 4 5 6 7 8 9 10 11 12 13&amp;lt;p&amp;gt; ここではデモのために、ウィンドウの幅ではなくdivの幅を変更するようにしています。&amp;lt;br /&amp;gt; divの幅を変更してみると、左側のテーブルの幅は変わらずに右側の文章の幅だけが変わっているのが確認できます。 &amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt; 実装方法 &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; cssはこのようになっています。（関係のないプロパティは省略しています。） &amp;lt;/p&amp;gt; &amp;lt;pre class=&amp;quot;brush: css; title: ; notranslate&amp;quot; title=&amp;quot;&amp;quot;&amp;gt; div { position: relative; } table { position: absolute; top: 0; left: 0; width: 250px; } p { margin: 0 0 0 250px; } 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19&amp;lt;p&amp;gt; 非常に簡単です。&amp;lt;br /&amp;gt; まず、tableをposition: absolute;で固定することを考えます。&amp;lt;br /&amp;gt; そのために親要素にposition: relative;を指定します。&amp;lt;br /&amp;gt; これでtableの位置が固</description>
     </item>
     
     <item>
@@ -1160,7 +1160,7 @@
       <pubDate>Fri, 29 Nov 2013 21:01:01 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-11-space_delete/</guid>
-      <description>作ったもの まずは実際に作ったものです。 見てからの方がわかりやすいと思います。 空白改行削除 | 5000164 here. 概要 半角スペース、全角スペース、タブ、改行を削</description>
+      <description>作ったもの まずは実際に作ったものです。 見てからの方がわかりやすいと思います。 空白改行削除 | 5000164 here. 概要 半角スペース、全角スペース、タブ、改行を削除できます。 機能 改行削除 改行を削除して出力領域に書き出し。 ショートカットキーはCtrl + Enter。 書き出したらテキストは全選択の状態なのでそのままコピー可。 空白削除 半角スペース、全角スペース、タブを削除して編集領域に上書き。 ショートカットキーはShift + Enter。 空白の削除前に戻したい場合はCtrl + Alt + Z。 空白改行削除 半角スペース、全角スペース、タブ、改行を削除して出力領域に書き出し。 ショートカットキーはCtrl + Shift + Enter。 補助機能 TabキーでTab文字の挿入。 Shift + Tabで行頭のTab文字を削除。 範囲を選択して削除した場合は選択範囲に対して処理の実行。 範囲を選択してTab、Shift + Tabを押した場合には選択行に対して実行。 実装解説 それ</description>
     </item>
     
     <item>
@@ -1169,7 +1169,7 @@
       <pubDate>Thu, 21 Nov 2013 23:58:36 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-11-vocaloid_ranking_20131121/</guid>
-      <description># イントロまたしても久しぶりのランキングです。 最近とてもハマった曲があったのでご紹介したくての更新。 というわけで自信を持っておすすめできるお</description>
+      <description># イントロまたしても久しぶりのランキングです。 最近とてもハマった曲があったのでご紹介したくての更新。 というわけで自信を持っておすすめできるおれおれVOCALOIDランキングベスト3の発表です。# 3位：CLONE DANCER／GUMI／フルオキセチン[nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;640&amp;#8243; height=&amp;#8221;360&amp;#8243;]sm21732003[/nicodo] お経っぽいというコメントを見て、なるほどと納得しました。 このVOCALOIDならではといった曲調がかっこいいです。 GUMIの声とテンポのいい音がまたいい感じに気持ちいい。# 2位：weathering patchwork／IA／クイナ[nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;640&amp;#8243; height=&amp;#8221;360&amp;#8243;]sm22072139[/nicodo] これはジャズっぽいんですかね。 ジャズィーなんですかね。 雰囲気がおしゃれです。 特に歌詞のリズム感がかっこいい。# 1位：死なない魔法／GUMI／みやけ[nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;640&amp;#8243; height=&amp;#8221;360&amp;#8243;]sm21673452[/nicodo] この曲が最近ドハマりしててすごいたくさん聴いてます。 初めて聴いた時はそこまでじゃなかったんですが、聴くたびにどんどん</description>
     </item>
     
     <item>
@@ -1178,7 +1178,7 @@
       <pubDate>Sat, 02 Nov 2013 03:03:50 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-11-pocket/</guid>
-      <description>Pocketについて Pocketという後で読むサービスがあります。 iPadでこのPocketのアプリを利用してた時に、気が利くなと思ったデザ</description>
+      <description>Pocketについて Pocketという後で読むサービスがあります。 iPadでこのPocketのアプリを利用してた時に、気が利くなと思ったデザインがあります。 Pocketの目的 Pocketというアプリを利用するときの目的は「読むこと」です。 そのために読みやすさが求められます。 Pocketを利用している時の行動 Pocketで記事を開くと、ヘッダーがあって、本文があります。 本文を読み進めて、最後まで読み終わると、ヘッダーの既読ボタンを押します。 読みやすさのためのデザイン Pocketで記事を読んでいて、記事を最後まで読み終わって既読ボタンを押そうとおもった時に、既読ボタンが表示されていることに気づきました。 記事を読んでいる時は全然気が付かなかったのに、でも既読ボタンを押したいなと思った時には表示されていました。 改めて見てみたところ、記事を読み始めるとヘッダーが非表示になり、記事を読み終わるとヘッダ</description>
     </item>
     
     <item>
@@ -1187,7 +1187,7 @@
       <pubDate>Wed, 23 Oct 2013 23:59:00 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-10-space_delete/</guid>
-      <description>作ったもの 空白改行削除 | 5000164 here. 作ったものの概要 半角スペース、全角スペース、タブ、改行を削除します。 作成にいたる経緯 パソコンに何もアプリケーショ</description>
+      <description>作ったもの 空白改行削除 | 5000164 here. 作ったものの概要 半角スペース、全角スペース、タブ、改行を削除します。 作成にいたる経緯 パソコンに何もアプリケーションをインストールしてはいけない環境。 文章を少しだけ修正する作業。 修正した文章は改行と空白を削除しなければならない。 という状況がつらかったから作った。 Webアプリという選択肢 アプリケーションはインストールできないけど、Webアプリならインストール不要。 なのでいい感じにWebで使えるツールを探す。 改行を削除するツールはたくさん見つかったが、使いづらい。 見つけたものは「改行を削除」するだけのツールのみ。 必要な作業は「文章を編集」して「改行を削除」すること。 出来上がってる文章をペーストして、改行を削除して、削除結果をコピーするという前提で作られているので、ちょっとした修正がやりづらい。 だから少しだけ編集もしやすいツールを作った 少しだけ編集しやすくするにあたって</description>
     </item>
     
     <item>
@@ -1196,7 +1196,7 @@
       <pubDate>Fri, 18 Oct 2013 23:17:49 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-10-danganronpa/</guid>
-      <description>ダンガンロンパ 希望の学園と絶望の高校生 The Animation ネタバレ注意 物語の核心に触れる記述があります。 ネタバレが嫌いな人は閲覧注意。 アニメを見ようと思った</description>
+      <description>ダンガンロンパ 希望の学園と絶望の高校生 The Animation ネタバレ注意 物語の核心に触れる記述があります。 ネタバレが嫌いな人は閲覧注意。 アニメを見ようと思ったきっかけ 最近はアニメを見ていないのに、なにがきっかけでダンガンロンパを見ようと思ったのか。 まずは、単語を知るところから。 【初音ミク】Party Junkie【クソビッチ化】 &amp;#8211; ニコニコ動画:GINZA この動画のコメントで「絵がダンガンロンパに似てる」というコメントが流れて、ダンガンロンパという単語を知りました。 （動画の絵はダンガンロンパの絵の人とは違ったみたいだけれども。） 次に、興味を持つところ。 暴力街 Web漫画をいろいろと読んでいた時期に、このトップ画を見て「ダンガンロンパというのは面白いゲームらしい」ということを知りました。 最後に、アニメを見ようと決めたところ。 論破の快感『ダンガンロンパ』: わたしが知らないスゴ本は、きっとあなたが読んでいる ツイッターや</description>
     </item>
     
     <item>
@@ -1205,7 +1205,7 @@
       <pubDate>Mon, 29 Jul 2013 00:43:25 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-07-koyomimonogatari/</guid>
-      <description>暦物語／西尾維新 ※ネタバレ注意 感想 物語シリーズの14作目「暦物語」。 予定になかった一作ということもあり、今までの作品とは毛色が違うなと感じた</description>
+      <description>暦物語／西尾維新 ※ネタバレ注意 感想 物語シリーズの14作目「暦物語」。 予定になかった一作ということもあり、今までの作品とは毛色が違うなと感じた。 こよみストーン 石の話。 阿良々木くん忘れちゃだめだよ。 そして羽川さんはやっぱりすごい。 こよみフラワー 花の話。 事故を悼む花で事故が起こるのはなんとも物悲しい。 こよみサンド 土の話。 羽川さんまじすごい。 こよみウォーター 水の話。 父親が見ていた水の相手が、子供の姿だったのか、それとも最初から大人の姿だったのかが気になる。 こよみウインド 噂の話。 このあたりから物語の次へ繋げる感じがでてきた。 そして貝木が素直に阿良々木くんに教えてくれるわけがないと思っていたら、案の定カツアゲされていた。 こよみツリー 木の話。 木に気付かなかったというのがなんとも不思議。 話の中では気付いてた人もいたという流れだったが、それだったら誰かが一言声をあげれば終わりだったのではないのだろうか。 まし</description>
     </item>
     
     <item>
@@ -1214,7 +1214,7 @@
       <pubDate>Mon, 24 Jun 2013 04:51:48 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-06-dv/</guid>
-      <description>20130623_dv 調べるきっかけDVのことを調べるきっかけになったのはこの記事を読んだからでした。 子育て中の親に安らぎを、映画『おおかみこどもの雨と雪』 &amp;#8211; #RyoAnnaBlog</description>
+      <description>20130623_dv 調べるきっかけDVのことを調べるきっかけになったのはこの記事を読んだからでした。 子育て中の親に安らぎを、映画『おおかみこどもの雨と雪』 &amp;#8211; #RyoAnnaBlog http://d.hatena.ne.jp/RyoAnna/20130617/1371476485 おおかみこどもの雨と雪に興味があって読んだ記事の最後に、以下の記事がリンクされていました。 ５歳児にスクワット５００回…虐待死で母親証言 : 社会 : YOMIURI ONLINE（読売新聞） http://www.yomiuri.co.jp/national/news/20130613-OYT1T00358.htm “その日の夜は「ママと一緒に寝たい」と言って眠りにつき、それが最後の言葉になったという。” ふざけんなよ。 なんだっていうんだよ。 なんでこんな悲しいことが起きるんだよ。# DVのことをあんまり知らないことに気付いたそういえば、DVというものについて知らない、ということに気付いた。 暴力を振るったらDV？という程度の知識。 なんで暴力を振るってしまうのか、といったことなどはわからない。 ということで調べた。 以下に個人的な見解をまとめます。# DVとはDVとは、親しい関係の人に対する暴力のこと。 暴力に</description>
     </item>
     
     <item>
@@ -1223,7 +1223,7 @@
       <pubDate>Sun, 23 Jun 2013 04:59:54 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-06-effect/</guid>
-      <description># 他人を救うことはできない他人は変えられない。 他人は救えない。変えられるのは自分だけ。 救えるのは自分だけ。# どうにもならないこともある目の前</description>
+      <description># 他人を救うことはできない他人は変えられない。 他人は救えない。変えられるのは自分だけ。 救えるのは自分だけ。# どうにもならないこともある目の前に困ってる人がいて、助けたいと思っても、どうにもならないこともある。# 言葉には届く範囲がある言葉っていうものは、言う人によって重みが違ってくる。 届く距離が違ってくる。 おれが言っても届かない距離がある。 助けたいと思っても、おれじゃだめなことがたくさんある。# 言葉を届かせるためには言葉を届かせたい人の大事な人になるしかない。 例えば、マイケル・ジャクソンの言葉は多くの人に届くと思う。 マイケル・ジャクソンが大事だと思う人が多いから。 あとは宗教とか。 一番強い言葉は恋人だったり家族のそれだと思う。# おれにはできないことがあるおれの言葉が届かない範囲はたくさんある。 おれは世界中のみんなの大事な人になることはできない。# だからってなにもできないわけじゃないおれにはでき</description>
     </item>
     
     <item>
@@ -1232,7 +1232,7 @@
       <pubDate>Sat, 15 Jun 2013 04:12:39 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-06-learn/</guid>
-      <description># よく思うこと私はよく「おれってダメだなぁ」と思います。 それは自分の希望する理想像と現実とのギャップが原因です。 自分自身への期待値が大きすぎ</description>
+      <description># よく思うこと私はよく「おれってダメだなぁ」と思います。 それは自分の希望する理想像と現実とのギャップが原因です。 自分自身への期待値が大きすぎる場合、時としてそれは過大なストレスになります。 それはこの記事（休職して退職してやっとわかったこと）で言及しています。 しかし、自分では自分のことをダメだなと思っても、「そんなことないよ」と言ってくれる人もいます。 今日は「そんなことないよ」について教えてもらったので、考えます。# ダメな例「おれってダメだなぁ」 「そんなことないよ」 「いや、ほんとにダメなんだよ、この前なんかさあ・・・」# いい例「おれってダメだなぁ」 「そんなことないよ」 「ほんと？ありがとう」# 大事なこと私はよくダメな例の方の受け答えをしてしまいます。 今日教えてもらったのは、いい例の方です。 この受け答えで大事なことはなにかを教えてもらいました。# ダメな例が大事にしていることダメな例では、「自分が</description>
     </item>
     
     <item>
@@ -1241,7 +1241,7 @@
       <pubDate>Fri, 14 Jun 2013 01:41:01 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-6-vocaloid_ranking_20130613/</guid>
-      <description># イントロおれおれVOCALOIDランキング久しぶりの更新ですね。 本当はおすすめの曲はたくさんあるんですけど、ここではあえて3曲に絞りました</description>
+      <description># イントロおれおれVOCALOIDランキング久しぶりの更新ですね。 本当はおすすめの曲はたくさんあるんですけど、ここではあえて3曲に絞りました。 多すぎても逆に聴く気力がなくなりますもんね。 というわけで現時点でのおれおれVOCALOIDランキングベスト3の発表です。# 3位：ロストワンの号哭／Neru[nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;640&amp;#8243; height=&amp;#8221;360&amp;#8243;]sm20244918[/nicodo] 再生数がミリオン達成しましたね。 いい曲です。 Neruさんの曲はかっこいいですね。 そしてこの曲のなにが一番いいって、カラオケで歌った時に気持ちいいんですよね。 通常の音程が高いので、1オクターブ下げて歌うととてもちょうどいい音程になって、非常に気持ちよく歌えます。# 2位：あの街は死んだ／KTKT[nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;640&amp;#8243; height=&amp;#8221;360&amp;#8243;]sm21081505[/nicodo] KTKTさんです。 最近知りました。 でも気づいたら他の曲もマイリストに登録してました。 つまり、要チェック人物ですね。# 1位：Ur-Style／DATEKEN[nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;640&amp;#8243;</description>
     </item>
     
     <item>
@@ -1250,7 +1250,7 @@
       <pubDate>Mon, 10 Jun 2013 04:52:56 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-06-think/</guid>
-      <description># 言葉との出会い伊坂幸太郎の重力ピエロという作品の中で、神様に『自分で考えろ！』と言われるシーンがあります。 私には衝撃的な言葉でした。 そして</description>
+      <description># 言葉との出会い伊坂幸太郎の重力ピエロという作品の中で、神様に『自分で考えろ！』と言われるシーンがあります。 私には衝撃的な言葉でした。 そしてすごく魅力的でした。 魅力的すぎて、会社に入社した時の新人歓迎会の時にこの言葉を使った記憶があります。 新人から一言ずつ、と言われてなにも考えていなかった私は即興で、 伊坂幸太郎の重力ピエロという作品の中で、主人公の父親が悩み事があって神様に相談するシーンがあります。 その時神様は、その父親に対して『自分で考えろ！』と言います。 大事なことは自分で考えて決めることだと。 私も自分で考えて決められるようになりたいです。 よろしくお願いします。 と、たぶんこのようなことを言ったはずです。 当時の上司の方が、即興でああいうことを言えるなんてすごいな、と褒めてくれたのを覚えています。 嬉しかったです。 今思うとその上司の方にはよく褒めてもらっていました。 というわけで、この言葉の意味</description>
     </item>
     
     <item>
@@ -1259,7 +1259,7 @@
       <pubDate>Sat, 08 Jun 2013 19:51:33 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-06-cube/</guid>
-      <description># 実装の練習最近がっつりコードを書く機会が減りました。 なので練習としてCSS3でなんちゃって立方体を実装してみました。 前々からやりたかった実</description>
+      <description># 実装の練習最近がっつりコードを書く機会が減りました。 なので練習としてCSS3でなんちゃって立方体を実装してみました。 前々からやりたかった実装。 これをうまく作れるようになればWebデザインにもっと幅が出る気がする。 動作はChromeで確認してます。# デモ# まとめソースはきれいじゃないけど、とりあえずそれっぽいものはできた。 制作時間は1時間30分でした。</description>
     </item>
     
     <item>
@@ -1268,7 +1268,7 @@
       <pubDate>Mon, 03 Jun 2013 15:37:28 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-06-retire/</guid>
-      <description>de_20130603_retire 退職2013/5/20付で株式会社アート・システムを退職しました。 2010/3/29の入社から約3年間お世話になりました。 退職してわかった</description>
+      <description>de_20130603_retire 退職2013/5/20付で株式会社アート・システムを退職しました。 2010/3/29の入社から約3年間お世話になりました。 退職してわかったこともあるので、それを書こうと思います。 入社してから退社するまでの簡単な時系列 まずはなんで退社することになったのかということから。 2010/3/29入社## 2011/9/5東京に転勤 2012/4/22うつ状態と診断される 2012/6/4仙台に転勤 2013/4/4適応障害と診断される 2013/4/9休職 2013/5/20退社 時系列への補足 入社 やりたいことはたくさんあるのに、なにもできない日々だった。 自分の力不足を痛感する日々。 東京へ転勤 初めての一人暮らしでいい経験になった。 うつ状態 仕事が忙しくて、いつからか日常的に頭痛がするようになった。 頭痛はどんどん悪化していってだんだんひどくなった。 他にも朝突然起き上がれなくなるなどの症状が発生。 そしてある日強い腹痛</description>
     </item>
     
     <item>
@@ -1277,7 +1277,7 @@
       <pubDate>Sun, 02 Jun 2013 23:57:08 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-06-kokoroconnect_hitorandom/</guid>
-      <description>ココロコネクト ヒトランダム／庵田定夏 ※ネタバレ注意 感想 ココロコネクトを漫画で読んで原作が気になったので読んでみた。 漫画よりは面白かったけど、</description>
+      <description>ココロコネクト ヒトランダム／庵田定夏 ※ネタバレ注意 感想 ココロコネクトを漫画で読んで原作が気になったので読んでみた。 漫画よりは面白かったけど、そんなに面白くなかった、という微妙な感想。 小説を読まずに漫画だけ読んでた方が幸せだったかも知れない。 状況の描写がめんどくさいのと、心理描写が押し付けがましいのと、論理飛躍がやや多い気がしたのが、ちょっと肌に合わなかったかな。 まとめ タイトルを「ヒトツナガリテ、ドコへユク」から「ココロコネクト ヒトランダム」って改題したのはすごくいいと思う。</description>
     </item>
     
     <item>
@@ -1286,7 +1286,7 @@
       <pubDate>Thu, 23 May 2013 23:14:27 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-05-the_perfect_outsider/</guid>
-      <description>有限と微小のパン／森博嗣 ※ネタバレ注意 感想 S&amp;amp;Mシリーズ10作目にして最終作。 約850ページですか。 厚いですな。 本の構成 序盤からガシ</description>
+      <description>有限と微小のパン／森博嗣 ※ネタバレ注意 感想 S&amp;amp;Mシリーズ10作目にして最終作。 約850ページですか。 厚いですな。 本の構成 序盤からガシガシと攻めてきて、クライマックス感がすごかった。 今までの人物がどんどん登場してきて、それが1つにまとまっていく感じ。 最初から勢いがあって850ページを苦にさせない面白さでした。 事件を解くヒント 勝手にヒントだと思ってるのは下記の二点です。 料理に味つけをするように、道徳と装飾を仮想構築しているだけ。 「有限と微小のパン」P.139より 「公道じゃないから、良いでしょう？」 「有限と微小のパン」P.382より まず、ずっと強調されていた「装飾」という言葉。 これは虚構や作り物だったということを表している。 つまり、事件は作り物の装飾だったということを意図しているように思える。 次に、公道じゃないという言葉。 これはつまり私有地ということ。 私有地の中であれば警察の格好をして歩</description>
     </item>
     
     <item>
@@ -1295,7 +1295,7 @@
       <pubDate>Wed, 22 May 2013 08:13:00 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-05-numerical_models/</guid>
-      <description>数奇にして模型／森博嗣 ※ネタバレ注意 感想 S&amp;#038;Mシリーズ9作目。 700ページですか。 厚いですな。 まとめ 概念の話のところが難しくてわか</description>
+      <description>数奇にして模型／森博嗣 ※ネタバレ注意 感想 S&amp;#038;Mシリーズ9作目。 700ページですか。 厚いですな。 まとめ 概念の話のところが難しくてわからないところがあったかな。 内容は多かったけど振り返ってみると特筆したい点が思い浮かばない。 すっきり消化できたってことなのかな。</description>
     </item>
     
     <item>
@@ -1304,7 +1304,7 @@
       <pubDate>Tue, 21 May 2013 09:16:22 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-05-switch_back/</guid>
-      <description>今はもうない／森博嗣 ※ネタバレ注意 感想 S&amp;#038;Mシリーズ8作目。 やられた。 これはやられた。 くやしい。 おもしろいです。 犀川先生と萌絵 今回</description>
+      <description>今はもうない／森博嗣 ※ネタバレ注意 感想 S&amp;#038;Mシリーズ8作目。 やられた。 これはやられた。 くやしい。 おもしろいです。 犀川先生と萌絵 今回は犀川先生要素が最初っから多めで嬉しいです。 萌絵とのやりとりも見てて楽しいです。 勘違い 小説の内容を完全に勘違いしてました。 てっきり萌絵の物語かと。 キスをしたあたりからすげー憤慨して読んでたものですが、それもおじさまだったと知って納得。 にしてもおばさまと萌絵は相当似てますね。 まとめ 今ならおだやかな気持ちで純粋に楽しんで読めそうです。 ネタは全くわからなかったけど、主人公が誰なのかが最大のミステリでしたね。 ところで萌絵と一緒にいた二人の男の子は誰なのだろう。</description>
     </item>
     
     <item>
@@ -1313,7 +1313,7 @@
       <pubDate>Mon, 20 May 2013 03:06:47 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-05-replaceable_summer/</guid>
-      <description>夏のレプリカ／森博嗣 ※ネタバレ注意 感想 S&amp;#038;Mシリーズ7作目。 なんかあんまりしっくりこなかった。 犀川先生が万能すぎて出番減ってるのも</description>
+      <description>夏のレプリカ／森博嗣 ※ネタバレ注意 感想 S&amp;#038;Mシリーズ7作目。 なんかあんまりしっくりこなかった。 犀川先生が万能すぎて出番減ってるのも悲しい。 素生は最後の救いだったけど、あれは昔から家出してたのかな。 杜萌の動機と実行犯3人のことがなんかしっくりこなくて微妙だった。 まとめ ミスリード多め。 犀川先生万能すぎ。 しっくりこなかった。 犯人の視点でこんなに書かれてるのはシリーズで初めてだからかな。</description>
     </item>
     
     <item>
@@ -1322,7 +1322,7 @@
       <pubDate>Sun, 19 May 2013 20:36:25 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-05-ultimo_trucco/</guid>
-      <description>ウルチモ・トルッコ 犯人はあなただ !／深水黎一郎 ※ネタバレ注意 感想 深水黎一郎さんの名前だけは知っていたけど作品を読むのは初めて。 文章がとてもす</description>
+      <description>ウルチモ・トルッコ 犯人はあなただ !／深水黎一郎 ※ネタバレ注意 感想 深水黎一郎さんの名前だけは知っていたけど作品を読むのは初めて。 文章がとてもすっきりしている印象。 電子書籍を購入したのだが、わからない単語が頻出したので電子書籍の辞書機能が大いに活躍した。 内容 正直最後のネタバレまではよくわからない状態で、あんまりおもしろくなかった。 本を読むスピードもなかなかあがらず、よく中断していた。 でも最後のネタバレがあってからはすごい納得。 気になったところ まず超能力の下りがよくわからなかった。 保険外交員とのやり取りで違和感を覚えた。 香坂誠一からの手紙で警察に言及されていたことでなにかあると気付いた。 ネタ 小説の中の世界で新聞に連載されている文章をそのまま読む。 小説からの情報量が極端に制限される。 つまり登場人物の保険外交員と同じレベルの情報しか持っていなかった。 小説では当たり前といえる、小説の登場人物は知るよし</description>
     </item>
     
     <item>
@@ -1331,7 +1331,7 @@
       <pubDate>Thu, 09 May 2013 02:01:24 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-05-illusion_acts_like_magic/</guid>
-      <description>幻惑の死と使途／森博嗣 ※ネタバレ注意 感想 S&amp;#038;Mシリーズ6作目。 犀川先生すごい。 今回は全然わからなかったなぁ。 そして、いろいろと、考</description>
+      <description>幻惑の死と使途／森博嗣 ※ネタバレ注意 感想 S&amp;#038;Mシリーズ6作目。 犀川先生すごい。 今回は全然わからなかったなぁ。 そして、いろいろと、考えさせられた。 まとめ 二代目引田天功さんがあとがきを書いていてすごいと思った。</description>
     </item>
     
     <item>
@@ -1340,7 +1340,7 @@
       <pubDate>Wed, 08 May 2013 02:27:26 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-05-aruking/</guid>
-      <description>あるキング／伊坂幸太郎 ※ネタバレ注意 感想 久しぶりに伊坂作品を読んだ。 今までと雰囲気が違うと作者本人が言っていた通り、物語全体の雰囲気は違った</description>
+      <description>あるキング／伊坂幸太郎 ※ネタバレ注意 感想 久しぶりに伊坂作品を読んだ。 今までと雰囲気が違うと作者本人が言っていた通り、物語全体の雰囲気は違った。 しかしやはりところどころに見える伊坂っぽさ。 登場人物の言い回しや展開など。 まとめ 王求は楽しかったと言えただろうか。</description>
     </item>
     
     <item>
@@ -1349,7 +1349,7 @@
       <pubDate>Mon, 06 May 2013 23:35:12 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-05-who_inside/</guid>
-      <description>封印再度／森博嗣 ※ネタバレ注意 感想 S&amp;#038;Mシリーズ5作目。 最初の構想ではここまでだったそうで、ひとまず一段落なのでしょうか。 エイプリ</description>
+      <description>封印再度／森博嗣 ※ネタバレ注意 感想 S&amp;#038;Mシリーズ5作目。 最初の構想ではここまでだったそうで、ひとまず一段落なのでしょうか。 エイプリル・フール このネタはきっと最初から考えてたんでしょう。 そしてこれで終わらせるつもりだったのかも。 萌絵の悪戯も犀川先生の反応もすごいおもしろかったです。 諏訪野はナイスでした。 もう、最高です トリック このトリックはかっこいいですね。 少しも思いつかなかった。 苦しみに耐えてまた鍵に戻すというところも美しさなのでしょう。 一欠けの美しさ。 まとめ 偶然が生み出した状況。 単純に生きたいのにどうしても複雑になってしまう。 記憶なんて不確かなものです。 でも犀川先生は人を疑ってかかるなと何回も言っていた。 不確かさを信じるってのもいいもんだと思います。 それにしてもエイプリル・フールの件に印象がまるごと持っていかれました。 二人の関係もそれぞれの変化も見てて楽しいです。 もっと見ていたい</description>
     </item>
     
     <item>
@@ -1358,7 +1358,7 @@
       <pubDate>Mon, 06 May 2013 17:41:52 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-05-jack_the_poetical_private/</guid>
-      <description>詩的私的ジャック／森博嗣 ※ネタバレ注意 感想 S&amp;#038;Mシリーズ4作目。 今回は萌絵要素が多めな感じ。 成長する姿を見るってのはいいもんです。</description>
+      <description>詩的私的ジャック／森博嗣 ※ネタバレ注意 感想 S&amp;#038;Mシリーズ4作目。 今回は萌絵要素が多めな感じ。 成長する姿を見るってのはいいもんです。 まとめ 今回は特に言及したい点もないかな。 萌絵がメインの話だったと思います。 あとは国枝桃子の魅力が今までで一番出てたかな。 これを読んでからすべてがFになるを読んでいれば、真賀田博士が逃げた時になにか気づけたかも知れない。 それとすべてがFになるで萌絵が儀同に抱いた思いもこれの後ならしっくりくる。 最初の構想から物語の順序を変えない方が良かったかな。</description>
     </item>
     
     <item>
@@ -1367,7 +1367,7 @@
       <pubDate>Sat, 04 May 2013 06:52:16 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-05-mathematical_goodbye/</guid>
-      <description>笑わない数学者／森博嗣 ※ネタバレ注意 感想 S&amp;#038;Mシリーズ3作目。 3作の中では一番おもしろい。 相変わらず殺された人の人物像は嫌悪感を抱</description>
+      <description>笑わない数学者／森博嗣 ※ネタバレ注意 感想 S&amp;#038;Mシリーズ3作目。 3作の中では一番おもしろい。 相変わらず殺された人の人物像は嫌悪感を抱きそうな設定です。 犯人について 昇君が犯人だという予想は的中。 でも予想の根拠は頭がいいからというだけ。 あと、昇君が高専に通ってるという設定がちょっと嬉しかった。 トリックについて 解説されるまでまったくわからなかった。 霧を使って投影してたとか鏡使ってたとか考えたけど全然だめ。 実際のトリックは実にスマートでスッキリ。 不自然な点についてもスッキリ。 今作はほんとに最後の最後まで解説がなかったからいつ種明かしをするんだろうとワクワクした。 最後の最後まで解説はないけど中だるみすることもなくスラスラ読めた。 博士について 博士は天王寺翔蔵と天王寺宗太郎と片山基生の誰かということだった。 誰かは白骨死体、誰かは地下の老人、誰かはベンチの老人。 まず、地下の老人は天王寺翔蔵ではない</description>
     </item>
     
     <item>
@@ -1376,7 +1376,7 @@
       <pubDate>Fri, 03 May 2013 23:59:08 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-05-doctors_in_isolated_room/</guid>
-      <description>冷たい密室と博士たち／森博嗣 ※ネタバレ注意 感想 おもしろい。 犀川先生の授業がとてもおもしろい。 萌絵への襲撃について 鍵をかけて閉じ込めるという明</description>
+      <description>冷たい密室と博士たち／森博嗣 ※ネタバレ注意 感想 おもしろい。 犀川先生の授業がとてもおもしろい。 萌絵への襲撃について 鍵をかけて閉じ込めるという明らかな殺意があるのに、なぜ危害を加えなかったのか。 萌絵が忍び込んでそのまま倒れてしまったという事故に見せかけようとしたのだろうか。 萌絵の意識がなくなった後に鍵を開けてクーリングを停止すれば物理的には事故のように見せかけられるが、萌絵が犀川に助けを求めていた時点で事故に見せかけることは不可能。 助けを求めていたことを知っていた上でなぜそのままにしておいたのか。 あるいはフロッピーディスクを回収するためだけに気を失わせただけで、最初から助けるつもりだったが、助けを求めていたことに気づいてそのままにしておいたということだろうか。 殺意は丹羽と珠子にだけ向かっていたので、萌絵を殺すつもりは最初からなかったものだと考える。 本文中には「殺そうとした」とあるが、木熊先生は</description>
     </item>
     
     <item>
@@ -1385,7 +1385,7 @@
       <pubDate>Wed, 01 May 2013 10:11:50 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-04-the_perfect_insider/</guid>
-      <description>すべてがFになる／森博嗣 ※ネタバレ注意 読むきっかけ 森博嗣さんはとても有名で知っていたのですが、有名すぎてなぜか今まで読まずにいました。 でもや</description>
+      <description>すべてがFになる／森博嗣 ※ネタバレ注意 読むきっかけ 森博嗣さんはとても有名で知っていたのですが、有名すぎてなぜか今まで読まずにいました。 でもやっぱり面白いという話を聞いたので読んでみました。 すべてがFになるという本を知っていたのでまずはこれから。 プログラマならタイトルで16進数が関係してるなとわかって楽しみなはず。 読了直後の感想 おもしろい。 会話のアプローチが今まで経験してきたものと趣が違っていて楽しい。 自分の価値観がグッっと広げられるような感覚が気持ちいい。 そして真賀田博士をもっと読んでいたい。 全体を通した感想 序盤 序盤の会話のやりとりは印象的だったが、その後はやや退屈。 この作品は当初五部作の四部作目として構想されていたという話を聞いてその点については納得。 序盤のクライマックスと言えるウェディングドレスが出てくる場面のインパクトが大きくて読むのを止められなくなる。 中盤 中盤は正直やや退屈な印象。</description>
     </item>
     
     <item>
@@ -1394,7 +1394,7 @@
       <pubDate>Mon, 01 Apr 2013 02:13:58 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-03-frighten/</guid>
-      <description>はじめに 先日、友達にある漫画をすすめられて読んでいたらその中に 「あんたが怯えるから相手も怯えるのよ」 という言葉がでてきました この言葉が頭の中</description>
+      <description>はじめに 先日、友達にある漫画をすすめられて読んでいたらその中に 「あんたが怯えるから相手も怯えるのよ」 という言葉がでてきました この言葉が頭の中をふわふわしているので、しっかり考えてすっきり頭に染み込ませたいと思います 省略されている言葉を埋める 「あんたが怯えるから相手も怯えるのよ」という言葉には省略されている言葉があると思います なのでまずはそれを自分なりに埋めてみます 「あんたが（相手のことを）怯えるから相手も（あんたのことを）怯えるのよ」 軽く埋めるとこんな感じ 「あんたが（相手のことを）怯え（て自分を守ろうとす）るから相手も（あんたから自分を守ろうとして）怯えるのよ」 もっと埋めるとこんな感じ 「あんたが（相手のことを）怯え（て自分のことを守るために攻撃しようとす）るから相手も（あんたから自分を守るために）怯えるのよ」 さらに自己解釈するとこんな感じ なぜ自分が怯えると相手も怯えるのか 人間は自分を守ろう</description>
     </item>
     
     <item>
@@ -1403,7 +1403,7 @@
       <pubDate>Wed, 20 Mar 2013 01:46:32 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-03-click/</guid>
-      <description>clickイベントを取得したい DOMに要素を追加するとjQueryのclickイベントって効かなくなるんですね 知らなかった そういう時はjQu</description>
+      <description>clickイベントを取得したい DOMに要素を追加するとjQueryのclickイベントって効かなくなるんですね 知らなかった そういう時はjQueryのonを使えばclickイベントも取得できるってことで実装 Chromeで動作確認 動いた iOSで見てみる 動かない iOSでonのclickイベントが取得できない iOSで動かなくていろいろ調べてみました でもサンプルが動いてるサイトもある うーん そこで手元でちょっとずつ変更を加えながら調べてみたところ サンプルのaタグをdivタグに変えると動かなくなるということが判明 そこでonlick=&amp;#8221;&amp;#8221;を追加すれば動くようになるという記事を発見 divタグにonclick=&amp;#8221;&amp;#8221;を追加することでiOSでも無事にclickイベントを拾うことができました iOSのlabel要素と同じ対処法ですね 動かないのは同じような理由なのでしょう</description>
     </item>
     
     <item>
@@ -1412,7 +1412,7 @@
       <pubDate>Sun, 17 Mar 2013 08:32:19 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-03-blog_design/</guid>
-      <description>ブログのデザインを変更しました。 今回のでVersionは1.8へ、ってことなので8回目の変更ですね。 では今回のデザイン変更点を。 デザインの変</description>
+      <description>ブログのデザインを変更しました。 今回のでVersionは1.8へ、ってことなので8回目の変更ですね。 では今回のデザイン変更点を。 デザインの変更コンセプト 今回のデザイン変更のコンセプトは「フラット」で「オシャレ感」を出すことです。 フラットデザインは今のWebデザインのトレンドなので練習を兼ねて。 オシャレ感を出すデザインがまだうまくできないのでこれも練習を兼ねて。 デザインの変更点 ブログタイトル 今までは左上にブログのロゴを置いていましたが、今回のコンセプトとしてオシャレ感を出すというものがあったので、大きく余白多めにとって目立つように配置しています。 それに合わせてフォントも変更。 Google Web Fontsの中からイメージに合うものを選びました。 今回は曲線がきれいだった「Tangerine」を使用しています。 hの縦線が素敵です。 記事一覧の表示方法 今までは1行に1つの記事を表示していました。 そしてアイキャッチ画</description>
     </item>
     
     <item>
@@ -1421,7 +1421,7 @@
       <pubDate>Mon, 04 Mar 2013 04:16:33 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-03-opera/</guid>
-      <description>Operaの右クリックをカスタマイズ Operaの右クリックで表示されるメニューをちょっとカスタマイズするだけですごく使いやすくなりますよ 便利</description>
+      <description>Operaの右クリックをカスタマイズ Operaの右クリックで表示されるメニューをちょっとカスタマイズするだけですごく使いやすくなりますよ 便利ですよ というわけでOperaのmenu.iniに下記を追記します 現在表示中のページのタイトルとURLを取得する [Document Popup Menu] ～中略～ ++++++++++++++++++-- Item, &#34;Copy URL&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, document.title+&#39;\n&#39;+location.href);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel 現在表示中のページをChromeで開く [Document Popup Menu] ～中略～ ++++++++++++++++++-- Item, &#34;Open page in Google Chrome&#34;=Execute program, &#34;chrome&#34;,&#34;%u&#34; リンク先のページをChromeで開く [Link Popup Menu] ～中略～ ++++++++++++++++++-- Item, &#34;Open link in Google Chrome&#34;=Execute program, &#34;chrome&#34;,&#34;%l&#34; 結論 ちょっとしたカスタマイズですごく幸せになれます</description>
     </item>
     
     <item>
@@ -1430,7 +1430,7 @@
       <pubDate>Thu, 14 Feb 2013 03:19:55 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-02-lyrics/</guid>
-      <description>友達の曲に詞をつけてみた 友達が作曲をしたというので、他の友だちと30分作詞一本勝負をした 結果は惨敗だった あまりの才能に全俺が嫉妬 曲は機会があ</description>
+      <description>友達の曲に詞をつけてみた 友達が作曲をしたというので、他の友だちと30分作詞一本勝負をした 結果は惨敗だった あまりの才能に全俺が嫉妬 曲は機会があれば紹介するかも知れません んじゃ書いてみた詞でも載せてみますね 竹林 あーやらなきゃいけないことは今日もたくさんあるし やりたいことだってもっとたくさんあるし やりたいことだけやって生きていたいけど そうそうなかなかうまくはいかないよねやっぱり 嫌なことがあっても全部忘れて踊り続けていればいいんじゃない 好きに踊って好きに歌って自分が楽しければそれでいいんじゃない 大事なのはいつだって自分だって他人じゃないんだってそれはあなただって本当はわかってる もう自分に嘘つかないで思っきり踊って見せてよねえ 今日はどのくらいいいことがあるのかな 明日は今日よりももっといいことがあるのかな 毎日がエブリデイでその中で今日も私は精一杯生きてるんだって 心のどっかで私の私がずっとそうやって叫ん</description>
     </item>
     
     <item>
@@ -1439,7 +1439,7 @@
       <pubDate>Sat, 09 Feb 2013 02:24:26 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-02-live/</guid>
-      <description>自分の力不足がすごくつらい もっともっとみんなを助けたい もっともっとよりよくなりたい でもできてない 無力な自分がつらい おれは全然いいところないし</description>
+      <description>自分の力不足がすごくつらい もっともっとみんなを助けたい もっともっとよりよくなりたい でもできてない 無力な自分がつらい おれは全然いいところないし 顔もきもいし でもそれでも誰かの役に立ちたいし そうやって生きていたい もっと幸せになって欲しいし もっとつらいことを減らしたい 具体的なところでいくと 今は会社がつらい みんなすごいがんばってるのに おれは全然協力できてない もっともっとがんばらないといけないのに がんばれてない 仕事が忙しいとか時間がないとか言い訳して 自分では何も勉強してないし成長してない つらい つらいつらいつらい どうしていいのかわからない 最近生きるのは楽しい でも生きてるとつらいこともある もっとよりよくなりたい おれはもっと成長したい 周りにいい影響を与えたい 傍観者になりたくない 上から目線で これじゃだめだ とか 我関せずで もっとこうすればいいのに とか 言いたくない 負けたくない いい環境にいれば自分が成長するのは当たり</description>
     </item>
     
     <item>
@@ -1448,7 +1448,7 @@
       <pubDate>Thu, 07 Feb 2013 00:57:47 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-02-input/</guid>
-      <description>iOSでの文字入力 iOSでテキストボックスに文字を入力しますよね。 カーソルを移動する矢印がないですよね。 不便ですよね。 文字を右寄せにしている</description>
+      <description>iOSでの文字入力 iOSでテキストボックスに文字を入力しますよね。 カーソルを移動する矢印がないですよね。 不便ですよね。 文字を右寄せにしているともっと不便です。 右端までなかなか移動できません。 どうして右寄せにしているのか 全部数字だったりすると桁を合わせて見やすくするためにも右寄せにしたりしますよね。 それが入力項目だから使いづらくなってるわけです。 iOSでも入力しやすくする方法 ひらめきました。 focusがあたっている時は左寄せにしてあげればいいのです。 デモとコード 動作画面 このように動作します。 テキストボックスに数字を右寄せで表示。 上のテキストボックスは特に何も設定をしていません。 文字を消すにはカーソルを右側に持って行かなければならないのですが手間がかかる。 下のテキストボックスはfocusがあたった時点で左寄せにしています。 このようになることで簡単に文字の右側にカーソルを持ってくることができます</description>
     </item>
     
     <item>
@@ -1457,7 +1457,7 @@
       <pubDate>Wed, 30 Jan 2013 01:44:54 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-01-meeting/</guid>
-      <description>会議というものをよりよいものにするために会議のルールを考えてる。 まだ全然洗練されてない。 とりあえず草案。 前提としての意識共有 基本方針 「会議は</description>
+      <description>会議というものをよりよいものにするために会議のルールを考えてる。 まだ全然洗練されてない。 とりあえず草案。 前提としての意識共有 基本方針 「会議はコスト」 なるべくなら会議は実施しないように努める 会議を開ける条件 「物事を前に進めるために何かを決定する必要がある場合」 情報共有が目的の会議は認められない 会議を開く場合 大前提 参加者は全員平等である 会議の準備 会議の責任者を決める 責任者は会議への参加者を5名程度、最大でも10名以下で選出する 責任者は事前に議題・目的・所要時間を共有する 会議の時間は最大でも2時間以内とする 資料は極力印刷しないでプロジェクタなどを利用する 会議の進め方 責任者が議事進行を行う 時間になった場合は参加者がそろっていなくても会議を始める 会議の終了予定時刻の10分前には会議をまとめるように進める 最後に会議で決定したことを全員で確認する 参加者は決定事項に対して次にどのような行動をとるか具体的に</description>
     </item>
     
     <item>
@@ -1466,7 +1466,7 @@
       <pubDate>Mon, 28 Jan 2013 01:23:16 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-01-programming/</guid>
-      <description>攻めのプログラミングという言葉を聞きました すげーハッとした 攻めてるか攻めてないか これ大事だと思う 常に改善を求めてるか よりよいものを求めてるか</description>
+      <description>攻めのプログラミングという言葉を聞きました すげーハッとした 攻めてるか攻めてないか これ大事だと思う 常に改善を求めてるか よりよいものを求めてるか おれは 「このプログラミングほんとに攻めてんの？」 って言われた時に 「ガンガンいってます」 ってノータイムで答えられるようになりたい 悩む時間とかなしに自信を持って答えたい それくらいに常に本気で取り組んでいたい</description>
     </item>
     
     <item>
@@ -1475,7 +1475,7 @@
       <pubDate>Sat, 26 Jan 2013 03:02:26 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-01-prepared/</guid>
-      <description>失う覚悟をして初めて前に進める なんか名言っぽい？ おれが今作りました。 どういう意味？ 意味はそのままです。 何か物事を進めようと思っています。 やれ</description>
+      <description>失う覚悟をして初めて前に進める なんか名言っぽい？ おれが今作りました。 どういう意味？ 意味はそのままです。 何か物事を進めようと思っています。 やれることはたくさんありますよね。 でも、何をやっていますか？ あれは疲れるし、これはかっこ悪いし、それは恥ずかしいし。 結局何をしたんですか？ そういうことです。 行動には失敗がつきものです。 いろいろと失うものもあるでしょう。 でも、それらを失う覚悟をしなければ前に進む一歩が踏み出せません。 いわゆる吹っ切れたってやつです。 それがどうした 失う覚悟をしました。 その結果、前に進みました。 今まで恥ずかしがってできなかったことができるようになりました。 微妙なことを中途半端に頑張っちゃってるおれ、って他の人に見られたら恥ずかしいって思ってました。 やるならプロフェッショナル級にスマートで完璧にこなしたいと。 でも、無理でした。 だって何もしてないんだもん。 だからダサくてもがんばること</description>
     </item>
     
     <item>
@@ -1484,7 +1484,7 @@
       <pubDate>Fri, 25 Jan 2013 03:12:34 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-01-blog_design/</guid>
-      <description>ブログのデザインを変更しましたよ。 変更点 ロゴ 今まではスクロールしてもロゴの位置が変わらないようにしてたのですが、今回はスクロールしたら一緒に</description>
+      <description>ブログのデザインを変更しましたよ。 変更点 ロゴ 今まではスクロールしてもロゴの位置が変わらないようにしてたのですが、今回はスクロールしたら一緒にスクロールするようにしました。 それに伴って目立って邪魔にならないように色を抑えてたものを、普通に見えるように変更。 マウスをホバーした時の画像は薄いロゴを流用したので修正する必要あり。 文字サイズ 本文の文字サイズを18pxから16pxへ変更。 最初は大きくていいなーと思ってたけど、見てるうちにあとほんの少し小さい方が読みやすいなと感じたから。 それに伴い行間もほんのり狭く。 ループスクロール そして最大の変更点はこれ。 ループスクロール（おれが今命名）です。 ずっとやってみたかったことをついにやってみた。 思ったよりも簡単に実装できてよかった。 ちゃんとデバッグしてないけど。 これは、本文を読み終わって「トップへ戻る」ボタンを配置するくらいなら勝手にトップに戻してしまえ、と</description>
     </item>
     
     <item>
@@ -1493,7 +1493,7 @@
       <pubDate>Sun, 20 Jan 2013 22:14:39 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-01-tsukimonogatari/</guid>
-      <description>憑物語／西尾維新 ネタバレ注意 物語シリーズの13作目「憑物語」を読みました。 2012年9月26日に出ていたということを二日前に知ったので、即買</description>
+      <description>憑物語／西尾維新 ネタバレ注意 物語シリーズの13作目「憑物語」を読みました。 2012年9月26日に出ていたということを二日前に知ったので、即買い即読み。 感想 印象 全体的な印象として、やっぱり物語シリーズが集結に向かうんだなと感じて少しさみしくなった。 今回は語り手が久しぶりの阿良々木くんで非常に楽しめました。 構成 相変わらず導入部分にすごいページ数が割かれていて、いつになったら話が進むんだろうと思いました。 まあこういうのが好きなのでいいぞもっとやれという感じなのですが。 にしてもキャラはどんどん可愛くなりますなー。 魅力 阿良々木くんは相変わらず阿良々木くんで、でもしっかりと成長していて、やっぱり阿良々木くんが好きです。 誰がなんと言おうと物語シリーズの一番の魅力は阿良々木くんのかっこよさにあると思っています。 中身 正弦は正弦でいろいろ考えていて今回の結論に至ったのかなぁと感じました。 役割を演じさせられてい</description>
     </item>
     
     <item>
@@ -1502,7 +1502,7 @@
       <pubDate>Fri, 18 Jan 2013 00:48:23 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-01-software_design_design/</guid>
-      <description>「ソフトウェア開発とデザイン －デザインとは－」という題で社内で発表しました。 これはそのときの発表資料です。 この資料について おそらくこの資料を</description>
+      <description>「ソフトウェア開発とデザイン －デザインとは－」という題で社内で発表しました。 これはそのときの発表資料です。 この資料について おそらくこの資料を見ただけではよくわからないと思います。 プレゼンは私の話がメインで資料には要点のみ書いています。 実際の発表にかかった時間は20分程度でした。 全4回を予定している発表の1回目 今回の発表はまず概念だけの話をしました。 続いての発表で具体的な話をしていこうと思っています。 デザインについては未熟なのに発表してもいいのか いいと思います。 今の自分の中ではこういうものです。 行動することに意味がある。 参考にさせていただいたサイト 下記のサイトを参考にさせていただきました。 ありがとうございます。 プログラマがデザインをはじめるとっかかり ｜ Developers.IO 「デザインあ」とは - デザインあ デザインの必要性を考える【デザインとは】 デザインとは何か、デザイナーとはどうあるべきか。 | デザインの地下２階ら</description>
     </item>
     
     <item>
@@ -1511,7 +1511,7 @@
       <pubDate>Mon, 14 Jan 2013 01:52:01 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-01-bakubakubaku/</guid>
-      <description>ネタバレ注意 バクバクバクというWeb漫画を読みました。 すぐに読めるので興味がある人は読んでみてはどうでしょうか。 バクバクバク http://nagurigaki.web.fc2.com/baku/ 感想 非常に面白</description>
+      <description>ネタバレ注意 バクバクバクというWeb漫画を読みました。 すぐに読めるので興味がある人は読んでみてはどうでしょうか。 バクバクバク http://nagurigaki.web.fc2.com/baku/ 感想 非常に面白かった。 舞台が夢というだけあって設定が難しかっただろうが、それも大きな違和感もなくまとまっていると思う。 登場人物について キシが主人公かとおもいきや、終わってみれば虫木の方が活躍してたような気がします。 まあキシは万能すぎたので登場し過ぎるとバランスが崩れるだろうから、いろいろ作戦を練れる虫木が活躍したのはいいことかなと思います。 舞は成長が見てとれたのでよかったです。 キシと幸せになって欲しいです。 というかラストで虫木がヴィーレを食ってキシを召喚したってことは、虫木は神にも等しい力を得ていると思うんですけど。 虫木の将来が不安です。 そして虫木が死んだらキシも死ぬ？ 猫又は東が治したっぽい描写だったんですがどうなんでしょう。 まあそれにしても不遇な環境でしたねえ。 レ</description>
     </item>
     
     <item>
@@ -1520,7 +1520,7 @@
       <pubDate>Fri, 04 Jan 2013 03:56:01 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013-01-yumechigai/</guid>
-      <description>夢違／恩田陸 ネタバレ注意 本を読んだので感想を書きます。 作品の内容について書くので、内容を知りたくない人はこの先を読まないでください。 どうせこ</description>
+      <description>夢違／恩田陸 ネタバレ注意 本を読んだので感想を書きます。 作品の内容について書くので、内容を知りたくない人はこの先を読まないでください。 どうせこの本を読むこともないだろうという人は読んでも大丈夫ですが、特に作品の紹介をするわけでもないのでそういう人にとってはきっとつまらない文章になると思います。 つまりは「夢違／恩田陸」をすでに読んだ人向けの感想です。 感想 ついつい世界観に引きこまれて一気に読んでしまった。 492ページも。 読み終わって最初に感じた感想は、結衣子は生きてるのか死んだのか、ということだった。 結衣子の生死について 486ページで頭がかくんと傾いて、みんながハッとした、という表現があったので死んだのだと思った。 しかし、いろいろ見返していたら258ページでかくんと頭が沈んだという表現があり、この時は夢が終わったことを示す表現だった。 つまり、今まで夢を見続けていた結衣子が浩章の呼びかけによって夢</description>
     </item>
     
     <item>
@@ -1529,7 +1529,7 @@
       <pubDate>Wed, 28 Nov 2012 00:29:41 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_elite/</guid>
-      <description>このサイトのデザインについて考える。 Welcome to Elite Premium WordPress Theme http://mythemepreviews.com/elite-wp/ 色 トップのテクスチャと写真の色使いが絶妙に渋くてお洒落な雰囲気を醸し出している。 全体的にコ</description>
+      <description>このサイトのデザインについて考える。 Welcome to Elite Premium WordPress Theme http://mythemepreviews.com/elite-wp/ 色 トップのテクスチャと写真の色使いが絶妙に渋くてお洒落な雰囲気を醸し出している。 全体的にコントラスト差がなくて落ち着きが得られる色使いとなっている。 全体 これはWordPressのテーマだそうで、もっとデザインのスキルを身につけなければと感じる。</description>
     </item>
     
     <item>
@@ -1538,7 +1538,7 @@
       <pubDate>Tue, 27 Nov 2012 00:39:29 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_buffalo/</guid>
-      <description>このサイトのデザインについて考える。 Buffalo &amp;#8211; Web Development, E-Commerce &amp;amp; Web Design &amp;#8211; Brighton UK http://builtbybuffalo.com/ ナビゲーションについて ナビゲーションの形が六角形で特徴的である。 どうやらパララッ</description>
+      <description>このサイトのデザインについて考える。 Buffalo &amp;#8211; Web Development, E-Commerce &amp;amp; Web Design &amp;#8211; Brighton UK http://builtbybuffalo.com/ ナビゲーションについて ナビゲーションの形が六角形で特徴的である。 どうやらパララックスデザインの次は六角形ナビゲーションが流行するという話もあるようである。 六角形の実現方法 このサイトでは下記の図のように3つの長方形を組み合わせることで実現している。 こうすることによってマウスの判定も見た目と同様となりUXが向上すると思われる。</description>
     </item>
     
     <item>
@@ -1547,7 +1547,7 @@
       <pubDate>Mon, 26 Nov 2012 01:24:33 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_laurent_millet/</guid>
-      <description>このサイトのデザインについて考える。 Laurent Millet http://www.laurent-millet.com/ コンテンツの並べ方 コンテンツが理路整然と並べられていて、写真が映えている。 写真のプロダクトの紹介が</description>
+      <description>このサイトのデザインについて考える。 Laurent Millet http://www.laurent-millet.com/ コンテンツの並べ方 コンテンツが理路整然と並べられていて、写真が映えている。 写真のプロダクトの紹介がメインのサイトだとわかる。 コンテンツの見せ方 アイテムをクリックすることでコンテンツが展開する。 展開されたサイズは横幅が並べられているコンテンツの3つ分となり、この画面のまま展開される。 展開された後も理路整然としていてストレスなくきれいにコンテンツの中身を見ることができる。 やはりページ遷移はできるだけない方がストレスはかからなくてすむ。</description>
     </item>
     
     <item>
@@ -1556,7 +1556,7 @@
       <pubDate>Sun, 25 Nov 2012 03:55:43 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_genelu/</guid>
-      <description>このサイトのデザインについて考える。 Gene Lu. User Experience/Interaction Designer. Welcome. http://genelu.com/ 全体 背景色と文字色のバランスがちょうどいい。 テクスチャなどを使わないとのペッとしがちだが、</description>
+      <description>このサイトのデザインについて考える。 Gene Lu. User Experience/Interaction Designer. Welcome. http://genelu.com/ 全体 背景色と文字色のバランスがちょうどいい。 テクスチャなどを使わないとのペッとしがちだが、背景色と文字色のバランスのおかげでシックでマットなデザインに見える。</description>
     </item>
     
     <item>
@@ -1565,7 +1565,7 @@
       <pubDate>Sat, 24 Nov 2012 03:26:12 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_half-moon/</guid>
-      <description>このサイトのデザインについて考える。 歯科ハーフムーン｜仙台市 インプラント 無痛治療｜トップページ http://www.half-moon.or.jp/ タイトル画像 Webデザインではタイトル画像を</description>
+      <description>このサイトのデザインについて考える。 歯科ハーフムーン｜仙台市 インプラント 無痛治療｜トップページ http://www.half-moon.or.jp/ タイトル画像 Webデザインではタイトル画像をクリックしたらトップページへ戻るというデザインが一般的だが、このサイトではタイトル画像にマウスをホバーした際に文字として「ホームページへ」と表示される。 対象とするユーザ層によっては、このように文字を表示するのも有効だと思える。 参考 ロゴマークの暗黙知について &amp;#8211; Webサイトの上部にリンクは必要か？ -｜Web Design KOJIKA17 http://kojika17.com/2011/09/implicit-knowledge-for-logo.html</description>
     </item>
     
     <item>
@@ -1574,7 +1574,7 @@
       <pubDate>Fri, 23 Nov 2012 01:12:53 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_sickdesigner/</guid>
-      <description>このサイトのデザインについて考える。 Sickdesigner.com › The work and play of Radu Chelariu http://sickdesigner.com/ 全体 1つ1つの画像の作りこみがとても繊細でサイト全体の質感がとても高級なものに仕上が</description>
+      <description>このサイトのデザインについて考える。 Sickdesigner.com › The work and play of Radu Chelariu http://sickdesigner.com/ 全体 1つ1つの画像の作りこみがとても繊細でサイト全体の質感がとても高級なものに仕上がっている。 これだけの画像を作れたらそれだけで相当なアピールになると思われる。 また、腕時計が現在時刻を示していたり、iPhoneのホームボタンが押せるなど遊び心も散りばめられている。 ただ、画像を多用しているせいかページの読み込みに若干の時間がかかった点だけが唯一気になった。</description>
     </item>
     
     <item>
@@ -1583,7 +1583,7 @@
       <pubDate>Thu, 22 Nov 2012 00:55:30 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_alcepixel/</guid>
-      <description>このサイトのデザインについて考える。 alcePixel http://alcepixel.com/ 全体 トップ画像が自然をぼかして奥行きがあってきれい。 文字の配置のバランスがきれい。 といったことはある</description>
+      <description>このサイトのデザインについて考える。 alcePixel http://alcepixel.com/ 全体 トップ画像が自然をぼかして奥行きがあってきれい。 文字の配置のバランスがきれい。 といったことはあるのですが、一番素敵だと思ったのはこのサイトのスクロールです。 一回スクロールするだけでちょうどいいスクロール位置までナビゲーションしてくれます。 パララックスサイトなどを見てる時に、スクロールがやりづらいなあと常々思っていたのですが、このサイトでは気付いたらスムーズにスクロールしていて、最初は自動でスクロール位置を合わせているということに気付きませんでした。 気持よくスクロールできるおかげでサイトのUXが格段に向上していると思います。</description>
     </item>
     
     <item>
@@ -1592,7 +1592,7 @@
       <pubDate>Wed, 21 Nov 2012 00:44:26 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_grand/</guid>
-      <description>このサイトのデザインについて考える。 GRAND : 416.977.3831 &amp;#8211; Digital, Interactive, Mobile &amp;amp; Social http://www.wearegrand.com/ テクスチャ ヘッダとトップにはザラザラとした質感のテクスチャが。 次は線が交差したテクス</description>
+      <description>このサイトのデザインについて考える。 GRAND : 416.977.3831 &amp;#8211; Digital, Interactive, Mobile &amp;amp; Social http://www.wearegrand.com/ テクスチャ ヘッダとトップにはザラザラとした質感のテクスチャが。 次は線が交差したテクスチャが。 そしてまたザラザラしたテクスチャを使用。 フッタには等高線のようなテクスチャが。 テクスチャを複数種類使うことでサイト全体に質感が生まれている。 それでいて主張しすぎないように白黒のテクスチャ使用していて全体の調和は保たれている。 アイコン 丸いアイコンと彩度が高めの色を用いることでアイコンを際立たせている。 アイコンには斜線とノイズが入ったテクスチャを使用して質感を出している。 影 ヘッダの下に影がついている。 文字にも影がついている。 アイコンにも影がついている。 画像の下にも影がついている。 影をつけることでサイトに奥行きが生まれている。 全体 全体的に細部に渡ってディティールにこだわっているのでサイトに雰囲気が生まれている。 マーケティングから開発まで請け負うとのこ</description>
     </item>
     
     <item>
@@ -1601,7 +1601,7 @@
       <pubDate>Tue, 20 Nov 2012 01:44:22 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-webdesign_jaypeg/</guid>
-      <description>このサイトのデザインについて考える。 JAYPEG https://jypg.net/ トップ画像 背景に様々な画像をタイル状に配置している。 ここで様々な作品の上に成り立つものだと伝えている</description>
+      <description>このサイトのデザインについて考える。 JAYPEG https://jypg.net/ トップ画像 背景に様々な画像をタイル状に配置している。 ここで様々な作品の上に成り立つものだと伝えている。 ホワイトスペースとテクスチャ サイトに空白が多いおかげですっきりしたスタイリッシュな印象を受ける。 テクスチャでのあっさりとした質感もあいまっておしゃれな感じが演出できている。 モノクロベースの色合い 全体的にモノクロベースのカラーとなっており、コンテンツに色がついている。 これはコンテンツが主役だということを意味しているように思える。</description>
     </item>
     
     <item>
@@ -1610,7 +1610,7 @@
       <pubDate>Sun, 04 Nov 2012 12:36:32 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-11-ipad_mini/</guid>
-      <description>iPad miniを触ってみた 触る前は「実際どうなの？」って思っていたけれど、実際触ってみたら思ったよりもよかった。 iPad miniを触ってみた ディスプレ</description>
+      <description>iPad miniを触ってみた 触る前は「実際どうなの？」って思っていたけれど、実際触ってみたら思ったよりもよかった。 iPad miniを触ってみた ディスプレイ まず一番に言われていたRetinaじゃないディスプレイについて。 これは実際にそんなに気にならなかった。 たしかにRetinaよりはジャギジャギしているが、それでも普通に見る分には問題なさそう。 iPad miniを使うユーザはそこまで鮮明さを求めていないはず。 miniって名前の通り小回り重視のはずだから。 それにRetinaディスプレイにすると電池の消費が多くなってあのサイズで長時間の動作は難しいように思える。 Retinaにしなかったのは妥当な判断だと思えます。 操作 次に操作感について。 iPad 4th genには敵わないものの、問題なし。 さすがiOSというところで、全くもって快適だった。 ただアプリケーションによっては、画面のサイズが小さくなったことによって使いづらくなっている可</description>
     </item>
     
     <item>
@@ -1619,7 +1619,7 @@
       <pubDate>Mon, 15 Oct 2012 23:24:54 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-10-vocaloid_ranking_20121015/</guid>
-      <description>早いもので前回のランキングから約1ヶ月ですね。 時が変われば聴く曲も変わるというもの。 では、ランキングをどうぞ 3位：Escape☆=Veloc</description>
+      <description>早いもので前回のランキングから約1ヶ月ですね。 時が変われば聴く曲も変わるというもの。 では、ランキングをどうぞ 3位：Escape☆=Velocity／PSGO-Z [nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;640&amp;#8243; height=&amp;#8221;360&amp;#8243;]sm16594273[/nicodo] Nsenでたまたま知ったPSGO-Zさん。 この人の曲センスいいですねー。 他の曲もマイリストに入ってます。 その中でもこの曲がかっこいい。 夜空とか流れ星とかそんな音がします。 いや、流星群かなー。 2位：ワンホット・ミニッツ／ショミ [nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;640&amp;#8243; height=&amp;#8221;360&amp;#8243;]sm16482252[/nicodo] ショミさんですね。 ショミさんの曲はかっこいいのばっかりですね。 この曲は一回マイリストから外れたのですが、どうしてもサビを聴きたくなりもう一回もう一回と聴いてるうちにマイリストに定着。 そしてそのままおれの中で熱さ2位にまでなりました。 この音のノリノリな感じがかっこいいですねー。 1位：みんなみくみくにしてあげる♪／ika, MOSAIC.TUNE [nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;640&amp;#8243; height=&amp;#8221;360&amp;#8243;]sm19069321[/nicodo] 原点にして頂点。 この言葉がこれほど似合う曲もないでしょう。 この曲は5年</description>
     </item>
     
     <item>
@@ -1628,7 +1628,7 @@
       <pubDate>Mon, 15 Oct 2012 22:33:16 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-10-input_type/</guid>
-      <description>iOSのブラウザにおいて数字のみのキーボードを出したいときがあります。 しかし、input type=&amp;#8221;number&amp;#8221;っ</description>
+      <description>iOSのブラウザにおいて数字のみのキーボードを出したいときがあります。 しかし、input type=&amp;#8221;number&amp;#8221;ってやっても数字以外のキーがでてきてしまう。 そうだ、input type=&amp;#8221;tel&amp;#8221;ってやれば数字のみになる、しかしセマンティックではない。 そこで、input type=&amp;#8221;text&amp;#8221; pattern=&amp;#8221;\d*&amp;#8221; HTML5からは入力文字をpatternで正規表現を利用して制御できるようになりました。 そこで入力可能文字を数字のみにするとiOSで数字のみのキーボードを出してくれるというものです。 賢いですね。 というわけで、実演 &amp;lt;input type=&amp;quot;number&amp;quot;&amp;gt; &amp;lt;input type=&amp;quot;tel&amp;quot;&amp;gt; &amp;lt;input type=&amp;quot;text&amp;quot; pattern=&amp;quot;\d*&amp;quot;&amp;gt; 以下、参考 少しのコードで実装可能な15のスマートフォンサイト用小技集 | Webクリエイターボックス http://www.webcreatorbox.com/tech/smartphone-snippets/ input 要素 &amp;#8211; フォーム &amp;#8211; HTML要素 &amp;#8211; HTML5 タグリファレンス &amp;#8211; HTML5.JP http://www.html5.jp/tag/elements/input.html JavaScript講座 15章 JavaScriptでの正規表現 http://www.site-cooler.com/kwl/javascript/15.htm</description>
     </item>
     
     <item>
@@ -1637,7 +1637,7 @@
       <pubDate>Mon, 15 Oct 2012 03:16:25 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-10-car/</guid>
-      <description>品のない行動が嫌いです。 自分も他人も含めて。 車で走ってると、嫌な走り方を目にすることがあります。 交通ルールは破ってないけど、違和感のある走り</description>
+      <description>品のない行動が嫌いです。 自分も他人も含めて。 車で走ってると、嫌な走り方を目にすることがあります。 交通ルールは破ってないけど、違和感のある走り方。 例えば、交差点に隣接してるコンビニの駐車場を利用して赤信号を回避する、とか。 それで、ずっと違和感を感じてた走り方について考えてみました。 その走り方はこれ。 直進するためには左の車線にいないといけない。 でも左の車線は混む。 右の車線は右折限定なので空いてる。 右の車線で車をたくさん抜く。 交差点の直前で左の車線に入る。 この走り方です。 交通ルールは破ってません。 ただの車線変更ですからね。 右の車線は追い越し車線ですし。 追い越すことになんの問題もありません。 ただ、ずっと気持ち悪いなと感じていました。 そしてその原因は、品がない走り方だからと、自分の中で納得しました。 左側の車線にずっといる人も直進したいから左の車線にいます。 できるなら早いほうが嬉しい。 それは当たり前の</description>
     </item>
     
     <item>
@@ -1646,7 +1646,7 @@
       <pubDate>Mon, 15 Oct 2012 01:50:10 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-10-fuelphp/</guid>
-      <description>最近FuelPHPを使っています。 バージョン1.2.1を使っていたのですが、1.3がでたということで1.3を使い始めました。 そこでデバッグを</description>
+      <description>最近FuelPHPを使っています。 バージョン1.2.1を使っていたのですが、1.3がでたということで1.3を使い始めました。 そこでデバッグをするときに、&amp;#8217;profiling&amp;#8217; =&amp;gt; true,とかしてプロファイラを表示させるんですが、プロファイラが最小化状態で表示されます。 1.2.1のプロファイラは展開した状態で表示されてたのに。 trueってしたらプロファイラは常に表示されてて欲しいです。 ということで、常に表示されるようにします。 fuel/core/vendor/phpquickprofiler/display.php を開きます。 305行目の $return_output .=&#39;&amp;lt;div style=&#34;clear:both;&#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div id=&#34;pqp-container&#34; class=&#34;pQp tallDetails&#34; style=&#34;display:none;position:inherit;&#34;&amp;gt;&#39;; を $return_output .=&#39;&amp;lt;div style=&#34;clear:both;&#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div id=&#34;pqp-container&#34; class=&#34;pQp tallDetails&#34; style=&#34;display:block;position:inherit;&#34;&amp;gt;&#39;; にします。 （display:none;をdisplay:block;に変更。） 661行目の $return_output .=&#39;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div id=&#34;openProfiler&#34;&amp;gt;&amp;lt;a href=&#34;#&#34; onclick=&#34;openProfiler();return false&#34; title=&#34;Open Code Profiler&#34;&amp;gt;Code Profiler&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&#39;; を $return_output .=&#39;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div id=&#34;openProfiler&#34; style=&#34;display: none; &#34;&amp;gt;&amp;lt;a href=&#34;#&#34; onclick=&#34;openProfiler();return false&#34; title=&#34;Open Code Profiler&#34;&amp;gt;Code Profiler&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&#39;; にします。 （ style=&amp;#8221;display: none; &amp;#8220;の追記。） 以上で常時表示されるようになったはずです。 検索して見つけた要素のスタイルを適当に変更してるだけなので、なんか他に方</description>
     </item>
     
     <item>
@@ -1655,7 +1655,7 @@
       <pubDate>Wed, 26 Sep 2012 03:17:30 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-09-font/</guid>
-      <description>Adobeから新しいプログラミング用フォントがリリースされたので、他のフォントと比較してみました。 表示しているフォントの大きさは全て12pt</description>
+      <description>Adobeから新しいプログラミング用フォントがリリースされたので、他のフォントと比較してみました。 表示しているフォントの大きさは全て12pt、表示している環境はMacType使用中のWindows7です。 早速比較する Inconsolata まずは私が普段使っているRictyフォントの英字フォントであるInconsolataから。 表示するスペースが少ないのに可読性が非常に高いのが特徴だと思います。 画面に表示できる文字数が多いほうが何かと有利ですよね。 Consolas 次にWindowsにプリインストールされているConsolas。 少しまるっとしていて非常に読みやすいフォントです。 Windowsにプリインストールされているので、とりあえず表示するフォントはこれにしておきましょう。 Source Code Pro そして新しくリリースされたSource Code Pro。 他の2つに比べて少し大きく文字間と行間が広めなのが特徴だと思います。 スペースがしっかりとられていて可</description>
     </item>
     
     <item>
@@ -1664,7 +1664,7 @@
       <pubDate>Wed, 19 Sep 2012 00:51:47 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-09-vocaloid_ranking_20120918/</guid>
-      <description>突然ですが新企画です。 おれの独自のVOCALOIDランキングを発表します。 今、おれの中でこれが熱い！と思う曲をBEST3形式で紹介したいと思</description>
+      <description>突然ですが新企画です。 おれの独自のVOCALOIDランキングを発表します。 今、おれの中でこれが熱い！と思う曲をBEST3形式で紹介したいと思います。 ジャンルが非常に偏っていますが、それはおれの好みなのでしょうがないです。 VOCALOID以外の曲も入ってたりするのでその辺はご了承を。 機械音声が苦手だと言う人はご注意を。 やろうと思った理由 VOCALOID文化を理解してもらい広げていくという「大義名分」 今の自分がどういう曲を聴いていたのかという「備忘録」 こんなことやったら面白そうという「実験」 が主な理由です。 ランキング では早速ランキングを発表します。 第3位 [nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;320&amp;#8243; height=&amp;#8221;180&amp;#8243;]sm18408895[/nicodo] 今、おれの中でこれが熱い！VOCALOIDランキング第3位は「CRYSTAL MICROPHONE UNDERGROUND／tysP」です。 ラップの曲でリズム感がいいです。 音もかっこいいしボーカルもきれいです。 かっこよくてノリノリな感じでとてもいい曲です。 こ</description>
     </item>
     
     <item>
@@ -1673,7 +1673,7 @@
       <pubDate>Tue, 18 Sep 2012 03:16:41 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-09-speech/</guid>
-      <description>スピーチをやるので原稿を書きました。 時間は3分間です。 やりたいことをやるために時間をつくる おはようございます。 今日は時間について話をしようと</description>
+      <description>スピーチをやるので原稿を書きました。 時間は3分間です。 やりたいことをやるために時間をつくる おはようございます。 今日は時間について話をしようと思います。 みなさんは、たくさんやりたいことがあると思います。 例えば、楽器などの趣味に没頭する。 スキルアップのために勉強する。 会社の業務を改善するためにプロジェクトを立ち上げる。 しかし、これらのことをするためには、時間が必要になってきます。 なにか行動するためには時間が必要なのです。 時間がなければなにもすることができません。 じゃあ時間を作ればいい、と思うかも知れませんが、これが非常に難しいことですね。 なので、時間を作るポイントを3つ紹介したいと思います。 1つ目は、常に作業効率の改善を考える、ということです。 例えば、テキストをコピーするときにも、 右クリック、コピー とやるよりは Ctrl+C とやる方が早いですよね。 他にも、画面をキャプチャするときにはツールを使った方が早い</description>
     </item>
     
     <item>
@@ -1682,7 +1682,7 @@
       <pubDate>Mon, 27 Aug 2012 03:18:59 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-08-title/</guid>
-      <description>ブログ名を変更しました。 自分はこのブログでなにを表現したいのか？ このブログでは、アフェリエイトでの収益や、便利なサイトになってみんなに使って</description>
+      <description>ブログ名を変更しました。 自分はこのブログでなにを表現したいのか？ このブログでは、アフェリエイトでの収益や、便利なサイトになってみんなに使ってもらいたい、といった考えはありません。 このブログを見ればおれの人となりがわかるようなものになればいいなと思ってます。 そして考えた結果、おれは「おれはここにいる」とアピールしたいのかなという考えが一番しっくりきました。 なので、「5000164 here.」に変更。 おれはここにいます。</description>
     </item>
     
     <item>
@@ -1691,7 +1691,7 @@
       <pubDate>Mon, 27 Aug 2012 03:14:37 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-08-confident/</guid>
-      <description>自信ってなんでしょう。 自信持ってますか？ おれは自信ってなんのことかわかってなかったです。 わからないものは持ちようがない。 ってことで自信につい</description>
+      <description>自信ってなんでしょう。 自信持ってますか？ おれは自信ってなんのことかわかってなかったです。 わからないものは持ちようがない。 ってことで自信について考えました。 長い間考え続けたことなので途中の経緯はごちゃごちゃですが、考えた結果のエッセンスだけ。 自信を持つということは、自分を自分で応援してあげるということ。 まず、 自分を肯定できる状態が、自信がある状態 自分を肯定できない状態が、自信がない状態 だと考えた。 自分を肯定できる人はつまるところ自分しかいない。 自分で自分を否定したらそれで終わってしまう。 かといって自分を肯定するのは難しい。 そこで、最初から肯定するのではなく、応援すればいいのだと考えた。 自分で自分のことを応援してあげる。 自分にしかできないこと。 そうすればそれがそのまま自信につながる。 結局心の持ちようの問題なのですが、持ち方を知っているのと知らないのでは全然違うと思います。 なので、おれの考えた心</description>
     </item>
     
     <item>
@@ -1700,7 +1700,7 @@
       <pubDate>Mon, 27 Aug 2012 02:37:14 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-08-popular/</guid>
-      <description>どうして女の子にもてたいのか考えてみた。 考えてみたというか、考える機会はあるけど、ちょっとした気づきがあったので考えをまとめてみた。 結論から</description>
+      <description>どうして女の子にもてたいのか考えてみた。 考えてみたというか、考える機会はあるけど、ちょっとした気づきがあったので考えをまとめてみた。 結論からいうと、自分が優れてると信じたいからだと思った。 前提としては、 人間は種として生きていく上で子孫を残すという本能を持っている よりよい子孫を残す本能を持っている の2つですかね。 より多くの女性に好まれるということは、自分は種の中で魅力的な存在であるという根拠を得ることになる。 つまり、自分は優れていると感じることができる。 優越感に浸れる。 その自尊心を満たすために女の子にもてたいのだと思った。 これを突き詰めると、もしかしたら「彼女欲しい」と言っている人は「もてたい」という意味で言っていて、実は「自分を肯定する理由が欲しい」という意味なのかも知れない。 うーむ。 当たり前のことをただ文字に起こしただけの考察になってしまった。 もっと考える必要がある。 というかちゃんと勉強</description>
     </item>
     
     <item>
@@ -1709,7 +1709,7 @@
       <pubDate>Wed, 22 Aug 2012 03:23:11 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-08-food_20120820/</guid>
-      <description>ryo(supercell) feat.初音ミク 『ODDS&amp;#038;ENDS』 &amp;#8211; YouTube ryoさんの新曲。 素敵な声だ。 人は「失いたくない」からがんばる – ライフハック心理学 な</description>
+      <description>ryo(supercell) feat.初音ミク 『ODDS&amp;#038;ENDS』 &amp;#8211; YouTube ryoさんの新曲。 素敵な声だ。 人は「失いたくない」からがんばる – ライフハック心理学 なるほど確かにそうかもしれない。 常に使うと精神的に疲れるかも知れないからタイミングが重要かも知れない。 完璧主義タイプの先送りをライフハックする – ライフハック心理学 わかってはいるんだけどなかなか。 タスクシュートはそのうち調べる必要がある。 腐るソーシャル &amp;#8211; teruyastarはかく語りき これはいいかも知れない。 わざと腐らせるソーシャル。 辞める方向に労力を使うのではなく、続ける方向に労力を使う。 今ではSNSがどういうものか認知が広まっているはずだから、わかる人にはわかるはず。 Google・Microsoftなどの翻訳エンジンを選べて複数言語対応のフリーソフト「QTranslate」 &amp;#8211; GIGAZINE ふむふむこれは便利かも知らんなあ。 他人の行動をしっかり評価できない人は、心理</description>
     </item>
     
     <item>
@@ -1718,7 +1718,7 @@
       <pubDate>Sun, 19 Aug 2012 00:29:22 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-08-food_20120818/</guid>
-      <description>CSS3 Wristwatch · CodePen これがすべてCSSだけというのはすごい。 このくらいの技術力が欲しいなあ。 Songrium &amp;#8211; つながりを用いた新しい音楽鑑賞を これは素敵なサイト。 つな</description>
+      <description>CSS3 Wristwatch · CodePen これがすべてCSSだけというのはすごい。 このくらいの技術力が欲しいなあ。 Songrium &amp;#8211; つながりを用いた新しい音楽鑑賞を これは素敵なサイト。 つながりを可視化してくれる。 つながりっていうものはWebの大きな特徴の1つだと思います。 Githubではなぜ人が辞めないのか？ | IDEA*IDEA これは素敵。</description>
     </item>
     
     <item>
@@ -1727,7 +1727,7 @@
       <pubDate>Wed, 15 Aug 2012 02:35:34 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-08-food_20120814/</guid>
-      <description>ニコン、Android搭載コンパクトデジタルカメラをまもなく発表 | ガジェット速報 デジカメから直接アップロードできればいいのに、がついに実現さ</description>
+      <description>ニコン、Android搭載コンパクトデジタルカメラをまもなく発表 | ガジェット速報 デジカメから直接アップロードできればいいのに、がついに実現されるようですね。 デジタルカメラ用Androidアプリとか需要がでてくるんじゃなかろうか。</description>
     </item>
     
     <item>
@@ -1736,7 +1736,7 @@
       <pubDate>Fri, 10 Aug 2012 23:36:41 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-08-food_20120810/</guid>
-      <description>うつ病治療ゲーム「SPARX」が画期的かつ面白そう！ &amp;#8211; NAVER まとめ これはすごい。 うつ病治療の敷居を下げることはとても大事だと思う。 Googleを</description>
+      <description>うつ病治療ゲーム「SPARX」が画期的かつ面白そう！ &amp;#8211; NAVER まとめ これはすごい。 うつ病治療の敷居を下げることはとても大事だと思う。 Googleをもっと便利に使いこなす32の検索技と14のネタ オリンピックとかサッカーとか競技名で調べたりするとスケジュールがわかってすごい便利。</description>
     </item>
     
     <item>
@@ -1745,7 +1745,7 @@
       <pubDate>Sat, 04 Aug 2012 01:36:31 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-08-food_20120803/</guid>
-      <description>iOSのUIはもうCSSでいいんじゃね？を実現する『Pixate』 | IDEA*IDEA なんだかこれはすごそう。 イラストレーターでアイコンを作る時によく使う機</description>
+      <description>iOSのUIはもうCSSでいいんじゃね？を実現する『Pixate』 | IDEA*IDEA なんだかこれはすごそう。 イラストレーターでアイコンを作る時によく使う機能いろいろ。 | Handy Web Design ほほう。 なるほど勉強になる。 LINEアカウントは乗っ取られやすい！？LINEの仕組みと注意すべきポイントまとめ | 情報科学屋さんを目指す人のメモ セキュリティ意識の低いユーザが多そうだからたしかに乗っ取りは簡単かも。 LINEはセキュリティ的にいろいろ問題が出てるけど一度広がってしまったからしょうがない。 こういうサービスは使いやすいだけじゃ広まらない。 サービスの展開の難しさ。</description>
     </item>
     
     <item>
@@ -1754,7 +1754,7 @@
       <pubDate>Wed, 01 Aug 2012 00:39:33 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-climb/</guid>
-      <description>久しぶりの登山に行って来ました。 体が重くてやっぱりやせなきゃだめですね。 がんばります。 登山ってのはとてもいいものです。 体験しなきゃ体感できな</description>
+      <description>久しぶりの登山に行って来ました。 体が重くてやっぱりやせなきゃだめですね。 がんばります。 登山ってのはとてもいいものです。 体験しなきゃ体感できない刺激であふれています。 素敵で刺激的な空間です。 登山は考え事にちょうどいいと個人的に思っています。 まず音が少ない。 音の種類がガラっと変わります。 そして自分に肯定的になれる。 登山はとてもつらいもので、疲れた、と思う時があります。 でもそれを越えて登頂できた時は無条件で自分を肯定できます。 これはあまり感じられない感覚だと思います。 疲れた体にすっきりした頭でいろいろ前向きに考えられると思います。 そういえば、人を信じられない人のリハビリに登山がいいって聞いたことがあるような気がします。 登山では簡単に怪我をしてしまうような場面がたくさんあります。 不安定そうな岩、滑りそうな足場、設置されている補助ロープを利用する険しい傾斜など。 その時に、これらを無条件に信じないと先</description>
     </item>
     
     <item>
@@ -1763,7 +1763,7 @@
       <pubDate>Tue, 31 Jul 2012 23:32:11 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-live/</guid>
-      <description>ちょっぴりこじんまりした会場でのライブ。 演奏者との距離は5mくらい。 なかなか人生初体験。 すごく楽しかった。 そしてなによりも強く肌に感じたのが</description>
+      <description>ちょっぴりこじんまりした会場でのライブ。 演奏者との距離は5mくらい。 なかなか人生初体験。 すごく楽しかった。 そしてなによりも強く肌に感じたのが、空間が作られてた。 ライブって空間になってた。 すごくクリエイティブだった。 刺激的だった。 おれももっとがんばらないと。 陽だまりに華が一番良かったですよ。 一番ステキな雰囲気でした。 おれももっとがんばらないと。</description>
     </item>
     
     <item>
@@ -1772,7 +1772,7 @@
       <pubDate>Tue, 31 Jul 2012 22:34:25 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-study_2012725/</guid>
-      <description>勉強会第4回。 今日の範囲はアジャイルサムライの3章〜4章。 メモ 同じ言葉で認識していても解釈がそれぞれで違う 何のためのものなのかを理解していれ</description>
+      <description>勉強会第4回。 今日の範囲はアジャイルサムライの3章〜4章。 メモ 同じ言葉で認識していても解釈がそれぞれで違う 何のためのものなのかを理解していれば大事なことがわかる 現実 情報が与えられない 勉強しろって言われる 理解するために聞くしかない 直接行くのが一番いい 行けるかどうかを確認する 行く理由を説明できればいいリスクマネジメントなど そのプロダクトで何がどれくらい良くなるのかを簡潔に説明できなければならない 認識のずれがあるか確認できる パッケージデザインを作ることによってなぜ作るのかとかエレベーターで考えたことが強化できる気がする やらないことリストを作ることによって不安をとり除くことができる やることとやらないことって意識的に出すことが大事 これはやらないんですよね？って聞く アプリを使ってもらう そのためのネットワークをつくっておく やっぱりメモだけじゃわかりづらいですね。 次からは文章化を意識します。 次回開催予定は</description>
     </item>
     
     <item>
@@ -1790,7 +1790,7 @@
       <pubDate>Tue, 31 Jul 2012 21:43:31 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120730/</guid>
-      <description>チャンスをつかむには「つまらない仕事を一流にこなす」ことが近道という教え : ライフハッカー［日本版］ なにも考えずに日本一になるのは難しい。 日本</description>
+      <description>チャンスをつかむには「つまらない仕事を一流にこなす」ことが近道という教え : ライフハッカー［日本版］ なにも考えずに日本一になるのは難しい。 日本一になったらちゃんと見てくれる人がいるって本人に思わせておくことが組織にとって大事だと思う。 人事担当が教える「こんな会社辞めてやる！」と思った時に考えること : ライフハッカー［日本版］ ふむふむ勉強になる。 http://anond.hatelabo.jp/20120721222138 いろいろな意見もあるだろうけどそんなことを言いたいのではなくて、主婦の承認欲求が満たされる機会が少なすぎるという点にハッとしたので共有。 当たり前に対して行動する必要があるんですよね。 でももはやすでに当たり前すぎてどう行動していいものなのか。 DESIGN ARCHIVE &amp;#8211; BLOG: 細かすぎて伝わりづらい!Mountain LionのUI変更点まとめ。 おほー、さすがApple。 Googleのプロダクトデザインのプロトタイプを見て想うこと [K&amp;#8217;conf] 対してのGoogle。 デザインって難しい。 CSS3を</description>
     </item>
     
     <item>
@@ -1799,7 +1799,7 @@
       <pubDate>Sat, 28 Jul 2012 04:12:04 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120727/</guid>
-      <description>Simone Marcarino | smashing designer &amp;#038; smart developer from italy. 素敵なデザインのサイト。 UICloud | User Interface Design Search Engine, UI Elements, GUI Design, Free Downloads デザインを探すときに便利そう。 iconmonstr シンプルなアイコンがたくさんあって便利</description>
+      <description>Simone Marcarino | smashing designer &amp;#038; smart developer from italy. 素敵なデザインのサイト。 UICloud | User Interface Design Search Engine, UI Elements, GUI Design, Free Downloads デザインを探すときに便利そう。 iconmonstr シンプルなアイコンがたくさんあって便利そう。 商用利用可能ってかいてあるけどその先が読めない。 効果を最大化させるなら「昼寝時間は10分がベスト」という研究結果 : ライフハッカー［日本版］ 寝すぎると起動に時間がかかるんです。</description>
     </item>
     
     <item>
@@ -1808,7 +1808,7 @@
       <pubDate>Fri, 27 Jul 2012 03:12:20 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120726/</guid>
-      <description>アップルがウェブブラウザ「Safari」のWindowsサポートを打ち切りか &amp;#8211; GIGAZINE どうなるんだろう。 でもこれでSafariがもっとより良くなっ</description>
+      <description>アップルがウェブブラウザ「Safari」のWindowsサポートを打ち切りか &amp;#8211; GIGAZINE どうなるんだろう。 でもこれでSafariがもっとより良くなったら嬉しいかな。 [CSS]ウェブデザインの可能性を広げる10のスタイルシート | コリス outline: none;は知らなかった。 ブラウザのしくみ: 最新ウェブブラウザの内部構造 &amp;#8211; HTML5 Rocks 長い・・・。 まだ読めてない。 でも内部構造がわかればウェブ開発者としてより成長できるはず。 GithubにあるHTMLをレンダリングしてその場で表示出来るChromeエクステンション・Githtml &amp;#8211; かちびと.net これは非常に便利かも。 すごくその場で表示したい。 その場で表示する機能がないのはサーバの負荷とかWebサービスとしての利用とかを制限するためかなあ。</description>
     </item>
     
     <item>
@@ -1817,7 +1817,7 @@
       <pubDate>Thu, 26 Jul 2012 20:58:04 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120725/</guid>
-      <description>ガレキが宝の山になる「コドモのチカラ展」 | The Power of Kids : monogocoro ものごころ これなんかよくわかんないけどすごい。 なんかすごい力がある。 衝撃がきた。 他の作</description>
+      <description>ガレキが宝の山になる「コドモのチカラ展」 | The Power of Kids : monogocoro ものごころ これなんかよくわかんないけどすごい。 なんかすごい力がある。 衝撃がきた。 他の作品は[こちら](http://www.watanohasmile.jp/)から見れます。 展示会の情報は[こちら](http://www.muji.net/lab/ateliermuji/exhibition/exhibition120615.html)。 Rriver » レスポンシブWebの時代だからこそ見直すべき、3つの「ウェブの哲学」 なるほど。 でもこれは理解できても理解してもらうのが難しい。</description>
     </item>
     
     <item>
@@ -1826,7 +1826,7 @@
       <pubDate>Wed, 25 Jul 2012 02:28:37 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120724/</guid>
-      <description>仮想的な4つのデスクトップ画面を使って楽に作業ができるフリーソフト「WindowsPager」 &amp;#8211; GIGAZINE Windowsの仮想デスクトップはいろいろ</description>
+      <description>仮想的な4つのデスクトップ画面を使って楽に作業ができるフリーソフト「WindowsPager」 &amp;#8211; GIGAZINE Windowsの仮想デスクトップはいろいろ試したけどどれも使いづらかったんだよね。 とりあえずこれも試用してみる。 「長い時間をともに過ごしている5人」の平均が、今と未来の自分を作っている : ライフハッカー［日本版］ なるほどね。 なんとなく直感的に感じてたことを文章におこしてもらった感じ。 よく人には、自分がいいと思う人を見つけて頼った方がいい、って言ってきたけど自分もそうするべきだよね。 まずは考え方を変えることから&amp;#8230;私たちが陥りがちな12の自動思考 : ライフハッカー［日本版］ おっと見事に全て当てはまっているぞ。 自分でちゃんと気付いてあげることが大事か。 ネイティブアプリ風の操作ができるスマートフォン用Webフレームワーク「Sidetap」 &amp;#8211; MOONGIFT|オープンソース・ソフトウェア紹介を軸</description>
     </item>
     
     <item>
@@ -1835,7 +1835,7 @@
       <pubDate>Wed, 25 Jul 2012 02:14:00 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-windows_mactype/</guid>
-      <description>再びWindowsのフォントをきれいにします。 前回紹介したgdi++はChromeに適用されなくなってしまったので、フォント環境を改善する必</description>
+      <description>再びWindowsのフォントをきれいにします。 前回紹介したgdi++はChromeに適用されなくなってしまったので、フォント環境を改善する必要がありました。 そこでMacTypeというものを使用していたのですが、私が導入したときはまだ安定していなくて試用している状態でした。 それがどうやら安定して話題になっていたようなので、改めてインストール。 まずこちらにアクセスします。 インストーラをダウンロードします。 インストールします。 私はインストール時の設定をカスタムにして、すべてインストール、インストール先をCドライブ直下に変更しました。 インストールは以上です。 起動時はMacTrayで独立モードで動かしています。 使用している設定は「LCD」です。 以上でWindowsでも多少きれいなフォント環境を実現できます。 ただ、ブラウザのハードウェアアクセラレーションが有効になっているとレンダリングが崩れるそうなの</description>
     </item>
     
     <item>
@@ -1844,7 +1844,7 @@
       <pubDate>Tue, 24 Jul 2012 03:02:32 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-auto_rss/</guid>
-      <description>RSSでサイトの更新情報をチェックしている人は多いと思います。 私もそのひとりです。 なので、RSSが配信されていないと更新情報がチェックしづら</description>
+      <description>RSSでサイトの更新情報をチェックしている人は多いと思います。 私もそのひとりです。 なので、RSSが配信されていないと更新情報がチェックしづらくなります。 それがどんなにいいブログでもやはり毎回アクセスするのは手間になるのです。 RSS配信してないサイトをRSSで購読したいといったときはWebサービスで解決できます。 RSSクリエイター RSS未対応サイトのRSS作成 上記サイトにアクセスし、購読したいサイトのURLを入力。 サイトの更新を監視する部分をマウスで選択し、フィードを作成ボタンを押します。 あとは生成されたURLをRSSリーダーに追加すれば完了。 私も使い始めたばかりなのでしばらく様子を見てみます。 参考 2012年最新版！RSS配信されていないサイトをRSSで配信してくれるサービス: Evernote Fan RSSを勝手に自動作成・更新してくれる無料Webサービスまとめ 2011年版 : web memo.Ver.2</description>
     </item>
     
     <item>
@@ -1853,7 +1853,7 @@
       <pubDate>Tue, 24 Jul 2012 00:09:23 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120723/</guid>
-      <description>今日は面白法人カヤックの社長のブログから多めに。 読む記事読む記事全部が素晴らしくて、すごいなあと思います。 ブログを購読する価値あり、です。 面</description>
+      <description>今日は面白法人カヤックの社長のブログから多めに。 読む記事読む記事全部が素晴らしくて、すごいなあと思います。 ブログを購読する価値あり、です。 面白法人カヤック社長のブログはこちらからどうぞ。 “部下に頼れる”ようになって初めて上司として一人前：日経ビジネスオンライン 頼ってもらいたい。 これとてもよくわかる。 でも実践するのは難しいんだろうなあ。 突然ですが「勇気」はどうすれば沸いてくるのでしょうか？：日経ビジネスオンライン 無条件の信頼は同じこと考えてた。 やっぱりそうなんだよね。 仕事の依頼を断られたけど「次はお願いしたい」と思った出来事：日経ビジネスオンライン ちょっとした意識でぜんぜん変えられること。 仕事の最高の報酬とは「俺最高！」と思える体験を得ること：日経ビジネスオンライン 達成感がなければモチベーションは保てません。 ただの「作業」をしたってつまらないだけです。 仕事で大事なことは、80年代の少年ジャン</description>
     </item>
     
     <item>
@@ -1862,7 +1862,7 @@
       <pubDate>Mon, 23 Jul 2012 03:08:46 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-study_2012718/</guid>
-      <description>勉強会の第3回を開きました。 第2回は人が少なくて自習になったので実質初の勉強会実施になりました。 範囲はアジャイルサムライの第1章〜第2章まで</description>
+      <description>勉強会の第3回を開きました。 第2回は人が少なくて自習になったので実質初の勉強会実施になりました。 範囲はアジャイルサムライの第1章〜第2章まで。 それぞれ事前に読んできて、わからないところの確認や意識合わせなどを行いました。 今回は特にわからないところもなく、一歩進んだところで「うちの会社にどう生かせるか」の話し合い。 組織として導入するのは現時点では難しいという考え。 開発者個人としてどう生かしていけるのか。 自分の担当する開発部分でネックになる機能を決める。 まずはその機能のみを実装してテストする。 実装が完了したら機能の動きのみを見てもらって確認する。 →仕様担当者との認識の齟齬を失くすため。 こう作業することによって開発が戻るリスクを減らせるのではないかという意見。 やれるところからやっていく。 個人的な感想としては、やっぱりまだまだわからないところが多いので、まずアジャイルとはなんぞやというところを感覚</description>
     </item>
     
     <item>
@@ -1871,7 +1871,7 @@
       <pubDate>Sun, 22 Jul 2012 20:52:35 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120720/</guid>
-      <description>子供と母親への理解と働き蜂化した世の中と：島国大和のド畜生 ふむ。 たしかにその通りだ。 聖人であるところを強要してはいけない。 目の見えない人に埋</description>
+      <description>子供と母親への理解と働き蜂化した世の中と：島国大和のド畜生 ふむ。 たしかにその通りだ。 聖人であるところを強要してはいけない。 目の見えない人に埋め込んで視覚を取り戻すデバイス「Bio-Retina」 &amp;#8211; GIGAZINE もっと進歩して欲しい。 視力を失くすかもしれない恐怖から解放されたい。 円や多角形をランダムに配置する背景を SVG で作る | Unformed Building こんなこともできるのか。 これはぜひやりたい。 HD画面のセリフ体 vs. サンセリフ体 – U-Site これはなるほど。 読む価値あり。 画面ってのは一番直接的なUIなわけですよ。</description>
     </item>
     
     <item>
@@ -1880,7 +1880,7 @@
       <pubDate>Thu, 19 Jul 2012 12:16:49 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120718/</guid>
-      <description>東北大教授による大学新入生への助言 &amp;#8211; Togetter これは非常にためになる。 大学に行きたくなってきた。 おっさんへ(パロディ) &amp;#8211; ひがやすを blog なんかちょっとす</description>
+      <description>東北大教授による大学新入生への助言 &amp;#8211; Togetter これは非常にためになる。 大学に行きたくなってきた。 おっさんへ(パロディ) &amp;#8211; ひがやすを blog なんかちょっとすっきりした。 説教ってよくわからんかったけど、あれは「お話を聞かせてください」といくものであって、「聞きたくもないのに聞かされるもの」ではないですよね。 ちなみに記事中にも出てますが、元ネタは[これ](http://d.hatena.ne.jp/shi3z/20120715/1342320729)だそうです。</description>
     </item>
     
     <item>
@@ -1889,7 +1889,7 @@
       <pubDate>Wed, 18 Jul 2012 00:04:52 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120717/</guid>
-      <description>孔子いわく「生涯一日たりとも働かなくて済む」方法は「情熱」と「愛」がカギ : ライフハッカー［日本版］ 情熱は自分で育てるもの。 Life is beautiful: たかが電気、</description>
+      <description>孔子いわく「生涯一日たりとも働かなくて済む」方法は「情熱」と「愛」がカギ : ライフハッカー［日本版］ 情熱は自分で育てるもの。 Life is beautiful: たかが電気、されど電気 非常にわかりやすい。 なるほど。 一つの視点から語るものではないですよね。 新しいことを始めるときは「何をやめるか」会議をしよう（特にWebでは） | Web担当者Forum これはまさしくその通り。 限られた表示をいかに使うか。</description>
     </item>
     
     <item>
@@ -1898,7 +1898,7 @@
       <pubDate>Mon, 16 Jul 2012 14:58:35 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120715/</guid>
-      <description>高校生になって初めてスクラムを始めました～「ストーリー」で何を作るかまとめよう (1/3) &amp;#8211; ＠IT 連載一回目。 この連載わかりやすい。 スプリントと“かん</description>
+      <description>高校生になって初めてスクラムを始めました～「ストーリー」で何を作るかまとめよう (1/3) &amp;#8211; ＠IT 連載一回目。 この連載わかりやすい。 スプリントと“かんばん”でチームのビートを刻め!! ～スクラム開発で使う手法とツール～ (1/3) &amp;#8211; ＠IT 連載二回目。 スクラムやるならRedmineとALMinium！ ～新キャラ登場！無表情なあの人が笑う日は来るのか？～ (1/3) &amp;#8211; ＠IT 連載三回目。 ALMiniumって便利そうだな。 Redmineでスクラム実践！～アジャイル開発始めました～ (1/3) &amp;#8211; ＠IT 連載四回目。 「うわっ…私のバージョン管理、ダメ過ぎ…？」を解決するGitの使い方“超”入門 (1/3) &amp;#8211; ＠IT 連載五回目。</description>
     </item>
     
     <item>
@@ -1907,7 +1907,7 @@
       <pubDate>Sun, 15 Jul 2012 03:21:53 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120714/</guid>
-      <description>長時間労働・サービス残業は自分の価値を下げ企業存続を危うくする | Act as Professional &amp;#8211; hiroki.jp by HIROCASTER 長時間労働の会社に魅力を感じない。 社員は辞めたい。 新しい人は入</description>
+      <description>長時間労働・サービス残業は自分の価値を下げ企業存続を危うくする | Act as Professional &amp;#8211; hiroki.jp by HIROCASTER 長時間労働の会社に魅力を感じない。 社員は辞めたい。 新しい人は入りたくない。 そんなの当たり前。 素晴らしいプレゼンだった。 残業をしない会社を作るために &amp;#8211; GoTheDistance 上記に関連して。 残業を減らしたいなら全社的な取り組みでなければ効果は出ないというのが、僕の基本的な考え。ボトムアップでは無理。トップダウンでしか成し遂げられない。仕事上の構造的欠陥の存在を認めないといけないので、その意味では経営者が問題だと感じないとどうにもならない。 ですよね。 残業を悪とするチームを作ろう &amp;#8211; ひがやすを blog これも残業関連の記事。 残業の問題を会社や上司のせいにしても実は何も解決しません。会社や上司を変えることは、とても難しいことだからです。 なるほど。 残業をなくすためにすべきこと &amp;#8211; ひがやすを blog 上記記事の続き。 さっさとその上司から離れることに全力をつくすべきで</description>
     </item>
     
     <item>
@@ -1916,7 +1916,7 @@
       <pubDate>Sun, 15 Jul 2012 02:36:00 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120713/</guid>
-      <description>スタートアップにおけるソフトウェア開発の無駄をなくす大事な３つの考えかた &amp;#8211; Social Change! 機能やソースコードは資産ではなく負債だと考えるべきです。どれだ</description>
+      <description>スタートアップにおけるソフトウェア開発の無駄をなくす大事な３つの考えかた &amp;#8211; Social Change! 機能やソースコードは資産ではなく負債だと考えるべきです。どれだけ速いスピードで作れたとして、それが誰にとっても価値を産まないのだとすれば、意味がないだけでなく、メンテナンスにかかるコストもあがりますし、運用するコストにも影響が出るでしょう。 この考え方には「なるほど」と思った。 iPhoneはなぜ気持ちがよいのか？ (1/5) | Telescope Magazine これは非常に参考になる。 ぬるぬるしたアニメーションがいいんじゃなくて、思った通りに思ったレスポンスを返してくれるのが気持ちいいのか。 だからWindows Phoneのパタパタした遷移アニメーションはなんか気持ち悪いのか。 あれはすごく不自然なアニメーションで、iPhoneみたいに選択したアプリが広がったり、横にスライドするのは自然な動きだと感じる。 それと記事中に紹介されているマウスポインタの体験がやや衝</description>
     </item>
     
     <item>
@@ -1925,7 +1925,7 @@
       <pubDate>Thu, 12 Jul 2012 23:40:25 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120712/</guid>
-      <description>コミュニケーション能力の高い奴は仕事が出来ない：島国大和のド畜生 コミュニケーション能力が高ければ仕事ができる、みたいなのはたしかにおかしいよ</description>
+      <description>コミュニケーション能力の高い奴は仕事が出来ない：島国大和のド畜生 コミュニケーション能力が高ければ仕事ができる、みたいなのはたしかにおかしいよね。 でもおれはコミュニケーションがいいものだって決めつけてた。 やっぱりおれは思慮が浅いなあ。 もっと考えないと。 Microsoft、企業内TwitterのYammer買収を確認―価格は12億ドル OfficeにSNSがのるのか胸熱。 日本の会社は糞だとか、ブラックだとかの話。：島国大和のド畜生 働くということをどうとらえるか。 おれは好きなことをしたいなー。 それなら労働時間が長くてもいい。 人類史上何度も起きた、クソ労働環境の劇的な改善の原因 &amp;#8211; 分裂勘違い君劇場 上記リンク内のこの記事も納得。 やるしかないってことか。 SonicGardenプログラマが大切にしている考え 〜キャラクタを明確にするということ〜 &amp;#8211; よかろうもん！ さりげなく 得意領域が各々違うことで、悩むことがあっ</description>
     </item>
     
     <item>
@@ -1934,7 +1934,7 @@
       <pubDate>Thu, 12 Jul 2012 23:32:16 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-suit/</guid>
-      <description>スーツのダメなところ。 それはシャツをinするところ。 シャツをinしたら体温調節がとてもしづらい。 したがってとても暑い。 だからスーパークールビ</description>
+      <description>スーツのダメなところ。 それはシャツをinするところ。 シャツをinしたら体温調節がとてもしづらい。 したがってとても暑い。 だからスーパークールビズをやることに意味はある。 気温で作業効率が変動するって研究結果は有名だけど（もちろん能率が落ちる）、布一枚変えて作業効率が上がるならとても有意義だと思うんですがどうでしょうか。 誰に見せるかもわからんスーツを着るより、そっちの方がよっぽど意味があると思うんですが。 他にも、着るもので気分が変わるとか、なんで脱ぐ必要があるのかとか、考えることはいろいろあるけど、とりあえず今日は「シャツをinするから暑い」って結論で終了。</description>
     </item>
     
     <item>
@@ -1943,7 +1943,7 @@
       <pubDate>Tue, 10 Jul 2012 22:53:04 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120710/</guid>
-      <description>uniqlo undercover とても素晴らしいアイディアだと思います。 Set Text on a Circle | CSS-Tricks SVGのパスに乗せる方法じゃなくても実現できるんだ。 一緒に仕事する仲間から信頼され</description>
+      <description>uniqlo undercover とても素晴らしいアイディアだと思います。 Set Text on a Circle | CSS-Tricks SVGのパスに乗せる方法じゃなくても実現できるんだ。 一緒に仕事する仲間から信頼されるには、プライドを持って仕事をしよう。 | 社長ブログ | 株式会社LIG 自分の力量を知らなければなあ。 プレゼンのマウスポインターを巨大化して見やすく便利にするフリーソフト「PointerStick」 &amp;#8211; GIGAZINE プレゼンのときにマウスポインタ使うのはどうなの、と思ってたけどこれは逆転の発想だった。 Auto Screen On | TABROID（タブロイド）欲しいアンドロイドアプリをギュッと凝縮！ これはすごい便利そう。 でも、おれの端末は対応してなかった・・・。 アップルストアでセルフレジ！「EasyPay」を使えば自分のiPhoneだけで清算可能みたいだよ : ギズモード・ジャパン とてもよい試みだと思います。 レジの待ち時間ってすごく不毛だと思うの。 レイヤー機能による画像合成機能やサムネイル生成等が超</description>
     </item>
     
     <item>
@@ -1952,7 +1952,7 @@
       <pubDate>Thu, 05 Jul 2012 23:26:57 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120705/</guid>
-      <description>突っ走るのをガマンする努力 – ライフハック心理学 これは非常に思い当たる。 やりたいことだけじゃ、なにもできなくなる。 誰でもできるインターネットの</description>
+      <description>突っ走るのをガマンする努力 – ライフハック心理学 これは非常に思い当たる。 やりたいことだけじゃ、なにもできなくなる。 誰でもできるインターネットの始め方 | オモコロ特集 これはなかなか。 【インタビュー】プログラミングの楽しさを伝え、もっと気軽に学習する環境を−−ドットインストール田口さんが抱く思い | Startup Dating [スタートアップ・デイティング] ドットインストールにはもっと広がって欲しい。 結果を出すための「3つのThink」をアップルに学ぶ : ライフハッカー［日本版］ シンプルという一言じゃ片付かない気がする。 なんか本質を表す日本語があった気がするのに思い出せない。</description>
     </item>
     
     <item>
@@ -1961,7 +1961,7 @@
       <pubDate>Thu, 05 Jul 2012 23:04:53 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-birthday/</guid>
-      <description>なんで誕生日を苦手だと思うのか考えてみました。 ただ、一つ誤解されたくないのは、誕生日を祝われるのは嬉しいということです。 誕生日は苦手なだけで</description>
+      <description>なんで誕生日を苦手だと思うのか考えてみました。 ただ、一つ誤解されたくないのは、誕生日を祝われるのは嬉しいということです。 誕生日は苦手なだけで、嫌いではないです。 祝ってもらったらとても嬉しいです。 そのうえで考えてみます。 まず、自分が祝ってもらう理由が自分でよくわかってない、というのがあります。 だから、おめでとう、と言われてもどう反応すればいいのかわからなくて困る。 嬉しいけど、困る。 これが苦手な理由のひとつかな。 次に、仮に祝ってもらう意味を見つけたとして、祝ってもらう価値を考える。 自分は祝ってもらえるだけのことをしてきたのだろうか、とか。 そんなことを考える。 から苦手になる。 そして、そんなことばっかり考えてると、もっといろいろ考えることになる。 自分で気づいた一番大きな理由は、誕生日は自分が生きてることを認識させられる、ということ。 そして生きてるってことは、いつか死ぬってこと。 そのことを考えざるを</description>
     </item>
     
     <item>
@@ -1970,7 +1970,7 @@
       <pubDate>Thu, 05 Jul 2012 22:45:27 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-study_20120703/</guid>
-      <description>勉強会を始めました。 始めたといっても第一回目なので、今後どう進めるかといったところを話しただけなのですが。 勉強会の進め方として、今回は意見交</description>
+      <description>勉強会を始めました。 始めたといっても第一回目なので、今後どう進めるかといったところを話しただけなのですが。 勉強会の進め方として、今回は意見交換会？って形です。 本を読んできて、意見交換するって感じです。 題材の本は「アジャイルサムライ」です。 まずは来週の第2回目までに第1章を読むところから。 次回は7/11Wed.開催予定です。</description>
     </item>
     
     <item>
@@ -1979,7 +1979,7 @@
       <pubDate>Thu, 05 Jul 2012 02:36:34 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-food_20120704/</guid>
-      <description>授業や会議でファーストペンギンを守る方法 &amp;#8211; teruyastarはかく語りき 非常にわかりやすい説明だった。 いかにして発言者を守るのか。 85％で</description>
+      <description>授業や会議でファーストペンギンを守る方法 &amp;#8211; teruyastarはかく語りき 非常にわかりやすい説明だった。 いかにして発言者を守るのか。 85％できる！ – ライフハック心理学 協力を仰ぐときは、85%の魅力が必要なのか。 ちょっとがんばればできるかもしれないなと思わせることが大事。 シゴタノ！ 通る提案資料は「GARPFS(ガルフス)」の順番で作る 「感情を論理でくるむことが大事です。」なるほど。 新たなスマホ用OS「Firefox OS」搭載のスマートフォンが2013年初頭に登場へ、実際のスクリーンショットはこんな感じ &amp;#8211; GIGAZINE 全部HTML5なのか。 操作性に期待。 レスポンシブとか、そういうことの前に : could レスポンシブデザインって好きじゃなかったんだけど、やってみようかな。 ウェブデザインのセンスを学ぼう、2012年上半期洗練されたディテールのUIデザインのまとめ | コリス これはかっこいい。 おれも本格的にデザインの勉強始め</description>
     </item>
     
     <item>
@@ -1988,7 +1988,7 @@
       <pubDate>Thu, 05 Jul 2012 01:02:05 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-07-opera_url/</guid>
-      <description>Operaのmenu.iniを編集して実現します。 まずファイルの [Document Popup Menu] の部分を探します。 見つけたら下に ++++++++++++++++++--9 ; get URL &amp; Link Item, &#34;Copy URL&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, document.title+&#39;\n&#39;+location.href);})();&#34; &amp; Delay, 100 &amp;</description>
+      <description>Operaのmenu.iniを編集して実現します。 まずファイルの [Document Popup Menu] の部分を探します。 見つけたら下に ++++++++++++++++++--9 ; get URL &amp; Link Item, &#34;Copy URL&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, document.title+&#39;\n&#39;+location.href);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel Item, &#34;Create Link&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;\n\n&amp;lt;section&amp;gt;\n&amp;lt;div&amp;gt;&amp;lt;a href=\u0022&#39;+location.href+&#39;\u0022&amp;gt;&#39;+document.title+&#39;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;\n&amp;lt;p&amp;gt;\n\n&amp;lt;/p&amp;gt;\n&amp;lt;/section&amp;gt;\n\n&#39;);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel Item, &#34;Reference Link&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;&amp;lt;div&amp;gt;&amp;lt;a href=\u0022&#39;+location.href+&#39;\u0022&amp;gt;&#39;+document.title+&#39;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;\n\n&#39;);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel と追加します。 これでOperaを再起動すれば完了です。 これは単純にJavaScriptを利用しています。 実装するときにダブルコーテーションのところで一回ハマりました。 ダブルコーテーションをエスケープしてなかったのが動かない原因かと思いきや、Operaの設定を解釈する側でダブルコーテーションを使用してはいけなかったみたいです。 なのでダブルコーテーションをUnicodeの「0022」で表現して回避しています。 実際にこれを使ってみるとこんな感じになります。 カスタマイズは簡単なので、自分の環境に合わせて使ってください。 「Copy URL」 生きるためのブログ http://5000164.jp/ 「Create Link」 &amp;lt;section&amp;gt; &amp;lt;div&amp;gt;&amp;lt;a hr</description>
     </item>
     
     <item>
@@ -1997,7 +1997,7 @@
       <pubDate>Sun, 01 Jul 2012 02:40:42 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-food_20120630/</guid>
-      <description>歴史のフィードバック。またはコンピュータ史を学ぶ価値 &amp;#8211; UEI/ARC shi3zの日記 ただ技術を習得するだけでは、先に進めない。 為末氏「成長を阻害するどう</description>
+      <description>歴史のフィードバック。またはコンピュータ史を学ぶ価値 &amp;#8211; UEI/ARC shi3zの日記 ただ技術を習得するだけでは、先に進めない。 為末氏「成長を阻害するどうでもいい事」 &amp;#8211; Togetter 自分がどう見られたいかではなく、自分はどんな目的を達したいかが大事。 フリーランス向け嫌な仕事の断り方・交渉の仕方 | たけのおしごと 物理的な物ができあがるわけではないので、理解を得るのは難しいですよね。全員がソフトウェアを作ったことがあればいいんですけど。お金をもらうということは、それだけの価値があるということです。 CSS3 Lasers! うまいことタイミングを合わせればこんなこともできるのか。もっと柔軟に考えないと。 Georgia ProとVerdana Proの深い話 – フォントブログ いろいろ使ってみたい。 [CSS]CSS3を使うとこんなこともできる！紙を折ったり反らしたするかっこいいエフェクト | コリス これもすごい。 もっと厚みが欲しいな。 ゲーム感覚でレイアウトを組み立てる、</description>
     </item>
     
     <item>
@@ -2006,7 +2006,7 @@
       <pubDate>Sat, 30 Jun 2012 02:03:25 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-for_kouhai/</guid>
-      <description>普段から思ってたことと、今日話して思ったこと。 おれがいま先輩として後輩にしてあげられることは、心配することです。 最初は、常に同等の立場でなけ</description>
+      <description>普段から思ってたことと、今日話して思ったこと。 おれがいま先輩として後輩にしてあげられることは、心配することです。 最初は、常に同等の立場でなければならないと思っていたのですが、そうでもありませんでした。 先輩後輩という概念が存在する以上それはきっと無理でしょう。 概念をなくすことに執心するのではなくて、その概念の中で何ができるのかを考えます。 そして先輩という立場だからこそ、できることがあります。 その中の一つに、心配するということがあると思います。 心配するということは、相手を思いやるということです。 自分が思いやってもらっているという事実は嬉しいですし、安心します。 それが次の行動につながります。 これが信頼関係になります。 信頼関係はとても大事です。 だから、先輩として後輩を心配してあげます。 そうすれば、行動にそれが表れます。 行動にでたら、相手に伝わります。 相手に伝われば、相手は嬉しいはずです。 安心するは</description>
     </item>
     
     <item>
@@ -2015,7 +2015,7 @@
       <pubDate>Fri, 29 Jun 2012 01:52:41 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-wordpress_twentyeleven_edit/</guid>
-      <description>デザインをいろいろと変更しました。 作業の途中で元ファイルがわからなくなりテーマをまるごと再インストールしたりもしました。 設定情報とかも一緒に</description>
+      <description>デザインをいろいろと変更しました。 作業の途中で元ファイルがわからなくなりテーマをまるごと再インストールしたりもしました。 設定情報とかも一緒に消しちゃって記事が見れなくなった時は焦った。 でもなんとか元に戻りました。 以下は変更内容です。 あんまり詳しく調べずに、それっぽいファイルをそれっぽく修正したらそれっぽい動きになっただけなので、参考にする時は注意してください。 まず、出したくないものを消します。 メニューバー（ナビゲーションバー）と検索ボックスを消します。 今のところ使用していないので。 header.phpの114行目以降 &amp;amp;lt;?php // Has the text been hidden? if ( &#39;blank&#39; == get_header_textcolor() ) : ?&amp;amp;gt; &amp;amp;lt;div&amp;amp;gt; &amp;amp;lt;?php get_search_form(); ?&amp;amp;gt; &amp;amp;lt;/div&amp;amp;gt; &amp;amp;lt;?php else : ?&amp;amp;gt; &amp;amp;lt;?php get_search_form(); ?&amp;amp;gt; &amp;amp;lt;?php endif; ?&amp;amp;gt; &amp;amp;lt;nav id=&amp;amp;quot;access&amp;amp;quot; role=&amp;amp;quot;navigation&amp;amp;quot;&amp;amp;gt; &amp;amp;lt;h3&amp;amp;gt;&amp;amp;lt;?php _e( &#39;Main menu&#39;, &#39;twentyeleven&#39; ); ?&amp;amp;gt;&amp;amp;lt;/h3&amp;amp;gt; &amp;amp;lt;?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?&amp;amp;gt; &amp;amp;lt;div&amp;amp;gt;&amp;amp;lt;a href=&amp;amp;quot;#content&amp;amp;quot; title=&amp;amp;quot;&amp;amp;lt;?php esc_attr_e( &#39;Skip to primary content&#39;, &#39;twentyeleven&#39; ); ?&amp;amp;gt;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;?php _e( &#39;Skip to primary content&#39;, &#39;twentyeleven&#39; ); ?&amp;amp;gt;&amp;amp;lt;/a&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt; &amp;amp;lt;div&amp;amp;gt;&amp;amp;lt;a href=&amp;amp;quot;#secondary&amp;amp;quot; title=&amp;amp;quot;&amp;amp;lt;?php esc_attr_e( &#39;Skip to secondary content&#39;, &#39;twentyeleven&#39; ); ?&amp;amp;gt;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;?php _e( &#39;Skip to secondary content&#39;, &#39;twentyeleven&#39; ); ?&amp;amp;gt;&amp;amp;lt;/a&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt; &amp;amp;lt;?php /* Our navigation menu. If one isn&#39;t filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn&#39;t assigned, the menu with the lowest ID is used. */</description>
     </item>
     
     <item>
@@ -2024,7 +2024,7 @@
       <pubDate>Tue, 26 Jun 2012 01:47:45 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-wordpress_twentyeleven_display_none/</guid>
-      <description>テーマのフォルダにある content-single.php を編集します。 34～40行目の if ( &amp;ldquo; != $tag_list ) { $utility_text = __( &amp;lsquo;This entry was posted in %1$s and tagged %2$s by &amp;lt;a href=&amp;quot;%6$s&amp;quot;&amp;gt;%5$s&amp;lt;/a&amp;gt;. Bookmark the &amp;lt;a href=&amp;quot;%3$s&amp;quot; title=&amp;quot;Permalink to %4$s&amp;quot; rel=&amp;quot;bookmark&amp;quot;&amp;gt;permalink&amp;lt;/a&amp;gt;.&amp;lsquo;, &amp;lsquo;twentyeleven&amp;rsquo; ); } elseif ( &amp;ldquo; != $categories_list ) { $utility_text = __(</description>
+      <description>テーマのフォルダにある content-single.php を編集します。 34～40行目の if ( &amp;ldquo; != $tag_list ) { $utility_text = __( &amp;lsquo;This entry was posted in %1$s and tagged %2$s by &amp;lt;a href=&amp;quot;%6$s&amp;quot;&amp;gt;%5$s&amp;lt;/a&amp;gt;. Bookmark the &amp;lt;a href=&amp;quot;%3$s&amp;quot; title=&amp;quot;Permalink to %4$s&amp;quot; rel=&amp;quot;bookmark&amp;quot;&amp;gt;permalink&amp;lt;/a&amp;gt;.&amp;lsquo;, &amp;lsquo;twentyeleven&amp;rsquo; ); } elseif ( &amp;ldquo; != $categories_list ) { $utility_text = __( &amp;lsquo;This entry was posted in %1$s by &amp;lt;a href=&amp;quot;%6$s&amp;quot;&amp;gt;%5$s&amp;lt;/a&amp;gt;. Bookmark the &amp;lt;a href=&amp;quot;%3$s&amp;quot; title=&amp;quot;Permalink to %4$s&amp;quot; rel=&amp;quot;bookmark&amp;quot;&amp;gt;permalink&amp;lt;/a&amp;gt;.&amp;lsquo;, &amp;lsquo;twentyeleven&amp;rsquo; ); } else { $utility_text = __( &amp;lsquo;This entry was posted by &amp;lt;a href=&amp;quot;%6$s&amp;quot;&amp;gt;%5$s&amp;lt;/a&amp;gt;. Bookmark the &amp;lt;a href=&amp;quot;%3$s&amp;quot; title=&amp;quot;Permalink to %4$s&amp;quot; rel=&amp;quot;bookmark&amp;quot;&amp;gt;permalink&amp;lt;/a&amp;gt;.&amp;lsquo;, &amp;lsquo;twentyeleven&amp;rsquo; ); } の部分を if ( &amp;ldquo; != $tag_list ) { $utility_text = __( &amp;lsquo;category %1$s and tag %2$s&amp;rsquo;, &amp;lsquo;twentyeleven&amp;rsquo; ); } elseif ( &amp;ldquo; != $categories_list ) { $utility_text = __( &amp;lsquo;category %1$s&amp;rsquo;, &amp;lsquo;twentyeleven&amp;rsquo; ); } else { $utility_text = __( &amp;ldquo;, &amp;lsquo;twentyeleven&amp;rsquo; ); } と変更します。 おそらく、単一記事表示時にカテゴリやタグを表示する部分での処理だと思われます。 全体表示時の対処はまだ不明。 作成者とパーマリンクは表示されないので保留にします。 参考サイト WordPressのTwentyElevenで作成者を非表示にする方法 | 沖縄なんくるウェブブログ</description>
     </item>
     
     <item>
@@ -2033,7 +2033,7 @@
       <pubDate>Tue, 26 Jun 2012 01:26:39 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-windows_trash/</guid>
-      <description>2014/03/06 追記 ここではタスクバーにごみ箱を設置する手順を示していますが、設置する目的は「より便利にごみ箱にアクセスしたい」というものです。 より便利に</description>
+      <description>2014/03/06 追記 ここではタスクバーにごみ箱を設置する手順を示していますが、設置する目的は「より便利にごみ箱にアクセスしたい」というものです。 より便利にアクセスできる方法を見つけたので追記します。 「Windowsロゴ」キー + 「R」キーで「ファイル名を指定して実行」を起動 「shell:RecycleBinFolder」と入力して実行 以上です。 一度入力すると履歴に残るので、2回目以降は履歴から簡単にアクセスできます。 参考 Shell コマンドで開く特殊フォルダー一覧（Windows 7,8） デスクトップをきれいにするために 私はデスクトップにアイコンを1つも表示しないので、ごみ箱にアクセスするのがとても面倒です。 常にごみ箱にアクセスできる方法の1つとして、Windows7のタスクバーにごみ箱を表示する方法を書いていきます。 1.フォルダの作成 まず、どこか適当な場所に適当なフォルダを作成します。 ここでは C:\Users\（ユ</description>
     </item>
     
     <item>
@@ -2042,7 +2042,7 @@
       <pubDate>Tue, 26 Jun 2012 01:01:16 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-windows_font/</guid>
-      <description>※下記内容については自己責任でお願いします。 Windowsの汚いフォントを少しだけマシにします。 筆者実行環境：Windows 7 Home Premium SP1 32bit まずこ</description>
+      <description>※下記内容については自己責任でお願いします。 Windowsの汚いフォントを少しだけマシにします。 筆者実行環境：Windows 7 Home Premium SP1 32bit まずこのサイト Downloads &amp;#8211; gdipp &amp;#8211; Customizable Windows text renderers &amp;#8211; Google Project Hosting から gdipp_x86_0.9.1.msi という名前のファイルをダウンロードします。 ダウンロードしたら起動してインストールします。 基本的にそのままの設定で大丈夫です。 インストールが完了したら再起動します。 （サービスの起動でもいけるそうですが、なんとなく。） これでフォントが多少きれいに表示されるはずです。 表示を戻したかったら、gdippのサービスを切るか、アンインストールすることで戻ります。 なお、表示が崩れる場合や文字が表示されない場合もあります。 参考サイト Windowsのフォントをより美しく出来る「gdipp」とその設定 gdipp &amp;#8211; ｋ本的に無料ソフト・フリーソフト gdipp &amp;#8211; Customizable Windows text renderers &amp;#8211; Google Project Hosting</description>
     </item>
     
     <item>
@@ -2051,7 +2051,7 @@
       <pubDate>Tue, 26 Jun 2012 00:55:37 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-eclipse_setting/</guid>
-      <description>毎回毎回Eclipseの設定を思い出すのがめんどくさくなったのでついにメモった。 とりあえず最低限の設定だけ。 Eclipse Market Place Eclipse Color Themeで検索する。</description>
+      <description>毎回毎回Eclipseの設定を思い出すのがめんどくさくなったのでついにメモった。 とりあえず最低限の設定だけ。 Eclipse Market Place Eclipse Color Themeで検索する。 Eclipse Color ThemeをInstallする。 環境設定 &amp;gt;General Show heap status check &amp;gt;Appearance -Color Theme Obsidian -Color and Fonts Basic Text Font Ricty 13 &amp;gt;ContentTypes Text CSS Add *.scss &amp;gt;Editors -FIle Associations File types Add *.css *.scss Associated editors *.cssと*.scssどちらも CSS Editor Text Editor &amp;gt;Text Editors Show line numbers check Show whitespace characters check -Keys Content Assist command + return &amp;gt;Workspace Text file encoding Other : UTF-8 New text file line delimiter Other : Unix &amp;gt;Web &amp;gt;CSS Files Encoding ISO 10646/Unicode(UTF-8) 設定ファイル Eclipse.appのパッケージの内容を表示。 /Contents/MacOS/eclipse.iniを開く。 下記内容に変更。 -vmargs -XX:MaxPermSize=256m -Xss2m -Xms256m -Xmx1024m これで設定をとりあえずエクスポートして完了。 あとはDropboxで共有するなりなんなり。 参考サイト livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと Eclipse Color Themeを使ってみよう 設定のインポート・エクスポート &amp;#8211; devillikeaangelの日記</description>
     </item>
     
     <item>
@@ -2060,7 +2060,7 @@
       <pubDate>Tue, 26 Jun 2012 00:12:55 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-mac_smb/</guid>
-      <description>Macから認証がかかってるサーバへ接続する際は、サーバアドレス入力後にユーザ名とパスワードを入力します。 この時に、Macにログインしてるユー</description>
+      <description>Macから認証がかかってるサーバへ接続する際は、サーバアドレス入力後にユーザ名とパスワードを入力します。 この時に、Macにログインしてるユーザ名を初期入力してくれてるのですが、必ずしもサーバのユーザ名と一致しているわけではありません。 下記のようにサーバアドレスを入力することで、任意のユーザ名を初期入力させておくことができます。 今まで接続していたアドレス smb://ServerName/ShareName ユーザ名を初期入力させて接続するアドレス smb://ドメイン名;ユーザ名@ServerName/ShareName 参考 Mac OS X：Windows ファイル共有 (SMB) に接続する方法 ログインした時に自動接続する方法もあるらしいです。 Mac OS X：ログインしたときに自動的にサーバに接続する方法</description>
     </item>
     
     <item>
@@ -2069,7 +2069,7 @@
       <pubDate>Mon, 25 Jun 2012 23:09:21 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-mobile_safari_link/</guid>
-      <description>Mobile Safariでは数字を電話番号だとみなして、勝手に電話番号のリンクを貼ることがあります。 これを防ぐためには勝手にリンクを貼る機能を無効化し</description>
+      <description>Mobile Safariでは数字を電話番号だとみなして、勝手に電話番号のリンクを貼ることがあります。 これを防ぐためには勝手にリンクを貼る機能を無効化し、telto:で明示的にリンクを貼りましょう。 機能を無効化するには、ヘッダに下記のmetaタグを追加します。 &amp;lt;meta name=&#34;format-detection&#34; content=&#34;telephone=no&#34;&amp;gt; telto:でのリンクの貼り方は下記になります。 &amp;lt;a href=&#34;telto:000-0000-0000&#34;&amp;gt;000-0000-0000&amp;lt;/a&amp;gt; 参考サイト jQueryMobileを使ってのスマートフォンサイトの構築メモ at HouseTect, JavaScriptな情報をあなたに</description>
     </item>
     
     <item>
@@ -2078,7 +2078,7 @@
       <pubDate>Sun, 24 Jun 2012 06:53:41 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012-06-start_wordpress/</guid>
-      <description>やっとこさWordPress始めました。 ここまで長かった・・・。 まずは始めることが大事ってことで、セキュリティとかは徐々にやっていきたいと思</description>
+      <description>やっとこさWordPress始めました。 ここまで長かった・・・。 まずは始めることが大事ってことで、セキュリティとかは徐々にやっていきたいと思います。 内容は技術系とかに限らずに、なんでもかんでも書いていきたいと思ってます。 まあ好みには偏るでしょうが、よろしくお願いします。</description>
     </item>
     
   </channel>

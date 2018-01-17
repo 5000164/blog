@@ -12,10 +12,10 @@ ga('send', 'pageview');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=640">
     <title>Ansible で作成したユーザーをパスワードなしで sudo できるようにする | 5000164 is here</title>
-    <meta name="description" content="先に簡単な結論 /etc/sudoers.d/ の下にパスワードなしで sudo できる設定を追加する。 Vagrant の VM に Ansible で環境を構築する いつもは vagrant ユーザーをそのまま使っていたのだが、ユーザ">
+    <meta name="description" content="先に簡単な結論 /etc/sudoers.d/ の下にパスワードなしで sudo できる設定を追加する。 Vagrant の VM に Ansible で環境を構築する いつもは vagrant ユーザーをそのまま使っていたのだが、ユーザー名を変えておいた方がなんとなくよさそう、と思ってユーザー名を変えることにした。 ユーザーの追加は user モジュールを使って簡単にできる。 問題は作成したユーザーで sudo できないことだった。 一応オプションをつけて毎回パスワードを入力すれば回避できる 1ansible-playbook playbook.yml --ask-sudo-pass ってやって、毎回パスワードを入れれば動く。 でもだるい。 vagrant ユーザーはなんでパスワードなしで sudo できるのか なぜ、どうして。 全然仕組みを理解できていなかった。 そして今日たまたまこの記事を見る。 suとsudoの違い - Qiita 「suは切替先ユーザー（root）のパスワードが要求されるのに対し、sudoは元のユーザーのパスワードが要求される。」 なるほど、もしかしてこれでは？ 「ansible sudoers」でググる。 Ansibleでユーザ">
     <link href="http://blog.5000164.jp/2015-11-ansible_sudo/" rel="canonical">
     <meta property="og:title" content="Ansible で作成したユーザーをパスワードなしで sudo できるようにする | 5000164 is here">
-    <meta property="og:description" content="先に簡単な結論 /etc/sudoers.d/ の下にパスワードなしで sudo できる設定を追加する。 Vagrant の VM に Ansible で環境を構築する いつもは vagrant ユーザーをそのまま使っていたのだが、ユーザ">
+    <meta property="og:description" content="先に簡単な結論 /etc/sudoers.d/ の下にパスワードなしで sudo できる設定を追加する。 Vagrant の VM に Ansible で環境を構築する いつもは vagrant ユーザーをそのまま使っていたのだが、ユーザー名を変えておいた方がなんとなくよさそう、と思ってユーザー名を変えることにした。 ユーザーの追加は user モジュールを使って簡単にできる。 問題は作成したユーザーで sudo できないことだった。 一応オプションをつけて毎回パスワードを入力すれば回避できる 1ansible-playbook playbook.yml --ask-sudo-pass ってやって、毎回パスワードを入れれば動く。 でもだるい。 vagrant ユーザーはなんでパスワードなしで sudo できるのか なぜ、どうして。 全然仕組みを理解できていなかった。 そして今日たまたまこの記事を見る。 suとsudoの違い - Qiita 「suは切替先ユーザー（root）のパスワードが要求されるのに対し、sudoは元のユーザーのパスワードが要求される。」 なるほど、もしかしてこれでは？ 「ansible sudoers」でググる。 Ansibleでユーザ">
     <meta property="og:url" content="http://blog.5000164.jp/2015-11-ansible_sudo/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@5000164">

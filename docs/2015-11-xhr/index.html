@@ -12,10 +12,10 @@ ga('send', 'pageview');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=640">
     <title>XHR のプリフライトリクエストを Access-Control-Allow-Origin で許可する | 5000164 is here</title>
-    <meta name="description" content="Firefox で API からデータが取得できない サーバー側に API を実装して、Chrome では値が取得できてるのに、Firefox では値が取得できていなかった。 ち">
+    <meta name="description" content="Firefox で API からデータが取得できない サーバー側に API を実装して、Chrome では値が取得できてるのに、Firefox では値が取得できていなかった。 ちゃんと Access-Control-Allow-Origin: * って感じにしてたのに、許可されていませんって感じのエラーメッセージが出ていた。 開発ツールのネットワークの履歴を見てたら、メソッドのところが OPTIONS って出てたので、OPTIONS メソッドの時にも Access-Control-Allow-Origin: * を返してあげるようにした。 FuelPHP のコントローラーにどうやって書くのだろと思って試しに書いてみたら動いた。 1 2 3 4 5 6 7/** * プリフライトリクエスト用のコントローラー */ public function options_index() { $this-&gt;response-&gt;set_header(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;); } こんな感じ。 どうやら、XHR ではプリフライトリクエストってやつを送るらしくて、その時にアクセスが許可されていないから API からデータを持ってきていなかったらしい。(現時点の Chrome では送ってなかった) なるほどな。">
     <link href="http://blog.5000164.jp/2015-11-xhr/" rel="canonical">
     <meta property="og:title" content="XHR のプリフライトリクエストを Access-Control-Allow-Origin で許可する | 5000164 is here">
-    <meta property="og:description" content="Firefox で API からデータが取得できない サーバー側に API を実装して、Chrome では値が取得できてるのに、Firefox では値が取得できていなかった。 ち">
+    <meta property="og:description" content="Firefox で API からデータが取得できない サーバー側に API を実装して、Chrome では値が取得できてるのに、Firefox では値が取得できていなかった。 ちゃんと Access-Control-Allow-Origin: * って感じにしてたのに、許可されていませんって感じのエラーメッセージが出ていた。 開発ツールのネットワークの履歴を見てたら、メソッドのところが OPTIONS って出てたので、OPTIONS メソッドの時にも Access-Control-Allow-Origin: * を返してあげるようにした。 FuelPHP のコントローラーにどうやって書くのだろと思って試しに書いてみたら動いた。 1 2 3 4 5 6 7/** * プリフライトリクエスト用のコントローラー */ public function options_index() { $this-&gt;response-&gt;set_header(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;); } こんな感じ。 どうやら、XHR ではプリフライトリクエストってやつを送るらしくて、その時にアクセスが許可されていないから API からデータを持ってきていなかったらしい。(現時点の Chrome では送ってなかった) なるほどな。">
     <meta property="og:url" content="http://blog.5000164.jp/2015-11-xhr/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@5000164">
