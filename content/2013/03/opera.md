@@ -16,27 +16,30 @@ Operaの右クリックで表示されるメニューをちょっとカスタマ
 
 ## 現在表示中のページのタイトルとURLを取得する
 
-<pre class="brush: jscript; gutter: false; title: ; notranslate" title="">[Document Popup Menu]
+```javascript
+[Document Popup Menu]
 ～中略～
 ++++++++++++++++++--
 Item, "Copy URL" = Go to page, "javascript:(function(){window.prompt('', document.title+'\n'+location.href);})();" & Delay, 100 & Cut & Cancel
-</pre>
+```
 
 ## 現在表示中のページをChromeで開く
 
-<pre class="brush: jscript; gutter: false; title: ; notranslate" title="">[Document Popup Menu]
+```javascript
+[Document Popup Menu]
 ～中略～
 ++++++++++++++++++--
 Item, "Open page in Google Chrome"=Execute program, "chrome","%u"
-</pre>
+```
 
 ## リンク先のページをChromeで開く
 
-<pre class="brush: jscript; gutter: false; title: ; notranslate" title="">[Link Popup Menu]
+```javascript
+[Link Popup Menu]
 ～中略～
 ++++++++++++++++++--
 Item, "Open link in Google Chrome"=Execute program, "chrome","%l"
-</pre>
+```
 
 ## 結論
 

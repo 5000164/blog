@@ -12,9 +12,9 @@ url = "2012-06-wordpress_twentyeleven_display_none"
   <div>
   </div>
 
-  <pre class="brush: plain; title: ; notranslate" title="">
+```
 content-single.php
-</pre>
+```
 
   <div>
   </div>
@@ -33,7 +33,7 @@ content-single.php
   <div>
   </div>
 
-  <pre class="brush: php; title: ; notranslate" title="">
+```php
 if ( '' != $tag_list ) {
 $utility_text = __( 'This entry was posted in %1$s and tagged %2$s by &lt;a href=&quot;%6$s&quot;&gt;%5$s&lt;/a&gt;. Bookmark the &lt;a href=&quot;%3$s&quot; title=&quot;Permalink to %4$s&quot; rel=&quot;bookmark&quot;&gt;permalink&lt;/a&gt;.', 'twentyeleven' );
 } elseif ( '' != $categories_list ) {
@@ -41,7 +41,7 @@ $utility_text = __( 'This entry was posted in %1$s by &lt;a href=&quot;%6$s&quot
 } else {
 $utility_text = __( 'This entry was posted by &lt;a href=&quot;%6$s&quot;&gt;%5$s&lt;/a&gt;. Bookmark the &lt;a href=&quot;%3$s&quot; title=&quot;Permalink to %4$s&quot; rel=&quot;bookmark&quot;&gt;permalink&lt;/a&gt;.', 'twentyeleven' );
 }
-</pre>
+```
 
   <div>
   </div>
@@ -53,7 +53,7 @@ $utility_text = __( 'This entry was posted by &lt;a href=&quot;%6$s&quot;&gt;%5$
   <div>
   </div>
 
-  <pre class="brush: php; title: ; notranslate" title="">
+```php
 if ( '' != $tag_list ) {
 $utility_text = __( 'category %1$s and tag %2$s', 'twentyeleven' );
 } elseif ( '' != $categories_list ) {
@@ -61,7 +61,7 @@ $utility_text = __( 'category %1$s', 'twentyeleven' );
 } else {
 $utility_text = __( '', 'twentyeleven' );
 }
-</pre>
+```
 
   <div>
   </div>

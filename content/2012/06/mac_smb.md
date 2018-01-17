@@ -12,13 +12,15 @@ Macから認証がかかってるサーバへ接続する際は、サーバア�
 
 今まで接続していたアドレス
 
-<pre class="brush: plain; title: ; notranslate" title="">smb://ServerName/ShareName
-</pre>
+```
+smb://ServerName/ShareName
+```
 
 ユーザ名を初期入力させて接続するアドレス
 
-<pre class="brush: plain; title: ; notranslate" title="">smb://ドメイン名;ユーザ名@ServerName/ShareName
-</pre>
+```
+smb://ドメイン名;ユーザ名@ServerName/ShareName
+```
 
 参考
 

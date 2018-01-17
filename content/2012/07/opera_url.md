@@ -13,9 +13,9 @@ url = "2012-07-opera_url"
     まずファイルの
   </div>
 
-  <pre class="brush: jscript; title: ; notranslate" title="">
+```
 [Document Popup Menu]
-</pre>
+```
 </div>
 
 <div>
@@ -26,12 +26,13 @@ url = "2012-07-opera_url"
   見つけたら下に
 </div>
 
-<pre class="brush: jscript; title: ; notranslate" title="">++++++++++++++++++--9
+```javascript
+++++++++++++++++++--9
  ; get URL & Link
  Item, "Copy URL" = Go to page, "javascript:(function(){window.prompt('', document.title+'\n'+location.href);})();" & Delay, 100 & Cut & Cancel
  Item, "Create Link" = Go to page, "javascript:(function(){window.prompt('', '\n\n&lt;section&gt;\n&lt;div&gt;&lt;a href=\u0022'+location.href+'\u0022&gt;'+document.title+'&lt;/a&gt;&lt;/div&gt;\n&lt;p&gt;\n\n&lt;/p&gt;\n&lt;/section&gt;\n\n');})();" & Delay, 100 & Cut & Cancel
  Item, "Reference Link" = Go to page, "javascript:(function(){window.prompt('', '&lt;div&gt;&lt;a href=\u0022'+location.href+'\u0022&gt;'+document.title+'&lt;/a&gt;&lt;/div&gt;\n\n');})();" & Delay, 100 & Cut & Cancel
-</pre>
+```
 
 <div>
   と追加します。
@@ -69,30 +70,35 @@ url = "2012-07-opera_url"
   「Copy URL」
 </div>
 
-<pre class="brush: xml; title: ; notranslate" title="">生きるためのブログ
+```html
+生きるためのブログ
 http://5000164.jp/
-</pre></section> <section> 
+```
+</section> <section> 
 
 <div>
   「Create Link」
 </div>
 
-<pre class="brush: xml; title: ; notranslate" title="">&lt;section&gt;
+```html
+&lt;section&gt;
 &lt;div&gt;&lt;a href="http://5000164.jp/"&gt;生きるためのブログ&lt;/a&gt;&lt;/div&gt;
 &lt;p&gt;
 
 &lt;/p&gt;
 &lt;/section&gt;
 
-</pre></section> <section>
+```
+</section> <section>
 
 <div>
   「Reference Link」
 </div>
 
-<pre class="brush: xml; title: ; notranslate" title="">&lt;div&gt;&lt;a href="http://5000164.jp/"&gt;生きるためのブログ&lt;/a&gt;&lt;/div&gt;
-
-</pre></section>
+```html
+&lt;div&gt;&lt;a href="http://5000164.jp/"&gt;生きるためのブログ&lt;/a&gt;&lt;/div&gt;
+```
+</section>
 
 <div>
   参考

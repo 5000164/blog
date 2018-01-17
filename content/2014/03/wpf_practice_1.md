@@ -24,10 +24,11 @@ url = "2014-03-wpf_practice_1"
 
 これを追記するだけ。
 
-<pre class="brush: xml; title: ; notranslate" title="">&lt;WindowChrome.WindowChrome&gt;
+```
+&lt;WindowChrome.WindowChrome&gt;
         &lt;WindowChrome CaptionHeight="23" ResizeBorderThickness="100" /&gt;
     &lt;/WindowChrome.WindowChrome&gt;
-</pre>
+```
 
 ## 枠なしには出来たけどウィンドウの影が気になる
 
@@ -45,7 +46,8 @@ WPF初心者の私には無理だと判断したので、この記事の冒頭�
 
 ## 影をいい感じにつける
 
-<pre class="brush: xml; title: ; notranslate" title="">&lt;Window x:Class="練習1.MainWindow"
+```
+&lt;Window x:Class="練習1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow"
@@ -63,7 +65,7 @@ WPF初心者の私には無理だと判断したので、この記事の冒頭�
 ～中略～
     &lt;/Border&gt;
 &lt;/Window&gt;
-</pre>
+```
 
 WindowにWindowStyle="None"、AllowsTransparency="True"、Background="Transparent"を指定することで、枠を消して透明にしています。
 

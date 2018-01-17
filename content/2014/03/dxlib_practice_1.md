@@ -34,8 +34,9 @@ url = "2014-03-dxlib_practice_1"
 
 ## フォントをきれいに表示するには1行追加するだけ
 
-<pre class="brush: cpp; title: ; notranslate" title="">ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8);
-</pre>
+```c++
+ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8);
+```
 
 この文を追加するだけです。
 
@@ -53,7 +54,8 @@ url = "2014-03-dxlib_practice_1"
 
 フォントを描画したあとにガウシアンフィルタをかけるのがポイント。
 
-<pre class="brush: cpp; title: ; notranslate" title="">// 影の表示開始位置
+```c++
+// 影の表示開始位置
 	text_x = font_size + shadow_offset_x;
 	text_y = font_size + shadow_offset_y;
 
@@ -65,11 +67,12 @@ url = "2014-03-dxlib_practice_1"
 
 	// ガウスフィルターを施して影にする
 	GraphFilter(backscreen, DX_GRAPH_FILTER_GAUSS, 8, 50);
-</pre>
+```
 
 背景ができたら、普通にフォントを描画します。
 
-<pre class="brush: cpp; title: ; notranslate" title="">// テキスト表示開始位置
+```c++
+// テキスト表示開始位置
 	text_x = font_size;
 	text_y = font_size;
 
@@ -78,7 +81,7 @@ url = "2014-03-dxlib_practice_1"
 	{
 		DrawString(text_x, (int)(text_y + ((font_size * line_height) * row)), text[row], font_color_dx);
 	}
-</pre>
+```
 
 これで完成です。
 

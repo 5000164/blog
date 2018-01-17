@@ -16,8 +16,9 @@ Windowsの汚いフォントを少しだけマシにします。
 
 から
 
-<pre class="brush: plain; title: ; notranslate" title="">gdipp_x86_0.9.1.msi
-</pre>
+```
+gdipp_x86_0.9.1.msi
+```
 
 という名前のファイルをダウンロードします。
 

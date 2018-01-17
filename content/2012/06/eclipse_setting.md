@@ -65,12 +65,13 @@ Eclipse.appのパッケージの内容を表示。
 
 下記内容に変更。
 
-<pre class="brush: plain; title: ; notranslate" title="">-vmargs
+```
+-vmargs
 -XX:MaxPermSize=256m
 -Xss2m
 -Xms256m
 -Xmx1024m
-</pre>
+```
 
 これで設定をとりあえずエクスポートして完了。
 

@@ -33,13 +33,15 @@ url = "2012-06-windows_trash"
 
 ここでは
 
-<pre class="brush: plain; title: ; notranslate" title="">C:\Users\（ユーザ名）\
-</pre>
+```
+C:\Users\（ユーザ名）\
+```
 
 の直下に
 
-<pre class="brush: plain; title: ; notranslate" title="">Toolbar
-</pre>
+```
+Toolbar
+```
 
 という名前のフォルダを作成します。
 

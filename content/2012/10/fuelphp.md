@@ -18,17 +18,23 @@ trueってしたらプロファイラは常に表示されてて欲しいです�
 
 ということで、常に表示されるようにします。 
 
-<pre class="brush: plain; gutter: false; title: ; notranslate" title="">fuel/core/vendor/phpquickprofiler/display.php</pre>
+```
+fuel/core/vendor/phpquickprofiler/display.php
+```
 
 を開きます。 
 
 305行目の 
 
-<pre class="brush: php; first-line: 305; html-script: true; title: ; notranslate" title="">$return_output .='&lt;div style="clear:both;"&gt;&lt;/div&gt;&lt;div id="pqp-container" class="pQp tallDetails" style="display:none;position:inherit;"&gt;';</pre>
+```php
+$return_output .='&lt;div style="clear:both;"&gt;&lt;/div&gt;&lt;div id="pqp-container" class="pQp tallDetails" style="display:none;position:inherit;"&gt;';
+```
 
 を 
 
-<pre class="brush: php; first-line: 305; html-script: true; title: ; notranslate" title="">$return_output .='&lt;div style="clear:both;"&gt;&lt;/div&gt;&lt;div id="pqp-container" class="pQp tallDetails" style="display:block;position:inherit;"&gt;';</pre>
+```php
+$return_output .='&lt;div style="clear:both;"&gt;&lt;/div&gt;&lt;div id="pqp-container" class="pQp tallDetails" style="display:block;position:inherit;"&gt;';
+```
 
 にします。 
 
@@ -36,11 +42,15 @@ trueってしたらプロファイラは常に表示されてて欲しいです�
 
 661行目の 
 
-<pre class="brush: php; first-line: 661; html-script: true; title: ; notranslate" title="">$return_output .='&lt;/div&gt;&lt;/div&gt;&lt;div id="openProfiler"&gt;&lt;a href="#" onclick="openProfiler();return false" title="Open Code Profiler"&gt;Code Profiler&lt;/a&gt;&lt;/div&gt;';</pre>
+```php
+$return_output .='&lt;/div&gt;&lt;/div&gt;&lt;div id="openProfiler"&gt;&lt;a href="#" onclick="openProfiler();return false" title="Open Code Profiler"&gt;Code Profiler&lt;/a&gt;&lt;/div&gt;';
+```
 
 を 
 
-<pre class="brush: php; first-line: 661; html-script: true; title: ; notranslate" title="">$return_output .='&lt;/div&gt;&lt;/div&gt;&lt;div id="openProfiler" style="display: none; "&gt;&lt;a href="#" onclick="openProfiler();return false" title="Open Code Profiler"&gt;Code Profiler&lt;/a&gt;&lt;/div&gt;';</pre>
+```php
+$return_output .='&lt;/div&gt;&lt;/div&gt;&lt;div id="openProfiler" style="display: none; "&gt;&lt;a href="#" onclick="openProfiler();return false" title="Open Code Profiler"&gt;Code Profiler&lt;/a&gt;&lt;/div&gt;';
+```
 
 にします。 
 

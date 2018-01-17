@@ -36,21 +36,21 @@ url = "2014-01-hover"
       非常に簡単です。<br /> 今までhoverの擬似クラスにしていた部分をhoverの擬似クラスのafter擬似要素にします。<br /> 文章だとちょっとわかりづらいのでコードで書くと、
     </p>
 
-    <pre class="brush: css; title: ; notranslate" title="">
+```css
 a:hover {
   ・・・
 }
-</pre>
+```
 
     <p>
       これを
     </p>
 
-    <pre class="brush: css; title: ; notranslate" title="">
+```css
 a:hover::after {
   ・・・
 }
-</pre>
+```
 
     <p>
       こうします。<br /> あとはちょっと装飾してやれば簡単に実現できます。

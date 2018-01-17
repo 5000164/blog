@@ -10,13 +10,15 @@ Mobile Safariでは数字を電話番号だとみなして、勝手に電話番�
 
 機能を無効化するには、ヘッダに下記のmetaタグを追加します。
 
-<pre class="brush: xml; title: ; notranslate" title="">&lt;meta name="format-detection" content="telephone=no"&gt;
-</pre>
+```html
+&lt;meta name="format-detection" content="telephone=no"&gt;
+```
 
 telto:でのリンクの貼り方は下記になります。
 
-<pre class="brush: xml; title: ; notranslate" title="">&lt;a href="telto:000-0000-0000"&gt;000-0000-0000&lt;/a&gt;
-</pre>
+```html
+&lt;a href="telto:000-0000-0000"&gt;000-0000-0000&lt;/a&gt;
+```
 
 参考サイト
 

@@ -22,10 +22,11 @@ url = "2014-03-wpf_practice_2"
 
 そして、位置を指定するためにCanvasタグで囲みます。
 
-<pre class="brush: xml; title: ; notranslate" title="">&lt;Canvas&gt;
+```
+&lt;Canvas&gt;
             &lt;Rectangle Name="pointer" Width="10" Height="10" Fill="Red" Canvas.Left="0" Canvas.Top="0" /&gt;
         &lt;/Canvas&gt;
-</pre>
+```
 
 これでXAML側はほぼ完成。
 
@@ -51,10 +52,11 @@ WindowにPreviewKeyDownをつけます。
 
 C#側で四角につけた名前から座標を取得します。
 
-<pre class="brush: csharp; title: ; notranslate" title="">// 現在地を取得
+```c#
+// 現在地を取得
             Double leftPosition = Canvas.GetLeft(this.pointer);
             Double topPosition = Canvas.GetTop(this.pointer);
-</pre>
+```
 
 [Canvas.GetLeft メソッド (System.Windows.Controls)](http://msdn.microsoft.com/ja-jp/library/system.windows.controls.canvas.getleft(v=vs.110).aspx)
 
@@ -62,7 +64,8 @@ C#側で四角につけた名前から座標を取得します。
 
 次は、方向キーが入力された方向へ動くために、入力されたキーを判断します。
 
-<pre class="brush: csharp; title: ; notranslate" title="">// 入力された方向キーの方向へ移動
+```c#
+// 入力された方向キーの方向へ移動
             if (e.Key == Key.Up)
                 // 上
             else if (e.Key == Key.Down)
@@ -71,7 +74,7 @@ C#側で四角につけた名前から座標を取得します。
                 // 左
             else if (e.Key == Key.Right)
                 // 右
-</pre>
+```
 
 [Key 列挙体 (System.Windows.Input)](http://msdn.microsoft.com/ja-jp/library/system.windows.input.key(v=vs.110).aspx)
 
@@ -79,7 +82,8 @@ C#側で四角につけた名前から座標を取得します。
 
 入力された方向がわかったら、その方向へ座標を移動してthis.pointerにセットします。
 
-<pre class="brush: csharp; title: ; notranslate" title="">// 入力された方向キーの方向へ移動
+```c#
+// 入力された方向キーの方向へ移動
             if (e.Key == Key.Up)
                 Canvas.SetTop(this.pointer, topPosition - 10);
             else if (e.Key == Key.Down)
@@ -88,7 +92,7 @@ C#側で四角につけた名前から座標を取得します。
                 Canvas.SetLeft(this.pointer, leftPosition - 10);
             else if (e.Key == Key.Right)
                 Canvas.SetLeft(this.pointer, leftPosition + 10);
-</pre>
+```
 
 [Canvas.SetLeft メソッド (System.Windows.Controls)](http://msdn.microsoft.com/ja-jp/library/system.windows.controls.canvas.setleft(v=vs.110).aspx)
 

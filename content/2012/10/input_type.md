@@ -20,15 +20,21 @@ HTML5からは入力文字をpatternで正規表現を利用して制御でき�
 
 ## というわけで、実演
 
-<pre class="brush: xml; gutter: false; title: ; notranslate" title="">&lt;input type=&quot;number&quot;&gt;</pre>
+```html
+&lt;input type=&quot;number&quot;&gt;
+```
 
 {{< figure src="/images/2012/10/number1.png" title="" >}}
 
-<pre class="brush: xml; gutter: false; title: ; notranslate" title="">&lt;input type=&quot;tel&quot;&gt;</pre>
+```html
+&lt;input type=&quot;tel&quot;&gt;
+```
 
 {{< figure src="/images/2012/10/tel1.png" title="" >}}
 
-<pre class="brush: xml; gutter: false; title: ; notranslate" title="">&lt;input type=&quot;text&quot; pattern=&quot;\d*&quot;&gt;</pre>
+```html
+&lt;input type=&quot;text&quot; pattern=&quot;\d*&quot;&gt;
+```
 
 {{< figure src="/images/2012/10/text1.png" title="" >}}
 

@@ -32,7 +32,7 @@ url = "2013-12-fluid"
       cssはこのようになっています。（関係のないプロパティは省略しています。）
     </p>
 
-    <pre class="brush: css; title: ; notranslate" title="">
+```css
 div {
   position: relative;
 }
@@ -45,7 +45,7 @@ table {
 p {
   margin: 0 0 0 250px;  
 }
-</pre>
+```
 
     <p>
       非常に簡単です。<br /> まず、tableをposition: absolute;で固定することを考えます。<br /> そのために親要素にposition: relative;を指定します。<br /> これでtableの位置が固定されるので、あとは右側のコンテンツにmarginを指定してtableと重ならないようにします。<br /> これだけです。
