@@ -12,10 +12,10 @@ ga('send', 'pageview');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=640">
     <title>Scala で JavaFX の Casvas の内容を画像として保存する | 5000164 is here</title>
-    <meta name="description" content="昨日の記事 の続きのようなもの。 Canvas で表示できるようになったから画像として保存する。 コードはこんな感じ。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18val c = new Canvas(300, 300) val gc = c.getGraphicsContext2D gc.setFill(Color.GRAY) gc.setFont(Font.font(&quot;Hiragino Sans&quot;, 20)) gc.fillText(&quot;テキスト&quot;, 50, 50) val wi = new WritableImage(300, 300) c.snapshot(null, wi) val ri = SwingFXUtils.fromFXImage(wi, null) val f = new File(&quot;test.png&quot;) ImageIO.write(ri, &quot;png&quot;, f) val root = new StackPane() root.getChildren.add(c) val scene = new Scene(root, 350, 350) primaryStage.setTitle(&quot;test&quot;) primaryStage.setScene(scene) primaryStage.show() これを実行するとこういう画像ファイルが生成される。 生成された画像 ざっくり説明 Canvas の内容を WritableImage に変換する。 これが Canvas が持ってる snapshot というメソッドでできるっぽい。 その後は RenderedImage に変換してファイルに保存する。 参考 Java-Buddy: Save Canvas to PNG file JavaFX 2 Snapshot as PNG Image | code.makery.ch ついでに保存場所選択 下記のコードを追加することで保存する場所を選べるようになった。 1 2val fc = new FileChooser val f = fc.showSaveDialog(primaryStage)">
+    <meta name="description" content="昨日の記事 の続きのようなもの。 Canvas で表示できるようになったから画像として保存する。 コードはこんな感じ。 123456789101112131415161718 val c = new Canvas(300, 300) val gc = c.getGraphicsContext2D gc.setFill(Color.GRAY) gc.setFont(Font.font(&#34;Hiragino Sans&#34;, 20)) gc.fillText(&#34;テキスト&#34;, 50, 50) val wi = new WritableImage(300, 300) c.snapshot(null, wi) val ri = SwingFXUtils.fromFXImage(wi, null) val f = new File(&#34;test.png&#34;) ImageIO.write(ri, &#34;png&#34;, f) val root = new StackPane() root.getChildren.add(c) val scene = new Scene(root, 350, 350) primaryStage.setTitle(&#34;test&#34;) primaryStage.setScene(scene) primaryStage.show() これを実行するとこういう画像ファイルが生成される。 生成された画像 ざっくり説明 Canvas の内容を WritableImage に変換する。 これが Canvas が持ってる snapshot というメソッドでできるっぽい。 その後は RenderedImage に変換してファイルに保存する。 参考 Java-Buddy: Save Canvas to PNG file JavaFX 2 Snapshot as PNG Image | code.makery.ch ついでに保存場所選択 下記のコードを追加することで保存する場所を選べるようになった。 12 val fc = new FileChooser val f = fc.showSaveDialog(primaryStage)">
     <link href="http://blog.5000164.jp/2018-01-scala_javafx_save_image/" rel="canonical">
     <meta property="og:title" content="Scala で JavaFX の Casvas の内容を画像として保存する | 5000164 is here">
-    <meta property="og:description" content="昨日の記事 の続きのようなもの。 Canvas で表示できるようになったから画像として保存する。 コードはこんな感じ。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18val c = new Canvas(300, 300) val gc = c.getGraphicsContext2D gc.setFill(Color.GRAY) gc.setFont(Font.font(&quot;Hiragino Sans&quot;, 20)) gc.fillText(&quot;テキスト&quot;, 50, 50) val wi = new WritableImage(300, 300) c.snapshot(null, wi) val ri = SwingFXUtils.fromFXImage(wi, null) val f = new File(&quot;test.png&quot;) ImageIO.write(ri, &quot;png&quot;, f) val root = new StackPane() root.getChildren.add(c) val scene = new Scene(root, 350, 350) primaryStage.setTitle(&quot;test&quot;) primaryStage.setScene(scene) primaryStage.show() これを実行するとこういう画像ファイルが生成される。 生成された画像 ざっくり説明 Canvas の内容を WritableImage に変換する。 これが Canvas が持ってる snapshot というメソッドでできるっぽい。 その後は RenderedImage に変換してファイルに保存する。 参考 Java-Buddy: Save Canvas to PNG file JavaFX 2 Snapshot as PNG Image | code.makery.ch ついでに保存場所選択 下記のコードを追加することで保存する場所を選べるようになった。 1 2val fc = new FileChooser val f = fc.showSaveDialog(primaryStage)">
+    <meta property="og:description" content="昨日の記事 の続きのようなもの。 Canvas で表示できるようになったから画像として保存する。 コードはこんな感じ。 123456789101112131415161718 val c = new Canvas(300, 300) val gc = c.getGraphicsContext2D gc.setFill(Color.GRAY) gc.setFont(Font.font(&#34;Hiragino Sans&#34;, 20)) gc.fillText(&#34;テキスト&#34;, 50, 50) val wi = new WritableImage(300, 300) c.snapshot(null, wi) val ri = SwingFXUtils.fromFXImage(wi, null) val f = new File(&#34;test.png&#34;) ImageIO.write(ri, &#34;png&#34;, f) val root = new StackPane() root.getChildren.add(c) val scene = new Scene(root, 350, 350) primaryStage.setTitle(&#34;test&#34;) primaryStage.setScene(scene) primaryStage.show() これを実行するとこういう画像ファイルが生成される。 生成された画像 ざっくり説明 Canvas の内容を WritableImage に変換する。 これが Canvas が持ってる snapshot というメソッドでできるっぽい。 その後は RenderedImage に変換してファイルに保存する。 参考 Java-Buddy: Save Canvas to PNG file JavaFX 2 Snapshot as PNG Image | code.makery.ch ついでに保存場所選択 下記のコードを追加することで保存する場所を選べるようになった。 12 val fc = new FileChooser val f = fc.showSaveDialog(primaryStage)">
     <meta property="og:url" content="http://blog.5000164.jp/2018-01-scala_javafx_save_image/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@5000164">
@@ -105,7 +105,7 @@ a:visited {
 
 /* 記事ページの設定 */
 .title {
-    margin: 40px auto;
+    margin: 40px 0;
 }
 
 h1 {
@@ -122,7 +122,7 @@ h1 {
 }
 
 .content {
-    margin: 40px auto;
+    margin: 40px 0;
 }
 
 .content p {
@@ -205,108 +205,25 @@ blockquote > p::before {
     border-radius: 8px;
 }
 
-.highlighttable {
-    table-layout: fixed;
-    width: 100%;
-    background-color: #272822;
-    border-spacing: 0;
-}
-
-.highlighttable > tbody {
-    display: block;
-    width: 600px;
-    margin: auto;
+.highlight {
+    margin: 40px 0;
     background-color: #272822;
 }
 
-.highlighttable .linenos {
-    width: 22px;
-    padding-left: 2px;
-    padding-right: 6px;
-    color: #f8f8f2;
-    text-align: right;
+.highlight > div {
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-.highlighttable .code {
-    width: 566px;
-    padding-left: 2px;
-    padding-right: 2px;
-    overflow-x: scroll;
+.highlight table {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
 }
 
-.highlighttable .highlight {
-    width: 566px;
+.highlight tbody {
+    max-width: 100%;
 }
-.highlight .hll { background-color: #49483e }
-.highlight  { background: #272822; color: #f8f8f2 }
-.highlight .c { color: #75715e } /* Comment */
-.highlight .err { color: #960050; background-color: #1e0010 } /* Error */
-.highlight .k { color: #66d9ef } /* Keyword */
-.highlight .l { color: #ae81ff } /* Literal */
-.highlight .n { color: #f8f8f2 } /* Name */
-.highlight .o { color: #f92672 } /* Operator */
-.highlight .p { color: #f8f8f2 } /* Punctuation */
-.highlight .ch { color: #75715e } /* Comment.Hashbang */
-.highlight .cm { color: #75715e } /* Comment.Multiline */
-.highlight .cp { color: #75715e } /* Comment.Preproc */
-.highlight .cpf { color: #75715e } /* Comment.PreprocFile */
-.highlight .c1 { color: #75715e } /* Comment.Single */
-.highlight .cs { color: #75715e } /* Comment.Special */
-.highlight .gd { color: #f92672 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gi { color: #a6e22e } /* Generic.Inserted */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #75715e } /* Generic.Subheading */
-.highlight .kc { color: #66d9ef } /* Keyword.Constant */
-.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
-.highlight .kn { color: #f92672 } /* Keyword.Namespace */
-.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
-.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
-.highlight .kt { color: #66d9ef } /* Keyword.Type */
-.highlight .ld { color: #e6db74 } /* Literal.Date */
-.highlight .m { color: #ae81ff } /* Literal.Number */
-.highlight .s { color: #e6db74 } /* Literal.String */
-.highlight .na { color: #a6e22e } /* Name.Attribute */
-.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
-.highlight .nc { color: #a6e22e } /* Name.Class */
-.highlight .no { color: #66d9ef } /* Name.Constant */
-.highlight .nd { color: #a6e22e } /* Name.Decorator */
-.highlight .ni { color: #f8f8f2 } /* Name.Entity */
-.highlight .ne { color: #a6e22e } /* Name.Exception */
-.highlight .nf { color: #a6e22e } /* Name.Function */
-.highlight .nl { color: #f8f8f2 } /* Name.Label */
-.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
-.highlight .nx { color: #a6e22e } /* Name.Other */
-.highlight .py { color: #f8f8f2 } /* Name.Property */
-.highlight .nt { color: #f92672 } /* Name.Tag */
-.highlight .nv { color: #f8f8f2 } /* Name.Variable */
-.highlight .ow { color: #f92672 } /* Operator.Word */
-.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
-.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
-.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
-.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
-.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
-.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
-.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
-.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
-.highlight .sc { color: #e6db74 } /* Literal.String.Char */
-.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
-.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
-.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
-.highlight .se { color: #ae81ff } /* Literal.String.Escape */
-.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
-.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
-.highlight .sx { color: #e6db74 } /* Literal.String.Other */
-.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
-.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
-.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
-.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
-.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
-.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
-.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
-.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
-.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */
 </style>
     <link href="/favicon.ico" rel="icon">
     <meta name="generator" content="Hugo 0.32.2" />
@@ -327,43 +244,30 @@ blockquote > p::before {
 <p><a href="/2018-01-scala_javafx_generate_image/">昨日の記事</a> の続きのようなもの。<br />
 <code>Canvas</code> で表示できるようになったから画像として保存する。<br />
 コードはこんな感じ。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-scala" data-lang="scala"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">val</span> <span class="n">c</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Canvas</span><span class="o">(</span><span class="mi">300</span><span class="o">,</span> <span class="mi">300</span><span class="o">)</span>
-<span class="k">val</span> <span class="n">gc</span> <span class="k">=</span> <span class="n">c</span><span class="o">.</span><span class="n">getGraphicsContext2D</span>
-<span class="n">gc</span><span class="o">.</span><span class="n">setFill</span><span class="o">(</span><span class="nc">Color</span><span class="o">.</span><span class="nc">GRAY</span><span class="o">)</span>
-<span class="n">gc</span><span class="o">.</span><span class="n">setFont</span><span class="o">(</span><span class="nc">Font</span><span class="o">.</span><span class="n">font</span><span class="o">(</span><span class="s">&quot;Hiragino Sans&quot;</span><span class="o">,</span> <span class="mi">20</span><span class="o">))</span>
-<span class="n">gc</span><span class="o">.</span><span class="n">fillText</span><span class="o">(</span><span class="s">&quot;テキスト&quot;</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">50</span><span class="o">)</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">14</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">15</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">16</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">17</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">18</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> c <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Canvas</span><span style="color:#f92672">(</span><span style="color:#ae81ff">300</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">300</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">val</span> gc <span style="color:#66d9ef">=</span> c<span style="color:#f92672">.</span>getGraphicsContext2D
+gc<span style="color:#f92672">.</span>setFill<span style="color:#f92672">(</span><span style="color:#a6e22e">Color</span><span style="color:#f92672">.</span><span style="color:#a6e22e">GRAY</span><span style="color:#f92672">)</span>
+gc<span style="color:#f92672">.</span>setFont<span style="color:#f92672">(</span><span style="color:#a6e22e">Font</span><span style="color:#f92672">.</span>font<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hiragino Sans&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">20</span><span style="color:#f92672">))</span>
+gc<span style="color:#f92672">.</span>fillText<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;テキスト&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">50</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">50</span><span style="color:#f92672">)</span>
 
-<span class="k">val</span> <span class="n">wi</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">WritableImage</span><span class="o">(</span><span class="mi">300</span><span class="o">,</span> <span class="mi">300</span><span class="o">)</span>
-<span class="n">c</span><span class="o">.</span><span class="n">snapshot</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="n">wi</span><span class="o">)</span>
-<span class="k">val</span> <span class="n">ri</span> <span class="k">=</span> <span class="nc">SwingFXUtils</span><span class="o">.</span><span class="n">fromFXImage</span><span class="o">(</span><span class="n">wi</span><span class="o">,</span> <span class="kc">null</span><span class="o">)</span>
-<span class="k">val</span> <span class="n">f</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="s">&quot;test.png&quot;</span><span class="o">)</span>
-<span class="nc">ImageIO</span><span class="o">.</span><span class="n">write</span><span class="o">(</span><span class="n">ri</span><span class="o">,</span> <span class="s">&quot;png&quot;</span><span class="o">,</span> <span class="n">f</span><span class="o">)</span>
+<span style="color:#66d9ef">val</span> wi <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">WritableImage</span><span style="color:#f92672">(</span><span style="color:#ae81ff">300</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">300</span><span style="color:#f92672">)</span>
+c<span style="color:#f92672">.</span>snapshot<span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> wi<span style="color:#f92672">)</span>
+<span style="color:#66d9ef">val</span> ri <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">SwingFXUtils</span><span style="color:#f92672">.</span>fromFXImage<span style="color:#f92672">(</span>wi<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">val</span> f <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">File</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;test.png&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#a6e22e">ImageIO</span><span style="color:#f92672">.</span>write<span style="color:#f92672">(</span>ri<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;png&#34;</span><span style="color:#f92672">,</span> f<span style="color:#f92672">)</span>
 
-<span class="k">val</span> <span class="n">root</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">StackPane</span><span class="o">()</span>
-<span class="n">root</span><span class="o">.</span><span class="n">getChildren</span><span class="o">.</span><span class="n">add</span><span class="o">(</span><span class="n">c</span><span class="o">)</span>
-<span class="k">val</span> <span class="n">scene</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Scene</span><span class="o">(</span><span class="n">root</span><span class="o">,</span> <span class="mi">350</span><span class="o">,</span> <span class="mi">350</span><span class="o">)</span>
-<span class="n">primaryStage</span><span class="o">.</span><span class="n">setTitle</span><span class="o">(</span><span class="s">&quot;test&quot;</span><span class="o">)</span>
-<span class="n">primaryStage</span><span class="o">.</span><span class="n">setScene</span><span class="o">(</span><span class="n">scene</span><span class="o">)</span>
-<span class="n">primaryStage</span><span class="o">.</span><span class="n">show</span><span class="o">()</span>
-</code></pre></div>
-</td></tr></table>
+<span style="color:#66d9ef">val</span> root <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">StackPane</span><span style="color:#f92672">()</span>
+root<span style="color:#f92672">.</span>getChildren<span style="color:#f92672">.</span>add<span style="color:#f92672">(</span>c<span style="color:#f92672">)</span>
+<span style="color:#66d9ef">val</span> scene <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Scene</span><span style="color:#f92672">(</span>root<span style="color:#f92672">,</span> <span style="color:#ae81ff">350</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">350</span><span style="color:#f92672">)</span>
+primaryStage<span style="color:#f92672">.</span>setTitle<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">)</span>
+primaryStage<span style="color:#f92672">.</span>setScene<span style="color:#f92672">(</span>scene<span style="color:#f92672">)</span>
+primaryStage<span style="color:#f92672">.</span>show<span style="color:#f92672">()</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>これを実行するとこういう画像ファイルが生成される。</p>
 
 
@@ -396,11 +300,14 @@ blockquote > p::before {
 <h2 id="ついでに保存場所選択">ついでに保存場所選択</h2>
 
 <p>下記のコードを追加することで保存する場所を選べるようになった。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-scala" data-lang="scala">1
-2</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">val</span> <span class="n">fc</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">FileChooser</span>
-<span class="k">val</span> <span class="n">f</span> <span class="k">=</span> <span class="n">fc</span><span class="o">.</span><span class="n">showSaveDialog</span><span class="o">(</span><span class="n">primaryStage</span><span class="o">)</span>
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> fc <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FileChooser</span>
+<span style="color:#66d9ef">val</span> f <span style="color:#66d9ef">=</span> fc<span style="color:#f92672">.</span>showSaveDialog<span style="color:#f92672">(</span>primaryStage<span style="color:#f92672">)</span></code></pre></td></tr></table>
+</div>
+</div>
     </div>
 </article>
 <footer>

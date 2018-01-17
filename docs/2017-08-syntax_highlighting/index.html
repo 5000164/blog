@@ -12,10 +12,10 @@ ga('send', 'pageview');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=640">
     <title>Hugo でシンタックスハイライトを使う | 5000164 is here</title>
-    <meta name="description" content="結論 シンタックスハイライト用の css をテーマで読み込んでおく config.toml に下記の設定を追加 1 2 3 4 5pygmentscodefences = true pygmentsCodeFencesGuessSyntax = true pygmentsStyle = &quot;monokai&quot; pygmentsUseClasses = true pygmentsoptions = &quot;linenos=inline&quot; 背景 コードを見やすくしたいからシンタックスハイライトを使おうと思った。 やってみたら思ったよりもできなかった。 なんか疲れたのでメモ。 手順 Pygments をインストールする シンタックスハイライトするのに必要なやつ。 何も考えずに入れる。 1sudo easy_install Pygments シンタックスハイライト用の css を生成する カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。 クラスで指定する場合は css を事前に生成しておいて読むこんでおく必要がある。 下記のコマンドで css を生成する。 デフォルトで用意されていないカラースキーマの使い方がわからなかったので今回は monokai を使う。 1pygmentize -f html -S monokai -a .highlight &gt; monokai.css 生成した css をテーマで読み込む テーマの static ディレクトリに css を置いて header で読み込む。 シンタックスハイライトを使うように設定する">
+    <meta name="description" content="結論 シンタックスハイライト用の css をテーマで読み込んでおく config.toml に下記の設定を追加 12345 pygmentscodefences = true pygmentsCodeFencesGuessSyntax = true pygmentsStyle = &#34;monokai&#34; pygmentsUseClasses = true pygmentsoptions = &#34;linenos=inline&#34; 背景 コードを見やすくしたいからシンタックスハイライトを使おうと思った。 やってみたら思ったよりもできなかった。 なんか疲れたのでメモ。 手順 Pygments をインストールする シンタックスハイライトするのに必要なやつ。 何も考えずに入れる。 1 sudo easy_install Pygments シンタックスハイライト用の css を生成する カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。 クラスで指定する場合は css を事前に生成しておいて読むこんでおく必要がある。 下記のコマンドで css を生成する。 デフォルトで用意されていないカラースキーマの使い方がわからなかったので今回は monokai を使う。 1 pygmentize -f html -S monokai -a .highlight &gt; monokai.css 生成した css をテーマで読み込む テーマの static ディレクトリに css を置いて header で読み込む。 シンタックスハイライトを使うように設定する config.toml">
     <link href="http://blog.5000164.jp/2017-08-syntax_highlighting/" rel="canonical">
     <meta property="og:title" content="Hugo でシンタックスハイライトを使う | 5000164 is here">
-    <meta property="og:description" content="結論 シンタックスハイライト用の css をテーマで読み込んでおく config.toml に下記の設定を追加 1 2 3 4 5pygmentscodefences = true pygmentsCodeFencesGuessSyntax = true pygmentsStyle = &quot;monokai&quot; pygmentsUseClasses = true pygmentsoptions = &quot;linenos=inline&quot; 背景 コードを見やすくしたいからシンタックスハイライトを使おうと思った。 やってみたら思ったよりもできなかった。 なんか疲れたのでメモ。 手順 Pygments をインストールする シンタックスハイライトするのに必要なやつ。 何も考えずに入れる。 1sudo easy_install Pygments シンタックスハイライト用の css を生成する カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。 クラスで指定する場合は css を事前に生成しておいて読むこんでおく必要がある。 下記のコマンドで css を生成する。 デフォルトで用意されていないカラースキーマの使い方がわからなかったので今回は monokai を使う。 1pygmentize -f html -S monokai -a .highlight &gt; monokai.css 生成した css をテーマで読み込む テーマの static ディレクトリに css を置いて header で読み込む。 シンタックスハイライトを使うように設定する">
+    <meta property="og:description" content="結論 シンタックスハイライト用の css をテーマで読み込んでおく config.toml に下記の設定を追加 12345 pygmentscodefences = true pygmentsCodeFencesGuessSyntax = true pygmentsStyle = &#34;monokai&#34; pygmentsUseClasses = true pygmentsoptions = &#34;linenos=inline&#34; 背景 コードを見やすくしたいからシンタックスハイライトを使おうと思った。 やってみたら思ったよりもできなかった。 なんか疲れたのでメモ。 手順 Pygments をインストールする シンタックスハイライトするのに必要なやつ。 何も考えずに入れる。 1 sudo easy_install Pygments シンタックスハイライト用の css を生成する カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。 クラスで指定する場合は css を事前に生成しておいて読むこんでおく必要がある。 下記のコマンドで css を生成する。 デフォルトで用意されていないカラースキーマの使い方がわからなかったので今回は monokai を使う。 1 pygmentize -f html -S monokai -a .highlight &gt; monokai.css 生成した css をテーマで読み込む テーマの static ディレクトリに css を置いて header で読み込む。 シンタックスハイライトを使うように設定する config.toml">
     <meta property="og:url" content="http://blog.5000164.jp/2017-08-syntax_highlighting/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@5000164">
@@ -105,7 +105,7 @@ a:visited {
 
 /* 記事ページの設定 */
 .title {
-    margin: 40px auto;
+    margin: 40px 0;
 }
 
 h1 {
@@ -122,7 +122,7 @@ h1 {
 }
 
 .content {
-    margin: 40px auto;
+    margin: 40px 0;
 }
 
 .content p {
@@ -205,108 +205,25 @@ blockquote > p::before {
     border-radius: 8px;
 }
 
-.highlighttable {
-    table-layout: fixed;
-    width: 100%;
-    background-color: #272822;
-    border-spacing: 0;
-}
-
-.highlighttable > tbody {
-    display: block;
-    width: 600px;
-    margin: auto;
+.highlight {
+    margin: 40px 0;
     background-color: #272822;
 }
 
-.highlighttable .linenos {
-    width: 22px;
-    padding-left: 2px;
-    padding-right: 6px;
-    color: #f8f8f2;
-    text-align: right;
+.highlight > div {
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-.highlighttable .code {
-    width: 566px;
-    padding-left: 2px;
-    padding-right: 2px;
-    overflow-x: scroll;
+.highlight table {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
 }
 
-.highlighttable .highlight {
-    width: 566px;
+.highlight tbody {
+    max-width: 100%;
 }
-.highlight .hll { background-color: #49483e }
-.highlight  { background: #272822; color: #f8f8f2 }
-.highlight .c { color: #75715e } /* Comment */
-.highlight .err { color: #960050; background-color: #1e0010 } /* Error */
-.highlight .k { color: #66d9ef } /* Keyword */
-.highlight .l { color: #ae81ff } /* Literal */
-.highlight .n { color: #f8f8f2 } /* Name */
-.highlight .o { color: #f92672 } /* Operator */
-.highlight .p { color: #f8f8f2 } /* Punctuation */
-.highlight .ch { color: #75715e } /* Comment.Hashbang */
-.highlight .cm { color: #75715e } /* Comment.Multiline */
-.highlight .cp { color: #75715e } /* Comment.Preproc */
-.highlight .cpf { color: #75715e } /* Comment.PreprocFile */
-.highlight .c1 { color: #75715e } /* Comment.Single */
-.highlight .cs { color: #75715e } /* Comment.Special */
-.highlight .gd { color: #f92672 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gi { color: #a6e22e } /* Generic.Inserted */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #75715e } /* Generic.Subheading */
-.highlight .kc { color: #66d9ef } /* Keyword.Constant */
-.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
-.highlight .kn { color: #f92672 } /* Keyword.Namespace */
-.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
-.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
-.highlight .kt { color: #66d9ef } /* Keyword.Type */
-.highlight .ld { color: #e6db74 } /* Literal.Date */
-.highlight .m { color: #ae81ff } /* Literal.Number */
-.highlight .s { color: #e6db74 } /* Literal.String */
-.highlight .na { color: #a6e22e } /* Name.Attribute */
-.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
-.highlight .nc { color: #a6e22e } /* Name.Class */
-.highlight .no { color: #66d9ef } /* Name.Constant */
-.highlight .nd { color: #a6e22e } /* Name.Decorator */
-.highlight .ni { color: #f8f8f2 } /* Name.Entity */
-.highlight .ne { color: #a6e22e } /* Name.Exception */
-.highlight .nf { color: #a6e22e } /* Name.Function */
-.highlight .nl { color: #f8f8f2 } /* Name.Label */
-.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
-.highlight .nx { color: #a6e22e } /* Name.Other */
-.highlight .py { color: #f8f8f2 } /* Name.Property */
-.highlight .nt { color: #f92672 } /* Name.Tag */
-.highlight .nv { color: #f8f8f2 } /* Name.Variable */
-.highlight .ow { color: #f92672 } /* Operator.Word */
-.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
-.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
-.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
-.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
-.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
-.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
-.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
-.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
-.highlight .sc { color: #e6db74 } /* Literal.String.Char */
-.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
-.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
-.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
-.highlight .se { color: #ae81ff } /* Literal.String.Escape */
-.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
-.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
-.highlight .sx { color: #e6db74 } /* Literal.String.Other */
-.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
-.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
-.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
-.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
-.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
-.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
-.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
-.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
-.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */
 </style>
     <link href="/favicon.ico" rel="icon">
     <meta name="generator" content="Hugo 0.32.2" />
@@ -330,17 +247,17 @@ blockquote > p::before {
 <li>シンタックスハイライト用の css をテーマで読み込んでおく</li>
 <li><code>config.toml</code> に下記の設定を追加</li>
 </ul>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>pygmentscodefences = true
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">5</span></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">pygmentscodefences = true
 pygmentsCodeFencesGuessSyntax = true
-pygmentsStyle = &quot;monokai&quot;
+pygmentsStyle = &#34;monokai&#34;
 pygmentsUseClasses = true
-pygmentsoptions = &quot;linenos=inline&quot;
-</pre></div>
-</td></tr></table>
+pygmentsoptions = &#34;linenos=inline&#34;</pre></td></tr></table>
+</div>
+</div>
 <h2 id="背景">背景</h2>
 
 <p>コードを見やすくしたいからシンタックスハイライトを使おうと思った。<br />
@@ -353,18 +270,26 @@ pygmentsoptions = &quot;linenos=inline&quot;
 
 <p>シンタックスハイライトするのに必要なやつ。<br />
 何も考えずに入れる。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-bash" data-lang="bash">1</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>sudo easy_install Pygments
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo easy_install Pygments</code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="シンタックスハイライト用の-css-を生成する">シンタックスハイライト用の css を生成する</h2>
 
 <p>カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。<br />
 クラスで指定する場合は css を事前に生成しておいて読むこんでおく必要がある。<br />
 下記のコマンドで css を生成する。<br />
 デフォルトで用意されていないカラースキーマの使い方がわからなかったので今回は monokai を使う。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-bash" data-lang="bash">1</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>pygmentize -f html -S monokai -a .highlight &gt; monokai.css
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pygmentize -f html -S monokai -a .highlight &gt; monokai.css</code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="生成した-css-をテーマで読み込む">生成した css をテーマで読み込む</h2>
 
 <p>テーマの static ディレクトリに css を置いて header で読み込む。</p>
@@ -375,17 +300,17 @@ pygmentsoptions = &quot;linenos=inline&quot;
 <code>pygmentscodefences</code> の設定が公式ドキュメントに見つからなくて罠だった。<br />
 これを <code>true</code> にしないとバッククオート 3 つでシンタックスハイライトを有効にする機能が動かない。<br />
 <code>pygmentsoptions</code> は Pygments のオプションを指定するところで、ここで見た目を変えたりできる。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>pygmentscodefences = true
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">5</span></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">pygmentscodefences = true
 pygmentsCodeFencesGuessSyntax = true
-pygmentsStyle = &quot;monokai&quot;
+pygmentsStyle = &#34;monokai&#34;
 pygmentsUseClasses = true
-pygmentsoptions = &quot;linenos=inline&quot;
-</pre></div>
-</td></tr></table>
+pygmentsoptions = &#34;linenos=inline&#34;</pre></td></tr></table>
+</div>
+</div>
 <h2 id="感想">感想</h2>
 
 <p>スッとできると思ったら意外とひっかかって疲れた。<br />

@@ -105,7 +105,7 @@ a:visited {
 
 /* 記事ページの設定 */
 .title {
-    margin: 40px auto;
+    margin: 40px 0;
 }
 
 h1 {
@@ -122,7 +122,7 @@ h1 {
 }
 
 .content {
-    margin: 40px auto;
+    margin: 40px 0;
 }
 
 .content p {
@@ -205,108 +205,25 @@ blockquote > p::before {
     border-radius: 8px;
 }
 
-.highlighttable {
-    table-layout: fixed;
-    width: 100%;
-    background-color: #272822;
-    border-spacing: 0;
-}
-
-.highlighttable > tbody {
-    display: block;
-    width: 600px;
-    margin: auto;
+.highlight {
+    margin: 40px 0;
     background-color: #272822;
 }
 
-.highlighttable .linenos {
-    width: 22px;
-    padding-left: 2px;
-    padding-right: 6px;
-    color: #f8f8f2;
-    text-align: right;
+.highlight > div {
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-.highlighttable .code {
-    width: 566px;
-    padding-left: 2px;
-    padding-right: 2px;
-    overflow-x: scroll;
+.highlight table {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
 }
 
-.highlighttable .highlight {
-    width: 566px;
+.highlight tbody {
+    max-width: 100%;
 }
-.highlight .hll { background-color: #49483e }
-.highlight  { background: #272822; color: #f8f8f2 }
-.highlight .c { color: #75715e } /* Comment */
-.highlight .err { color: #960050; background-color: #1e0010 } /* Error */
-.highlight .k { color: #66d9ef } /* Keyword */
-.highlight .l { color: #ae81ff } /* Literal */
-.highlight .n { color: #f8f8f2 } /* Name */
-.highlight .o { color: #f92672 } /* Operator */
-.highlight .p { color: #f8f8f2 } /* Punctuation */
-.highlight .ch { color: #75715e } /* Comment.Hashbang */
-.highlight .cm { color: #75715e } /* Comment.Multiline */
-.highlight .cp { color: #75715e } /* Comment.Preproc */
-.highlight .cpf { color: #75715e } /* Comment.PreprocFile */
-.highlight .c1 { color: #75715e } /* Comment.Single */
-.highlight .cs { color: #75715e } /* Comment.Special */
-.highlight .gd { color: #f92672 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gi { color: #a6e22e } /* Generic.Inserted */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #75715e } /* Generic.Subheading */
-.highlight .kc { color: #66d9ef } /* Keyword.Constant */
-.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
-.highlight .kn { color: #f92672 } /* Keyword.Namespace */
-.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
-.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
-.highlight .kt { color: #66d9ef } /* Keyword.Type */
-.highlight .ld { color: #e6db74 } /* Literal.Date */
-.highlight .m { color: #ae81ff } /* Literal.Number */
-.highlight .s { color: #e6db74 } /* Literal.String */
-.highlight .na { color: #a6e22e } /* Name.Attribute */
-.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
-.highlight .nc { color: #a6e22e } /* Name.Class */
-.highlight .no { color: #66d9ef } /* Name.Constant */
-.highlight .nd { color: #a6e22e } /* Name.Decorator */
-.highlight .ni { color: #f8f8f2 } /* Name.Entity */
-.highlight .ne { color: #a6e22e } /* Name.Exception */
-.highlight .nf { color: #a6e22e } /* Name.Function */
-.highlight .nl { color: #f8f8f2 } /* Name.Label */
-.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
-.highlight .nx { color: #a6e22e } /* Name.Other */
-.highlight .py { color: #f8f8f2 } /* Name.Property */
-.highlight .nt { color: #f92672 } /* Name.Tag */
-.highlight .nv { color: #f8f8f2 } /* Name.Variable */
-.highlight .ow { color: #f92672 } /* Operator.Word */
-.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
-.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
-.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
-.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
-.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
-.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
-.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
-.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
-.highlight .sc { color: #e6db74 } /* Literal.String.Char */
-.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
-.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
-.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
-.highlight .se { color: #ae81ff } /* Literal.String.Escape */
-.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
-.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
-.highlight .sx { color: #e6db74 } /* Literal.String.Other */
-.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
-.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
-.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
-.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
-.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
-.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
-.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
-.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
-.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */
 </style>
     <link href="/favicon.ico" rel="icon">
     <meta name="generator" content="Hugo 0.32.2" />
@@ -365,33 +282,57 @@ Twitter のことを最近いいなと感じ始めていたのだけれど投稿
 </ul>
 
 <p>情報をうまく探すことが出来なくて動かすまでに少し時間がかかった。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-scala" data-lang="scala">1</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">class</span> <span class="nc">OperatorSpec</span> <span class="k">extends</span> <span class="nc">FreeSpec</span> <span class="k">with</span> <span class="nc">MockitoSugar</span> <span class="o">{</span>
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OperatorSpec</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">FreeSpec</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">MockitoSugar</span> <span style="color:#f92672">{</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>のように MockitoSugar をミックスインしたり、</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-scala" data-lang="scala">1</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">import</span> <span class="nn">org.mockito.Mockito.</span><span class="o">{</span><span class="n">never</span><span class="o">,</span> <span class="n">verify</span><span class="o">,</span> <span class="n">when</span><span class="o">}</span>
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">import</span> org.mockito.Mockito.<span style="color:#f92672">{</span>never<span style="color:#f92672">,</span> verify<span style="color:#f92672">,</span> when<span style="color:#f92672">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>のように verify をインポートしたりすることで動くようになった。</p>
 
 <p>しかし、モックの返り値を設定する thenReturn に</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-scala" data-lang="scala">1</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="n">when</span><span class="o">(</span><span class="n">mockTwitter</span><span class="o">.</span><span class="n">tweet</span><span class="o">(</span><span class="s">&quot;text&quot;</span><span class="o">)).</span><span class="n">thenReturn</span><span class="o">(</span><span class="nc">Right</span><span class="o">(</span><span class="nc">Unit</span><span class="o">))</span>
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">when<span style="color:#f92672">(</span>mockTwitter<span style="color:#f92672">.</span>tweet<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;text&#34;</span><span style="color:#f92672">)).</span>thenReturn<span style="color:#f92672">(</span><span style="color:#a6e22e">Right</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Unit</span><span style="color:#f92672">))</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>のように Unit を渡すとなぜかコンパイルエラーになってしまい動かなくなったので、</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-scala" data-lang="scala">1</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="n">when</span><span class="o">(</span><span class="n">mockTwitter</span><span class="o">.</span><span class="n">tweet</span><span class="o">(</span><span class="s">&quot;text&quot;</span><span class="o">)).</span><span class="n">thenReturn</span><span class="o">(</span><span class="nc">Right</span><span class="o">())</span>
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">when<span style="color:#f92672">(</span>mockTwitter<span style="color:#f92672">.</span>tweet<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;text&#34;</span><span style="color:#f92672">)).</span>thenReturn<span style="color:#f92672">(</span><span style="color:#a6e22e">Right</span><span style="color:#f92672">())</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>のように書いている。</p>
 
 <p>また、</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-scala" data-lang="scala">1</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="n">verify</span><span class="o">(</span><span class="n">mockTwitter</span><span class="o">).</span><span class="n">tweet</span><span class="o">(</span><span class="s">&quot;text&quot;</span><span class="o">)</span>
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">verify<span style="color:#f92672">(</span>mockTwitter<span style="color:#f92672">).</span>tweet<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;text&#34;</span><span style="color:#f92672">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>はちゃんと引数の検証ができて想定していない値が渡されたらテストがコケるのに対して、</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-scala" data-lang="scala">1</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="n">verify</span><span class="o">(</span><span class="n">mockClient</span><span class="o">).</span><span class="n">sendMessage</span><span class="o">(</span><span class="s">&quot;channel&quot;</span><span class="o">,</span> <span class="s">&quot;message&quot;</span><span class="o">)</span>
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">verify<span style="color:#f92672">(</span>mockClient<span style="color:#f92672">).</span>sendMessage<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;channel&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;message&#34;</span><span style="color:#f92672">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>の方は引数の値に関わらず、関数が実行されていればテストが通ってしまう状態になっている。<br />
 関数が実行されていなければテストはコケる。</p>
 
@@ -405,15 +346,16 @@ Twitter のことを最近いいなと感じ始めていたのだけれど投稿
 副作用がある関数の返り値をどうやって表現するか、 Boolean にするか Option にするかライブラリが投げるエラーをそのままキャッチするか、どれもしっくりこないと思っていて調べていたら Either を見つけたので使ってみた。<br />
 Either だと、エラーが起きたら文字列を返して、正常終了したら何も返さない、ということが表現できた。<br />
 ツイートに成功したらそのままで、ツイートに失敗したら失敗した旨を Slack に投げたいと思っていたので、</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-scala" data-lang="scala">1
-2
-3
-4</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="n">twitter</span><span class="o">.</span><span class="n">tweet</span><span class="o">(</span><span class="nc">Command</span><span class="o">.</span><span class="n">content</span><span class="o">(</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">))</span> <span class="k">match</span> <span class="o">{</span>
-  <span class="k">case</span> <span class="nc">Right</span><span class="o">(</span><span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span>
-  <span class="k">case</span> <span class="nc">Left</span><span class="o">(</span><span class="n">error_message</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">client</span><span class="o">.</span><span class="n">sendMessage</span><span class="o">(</span><span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="o">,</span> <span class="n">error_message</span><span class="o">)</span>
-<span class="o">}</span>
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">twitter<span style="color:#f92672">.</span>tweet<span style="color:#f92672">(</span><span style="color:#a6e22e">Command</span><span style="color:#f92672">.</span>content<span style="color:#f92672">(</span>message<span style="color:#f92672">.</span>text<span style="color:#f92672">))</span> <span style="color:#66d9ef">match</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">Right</span><span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span>
+  <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">Left</span><span style="color:#f92672">(</span>error_message<span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> client<span style="color:#f92672">.</span>sendMessage<span style="color:#f92672">(</span>message<span style="color:#f92672">.</span>channel<span style="color:#f92672">,</span> error_message<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>のように表現することができた。</p>
 
 <h2 id="コマンドを増やしやすいような設計">コマンドを増やしやすいような設計</h2>
@@ -439,17 +381,17 @@ DDD はまだ全然勉強できておらず、これからたくさん学ぶ必�
 
 <p>というように分けた。<br />
 判定したコマンドは case object としてコントローラーに返し、コントローラー側でパターンマッチを行って実際に処理を行うコマンドに投げる、という形にすることで、コマンドが追加しやすいようにした。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-scala" data-lang="scala">1
-2
-3
-4
-5</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="c1">// コマンドに応じて処理を行う</span>
-<span class="nc">Command</span><span class="o">.</span><span class="n">dispatch</span><span class="o">(</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">)</span> <span class="k">match</span> <span class="o">{</span>
-  <span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">TweetCommand</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="c1">// コマンドの内容を書く</span>
-  <span class="c1">// 新しいコマンドを追加する時はここに書いていけばいい</span>
-<span class="o">}</span>
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">5</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#75715e">// コマンドに応じて処理を行う
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">Command</span><span style="color:#f92672">.</span>dispatch<span style="color:#f92672">(</span>message<span style="color:#f92672">.</span>text<span style="color:#f92672">)</span> <span style="color:#66d9ef">match</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">Some</span><span style="color:#f92672">(</span><span style="color:#a6e22e">TweetCommand</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#75715e">// コマンドの内容を書く
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 新しいコマンドを追加する時はここに書いていけばいい
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="まとめ">まとめ</h2>
 
 <p>Slack から Twitter に投稿できるようになって便利。<br />

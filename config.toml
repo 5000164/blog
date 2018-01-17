@@ -7,12 +7,10 @@ theme = "divided"
 publishDir = "docs"
 summaryLength = 400
 
-pygmentsUseClassic = true
+pygmentsOptions = "linenos=table"
 pygmentscodefences = true
-pygmentsCodeFencesGuessSyntax = true
 pygmentsStyle = "monokai"
-pygmentsUseClasses = true
-pygmentsoptions = "linenos=on"
+pygmentsCodefencesGuessSyntax = true
 
 googleAnalytics = "UA-51024599-1"
 

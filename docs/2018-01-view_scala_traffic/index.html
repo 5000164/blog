@@ -12,10 +12,10 @@ ga('send', 'pageview');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=640">
     <title>Scala の SSL / TLS 通信の中身を見る | 5000164 is here</title>
-    <meta name="description" content="Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy(&quot;localhost&quot;, 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信頼したキーストアを生成する 生成したキーストアをアプリケーションから読み込む Charles の SSL Proxy を有効にする となる。 Charles の証明書を信頼したキーストアを生成する まず Charles の証明書を取得する。 これはアプリケーションのメニューの Help &gt; SSL Proxying &gt; Save Charles Root Certificate... から取得できる">
+    <meta name="description" content="Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy(&#34;localhost&#34;, 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信頼したキーストアを生成する 生成したキーストアをアプリケーションから読み込む Charles の SSL Proxy を有効にする となる。 Charles の証明書を信頼したキーストアを生成する まず Charles の証明書を取得する。 これはアプリケーションのメニューの Help &gt; SSL Proxying &gt; Save Charles Root Certificate... から取得でき">
     <link href="http://blog.5000164.jp/2018-01-view_scala_traffic/" rel="canonical">
     <meta property="og:title" content="Scala の SSL / TLS 通信の中身を見る | 5000164 is here">
-    <meta property="og:description" content="Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy(&quot;localhost&quot;, 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信頼したキーストアを生成する 生成したキーストアをアプリケーションから読み込む Charles の SSL Proxy を有効にする となる。 Charles の証明書を信頼したキーストアを生成する まず Charles の証明書を取得する。 これはアプリケーションのメニューの Help &gt; SSL Proxying &gt; Save Charles Root Certificate... から取得できる">
+    <meta property="og:description" content="Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy(&#34;localhost&#34;, 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信頼したキーストアを生成する 生成したキーストアをアプリケーションから読み込む Charles の SSL Proxy を有効にする となる。 Charles の証明書を信頼したキーストアを生成する まず Charles の証明書を取得する。 これはアプリケーションのメニューの Help &gt; SSL Proxying &gt; Save Charles Root Certificate... から取得でき">
     <meta property="og:url" content="http://blog.5000164.jp/2018-01-view_scala_traffic/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@5000164">
@@ -105,7 +105,7 @@ a:visited {
 
 /* 記事ページの設定 */
 .title {
-    margin: 40px auto;
+    margin: 40px 0;
 }
 
 h1 {
@@ -122,7 +122,7 @@ h1 {
 }
 
 .content {
-    margin: 40px auto;
+    margin: 40px 0;
 }
 
 .content p {
@@ -205,108 +205,25 @@ blockquote > p::before {
     border-radius: 8px;
 }
 
-.highlighttable {
-    table-layout: fixed;
-    width: 100%;
-    background-color: #272822;
-    border-spacing: 0;
-}
-
-.highlighttable > tbody {
-    display: block;
-    width: 600px;
-    margin: auto;
+.highlight {
+    margin: 40px 0;
     background-color: #272822;
 }
 
-.highlighttable .linenos {
-    width: 22px;
-    padding-left: 2px;
-    padding-right: 6px;
-    color: #f8f8f2;
-    text-align: right;
+.highlight > div {
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-.highlighttable .code {
-    width: 566px;
-    padding-left: 2px;
-    padding-right: 2px;
-    overflow-x: scroll;
+.highlight table {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
 }
 
-.highlighttable .highlight {
-    width: 566px;
+.highlight tbody {
+    max-width: 100%;
 }
-.highlight .hll { background-color: #49483e }
-.highlight  { background: #272822; color: #f8f8f2 }
-.highlight .c { color: #75715e } /* Comment */
-.highlight .err { color: #960050; background-color: #1e0010 } /* Error */
-.highlight .k { color: #66d9ef } /* Keyword */
-.highlight .l { color: #ae81ff } /* Literal */
-.highlight .n { color: #f8f8f2 } /* Name */
-.highlight .o { color: #f92672 } /* Operator */
-.highlight .p { color: #f8f8f2 } /* Punctuation */
-.highlight .ch { color: #75715e } /* Comment.Hashbang */
-.highlight .cm { color: #75715e } /* Comment.Multiline */
-.highlight .cp { color: #75715e } /* Comment.Preproc */
-.highlight .cpf { color: #75715e } /* Comment.PreprocFile */
-.highlight .c1 { color: #75715e } /* Comment.Single */
-.highlight .cs { color: #75715e } /* Comment.Special */
-.highlight .gd { color: #f92672 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gi { color: #a6e22e } /* Generic.Inserted */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #75715e } /* Generic.Subheading */
-.highlight .kc { color: #66d9ef } /* Keyword.Constant */
-.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
-.highlight .kn { color: #f92672 } /* Keyword.Namespace */
-.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
-.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
-.highlight .kt { color: #66d9ef } /* Keyword.Type */
-.highlight .ld { color: #e6db74 } /* Literal.Date */
-.highlight .m { color: #ae81ff } /* Literal.Number */
-.highlight .s { color: #e6db74 } /* Literal.String */
-.highlight .na { color: #a6e22e } /* Name.Attribute */
-.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
-.highlight .nc { color: #a6e22e } /* Name.Class */
-.highlight .no { color: #66d9ef } /* Name.Constant */
-.highlight .nd { color: #a6e22e } /* Name.Decorator */
-.highlight .ni { color: #f8f8f2 } /* Name.Entity */
-.highlight .ne { color: #a6e22e } /* Name.Exception */
-.highlight .nf { color: #a6e22e } /* Name.Function */
-.highlight .nl { color: #f8f8f2 } /* Name.Label */
-.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
-.highlight .nx { color: #a6e22e } /* Name.Other */
-.highlight .py { color: #f8f8f2 } /* Name.Property */
-.highlight .nt { color: #f92672 } /* Name.Tag */
-.highlight .nv { color: #f8f8f2 } /* Name.Variable */
-.highlight .ow { color: #f92672 } /* Operator.Word */
-.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
-.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
-.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
-.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
-.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
-.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
-.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
-.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
-.highlight .sc { color: #e6db74 } /* Literal.String.Char */
-.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
-.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
-.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
-.highlight .se { color: #ae81ff } /* Literal.String.Escape */
-.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
-.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
-.highlight .sx { color: #e6db74 } /* Literal.String.Other */
-.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
-.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
-.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
-.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
-.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
-.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
-.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
-.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
-.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */
 </style>
     <link href="/favicon.ico" rel="icon">
     <meta name="generator" content="Hugo 0.32.2" />
@@ -333,9 +250,13 @@ blockquote > p::before {
 
 <p><a href="https://www.charlesproxy.com/">Charles</a> を使ってローカルにプロキシーを立てる。 (<a href="https://www.getpostman.com/">Postman</a> も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。)<br />
 HTTP 通信のライブラリとして <a href="https://github.com/softwaremill/sttp">sttp</a> を使用していたので <a href="http://sttp.readthedocs.io/en/latest/conf/proxy.html">プロキシーの設定方法</a> を参考にして下記のように設定する。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-scala" data-lang="scala">1</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">val</span> <span class="n">backend</span> <span class="k">=</span> <span class="nc">HttpURLConnectionBackend</span><span class="o">(</span><span class="n">options</span> <span class="k">=</span> <span class="nc">SttpBackendOptions</span><span class="o">.</span><span class="n">httpProxy</span><span class="o">(</span><span class="s">&quot;localhost&quot;</span><span class="o">,</span> <span class="mi">8888</span><span class="o">))</span>
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> backend <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">HttpURLConnectionBackend</span><span style="color:#f92672">(</span>options <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">SttpBackendOptions</span><span style="color:#f92672">.</span>httpProxy<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;localhost&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">8888</span><span style="color:#f92672">))</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>これだけで、 HTTP 通信の中身は見られるようになる。</p>
 
 <h2 id="ssl-tls-通信の中身を見えるようにする">SSL / TLS 通信の中身を見えるようにする</h2>
@@ -358,9 +279,13 @@ HTTP 通信のライブラリとして <a href="https://github.com/softwaremill/
 保存したら取得した証明書を信頼したキーストアを生成する。<br />
 この時に普段使用されるキーストアを別の場所にコピーしてから作業を行うことで環境を汚さないようにした。<br />
 普段使用されるキーストアは jdk の中にあり、自分の場合は <code>$(/usr/libexec/java_home)/lib/security/cacerts</code> にあった。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-bash" data-lang="bash">1</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>keytool -keystore cacerts -importcert -alias charles -file charles-ssl-proxying-certificate.cer
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">keytool -keystore cacerts -importcert -alias charles -file charles-ssl-proxying-certificate.cer</code></pre></td></tr></table>
+</div>
+</div>
 <p>また、この時に <code>keytool -list -keystore cacerts</code> のようにして内容を表示して追加されたかどうか確認することができる。</p>
 
 <h2 id="生成したキーストアをアプリケーションから読み込む">生成したキーストアをアプリケーションから読み込む</h2>
@@ -369,9 +294,13 @@ HTTP 通信のライブラリとして <a href="https://github.com/softwaremill/
 実行環境としては IntelliJ IDEA で Scala を動かしている。<br />
 設定方法が環境変数に指定する方法しかわからなかったので環境変数に設定を行う。<br />
 下記のような内容を実行時の <code>VM parameters</code> に設定する。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-bash" data-lang="bash">1</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>-Djavax.net.ssl.keyStore<span class="o">=</span>/path/to/cacerts -Djavax.net.ssl.keyStorePassword<span class="o">=</span>changeit -Djavax.net.ssl.trustStore<span class="o">=</span>/path/to/cacerts -Djavax.net.ssl.trustStorePassword<span class="o">=</span>changeit
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">1</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">-Djavax.net.ssl.keyStore<span style="color:#f92672">=</span>/path/to/cacerts -Djavax.net.ssl.keyStorePassword<span style="color:#f92672">=</span>changeit -Djavax.net.ssl.trustStore<span style="color:#f92672">=</span>/path/to/cacerts -Djavax.net.ssl.trustStorePassword<span style="color:#f92672">=</span>changeit</code></pre></td></tr></table>
+</div>
+</div>
 <p><code>/path/to/cacerts</code> には先ほど作成したキーストアへのパスを指定する。</p>
 
 <h2 id="charles-の-ssl-proxy-を有効にする">Charles の SSL Proxy を有効にする</h2>
@@ -404,33 +333,25 @@ HTTP 通信のライブラリとして <a href="https://github.com/softwaremill/
 <li>これのおかげで javaOptions に設定できたと思ってたけどできてなかった、というところが問題だと気付くことができた</li>
 </ul></li>
 </ul>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-scala" data-lang="scala"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="c1">// import what we need</span>
-<span class="k">import</span> <span class="nn">java.lang.management.ManagementFactory</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style=";border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 1</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 2</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 3</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 4</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 5</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 6</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 7</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 8</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;"> 9</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">10</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">11</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">12</span><span style="color:#7c7c79;margin-right:0.4em;padding:00.4em00.4em;display:block;">13</span></code></pre></td>
+<td style=";vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#75715e">// import what we need
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> java.lang.management.ManagementFactory
 
-<span class="k">import</span> <span class="nn">scala.collection.JavaConverters._</span>
+<span style="color:#66d9ef">import</span> scala.collection.JavaConverters._
 
-<span class="c1">// get a RuntimeMXBean reference</span>
-<span class="k">val</span> <span class="n">runtimeMxBean</span> <span class="k">=</span> <span class="nc">ManagementFactory</span><span class="o">.</span><span class="n">getRuntimeMXBean</span>
+<span style="color:#75715e">// get a RuntimeMXBean reference
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> runtimeMxBean <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">ManagementFactory</span><span style="color:#f92672">.</span>getRuntimeMXBean
 
-<span class="c1">// get the jvm&#39;s input arguments as a list of strings</span>
-<span class="k">val</span> <span class="n">listOfArguments</span> <span class="k">=</span> <span class="n">runtimeMxBean</span><span class="o">.</span><span class="n">getInputArguments</span><span class="o">.</span><span class="n">asScala</span>
+<span style="color:#75715e">// get the jvm&#39;s input arguments as a list of strings
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> listOfArguments <span style="color:#66d9ef">=</span> runtimeMxBean<span style="color:#f92672">.</span>getInputArguments<span style="color:#f92672">.</span>asScala
 
-<span class="c1">// print the arguments using my logger</span>
-<span class="k">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="n">listOfArguments</span><span class="o">)</span> <span class="n">println</span><span class="o">(</span><span class="s">s&quot;ARG: </span><span class="si">$a</span><span class="s">&quot;</span><span class="o">)</span>
-</code></pre></div>
-</td></tr></table>
+<span style="color:#75715e">// print the arguments using my logger
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>a <span style="color:#66d9ef">&lt;-</span> listOfArguments<span style="color:#f92672">)</span> println<span style="color:#f92672">(</span><span style="color:#e6db74">s&#34;ARG: </span><span style="color:#e6db74">$a</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="参考になったリンク">参考になったリンク</h2>
 
 <ul>
