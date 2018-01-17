@@ -288,7 +288,7 @@ body > blockquote > p::before {
 </div>
 
 
-<h1 id="結論">結論</h1>
+<h2 id="結論">結論</h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -298,21 +298,21 @@ exit
 adb pull /sdcard/{DB 名} ~/Downloads/{DB 名}
 </pre></div>
 </td></tr></table>
-<h1 id="解説">解説</h1>
+<h2 id="解説">解説</h2>
 
 <p>adb pull ではパッケージの権限がないため直接ファイルを取得できない<br />
 なので run-as コマンドを使いパッケージの権限があるユーザーで adb pull できる領域にファイルをコピー<br />
 Android は cp コマンドがないので cat コマンドの出力をリダイレクトして同じ内容のファイルを生成している<br />
 ファイルが adb pull できる領域にコピーできたので adb pull</p>
 
-<h1 id="あとはローカルで好きにできる">あとはローカルで好きにできる</h1>
+<h2 id="あとはローカルで好きにできる">あとはローカルで好きにできる</h2>
 
 <p>好きな GUI で簡単に見られる<br />
 継続的に繰り返すのは大変だけど、手軽に見られるのは楽<br />
 <a href="http://sqlitebrowser.org/">DB Browser for SQLite</a><br />
 <a href="https://addons.mozilla.org/ja/firefox/addon/sqlite-manager/">SQLite Manager :: Add-ons for Firefox</a></p>
 
-<h1 id="まとめ">まとめ</h1>
+<h2 id="まとめ">まとめ</h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>adb -d shell &quot;run-as {パッケージ名} cat databases/{DB 名} &gt; /sdcard/{DB 名}&quot;
 adb pull /sdcard/{DB 名} ~/Downloads/{DB 名}
@@ -320,7 +320,7 @@ adb pull /sdcard/{DB 名} ~/Downloads/{DB 名}
 </td></tr></table>
 <p>ってやれば 2 行でいけるかも知れないけど未検証</p>
 
-<h1 id="参考">参考</h1>
+<h2 id="参考">参考</h2>
 
 <p><a href="http://kimihiro-n.appspot.com/show/275003">Android端末の開発中データベース(SQlite)を見る方法 #Pistatium</a><br />
 <a href="http://to-developer.com/blog/?p=1111">[Android]実機デバッグでdata/dataに保存したファイルを取得する方法 | Memorandum blog</a></p>

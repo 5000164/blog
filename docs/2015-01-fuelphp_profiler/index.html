@@ -288,14 +288,14 @@ body > blockquote > p::before {
 </div>
 
 
-<h1 id="fuelphp-のログにプロファイラの情報を出力できるパッケージをインストールしてみる">FuelPHP のログにプロファイラの情報を出力できるパッケージをインストールしてみる</h1>
+<h2 id="fuelphp-のログにプロファイラの情報を出力できるパッケージをインストールしてみる">FuelPHP のログにプロファイラの情報を出力できるパッケージをインストールしてみる</h2>
 
 <p>FuelPHP のバージョンは 1.7.2。<br />
 インストールするパッケージはこちら。<br />
 <a href="https://github.com/MiuraKatsu/fuelphp-profiler-log">MiuraKatsu/fuelphp-profiler-log</a><br />
 手順を見ると、Core を直接いじってるので、Core をいじらないで拡張する。</p>
 
-<h1 id="手順">手順</h1>
+<h2 id="手順">手順</h2>
 
 <p><code>fuel/packages</code> で下記コマンド実行してパッケージの取得<br />
 <code>git clone --recursive git://github.com/MiuraKatsu/fuelphp-profiler-log.git profiler-log</code></p>
@@ -312,15 +312,15 @@ body > blockquote > p::before {
 <p><code>packages/profiler-log/config/profiler.php</code> を <code>app/config/profiler.php</code> にコピーして編集<br />
 <code>output</code> の値を <code>false</code> から <code>true</code> に変更</p>
 
-<h1 id="動作確認">動作確認</h1>
+<h2 id="動作確認">動作確認</h2>
 
 <p>画面の右下にプロファイラが表示されていて、ログにプロファイラの情報が出力されていれば成功。</p>
 
-<h1 id="まとめ">まとめ</h1>
+<h2 id="まとめ">まとめ</h2>
 
 <p>とりあえず使ってみる。</p>
 
-<h1 id="参考">参考</h1>
+<h2 id="参考">参考</h2>
 
 <p><a href="http://www.slideshare.net/MiuraKatsu/ss-26186401">FuelPHPで３種のprofilerを使ってみた</a></p>
 

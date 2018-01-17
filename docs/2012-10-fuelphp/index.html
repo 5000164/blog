@@ -295,31 +295,21 @@ body > blockquote > p::before {
 </figure>
 
 
-<p>&nbsp;</p>
-
 <p>最近FuelPHPを使っています。</p>
 
 <p>バージョン1.2.1を使っていたのですが、1.3がでたということで1.3を使い始めました。</p>
 
-<p>そこでデバッグをするときに、&#8217;profiling&#8217;&nbsp; =&gt; true,とかしてプロファイラを表示させるんですが、プロファイラが最小化状態で表示されます。</p>
+<p>そこでデバッグをするときに、&#8217;profiling&#8217; =&gt; true,とかしてプロファイラを表示させるんですが、プロファイラが最小化状態で表示されます。</p>
 
 <p>1.2.1のプロファイラは展開した状態で表示されてたのに。</p>
 
 <p>trueってしたらプロファイラは常に表示されてて欲しいです。</p>
 
-<p>&nbsp;</p>
-
 <p>ということで、常に表示されるようにします。</p>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
 
 <pre class="brush: plain; gutter: false; title: ; notranslate" title="">fuel/core/vendor/phpquickprofiler/display.php</pre>
 
 <p>を開きます。</p>
-
-<p>&nbsp;</p>
 
 <p>305行目の</p>
 
@@ -333,8 +323,6 @@ body > blockquote > p::before {
 
 <p>（display:none;をdisplay:block;に変更。）</p>
 
-<p>&nbsp;</p>
-
 <p>661行目の</p>
 
 <pre class="brush: php; first-line: 661; html-script: true; title: ; notranslate" title="">$return_output .='&lt;/div&gt;&lt;/div&gt;&lt;div id="openProfiler"&gt;&lt;a href="#" onclick="openProfiler();return false" title="Open Code Profiler"&gt;Code Profiler&lt;/a&gt;&lt;/div&gt;';</pre>
@@ -347,17 +335,11 @@ body > blockquote > p::before {
 
 <p>（ style=&#8221;display: none; &#8220;の追記。）</p>
 
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
 <p>以上で常時表示されるようになったはずです。</p>
 
 <p>検索して見つけた要素のスタイルを適当に変更してるだけなので、なんか他に方法があるのかもしれませんけども。</p>
 
 <p>とりあえず、これでちょっとだけ快適になった。</p>
-
-<p>&nbsp;</p>
 
 <p>常時表示されなくなったことにはなにか理由があるんですかねえ。</p>
 

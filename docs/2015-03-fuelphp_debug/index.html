@@ -288,21 +288,21 @@ body > blockquote > p::before {
 </div>
 
 
-<h1 id="fuelphp-で-debug-dump-とか-log-debug-とかうつのがだるかった">FuelPHP で Debug::dump() とか Log::debug() とかうつのがだるかった</h1>
+<h2 id="fuelphp-で-debug-dump-とか-log-debug-とかうつのがだるかった">FuelPHP で Debug::dump() とか Log::debug() とかうつのがだるかった</h2>
 
 <p>e() という関数があったから、同じ感じで d() とか l() にしたいなって思った。</p>
 
-<h1 id="引数をただダンプするだけのようなやつを作った">引数をただダンプするだけのようなやつを作った</h1>
+<h2 id="引数をただダンプするだけのようなやつを作った">引数をただダンプするだけのようなやつを作った</h2>
 
 <p>ソースはこちら。<br />
 FuelPHP 1.7.2 で動作確認してます。<br />
 <a href="https://gist.github.com/5000164/a933cb3f485c9a60a1a0">FuelPHP で Debug::dump() と Log::debug() を簡単に使えるようにする</a></p>
 
-<h1 id="配置方法">配置方法</h1>
+<h2 id="配置方法">配置方法</h2>
 
 <p>e() という関数を追ったら core 直下の base.php に書いてあったので、同じような感じで app の下に base.php というファイルを作って bootstrap.php で require する。</p>
 
-<h1 id="結果">結果</h1>
+<h2 id="結果">結果</h2>
 
 <p>d() とか l() で表示できるようになって楽になった。</p>
 

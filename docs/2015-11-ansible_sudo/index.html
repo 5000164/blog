@@ -288,24 +288,24 @@ body > blockquote > p::before {
 </div>
 
 
-<h1 id="先に簡単な結論">先に簡単な結論</h1>
+<h2 id="先に簡単な結論">先に簡単な結論</h2>
 
 <p><code>/etc/sudoers.d/</code> の下にパスワードなしで sudo できる設定を追加する。</p>
 
-<h1 id="vagrant-の-vm-に-ansible-で環境を構築する">Vagrant の VM に Ansible で環境を構築する</h1>
+<h2 id="vagrant-の-vm-に-ansible-で環境を構築する">Vagrant の VM に Ansible で環境を構築する</h2>
 
 <p>いつもは vagrant ユーザーをそのまま使っていたのだが、ユーザー名を変えておいた方がなんとなくよさそう、と思ってユーザー名を変えることにした。<br />
 ユーザーの追加は user モジュールを使って簡単にできる。<br />
 問題は作成したユーザーで sudo できないことだった。</p>
 
-<h1 id="一応オプションをつけて毎回パスワードを入力すれば回避できる">一応オプションをつけて毎回パスワードを入力すれば回避できる</h1>
+<h2 id="一応オプションをつけて毎回パスワードを入力すれば回避できる">一応オプションをつけて毎回パスワードを入力すれば回避できる</h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>ansible-playbook playbook.yml --ask-sudo-pass
 </pre></div>
 </td></tr></table>
 <p>ってやって、毎回パスワードを入れれば動く。<br />
 でもだるい。</p>
 
-<h1 id="vagrant-ユーザーはなんでパスワードなしで-sudo-できるのか">vagrant ユーザーはなんでパスワードなしで sudo できるのか</h1>
+<h2 id="vagrant-ユーザーはなんでパスワードなしで-sudo-できるのか">vagrant ユーザーはなんでパスワードなしで sudo できるのか</h2>
 
 <p>なぜ、どうして。<br />
 全然仕組みを理解できていなかった。<br />
@@ -321,19 +321,19 @@ body > blockquote > p::before {
 <a href="http://webkaru.net/linux/sudo-user-add/">sudoユーザーを追加する方法 - Linux入門 - Webkaru</a><br />
 やってみよう。</p>
 
-<h1 id="sudo-はできたけどパスワードは聞かれる">sudo はできたけどパスワードは聞かれる</h1>
+<h2 id="sudo-はできたけどパスワードは聞かれる">sudo はできたけどパスワードは聞かれる</h2>
 
 <p>なぜだ。<br />
 そうか、vagrant と同じグループに入れればいいのかと思いつく。<br />
 vagrant グループに入れてみる。</p>
 
-<h1 id="状況は変わらず">状況は変わらず</h1>
+<h2 id="状況は変わらず">状況は変わらず</h2>
 
 <p>なんで vagrant はパスワードなしで実行できるんだ。<br />
 特に <code>/etc/sudoers</code> に vagrant の記述はないのに。<br />
 と思ったら、よく見たら最後に <code>#includedir /etc/sudoers.d</code> って書いてある。</p>
 
-<h1 id="etc-sudoers-d-に-vagrant-ってファイルがあった">/etc/sudoers.d/ に vagrant ってファイルがあった</h1>
+<h2 id="etc-sudoers-d-に-vagrant-ってファイルがあった">/etc/sudoers.d/ に vagrant ってファイルがあった</h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>vagrant ALL=(ALL) NOPASSWD:ALL
 </pre></div>
 </td></tr></table>
@@ -341,18 +341,18 @@ vagrant グループに入れてみる。</p>
 なるほどたしかにパスワードなしって書いてある。<br />
 でもそしたらやっぱり vagrant グループに入れればいけるのでは？</p>
 
-<h1 id="がついてないからグループに指定してるのではなく-vagrant-ユーザーにだけ指定してた">% がついてないからグループに指定してるのではなく vagrant ユーザーにだけ指定してた</h1>
+<h2 id="がついてないからグループに指定してるのではなく-vagrant-ユーザーにだけ指定してた">% がついてないからグループに指定してるのではなく vagrant ユーザーにだけ指定してた</h2>
 
 <p>やっと理解した。<br />
 つまり追加するユーザーの設定をここに追加すればいいわけだ。</p>
 
-<h1 id="copy-モジュールで持ってったら動いた">copy モジュールで持ってったら動いた</h1>
+<h2 id="copy-モジュールで持ってったら動いた">copy モジュールで持ってったら動いた</h2>
 
 <p>やった。<br />
 でも調べてたらもっと簡単な記述があった。<br />
 <a href="http://qiita.com/hidekuro/items/8cd1ebe1c52a256593ef">Vagrant + Ansibleで環境構築をコード化する(4)さらにPlaybook　～終わり～ - Qiita</a></p>
 
-<h1 id="結論">結論</h1>
+<h2 id="結論">結論</h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
