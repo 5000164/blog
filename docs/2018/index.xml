@@ -6,10 +6,19 @@
     <description>Recent content in 2018s on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 15 Jan 2018 20:35:10 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jan 2018 22:46:52 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/2018/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ブログを WordPress 👉 Octopress 👉 Hugo と変えてきて記事の書式がバラバラだったのをある程度整えた時の作業ログ 🗒️</title>
+      <link>http://blog.5000164.jp/2018-01-format/</link>
+      <pubDate>Fri, 19 Jan 2018 22:46:52 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2018-01-format/</guid>
+      <description>古い記事のメンテとかはしていないんだけど、ブログのデザインを変えた時に見てみたら思ったよりも崩れていたのでまとめてある程度修正することにした。 まだ崩れてる記事とかもあるけど、ひとつひとつ見ていくのは大変なので正確さではなくざっくりなんとなくを目的として作業を行う。 💡 前提となる記事の状態 ブログの記事の書き方は以下の変遷を辿ってきた。 WordPress で始めた最初は HTML を直接書いていた 途中から WordPress に Markdown のプラグインを入れて Markdown で書いていた ブログを Octopress に変えたが WordPress の記事はインポートしなかった 見出しの書き方を ## ではなく --- のように書いていた 見出しレベルは h1 から h3 まで使っていた ブログを Hugo に変えたタイミングで WordPress と Octopress の記事をインポートした 見出しの書き方を ## にした 本文での見出しレベルは h2 だけを使うようにした という状態で時期によって記事の書き方がごちゃごちゃ。 😩 見方 使用したツールは WebStorm 👇 の上側が正規表現での置換対象で、下側が置換内容 3 連</description>
+    </item>
     
     <item>
       <title>Scala で JavaFX の Casvas の内容を画像として保存する</title>
