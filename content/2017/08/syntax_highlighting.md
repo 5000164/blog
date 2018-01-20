@@ -4,6 +4,13 @@ date = 2017-08-14T22:44:23+09:00
 url = "2017-08-syntax_highlighting"
 +++
 
+## 2018.1.20 追記
+
+バージョン 0.28 から導入された Chroma で何も考えず簡単にシンタックスハイライトが使えるようになった。
+
+- [Hugo | Hugo 0.28: High-speed Syntax Highlighting!](https://gohugo.io/news/0.28-relnotes/)
+- [Hugo | Syntax Highlighting](https://gohugo.io/content-management/syntax-highlighting/)
+
 ## 結論
 
 - シンタックスハイライト用の css をテーマで読み込んでおく
