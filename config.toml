@@ -3,7 +3,7 @@ DefaultContentLanguage = "ja"
 hasCJKLanguage = true
 languageCode = "ja"
 title = "5000164 is here"
-theme = "divided"
+theme = "remember"
 publishDir = "docs"
 summaryLength = 400
 

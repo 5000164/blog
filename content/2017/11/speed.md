@@ -21,7 +21,7 @@ partial を使えばできそうだと思ってぐぐったらあった。
 これでできた。  
 コードはここ。
 
-- [高速化のために Web フォントをやめて CSS を HTML への埋め込みにした · 5000164/divided@0f3132d](https://github.com/5000164/divided/commit/0f3132d2b44924e02d60568c912f536accdfa598)
+- [高速化のために Web フォントをやめて CSS を HTML への埋め込みにした · 5000164/remember@0f3132d](https://github.com/5000164/remember/commit/0f3132d2b44924e02d60568c912f536accdfa598)
 
 ## Minify はまだできてない
 
