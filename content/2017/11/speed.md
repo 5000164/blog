@@ -26,3 +26,9 @@ partial を使えばできそうだと思ってぐぐったらあった。
 ## Minify はまだできてない
 
 簡単にやる方法あるのかな。
+
+## 2018.1.20 追記
+
+CSS の Minify は YUI Compressor と WebStorm の File Watcher を使って実現した。
+
+- [Minifying CSS - Help | WebStorm](https://www.jetbrains.com/help/webstorm/minifying-css.html)
