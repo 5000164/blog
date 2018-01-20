@@ -6,6 +6,7 @@ title = "5000164 is here"
 theme = "remember"
 publishDir = "docs"
 summaryLength = 400
+pluralizeListTitles = false
 
 pygmentsOptions = "linenos=table"
 pygmentscodefences = true
