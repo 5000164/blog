@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Windows で PHP の開発をするときに使ったツール | 5000164 is here</title>
+    <meta name="description" content="最近 Windows で PHP の開発をする機会があったので、使用したツールをまとめます Atom エディタ Chocolatey Gallery パッケージ管理 Clibor | amuns:code クリップボード Clover Brings Chrome-Style Tabs to Windows Explorer. | 易捷科技 EJIE Technology エクスプローラー conemu-maximus5 - Windows Console Emulator, Far Manager plugins - Google Project Hosting ターミナル 無料圧縮・解凍フリーソフト CubeICE - CubeSoft アーカイバ Devas - namespace gimite 検索 Dual Monitor Taskbar | SourceForge.net タスクバー 大切な仕事のためのワークスペース | Evernote 情報蓄積 Everything Search Engine 検索 Git バージョン管理 Chrome ブラウザ ブラウザ Chrome ブラウザ ブラウザ Google 日本語入力 IME Hosts File Manager ユーティリティ Just Color Picker 4.2 - the best colour tool for Windows and Mac OS ユーティリティ 文字コード変換ツール「KanjiTranslator」(フリーソフト) 変換 KeySwapについて キーボード PHP IDE :: JetBrains PhpStorm IDE MinGW | Minimalist GNU for Windows 開発 mintty - Terminal window for Cygwin and MSYS - Google Project Hosting ターミナル NYAOS.ORG - NYAGOS ターミナル Oracle VM VirtualBox VM オフィス・ネオ（office-neo） ユーティリティ About - Rapid Environment Editor ユーティリティ Revo Uninstaller Pro - Uninstall Software, Remove Programs easily, Forced Uninstall, Leftovers Uninstaller, Portable Uninstaller アンインストーラー yascentur/RictyDiminished フォント サクラエディタ エディタ Free Mercurial">
+    <link href="http://blog.5000164.jp/2015/2/3/windows-tools/" rel="canonical">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Windows で PHP の開発をするときに使ったツール | 5000164 is here">
+    <meta property="og:description" content="最近 Windows で PHP の開発をする機会があったので、使用したツールをまとめます Atom エディタ Chocolatey Gallery パッケージ管理 Clibor | amuns:code クリップボード Clover Brings Chrome-Style Tabs to Windows Explorer. | 易捷科技 EJIE Technology エクスプローラー conemu-maximus5 - Windows Console Emulator, Far Manager plugins - Google Project Hosting ターミナル 無料圧縮・解凍フリーソフト CubeICE - CubeSoft アーカイバ Devas - namespace gimite 検索 Dual Monitor Taskbar | SourceForge.net タスクバー 大切な仕事のためのワークスペース | Evernote 情報蓄積 Everything Search Engine 検索 Git バージョン管理 Chrome ブラウザ ブラウザ Chrome ブラウザ ブラウザ Google 日本語入力 IME Hosts File Manager ユーティリティ Just Color Picker 4.2 - the best colour tool for Windows and Mac OS ユーティリティ 文字コード変換ツール「KanjiTranslator」(フリーソフト) 変換 KeySwapについて キーボード PHP IDE :: JetBrains PhpStorm IDE MinGW | Minimalist GNU for Windows 開発 mintty - Terminal window for Cygwin and MSYS - Google Project Hosting ターミナル NYAOS.ORG - NYAGOS ターミナル Oracle VM VirtualBox VM オフィス・ネオ（office-neo） ユーティリティ About - Rapid Environment Editor ユーティリティ Revo Uninstaller Pro - Uninstall Software, Remove Programs easily, Forced Uninstall, Leftovers Uninstaller, Portable Uninstaller アンインストーラー yascentur/RictyDiminished フォント サクラエディタ エディタ Free Mercurial">
+    <meta property="og:url" content="http://blog.5000164.jp/2015/2/3/windows-tools/">
+    <meta property="og:image" content="http://blog.5000164.jp/icon.png">
+    <meta property="og:site_name" content="5000164 is here">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Windows で PHP の開発をするときに使ったツール | 5000164 is here">
+    <meta name="twitter:description" content="最近 Windows で PHP の開発をする機会があったので、使用したツールをまとめます Atom エディタ Chocolatey Gallery パッケージ管理 Clibor | amuns:code クリップボード Clover Brings Chrome-Style Tabs to Windows Explorer. | 易捷科技 EJIE Technology エクスプローラー conemu-maximus5 - Windows Console Emulator, Far Manager plugins - Google Project Hosting ターミナル 無料圧縮・解凍フリーソフト CubeICE - CubeSoft アーカイバ Devas - namespace gimite 検索 Dual Monitor Taskbar | SourceForge.net タスクバー 大切な仕事のためのワークスペース | Evernote 情報蓄積 Everything Search Engine 検索 Git バージョン管理 Chrome ブラウザ ブラウザ Chrome ブラウザ ブラウザ Google 日本語入力 IME Hosts File Manager ユーティリティ Just Color Picker 4.2 - the best colour tool for Windows and Mac OS ユーティリティ 文字コード変換ツール「KanjiTranslator」(フリーソフト) 変換 KeySwapについて キーボード PHP IDE :: JetBrains PhpStorm IDE MinGW | Minimalist GNU for Windows 開発 mintty - Terminal window for Cygwin and MSYS - Google Project Hosting ターミナル NYAOS.ORG - NYAGOS ターミナル Oracle VM VirtualBox VM オフィス・ネオ（office-neo） ユーティリティ About - Rapid Environment Editor ユーティリティ Revo Uninstaller Pro - Uninstall Software, Remove Programs easily, Forced Uninstall, Leftovers Uninstaller, Portable Uninstaller アンインストーラー yascentur/RictyDiminished フォント サクラエディタ エディタ Free Mercurial">
+    <meta name="twitter:url" content="http://blog.5000164.jp/2015/2/3/windows-tools/">
+    <meta name="twitter:image" content="http://blog.5000164.jp/icon.png">
+    <meta name="twitter:site" content="@5000164">
+    <meta name="twitter:creator" content="@5000164">
+    <style type="text/css">html{width:100%;height:100%;margin:0;font-size:62.5%;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN",sans-serif;font-kerning:normal;font-feature-settings:"palt";letter-spacing:.02rem;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body{width:100%;height:100%;margin:0;font-size:1.8rem;line-height:1.73;color:#454654;background-color:#fff}@media(max-width:640px){body{line-height:1.9}}header{height:15vw}@media(max-width:640px){header{height:50vw}}header>a{display:block;margin:-2.5vw 0 0 -3vw;font-size:24vw;line-height:1;text-align-last:justify;letter-spacing:-5vw;transform-origin:top center;transform:scaleY(0.5);color:#818398;text-decoration:none;white-space:nowrap}@media(max-width:640px){header>a{margin:-10.5vw 0 0 -3vw;transform:scaleY(2)}}header>a:visited{color:#818398}header>a::before,header>a::after{content:"";display:inline-block;position:absolute;top:21vw;width:0;height:.5vw;background:#c3ffde;transition:.2s ease-out}@media(max-width:640px){header>a::before,header>a::after{height:.4vw}}header>a::before{left:50%}header>a::after{right:50%}header>a:hover::before,header>a:hover::after{width:50%}footer{width:600px;margin:120px auto 60px}footer .about{text-align:right;letter-spacing:-0.2rem}@media(max-width:640px){footer{width:95%}}a{color:#454654}a:visited{color:#73758c}.articles{width:600px;list-style:none;margin:0 auto 20px;padding:0}@media(max-width:640px){.articles{width:95%}}.articles>li{margin:60px 0}.articles>li>a{display:grid;grid-template-columns:110px 1fr;grid-gap:2vw}.articles>li>a>div:first-child{text-align:right;white-space:nowrap}.articles>li>a>div:last-child{white-space:pre-wrap;word-break:break-all;word-wrap:break-word}.title{margin:40px 0}h1{width:600px;margin:0 auto;font-size:3rem;font-weight:bold}@media(max-width:640px){h1{width:95%}}.date{width:600px;margin:0 auto;text-align:right}@media(max-width:640px){.date{width:95%}}.content{margin:40px 0}.content p{width:600px;margin:40px auto}@media(max-width:640px){.content p{width:95%}}.content p:first-child{margin-top:0}.content p:last-child{margin-bottom:0}.content h2{width:600px;margin:120px auto 20px;font-size:2.4rem;font-weight:bold}@media(max-width:640px){.content h2{width:95%}}.content h2:first-child{margin-top:0}.content h2+p{margin-top:0}.content h2+h2{margin-top:0}.content h4{width:600px;margin:10px auto 10px;font-size:1.8rem;font-weight:normal;text-align:center}@media(max-width:640px){.content h4{width:95%}}.content ul{width:580px;margin:auto;padding-left:20px}@media(max-width:640px){.content ul{width:90%;padding-left:5%}}.content figure{width:600px;margin:auto}@media(max-width:640px){.content figure{width:95%}}.content img{display:block;max-width:600px;margin:0 auto}@media(max-width:640px){.content img{max-width:95%}}.content blockquote{width:600px;margin:20px auto}@media(max-width:640px){.content blockquote{width:95%}}.content blockquote>p{position:relative;width:580px;padding-left:20px}@media(max-width:640px){.content blockquote>p{width:96%;padding-left:4%}}.content blockquote>p::before{content:"";display:block;position:absolute;top:0;left:0;width:4px;height:100%;background:#e3e4e6;border-radius:8px}.content .highlight{margin:40px 0;background-color:#272822}.content .highlight>div{max-width:100%;margin:0 auto}.content .highlight table{display:flex !important;justify-content:center;align-items:center}.content .highlight tbody{min-width:600px;max-width:98%}@media(max-width:640px){.content .highlight tbody{min-width:95%;max-width:95%}}</style>
+    <link href="/favicon.ico" rel="icon">
+    <meta name="generator" content="Hugo 0.33" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp/">5000164 is here</a>
+</header>
+
+<article>
+    <div class="title">
+        <div class="date">2015.2.3</div>
+        <h1>Windows で PHP の開発をするときに使ったツール</h1>
+    </div>
+    <div class="content">
+        
+
+<h2 id="最近-windows-で-php-の開発をする機会があったので-使用したツールをまとめます">最近 Windows で PHP の開発をする機会があったので、使用したツールをまとめます</h2>
+
+<ul>
+<li><a href="https://atom.io/">Atom</a>
+
+<ul>
+<li>エディタ</li>
+</ul></li>
+<li><a href="https://chocolatey.org/">Chocolatey Gallery</a>
+
+<ul>
+<li>パッケージ管理</li>
+</ul></li>
+<li><a href="http://www.amunsnet.com/soft.html">Clibor | amuns:code</a>
+
+<ul>
+<li>クリップボード</li>
+</ul></li>
+<li><a href="http://ejie.me/">Clover Brings Chrome-Style Tabs to Windows Explorer. | 易捷科技 EJIE Technology</a>
+
+<ul>
+<li>エクスプローラー</li>
+</ul></li>
+<li><a href="https://code.google.com/p/conemu-maximus5/">conemu-maximus5 - Windows Console Emulator, Far Manager plugins - Google Project Hosting</a>
+
+<ul>
+<li>ターミナル</li>
+</ul></li>
+<li><a href="http://www.cube-soft.jp/cubeice/">無料圧縮・解凍フリーソフト CubeICE - CubeSoft</a>
+
+<ul>
+<li>アーカイバ</li>
+</ul></li>
+<li><a href="http://gimite.net/pukiwiki/index.php?Devas">Devas - namespace gimite</a>
+
+<ul>
+<li>検索</li>
+</ul></li>
+<li><a href="http://sourceforge.net/projects/dualmonitortb/">Dual Monitor Taskbar | SourceForge.net</a>
+
+<ul>
+<li>タスクバー</li>
+</ul></li>
+<li><a href="https://evernote.com/intl/jp/">大切な仕事のためのワークスペース | Evernote</a>
+
+<ul>
+<li>情報蓄積</li>
+</ul></li>
+<li><a href="http://www.voidtools.com/">Everything Search Engine</a>
+
+<ul>
+<li>検索</li>
+</ul></li>
+<li><a href="http://git-scm.com/">Git</a>
+
+<ul>
+<li>バージョン管理</li>
+</ul></li>
+<li><a href="https://www.google.co.jp/chrome/browser/desktop/index.html">Chrome ブラウザ</a>
+
+<ul>
+<li>ブラウザ</li>
+</ul></li>
+<li><a href="https://www.google.co.jp/chrome/browser/canary.html">Chrome ブラウザ</a>
+
+<ul>
+<li>ブラウザ</li>
+</ul></li>
+<li><a href="http://www.google.co.jp/ime/">Google 日本語入力</a>
+
+<ul>
+<li>IME</li>
+</ul></li>
+<li><a href="http://softwarefactory.jp/ja/products/hostsfilemanager/">Hosts File Manager</a>
+
+<ul>
+<li>ユーティリティ</li>
+</ul></li>
+<li><a href="http://annystudio.com/software/colorpicker/">Just Color Picker 4.2 - the best colour tool for Windows and Mac OS</a>
+
+<ul>
+<li>ユーティリティ</li>
+</ul></li>
+<li><a href="http://www.kashim.com/kanjitranslator/">文字コード変換ツール「KanjiTranslator」(フリーソフト)</a>
+
+<ul>
+<li>変換</li>
+</ul></li>
+<li><a href="http://www.asahi-net.or.jp/~ee7k-nsd/readme3.htm">KeySwapについて</a>
+
+<ul>
+<li>キーボード</li>
+</ul></li>
+<li><a href="https://www.jetbrains.com/phpstorm/">PHP IDE :: JetBrains PhpStorm</a>
+
+<ul>
+<li>IDE</li>
+</ul></li>
+<li><a href="http://www.mingw.org/">MinGW | Minimalist GNU for Windows</a>
+
+<ul>
+<li>開発</li>
+</ul></li>
+<li><a href="https://code.google.com/p/mintty/">mintty - Terminal window for Cygwin and MSYS - Google Project Hosting</a>
+
+<ul>
+<li>ターミナル</li>
+</ul></li>
+<li><a href="http://www.nyaos.org/index.cgi?p=NYAGOS">NYAOS.ORG - NYAGOS</a>
+
+<ul>
+<li>ターミナル</li>
+</ul></li>
+<li><a href="https://www.virtualbox.org/">Oracle VM VirtualBox</a>
+
+<ul>
+<li>VM</li>
+</ul></li>
+<li><a href="http://www.office-neo.jp/pglst/pglst.html">オフィス・ネオ（office-neo）</a>
+
+<ul>
+<li>ユーティリティ</li>
+</ul></li>
+<li><a href="http://www.rapidee.com/en/about">About - Rapid Environment Editor</a>
+
+<ul>
+<li>ユーティリティ</li>
+</ul></li>
+<li><a href="http://www.revouninstaller.com/">Revo Uninstaller Pro - Uninstall Software, Remove Programs easily, Forced Uninstall, Leftovers Uninstaller, Portable Uninstaller</a>
+
+<ul>
+<li>アンインストーラー</li>
+</ul></li>
+<li><a href="https://github.com/yascentur/RictyDiminished">yascentur/RictyDiminished</a>
+
+<ul>
+<li>フォント</li>
+</ul></li>
+<li><a href="http://sakura-editor.sourceforge.net/">サクラエディタ</a>
+
+<ul>
+<li>エディタ</li>
+</ul></li>
+<li><a href="http://www.sourcetreeapp.com/">Free Mercurial and Git Client for Windows and Mac | Atlassian SourceTree</a>
+
+<ul>
+<li>バージョン管理</li>
+</ul></li>
+<li><a href="http://www.sumatrapdfreader.org/free-pdf-reader-ja.html">無料 PDF リーダー - Sumatra PDF</a>
+
+<ul>
+<li>PDF ビューアー</li>
+</ul></li>
+<li><a href="https://ja.todoist.com/">To-Doリストとタスク管理。無料、簡単、オンラインとモバイル用: Todoist</a>
+
+<ul>
+<li>タスク管理</li>
+</ul></li>
+<li><a href="https://www.toggl.com/">Toggl - Insanely simple time tracking</a>
+
+<ul>
+<li>タイムトラッキング</li>
+</ul></li>
+<li><a href="https://code.google.com/p/transpwnds/">transpwnds - This program makes semitransparent windows and other operation&hellip;. - Google Project Hosting</a>
+
+<ul>
+<li>ユーティリティ</li>
+</ul></li>
+<li><a href="https://www.vagrantup.com/">Vagrant</a>
+
+<ul>
+<li>開発</li>
+</ul></li>
+<li><a href="http://winmerge.org/">WinMerge</a>
+
+<ul>
+<li>差分</li>
+</ul></li>
+<li><a href="http://antibody-software.com/web/software/software/wizmouse-makes-your-mouse-wheel-work-on-the-window-under-the-mouse/">Antibody Software - WizMouse makes your mouse wheel work on the window under the mouse</a>
+
+<ul>
+<li>ユーティリティ</li>
+</ul></li>
+</ul>
+
+<h2 id="使ってみればよかった">使ってみればよかった</h2>
+
+<ul>
+<li><a href="http://www.ponsoftware.com/archiver/download.htm">ダウンロード</a>
+
+<ul>
+<li>アーカイバ</li>
+</ul></li>
+<li><a href="http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools">Visual Merge and Diff Tools | Perforce</a>
+
+<ul>
+<li>マージ</li>
+</ul></li>
+</ul>
+
+    </div>
+</article>
+<footer>
+    <ul>
+        
+        <li>
+    <a href="http://blog.5000164.jp/2012/">
+        <div>2012</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2013/">
+        <div>2013</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2014/">
+        <div>2014</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2015/">
+        <div>2015</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2016/">
+        <div>2016</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2017/">
+        <div>2017</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2018/">
+        <div>2018</div>
+    </a>
+</li>
+
+        
+    </ul>
+    <div class="about">
+        <div>菅原 浩</div>
+        <div><a href="https://github.com/5000164/profile">About</a></div>
+    </div>
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

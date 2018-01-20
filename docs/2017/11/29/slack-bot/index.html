@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Scala で Slack bot | 5000164 is here</title>
+    <meta name="description" content="動機 Scala の勉強をするにあたって題材をどうしようか考えた。 Twitter のことを最近いいなと感じ始めていたのだけれど投稿するのが面倒くさくて、簡単に投稿できるようにしたかったので普段よく使っている Slack から投稿できるようにすることにした。 概要 Slack の bot に投げた内容をツイートする。 コード ここです。 5000164/scala-bot 技術的なところ Scala のライブラリと Java のライブラリ build.sbt で slack-scala-client は追加できるのに twitter4j-core は追加できないと悩んでいたら、 % と %% が違うことを知った。 groupID % artifactID % revision のかわりに、 groupID %% artifactID % revision を使うと（違いは groupID の後ろの二つ連なった %%）、 sbt はプロジェクトの Scala のバイナリバージョンをアーティファクト名に追加する。 これはただの略記法なので %% 無しで書くこともできる: sbt Reference Manual — ライブラリ依存性 slack-scala-client は Scala のライブラリなので略記法でいける、 twitter4j-core は Java のライブラリなので略記法ではいけない、ということだった。 モックを使ったテスト コントローラーのテストを書く時に、副作用が出る部分をモッ">
+    <link href="http://blog.5000164.jp/2017/11/29/slack-bot/" rel="canonical">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Scala で Slack bot | 5000164 is here">
+    <meta property="og:description" content="動機 Scala の勉強をするにあたって題材をどうしようか考えた。 Twitter のことを最近いいなと感じ始めていたのだけれど投稿するのが面倒くさくて、簡単に投稿できるようにしたかったので普段よく使っている Slack から投稿できるようにすることにした。 概要 Slack の bot に投げた内容をツイートする。 コード ここです。 5000164/scala-bot 技術的なところ Scala のライブラリと Java のライブラリ build.sbt で slack-scala-client は追加できるのに twitter4j-core は追加できないと悩んでいたら、 % と %% が違うことを知った。 groupID % artifactID % revision のかわりに、 groupID %% artifactID % revision を使うと（違いは groupID の後ろの二つ連なった %%）、 sbt はプロジェクトの Scala のバイナリバージョンをアーティファクト名に追加する。 これはただの略記法なので %% 無しで書くこともできる: sbt Reference Manual — ライブラリ依存性 slack-scala-client は Scala のライブラリなので略記法でいける、 twitter4j-core は Java のライブラリなので略記法ではいけない、ということだった。 モックを使ったテスト コントローラーのテストを書く時に、副作用が出る部分をモッ">
+    <meta property="og:url" content="http://blog.5000164.jp/2017/11/29/slack-bot/">
+    <meta property="og:image" content="http://blog.5000164.jp/icon.png">
+    <meta property="og:site_name" content="5000164 is here">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Scala で Slack bot | 5000164 is here">
+    <meta name="twitter:description" content="動機 Scala の勉強をするにあたって題材をどうしようか考えた。 Twitter のことを最近いいなと感じ始めていたのだけれど投稿するのが面倒くさくて、簡単に投稿できるようにしたかったので普段よく使っている Slack から投稿できるようにすることにした。 概要 Slack の bot に投げた内容をツイートする。 コード ここです。 5000164/scala-bot 技術的なところ Scala のライブラリと Java のライブラリ build.sbt で slack-scala-client は追加できるのに twitter4j-core は追加できないと悩んでいたら、 % と %% が違うことを知った。 groupID % artifactID % revision のかわりに、 groupID %% artifactID % revision を使うと（違いは groupID の後ろの二つ連なった %%）、 sbt はプロジェクトの Scala のバイナリバージョンをアーティファクト名に追加する。 これはただの略記法なので %% 無しで書くこともできる: sbt Reference Manual — ライブラリ依存性 slack-scala-client は Scala のライブラリなので略記法でいける、 twitter4j-core は Java のライブラリなので略記法ではいけない、ということだった。 モックを使ったテスト コントローラーのテストを書く時に、副作用が出る部分をモッ">
+    <meta name="twitter:url" content="http://blog.5000164.jp/2017/11/29/slack-bot/">
+    <meta name="twitter:image" content="http://blog.5000164.jp/icon.png">
+    <meta name="twitter:site" content="@5000164">
+    <meta name="twitter:creator" content="@5000164">
+    <style type="text/css">html{width:100%;height:100%;margin:0;font-size:62.5%;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN",sans-serif;font-kerning:normal;font-feature-settings:"palt";letter-spacing:.02rem;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body{width:100%;height:100%;margin:0;font-size:1.8rem;line-height:1.73;color:#454654;background-color:#fff}@media(max-width:640px){body{line-height:1.9}}header{height:15vw}@media(max-width:640px){header{height:50vw}}header>a{display:block;margin:-2.5vw 0 0 -3vw;font-size:24vw;line-height:1;text-align-last:justify;letter-spacing:-5vw;transform-origin:top center;transform:scaleY(0.5);color:#818398;text-decoration:none;white-space:nowrap}@media(max-width:640px){header>a{margin:-10.5vw 0 0 -3vw;transform:scaleY(2)}}header>a:visited{color:#818398}header>a::before,header>a::after{content:"";display:inline-block;position:absolute;top:21vw;width:0;height:.5vw;background:#c3ffde;transition:.2s ease-out}@media(max-width:640px){header>a::before,header>a::after{height:.4vw}}header>a::before{left:50%}header>a::after{right:50%}header>a:hover::before,header>a:hover::after{width:50%}footer{width:600px;margin:120px auto 60px}footer .about{text-align:right;letter-spacing:-0.2rem}@media(max-width:640px){footer{width:95%}}a{color:#454654}a:visited{color:#73758c}.articles{width:600px;list-style:none;margin:0 auto 20px;padding:0}@media(max-width:640px){.articles{width:95%}}.articles>li{margin:60px 0}.articles>li>a{display:grid;grid-template-columns:110px 1fr;grid-gap:2vw}.articles>li>a>div:first-child{text-align:right;white-space:nowrap}.articles>li>a>div:last-child{white-space:pre-wrap;word-break:break-all;word-wrap:break-word}.title{margin:40px 0}h1{width:600px;margin:0 auto;font-size:3rem;font-weight:bold}@media(max-width:640px){h1{width:95%}}.date{width:600px;margin:0 auto;text-align:right}@media(max-width:640px){.date{width:95%}}.content{margin:40px 0}.content p{width:600px;margin:40px auto}@media(max-width:640px){.content p{width:95%}}.content p:first-child{margin-top:0}.content p:last-child{margin-bottom:0}.content h2{width:600px;margin:120px auto 20px;font-size:2.4rem;font-weight:bold}@media(max-width:640px){.content h2{width:95%}}.content h2:first-child{margin-top:0}.content h2+p{margin-top:0}.content h2+h2{margin-top:0}.content h4{width:600px;margin:10px auto 10px;font-size:1.8rem;font-weight:normal;text-align:center}@media(max-width:640px){.content h4{width:95%}}.content ul{width:580px;margin:auto;padding-left:20px}@media(max-width:640px){.content ul{width:90%;padding-left:5%}}.content figure{width:600px;margin:auto}@media(max-width:640px){.content figure{width:95%}}.content img{display:block;max-width:600px;margin:0 auto}@media(max-width:640px){.content img{max-width:95%}}.content blockquote{width:600px;margin:20px auto}@media(max-width:640px){.content blockquote{width:95%}}.content blockquote>p{position:relative;width:580px;padding-left:20px}@media(max-width:640px){.content blockquote>p{width:96%;padding-left:4%}}.content blockquote>p::before{content:"";display:block;position:absolute;top:0;left:0;width:4px;height:100%;background:#e3e4e6;border-radius:8px}.content .highlight{margin:40px 0;background-color:#272822}.content .highlight>div{max-width:100%;margin:0 auto}.content .highlight table{display:flex !important;justify-content:center;align-items:center}.content .highlight tbody{min-width:600px;max-width:98%}@media(max-width:640px){.content .highlight tbody{min-width:95%;max-width:95%}}</style>
+    <link href="/favicon.ico" rel="icon">
+    <meta name="generator" content="Hugo 0.33" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp/">5000164 is here</a>
+</header>
+
+<article>
+    <div class="title">
+        <div class="date">2017.11.29</div>
+        <h1>Scala で Slack bot</h1>
+    </div>
+    <div class="content">
+        
+
+<h2 id="動機">動機</h2>
+
+<p>Scala の勉強をするにあたって題材をどうしようか考えた。<br />
+Twitter のことを最近いいなと感じ始めていたのだけれど投稿するのが面倒くさくて、簡単に投稿できるようにしたかったので普段よく使っている Slack から投稿できるようにすることにした。</p>
+
+<h2 id="概要">概要</h2>
+
+<p>Slack の bot に投げた内容をツイートする。</p>
+
+<h2 id="コード">コード</h2>
+
+<p>ここです。</p>
+
+<p><a href="https://github.com/5000164/scala-bot">5000164/scala-bot</a></p>
+
+<h2 id="技術的なところ">技術的なところ</h2>
+
+<h2 id="scala-のライブラリと-java-のライブラリ">Scala のライブラリと Java のライブラリ</h2>
+
+<p>build.sbt で slack-scala-client は追加できるのに twitter4j-core は追加できないと悩んでいたら、 % と %% が違うことを知った。</p>
+
+<blockquote>
+<p>groupID % artifactID % revision のかわりに、 groupID %% artifactID % revision を使うと（違いは groupID の後ろの二つ連なった %%）、 sbt はプロジェクトの Scala のバイナリバージョンをアーティファクト名に追加する。 これはただの略記法なので %% 無しで書くこともできる:<br />
+<a href="http://www.scala-sbt.org/1.x/docs/ja/Library-Dependencies.html">sbt Reference Manual — ライブラリ依存性</a></p>
+</blockquote>
+
+<p>slack-scala-client は Scala のライブラリなので略記法でいける、 twitter4j-core は Java のライブラリなので略記法ではいけない、ということだった。</p>
+
+<h2 id="モックを使ったテスト">モックを使ったテスト</h2>
+
+<p>コントローラーのテストを書く時に、副作用が出る部分をモックにしようとした。<br />
+調べたら Mockito というモックライブラリがよく使われているようなので、 ScalaTest と Mockito を使うことにした。</p>
+
+<ul>
+<li><a href="http://www.scalatest.org/">ScalaTest</a></li>
+<li><a href="http://site.mockito.org/">Mockito framework site</a></li>
+<li><a href="http://www.scalatest.org/user_guide/testing_with_mock_objects">ScalaTest</a></li>
+</ul>
+
+<p>情報をうまく探すことが出来なくて動かすまでに少し時間がかかった。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OperatorSpec</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">FreeSpec</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">MockitoSugar</span> <span style="color:#f92672">{</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>のように MockitoSugar をミックスインしたり、</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">import</span> org.mockito.Mockito.<span style="color:#f92672">{</span>never<span style="color:#f92672">,</span> verify<span style="color:#f92672">,</span> when<span style="color:#f92672">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>のように verify をインポートしたりすることで動くようになった。</p>
+
+<p>しかし、モックの返り値を設定する thenReturn に</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">when<span style="color:#f92672">(</span>mockTwitter<span style="color:#f92672">.</span>tweet<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;text&#34;</span><span style="color:#f92672">)).</span>thenReturn<span style="color:#f92672">(</span><span style="color:#a6e22e">Right</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Unit</span><span style="color:#f92672">))</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>のように Unit を渡すとなぜかコンパイルエラーになってしまい動かなくなったので、</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">when<span style="color:#f92672">(</span>mockTwitter<span style="color:#f92672">.</span>tweet<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;text&#34;</span><span style="color:#f92672">)).</span>thenReturn<span style="color:#f92672">(</span><span style="color:#a6e22e">Right</span><span style="color:#f92672">())</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>のように書いている。</p>
+
+<p>また、</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">verify<span style="color:#f92672">(</span>mockTwitter<span style="color:#f92672">).</span>tweet<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;text&#34;</span><span style="color:#f92672">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>はちゃんと引数の検証ができて想定していない値が渡されたらテストがコケるのに対して、</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">verify<span style="color:#f92672">(</span>mockClient<span style="color:#f92672">).</span>sendMessage<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;channel&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;message&#34;</span><span style="color:#f92672">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>の方は引数の値に関わらず、関数が実行されていればテストが通ってしまう状態になっている。<br />
+関数が実行されていなければテストはコケる。</p>
+
+<p>このあたりのコードはここに書いてある。</p>
+
+<p><a href="https://github.com/5000164/scala-bot/blob/master/src/test/scala/jp/_5000164/scala_bot/interfaces/OperatorSpec.scala">scala-bot/OperatorSpec.scala at master · 5000164/scala-bot</a></p>
+
+<h2 id="副作用がある関数の返り値">副作用がある関数の返り値</h2>
+
+<p>今回の場合では副作用は Twitter にツイートすることで発生する。<br />
+副作用がある関数の返り値をどうやって表現するか、 Boolean にするか Option にするかライブラリが投げるエラーをそのままキャッチするか、どれもしっくりこないと思っていて調べていたら Either を見つけたので使ってみた。<br />
+Either だと、エラーが起きたら文字列を返して、正常終了したら何も返さない、ということが表現できた。<br />
+ツイートに成功したらそのままで、ツイートに失敗したら失敗した旨を Slack に投げたいと思っていたので、</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">twitter<span style="color:#f92672">.</span>tweet<span style="color:#f92672">(</span><span style="color:#a6e22e">Command</span><span style="color:#f92672">.</span>content<span style="color:#f92672">(</span>message<span style="color:#f92672">.</span>text<span style="color:#f92672">))</span> <span style="color:#66d9ef">match</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">Right</span><span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span>
+  <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">Left</span><span style="color:#f92672">(</span>error_message<span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> client<span style="color:#f92672">.</span>sendMessage<span style="color:#f92672">(</span>message<span style="color:#f92672">.</span>channel<span style="color:#f92672">,</span> error_message<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>のように表現することができた。</p>
+
+<h2 id="コマンドを増やしやすいような設計">コマンドを増やしやすいような設計</h2>
+
+<p>今はツイートする機能だけだが、今後機能を増やしたいと思った時に追加しやすいように心がけた。<br />
+そのために DDD を意識しながら全体の設計を行った。<br />
+DDD はまだ全然勉強できておらず、これからたくさん学ぶ必要があるという感じだが、責任やレイヤーというものを意識した。</p>
+
+<p>インターフェイス層としては</p>
+
+<ul>
+<li>アプリケーションのエンドポイント</li>
+<li>発言されたメッセージの内容によって処理を振り分けるコントローラー</li>
+<li>Twitter へ投稿する処理</li>
+</ul>
+
+<p>というように分け、ドメイン層としては</p>
+
+<ul>
+<li>メッセージの内容から指定されたコマンドを判定する</li>
+<li>実際に処理を行うコマンド</li>
+</ul>
+
+<p>というように分けた。<br />
+判定したコマンドは case object としてコントローラーに返し、コントローラー側でパターンマッチを行って実際に処理を行うコマンドに投げる、という形にすることで、コマンドが追加しやすいようにした。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#75715e">// コマンドに応じて処理を行う
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">Command</span><span style="color:#f92672">.</span>dispatch<span style="color:#f92672">(</span>message<span style="color:#f92672">.</span>text<span style="color:#f92672">)</span> <span style="color:#66d9ef">match</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">Some</span><span style="color:#f92672">(</span><span style="color:#a6e22e">TweetCommand</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#75715e">// コマンドの内容を書く
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 新しいコマンドを追加する時はここに書いていけばいい
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="まとめ">まとめ</h2>
+
+<p>Slack から Twitter に投稿できるようになって便利。<br />
+小さいものでも、動くものを作ることで勉強になった。<br />
+これからも勉強を続ける。</p>
+
+    </div>
+</article>
+<footer>
+    <ul>
+        
+        <li>
+    <a href="http://blog.5000164.jp/2012/">
+        <div>2012</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2013/">
+        <div>2013</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2014/">
+        <div>2014</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2015/">
+        <div>2015</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2016/">
+        <div>2016</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2017/">
+        <div>2017</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2018/">
+        <div>2018</div>
+    </a>
+</li>
+
+        
+    </ul>
+    <div class="about">
+        <div>菅原 浩</div>
+        <div><a href="https://github.com/5000164/profile">About</a></div>
+    </div>
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

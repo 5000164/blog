@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>XHR のプリフライトリクエストを Access-Control-Allow-Origin で許可する | 5000164 is here</title>
+    <meta name="description" content="Firefox で API からデータが取得できない サーバー側に API を実装して、Chrome では値が取得できてるのに、Firefox では値が取得できていなかった。 ちゃんと Access-Control-Allow-Origin: * って感じにしてたのに、許可されていませんって感じのエラーメッセージが出ていた。 開発ツールのネットワークの履歴を見てたら、メソッドのところが OPTIONS って出てたので、OPTIONS メソッドの時にも Access-Control-Allow-Origin: * を返してあげるようにした。 FuelPHP のコントローラーにどうやって書くのだろと思って試しに書いてみたら動いた。 1234567 /** * プリフライトリクエスト用のコントローラー */ public function options_index() { $this-&gt;response-&gt;set_header(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;); } こんな感じ。 どうやら、XHR ではプリフライトリクエストってやつを送るらしくて、その時にアクセスが許可されていないから API からデータを持ってきていなかったらしい。(現時点の Chrome では送ってなかった) なるほどな。">
+    <link href="http://blog.5000164.jp/2015/11/23/xhr/" rel="canonical">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="XHR のプリフライトリクエストを Access-Control-Allow-Origin で許可する | 5000164 is here">
+    <meta property="og:description" content="Firefox で API からデータが取得できない サーバー側に API を実装して、Chrome では値が取得できてるのに、Firefox では値が取得できていなかった。 ちゃんと Access-Control-Allow-Origin: * って感じにしてたのに、許可されていませんって感じのエラーメッセージが出ていた。 開発ツールのネットワークの履歴を見てたら、メソッドのところが OPTIONS って出てたので、OPTIONS メソッドの時にも Access-Control-Allow-Origin: * を返してあげるようにした。 FuelPHP のコントローラーにどうやって書くのだろと思って試しに書いてみたら動いた。 1234567 /** * プリフライトリクエスト用のコントローラー */ public function options_index() { $this-&gt;response-&gt;set_header(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;); } こんな感じ。 どうやら、XHR ではプリフライトリクエストってやつを送るらしくて、その時にアクセスが許可されていないから API からデータを持ってきていなかったらしい。(現時点の Chrome では送ってなかった) なるほどな。">
+    <meta property="og:url" content="http://blog.5000164.jp/2015/11/23/xhr/">
+    <meta property="og:image" content="http://blog.5000164.jp/icon.png">
+    <meta property="og:site_name" content="5000164 is here">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="XHR のプリフライトリクエストを Access-Control-Allow-Origin で許可する | 5000164 is here">
+    <meta name="twitter:description" content="Firefox で API からデータが取得できない サーバー側に API を実装して、Chrome では値が取得できてるのに、Firefox では値が取得できていなかった。 ちゃんと Access-Control-Allow-Origin: * って感じにしてたのに、許可されていませんって感じのエラーメッセージが出ていた。 開発ツールのネットワークの履歴を見てたら、メソッドのところが OPTIONS って出てたので、OPTIONS メソッドの時にも Access-Control-Allow-Origin: * を返してあげるようにした。 FuelPHP のコントローラーにどうやって書くのだろと思って試しに書いてみたら動いた。 1234567 /** * プリフライトリクエスト用のコントローラー */ public function options_index() { $this-&gt;response-&gt;set_header(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;); } こんな感じ。 どうやら、XHR ではプリフライトリクエストってやつを送るらしくて、その時にアクセスが許可されていないから API からデータを持ってきていなかったらしい。(現時点の Chrome では送ってなかった) なるほどな。">
+    <meta name="twitter:url" content="http://blog.5000164.jp/2015/11/23/xhr/">
+    <meta name="twitter:image" content="http://blog.5000164.jp/icon.png">
+    <meta name="twitter:site" content="@5000164">
+    <meta name="twitter:creator" content="@5000164">
+    <style type="text/css">html{width:100%;height:100%;margin:0;font-size:62.5%;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN",sans-serif;font-kerning:normal;font-feature-settings:"palt";letter-spacing:.02rem;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body{width:100%;height:100%;margin:0;font-size:1.8rem;line-height:1.73;color:#454654;background-color:#fff}@media(max-width:640px){body{line-height:1.9}}header{height:15vw}@media(max-width:640px){header{height:50vw}}header>a{display:block;margin:-2.5vw 0 0 -3vw;font-size:24vw;line-height:1;text-align-last:justify;letter-spacing:-5vw;transform-origin:top center;transform:scaleY(0.5);color:#818398;text-decoration:none;white-space:nowrap}@media(max-width:640px){header>a{margin:-10.5vw 0 0 -3vw;transform:scaleY(2)}}header>a:visited{color:#818398}header>a::before,header>a::after{content:"";display:inline-block;position:absolute;top:21vw;width:0;height:.5vw;background:#c3ffde;transition:.2s ease-out}@media(max-width:640px){header>a::before,header>a::after{height:.4vw}}header>a::before{left:50%}header>a::after{right:50%}header>a:hover::before,header>a:hover::after{width:50%}footer{width:600px;margin:120px auto 60px}footer .about{text-align:right;letter-spacing:-0.2rem}@media(max-width:640px){footer{width:95%}}a{color:#454654}a:visited{color:#73758c}.articles{width:600px;list-style:none;margin:0 auto 20px;padding:0}@media(max-width:640px){.articles{width:95%}}.articles>li{margin:60px 0}.articles>li>a{display:grid;grid-template-columns:110px 1fr;grid-gap:2vw}.articles>li>a>div:first-child{text-align:right;white-space:nowrap}.articles>li>a>div:last-child{white-space:pre-wrap;word-break:break-all;word-wrap:break-word}.title{margin:40px 0}h1{width:600px;margin:0 auto;font-size:3rem;font-weight:bold}@media(max-width:640px){h1{width:95%}}.date{width:600px;margin:0 auto;text-align:right}@media(max-width:640px){.date{width:95%}}.content{margin:40px 0}.content p{width:600px;margin:40px auto}@media(max-width:640px){.content p{width:95%}}.content p:first-child{margin-top:0}.content p:last-child{margin-bottom:0}.content h2{width:600px;margin:120px auto 20px;font-size:2.4rem;font-weight:bold}@media(max-width:640px){.content h2{width:95%}}.content h2:first-child{margin-top:0}.content h2+p{margin-top:0}.content h2+h2{margin-top:0}.content h4{width:600px;margin:10px auto 10px;font-size:1.8rem;font-weight:normal;text-align:center}@media(max-width:640px){.content h4{width:95%}}.content ul{width:580px;margin:auto;padding-left:20px}@media(max-width:640px){.content ul{width:90%;padding-left:5%}}.content figure{width:600px;margin:auto}@media(max-width:640px){.content figure{width:95%}}.content img{display:block;max-width:600px;margin:0 auto}@media(max-width:640px){.content img{max-width:95%}}.content blockquote{width:600px;margin:20px auto}@media(max-width:640px){.content blockquote{width:95%}}.content blockquote>p{position:relative;width:580px;padding-left:20px}@media(max-width:640px){.content blockquote>p{width:96%;padding-left:4%}}.content blockquote>p::before{content:"";display:block;position:absolute;top:0;left:0;width:4px;height:100%;background:#e3e4e6;border-radius:8px}.content .highlight{margin:40px 0;background-color:#272822}.content .highlight>div{max-width:100%;margin:0 auto}.content .highlight table{display:flex !important;justify-content:center;align-items:center}.content .highlight tbody{min-width:600px;max-width:98%}@media(max-width:640px){.content .highlight tbody{min-width:95%;max-width:95%}}</style>
+    <link href="/favicon.ico" rel="icon">
+    <meta name="generator" content="Hugo 0.33" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp/">5000164 is here</a>
+</header>
+
+<article>
+    <div class="title">
+        <div class="date">2015.11.23</div>
+        <h1>XHR のプリフライトリクエストを Access-Control-Allow-Origin で許可する</h1>
+    </div>
+    <div class="content">
+        
+
+<h2 id="firefox-で-api-からデータが取得できない">Firefox で API からデータが取得できない</h2>
+
+<p>サーバー側に API を実装して、Chrome では値が取得できてるのに、Firefox では値が取得できていなかった。<br />
+ちゃんと <code>Access-Control-Allow-Origin: *</code> って感じにしてたのに、許可されていませんって感じのエラーメッセージが出ていた。<br />
+開発ツールのネットワークの履歴を見てたら、メソッドのところが <code>OPTIONS</code> って出てたので、OPTIONS メソッドの時にも <code>Access-Control-Allow-Origin: *</code> を返してあげるようにした。<br />
+FuelPHP のコントローラーにどうやって書くのだろと思って試しに書いてみたら動いた。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">7</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">/**
+ * プリフライトリクエスト用のコントローラー
+ */
+public function options_index()
+{
+    $this-&gt;response-&gt;set_header(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;);
+}</code></pre></td></tr></table>
+</div>
+</div>
+<p>こんな感じ。<br />
+どうやら、XHR ではプリフライトリクエストってやつを送るらしくて、その時にアクセスが許可されていないから API からデータを持ってきていなかったらしい。(現時点の Chrome では送ってなかった)<br />
+なるほどな。</p>
+
+    </div>
+</article>
+<footer>
+    <ul>
+        
+        <li>
+    <a href="http://blog.5000164.jp/2012/">
+        <div>2012</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2013/">
+        <div>2013</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2014/">
+        <div>2014</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2015/">
+        <div>2015</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2016/">
+        <div>2016</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2017/">
+        <div>2017</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2018/">
+        <div>2018</div>
+    </a>
+</li>
+
+        
+    </ul>
+    <div class="about">
+        <div>菅原 浩</div>
+        <div><a href="https://github.com/5000164/profile">About</a></div>
+    </div>
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

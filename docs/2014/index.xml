@@ -13,334 +13,334 @@
     
     <item>
       <title>2014 年を振り返る</title>
-      <link>http://blog.5000164.jp/2014-12-2014/</link>
+      <link>http://blog.5000164.jp/2014/12/31/2014/</link>
       <pubDate>Wed, 31 Dec 2014 19:35:46 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-12-2014/</guid>
+      <guid>http://blog.5000164.jp/2014/12/31/2014/</guid>
       <description>2014 年を振り返ってみる 長い時間を生きていく中で、節目節目にキリをつけて振り返ることは大事。 年末というのはちょうどいいチャンスなので、1 年間を振り返る。 プログラマとして生きていくと決めた 今年はプログラマとしての仕事を再開して、プログラマとして生きていくと決めた。 これに尽きる。 去年は目標を立てなかった なにか振り返りをしようと思って、いろいろ見返して、いろんなことがあったなーと思ったけど、目標がなかったから目標に対する振り返りができなかった。 来年の目標を立てる 来年の目標を立てようと思う。 今年のだめなところ 目標を立てるためにまずはだめだったところを考える。 アウトプットが少なかった。 ビビってる。 来年の目標 なので、来年の目標はアウトプットすること。 個人のプロジェクトを立てて、仕事とは別に進める。 まとめ もっと気楽に生きること。 生きづらいと感じたら、生き方を変えること。</description>
     </item>
     
     <item>
       <title>Windows の Atom で矩形選択する方法</title>
-      <link>http://blog.5000164.jp/2014-12-atom/</link>
+      <link>http://blog.5000164.jp/2014/12/1/atom/</link>
       <pubDate>Mon, 01 Dec 2014 23:55:30 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-12-atom/</guid>
+      <guid>http://blog.5000164.jp/2014/12/1/atom/</guid>
       <description>結論 Windows の Atom はセンタークリックのドラッグで矩形選択できる。 Windows の Atom で矩形選択するやり方です まず、Atom はこれ。 Atom んで、このプラグインを入れる。 sublime-style-column-selection Mac なら option を押しながら左クリックのドラッグで矩形選択できる。 でも Windows だと Alt キーを押しながら左クリックでドラッグしても矩形選択できない。 Windows はセンタークリックのドラッグで矩形選択できる。 Mac でも Windows でも全角文字は選択範囲がずれる。</description>
     </item>
     
     <item>
       <title>動画の話 - 「「動画」にまつわる技術・物語 〜我々はどのように動画と関わっていくのか〜」に参加しました</title>
-      <link>http://blog.5000164.jp/2014-12-video/</link>
+      <link>http://blog.5000164.jp/2014/12/1/video/</link>
       <pubDate>Mon, 01 Dec 2014 23:35:03 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-12-video/</guid>
+      <guid>http://blog.5000164.jp/2014/12/1/video/</guid>
       <description>「「動画」にまつわる技術・物語 〜我々はどのように動画と関わっていくのか〜」に参加しました 詳細はこちら。 「動画」にまつわる技術・物語 〜我々はどのように動画と関わっていくのか〜 - DevLOVE | Doorkeeper 配信と再生と企画の話 動画に対して異なる立場からの話が聞けた。 配信の話 インフラにもっと興味を持とうと思った。 明日会社に行ったらインフラがどういう構成なのか聞こう。 どんどん変わっていく環境にどんどん対応していくのが大事。 再生の話 動画の仕組みがなんとなくわかった。 おもしろかった。 音と絵を同期させるのが大変らしい。 企画の話 今まではサービスの開発といったら実装のことを考えていた。 でも、サービスのことを考えるのも、実際に使ってもらって声を聞くのも開発だと思った。 まとめ おもしろかった。 明日から現場に持ち込むものとして、インフラに興味を持つこと。 明日インフラの構成聞く。</description>
     </item>
     
     <item>
       <title>シンプルさ - 「Go Conference 2014 autumn」に参加しました</title>
-      <link>http://blog.5000164.jp/2014-11-gocon/</link>
+      <link>http://blog.5000164.jp/2014/11/30/gocon/</link>
       <pubDate>Sun, 30 Nov 2014 23:04:02 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-11-gocon/</guid>
+      <guid>http://blog.5000164.jp/2014/11/30/gocon/</guid>
       <description>「Go Conference 2014 autumn」に参加しました イベントの詳細はこちら。 Go Conference 2014 autumn - connpass GoCon/2014autumn.rst at master · GoCon/GoCon 内容についてはこちら。 #goconに関するツイート Go Conference 2014 autumn - Togetterまとめ わからないことが多かった Go に興味があって参加した。 けど、触ったことがなかったので、わからない部分が多かった。 でも刺激はもらえた。 シンプル Go はシンプルさを大事にしているとのことだった。 楽に書くのと、読みやすく書くのはトレードオフで、読みやすさに重点を置くべき、とどこかで言っていた気がする。 最近どこかで、プログラマはプログラムを書いてる時間よりも読んでいる時間の方が圧倒的に長いのだから読みやすさを大事にするべき、と聞いた気がする。 これにはとても納得しているし、私自身も読んで理解するのにかかる時間が短いコードがいいコードだと考えているので、Go の思想は魅力的に感じた。 複雑さを隠してシンプルに見せる Go はシンプルに使えるように難しいこと</description>
     </item>
     
     <item>
       <title>しっくりこない - 小説「クドリャフカの順番」の感想</title>
-      <link>http://blog.5000164.jp/2014-11-welcome_to_kanya_festa/</link>
+      <link>http://blog.5000164.jp/2014/11/23/welcome-to-kanya-festa/</link>
       <pubDate>Sun, 23 Nov 2014 15:05:42 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-11-welcome_to_kanya_festa/</guid>
+      <guid>http://blog.5000164.jp/2014/11/23/welcome-to-kanya-festa/</guid>
       <description>※ ネタバレ注意 谷くんの立場がよくわからなかった 谷くんはなにがしたかったんだろう。 動機がしっくりこない 氷菓もそうだったけど、ストーリーがすっきりまとまってない気がする。 クが既に失われてたとして、そのメッセージが伝わったとして、それでどうなるっていうんだろう。 表向きは文化祭を盛り上げたくて、実はメッセージが、って方がしっくりくる。 コストとリターンが見合ってないなー。 「〈古典部〉シリーズ」 読む。 トランプの柄で 4 人が表現されてたのはけっこーしっくりきた。 ホータローの姉はジョーカーだな。</description>
     </item>
     
     <item>
       <title>最初から完璧を求めない - 「TDDBC in Tokyo 2014-11」に参加しました</title>
-      <link>http://blog.5000164.jp/2014-11-tddbc/</link>
+      <link>http://blog.5000164.jp/2014/11/22/tddbc/</link>
       <pubDate>Sat, 22 Nov 2014 23:08:52 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-11-tddbc/</guid>
+      <guid>http://blog.5000164.jp/2014/11/22/tddbc/</guid>
       <description>「TDDBC in Tokyo 2014-11」に参加しました イベントの詳細はこちら。 TDDBC in Tokyo 2014-11 - TDDBC | Doorkeeper 課題はこちら。 TDD演習課題 - TODOリストアプリ 私の組の実装はこちら。 5000164/tddbc-tokyo_2014-11 理解しやすいテストを書く 基調講演は xUnit Test Patterns の著者である Gerard Meszaros さんの「Refactoring a Test」だった。 単体テストはわかりやすく書く。 悪いコードが示されて、ここはこうする、次はこうする、と話してくれた。 1 つのテストコードは 5 行に抑える、7 行を超えると理解しづらくなる。 カスタムアサーションというものを知った。 すっきり書けるようになっててよかった。 なにをテストしたいのか？ このテストケースではなにをテストしたいのかを明確にする。 重要でないセットアップは 1 つのメソッドにまとめてしまう。 こうすることで、どこにフォーカスしたいテストなのかがわかりやすくなる。 やっぱ英語はできないとだめだ リアルタイムのヒアリングだとほとんど理解できなかった。 単体</description>
     </item>
     
     <item>
       <title>夢を語り合える世界をつくりたい - 「Hoping Invites | Tsutomu Uematsu | TEDxSapporo」の感想</title>
-      <link>http://blog.5000164.jp/2014-11-hoping_invites/</link>
+      <link>http://blog.5000164.jp/2014/11/22/hoping-invites/</link>
       <pubDate>Sat, 22 Nov 2014 00:12:40 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-11-hoping_invites/</guid>
+      <guid>http://blog.5000164.jp/2014/11/22/hoping-invites/</guid>
       <description>ひとりでも多くの子どもたちが、可能性を奪われなくなったらいいなぁ 植松さんは講演の中でこう言っていた。 この言葉にとても共感した。 少しでも多くの可能性を持っていて欲しい。 周りの大人が可能性を奪ってしまう 子供に向かって、どーせ無理と言う。 やったことがない大人が、自分がしなかった理由を子供に押し付ける。 夢を見る子供を脅す。 子供の可能性が潰されてしまう。 悲しい。 可能性を奪わないために どーせ無理は言わない。 だったらこうしてみたら？を言う。 教育というものは、死に至らない失敗を安全に経験させるためのもの 失敗は悪いものではない。 可能性と自信を失うものではない。 失敗はよりよくするためのデータである。 なにもないところから踏み出した一歩目である。 そこに自信を持つ。 植松さんにとって宇宙開発は手段 どーせ無理だと思われがちな宇宙開発をやることで、無理じゃないと示している。 子どもたちに無理じゃないって思って欲しい。 そうい</description>
     </item>
     
     <item>
       <title>これはしてやられた - 小説「愚者のエンドロール」の感想</title>
-      <link>http://blog.5000164.jp/2014-11-why_didnt_she_ask_eba/</link>
+      <link>http://blog.5000164.jp/2014/11/18/why-didnt-she-ask-eba/</link>
       <pubDate>Tue, 18 Nov 2014 01:23:43 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-11-why_didnt_she_ask_eba/</guid>
+      <guid>http://blog.5000164.jp/2014/11/18/why-didnt-she-ask-eba/</guid>
       <description>※ ネタバレ注意 米澤 穂信さんはミステリーが好きなんだろうなと思った なんというか、ミステリーへの愛に溢れている作品だと思った。 感情の込もった作品は読んでて気持ちいい。 内容には、してやられた 全員実現できない、じゃあカメラマンだろ、と思っていた。 伊原がカメラワークに対して物足りないと言っていたし。 でもそれは作者の思惑通りだった。 まんまとひっかかってしまった。 正直、これはやられたと思った。 「〈古典部〉シリーズ」は今後も読む これからどうなるのか楽しみ。</description>
     </item>
     
     <item>
       <title>叫ぶ強さ - 小説「氷菓」の感想</title>
-      <link>http://blog.5000164.jp/2014-11-the_niece_of_time/</link>
+      <link>http://blog.5000164.jp/2014/11/18/the-niece-of-time/</link>
       <pubDate>Tue, 18 Nov 2014 01:02:24 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-11-the_niece_of_time/</guid>
+      <guid>http://blog.5000164.jp/2014/11/18/the-niece-of-time/</guid>
       <description>※ ネタバレ注意 電車で読む本が欲しかった 電車に 30 分くらい乗り続ける時間があった。 手持ち無沙汰だなと思って電子書籍を買うことにした。 米澤 穂信さんの作品がおもしろいと見かけた記憶があった なにを買おうかなと思った時に、氷菓を思い出した。 いつか読んでみたいと思っていたので買った。 その場で買ってその場で読めるのはいい。 話に置いて行かれるところがあった たまに作品に置いて行かれるところがあった。 私の知らない言い回しなどがよく出てくるので、そのせいかもしれない。 結末はあんまりすっきりしなかった おれにできることはこれくらいしかない、と言っていたわりには回りくどすぎる。 叫ぶ強さを持て、という点は大いに同意だが、それを I scream に込めるのはどうだろうか。 もうちょっとなんとかならなかったのかなと思う。 「〈古典部〉シリーズ」は読んでみようと思う 興味があるので読む。</description>
     </item>
     
     <item>
       <title>ブログの手順</title>
-      <link>http://blog.5000164.jp/2014-11-blog/</link>
+      <link>http://blog.5000164.jp/2014/11/18/blog/</link>
       <pubDate>Tue, 18 Nov 2014 00:24:39 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-11-blog/</guid>
+      <guid>http://blog.5000164.jp/2014/11/18/blog/</guid>
       <description>Octopress をインストールしているディレクトリに移動 cd Blog/ ブログの記事を生成 bundle exec rake new_post[&#39;URL にする文字列&#39;] 日付のプレフィックスは自動で付与されるので「blog」などだけでよい 生成された記事のマークダウンファイルをハイフンつなぎからアンダーバーつなぎに変える アンダーバーで入力してもハイフンにされるため 生成された記事を開いて書く title を記事のタイトルに変える 記事を書いたらプレビュー bundle exec rake preview http://localhost:4000/ プレビューして問題なかったら公開 bundle exec rake gen_deploy 公開したらバージョン管理 SourceTree でコミット コミットメッセージは「記事追加」とか適宜入力 本番環境で動作確認、文章見直し 5000164 is here</description>
     </item>
     
     <item>
       <title>Android 実機の SQLite ファイルをローカルに持ってくる</title>
-      <link>http://blog.5000164.jp/2014-11-sqlite/</link>
+      <link>http://blog.5000164.jp/2014/11/14/sqlite/</link>
       <pubDate>Fri, 14 Nov 2014 20:39:16 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-11-sqlite/</guid>
+      <guid>http://blog.5000164.jp/2014/11/14/sqlite/</guid>
       <description>結論 1234 adb shell run-as {パッケージ名} cat databases/{DB 名} &amp;gt; /sdcard/{DB 名} exit adb pull /sdcard/{DB 名} ~/Downloads/{DB 名} 解説 adb pull ではパッケージの権限がないため直接ファイルを取得できない なので run-as コマンドを使いパッケージの権限があるユーザーで adb pull できる領域にファイルをコピー Android は cp コマンドがないので cat コマンドの出力をリダイレクトして同じ内容のファイルを生成している ファイルが adb pull できる領域にコピーできたので adb pull あとはローカルで好きにできる 好きな GUI で簡単に見られる 継続的に繰り返すのは大変だけど、手軽に見られるのは楽 DB Browser for SQLite SQLite Manager :: Add-ons for Firefox まとめ 12 adb -d shell &amp;#34;run-as {パッケージ名} cat databases/{DB 名} &amp;gt; /sdcard/{DB 名}&amp;#34; adb pull /sdcard/{DB 名} ~/Downloads/{DB 名} ってやれば 2 行でいけるかも知れないけど未検証 参考 Android端末の開発中データベース(SQlite)を見る方法 #Pistatium [Android]実機デバッグでdata/dataに保存したファイルを取得する方法 | Memorandum blog</description>
     </item>
     
     <item>
       <title>Processing 始めました</title>
-      <link>http://blog.5000164.jp/2014-11-processing_practice_1/</link>
+      <link>http://blog.5000164.jp/2014/11/12/processing-practice-1/</link>
       <pubDate>Wed, 12 Nov 2014 04:52:21 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-11-processing_practice_1/</guid>
+      <guid>http://blog.5000164.jp/2014/11/12/processing-practice-1/</guid>
       <description>Processing がおもしろそうだった このあたりのブログを見ていておもしろそうだった インタラクティブ・プログラミング勉強会 第1回 乱数 | fladdict 標本002 三角関数 | fladdict インタラクティブデザイン勉強会 第1回「ランダム」 — フニフニ微生物ができるまで | ここぽんのーと インタラクティブデザイン勉強会 第2回「三角関数」でプロペラを回す | ここぽんのーと インタラクティブデザイン勉強会 第3回「パーティクル」で爆発四散 | ここぽんのーと どうやら Processing というものを使うとできるらしい Processing 触ってみた 勉強会の課題を勝手にやってみました こんなんができました 実行結果 ソースはここにあります 5000164/processing-practice-1 まとめ 楽しい</description>
     </item>
     
     <item>
       <title>まずは手を動かす - 「TDDBC仙台 4th」に参加しました</title>
-      <link>http://blog.5000164.jp/2014-10-tddbc/</link>
+      <link>http://blog.5000164.jp/2014/10/11/tddbc/</link>
       <pubDate>Sat, 11 Oct 2014 22:28:33 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-10-tddbc/</guid>
+      <guid>http://blog.5000164.jp/2014/10/11/tddbc/</guid>
       <description>「TDDBC仙台 4th」に参加しました イベントの詳細はこちら。 TDDBC仙台 4th - TDDBC | Doorkeeper 今回の課題と私の組の実装はこちら。 TDD Boot Camp(TDDBC) - TDDBC仙台04/課題 5000164/tddbc-sendai04 参加してよかった 初めて TDD &amp;amp; ペアプロ をやった。 TDD というものを知ってはいたものの、ちゃんとやったことはなかった。 どころかまともにテストコードも書けないので、自分にはまだ早いと決めつけていた。 でもイベントを知った時からすごい良さそうな雰囲気を感じて参加してみた。 参加してよかった。 TDD は開発者を後押しするためのもの テストという言葉にはいろいろな意味が含まれてしまう。 お互いの共通言語になりにくい。 だから、一度意味をリセットする。 TDD の T とはなにか。 T は Test の T だが、意味合いとしては Checking に近い。 テストを目的毎に区切る。 TDD は開発者をサポートするものである。 ペアプロで助けてもらった ペアプロも初めてだったけど、思ってたよりもいいものだった。 コードを通してお互いの知</description>
     </item>
     
     <item>
       <title>わからないことがわかった - 「DDD勉強会×すくすくスクラム仙台」に参加しました</title>
-      <link>http://blog.5000164.jp/2014-09-sukusuku/</link>
+      <link>http://blog.5000164.jp/2014/9/14/sukusuku/</link>
       <pubDate>Sun, 14 Sep 2014 00:57:37 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-09-sukusuku/</guid>
+      <guid>http://blog.5000164.jp/2014/9/14/sukusuku/</guid>
       <description>「DDD勉強会×すくすくスクラム仙台」に参加しました イベントの詳細はこちら。 DDD勉強会×すくすくスクラム仙台 コラボ企画 「Scrum でモデリングってどうしよう。プロダクトバックログとモデリングのいい関係」 - すくすくスクラム仙台 | Doorkeeper わからないことがわかった DDD も、Scrum も、全然わかってないけど興味があった。 どんなものか知りたかった。 だから参加した。 その結果、自分がわからないことがわかった。 いや、当たり前のことなんですけど、厳然と事実として目の前につきつけられた。 わからないことがわかることが改善の一歩目 自分が開発する時に、この機能はこういうように実装しよう、と考える。 そこには明確な基準がない。 自分が楽に実装できそうなこと、が基準だけど、その「楽」の基準がない。 なんとなく作ってる。 だから、ごちゃごちゃになる。 ここに、基準が作れそうだと感じた。 優先順位を付けて最小で回す 機能を洗い出す。 優先順位を</description>
     </item>
     
     <item>
       <title>代わり映えのない二年間 - 小説「四畳半神話大系」の感想</title>
-      <link>http://blog.5000164.jp/2014-07-yojouhan_shinwa_taikei/</link>
+      <link>http://blog.5000164.jp/2014/7/5/yojouhan-shinwa-taikei/</link>
       <pubDate>Sat, 05 Jul 2014 10:24:22 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-07-yojouhan_shinwa_taikei/</guid>
+      <guid>http://blog.5000164.jp/2014/7/5/yojouhan-shinwa-taikei/</guid>
       <description>※ネタバレ注意 アニメを見たので、小説を読んだ この記事でアニメの感想を書きましたが、アニメを見たら原作が気になったので小説を読みました。 アニメはよくできている 原作を読んで思ったのは、アニメはよくできてるなー、ということでした。 原作をうまく解釈してアニメという形に合わせた感じがします。 やや間延びした印象を受けたのも、1話30分で1クールという決まったものがある以上しょうがないのかなと思います。 よく30分でうまく区切りをつけたと思います。 ただ、アニメだと時計の演出があってタイムリープもののように感じられましたが、実際はそうではないと思ったのが残念なところ。 森見登美彦らしい表現が楽しい 随所に森見登美彦らしい言葉づかいが感じられて、楽しめました。 代わり映えのない二年間 どの世界の「私」も、明石さんとはうまくいくことができた。 小津とも親友であった。 どの世界でも代わり映えのない二年間であった。 人生は選択の</description>
     </item>
     
     <item>
       <title>その一歩をいつ踏み出すのか – アニメ「四畳半神話大系」の感想</title>
-      <link>http://blog.5000164.jp/2014-07-yojouhan/</link>
+      <link>http://blog.5000164.jp/2014/7/1/yojouhan/</link>
       <pubDate>Tue, 01 Jul 2014 23:25:42 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-07-yojouhan/</guid>
+      <guid>http://blog.5000164.jp/2014/7/1/yojouhan/</guid>
       <description>※ネタバレ注意 友人におすすめされました おすすめのアニメを友人に聞いたところ、四畳半神話大系をおすすめされたので見ました。 原作が森見登美彦とのことで、「太陽の塔」と「夜は短し歩けよ乙女」がおもしろかったので期待。 森見登美彦っぽくておもしろかった 全体的に非常に雰囲気がよかったです。 キャラクター原案が中村佑介で、うまいことキャラが動いているなと感じました。 初めて森見登美彦を読んだきっかけが中村佑介の表紙で、登場人物のどこか浮世離れしたところが絵のイメージとしっくりくるなと思っていたので、中村佑介っぽい絵が動いてるのは楽しかったです。 また、主人公のナレーションを含め、メインキャストの声に違和感がないのがよかった。 森見登美彦作品の雰囲気がうまく出ていて、おもしろかったです。 アニメには合っていない気がした 作品自体はおもしろかったのですが、中盤やや間延びした印象を受けました。 アニメの30分区切りという性</description>
     </item>
     
     <item>
       <title>新しい考え方をもらった – Agile Japan 2014 仙台サテライトに参加しました</title>
-      <link>http://blog.5000164.jp/2014-06-agilejapan/</link>
+      <link>http://blog.5000164.jp/2014/6/27/agilejapan/</link>
       <pubDate>Fri, 27 Jun 2014 22:54:42 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-06-agilejapan/</guid>
+      <guid>http://blog.5000164.jp/2014/6/27/agilejapan/</guid>
       <description>Agile Japan 2014 仙台サテライトに参加しました イベントの詳細はこちら。 イベント案内 | 2014-06-27 (金) Agile Japan 2014 仙台サテライト 「ひとりぼっちは、寂しいもんな」 #AgileJapan - 東北デベロッパーズコミュニティ 柔軟な考え方をもらいました ためになる話をいくつも聞けて、自分の中にはなかった新しい考え方をもらいました。 今まで自分の中にあったものよりも、もっともっと柔軟な考え方をもらいました。 以下、自分の解釈です。 アジャイルを導入するために、アジャイルを説明しない アジャイルとは、ソフトウェア価値の最大化であり、利益を最大化する姿勢である。 その手法として Scrum や XP があるのであり、それ自体はアジャイルではない。 このアジャイルというものを説明するのが非常に難しい。 やってみるのが一番わかりやすい。 じゃあやってみるためにはどうするか。 アジャイルを説明しないで、プラクティスを1つ1つ試してみる。 まずは KPT によるふりかえりだけ試してみる、など。 それで、これいい</description>
     </item>
     
     <item>
       <title>UbuntuのIntelliJ IDEAでJUnitを使う準備をする</title>
-      <link>http://blog.5000164.jp/2014-06-junit/</link>
+      <link>http://blog.5000164.jp/2014/6/14/junit/</link>
       <pubDate>Sat, 14 Jun 2014 22:46:26 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-06-junit/</guid>
+      <guid>http://blog.5000164.jp/2014/6/14/junit/</guid>
       <description>Ubuntuのバージョン ubuntu 14.04 LTS 64bit Javaのインストール 123456 sudo apt-get update sudo apt-get install -y python-software-properties sudo add-apt-repository ppa:webupd8team/java sudo apt-get update sudo apt-get install -y oracle-java8-installer sudo update-java-alternatives -s java-7-oracle 参考 Ubuntu 12.04 LTS に Java (Oracle JDK) をインストールする - xykのブログ IntelliJ IDEAのインストール 公式サイトからダウンロードする IntelliJ IDEA — The Best Java and Polyglot IDE 任意のディレクトリに配置 IntelliJ IDEAの起動 解凍したディレクトリ内のbin/idea.shを実行 プロジェクトの作成 Java を選択 Project SDK で New -&amp;gt; JDK を選択 /usr/lib/jvm/java-8-oracleを選択してOK JUnitをインストール GitHub のリンクからjunit.jarとhamcrest-core.jarをダウンロード junit-team/junit junit.jarとhamcrest-core.jarをプロジェクトにコピー junit.jarとhamcrest-core.jarをライブラリに追加 参考 junit-4.11.jar が単独で使えない - 日々常々 試してみる プロジェクトの直下にtestディレクトリを作成 testディレクトリをTes</description>
     </item>
     
     <item>
       <title>気分が悪くなったらよつばと！を読もう</title>
-      <link>http://blog.5000164.jp/2014-05-yotsubato/</link>
+      <link>http://blog.5000164.jp/2014/5/19/yotsubato/</link>
       <pubDate>Mon, 19 May 2014 22:30:02 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-05-yotsubato/</guid>
+      <guid>http://blog.5000164.jp/2014/5/19/yotsubato/</guid>
       <description>最近よつばと！を読んでいます よつばと！面白いですよね。 何回読んでも面白い。 気分が悪くなる時ってありますよね なんだか気に食わないことが連続しておこったり。 特に意味もなくイライラしたり。 そういう時がありますよね。 私はよくあります。 この前も気分が悪くなった この前は特に意味もなく気分が悪くなりました。 そういう時って他人の一挙手一投足がやけに目について不快感を覚えてしまいます。 いつもの感じでよつばと！を読んだ 最近よつばと！を読んでいるので、いつもの感じで読みました。 読んでたら気分がよくなった さっきまで感じてたいやな気分を感じなくなりました。 むしろいい気分になりました。 理由はよくわからないけど、救われた なぜ気分がよくなったのか、それはまだよくわかっていません。 よつばと！については考える余地が多く残っていそうです。 でも結果はよくわかりました。 暗澹とした気持ちを救ってくれたのです。 気分が悪くなったらよつば</description>
     </item>
     
     <item>
       <title>体調不良で早退した</title>
-      <link>http://blog.5000164.jp/2014-05-sick/</link>
+      <link>http://blog.5000164.jp/2014/5/15/sick/</link>
       <pubDate>Thu, 15 May 2014 23:07:13 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-05-sick/</guid>
+      <guid>http://blog.5000164.jp/2014/5/15/sick/</guid>
       <description>なんだか突然具合が悪くなった 朝はなんともなかったのに、昼過ぎくらいから急に体調が悪くなったので早退しました。 症状としては、頭が重いのと、吐き気ですかね。 具合が悪くなった時は余計な心配をせずに帰りたい ただでさえ具合が悪い状態の時に、余計な心配はしたくない。 帰ったら迷惑になるんじゃないか、とかそんなことは考えたくない。 頭脳労働で頭がうまく働かないのは致命的 そもそも頭がうまく働いてない時点で生産性はガタ落ちである。 そんな状態で無理に作業するよりも、さっさと体調を治してから作業を再開した方がいい。 目先の進捗に気を取られると、体調不良がずるずると長引いてしまう。 もし風邪だったら周りに風邪をうつしてしまうリスクがある もし体調不良の原因がウイルス性のものだった場合、自分がその場に居続けるだけで周りの人にリスクを負わせ続けることになる。 風邪を完全に防ぐことはできないので、具合が悪かったらおとなしく隔離され</description>
     </item>
     
     <item>
       <title>合コンに参加してから落ち着かない心の平穏を取り戻すために</title>
-      <link>http://blog.5000164.jp/2014-05-calm/</link>
+      <link>http://blog.5000164.jp/2014/5/14/calm/</link>
       <pubDate>Wed, 14 May 2014 22:48:40 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-05-calm/</guid>
+      <guid>http://blog.5000164.jp/2014/5/14/calm/</guid>
       <description>僭越ながら合コンに参加させていただきました この度、ありがたいことにご縁がありまして、合コンに参加させていただきました。 合コンに参加するのは4ヶ月ぶり2度目になります。 それ以来、なかなかに心の中がもやもやと落ち着かないので、現在の心境などを言語化してみようと思います。 なにはともあれまずはこのような機会を与えていただいたことに感謝です。 内容については特筆しません 私が書こうとしていることは、合コンが終わってからの話なので、内容について特に触れません。 ただ、非常にありがたかったこと、非常に楽しかったこと、非常に魅力的であったことはここに記します。 合コンが終わってから心が落ち着かない なんだか心がフワフワしています。 慣れないことをしたからかも知れません。 合コンのことを思い返したり、他の女性のことを考えたり。 なんだか女性のことばかりを考えてしまいます。 初めて合コンに参加した時も舞い上がった 初めて合コンに</description>
     </item>
     
     <item>
       <title>ブログ移転しました</title>
-      <link>http://blog.5000164.jp/2014-05-blog_moved/</link>
+      <link>http://blog.5000164.jp/2014/5/13/blog-moved/</link>
       <pubDate>Tue, 13 May 2014 00:11:23 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-05-blog_moved/</guid>
+      <guid>http://blog.5000164.jp/2014/5/13/blog-moved/</guid>
       <description>WordPressからOctopressへ タイトルにもありますが、ブログを移転しました。 ブログの管理をWordPressからOctopressへ変えました。 WordPressからOctopressへ変えた理由 一番の理由としては、サーバーに公開するのが静的ファイルである、という点です。 速さという面でもセキュリティという面でも有利だと判断しました。 5000164.jpからblog.5000164.jpへ ついでにドメインも変えました。 最初は5000164.jpを私のブログのドメインとして位置づけていたのですが、5000164.jpを私のドメインとして、それに付随する形でブログのドメインを作りたいと思ったのがきっかけでした。 ドメインを変更するとそれなりに影響が出るのですが、そのあたりはせっかくの機会なので勉強したいと思います。 Windows 7からUbuntu 14へ 普段からWindowsには不満を持っていたので</description>
     </item>
     
     <item>
       <title>DXライブラリで読み込んだテキストをエンターで表示</title>
-      <link>http://blog.5000164.jp/2014-03-dxlib_practice_2/</link>
+      <link>http://blog.5000164.jp/2014/4/1/dxlib-practice-2/</link>
       <pubDate>Tue, 01 Apr 2014 02:03:09 +0000</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-03-dxlib_practice_2/</guid>
+      <guid>http://blog.5000164.jp/2014/4/1/dxlib-practice-2/</guid>
       <description>実行結果 これが。 こうなって。 こうなってって。 最終的にはこうなります。 正直こんなに長くする必要はなかった。 ソースコードはこちら。 5000164/dxlib-practice-2 ゲームなんだから入力できるようにしなくては 前回 はDXライブラリで文字を表示するだけでしたが、こんどは入力を受け付けるようにします。 とりあえずエンターキーを押したら単純に表示するだけ。 表示するテキストをファイルから読み込むようにした ついでに、表示するテキストを外部から読み込んでいます。 最初はUTF-8でテキストを書いていたら、文字化けをしてうまく読み込めません。 DXライブラリはShift_JISとCRLFで書かれているので、テキストもShift_JISとCRLFで書いたらうまくいきました。 プロジェクト全体の設定も、DXライブラリに合わせてShift_JISとCRLFで統一するのがいいと思います。 個人的にはUTF-8のLFが安心するのですが、DXライブラリを使っている</description>
     </item>
     
     <item>
       <title>変えられないエンジニア</title>
-      <link>http://blog.5000164.jp/2014-03-engineer/</link>
+      <link>http://blog.5000164.jp/2014/3/26/engineer/</link>
       <pubDate>Wed, 26 Mar 2014 23:03:14 +0000</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-03-engineer/</guid>
+      <guid>http://blog.5000164.jp/2014/3/26/engineer/</guid>
       <description>「君は変えられるエンジニアか？変えられないエンジニアか？」 下記リンクから引用 PHPerのためのJenkins | アライドアーキテクツ エンジニアブログ 私は変えられないエンジニアだった。 そして逃げ出してしまった。 逃げ出した判断は間違っていなかったと今でも思う。 ただ、何も変えられなかったことを後悔している。 今でも、中途半端に干渉しては無力感を感じている。 私はなぜ変えられないエンジニアだったのか 原因がわからなければ対策もできない。 全員が必ず変えられるエンジニアになる必要はないが、私は変えられるエンジニアになりたい。 そのために変えられなかった原因を考える。 自分では「良い」と思ってるこの「良さ」を共有できていない 改善はなぜ存在するのか。 そこに問題があるからである。 問題からストレスが生まれ、このストレスを消すために改善する。 この「ストレスを消す」ことが良さである。 しかし、ストレスが共有できなかった。 ストレ</description>
     </item>
     
     <item>
       <title>DXライブラリできれいなフォントを表示する</title>
-      <link>http://blog.5000164.jp/2014-03-dxlib_practice_1/</link>
+      <link>http://blog.5000164.jp/2014/3/16/dxlib-practice-1/</link>
       <pubDate>Sun, 16 Mar 2014 03:20:28 +0000</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-03-dxlib_practice_1/</guid>
+      <guid>http://blog.5000164.jp/2014/3/16/dxlib-practice-1/</guid>
       <description>早速見ていただきましょう ソースコードはこちら。 5000164/dxlib-practice-1 DXライブラリで1番最初に確認したのがフォントの表示 ゲームのようなものを作りたいなと考えていて、知人に教えてもらったDXライブラリを使うことにしました。 ＤＸライブラリ置き場 ＨＯＭＥ その際に、1番初めに確認したことがフォントの表示でした。 フォントの美しさはモチベーションに直結します。 結果はごらんの通り 美しいフォントを表示させることができました。 ちなみに比較対象として、デフォルト設定でのフォントを下部に表示しています。 フォントをきれいに表示するには1行追加するだけ 1 ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8); この文を追加するだけです。 この文を追加することでフォントにアンチエイリアスをかけてくれます。 ＤＸライブラリ置き場 リファレンスページ よりうつくしい表示のために若干の影をつけています アンチエイリアスをかけるだけで十分きれいに表示されます。 ですが、ここではよりフォントを際立たせるために、若</description>
     </item>
     
     <item>
       <title>WPFで方向キーを入力した方向へ四角形を動かす</title>
-      <link>http://blog.5000164.jp/2014-03-wpf_practice_2/</link>
+      <link>http://blog.5000164.jp/2014/3/13/wpf-practice-2/</link>
       <pubDate>Thu, 13 Mar 2014 04:21:42 +0000</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-03-wpf_practice_2/</guid>
+      <guid>http://blog.5000164.jp/2014/3/13/wpf-practice-2/</guid>
       <description>実際に作ったものはこんな感じです 方向キーの入力した方向へで赤い点が動きます。 ソースコードはこちら。 5000164/wpf-practice-2 画面に動かすものを表示する とりあえずなんでもよかったので、Rectangleタグで四角形を表示します。 そして、位置を指定するためにCanvasタグで囲みます。 123 &amp;lt;Canvas&amp;gt; &amp;lt;Rectangle Name=&amp;#34;pointer&amp;#34; Width=&amp;#34;10&amp;#34; Height=&amp;#34;10&amp;#34; Fill=&amp;#34;Red&amp;#34; Canvas.Left=&amp;#34;0&amp;#34; Canvas.Top=&amp;#34;0&amp;#34; /&amp;gt; &amp;lt;/Canvas&amp;gt; これでXAML側はほぼ完成。 あとは動かすだけ。 キーボードの入力を取得します WindowにPreviewKeyDownをつけます。 これでキーが押されたらイベントが発生します。 WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&amp;#8217;s C# Dev Notes C#側で座標を取得するために まずは四角にNameをつけます。 これでC#側で変数として扱えます。 XAML とプログラムコード（WPF） (.NET Framework) 四角の現在位置を取得する C#側で四角につけた名前から座標を取得します。 123 // 現在地を取得 Double leftPosition = Canvas.GetLeft(this.pointer); Double</description>
     </item>
     
     <item>
       <title>WPFで枠のないウィンドウを作る</title>
-      <link>http://blog.5000164.jp/2014-03-wpf_practice_1/</link>
+      <link>http://blog.5000164.jp/2014/3/11/wpf-practice-1/</link>
       <pubDate>Tue, 11 Mar 2014 23:17:38 +0000</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-03-wpf_practice_1/</guid>
+      <guid>http://blog.5000164.jp/2014/3/11/wpf-practice-1/</guid>
       <description>実際に作ったものはこんな感じです ソースコードはこちら。 5000164/wpf-practice-1 実装するにあたって参考にしたサイト こちらの記事を参考にさせていただきました。 WPF で Zune のようなウィンドウを作る | grabacr.nét この記事に沿っていったらできました。 これを追記するだけ。 123 &amp;lt;WindowChrome.WindowChrome&amp;gt; &amp;lt;WindowChrome CaptionHeight=&amp;#34;23&amp;#34; ResizeBorderThickness=&amp;#34;100&amp;#34; /&amp;gt; &amp;lt;/WindowChrome.WindowChrome&amp;gt; 枠なしには出来たけどウィンドウの影が気になる ウィンドウの枠がなくなってかっこよくなったのに、影が主張し過ぎで気になります。 この影も消したい。 影を消す方法を調べていたら、先ほどと同じブログのこちらの記事にたどり着きました。 WPF で Visual Studio 2012 のような光るウィンドウを作る | grabacr.nét なるほど、よくわからん。 WPF初心者の私には無理だと判断したので、この記事の冒頭で紹介されていた簡易版で実装します。 影をいい感じにつける 123456789101112131415161718 &amp;lt;Window x:Class=&amp;#34;練習1.MainWindow&amp;#34; xmlns=&amp;#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&amp;#34; xmlns:x=&amp;#34;http://schemas.microsoft.com/winfx/2006/xaml&amp;#34; Title=&amp;#34;MainWindow&amp;#34; Width=&amp;#34;700&amp;#34; Height=&amp;#34;700&amp;#34; WindowStyle=&amp;#34;None&amp;#34; AllowsTransparency=&amp;#34;True&amp;#34; WindowStartupLocation=&amp;#34;CenterScreen&amp;#34; Background=&amp;#34;Transparent&amp;#34;&amp;gt; ～中略～ &amp;lt;Border BorderBrush=&amp;#34;#222222&amp;#34; Background=&amp;#34;#222222&amp;#34; BorderThickness=&amp;#34;1&amp;#34; Margin=&amp;#34;100&amp;#34;&amp;gt; &amp;lt;Border.Effect&amp;gt; &amp;lt;DropShadowEffect ShadowDepth=&amp;#34;0&amp;#34; BlurRadius=&amp;#34;100&amp;#34; Color=&amp;#34;#000000&amp;#34; Opacity=&amp;#34;0.7&amp;#34; /&amp;gt; &amp;lt;/Border.Effect&amp;gt; ～中略</description>
     </item>
     
     <item>
       <title>4ヶ月無職で過ごした感想</title>
-      <link>http://blog.5000164.jp/2014-02-musyoku/</link>
+      <link>http://blog.5000164.jp/2014/2/28/musyoku/</link>
       <pubDate>Fri, 28 Feb 2014 00:14:30 +0000</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-02-musyoku/</guid>
+      <guid>http://blog.5000164.jp/2014/2/28/musyoku/</guid>
       <description>私は無職で約4ヶ月間過ごしました せっかく無職で4ヶ月も過ごしたので、その感想を書いてみたいと思います。 あんまりこういう機会もないことですし。 最初は不安で仕方がなかった 辞めて最初のうちは不安でした。 不安で不安で、早くなんとかしなきゃとずっと思っていました。 そうしたらすごく疲れました。 不安ばっかりなのはよくないです。 なるべく気楽に考えるようにしてたらすごい楽しくなってきた すごい疲れてしまったので、なるべく気楽に考えるようにしました。 大丈夫なんとかなるさ、と。 気楽に気楽に考えていたら、すごい楽しくなってきました。 お金こそあんまり使えないものの時間がたくさんある。 開発したいときに開発したり、麻雀したい時に麻雀したり。 気分が乗ったら好きなだけ好きなことできるのはすごい楽しかった。 物事を楽しく感じる気持ちの余裕を持ち続けることが大事ですね。 そして1番びっくりしたのがたくさん助けがあること 仕事は自分で見</description>
     </item>
     
     <item>
       <title>プレゼンは想いを伝える手段 - 本の感想（プレゼンテーションzen／ガー・レイノルズ、熊谷小百合訳）</title>
-      <link>http://blog.5000164.jp/2014-02-presentationzen/</link>
+      <link>http://blog.5000164.jp/2014/2/12/presentationzen/</link>
       <pubDate>Wed, 12 Feb 2014 00:27:55 +0000</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-02-presentationzen/</guid>
+      <guid>http://blog.5000164.jp/2014/2/12/presentationzen/</guid>
       <description>プレゼンテーションzen／ガー・レイノルズ、熊谷小百合訳 そのプレゼンはなんのため？ つまらないプレゼンが溢れかえっている。 資料をただ読み上げるだけ？ やらされてやる？ そういった悲劇をなくすためにはどうすればいいのか。 プレゼンとは、伝えたい想いがあり、聞き手を説得するために行う手段の1つである。 プレゼンの見せ方 スライドはドキュメントではない。 主役はスライドではなく発表者である。 スライドは引き立て役。 発表者を引き立てるためにはどんなスライドがいいのか。 デザインの知識がなくてもわかりやすいように書いてある。 プレゼンについての全般的なことをわかりやすく教えてくれる なんのためにプレゼンをするのか。 その準備から発表の心構えまで。 想いを伝える方法や資料をデザインする方法まで簡潔にまとめられていてわかりやすい。 プレゼンの資料がたくさん載ってるのも参考になっていい。 プレゼンがうまくなるためには、いいプレゼンを知</description>
     </item>
     
     <item>
       <title>使いやすさとはなにか - 本の感想（誰のためのデザイン？／D.A.ノーマン、野島久雄訳）</title>
-      <link>http://blog.5000164.jp/2014-02-the_design_of_everyday_things/</link>
+      <link>http://blog.5000164.jp/2014/2/11/the-design-of-everyday-things/</link>
       <pubDate>Tue, 11 Feb 2014 23:47:53 +0000</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-02-the_design_of_everyday_things/</guid>
+      <guid>http://blog.5000164.jp/2014/2/11/the-design-of-everyday-things/</guid>
       <description>誰のためのデザイン？／D.A.ノーマン、野島久雄訳 非常にわかりやすかった 具体的な例が多く出てきて非常にわかりやすかった。 使いやすいデザインとはなにか。 どのようなデザインが使いにくいのか。 どのようにデザインすれば使いやすくなるのか。 読むのに半年くらいかかった 読み始めるのにそれほど抵抗はないのだけれど、読み進めるのが遅かった。 事前に読みやすい読みやすいという評判を聞いていたせいで、私が誤ったメンタルモデルを構築してしまったのかも知れない。 ユーザーよりも開発者を優先したことがある なにかを作る時に、「作るのが簡単だから」という理由で決定したことがある。 もちろん開発工数を抑えることは大事だけれど、それで安物買いの銭失いになってしまっては本末転倒である。 デザインをもっと考えるべきであった。 わかりやすさよりも見た目の簡単さを優先したことがある 具体例としても出てきたボタンの配置について、なんとなくすべてを</description>
     </item>
     
     <item>
       <title>HTC J One HTL22では絵文字が表示されないので簡単な対処法を見つけた</title>
-      <link>http://blog.5000164.jp/2014-01-emoji/</link>
+      <link>http://blog.5000164.jp/2014/1/27/emoji/</link>
       <pubDate>Mon, 27 Jan 2014 01:29:02 +0000</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-01-emoji/</guid>
+      <guid>http://blog.5000164.jp/2014/1/27/emoji/</guid>
       <description>HTC J Oneって絵文字が表示されないんですね HTC J Oneを使い始めて半年ほどですが、最近になって絵文字が表示されないということに気づきました。 というわけで表示するためにはどうすればいいのか調べました。 HTC J Oneには絵文字のフォントが入っていないから絵文字は表示できない 結論から言うと表示できません。 rootをとって絵文字のフォントを入れれば表示することもできるらしいですが、リターンに対してリスクが大きすぎます。 半年間気付かなかったくらい使っていませんし。 そこで簡単にできる臨時的な対処法 表示されない絵文字を完全に確認することはできないですが、一部の絵文字なら簡単に確認できる方法を見つけました。 例えばLINEで絵文字が送られてきた場合 絵文字をコピーします。 Eメールアプリを起動して絵文字を貼り付けます。 絵文字が表示されます。 どうやらEメールアプリはアプリ側で解釈してくれているらしい Eメールアプリでは絵</description>
     </item>
     
     <item>
       <title>hoverした要素に好きなようにハイライトをかける</title>
-      <link>http://blog.5000164.jp/2014-01-hover/</link>
+      <link>http://blog.5000164.jp/2014/1/22/hover/</link>
       <pubDate>Wed, 22 Jan 2014 17:10:00 +0000</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-01-hover/</guid>
+      <guid>http://blog.5000164.jp/2014/1/22/hover/</guid>
       <description>リンクとかをホバーしたら背景色を変えたりしますよね リンクをホバーしたら文字色と背景色が変わるという実装はよくあります。 このコンテンツはクリッカブルですよ、と知らせるためですね。 でもリンクの中に画像が含まれている時は画像だけ変わらなかったりします。 これはちょっと違和感です。 そこですべてに覆いかぶさっているように見せます。 まずはデモをどうぞ 1 See the Pen hoverした要素の上に色をかぶせる by SUGAWARA Hiroshi (@5000164) on CodePen. 実装の解説です 1 非常に簡単です。 今までhoverの擬似クラスにしていた部分をhoverの擬似クラスのafter擬似要素にします。 文章だとちょっとわかりづらいのでコードで書くと、 123 a:hover { ・・・ } これを 123 a:hover::after { ・・・ } 1 こうします。 あとはちょっと装飾してやれば簡単に実現できます。 まとめ 1 hoverした時に画像にハイライトがついていないのが個人的にすごく気になっていたので、簡単に実装できてよかったです。 ちょっと応</description>
     </item>
     
     <item>
       <title>自分を紹介するポートフォリオサイトを作った</title>
-      <link>http://blog.5000164.jp/2014-01-portfolio/</link>
+      <link>http://blog.5000164.jp/2014/1/21/portfolio/</link>
       <pubDate>Tue, 21 Jan 2014 13:15:09 +0000</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-01-portfolio/</guid>
+      <guid>http://blog.5000164.jp/2014/1/21/portfolio/</guid>
       <description>就職のためにポートフォリオサイトを作りました Webデザイナーになりたいなら就職活動をするにあたってポートフォリオサイトは必須という情報を得ましたので作りました。 正直よくわかりませんでした とりあえず作ったは作ったんですが、内容をどうすればいいのかさっぱりわかりませんでした。 それは私に実績がないからですね。 実績を紹介して自分のスキルを証明するためにポートフォリオサイトを作ると思うのですが、実績がないとなにを書けばいいのかわかりません。 だから「すごいぽーとふぉりおさいと」を作ればアピールできるのかなと考えていました。 「すごいぽーとふぉりおさいと」は簡単にはできない 簡単にはできないことばっかりやろうとしてると全然前に進めません。 ポートフォリオサイトを作るためにかなり時間をかけましたが、全然完成の目処が立ちませんでした。 そこでポートフォリオサイトに時間をかけるならできることからやろうと思い、とりあえ</description>
     </item>
     
     <item>
       <title>映像が丁寧で光の表現が美しい – 映画の感想（秒速5センチメートル）</title>
-      <link>http://blog.5000164.jp/2014-01-5cm_per_sec/</link>
+      <link>http://blog.5000164.jp/2014/1/5/5cm-per-sec/</link>
       <pubDate>Sun, 05 Jan 2014 03:33:09 +0000</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-01-5cm_per_sec/</guid>
+      <guid>http://blog.5000164.jp/2014/1/5/5cm-per-sec/</guid>
       <description>秒速5センチメートル ※ネタバレ注意 秒速5センチメートルを見ました Appleの12 DAYS プレゼントでレンタルが無料だったので見ました。 どこかで聞いたことがあるタイトルなのできっと有名なのだと思います。 とりあえずざっくりとした感想を 映像がきれい 映像がすごいきれいですね。 特に光の描写がきれいだと思いました。 現実とは異なる描写が多いように感じたので、そこがアニメの表現の良さなのかなと思います。 遠野くんかっこいい 遠野くんはかっこいいですね。 花苗ちゃんがかわいかったです。 花苗ちゃんの声優がいいなと思いました。 他の人の声はちょっと浮いてる感じがしたけど、花苗ちゃんの声は花苗ちゃんがしゃべってるように感じました。 その他もろもろ 遠野くんが見た夢の中で出てきた銀河ってMacの壁紙の銀河と同じですかね？（調べたらアンドロメダ銀河だった） それがちょっと「おっ？」ってなった。 あとは遠野くんのパソコンがiMacっぽかった</description>
     </item>
     
     <item>
       <title>2013年を振り返る</title>
-      <link>http://blog.5000164.jp/2014-01-2013/</link>
+      <link>http://blog.5000164.jp/2014/1/1/2013/</link>
       <pubDate>Wed, 01 Jan 2014 19:53:50 +0000</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-01-2013/</guid>
+      <guid>http://blog.5000164.jp/2014/1/1/2013/</guid>
       <description>TwitterとかFacebookとか自分のブログを見て2013年を振り返った 2013年が終わったので1年の振り返りをしたいと思います。 こういう時にログがちゃんと残ってて振り返れるのはいいですね。 たくさんのボカロ曲を聴いていい曲とたくさん出会えた 2013年もたくさんボカロ曲を聴きました。 Twitterを見てても気に入った曲のツイートがすごい多かったです。 2014年もたくさん聴くと思います。 自分の好みもどんどん変わっていったりしているので、どういう曲を聴くようになるのか楽しみです。 Webのことをいろいろ勉強した Webの勉強は常に欠かさないようにしていました。 どう考えても去年より力がついてます。 常に成長できるようにこれからもがんばっていきます。 小説をそこそこ読んだ 今までは小説は読んで終わりだったのですが、今年から小説の感想をブログに書くようにしました。 感想を書くというアウトプットが面白かったの</description>
     </item>
     
     <item>
       <title>リストバンド型のライフログガジェットを調べたのでまとめた</title>
-      <link>http://blog.5000164.jp/2014-01-lifelog/</link>
+      <link>http://blog.5000164.jp/2014/1/1/lifelog/</link>
       <pubDate>Wed, 01 Jan 2014 17:44:17 +0000</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-01-lifelog/</guid>
+      <guid>http://blog.5000164.jp/2014/1/1/lifelog/</guid>
       <description>きっかけ なんかうまく睡眠をとれている気がしません。 ということで睡眠のログをとろうと思ってライフログガジェットを調べました。 リストバンド型が楽そうだなと思ったので、リストバンド型だけ調べてます。 Jawbone UP いきなりですが、これを買いました。 慣れてきたら使用感をレビューしたいと思います。 メモ 同期する際にスマートフォンに接続する必要がある。 Androidだと対応していない端末もある。 Bluetoothで接続できるUP24が発売されたが、日本では未発売。 UP24が日本で発売されるまで様子を見るか、UPを買うか。 参考 Jawbone UPを1ヵ月使ってわかったこと | absorbed in&amp;#8230; Bluetooth対応！ Jawbone、新型ライフログリストバンド「UP24」を発表 : ギズモード・ジャパン Jawbone UP24 : Jawboneから次のUPが発表！今度はBluetooth機能が追加！ | favLife with iPhone Nike+ FuelBand SE メモ 運動×ソーシャルというイメージ。 睡眠のトラッキングやライフ</description>
     </item>
     
     <item>
       <title>2013年出会えてよかったVOCALOID曲5選</title>
-      <link>http://blog.5000164.jp/2014-01-vocaloid_2013/</link>
+      <link>http://blog.5000164.jp/2014/1/1/vocaloid-2013/</link>
       <pubDate>Wed, 01 Jan 2014 15:44:14 +0000</pubDate>
       
-      <guid>http://blog.5000164.jp/2014-01-vocaloid_2013/</guid>
+      <guid>http://blog.5000164.jp/2014/1/1/vocaloid-2013/</guid>
       <description>イントロ 2013年が終わり、2014年になりました。 2013年もたくさんのVOCALOID曲が生まれました。 私が聴いた曲はその中のほんとにごく一部ですが、その中でも出会えてよかったという曲を紹介します。 そんなわけで2013年出会えてよかったVOCALOID曲5選です。 キアゲハ・プリケノート &amp;#8211; 初音ミク &amp;#8211; あえる [nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;640&amp;#8243; height=&amp;#8221;360&amp;#8243;]sm20271398[/nicodo] あえるさんのキアゲハ・プリケノート。 音がすごい気持よくてすぐにはまりました。 ミクの声も素敵です。 きれいな音がたくさん詰まってて、でもそれでもうるさくなくて、ゆったりのびのび聴いてて楽しいです。 あえるさんの曲はみんな素敵な音です。 Mermaid &amp;#8211; MC : MIKU RIN GUMI LUKA &amp;#038; DJ : LEN &amp;#8211; Torero [nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;640&amp;#8243; height=&amp;#8221;360&amp;#8243;]sm20624241[/nicodo] ToreroさんのMermaid。 Toreroさんを知ったのはLeviathanでした。 それから追いかけてますけど、どの曲もすごいかっこいいです。 絵もかわいくて好きです。 Toreroさんの曲の中でもMermaidが今のと</description>
     </item>
     

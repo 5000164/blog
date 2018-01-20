@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ブログを WordPress 👉 Octopress 👉 Hugo と変えてきて記事の書式がバラバラだったのをある程度整えた時の作業ログ 🗒️ | 5000164 is here</title>
+    <meta name="description" content="古い記事のメンテとかはしていないんだけど、ブログのデザインを変えた時に見てみたら思ったよりも崩れていたのでまとめてある程度修正することにした。 まだ崩れてる記事とかもあるけど、ひとつひとつ見ていくのは大変なので正確さではなくざっくりなんとなくを目的として作業を行う。 💡 前提となる記事の状態 ブログの記事の書き方は以下の変遷を辿ってきた。 WordPress で始めた最初は HTML を直接書いていた 途中から WordPress に Markdown のプラグインを入れて Markdown で書いていた ブログを Octopress に変えたが WordPress の記事はインポートしなかった 見出しの書き方を ## ではなく --- のように書いていた 見出しレベルは h1 から h3 まで使っていた ブログを Hugo に変えたタイミングで WordPress と Octopress の記事をインポートした 見出しの書き方を ## にした 本文での見出しレベルは h2 だけを使うようにした という状態で時期によって記事の書き方がごちゃごちゃ。 😩 見方 使用したツールは WebStorm 👇 の上側が正規表現での置換対象で、下側が置換内容 3 連">
+    <link href="http://blog.5000164.jp/2018/1/19/format/" rel="canonical">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ブログを WordPress 👉 Octopress 👉 Hugo と変えてきて記事の書式がバラバラだったのをある程度整えた時の作業ログ 🗒️ | 5000164 is here">
+    <meta property="og:description" content="古い記事のメンテとかはしていないんだけど、ブログのデザインを変えた時に見てみたら思ったよりも崩れていたのでまとめてある程度修正することにした。 まだ崩れてる記事とかもあるけど、ひとつひとつ見ていくのは大変なので正確さではなくざっくりなんとなくを目的として作業を行う。 💡 前提となる記事の状態 ブログの記事の書き方は以下の変遷を辿ってきた。 WordPress で始めた最初は HTML を直接書いていた 途中から WordPress に Markdown のプラグインを入れて Markdown で書いていた ブログを Octopress に変えたが WordPress の記事はインポートしなかった 見出しの書き方を ## ではなく --- のように書いていた 見出しレベルは h1 から h3 まで使っていた ブログを Hugo に変えたタイミングで WordPress と Octopress の記事をインポートした 見出しの書き方を ## にした 本文での見出しレベルは h2 だけを使うようにした という状態で時期によって記事の書き方がごちゃごちゃ。 😩 見方 使用したツールは WebStorm 👇 の上側が正規表現での置換対象で、下側が置換内容 3 連">
+    <meta property="og:url" content="http://blog.5000164.jp/2018/1/19/format/">
+    <meta property="og:image" content="http://blog.5000164.jp/icon.png">
+    <meta property="og:site_name" content="5000164 is here">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ブログを WordPress 👉 Octopress 👉 Hugo と変えてきて記事の書式がバラバラだったのをある程度整えた時の作業ログ 🗒️ | 5000164 is here">
+    <meta name="twitter:description" content="古い記事のメンテとかはしていないんだけど、ブログのデザインを変えた時に見てみたら思ったよりも崩れていたのでまとめてある程度修正することにした。 まだ崩れてる記事とかもあるけど、ひとつひとつ見ていくのは大変なので正確さではなくざっくりなんとなくを目的として作業を行う。 💡 前提となる記事の状態 ブログの記事の書き方は以下の変遷を辿ってきた。 WordPress で始めた最初は HTML を直接書いていた 途中から WordPress に Markdown のプラグインを入れて Markdown で書いていた ブログを Octopress に変えたが WordPress の記事はインポートしなかった 見出しの書き方を ## ではなく --- のように書いていた 見出しレベルは h1 から h3 まで使っていた ブログを Hugo に変えたタイミングで WordPress と Octopress の記事をインポートした 見出しの書き方を ## にした 本文での見出しレベルは h2 だけを使うようにした という状態で時期によって記事の書き方がごちゃごちゃ。 😩 見方 使用したツールは WebStorm 👇 の上側が正規表現での置換対象で、下側が置換内容 3 連">
+    <meta name="twitter:url" content="http://blog.5000164.jp/2018/1/19/format/">
+    <meta name="twitter:image" content="http://blog.5000164.jp/icon.png">
+    <meta name="twitter:site" content="@5000164">
+    <meta name="twitter:creator" content="@5000164">
+    <style type="text/css">html{width:100%;height:100%;margin:0;font-size:62.5%;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN",sans-serif;font-kerning:normal;font-feature-settings:"palt";letter-spacing:.02rem;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body{width:100%;height:100%;margin:0;font-size:1.8rem;line-height:1.73;color:#454654;background-color:#fff}@media(max-width:640px){body{line-height:1.9}}header{height:15vw}@media(max-width:640px){header{height:50vw}}header>a{display:block;margin:-2.5vw 0 0 -3vw;font-size:24vw;line-height:1;text-align-last:justify;letter-spacing:-5vw;transform-origin:top center;transform:scaleY(0.5);color:#818398;text-decoration:none;white-space:nowrap}@media(max-width:640px){header>a{margin:-10.5vw 0 0 -3vw;transform:scaleY(2)}}header>a:visited{color:#818398}header>a::before,header>a::after{content:"";display:inline-block;position:absolute;top:21vw;width:0;height:.5vw;background:#c3ffde;transition:.2s ease-out}@media(max-width:640px){header>a::before,header>a::after{height:.4vw}}header>a::before{left:50%}header>a::after{right:50%}header>a:hover::before,header>a:hover::after{width:50%}footer{width:600px;margin:120px auto 60px}footer .about{text-align:right;letter-spacing:-0.2rem}@media(max-width:640px){footer{width:95%}}a{color:#454654}a:visited{color:#73758c}.articles{width:600px;list-style:none;margin:0 auto 20px;padding:0}@media(max-width:640px){.articles{width:95%}}.articles>li{margin:60px 0}.articles>li>a{display:grid;grid-template-columns:110px 1fr;grid-gap:2vw}.articles>li>a>div:first-child{text-align:right;white-space:nowrap}.articles>li>a>div:last-child{white-space:pre-wrap;word-break:break-all;word-wrap:break-word}.title{margin:40px 0}h1{width:600px;margin:0 auto;font-size:3rem;font-weight:bold}@media(max-width:640px){h1{width:95%}}.date{width:600px;margin:0 auto;text-align:right}@media(max-width:640px){.date{width:95%}}.content{margin:40px 0}.content p{width:600px;margin:40px auto}@media(max-width:640px){.content p{width:95%}}.content p:first-child{margin-top:0}.content p:last-child{margin-bottom:0}.content h2{width:600px;margin:120px auto 20px;font-size:2.4rem;font-weight:bold}@media(max-width:640px){.content h2{width:95%}}.content h2:first-child{margin-top:0}.content h2+p{margin-top:0}.content h2+h2{margin-top:0}.content h4{width:600px;margin:10px auto 10px;font-size:1.8rem;font-weight:normal;text-align:center}@media(max-width:640px){.content h4{width:95%}}.content ul{width:580px;margin:auto;padding-left:20px}@media(max-width:640px){.content ul{width:90%;padding-left:5%}}.content figure{width:600px;margin:auto}@media(max-width:640px){.content figure{width:95%}}.content img{display:block;max-width:600px;margin:0 auto}@media(max-width:640px){.content img{max-width:95%}}.content blockquote{width:600px;margin:20px auto}@media(max-width:640px){.content blockquote{width:95%}}.content blockquote>p{position:relative;width:580px;padding-left:20px}@media(max-width:640px){.content blockquote>p{width:96%;padding-left:4%}}.content blockquote>p::before{content:"";display:block;position:absolute;top:0;left:0;width:4px;height:100%;background:#e3e4e6;border-radius:8px}.content .highlight{margin:40px 0;background-color:#272822}.content .highlight>div{max-width:100%;margin:0 auto}.content .highlight table{display:flex !important;justify-content:center;align-items:center}.content .highlight tbody{min-width:600px;max-width:98%}@media(max-width:640px){.content .highlight tbody{min-width:95%;max-width:95%}}</style>
+    <link href="/favicon.ico" rel="icon">
+    <meta name="generator" content="Hugo 0.33" />
+</head>
+<body>
+<header>
+    <a href="http://blog.5000164.jp/">5000164 is here</a>
+</header>
+
+<article>
+    <div class="title">
+        <div class="date">2018.1.19</div>
+        <h1>ブログを WordPress 👉 Octopress 👉 Hugo と変えてきて記事の書式がバラバラだったのをある程度整えた時の作業ログ 🗒️</h1>
+    </div>
+    <div class="content">
+        
+
+<p>古い記事のメンテとかはしていないんだけど、ブログのデザインを変えた時に見てみたら思ったよりも崩れていたのでまとめてある程度修正することにした。<br />
+まだ崩れてる記事とかもあるけど、ひとつひとつ見ていくのは大変なので正確さではなくざっくりなんとなくを目的として作業を行う。 💡</p>
+
+<h2 id="前提となる記事の状態">前提となる記事の状態</h2>
+
+<p>ブログの記事の書き方は以下の変遷を辿ってきた。</p>
+
+<ul>
+<li>WordPress で始めた最初は HTML を直接書いていた</li>
+<li>途中から WordPress に Markdown のプラグインを入れて Markdown で書いていた</li>
+<li>ブログを Octopress に変えたが WordPress の記事はインポートしなかった</li>
+<li>見出しの書き方を <code>##</code> ではなく <code>---</code> のように書いていた</li>
+<li>見出しレベルは <code>h1</code> から <code>h3</code> まで使っていた</li>
+<li>ブログを Hugo に変えたタイミングで WordPress と Octopress の記事をインポートした</li>
+<li>見出しの書き方を <code>##</code> にした</li>
+<li>本文での見出しレベルは <code>h2</code> だけを使うようにした</li>
+</ul>
+
+<p>という状態で時期によって記事の書き方がごちゃごちゃ。 😩</p>
+
+<h2 id="見方">見方</h2>
+
+<ul>
+<li>使用したツールは WebStorm</li>
+<li>👇 の上側が正規表現での置換対象で、下側が置換内容</li>
+<li>3 連続してるバッククオートの前にスペースが 4 つ入っているのはコードブロックで囲むためのもので、実際はスペースは不要</li>
+<li>半角スペースが 1 個だけ入っているものは中身がなにもないと表示が崩れて見づらくなってしまうのでそれを回避するためのもので、実際は空のまま置換して削除する</li>
+<li><code>&amp;nbsp;</code> だけコードブロックだとうまくエスケープされなかったのでバッククオートで囲って表示している</li>
+</ul>
+
+<h2 id="以下作業ログ">以下作業ログ</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">^(.*)$\n=+</pre></td></tr></table>
+</div>
+</div>
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">## $1\n</pre></td></tr></table>
+</div>
+</div>
+<p><code>h1</code> を <code>h2</code> にしてるのは見出しレベルの <code>h2</code> だけ使うことにしたから。<br />
+<code>h1</code> のままがいいなら <code># $1\n</code> で置換すればいい。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">^(.*)$\n--+</pre></td></tr></table>
+</div>
+</div>
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">## $1\n</pre></td></tr></table>
+</div>
+</div>
+<p><code>----</code> を使ってたやつはリストの <code>-</code> があったので最低 2 個つながっていることをチェックしている。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">^\* </pre></td></tr></table>
+</div>
+</div>
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">- </pre></td></tr></table>
+</div>
+</div>
+<p>リストに使ってる <code>*</code> を <code>-</code> に統一するため。<br />
+<code>*</code> だけだと記事で普通に使ってるからそこそこ多く引っかかる。<br />
+行頭チェックと <code>*</code> の後にスペースが入ってるかチェックすることで絞り込む。<br />
+それでもひっかかるものはあるのであとは手作業で直す。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&#34;$\n^\++$</pre></td></tr></table>
+</div>
+</div>
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&#34;\n+++\n</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">(^$\n){2,}</pre></td></tr></table>
+</div>
+</div>
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">\n</pre></td></tr></table>
+</div>
+</div>
+<p>Front Matter の後に 1 行空いてたり空いてなかったりしたのを統一するため。<br />
+最初は</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">^\++$\n^([^t^\n])</pre></td></tr></table>
+</div>
+</div>
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">+++\n\n$1</pre></td></tr></table>
+</div>
+</div>
+<p>というやり方でやってたんだけど、これだとなぜか行末のスペースが消えてしまう。<br />
+ページ内で置換した場合は消えないのに、ディレクトリ指定で一気に置換すると消える。<br />
+困る。<br />
+なので、行末にスペースがある行に少しでも触れる正規表現だとだめなのでは？という仮説のもとにそこに触れないようにやってみたら消えずに済んだ。<br />
+なので一度全部のファイルに改行を入れてから 2 行以上の空行を 1 行にすることで対応した。<br />
+最初に <code>&quot;</code> とか入れてるのは上の方の <code>+++</code> に引っかからないようにするため。<br />
+<code>+++</code> 内はすでに一度整備していて、最後に <code>&quot;</code> が来ることがわかってるからこの条件でいけた。<br />
+すぐできるだろうしついでにあそこも直すかーという気持ちで始めたのにここだけ時間かかって疲れた。<br />
+しかもそれでも結局なぜか行末のスペースが消えてるところもあったので見直して手で直した。<br />
+あと 2 行以上の空行を削除でやるとコードの中の改行が消えてだめだとわかった。<br />
+そこも手で直した。</p>
+
+<p><code>&amp;nbsp;</code></p>
+
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"> </pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">^ +$</pre></td></tr></table>
+</div>
+</div>
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"> </pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">(^$\n){2,}</pre></td></tr></table>
+</div>
+</div>
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">\n</pre></td></tr></table>
+</div>
+</div>
+<p><code>&amp;nbsp;</code> を消したり空白だけの行を消したりして空行を 1 行にした。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;a.*href=&#34;(.*?)&#34;.*&gt;(.*?)&lt;.*$</pre></td></tr></table>
+</div>
+</div>
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">[$2]($1)</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;pre.*?&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">    ```</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;/pre.*?&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">    ```</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;blockquote.*?&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&gt;&gt;&gt;</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;br.*?&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">  \n</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;.*?&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"> </pre></td></tr></table>
+</div>
+</div>
+<p>残しておきたいタグを Markdown に有効なものに置換してから全 HTML タグを削除。<br />
+でもこれはコードの中のものや必要なリンクを消すってわかってるのでちゃんと見返す必要がある。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">^ +([^ ]+)$</pre></td></tr></table>
+</div>
+</div>
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">$1</pre></td></tr></table>
+</div>
+</div>
+<p>文字の前にある空白を削除。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">^ +$</pre></td></tr></table>
+</div>
+</div>
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"> </pre></td></tr></table>
+</div>
+</div>
+<p>空白だけの行の内容を削除。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -name <span style="color:#e6db74">&#34;*.md&#34;</span> -type f -print0 | xargs -0 gsed -i -e <span style="color:#e6db74">&#39;$ a korehakesutext&#39;</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">korehakesutext</pre></td></tr></table>
+</div>
+</div>
+<p>👇</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"> </pre></td></tr></table>
+</div>
+</div>
+<p>全てのファイルの最後に空行を追加しようと思ったら正規表現でファイルの最後、というのが取れなかったので sed で追加することにした。<br />
+Mac の sed は POSIX sed で使いづらいらしく、 <code>brew install gnu-sed</code> で GNU sed を入れて使った。<br />
+空行の追加方法がわからなかったのでダミーの文字列を入れてからダミーの文字を消すことにした。<br />
+追加した後にまた 2 行以上の空行を消そう、と思ったらファイルの最後の空行 2 行になってるのは正規表現では検出できないっぽかったので、全てのファイルには追加しないで、日付が古くてファイルの最後に改行が入ってなさそうなものだけに絞って改行を追加した。<br />
+結局バラバラなままだしこれはやらなくてもよかった。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>一括で変換かけたけど見直したらうまくいってないところが思ったよりも多くて、けっこう手で直したので疲れた。 😓<br />
+記事のソースとなるデータはできるだけ構造化してある状態で保存しておきたいと思った。</p>
+
+<h2 id="おまけ">おまけ</h2>
+
+<p>WebStorm の Markdown の設定で行末のスペースを削除する設定になっていたので不要な変更点が出たりした。<br />
+Hugo は Markdown に厳密で行末にスペース 2 つないと改行しないのでこの設定は切っておくといい。<br />
+あと、最近絵文字いいなという気分が高まってきたのでブログに絵文字を使ってみた。 ✨</p>
+
+    </div>
+</article>
+<footer>
+    <ul>
+        
+        <li>
+    <a href="http://blog.5000164.jp/2012/">
+        <div>2012</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2013/">
+        <div>2013</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2014/">
+        <div>2014</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2015/">
+        <div>2015</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2016/">
+        <div>2016</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2017/">
+        <div>2017</div>
+    </a>
+</li>
+
+        
+        <li>
+    <a href="http://blog.5000164.jp/2018/">
+        <div>2018</div>
+    </a>
+</li>
+
+        
+    </ul>
+    <div class="about">
+        <div>菅原 浩</div>
+        <div><a href="https://github.com/5000164/profile">About</a></div>
+    </div>
+</footer>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51024599-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+
