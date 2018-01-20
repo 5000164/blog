@@ -53,7 +53,7 @@
       <pubDate>Mon, 20 Nov 2017 13:26:39 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-11-speed/</guid>
-      <description>速い is 正義 CSS は HTML に埋め込んだ方が速いらしい。 では Hugo でどうやってそれを実現するのか。 partial を使えばできそうだと思ってぐぐったらあった。 [Feature request] Partial CSS files · Issue #3186 · gohugoio/hugo これに従って下記のように修正する。 1 &amp;lt;style type=&amp;#34;text/css&amp;#34;&amp;gt;{{ partial &amp;#34;css/main.css&amp;#34; . | print | safeCSS }}{{ partial &amp;#34;css/monokai.css&amp;#34; . | print | safeCSS }}&amp;lt;/style&amp;gt; これでできた。 コードはここ。 高速化のために Web フォントをやめて CSS を HTML への埋め込みにした · 5000164/divided@0f3132d Minify はまだできてない 簡単にやる方法あるのかな。</description>
+      <description>速い is 正義 CSS は HTML に埋め込んだ方が速いらしい。 では Hugo でどうやってそれを実現するのか。 partial を使えばできそうだと思ってぐぐったらあった。 [Feature request] Partial CSS files · Issue #3186 · gohugoio/hugo これに従って下記のように修正する。 1 &amp;lt;style type=&amp;#34;text/css&amp;#34;&amp;gt;{{ partial &amp;#34;css/main.css&amp;#34; . | print | safeCSS }}{{ partial &amp;#34;css/monokai.css&amp;#34; . | print | safeCSS }}&amp;lt;/style&amp;gt; これでできた。 コードはここ。 高速化のために Web フォントをやめて CSS を HTML への埋め込みにした · 5000164/remember@0f3132d Minify はまだできてない 簡単にやる方法あるのかな。 2018.1.20 追記 CSS の Minify は YUI Compressor と WebStorm の File Watcher を使って実現した。 Minifying CSS - Help | WebStorm</description>
     </item>
     
     <item>
@@ -143,7 +143,7 @@
       <pubDate>Mon, 14 Aug 2017 22:44:23 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017-08-syntax_highlighting/</guid>
-      <description>結論 シンタックスハイライト用の css をテーマで読み込んでおく config.toml に下記の設定を追加 12345 pygmentscodefences = true pygmentsCodeFencesGuessSyntax = true pygmentsStyle = &amp;#34;monokai&amp;#34; pygmentsUseClasses = true pygmentsoptions = &amp;#34;linenos=inline&amp;#34; 背景 コードを見やすくしたいからシンタックスハイライトを使おうと思った。 やってみたら思ったよりもできなかった。 なんか疲れたのでメモ。 手順 Pygments をインストールする シンタックスハイライトするのに必要なやつ。 何も考えずに入れる。 1 sudo easy_install Pygments シンタックスハイライト用の css を生成する カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。 クラスで指定する場合は css を事前に生成しておいて読むこんでおく必要がある。 下記のコマンドで css を生成する。 デフォルトで用意されていないカラースキーマの使い方がわからなかったので今回は monokai を使う。 1 pygmentize -f html -S monokai -a .highlight &amp;gt; monokai.css 生成した css をテーマで読み込む テーマの static ディレクトリに css を置いて header で読み込む。 シンタックスハイライトを使うように設定する config.toml</description>
+      <description>2018.1.20 追記 バージョン 0.28 から導入された Chroma で何も考えず簡単にシンタックスハイライトが使えるようになった。 Hugo | Hugo 0.28: High-speed Syntax Highlighting! Hugo | Syntax Highlighting 結論 シンタックスハイライト用の css をテーマで読み込んでおく config.toml に下記の設定を追加 12345 pygmentscodefences = true pygmentsCodeFencesGuessSyntax = true pygmentsStyle = &amp;#34;monokai&amp;#34; pygmentsUseClasses = true pygmentsoptions = &amp;#34;linenos=inline&amp;#34; 背景 コードを見やすくしたいからシンタックスハイライトを使おうと思った。 やってみたら思ったよりもできなかった。 なんか疲れたのでメモ。 手順 Pygments をインストールする シンタックスハイライトするのに必要なやつ。 何も考えずに入れる。 1 sudo easy_install Pygments シンタックスハイライト用の css を生成する カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。 クラスで指定する場合は css を事前に生成しておいて読むこんでおく必要がある。 下記のコマンドで css を生成する。 デフォルトで用意されていないカラースキーマの使い方がわからなかったので今回は monokai を使う。 1 pygmentize -f html -S monokai -a .highlight &amp;gt; monokai.css 生</description>
     </item>
     
     <item>

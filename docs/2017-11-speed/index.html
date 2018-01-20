@@ -12,17 +12,17 @@ ga('send', 'pageview');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>高速化のために Hugo で CSS を HTML に埋め込む | 5000164 is here</title>
-    <meta name="description" content="速い is 正義 CSS は HTML に埋め込んだ方が速いらしい。 では Hugo でどうやってそれを実現するのか。 partial を使えばできそうだと思ってぐぐったらあった。 [Feature request] Partial CSS files · Issue #3186 · gohugoio/hugo これに従って下記のように修正する。 1 &lt;style type=&#34;text/css&#34;&gt;{{ partial &#34;css/main.css&#34; . | print | safeCSS }}{{ partial &#34;css/monokai.css&#34; . | print | safeCSS }}&lt;/style&gt; これでできた。 コードはここ。 高速化のために Web フォントをやめて CSS を HTML への埋め込みにした · 5000164/divided@0f3132d Minify はまだできてない 簡単にやる方法あるのかな。">
+    <meta name="description" content="速い is 正義 CSS は HTML に埋め込んだ方が速いらしい。 では Hugo でどうやってそれを実現するのか。 partial を使えばできそうだと思ってぐぐったらあった。 [Feature request] Partial CSS files · Issue #3186 · gohugoio/hugo これに従って下記のように修正する。 1 &lt;style type=&#34;text/css&#34;&gt;{{ partial &#34;css/main.css&#34; . | print | safeCSS }}{{ partial &#34;css/monokai.css&#34; . | print | safeCSS }}&lt;/style&gt; これでできた。 コードはここ。 高速化のために Web フォントをやめて CSS を HTML への埋め込みにした · 5000164/remember@0f3132d Minify はまだできてない 簡単にやる方法あるのかな。 2018.1.20 追記 CSS の Minify は YUI Compressor と WebStorm の File Watcher を使って実現した。 Minifying CSS - Help | WebStorm">
     <link href="http://blog.5000164.jp/2017-11-speed/" rel="canonical">
     <meta property="og:type" content="article">
     <meta property="og:title" content="高速化のために Hugo で CSS を HTML に埋め込む | 5000164 is here">
-    <meta property="og:description" content="速い is 正義 CSS は HTML に埋め込んだ方が速いらしい。 では Hugo でどうやってそれを実現するのか。 partial を使えばできそうだと思ってぐぐったらあった。 [Feature request] Partial CSS files · Issue #3186 · gohugoio/hugo これに従って下記のように修正する。 1 &lt;style type=&#34;text/css&#34;&gt;{{ partial &#34;css/main.css&#34; . | print | safeCSS }}{{ partial &#34;css/monokai.css&#34; . | print | safeCSS }}&lt;/style&gt; これでできた。 コードはここ。 高速化のために Web フォントをやめて CSS を HTML への埋め込みにした · 5000164/divided@0f3132d Minify はまだできてない 簡単にやる方法あるのかな。">
+    <meta property="og:description" content="速い is 正義 CSS は HTML に埋め込んだ方が速いらしい。 では Hugo でどうやってそれを実現するのか。 partial を使えばできそうだと思ってぐぐったらあった。 [Feature request] Partial CSS files · Issue #3186 · gohugoio/hugo これに従って下記のように修正する。 1 &lt;style type=&#34;text/css&#34;&gt;{{ partial &#34;css/main.css&#34; . | print | safeCSS }}{{ partial &#34;css/monokai.css&#34; . | print | safeCSS }}&lt;/style&gt; これでできた。 コードはここ。 高速化のために Web フォントをやめて CSS を HTML への埋め込みにした · 5000164/remember@0f3132d Minify はまだできてない 簡単にやる方法あるのかな。 2018.1.20 追記 CSS の Minify は YUI Compressor と WebStorm の File Watcher を使って実現した。 Minifying CSS - Help | WebStorm">
     <meta property="og:url" content="http://blog.5000164.jp/2017-11-speed/">
     <meta property="og:image" content="http://blog.5000164.jp/icon.png">
     <meta property="og:site_name" content="5000164 is here">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="高速化のために Hugo で CSS を HTML に埋め込む | 5000164 is here">
-    <meta name="twitter:description" content="速い is 正義 CSS は HTML に埋め込んだ方が速いらしい。 では Hugo でどうやってそれを実現するのか。 partial を使えばできそうだと思ってぐぐったらあった。 [Feature request] Partial CSS files · Issue #3186 · gohugoio/hugo これに従って下記のように修正する。 1 &lt;style type=&#34;text/css&#34;&gt;{{ partial &#34;css/main.css&#34; . | print | safeCSS }}{{ partial &#34;css/monokai.css&#34; . | print | safeCSS }}&lt;/style&gt; これでできた。 コードはここ。 高速化のために Web フォントをやめて CSS を HTML への埋め込みにした · 5000164/divided@0f3132d Minify はまだできてない 簡単にやる方法あるのかな。">
+    <meta name="twitter:description" content="速い is 正義 CSS は HTML に埋め込んだ方が速いらしい。 では Hugo でどうやってそれを実現するのか。 partial を使えばできそうだと思ってぐぐったらあった。 [Feature request] Partial CSS files · Issue #3186 · gohugoio/hugo これに従って下記のように修正する。 1 &lt;style type=&#34;text/css&#34;&gt;{{ partial &#34;css/main.css&#34; . | print | safeCSS }}{{ partial &#34;css/monokai.css&#34; . | print | safeCSS }}&lt;/style&gt; これでできた。 コードはここ。 高速化のために Web フォントをやめて CSS を HTML への埋め込みにした · 5000164/remember@0f3132d Minify はまだできてない 簡単にやる方法あるのかな。 2018.1.20 追記 CSS の Minify は YUI Compressor と WebStorm の File Watcher を使って実現した。 Minifying CSS - Help | WebStorm">
     <meta name="twitter:url" content="http://blog.5000164.jp/2017-11-speed/">
     <meta name="twitter:image" content="http://blog.5000164.jp/icon.png">
     <meta name="twitter:site" content="@5000164">
@@ -66,12 +66,20 @@ partial を使えばできそうだと思ってぐぐったらあった。</p>
 コードはここ。</p>
 
 <ul>
-<li><a href="https://github.com/5000164/divided/commit/0f3132d2b44924e02d60568c912f536accdfa598">高速化のために Web フォントをやめて CSS を HTML への埋め込みにした · 5000164/divided@0f3132d</a></li>
+<li><a href="https://github.com/5000164/remember/commit/0f3132d2b44924e02d60568c912f536accdfa598">高速化のために Web フォントをやめて CSS を HTML への埋め込みにした · 5000164/remember@0f3132d</a></li>
 </ul>
 
 <h2 id="minify-はまだできてない">Minify はまだできてない</h2>
 
 <p>簡単にやる方法あるのかな。</p>
+
+<h2 id="2018-1-20-追記">2018.1.20 追記</h2>
+
+<p>CSS の Minify は YUI Compressor と WebStorm の File Watcher を使って実現した。</p>
+
+<ul>
+<li><a href="https://www.jetbrains.com/help/webstorm/minifying-css.html">Minifying CSS - Help | WebStorm</a></li>
+</ul>
 
     </div>
 </article>
