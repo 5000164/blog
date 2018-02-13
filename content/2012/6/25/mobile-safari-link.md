@@ -18,6 +18,6 @@ Mobile Safari では数字を電話番号だとみなして、勝手に電話番
 <a href="telto:000-0000-0000">000-0000-0000</a>
 ```
 
-参考サイト
+## 参考サイト
 
 - [jQueryMobileを使ってのスマートフォンサイトの構築メモ at HouseTect, JavaScriptな情報をあなたに](http://hisasann.com/housetect/2011/02/jquerymobile.html)

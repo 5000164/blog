@@ -17,7 +17,7 @@ sudo apt-get update
 sudo apt-get install -y oracle-java8-installer
 sudo update-java-alternatives -s java-7-oracle
 ```
-参考  
+## 参考  
 [Ubuntu 12.04 LTS に Java (Oracle JDK) をインストールする - xykのブログ](http://xyk.hatenablog.com/entry/2013/10/15/175623)
 
 ## IntelliJ IDEAのインストール
@@ -38,7 +38,7 @@ GitHub のリンクから`junit.jar`と`hamcrest-core.jar`をダウンロード
 [junit-team/junit](https://github.com/junit-team/junit)  
 `junit.jar`と`hamcrest-core.jar`をプロジェクトにコピー  
 `junit.jar`と`hamcrest-core.jar`をライブラリに追加  
-参考  
+## 参考  
 [junit-4.11.jar が単独で使えない - 日々常々](http://d.hatena.ne.jp/irof/20130110/p1)
 
 ## 試してみる
