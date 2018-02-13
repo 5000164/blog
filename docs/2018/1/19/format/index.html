@@ -71,7 +71,6 @@ ga('send', 'pageview');
 <li>👇 の上側が正規表現での置換対象で、下側が置換内容</li>
 <li>3 連続してるバッククオートの前にスペースが 4 つ入っているのはコードブロックで囲むためのもので、実際はスペースは不要</li>
 <li>半角スペースが 1 個だけ入っているものは中身がなにもないと表示が崩れて見づらくなってしまうのでそれを回避するためのもので、実際は空のまま置換して削除する</li>
-<li><code>&amp;nbsp;</code> だけコードブロックだとうまくエスケープされなかったのでバッククオートで囲って表示している</li>
 </ul>
 
 <h2 id="以下作業ログ">以下作業ログ</h2>
@@ -184,9 +183,13 @@ ga('send', 'pageview');
 しかもそれでも結局なぜか行末のスペースが消えてるところもあったので見直して手で直した。<br />
 あと 2 行以上の空行を削除でやるとコードの中の改行が消えてだめだとわかった。<br />
 そこも手で直した。</p>
-
-<p><code>&amp;nbsp;</code></p>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&amp;nbsp;</pre></td></tr></table>
+</div>
+</div>
 <p>👇</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

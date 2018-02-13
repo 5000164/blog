@@ -6,7 +6,7 @@ aliases = ["/2012-11-webdesign_grand/"]
 
 このサイトのデザインについて考える。
 
-[GRAND : 416.977.3831 &#8211; Digital, Interactive, Mobile & Social](http://www.wearegrand.com/)
+[GRAND : 416.977.3831 - Digital, Interactive, Mobile & Social](http://www.wearegrand.com/)
 
 {{< figure src="/images/2012/11/20121120.png" title="" >}}
 

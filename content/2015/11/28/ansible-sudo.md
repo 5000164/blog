@@ -27,16 +27,22 @@ ansible-playbook playbook.yml --ask-sudo-pass
 
 なぜ、どうして。  
 全然仕組みを理解できていなかった。  
-そして今日たまたまこの記事を見る。  
-[suとsudoの違い - Qiita](http://qiita.com/aosho235/items/05d4a4f549016e41cde7)  
+そして今日たまたまこの記事を見る。
+
+- [suとsudoの違い - Qiita](http://qiita.com/aosho235/items/05d4a4f549016e41cde7)
+
 「suは切替先ユーザー（root）のパスワードが要求されるのに対し、sudoは元のユーザーのパスワードが要求される。」  
 なるほど、もしかしてこれでは？  
-「ansible sudoers」でググる。  
-[Ansibleでユーザを追加 - Qiita](http://qiita.com/kiarina/items/813878489f4adba4eb34)  
-[ansibleでsudo可能なユーザを追加する - Qiita](http://qiita.com/suin/items/155ca2b98c485935db1b)  
+「ansible sudoers」でググる。
+
+- [Ansibleでユーザを追加 - Qiita](http://qiita.com/kiarina/items/813878489f4adba4eb34)
+- [ansibleでsudo可能なユーザを追加する - Qiita](http://qiita.com/suin/items/155ca2b98c485935db1b)
+
 なるほど。  
-「sudo group」でググる。  
-[sudoユーザーを追加する方法 - Linux入門 - Webkaru](http://webkaru.net/linux/sudo-user-add/)  
+「sudo group」でググる。
+
+- [sudoユーザーを追加する方法 - Linux入門 - Webkaru](http://webkaru.net/linux/sudo-user-add/)
+
 やってみよう。
 
 ## sudo はできたけどパスワードは聞かれる
@@ -69,8 +75,9 @@ vagrant ALL=(ALL) NOPASSWD:ALL
 ## copy モジュールで持ってったら動いた
 
 やった。  
-でも調べてたらもっと簡単な記述があった。  
-[Vagrant + Ansibleで環境構築をコード化する(4)さらにPlaybook　～終わり～ - Qiita](http://qiita.com/hidekuro/items/8cd1ebe1c52a256593ef)
+でも調べてたらもっと簡単な記述があった。
+
+- [Vagrant + Ansibleで環境構築をコード化する(4)さらにPlaybook　～終わり～ - Qiita](http://qiita.com/hidekuro/items/8cd1ebe1c52a256593ef)
 
 ## 結論
 
@@ -83,9 +90,9 @@ vagrant ALL=(ALL) NOPASSWD:ALL
     user_name: # ユーザー名を設定
     password: # ハッシュ化したパスワードを設定
   tasks:
-    - user: name=&#123;&#123; user_name &#125;&#125; password=&#123;&#123; password &#125;&#125; groups=&#123;&#123; user_name &#125;&#125;
-    - lineinfile: dest=/etc/sudoers.d/&#123;&#123; user_name &#125;&#125; line="&#123;&#123; user_name &#125;&#125; ALL=(ALL) NOPASSWD:ALL" create=yes owner=root group=root mode=0440
-    - authorized_key: user=&#123;&#123; user_name &#125;&#125; key="&#123;&#123; lookup('file', '/home/charlie/.ssh/id_rsa.pub') &#125;&#125;" # Ansible を実行しているユーザーの持っている公開鍵へのパス
+    - user: name={{ user_name }} password={{ password }} groups={{ user_name }}
+    - lineinfile: dest=/etc/sudoers.d/{{ user_name }} line="{{ user_name }} ALL=(ALL) NOPASSWD:ALL" create=yes owner=root group=root mode=0440
+    - authorized_key: user={{ user_name }} key="{{ lookup('file', '/home/charlie/.ssh/id_rsa.pub') }}" # Ansible を実行しているユーザーの持っている公開鍵へのパス
 ```
 
 これで同じ playbook の中で作成したユーザーでパスワードなしで `sudo: yes` できるようになった。

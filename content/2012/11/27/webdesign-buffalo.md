@@ -6,7 +6,7 @@ aliases = ["/2012-11-webdesign_buffalo/"]
 
 このサイトのデザインについて考える。
 
-[Buffalo &#8211; Web Development, E-Commerce & Web Design &#8211; Brighton UK](http://builtbybuffalo.com/)
+[Buffalo - Web Development, E-Commerce & Web Design - Brighton UK](http://builtbybuffalo.com/)
 
 {{< figure src="/images/2012/11/Buffalo.png" title="" >}}
 

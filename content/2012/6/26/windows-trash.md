@@ -92,9 +92,9 @@ Toolbar
 
 ## 参考サイト
 
-[Windows7 でごみ箱アイコンをタスクバーにピン留め(固定)する方法 &#8211; さよならストレス](http://d.hatena.ne.jp/wwwcfe/20091106/pin_recycle_bin_to_taskbar)
+[Windows7 でごみ箱アイコンをタスクバーにピン留め(固定)する方法 - さよならストレス](http://d.hatena.ne.jp/wwwcfe/20091106/pin_recycle_bin_to_taskbar)
 
-[Place a Fully Functional Recycle Bin on your Windows 7 Taskbar &#8211; TechSpot Guides](http://www.techspot.com/guides/196-recycle-bin-on-windows-7-taskbar/)
+[Place a Fully Functional Recycle Bin on your Windows 7 Taskbar - TechSpot Guides](http://www.techspot.com/guides/196-recycle-bin-on-windows-7-taskbar/)
 
 [ImeTray Windows7対応,IMEの状態をタスクトレイに表示の詳細情報 : Vector ソフトを探す！](http://www.vector.co.jp/soft/win95/writing/se456773.html)
 

@@ -69,17 +69,29 @@ ga('send', 'pageview');
 
 <p>なぜ、どうして。<br />
 全然仕組みを理解できていなかった。<br />
-そして今日たまたまこの記事を見る。<br />
-<a href="http://qiita.com/aosho235/items/05d4a4f549016e41cde7">suとsudoの違い - Qiita</a><br />
-「suは切替先ユーザー（root）のパスワードが要求されるのに対し、sudoは元のユーザーのパスワードが要求される。」<br />
+そして今日たまたまこの記事を見る。</p>
+
+<ul>
+<li><a href="http://qiita.com/aosho235/items/05d4a4f549016e41cde7">suとsudoの違い - Qiita</a></li>
+</ul>
+
+<p>「suは切替先ユーザー（root）のパスワードが要求されるのに対し、sudoは元のユーザーのパスワードが要求される。」<br />
 なるほど、もしかしてこれでは？<br />
-「ansible sudoers」でググる。<br />
-<a href="http://qiita.com/kiarina/items/813878489f4adba4eb34">Ansibleでユーザを追加 - Qiita</a><br />
-<a href="http://qiita.com/suin/items/155ca2b98c485935db1b">ansibleでsudo可能なユーザを追加する - Qiita</a><br />
-なるほど。<br />
-「sudo group」でググる。<br />
-<a href="http://webkaru.net/linux/sudo-user-add/">sudoユーザーを追加する方法 - Linux入門 - Webkaru</a><br />
-やってみよう。</p>
+「ansible sudoers」でググる。</p>
+
+<ul>
+<li><a href="http://qiita.com/kiarina/items/813878489f4adba4eb34">Ansibleでユーザを追加 - Qiita</a></li>
+<li><a href="http://qiita.com/suin/items/155ca2b98c485935db1b">ansibleでsudo可能なユーザを追加する - Qiita</a></li>
+</ul>
+
+<p>なるほど。<br />
+「sudo group」でググる。</p>
+
+<ul>
+<li><a href="http://webkaru.net/linux/sudo-user-add/">sudoユーザーを追加する方法 - Linux入門 - Webkaru</a></li>
+</ul>
+
+<p>やってみよう。</p>
 
 <h2 id="sudo-はできたけどパスワードは聞かれる">sudo はできたけどパスワードは聞かれる</h2>
 
@@ -113,8 +125,11 @@ vagrant グループに入れてみる。</p>
 <h2 id="copy-モジュールで持ってったら動いた">copy モジュールで持ってったら動いた</h2>
 
 <p>やった。<br />
-でも調べてたらもっと簡単な記述があった。<br />
-<a href="http://qiita.com/hidekuro/items/8cd1ebe1c52a256593ef">Vagrant + Ansibleで環境構築をコード化する(4)さらにPlaybook　～終わり～ - Qiita</a></p>
+でも調べてたらもっと簡単な記述があった。</p>
+
+<ul>
+<li><a href="http://qiita.com/hidekuro/items/8cd1ebe1c52a256593ef">Vagrant + Ansibleで環境構築をコード化する(4)さらにPlaybook　～終わり～ - Qiita</a></li>
+</ul>
 
 <h2 id="結論">結論</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -129,9 +144,9 @@ vagrant グループに入れてみる。</p>
     user_name: # ユーザー名を設定
     password: # ハッシュ化したパスワードを設定
   tasks:
-    - user: name=&amp;#123;&amp;#123; user_name &amp;#125;&amp;#125; password=&amp;#123;&amp;#123; password &amp;#125;&amp;#125; groups=&amp;#123;&amp;#123; user_name &amp;#125;&amp;#125;
-    - lineinfile: dest=/etc/sudoers.d/&amp;#123;&amp;#123; user_name &amp;#125;&amp;#125; line=&#34;&amp;#123;&amp;#123; user_name &amp;#125;&amp;#125; ALL=(ALL) NOPASSWD:ALL&#34; create=yes owner=root group=root mode=0440
-    - authorized_key: user=&amp;#123;&amp;#123; user_name &amp;#125;&amp;#125; key=&#34;&amp;#123;&amp;#123; lookup(&#39;file&#39;, &#39;/home/charlie/.ssh/id_rsa.pub&#39;) &amp;#125;&amp;#125;&#34; # Ansible を実行しているユーザーの持っている公開鍵へのパス</pre></td></tr></table>
+    - user: name={{ user_name }} password={{ password }} groups={{ user_name }}
+    - lineinfile: dest=/etc/sudoers.d/{{ user_name }} line=&#34;{{ user_name }} ALL=(ALL) NOPASSWD:ALL&#34; create=yes owner=root group=root mode=0440
+    - authorized_key: user={{ user_name }} key=&#34;{{ lookup(&#39;file&#39;, &#39;/home/charlie/.ssh/id_rsa.pub&#39;) }}&#34; # Ansible を実行しているユーザーの持っている公開鍵へのパス</pre></td></tr></table>
 </div>
 </div>
 <p>これで同じ playbook の中で作成したユーザーでパスワードなしで <code>sudo: yes</code> できるようになった。</p>

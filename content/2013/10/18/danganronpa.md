@@ -21,7 +21,7 @@ aliases = ["/2013-10-danganronpa/"]
 
 まずは、単語を知るところから。
 
-[【初音ミク】Party Junkie【クソビッチ化】 &#8211; ニコニコ動画:GINZA](http://www.nicovideo.jp/watch/sm19251235 "【初音ミク】Party Junkie【クソビッチ化】 - ニコニコ動画:GINZA")
+[【初音ミク】Party Junkie【クソビッチ化】 - ニコニコ動画:GINZA](http://www.nicovideo.jp/watch/sm19251235 "【初音ミク】Party Junkie【クソビッチ化】 - ニコニコ動画:GINZA")
 
 この動画のコメントで「絵がダンガンロンパに似てる」というコメントが流れて、ダンガンロンパという単語を知りました。
 

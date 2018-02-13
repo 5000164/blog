@@ -11,18 +11,18 @@ ga('send', 'pageview');
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>WPFで方向キーを入力した方向へ四角形を動かす | 5000164 is here</title>
-    <meta name="description" content="実際に作ったものはこんな感じです 方向キーの入力した方向へで赤い点が動きます。 ソースコードはこちら。 5000164/wpf-practice-2 画面に動かすものを表示する とりあえずなんでもよかったので、Rectangleタグで四角形を表示します。 そして、位置を指定するためにCanvasタグで囲みます。 123 &amp;lt;Canvas&amp;gt; &amp;lt;Rectangle Name=&#34;pointer&#34; Width=&#34;10&#34; Height=&#34;10&#34; Fill=&#34;Red&#34; Canvas.Left=&#34;0&#34; Canvas.Top=&#34;0&#34; /&amp;gt; &amp;lt;/Canvas&amp;gt; これでXAML側はほぼ完成。 あとは動かすだけ。 キーボードの入力を取得します WindowにPreviewKeyDownをつけます。 これでキーが押されたらイベントが発生します。 WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&#8217;s C# Dev Notes C#側で座標を取得するために まずは四角にNameをつけます。 これでC#側で変数として扱えます。 XAML とプログラムコード（WPF） (.NET Framework) 四角の現在位置を取得する C#側で四角につけた名前から座標を取得します。 123 // 現在地を取得 Double leftPosition = Canvas.GetLeft(this.pointer); Double">
+    <title>WPF で方向キーを入力した方向へ四角形を動かす | 5000164 is here</title>
+    <meta name="description" content="実際に作ったものはこんな感じです 方向キーの入力した方向へで赤い点が動きます。 ソースコードはこちら。 5000164/wpf-practice-2 画面に動かすものを表示する とりあえずなんでもよかったので、 Rectangle タグで四角形を表示します。 そして、位置を指定するために Canvas タグで囲みます。 123 &lt;Canvas&gt; &lt;Rectangle Name=&#34;pointer&#34; Width=&#34;10&#34; Height=&#34;10&#34; Fill=&#34;Red&#34; Canvas.Left=&#34;0&#34; Canvas.Top=&#34;0&#34; /&gt; &lt;/Canvas&gt; これで XAML 側はほぼ完成。 あとは動かすだけ。 キーボードの入力を取得します Window に PreviewKeyDown をつけます。 これでキーが押されたらイベントが発生します。 WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&#8217;s C# Dev Notes C# 側で座標を取得するために まずは四角に Name をつけます。 これで C# 側で変数として扱えます。 XAML とプログラムコード（WPF） (.NET Framework) 四角の現在位置を取得する C# 側で四角につけた名前から座標を取得します。 123 // 現在地を取得 Double leftPosition = Canvas.GetLeft(this.pointer); Double topPosition = Canvas.GetTop(this.pointer); Canvas.GetLeft メソッド (System.Windows.Controls) 入力されたキーの内容を判断する 次は、方向キーが入力された方向へ">
     <link href="http://blog.5000164.jp/2014/3/13/wpf-practice-2/" rel="canonical">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="WPFで方向キーを入力した方向へ四角形を動かす | 5000164 is here">
-    <meta property="og:description" content="実際に作ったものはこんな感じです 方向キーの入力した方向へで赤い点が動きます。 ソースコードはこちら。 5000164/wpf-practice-2 画面に動かすものを表示する とりあえずなんでもよかったので、Rectangleタグで四角形を表示します。 そして、位置を指定するためにCanvasタグで囲みます。 123 &amp;lt;Canvas&amp;gt; &amp;lt;Rectangle Name=&#34;pointer&#34; Width=&#34;10&#34; Height=&#34;10&#34; Fill=&#34;Red&#34; Canvas.Left=&#34;0&#34; Canvas.Top=&#34;0&#34; /&amp;gt; &amp;lt;/Canvas&amp;gt; これでXAML側はほぼ完成。 あとは動かすだけ。 キーボードの入力を取得します WindowにPreviewKeyDownをつけます。 これでキーが押されたらイベントが発生します。 WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&#8217;s C# Dev Notes C#側で座標を取得するために まずは四角にNameをつけます。 これでC#側で変数として扱えます。 XAML とプログラムコード（WPF） (.NET Framework) 四角の現在位置を取得する C#側で四角につけた名前から座標を取得します。 123 // 現在地を取得 Double leftPosition = Canvas.GetLeft(this.pointer); Double">
+    <meta property="og:title" content="WPF で方向キーを入力した方向へ四角形を動かす | 5000164 is here">
+    <meta property="og:description" content="実際に作ったものはこんな感じです 方向キーの入力した方向へで赤い点が動きます。 ソースコードはこちら。 5000164/wpf-practice-2 画面に動かすものを表示する とりあえずなんでもよかったので、 Rectangle タグで四角形を表示します。 そして、位置を指定するために Canvas タグで囲みます。 123 &lt;Canvas&gt; &lt;Rectangle Name=&#34;pointer&#34; Width=&#34;10&#34; Height=&#34;10&#34; Fill=&#34;Red&#34; Canvas.Left=&#34;0&#34; Canvas.Top=&#34;0&#34; /&gt; &lt;/Canvas&gt; これで XAML 側はほぼ完成。 あとは動かすだけ。 キーボードの入力を取得します Window に PreviewKeyDown をつけます。 これでキーが押されたらイベントが発生します。 WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&#8217;s C# Dev Notes C# 側で座標を取得するために まずは四角に Name をつけます。 これで C# 側で変数として扱えます。 XAML とプログラムコード（WPF） (.NET Framework) 四角の現在位置を取得する C# 側で四角につけた名前から座標を取得します。 123 // 現在地を取得 Double leftPosition = Canvas.GetLeft(this.pointer); Double topPosition = Canvas.GetTop(this.pointer); Canvas.GetLeft メソッド (System.Windows.Controls) 入力されたキーの内容を判断する 次は、方向キーが入力された方向へ">
     <meta property="og:url" content="http://blog.5000164.jp/2014/3/13/wpf-practice-2/">
     <meta property="og:image" content="http://blog.5000164.jp/icon.png">
     <meta property="og:site_name" content="5000164 is here">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="WPFで方向キーを入力した方向へ四角形を動かす | 5000164 is here">
-    <meta name="twitter:description" content="実際に作ったものはこんな感じです 方向キーの入力した方向へで赤い点が動きます。 ソースコードはこちら。 5000164/wpf-practice-2 画面に動かすものを表示する とりあえずなんでもよかったので、Rectangleタグで四角形を表示します。 そして、位置を指定するためにCanvasタグで囲みます。 123 &amp;lt;Canvas&amp;gt; &amp;lt;Rectangle Name=&#34;pointer&#34; Width=&#34;10&#34; Height=&#34;10&#34; Fill=&#34;Red&#34; Canvas.Left=&#34;0&#34; Canvas.Top=&#34;0&#34; /&amp;gt; &amp;lt;/Canvas&amp;gt; これでXAML側はほぼ完成。 あとは動かすだけ。 キーボードの入力を取得します WindowにPreviewKeyDownをつけます。 これでキーが押されたらイベントが発生します。 WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&#8217;s C# Dev Notes C#側で座標を取得するために まずは四角にNameをつけます。 これでC#側で変数として扱えます。 XAML とプログラムコード（WPF） (.NET Framework) 四角の現在位置を取得する C#側で四角につけた名前から座標を取得します。 123 // 現在地を取得 Double leftPosition = Canvas.GetLeft(this.pointer); Double">
+    <meta name="twitter:title" content="WPF で方向キーを入力した方向へ四角形を動かす | 5000164 is here">
+    <meta name="twitter:description" content="実際に作ったものはこんな感じです 方向キーの入力した方向へで赤い点が動きます。 ソースコードはこちら。 5000164/wpf-practice-2 画面に動かすものを表示する とりあえずなんでもよかったので、 Rectangle タグで四角形を表示します。 そして、位置を指定するために Canvas タグで囲みます。 123 &lt;Canvas&gt; &lt;Rectangle Name=&#34;pointer&#34; Width=&#34;10&#34; Height=&#34;10&#34; Fill=&#34;Red&#34; Canvas.Left=&#34;0&#34; Canvas.Top=&#34;0&#34; /&gt; &lt;/Canvas&gt; これで XAML 側はほぼ完成。 あとは動かすだけ。 キーボードの入力を取得します Window に PreviewKeyDown をつけます。 これでキーが押されたらイベントが発生します。 WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&#8217;s C# Dev Notes C# 側で座標を取得するために まずは四角に Name をつけます。 これで C# 側で変数として扱えます。 XAML とプログラムコード（WPF） (.NET Framework) 四角の現在位置を取得する C# 側で四角につけた名前から座標を取得します。 123 // 現在地を取得 Double leftPosition = Canvas.GetLeft(this.pointer); Double topPosition = Canvas.GetTop(this.pointer); Canvas.GetLeft メソッド (System.Windows.Controls) 入力されたキーの内容を判断する 次は、方向キーが入力された方向へ">
     <meta name="twitter:url" content="http://blog.5000164.jp/2014/3/13/wpf-practice-2/">
     <meta name="twitter:image" content="http://blog.5000164.jp/icon.png">
     <meta name="twitter:site" content="@5000164">
@@ -39,7 +39,7 @@ ga('send', 'pageview');
 <article>
     <div class="title">
         <div class="date">2014.3.13</div>
-        <h1>WPFで方向キーを入力した方向へ四角形を動かす</h1>
+        <h1>WPF で方向キーを入力した方向へ四角形を動かす</h1>
     </div>
     <div class="content">
         
@@ -64,59 +64,62 @@ ga('send', 'pageview');
 </figure>
 
 
-<p>方向キーの入力した方向へで赤い点が動きます。</p>
+<p>方向キーの入力した方向へで赤い点が動きます。<br />
+ソースコードはこちら。</p>
 
-<p>ソースコードはこちら。</p>
-
-<p><a href="https://github.com/5000164/wpf-practice-2">5000164/wpf-practice-2</a></p>
+<ul>
+<li><a href="https://github.com/5000164/wpf-practice-2">5000164/wpf-practice-2</a></li>
+</ul>
 
 <h2 id="画面に動かすものを表示する">画面に動かすものを表示する</h2>
 
-<p>とりあえずなんでもよかったので、Rectangleタグで四角形を表示します。</p>
-
-<p>そして、位置を指定するためにCanvasタグで囲みます。</p>
+<p>とりあえずなんでもよかったので、 Rectangle タグで四角形を表示します。<br />
+そして、位置を指定するために Canvas タグで囲みます。</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&amp;lt;Canvas&amp;gt;
-            &amp;lt;Rectangle Name=&#34;pointer&#34; Width=&#34;10&#34; Height=&#34;10&#34; Fill=&#34;Red&#34; Canvas.Left=&#34;0&#34; Canvas.Top=&#34;0&#34; /&amp;gt;
-        &amp;lt;/Canvas&amp;gt;</pre></td></tr></table>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;Canvas&gt;
+    &lt;Rectangle Name=&#34;pointer&#34; Width=&#34;10&#34; Height=&#34;10&#34; Fill=&#34;Red&#34; Canvas.Left=&#34;0&#34; Canvas.Top=&#34;0&#34; /&gt;
+&lt;/Canvas&gt;</pre></td></tr></table>
 </div>
 </div>
-<p>これでXAML側はほぼ完成。</p>
-
-<p>あとは動かすだけ。</p>
+<p>これで XAML 側はほぼ完成。<br />
+あとは動かすだけ。</p>
 
 <h2 id="キーボードの入力を取得します">キーボードの入力を取得します</h2>
 
-<p>WindowにPreviewKeyDownをつけます。</p>
+<p>Window に PreviewKeyDown をつけます。<br />
+これでキーが押されたらイベントが発生します。</p>
 
-<p>これでキーが押されたらイベントが発生します。</p>
+<ul>
+<li><a href="http://gushwell.ldblog.jp/archives/52318833.html">WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&#8217;s C# Dev Notes</a></li>
+</ul>
 
-<p><a href="http://gushwell.ldblog.jp/archives/52318833.html">WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&#8217;s C# Dev Notes</a></p>
+<h2 id="c-側で座標を取得するために">C# 側で座標を取得するために</h2>
 
-<h2 id="c-側で座標を取得するために">C#側で座標を取得するために</h2>
+<p>まずは四角に Name をつけます。<br />
+これで C# 側で変数として扱えます。</p>
 
-<p>まずは四角にNameをつけます。</p>
-
-<p>これでC#側で変数として扱えます。</p>
-
-<p><a href="http://ufcpp.net/study/dotnet/wpf_xamlcode.html">XAML とプログラムコード（WPF） (.NET Framework)</a></p>
+<ul>
+<li><a href="http://ufcpp.net/study/dotnet/wpf_xamlcode.html">XAML とプログラムコード（WPF） (.NET Framework)</a></li>
+</ul>
 
 <h2 id="四角の現在位置を取得する">四角の現在位置を取得する</h2>
 
-<p>C#側で四角につけた名前から座標を取得します。</p>
+<p>C# 側で四角につけた名前から座標を取得します。</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// 現在地を取得
-</span><span style="color:#75715e"></span>            Double leftPosition = <span style="color:#a6e22e">Canvas</span>.GetLeft(<span style="color:#66d9ef">this</span>.pointer);
-            Double topPosition = <span style="color:#a6e22e">Canvas</span>.GetTop(<span style="color:#66d9ef">this</span>.pointer);</code></pre></td></tr></table>
+</span><span style="color:#75715e"></span>Double leftPosition = <span style="color:#a6e22e">Canvas</span>.GetLeft(<span style="color:#66d9ef">this</span>.pointer);
+Double topPosition = <span style="color:#a6e22e">Canvas</span>.GetTop(<span style="color:#66d9ef">this</span>.pointer);</code></pre></td></tr></table>
 </div>
 </div>
-<p><a href="http://msdn.microsoft.com/ja-jp/library/system.windows.controls.canvas.getleft(v=vs.110).aspx">Canvas.GetLeft メソッド (System.Windows.Controls)</a></p>
+<ul>
+<li><a href="http://msdn.microsoft.com/ja-jp/library/system.windows.controls.canvas.getleft(v=vs.110).aspx">Canvas.GetLeft メソッド (System.Windows.Controls)</a></li>
+</ul>
 
 <h2 id="入力されたキーの内容を判断する">入力されたキーの内容を判断する</h2>
 
@@ -126,45 +129,47 @@ ga('send', 'pageview');
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">9</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// 入力された方向キーの方向へ移動
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.Key == <span style="color:#a6e22e">Key</span>.Up)
-                <span style="color:#75715e">// 上
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.Key == <span style="color:#a6e22e">Key</span>.Down)
-                <span style="color:#75715e">// 下
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.Key == <span style="color:#a6e22e">Key</span>.Left)
-                <span style="color:#75715e">// 左
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.Key == <span style="color:#a6e22e">Key</span>.Right)
-                // <span style="color:#960050;background-color:#1e0010">右</span></code></pre></td></tr></table>
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.Key == <span style="color:#a6e22e">Key</span>.Up)
+    <span style="color:#75715e">// 上
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.Key == <span style="color:#a6e22e">Key</span>.Down)
+    <span style="color:#75715e">// 下
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.Key == <span style="color:#a6e22e">Key</span>.Left)
+    <span style="color:#75715e">// 左
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.Key == <span style="color:#a6e22e">Key</span>.Right)
+    // <span style="color:#960050;background-color:#1e0010">右</span></code></pre></td></tr></table>
 </div>
 </div>
-<p><a href="http://msdn.microsoft.com/ja-jp/library/system.windows.input.key(v=vs.110).aspx">Key 列挙体 (System.Windows.Input)</a></p>
+<ul>
+<li><a href="http://msdn.microsoft.com/ja-jp/library/system.windows.input.key(v=vs.110).aspx">Key 列挙体 (System.Windows.Input)</a></li>
+</ul>
 
 <h2 id="入力された方向へ移動する">入力された方向へ移動する</h2>
 
-<p>入力された方向がわかったら、その方向へ座標を移動してthis.pointerにセットします。</p>
+<p>入力された方向がわかったら、その方向へ座標を移動して this.pointer にセットします。</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">6</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">7</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">8</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">9</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// 入力された方向キーの方向へ移動
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.Key == <span style="color:#a6e22e">Key</span>.Up)
-                <span style="color:#a6e22e">Canvas</span>.SetTop(<span style="color:#66d9ef">this</span>.pointer, topPosition - <span style="color:#ae81ff">10</span>);
-            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.Key == <span style="color:#a6e22e">Key</span>.Down)
-                <span style="color:#a6e22e">Canvas</span>.SetTop(<span style="color:#66d9ef">this</span>.pointer, topPosition + <span style="color:#ae81ff">10</span>);
-            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.Key == <span style="color:#a6e22e">Key</span>.Left)
-                <span style="color:#a6e22e">Canvas</span>.SetLeft(<span style="color:#66d9ef">this</span>.pointer, leftPosition - <span style="color:#ae81ff">10</span>);
-            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.Key == <span style="color:#a6e22e">Key</span>.Right)
-                <span style="color:#a6e22e">Canvas</span>.SetLeft(<span style="color:#66d9ef">this</span>.pointer, leftPosition + <span style="color:#ae81ff">10</span>);</code></pre></td></tr></table>
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.Key == <span style="color:#a6e22e">Key</span>.Up)
+    <span style="color:#a6e22e">Canvas</span>.SetTop(<span style="color:#66d9ef">this</span>.pointer, topPosition - <span style="color:#ae81ff">10</span>);
+<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.Key == <span style="color:#a6e22e">Key</span>.Down)
+    <span style="color:#a6e22e">Canvas</span>.SetTop(<span style="color:#66d9ef">this</span>.pointer, topPosition + <span style="color:#ae81ff">10</span>);
+<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.Key == <span style="color:#a6e22e">Key</span>.Left)
+    <span style="color:#a6e22e">Canvas</span>.SetLeft(<span style="color:#66d9ef">this</span>.pointer, leftPosition - <span style="color:#ae81ff">10</span>);
+<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.Key == <span style="color:#a6e22e">Key</span>.Right)
+    <span style="color:#a6e22e">Canvas</span>.SetLeft(<span style="color:#66d9ef">this</span>.pointer, leftPosition + <span style="color:#ae81ff">10</span>);</code></pre></td></tr></table>
 </div>
 </div>
-<p><a href="http://msdn.microsoft.com/ja-jp/library/system.windows.controls.canvas.setleft(v=vs.110).aspx">Canvas.SetLeft メソッド (System.Windows.Controls)</a></p>
+<ul>
+<li><a href="http://msdn.microsoft.com/ja-jp/library/system.windows.controls.canvas.setleft(v=vs.110).aspx">Canvas.SetLeft メソッド (System.Windows.Controls)</a></li>
+</ul>
 
 <h2 id="完成">完成</h2>
 
-<p>これで、キーボードの方向キーを入力した方向へ移動することができました。</p>
-
-<p>ただ、ゲームのようなものを作ろうと思っていたのですが、これだと実装が大変そうです。</p>
-
-<p>他の方法も調べてみようと思います。</p>
+<p>これで、キーボードの方向キーを入力した方向へ移動することができました。<br />
+ただ、ゲームのようなものを作ろうと思っていたのですが、これだと実装が大変そうです。<br />
+他の方法も調べてみようと思います。</p>
 
     </div>
 </article>

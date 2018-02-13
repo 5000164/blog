@@ -66,6 +66,6 @@ aliases = ["/2013-01-meeting/"]
 
 [グーグル流「会議を意味あるものにする5つのルール」 | Web担当者Forum](http://web-tan.forum.impressrd.jp/e/2012/01/17/11954)
 
-[IBM社員が身につけている会議ルール &#8211; 皆、みんな、ミンナ！～見んなよ（笑）](http://blog.goo.ne.jp/dimebag_darell_20041208_rip/e/07c547f4ce3646b53c0a28c6ed291b63)
+[IBM社員が身につけている会議ルール - 皆、みんな、ミンナ！～見んなよ（笑）](http://blog.goo.ne.jp/dimebag_darell_20041208_rip/e/07c547f4ce3646b53c0a28c6ed291b63)
 
 [フィンランドの5年生が作った議論のルール　負けまいとする心でしょう！](http://kd1.blog103.fc2.com/blog-entry-200.html)

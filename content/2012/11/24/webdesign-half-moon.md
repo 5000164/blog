@@ -18,4 +18,4 @@ Webデザインではタイトル画像をクリックしたらトップペー�
 
 ## 参考
 
-[ロゴマークの暗黙知について &#8211; Webサイトの上部にリンクは必要か？ -｜Web Design KOJIKA17](http://kojika17.com/2011/09/implicit-knowledge-for-logo.html)
+[ロゴマークの暗黙知について - Webサイトの上部にリンクは必要か？ -｜Web Design KOJIKA17](http://kojika17.com/2011/09/implicit-knowledge-for-logo.html)

@@ -572,8 +572,8 @@ ver.4では、Shift + Tab対応、範囲選択の処理に対応、デザイン�
 
 ## 参考にさせていただいたサイト
 
-- [JavaScript &#8211; Facebookみたいにtextareaの一部を強調する &#8211; Qiita [キータ]](http://qiita.com/yuku_t/items/516ec6fe59b77b93edc5 "JavaScript - Facebookみたいにtextareaの一部を強調する - Qiita [キータ]")
+- [JavaScript - Facebookみたいにtextareaの一部を強調する - Qiita [キータ]](http://qiita.com/yuku_t/items/516ec6fe59b77b93edc5 "JavaScript - Facebookみたいにtextareaの一部を強調する - Qiita [キータ]")
 - [Facebookライクにテキストエリアを強調する方法 | Backlogブログ](http://www.backlog.jp/blog/2013/06/facebook-like-textarea.html "Facebookライクにテキストエリアを強調する方法 | Backlogブログ")
 - [CSSだけでウィンドウぴったりに表示する編集画面を作る。（CSS おれおれ Advent Calendar 2012 – 23日目） | Ginpen.com](http://ginpen.com/2012/12/24/fix-window-height/ "CSSだけでウィンドウぴったりに表示する編集画面を作る。（CSS おれおれ Advent Calendar 2012 – 23日目） | Ginpen.com")
 - [CSSでheight:100%を使う方法について。 | Ginpen.com](http://ginpen.com/2011/07/01/height-100-parcent/ "CSSでheight:100%を使う方法について。 | Ginpen.com")
-- [textareaでタブを入力できるようにする &#8211; hokaccha.hamalog v2](http://d.hatena.ne.jp/hokaccha/20111028/1319814792 "textareaでタブを入力できるようにする - hokaccha.hamalog v2")
+- [textareaでタブを入力できるようにする - hokaccha.hamalog v2](http://d.hatena.ne.jp/hokaccha/20111028/1319814792 "textareaでタブを入力できるようにする - hokaccha.hamalog v2")

@@ -96,4 +96,4 @@ aliases = ["/2012-10-car/"]
 
 ## 参考
 
-[品位 (人品) &#8211; Wikipedia](http://ja.wikipedia.org/wiki/%E5%93%81%E4%BD%8D_\(%E4%BA%BA%E5%93%81\))
+[品位 (人品) - Wikipedia](http://ja.wikipedia.org/wiki/%E5%93%81%E4%BD%8D_\(%E4%BA%BA%E5%93%81\))

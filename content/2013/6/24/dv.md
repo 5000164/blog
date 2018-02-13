@@ -8,7 +8,7 @@ aliases = ["/2013-06-dv/"]
 
 ## 調べるきっかけDVのことを調べるきっかけになったのはこの記事を読んだからでした。
 
-子育て中の親に安らぎを、映画『おおかみこどもの雨と雪』 &#8211; #RyoAnnaBlog
+子育て中の親に安らぎを、映画『おおかみこどもの雨と雪』 - #RyoAnnaBlog
 
 [http://d.hatena.ne.jp/RyoAnna/20130617/1371476485](http://d.hatena.ne.jp/RyoAnna/20130617/1371476485 "http://d.hatena.ne.jp/RyoAnna/20130617/1371476485")
 
@@ -86,7 +86,7 @@ DVには暴力のサイクルといって抜け出せない仕組みがありま
 
 どのような決断をするにしろ、なるべく早めに行動することで被害を抑えることができます。
 
-異性をほぼ確実に落とす方法 &#8211; あるSEとゲーマーの四方山話
+異性をほぼ確実に落とす方法 - あるSEとゲーマーの四方山話
 
 [http://finalf12.blog82.fc2.com/blog-entry-511.html](http://finalf12.blog82.fc2.com/blog-entry-511.html "http://finalf12.blog82.fc2.com/blog-entry-511.html")# DVの相談を受けた場合まずは、話を聞きましょう。
 
@@ -114,7 +114,7 @@ DVには暴力のサイクルといって抜け出せない仕組みがありま
 
 例えば私が住んでいる仙台市ならこれ。
 
-仙台市配偶者暴力相談支援センター事業を開始しました &#8211; くらしのガイド | 仙台市
+仙台市配偶者暴力相談支援センター事業を開始しました - くらしのガイド | 仙台市
 
 [http://www.city.sendai.jp/manabu/danjo/danjo/1207539_1777.html](http://www.city.sendai.jp/manabu/danjo/danjo/1207539_1777.html "http://www.city.sendai.jp/manabu/danjo/danjo/1207539_1777.html")# まとめDVをつらいと感じたら、逃げよう。
 

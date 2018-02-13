@@ -11,18 +11,18 @@ ga('send', 'pageview');
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Operaの右クリックで現在表示中ページのタイトルやらURLをaタグで取得したりいい感じにする | 5000164 is here</title>
-    <meta name="description" content="Operaのmenu.iniを編集して実現します。 まずファイルの 1 [Document Popup Menu] の部分を探します。 見つけたら下に 12345 &#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;--9 ; get URL &amp; Link Item, &#34;Copy URL&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, document.title&#43;&#39;\n&#39;&#43;location.href);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel Item, &#34;Create Link&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;\n\n&amp;lt;section&amp;gt;\n&amp;lt;div&amp;gt;&amp;lt;a href=\u0022&#39;&#43;location.href&#43;&#39;\u0022&amp;gt;&#39;&#43;document.title&#43;&#39;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;\n&amp;lt;p&amp;gt;\n\n&amp;lt;/p&amp;gt;\n&amp;lt;/section&amp;gt;\n\n&#39;);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel Item, &#34;Reference Link&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;&amp;lt;div&amp;gt;&amp;lt;a href=\u0022&#39;&#43;location.href&#43;&#39;\u0022&amp;gt;&#39;&#43;document.title&#43;&#39;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;\n\n&#39;);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel と追加します。 これでOperaを再起動すれば完了です。 これは単純にJavaScriptを利用しています。 実装するときにダブルコーテーションのところで一回ハマりました。 ダブルコーテーションをエスケープしてなかったのが動かない原因かと思いきや、Operaの設定を解釈する側でダブルコーテーションを使用してはいけなかったみたいです。 なのでダブルコーテーションをUnicodeの「0022」で表現して回避しています。 実際にこれを使ってみるとこんな感じになります。 カスタマイズは簡単なので、自分の環境に合わせて使ってください。 「Copy URL」 12 生きるためのブログ http://5000164.jp/ 「Create Link」 123456">
+    <title>Opera の右クリックで現在表示中ページのタイトルやら URL を a タグで取得したりいい感じにする | 5000164 is here</title>
+    <meta name="description" content="Opera の menu.ini を編集して実現します。 まずファイルの 1 [Document Popup Menu] の部分を探します。 見つけたら下に 12345 &#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;--9 ; get URL &amp; Link Item, &#34;Copy URL&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, document.title&#43;&#39;\n&#39;&#43;location.href);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel Item, &#34;Create Link&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;\n\n&lt;section&gt;\n&lt;div&gt;&lt;a href=\u0022&#39;&#43;location.href&#43;&#39;\u0022&gt;&#39;&#43;document.title&#43;&#39;&lt;/a&gt;&lt;/div&gt;\n&lt;p&gt;\n\n&lt;/p&gt;\n&lt;/section&gt;\n\n&#39;);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel Item, &#34;Reference Link&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;&lt;div&gt;&lt;a href=\u0022&#39;&#43;location.href&#43;&#39;\u0022&gt;&#39;&#43;document.title&#43;&#39;&lt;/a&gt;&lt;/div&gt;\n\n&#39;);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel と追加します。 これで Opera を再起動すれば完了です。 これは単純にJavaScriptを利用しています。 実装するときにダブルコーテーションのところで一回ハマりました。 ダブルコーテーションをエスケープしてなかったのが動かない原因かと思いきや、 Opera の設定を解釈する側でダブルコーテーションを使用してはいけなかったみたいです。 なのでダブルコーテーションを Unicode の「0022」で表現して回避しています。 実際にこれを使ってみるとこんな感じになります。 カスタマイズは簡単なので、自分の環境に合わせて使ってください。 Copy URL 12 生きるためのブログ http://5000164.jp/ Create Link 123456 &lt;section&gt; &lt;div&gt;&lt;a href=&#34;http://5000164.jp/&#34;&gt;生きる">
     <link href="http://blog.5000164.jp/2012/7/5/opera-url/" rel="canonical">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Operaの右クリックで現在表示中ページのタイトルやらURLをaタグで取得したりいい感じにする | 5000164 is here">
-    <meta property="og:description" content="Operaのmenu.iniを編集して実現します。 まずファイルの 1 [Document Popup Menu] の部分を探します。 見つけたら下に 12345 &#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;--9 ; get URL &amp; Link Item, &#34;Copy URL&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, document.title&#43;&#39;\n&#39;&#43;location.href);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel Item, &#34;Create Link&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;\n\n&amp;lt;section&amp;gt;\n&amp;lt;div&amp;gt;&amp;lt;a href=\u0022&#39;&#43;location.href&#43;&#39;\u0022&amp;gt;&#39;&#43;document.title&#43;&#39;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;\n&amp;lt;p&amp;gt;\n\n&amp;lt;/p&amp;gt;\n&amp;lt;/section&amp;gt;\n\n&#39;);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel Item, &#34;Reference Link&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;&amp;lt;div&amp;gt;&amp;lt;a href=\u0022&#39;&#43;location.href&#43;&#39;\u0022&amp;gt;&#39;&#43;document.title&#43;&#39;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;\n\n&#39;);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel と追加します。 これでOperaを再起動すれば完了です。 これは単純にJavaScriptを利用しています。 実装するときにダブルコーテーションのところで一回ハマりました。 ダブルコーテーションをエスケープしてなかったのが動かない原因かと思いきや、Operaの設定を解釈する側でダブルコーテーションを使用してはいけなかったみたいです。 なのでダブルコーテーションをUnicodeの「0022」で表現して回避しています。 実際にこれを使ってみるとこんな感じになります。 カスタマイズは簡単なので、自分の環境に合わせて使ってください。 「Copy URL」 12 生きるためのブログ http://5000164.jp/ 「Create Link」 123456">
+    <meta property="og:title" content="Opera の右クリックで現在表示中ページのタイトルやら URL を a タグで取得したりいい感じにする | 5000164 is here">
+    <meta property="og:description" content="Opera の menu.ini を編集して実現します。 まずファイルの 1 [Document Popup Menu] の部分を探します。 見つけたら下に 12345 &#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;--9 ; get URL &amp; Link Item, &#34;Copy URL&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, document.title&#43;&#39;\n&#39;&#43;location.href);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel Item, &#34;Create Link&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;\n\n&lt;section&gt;\n&lt;div&gt;&lt;a href=\u0022&#39;&#43;location.href&#43;&#39;\u0022&gt;&#39;&#43;document.title&#43;&#39;&lt;/a&gt;&lt;/div&gt;\n&lt;p&gt;\n\n&lt;/p&gt;\n&lt;/section&gt;\n\n&#39;);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel Item, &#34;Reference Link&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;&lt;div&gt;&lt;a href=\u0022&#39;&#43;location.href&#43;&#39;\u0022&gt;&#39;&#43;document.title&#43;&#39;&lt;/a&gt;&lt;/div&gt;\n\n&#39;);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel と追加します。 これで Opera を再起動すれば完了です。 これは単純にJavaScriptを利用しています。 実装するときにダブルコーテーションのところで一回ハマりました。 ダブルコーテーションをエスケープしてなかったのが動かない原因かと思いきや、 Opera の設定を解釈する側でダブルコーテーションを使用してはいけなかったみたいです。 なのでダブルコーテーションを Unicode の「0022」で表現して回避しています。 実際にこれを使ってみるとこんな感じになります。 カスタマイズは簡単なので、自分の環境に合わせて使ってください。 Copy URL 12 生きるためのブログ http://5000164.jp/ Create Link 123456 &lt;section&gt; &lt;div&gt;&lt;a href=&#34;http://5000164.jp/&#34;&gt;生きる">
     <meta property="og:url" content="http://blog.5000164.jp/2012/7/5/opera-url/">
     <meta property="og:image" content="http://blog.5000164.jp/icon.png">
     <meta property="og:site_name" content="5000164 is here">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Operaの右クリックで現在表示中ページのタイトルやらURLをaタグで取得したりいい感じにする | 5000164 is here">
-    <meta name="twitter:description" content="Operaのmenu.iniを編集して実現します。 まずファイルの 1 [Document Popup Menu] の部分を探します。 見つけたら下に 12345 &#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;--9 ; get URL &amp; Link Item, &#34;Copy URL&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, document.title&#43;&#39;\n&#39;&#43;location.href);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel Item, &#34;Create Link&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;\n\n&amp;lt;section&amp;gt;\n&amp;lt;div&amp;gt;&amp;lt;a href=\u0022&#39;&#43;location.href&#43;&#39;\u0022&amp;gt;&#39;&#43;document.title&#43;&#39;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;\n&amp;lt;p&amp;gt;\n\n&amp;lt;/p&amp;gt;\n&amp;lt;/section&amp;gt;\n\n&#39;);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel Item, &#34;Reference Link&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;&amp;lt;div&amp;gt;&amp;lt;a href=\u0022&#39;&#43;location.href&#43;&#39;\u0022&amp;gt;&#39;&#43;document.title&#43;&#39;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;\n\n&#39;);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel と追加します。 これでOperaを再起動すれば完了です。 これは単純にJavaScriptを利用しています。 実装するときにダブルコーテーションのところで一回ハマりました。 ダブルコーテーションをエスケープしてなかったのが動かない原因かと思いきや、Operaの設定を解釈する側でダブルコーテーションを使用してはいけなかったみたいです。 なのでダブルコーテーションをUnicodeの「0022」で表現して回避しています。 実際にこれを使ってみるとこんな感じになります。 カスタマイズは簡単なので、自分の環境に合わせて使ってください。 「Copy URL」 12 生きるためのブログ http://5000164.jp/ 「Create Link」 123456">
+    <meta name="twitter:title" content="Opera の右クリックで現在表示中ページのタイトルやら URL を a タグで取得したりいい感じにする | 5000164 is here">
+    <meta name="twitter:description" content="Opera の menu.ini を編集して実現します。 まずファイルの 1 [Document Popup Menu] の部分を探します。 見つけたら下に 12345 &#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;--9 ; get URL &amp; Link Item, &#34;Copy URL&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, document.title&#43;&#39;\n&#39;&#43;location.href);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel Item, &#34;Create Link&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;\n\n&lt;section&gt;\n&lt;div&gt;&lt;a href=\u0022&#39;&#43;location.href&#43;&#39;\u0022&gt;&#39;&#43;document.title&#43;&#39;&lt;/a&gt;&lt;/div&gt;\n&lt;p&gt;\n\n&lt;/p&gt;\n&lt;/section&gt;\n\n&#39;);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel Item, &#34;Reference Link&#34; = Go to page, &#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;&lt;div&gt;&lt;a href=\u0022&#39;&#43;location.href&#43;&#39;\u0022&gt;&#39;&#43;document.title&#43;&#39;&lt;/a&gt;&lt;/div&gt;\n\n&#39;);})();&#34; &amp; Delay, 100 &amp; Cut &amp; Cancel と追加します。 これで Opera を再起動すれば完了です。 これは単純にJavaScriptを利用しています。 実装するときにダブルコーテーションのところで一回ハマりました。 ダブルコーテーションをエスケープしてなかったのが動かない原因かと思いきや、 Opera の設定を解釈する側でダブルコーテーションを使用してはいけなかったみたいです。 なのでダブルコーテーションを Unicode の「0022」で表現して回避しています。 実際にこれを使ってみるとこんな感じになります。 カスタマイズは簡単なので、自分の環境に合わせて使ってください。 Copy URL 12 生きるためのブログ http://5000164.jp/ Create Link 123456 &lt;section&gt; &lt;div&gt;&lt;a href=&#34;http://5000164.jp/&#34;&gt;生きる">
     <meta name="twitter:url" content="http://blog.5000164.jp/2012/7/5/opera-url/">
     <meta name="twitter:image" content="http://blog.5000164.jp/icon.png">
     <meta name="twitter:site" content="@5000164">
@@ -39,12 +39,11 @@ ga('send', 'pageview');
 <article>
     <div class="title">
         <div class="date">2012.7.5</div>
-        <h1>Operaの右クリックで現在表示中ページのタイトルやらURLをaタグで取得したりいい感じにする</h1>
+        <h1>Opera の右クリックで現在表示中ページのタイトルやら URL を a タグで取得したりいい感じにする</h1>
     </div>
     <div class="content">
-        <p>Operaのmenu.iniを編集して実現します。</p>
-
-<p>まずファイルの</p>
+        <p>Opera の menu.ini を編集して実現します。<br />
+まずファイルの</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></pre></td>
@@ -52,9 +51,8 @@ ga('send', 'pageview');
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">[Document Popup Menu]</pre></td></tr></table>
 </div>
 </div>
-<p>の部分を探します。</p>
-
-<p>見つけたら下に</p>
+<p>の部分を探します。<br />
+見つけたら下に</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span></code></pre></td>
@@ -62,27 +60,22 @@ ga('send', 'pageview');
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">++++++++++++++++++--</span><span style="color:#ae81ff">9</span>
  ; <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">URL</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">Link</span>
  <span style="color:#a6e22e">Item</span>, <span style="color:#e6db74">&#34;Copy URL&#34;</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Go</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">page</span>, <span style="color:#e6db74">&#34;javascript:(function(){window.prompt(&#39;&#39;, document.title+&#39;\n&#39;+location.href);})();&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">Delay</span>, <span style="color:#ae81ff">100</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">Cut</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">Cancel</span>
- <span style="color:#a6e22e">Item</span>, <span style="color:#e6db74">&#34;Create Link&#34;</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Go</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">page</span>, <span style="color:#e6db74">&#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;\n\n&amp;lt;section&amp;gt;\n&amp;lt;div&amp;gt;&amp;lt;a href=\u0022&#39;+location.href+&#39;\u0022&amp;gt;&#39;+document.title+&#39;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;\n&amp;lt;p&amp;gt;\n\n&amp;lt;/p&amp;gt;\n&amp;lt;/section&amp;gt;\n\n&#39;);})();&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">Delay</span>, <span style="color:#ae81ff">100</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">Cut</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">Cancel</span>
- <span style="color:#a6e22e">Item</span>, <span style="color:#e6db74">&#34;Reference Link&#34;</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Go</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">page</span>, <span style="color:#e6db74">&#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;&amp;lt;div&amp;gt;&amp;lt;a href=\u0022&#39;+location.href+&#39;\u0022&amp;gt;&#39;+document.title+&#39;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;\n\n&#39;);})();&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">Delay</span>, <span style="color:#ae81ff">100</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">Cut</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">Cancel</span></code></pre></td></tr></table>
+ <span style="color:#a6e22e">Item</span>, <span style="color:#e6db74">&#34;Create Link&#34;</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Go</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">page</span>, <span style="color:#e6db74">&#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;\n\n&lt;section&gt;\n&lt;div&gt;&lt;a href=\u0022&#39;+location.href+&#39;\u0022&gt;&#39;+document.title+&#39;&lt;/a&gt;&lt;/div&gt;\n&lt;p&gt;\n\n&lt;/p&gt;\n&lt;/section&gt;\n\n&#39;);})();&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">Delay</span>, <span style="color:#ae81ff">100</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">Cut</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">Cancel</span>
+ <span style="color:#a6e22e">Item</span>, <span style="color:#e6db74">&#34;Reference Link&#34;</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Go</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">page</span>, <span style="color:#e6db74">&#34;javascript:(function(){window.prompt(&#39;&#39;, &#39;&lt;div&gt;&lt;a href=\u0022&#39;+location.href+&#39;\u0022&gt;&#39;+document.title+&#39;&lt;/a&gt;&lt;/div&gt;\n\n&#39;);})();&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">Delay</span>, <span style="color:#ae81ff">100</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">Cut</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">Cancel</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>と追加します。</p>
+<p>と追加します。<br />
+これで Opera を再起動すれば完了です。<br />
+これは単純にJavaScriptを利用しています。<br />
+実装するときにダブルコーテーションのところで一回ハマりました。<br />
+ダブルコーテーションをエスケープしてなかったのが動かない原因かと思いきや、 Opera の設定を解釈する側でダブルコーテーションを使用してはいけなかったみたいです。<br />
+なのでダブルコーテーションを Unicode の「0022」で表現して回避しています。<br />
+実際にこれを使ってみるとこんな感じになります。<br />
+カスタマイズは簡単なので、自分の環境に合わせて使ってください。</p>
 
-<p>これでOperaを再起動すれば完了です。</p>
-
-<p>これは単純にJavaScriptを利用しています。</p>
-
-<p>実装するときにダブルコーテーションのところで一回ハマりました。</p>
-
-<p>ダブルコーテーションをエスケープしてなかったのが動かない原因かと思いきや、Operaの設定を解釈する側でダブルコーテーションを使用してはいけなかったみたいです。</p>
-
-<p>なのでダブルコーテーションをUnicodeの「0022」で表現して回避しています。</p>
-
-<p>実際にこれを使ってみるとこんな感じになります。</p>
-
-<p>カスタマイズは簡単なので、自分の環境に合わせて使ってください。</p>
-
-<p>「Copy URL」</p>
+<ul>
+<li>Copy URL</li>
+</ul>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span></code></pre></td>
@@ -91,38 +84,40 @@ ga('send', 'pageview');
 http://5000164.jp/</code></pre></td></tr></table>
 </div>
 </div>
-<p>「Create Link」</p>
+<ul>
+<li>Create Link</li>
+</ul>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">2</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">3</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">4</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">5</span><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">6</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&amp;lt;section&amp;gt;
-&amp;lt;div&amp;gt;&amp;lt;a href=&#34;http://5000164.jp/&#34;&amp;gt;生きるためのブログ&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;p&amp;gt;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">section</span>&gt;
+&lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://5000164.jp/&#34;</span>&gt;生きるためのブログ&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;
 
-&amp;lt;/p&amp;gt;
-&amp;lt;/section&amp;gt;</code></pre></td></tr></table>
+&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">section</span>&gt;</code></pre></td></tr></table>
 </div>
 </div>
-<p>「Reference Link」</p>
+<ul>
+<li>Reference Link</li>
+</ul>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:100%;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:00.4em00.4em;display:block;color:#7c7c79">1</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&amp;lt;div&amp;gt;&amp;lt;a href=&#34;http://5000164.jp/&#34;&amp;gt;生きるためのブログ&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;</code></pre></td></tr></table>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://5000164.jp/&#34;</span>&gt;生きるためのブログ&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></td></tr></table>
 </div>
 </div>
 <p>参考</p>
 
-<p><a href="http://my.opera.com/gyozazuki/blog/2009/10/20/opera">gyozazuki &#8211; Operaの右クリックメニュー</a></p>
-
-<p><a href="http://d.hatena.ne.jp/mame-tanuki+tiraura/20100220/CopyURL">ブラウザで表示しているページのＵＲＬとタイトルをクリップボードにコピーする &#8211; そっとチラ裏</a></p>
-
-<p><a href="http://d.hatena.ne.jp/mame-tanuki+tiraura/20110425/CopyURL2">ブラウザで表示しているページのＵＲＬとタイトルをクリップボードにコピーする(改) &#8211; そっとチラ裏</a></p>
-
-<p><a href="http://www.tohoho-web.com/js/string.htm">文字列（String）</a></p>
-
-<p><a href="http://wisdom.sakura.ne.jp/programming/cs/cs3.html">リテラル</a></p>
+<ul>
+<li><a href="http://my.opera.com/gyozazuki/blog/2009/10/20/opera">gyozazuki - Operaの右クリックメニュー</a></li>
+<li><a href="http://d.hatena.ne.jp/mame-tanuki+tiraura/20100220/CopyURL">ブラウザで表示しているページのＵＲＬとタイトルをクリップボードにコピーする - そっとチラ裏</a></li>
+<li><a href="http://d.hatena.ne.jp/mame-tanuki+tiraura/20110425/CopyURL2">ブラウザで表示しているページのＵＲＬとタイトルをクリップボードにコピーする(改) - そっとチラ裏</a></li>
+<li><a href="http://www.tohoho-web.com/js/string.htm">文字列（String）</a></li>
+<li><a href="http://wisdom.sakura.ne.jp/programming/cs/cs3.html">リテラル</a></li>
+</ul>
 
     </div>
 </article>

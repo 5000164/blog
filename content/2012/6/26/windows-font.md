@@ -12,7 +12,7 @@ Windowsの汚いフォントを少しだけマシにします。
 
 まずこのサイト
 
-[Downloads &#8211; gdipp &#8211; Customizable Windows text renderers &#8211; Google Project Hosting](http://code.google.com/p/gdipp/downloads/list)
+[Downloads - gdipp - Customizable Windows text renderers - Google Project Hosting](http://code.google.com/p/gdipp/downloads/list)
 
 から
 
@@ -40,7 +40,7 @@ gdipp_x86_0.9.1.msi
 
 [Windowsのフォントをより美しく出来る「gdipp」とその設定](http://lufesu.blog3.fc2.com/blog-entry-57.html)
 
-[gdipp &#8211; ｋ本的に無料ソフト・フリーソフト](http://www.gigafree.net/system/registry/gdipp.html)
+[gdipp - ｋ本的に無料ソフト・フリーソフト](http://www.gigafree.net/system/registry/gdipp.html)
 
- [gdipp &#8211; Customizable Windows text renderers &#8211; Google Project Hosting](http://code.google.com/p/gdipp/)
+ [gdipp - Customizable Windows text renderers - Google Project Hosting](http://code.google.com/p/gdipp/)
 

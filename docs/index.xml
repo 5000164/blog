@@ -1011,21 +1011,21 @@
     </item>
     
     <item>
-      <title>WPFで方向キーを入力した方向へ四角形を動かす</title>
+      <title>WPF で方向キーを入力した方向へ四角形を動かす</title>
       <link>http://blog.5000164.jp/2014/3/13/wpf-practice-2/</link>
       <pubDate>Thu, 13 Mar 2014 04:21:42 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014/3/13/wpf-practice-2/</guid>
-      <description>実際に作ったものはこんな感じです 方向キーの入力した方向へで赤い点が動きます。 ソースコードはこちら。 5000164/wpf-practice-2 画面に動かすものを表示する とりあえずなんでもよかったので、Rectangleタグで四角形を表示します。 そして、位置を指定するためにCanvasタグで囲みます。 123 &amp;amp;lt;Canvas&amp;amp;gt; &amp;amp;lt;Rectangle Name=&amp;#34;pointer&amp;#34; Width=&amp;#34;10&amp;#34; Height=&amp;#34;10&amp;#34; Fill=&amp;#34;Red&amp;#34; Canvas.Left=&amp;#34;0&amp;#34; Canvas.Top=&amp;#34;0&amp;#34; /&amp;amp;gt; &amp;amp;lt;/Canvas&amp;amp;gt; これでXAML側はほぼ完成。 あとは動かすだけ。 キーボードの入力を取得します WindowにPreviewKeyDownをつけます。 これでキーが押されたらイベントが発生します。 WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&amp;#8217;s C# Dev Notes C#側で座標を取得するために まずは四角にNameをつけます。 これでC#側で変数として扱えます。 XAML とプログラムコード（WPF） (.NET Framework) 四角の現在位置を取得する C#側で四角につけた名前から座標を取得します。 123 // 現在地を取得 Double leftPosition = Canvas.GetLeft(this.pointer); Double</description>
+      <description>実際に作ったものはこんな感じです 方向キーの入力した方向へで赤い点が動きます。 ソースコードはこちら。 5000164/wpf-practice-2 画面に動かすものを表示する とりあえずなんでもよかったので、 Rectangle タグで四角形を表示します。 そして、位置を指定するために Canvas タグで囲みます。 123 &amp;lt;Canvas&amp;gt; &amp;lt;Rectangle Name=&amp;#34;pointer&amp;#34; Width=&amp;#34;10&amp;#34; Height=&amp;#34;10&amp;#34; Fill=&amp;#34;Red&amp;#34; Canvas.Left=&amp;#34;0&amp;#34; Canvas.Top=&amp;#34;0&amp;#34; /&amp;gt; &amp;lt;/Canvas&amp;gt; これで XAML 側はほぼ完成。 あとは動かすだけ。 キーボードの入力を取得します Window に PreviewKeyDown をつけます。 これでキーが押されたらイベントが発生します。 WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&amp;#8217;s C# Dev Notes C# 側で座標を取得するために まずは四角に Name をつけます。 これで C# 側で変数として扱えます。 XAML とプログラムコード（WPF） (.NET Framework) 四角の現在位置を取得する C# 側で四角につけた名前から座標を取得します。 123 // 現在地を取得 Double leftPosition = Canvas.GetLeft(this.pointer); Double topPosition = Canvas.GetTop(this.pointer); Canvas.GetLeft メソッド (System.Windows.Controls) 入力されたキーの内容を判断する 次は、方向キーが入力された方向へ</description>
     </item>
     
     <item>
-      <title>WPFで枠のないウィンドウを作る</title>
+      <title>WPF で枠のないウィンドウを作る</title>
       <link>http://blog.5000164.jp/2014/3/11/wpf-practice-1/</link>
       <pubDate>Tue, 11 Mar 2014 23:17:38 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014/3/11/wpf-practice-1/</guid>
-      <description>実際に作ったものはこんな感じです ソースコードはこちら。 5000164/wpf-practice-1 実装するにあたって参考にしたサイト こちらの記事を参考にさせていただきました。 WPF で Zune のようなウィンドウを作る | grabacr.nét この記事に沿っていったらできました。 これを追記するだけ。 123 &amp;amp;lt;WindowChrome.WindowChrome&amp;amp;gt; &amp;amp;lt;WindowChrome CaptionHeight=&amp;#34;23&amp;#34; ResizeBorderThickness=&amp;#34;100&amp;#34; /&amp;amp;gt; &amp;amp;lt;/WindowChrome.WindowChrome&amp;amp;gt; 枠なしには出来たけどウィンドウの影が気になる ウィンドウの枠がなくなってかっこよくなったのに、影が主張し過ぎで気になります。 この影も消したい。 影を消す方法を調べていたら、先ほどと同じブログのこちらの記事にたどり着きました。 WPF で Visual Studio 2012 のような光るウィンドウを作る | grabacr.nét なるほど、よくわからん。 WPF初心者の私には無理だと判断したので、この記事の冒頭で紹介されていた簡易版で実装します。 影をいい感じにつける 123456789101112131415161718 &amp;amp;lt;Window x:Class=&amp;#34;練習1.MainWindow&amp;#34; xmlns=&amp;#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&amp;#34; xmlns:x=&amp;#34;http://schemas.microsoft.com/winfx/2006/xaml&amp;#34; Title=&amp;#34;MainWindow&amp;#34; Width=&amp;#34;700&amp;#34; Height=&amp;#34;700&amp;#34; WindowStyle=&amp;#34;None&amp;#34; AllowsTransparency=&amp;#34;True&amp;#34; WindowStartupLocation=&amp;#34;CenterScreen&amp;#34; Background=&amp;#34;Transparent&amp;#34;&amp;amp;gt; ～中略～ &amp;amp;lt;Border BorderBrush=&amp;#34;#222222&amp;#34; Background=&amp;#34;#222222&amp;#34; BorderThickness=&amp;#34;1&amp;#34; Margin=&amp;#34;100&amp;#34;&amp;amp;gt; &amp;amp;lt;Border.Effect&amp;amp;gt; &amp;amp;lt;DropShadowEffect ShadowDepth=&amp;#34;0&amp;#34; BlurRadius=&amp;#34;100&amp;#34; Color=&amp;#34;#000000&amp;#34; Opacity=&amp;#34;0.7&amp;#34; /&amp;amp;gt; &amp;amp;lt;/Border.Effect&amp;amp;gt; ～中略</description>
+      <description>実際に作ったものはこんな感じです ソースコードはこちら。 5000164/wpf-practice-1 実装するにあたって参考にしたサイト こちらの記事を参考にさせていただきました。 WPF で Zune のようなウィンドウを作る | grabacr.nét この記事に沿っていったらできました。 これを追記するだけ。 123 &amp;lt;WindowChrome.WindowChrome&amp;gt; &amp;lt;WindowChrome CaptionHeight=&amp;#34;23&amp;#34; ResizeBorderThickness=&amp;#34;100&amp;#34; /&amp;gt; &amp;lt;/WindowChrome.WindowChrome&amp;gt; 枠なしには出来たけどウィンドウの影が気になる ウィンドウの枠がなくなってかっこよくなったのに、影が主張し過ぎで気になります。 この影も消したい。 影を消す方法を調べていたら、先ほどと同じブログのこちらの記事にたどり着きました。 WPF で Visual Studio 2012 のような光るウィンドウを作る | grabacr.nét なるほど、よくわからん。 WPF初心者の私には無理だと判断したので、この記事の冒頭で紹介されていた簡易版で実装します。 影をいい感じにつける 123456789101112131415161718 &amp;lt;Window x:Class=&amp;#34;練習1.MainWindow&amp;#34; xmlns=&amp;#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&amp;#34; xmlns:x=&amp;#34;http://schemas.microsoft.com/winfx/2006/xaml&amp;#34; Title=&amp;#34;MainWindow&amp;#34; Width=&amp;#34;700&amp;#34; Height=&amp;#34;700&amp;#34; WindowStyle=&amp;#34;None&amp;#34; AllowsTransparency=&amp;#34;True&amp;#34; WindowStartupLocation=&amp;#34;CenterScreen&amp;#34; Background=&amp;#34;Transparent&amp;#34;&amp;gt; ～中略～ &amp;lt;Border BorderBrush=&amp;#34;#222222&amp;#34; Background=&amp;#34;#222222&amp;#34; BorderThickness=&amp;#34;1&amp;#34; Margin=&amp;#34;100&amp;#34;&amp;gt; &amp;lt;Border.Effect&amp;gt; &amp;lt;DropShadowEffect ShadowDepth=&amp;#34;0&amp;#34; BlurRadius=&amp;#34;100&amp;#34; Color=&amp;#34;#000000&amp;#34; Opacity=&amp;#34;0.7&amp;#34; /&amp;gt; &amp;lt;/Border.Effect&amp;gt; ～中略</description>
     </item>
     
     <item>
@@ -1115,7 +1115,7 @@
       <pubDate>Wed, 01 Jan 2014 15:44:14 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2014/1/1/vocaloid-2013/</guid>
-      <description>イントロ 2013年が終わり、2014年になりました。 2013年もたくさんのVOCALOID曲が生まれました。 私が聴いた曲はその中のほんとにごく一部ですが、その中でも出会えてよかったという曲を紹介します。 そんなわけで2013年出会えてよかったVOCALOID曲5選です。 キアゲハ・プリケノート &amp;#8211; 初音ミク &amp;#8211; あえる [nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;640&amp;#8243; height=&amp;#8221;360&amp;#8243;]sm20271398[/nicodo] あえるさんのキアゲハ・プリケノート。 音がすごい気持よくてすぐにはまりました。 ミクの声も素敵です。 きれいな音がたくさん詰まってて、でもそれでもうるさくなくて、ゆったりのびのび聴いてて楽しいです。 あえるさんの曲はみんな素敵な音です。 Mermaid &amp;#8211; MC : MIKU RIN GUMI LUKA &amp;#038; DJ : LEN &amp;#8211; Torero [nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;640&amp;#8243; height=&amp;#8221;360&amp;#8243;]sm20624241[/nicodo] ToreroさんのMermaid。 Toreroさんを知ったのはLeviathanでした。 それから追いかけてますけど、どの曲もすごいかっこいいです。 絵もかわいくて好きです。 Toreroさんの曲の中でもMermaidが今のと</description>
+      <description>イントロ 2013年が終わり、2014年になりました。 2013年もたくさんのVOCALOID曲が生まれました。 私が聴いた曲はその中のほんとにごく一部ですが、その中でも出会えてよかったという曲を紹介します。 そんなわけで2013年出会えてよかったVOCALOID曲5選です。 キアゲハ・プリケノート - 初音ミク - あえる [nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;640&amp;#8243; height=&amp;#8221;360&amp;#8243;]sm20271398[/nicodo] あえるさんのキアゲハ・プリケノート。 音がすごい気持よくてすぐにはまりました。 ミクの声も素敵です。 きれいな音がたくさん詰まってて、でもそれでもうるさくなくて、ゆったりのびのび聴いてて楽しいです。 あえるさんの曲はみんな素敵な音です。 Mermaid - MC : MIKU RIN GUMI LUKA &amp;#038; DJ : LEN - Torero [nicodo display=&amp;#8221;player&amp;#8221; width=&amp;#8221;640&amp;#8243; height=&amp;#8221;360&amp;#8243;]sm20624241[/nicodo] ToreroさんのMermaid。 Toreroさんを知ったのはLeviathanでした。 それから追いかけてますけど、どの曲もすごいかっこいいです。 絵もかわいくて好きです。 Toreroさんの曲の中でもMermaidが今のと</description>
     </item>
     
     <item>
@@ -1214,7 +1214,7 @@
       <pubDate>Fri, 18 Oct 2013 23:17:49 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013/10/18/danganronpa/</guid>
-      <description>ダンガンロンパ 希望の学園と絶望の高校生 The Animation ネタバレ注意 物語の核心に触れる記述があります。 ネタバレが嫌いな人は閲覧注意。 アニメを見ようと思ったきっかけ 最近はアニメを見ていないのに、なにがきっかけでダンガンロンパを見ようと思ったのか。 まずは、単語を知るところから。 【初音ミク】Party Junkie【クソビッチ化】 &amp;#8211; ニコニコ動画:GINZA この動画のコメントで「絵がダンガンロンパに似てる」というコメントが流れて、ダンガンロンパという単語を知りました。 （動画の絵はダンガンロンパの絵の人とは違ったみたいだけれども。） 次に、興味を持つところ。 暴力街 Web漫画をいろいろと読んでいた時期に、このトップ画を見て「ダンガンロンパというのは面白いゲームらしい」ということを知りました。 最後に、アニメを見ようと決めたところ。 論破の快感『ダンガンロンパ』: わたしが知らないスゴ本は、きっとあなたが読んでいる ツイッターや</description>
+      <description>ダンガンロンパ 希望の学園と絶望の高校生 The Animation ネタバレ注意 物語の核心に触れる記述があります。 ネタバレが嫌いな人は閲覧注意。 アニメを見ようと思ったきっかけ 最近はアニメを見ていないのに、なにがきっかけでダンガンロンパを見ようと思ったのか。 まずは、単語を知るところから。 【初音ミク】Party Junkie【クソビッチ化】 - ニコニコ動画:GINZA この動画のコメントで「絵がダンガンロンパに似てる」というコメントが流れて、ダンガンロンパという単語を知りました。 （動画の絵はダンガンロンパの絵の人とは違ったみたいだけれども。） 次に、興味を持つところ。 暴力街 Web漫画をいろいろと読んでいた時期に、このトップ画を見て「ダンガンロンパというのは面白いゲームらしい」ということを知りました。 最後に、アニメを見ようと決めたところ。 論破の快感『ダンガンロンパ』: わたしが知らないスゴ本は、きっとあなたが読んでいる ツイッターや</description>
     </item>
     
     <item>
@@ -1232,7 +1232,7 @@
       <pubDate>Mon, 24 Jun 2013 04:51:48 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2013/6/24/dv/</guid>
-      <description>20130623_dv 調べるきっかけDVのことを調べるきっかけになったのはこの記事を読んだからでした。 子育て中の親に安らぎを、映画『おおかみこどもの雨と雪』 &amp;#8211; #RyoAnnaBlog http://d.hatena.ne.jp/RyoAnna/20130617/1371476485 おおかみこどもの雨と雪に興味があって読んだ記事の最後に、以下の記事がリンクされていました。 ５歳児にスクワット５００回…虐待死で母親証言 : 社会 : YOMIURI ONLINE（読売新聞） http://www.yomiuri.co.jp/national/news/20130613-OYT1T00358.htm “その日の夜は「ママと一緒に寝たい」と言って眠りにつき、それが最後の言葉になったという。” ふざけんなよ。 なんだっていうんだよ。 なんでこんな悲しいことが起きるんだよ。# DVのことをあんまり知らないことに気付いたそういえば、DVというものについて知らない、ということに気付いた。 暴力を振るったらDV？という程度の知識。 なんで暴力を振るってしまうのか、といったことなどはわからない。 ということで調べた。 以下に個人的な見解をまとめます。# DVとはDVとは、親しい関係の人に対する暴力のこと。 暴力に</description>
+      <description>20130623_dv 調べるきっかけDVのことを調べるきっかけになったのはこの記事を読んだからでした。 子育て中の親に安らぎを、映画『おおかみこどもの雨と雪』 - #RyoAnnaBlog http://d.hatena.ne.jp/RyoAnna/20130617/1371476485 おおかみこどもの雨と雪に興味があって読んだ記事の最後に、以下の記事がリンクされていました。 ５歳児にスクワット５００回…虐待死で母親証言 : 社会 : YOMIURI ONLINE（読売新聞） http://www.yomiuri.co.jp/national/news/20130613-OYT1T00358.htm “その日の夜は「ママと一緒に寝たい」と言って眠りにつき、それが最後の言葉になったという。” ふざけんなよ。 なんだっていうんだよ。 なんでこんな悲しいことが起きるんだよ。# DVのことをあんまり知らないことに気付いたそういえば、DVというものについて知らない、ということに気付いた。 暴力を振るったらDV？という程度の知識。 なんで暴力を振るってしまうのか、といったことなどはわからない。 ということで調べた。 以下に個人的な見解をまとめます。# DVとはDVとは、親しい関係の人に対する暴力のこと。 暴力に</description>
     </item>
     
     <item>
@@ -1556,7 +1556,7 @@
       <pubDate>Tue, 27 Nov 2012 00:39:29 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/11/27/webdesign-buffalo/</guid>
-      <description>このサイトのデザインについて考える。 Buffalo &amp;#8211; Web Development, E-Commerce &amp;amp; Web Design &amp;#8211; Brighton UK ナビゲーションについて ナビゲーションの形が六角形で特徴的である。 どうやらパララックスデザインの次は六角形ナビゲーションが流行するという話もあるようである。 六角形の実現方法 このサイトでは下記の図のように3つの長方形を組み合わせることで実現している。 こうすることによってマウスの判定も見た目と同様となりUXが向上すると思われる。</description>
+      <description>このサイトのデザインについて考える。 Buffalo - Web Development, E-Commerce &amp;amp; Web Design - Brighton UK ナビゲーションについて ナビゲーションの形が六角形で特徴的である。 どうやらパララックスデザインの次は六角形ナビゲーションが流行するという話もあるようである。 六角形の実現方法 このサイトでは下記の図のように3つの長方形を組み合わせることで実現している。 こうすることによってマウスの判定も見た目と同様となりUXが向上すると思われる。</description>
     </item>
     
     <item>
@@ -1583,7 +1583,7 @@
       <pubDate>Sat, 24 Nov 2012 03:26:12 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/11/24/webdesign-half-moon/</guid>
-      <description>このサイトのデザインについて考える。 歯科ハーフムーン｜仙台市 インプラント 無痛治療｜トップページ タイトル画像 Webデザインではタイトル画像をクリックしたらトップページへ戻るというデザインが一般的だが、このサイトではタイトル画像にマウスをホバーした際に文字として「ホームページへ」と表示される。 対象とするユーザ層によっては、このように文字を表示するのも有効だと思える。 参考 ロゴマークの暗黙知について &amp;#8211; Webサイトの上部にリンクは必要か？ -｜Web Design KOJIKA17</description>
+      <description>このサイトのデザインについて考える。 歯科ハーフムーン｜仙台市 インプラント 無痛治療｜トップページ タイトル画像 Webデザインではタイトル画像をクリックしたらトップページへ戻るというデザインが一般的だが、このサイトではタイトル画像にマウスをホバーした際に文字として「ホームページへ」と表示される。 対象とするユーザ層によっては、このように文字を表示するのも有効だと思える。 参考 ロゴマークの暗黙知について - Webサイトの上部にリンクは必要か？ -｜Web Design KOJIKA17</description>
     </item>
     
     <item>
@@ -1610,7 +1610,7 @@
       <pubDate>Wed, 21 Nov 2012 00:44:26 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/11/21/webdesign-grand/</guid>
-      <description>このサイトのデザインについて考える。 GRAND : 416.977.3831 &amp;#8211; Digital, Interactive, Mobile &amp;amp; Social テクスチャ ヘッダとトップにはザラザラとした質感のテクスチャが。 次は線が交差したテクスチャが。 そしてまたザラザラしたテクスチャを使用。 フッタには等高線のようなテクスチャが。 テクスチャを複数種類使うことでサイト全体に質感が生まれている。 それでいて主張しすぎないように白黒のテクスチャ使用していて全体の調和は保たれている。 アイコン 丸いアイコンと彩度が高めの色を用いることでアイコンを際立たせている。 アイコンには斜線とノイズが入ったテクスチャを使用して質感を出している。 影 ヘッダの下に影がついている。 文字にも影がついている。 アイコンにも影がついている。 画像の下にも影がついている。 影をつけることでサイトに奥行きが生まれている。 全体 全体的に細部に渡ってディティールにこだわっているのでサイトに雰囲気が生まれている。 マーケティングから開発まで請け負うとのこと</description>
+      <description>このサイトのデザインについて考える。 GRAND : 416.977.3831 - Digital, Interactive, Mobile &amp;amp; Social テクスチャ ヘッダとトップにはザラザラとした質感のテクスチャが。 次は線が交差したテクスチャが。 そしてまたザラザラしたテクスチャを使用。 フッタには等高線のようなテクスチャが。 テクスチャを複数種類使うことでサイト全体に質感が生まれている。 それでいて主張しすぎないように白黒のテクスチャ使用していて全体の調和は保たれている。 アイコン 丸いアイコンと彩度が高めの色を用いることでアイコンを際立たせている。 アイコンには斜線とノイズが入ったテクスチャを使用して質感を出している。 影 ヘッダの下に影がついている。 文字にも影がついている。 アイコンにも影がついている。 画像の下にも影がついている。 影をつけることでサイトに奥行きが生まれている。 全体 全体的に細部に渡ってディティールにこだわっているのでサイトに雰囲気が生まれている。 マーケティングから開発まで請け負うとのこと</description>
     </item>
     
     <item>
@@ -1641,12 +1641,12 @@
     </item>
     
     <item>
-      <title>iOSのブラウザで数字のみのキーボードを出す</title>
+      <title>iOS のブラウザで数字のみのキーボードを出す</title>
       <link>http://blog.5000164.jp/2012/10/15/input-type/</link>
       <pubDate>Mon, 15 Oct 2012 22:33:16 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/10/15/input-type/</guid>
-      <description>iOSのブラウザにおいて数字のみのキーボードを出したいときがあります。 しかし、input type=&amp;#8221;number&amp;#8221;ってやっても数字以外のキーがでてきてしまう。 そうだ、input type=&amp;#8221;tel&amp;#8221;ってやれば数字のみになる、しかしセマンティックではない。 そこで、input type=&amp;#8221;text&amp;#8221; pattern=&amp;#8221;\d*&amp;#8221; HTML5からは入力文字をpatternで正規表現を利用して制御できるようになりました。 そこで入力可能文字を数字のみにするとiOSで数字のみのキーボードを出してくれるというものです。 賢いですね。 というわけで、実演 1 &amp;amp;lt;input type=&amp;amp;quot;number&amp;amp;quot;&amp;amp;gt; 1 &amp;amp;lt;input type=&amp;amp;quot;tel&amp;amp;quot;&amp;amp;gt; 1 &amp;amp;lt;input type=&amp;amp;quot;text&amp;amp;quot; pattern=&amp;amp;quot;\d*&amp;amp;quot;&amp;amp;gt; 以下、参考 少しのコードで実装可能な15のスマートフォンサイト用小技集 | Webクリエイターボックス input 要素 &amp;#8211; フォーム &amp;#8211; HTML要素 &amp;#8211; HTML5 タグリファレンス &amp;#8211; HTML5.JP JavaScript講座 15章 JavaScriptでの正規表現</description>
+      <description>iOS のブラウザにおいて数字のみのキーボードを出したいときがあります。 しかし、 input type=&amp;quot;number&amp;quot; ってやっても数字以外のキーがでてきてしまう。 そうだ、 input type=&amp;quot;tel&amp;quot; ってやれば数字のみになる、しかしセマンティックではない。 そこで、 input type=&amp;quot;text&amp;quot; pattern=&amp;quot;\d*&amp;quot; HTML5 からは入力文字を pattern で正規表現を利用して制御できるようになりました。 そこで入力可能文字を数字のみにすると iOS で数字のみのキーボードを出してくれるというものです。 賢いですね。 というわけで、実演 1 &amp;lt;input type=&amp;#34;number&amp;#34;&amp;gt; 1 &amp;lt;input type=&amp;#34;tel&amp;#34;&amp;gt; 1 &amp;lt;input type=&amp;#34;text&amp;#34; pattern=&amp;#34;\d*&amp;#34;&amp;gt; 以下、参考 少しのコードで実装可能な15のスマートフォンサイト用小技集 | Webクリエイターボックス input 要素 - フォーム - HTML要素 - HTML5 タグリファレンス - HTML5.JP JavaScript講座 15章 JavaScriptでの正規表現</description>
     </item>
     
     <item>
@@ -1659,12 +1659,12 @@
     </item>
     
     <item>
-      <title>FuelPHP1.3でProfilerを有効にしたら最初から展開した状態で表示されるようにする</title>
+      <title>FuelPHP 1.3 で Profiler を有効にしたら最初から展開した状態で表示されるようにする</title>
       <link>http://blog.5000164.jp/2012/10/15/fuelphp/</link>
       <pubDate>Mon, 15 Oct 2012 01:50:10 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/10/15/fuelphp/</guid>
-      <description>最近FuelPHPを使っています。 バージョン1.2.1を使っていたのですが、1.3がでたということで1.3を使い始めました。 そこでデバッグをするときに、&amp;#8217;profiling&amp;#8217; =&amp;gt; true,とかしてプロファイラを表示させるんですが、プロファイラが最小化状態で表示されます。 1.2.1のプロファイラは展開した状態で表示されてたのに。 trueってしたらプロファイラは常に表示されてて欲しいです。 ということで、常に表示されるようにします。 1 fuel/core/vendor/phpquickprofiler/display.php を開きます。 305行目の 1 $return_output .=&amp;#39;&amp;amp;lt;div style=&amp;#34;clear:both;&amp;#34;&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;&amp;amp;lt;div id=&amp;#34;pqp-container&amp;#34; class=&amp;#34;pQp tallDetails&amp;#34; style=&amp;#34;display:none;position:inherit;&amp;#34;&amp;amp;gt;&amp;#39;; を 1 $return_output .=&amp;#39;&amp;amp;lt;div style=&amp;#34;clear:both;&amp;#34;&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;&amp;amp;lt;div id=&amp;#34;pqp-container&amp;#34; class=&amp;#34;pQp tallDetails&amp;#34; style=&amp;#34;display:block;position:inherit;&amp;#34;&amp;amp;gt;&amp;#39;; にします。 （display:none;をdisplay:block;に変更。） 661行目の 1 $return_output .=&amp;#39;&amp;amp;lt;/div&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;&amp;amp;lt;div id=&amp;#34;openProfiler&amp;#34;&amp;amp;gt;&amp;amp;lt;a href=&amp;#34;#&amp;#34; onclick=&amp;#34;openProfiler();return false&amp;#34; title=&amp;#34;Open Code Profiler&amp;#34;&amp;amp;gt;Code Profiler&amp;amp;lt;/a&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;&amp;#39;; を 1 $return_output .=&amp;#39;&amp;amp;lt;/div&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;&amp;amp;lt;div id=&amp;#34;openProfiler&amp;#34; style=&amp;#34;display: none; &amp;#34;&amp;amp;gt;&amp;amp;lt;a href=&amp;#34;#&amp;#34; onclick=&amp;#34;openProfiler();return false&amp;#34; title=&amp;#34;Open Code Profiler&amp;#34;&amp;amp;gt;Code Profiler&amp;amp;lt;/a&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;&amp;#39;; にします。 （ style=&amp;#8221;display: none; &amp;#8220;の追記。） 以上で常時表示されるようになったはずです。 検索して見つけた要素のスタイルを適当に変更してるだけなので、な</description>
+      <description>最近 FuelPHP を使っています。 バージョン 1.2.1 を使っていたのですが、 1.3 がでたということで 1.3 を使い始めました。 そこでデバッグをするときに、 &#39;profiling&#39; =&amp;gt; true とかしてプロファイラを表示させるんですが、プロファイラが最小化状態で表示されます。 1.2.1 のプロファイラは展開した状態で表示されてたのに。 true ってしたらプロファイラは常に表示されてて欲しいです。 ということで、常に表示されるようにします。 1 fuel/core/vendor/phpquickprofiler/display.php を開きます。 305 行目の 1 $return_output .=&amp;#39;&amp;lt;div style=&amp;#34;clear:both;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div id=&amp;#34;pqp-container&amp;#34; class=&amp;#34;pQp tallDetails&amp;#34; style=&amp;#34;display:none;position:inherit;&amp;#34;&amp;gt;&amp;#39;; を 1 $return_output .=&amp;#39;&amp;lt;div style=&amp;#34;clear:both;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div id=&amp;#34;pqp-container&amp;#34; class=&amp;#34;pQp tallDetails&amp;#34; style=&amp;#34;display:block;position:inherit;&amp;#34;&amp;gt;&amp;#39;; にします。 (display:none; を display:block; に変更) 661 行目の 1 $return_output .=&amp;#39;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div id=&amp;#34;openProfiler&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;#&amp;#34; onclick=&amp;#34;openProfiler();return false&amp;#34; title=&amp;#34;Open Code Profiler&amp;#34;&amp;gt;Code Profiler&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;#39;; を 1 $return_output .=&amp;#39;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div id=&amp;#34;openProfiler&amp;#34; style=&amp;#34;display: none;&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;#&amp;#34; onclick=&amp;#34;openProfiler();return false&amp;#34; title=&amp;#34;Open Code Profiler&amp;#34;&amp;gt;Code Profiler&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;#39;; にします。 (style=&amp;quot;display: none;&amp;quot; の追記) 以上で常時表示されるようになったはずです。 検索して見つけた要素のスタイルを適当に変更してるだけなので、なんか他に方法があるのかもしれませんけども。 とりあえず、これでちょっとだけ快適になった。 常時表示されなくなったことにはなにか理由があるんですかねえ。</description>
     </item>
     
     <item>
@@ -1727,7 +1727,7 @@
       <pubDate>Wed, 22 Aug 2012 03:23:11 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/8/22/food-20120820/</guid>
-      <description>ryo(supercell) feat.初音ミク 『ODDS&amp;#038;ENDS』 &amp;#8211; YouTube ryoさんの新曲。 素敵な声だ。 人は「失いたくない」からがんばる – ライフハック心理学 なるほど確かにそうかもしれない。 常に使うと精神的に疲れるかも知れないからタイミングが重要かも知れない。 完璧主義タイプの先送りをライフハックする – ライフハック心理学 わかってはいるんだけどなかなか。 タスクシュートはそのうち調べる必要がある。 腐るソーシャル &amp;#8211; teruyastarはかく語りき これはいいかも知れない。 わざと腐らせるソーシャル。 辞める方向に労力を使うのではなく、続ける方向に労力を使う。 今ではSNSがどういうものか認知が広まっているはずだから、わかる人にはわかるはず。 Google・Microsoftなどの翻訳エンジンを選べて複数言語対応のフリーソフト「QTranslate」 &amp;#8211; GIGAZINE ふむふむこれは便利かも知らんなあ。 他人の行動をしっかり評価できない人は、心理</description>
+      <description>ryo(supercell) feat.初音ミク 『ODDS&amp;#038;ENDS』 - YouTube ryoさんの新曲。 素敵な声だ。 人は「失いたくない」からがんばる – ライフハック心理学 なるほど確かにそうかもしれない。 常に使うと精神的に疲れるかも知れないからタイミングが重要かも知れない。 完璧主義タイプの先送りをライフハックする – ライフハック心理学 わかってはいるんだけどなかなか。 タスクシュートはそのうち調べる必要がある。 腐るソーシャル - teruyastarはかく語りき これはいいかも知れない。 わざと腐らせるソーシャル。 辞める方向に労力を使うのではなく、続ける方向に労力を使う。 今ではSNSがどういうものか認知が広まっているはずだから、わかる人にはわかるはず。 Google・Microsoftなどの翻訳エンジンを選べて複数言語対応のフリーソフト「QTranslate」 - GIGAZINE ふむふむこれは便利かも知らんなあ。 他人の行動をしっかり評価できない人は、心理</description>
     </item>
     
     <item>
@@ -1736,7 +1736,7 @@
       <pubDate>Sun, 19 Aug 2012 00:29:22 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/8/19/food-20120818/</guid>
-      <description>CSS3 Wristwatch · CodePen これがすべてCSSだけというのはすごい。 このくらいの技術力が欲しいなあ。 Songrium &amp;#8211; つながりを用いた新しい音楽鑑賞を これは素敵なサイト。 つながりを可視化してくれる。 つながりっていうものはWebの大きな特徴の1つだと思います。 Githubではなぜ人が辞めないのか？ | IDEA*IDEA これは素敵。</description>
+      <description>CSS3 Wristwatch · CodePen これがすべてCSSだけというのはすごい。 このくらいの技術力が欲しいなあ。 Songrium - つながりを用いた新しい音楽鑑賞を これは素敵なサイト。 つながりを可視化してくれる。 つながりっていうものはWebの大きな特徴の1つだと思います。 Githubではなぜ人が辞めないのか？ | IDEA*IDEA これは素敵。</description>
     </item>
     
     <item>
@@ -1754,7 +1754,7 @@
       <pubDate>Fri, 10 Aug 2012 23:36:41 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/8/10/food-20120810/</guid>
-      <description>うつ病治療ゲーム「SPARX」が画期的かつ面白そう！ &amp;#8211; NAVER まとめ これはすごい。 うつ病治療の敷居を下げることはとても大事だと思う。 Googleをもっと便利に使いこなす32の検索技と14のネタ オリンピックとかサッカーとか競技名で調べたりするとスケジュールがわかってすごい便利。</description>
+      <description>うつ病治療ゲーム「SPARX」が画期的かつ面白そう！ - NAVER まとめ これはすごい。 うつ病治療の敷居を下げることはとても大事だと思う。 Googleをもっと便利に使いこなす32の検索技と14のネタ オリンピックとかサッカーとか競技名で調べたりするとスケジュールがわかってすごい便利。</description>
     </item>
     
     <item>
@@ -1808,7 +1808,7 @@
       <pubDate>Tue, 31 Jul 2012 21:43:31 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/7/31/food-20120730/</guid>
-      <description>チャンスをつかむには「つまらない仕事を一流にこなす」ことが近道という教え : ライフハッカー［日本版］ なにも考えずに日本一になるのは難しい。 日本一になったらちゃんと見てくれる人がいるって本人に思わせておくことが組織にとって大事だと思う。 人事担当が教える「こんな会社辞めてやる！」と思った時に考えること : ライフハッカー［日本版］ ふむふむ勉強になる。 http://anond.hatelabo.jp/20120721222138 いろいろな意見もあるだろうけどそんなことを言いたいのではなくて、主婦の承認欲求が満たされる機会が少なすぎるという点にハッとしたので共有。 当たり前に対して行動する必要があるんですよね。 でももはやすでに当たり前すぎてどう行動していいものなのか。 DESIGN ARCHIVE &amp;#8211; BLOG: 細かすぎて伝わりづらい!Mountain LionのUI変更点まとめ。 おほー、さすがApple。 Googleのプロダクトデザインのプロトタイプを見て想うこと [K&amp;#8217;conf] 対してのGoogle。 デザインって難しい。 CSS3を</description>
+      <description>チャンスをつかむには「つまらない仕事を一流にこなす」ことが近道という教え : ライフハッカー［日本版］ なにも考えずに日本一になるのは難しい。 日本一になったらちゃんと見てくれる人がいるって本人に思わせておくことが組織にとって大事だと思う。 人事担当が教える「こんな会社辞めてやる！」と思った時に考えること : ライフハッカー［日本版］ ふむふむ勉強になる。 http://anond.hatelabo.jp/20120721222138 いろいろな意見もあるだろうけどそんなことを言いたいのではなくて、主婦の承認欲求が満たされる機会が少なすぎるという点にハッとしたので共有。 当たり前に対して行動する必要があるんですよね。 でももはやすでに当たり前すぎてどう行動していいものなのか。 DESIGN ARCHIVE - BLOG: 細かすぎて伝わりづらい!Mountain LionのUI変更点まとめ。 おほー、さすがApple。 Googleのプロダクトデザインのプロトタイプを見て想うこと [K&amp;#8217;conf] 対してのGoogle。 デザインって難しい。 CSS3を</description>
     </item>
     
     <item>
@@ -1826,7 +1826,7 @@
       <pubDate>Fri, 27 Jul 2012 03:12:20 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/7/27/food-20120726/</guid>
-      <description>アップルがウェブブラウザ「Safari」のWindowsサポートを打ち切りか &amp;#8211; GIGAZINE どうなるんだろう。 でもこれでSafariがもっとより良くなったら嬉しいかな。 [CSS]ウェブデザインの可能性を広げる10のスタイルシート | コリス outline: none;は知らなかった。 ブラウザのしくみ: 最新ウェブブラウザの内部構造 &amp;#8211; HTML5 Rocks 長い・・・。 まだ読めてない。 でも内部構造がわかればウェブ開発者としてより成長できるはず。 GithubにあるHTMLをレンダリングしてその場で表示出来るChromeエクステンション・Githtml &amp;#8211; かちびと.net これは非常に便利かも。 すごくその場で表示したい。 その場で表示する機能がないのはサーバの負荷とかWebサービスとしての利用とかを制限するためかなあ。</description>
+      <description>アップルがウェブブラウザ「Safari」のWindowsサポートを打ち切りか - GIGAZINE どうなるんだろう。 でもこれでSafariがもっとより良くなったら嬉しいかな。 [CSS]ウェブデザインの可能性を広げる10のスタイルシート | コリス outline: none;は知らなかった。 ブラウザのしくみ: 最新ウェブブラウザの内部構造 - HTML5 Rocks 長い・・・。 まだ読めてない。 でも内部構造がわかればウェブ開発者としてより成長できるはず。 GithubにあるHTMLをレンダリングしてその場で表示出来るChromeエクステンション・Githtml - かちびと.net これは非常に便利かも。 すごくその場で表示したい。 その場で表示する機能がないのはサーバの負荷とかWebサービスとしての利用とかを制限するためかなあ。</description>
     </item>
     
     <item>
@@ -1844,7 +1844,7 @@
       <pubDate>Wed, 25 Jul 2012 02:28:37 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/7/25/food-20120724/</guid>
-      <description>仮想的な4つのデスクトップ画面を使って楽に作業ができるフリーソフト「WindowsPager」 &amp;#8211; GIGAZINE Windowsの仮想デスクトップはいろいろ試したけどどれも使いづらかったんだよね。 とりあえずこれも試用してみる。 「長い時間をともに過ごしている5人」の平均が、今と未来の自分を作っている : ライフハッカー［日本版］ なるほどね。 なんとなく直感的に感じてたことを文章におこしてもらった感じ。 よく人には、自分がいいと思う人を見つけて頼った方がいい、って言ってきたけど自分もそうするべきだよね。 まずは考え方を変えることから&amp;#8230;私たちが陥りがちな12の自動思考 : ライフハッカー［日本版］ おっと見事に全て当てはまっているぞ。 自分でちゃんと気付いてあげることが大事か。 ネイティブアプリ風の操作ができるスマートフォン用Webフレームワーク「Sidetap」 &amp;#8211; MOONGIFT|オープンソース・ソフトウェア紹介を軸</description>
+      <description>仮想的な4つのデスクトップ画面を使って楽に作業ができるフリーソフト「WindowsPager」 - GIGAZINE Windowsの仮想デスクトップはいろいろ試したけどどれも使いづらかったんだよね。 とりあえずこれも試用してみる。 「長い時間をともに過ごしている5人」の平均が、今と未来の自分を作っている : ライフハッカー［日本版］ なるほどね。 なんとなく直感的に感じてたことを文章におこしてもらった感じ。 よく人には、自分がいいと思う人を見つけて頼った方がいい、って言ってきたけど自分もそうするべきだよね。 まずは考え方を変えることから&amp;#8230;私たちが陥りがちな12の自動思考 : ライフハッカー［日本版］ おっと見事に全て当てはまっているぞ。 自分でちゃんと気付いてあげることが大事か。 ネイティブアプリ風の操作ができるスマートフォン用Webフレームワーク「Sidetap」 - MOONGIFT|オープンソース・ソフトウェア紹介を軸</description>
     </item>
     
     <item>
@@ -1889,7 +1889,7 @@
       <pubDate>Sun, 22 Jul 2012 20:52:35 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/7/22/food-20120720/</guid>
-      <description>子供と母親への理解と働き蜂化した世の中と：島国大和のド畜生 ふむ。 たしかにその通りだ。 聖人であるところを強要してはいけない。 目の見えない人に埋め込んで視覚を取り戻すデバイス「Bio-Retina」 &amp;#8211; GIGAZINE もっと進歩して欲しい。 視力を失くすかもしれない恐怖から解放されたい。 円や多角形をランダムに配置する背景を SVG で作る | Unformed Building こんなこともできるのか。 これはぜひやりたい。 HD画面のセリフ体 vs. サンセリフ体 – U-Site これはなるほど。 読む価値あり。 画面ってのは一番直接的なUIなわけですよ。</description>
+      <description>子供と母親への理解と働き蜂化した世の中と：島国大和のド畜生 ふむ。 たしかにその通りだ。 聖人であるところを強要してはいけない。 目の見えない人に埋め込んで視覚を取り戻すデバイス「Bio-Retina」 - GIGAZINE もっと進歩して欲しい。 視力を失くすかもしれない恐怖から解放されたい。 円や多角形をランダムに配置する背景を SVG で作る | Unformed Building こんなこともできるのか。 これはぜひやりたい。 HD画面のセリフ体 vs. サンセリフ体 – U-Site これはなるほど。 読む価値あり。 画面ってのは一番直接的なUIなわけですよ。</description>
     </item>
     
     <item>
@@ -1898,7 +1898,7 @@
       <pubDate>Thu, 19 Jul 2012 12:16:49 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/7/19/food-20120718/</guid>
-      <description>東北大教授による大学新入生への助言 &amp;#8211; Togetter これは非常にためになる。 大学に行きたくなってきた。 おっさんへ(パロディ) &amp;#8211; ひがやすを blog なんかちょっとすっきりした。 説教ってよくわからんかったけど、あれは「お話を聞かせてください」といくものであって、「聞きたくもないのに聞かされるもの」ではないですよね。 ちなみに記事中にも出てますが、元ネタはこれだそうです。</description>
+      <description>東北大教授による大学新入生への助言 - Togetter これは非常にためになる。 大学に行きたくなってきた。 おっさんへ(パロディ) - ひがやすを blog なんかちょっとすっきりした。 説教ってよくわからんかったけど、あれは「お話を聞かせてください」といくものであって、「聞きたくもないのに聞かされるもの」ではないですよね。 ちなみに記事中にも出てますが、元ネタはこれだそうです。</description>
     </item>
     
     <item>
@@ -1916,7 +1916,7 @@
       <pubDate>Mon, 16 Jul 2012 14:58:35 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/7/16/food-20120715/</guid>
-      <description>高校生になって初めてスクラムを始めました～「ストーリー」で何を作るかまとめよう (1&amp;frasl;3) &amp;#8211; ＠IT 連載一回目。 この連載わかりやすい。 スプリントと“かんばん”でチームのビートを刻め!! ～スクラム開発で使う手法とツール～ (1&amp;frasl;3) &amp;#8211; ＠IT 連載二回目。 スクラムやるならRedmineとALMinium！ ～新キャラ登場！無表情なあの人が笑う日は来るのか？～ (1&amp;frasl;3) &amp;#8211; ＠IT 連載三回目。 ALMiniumって便利そうだな。 Redmineでスクラム実践！～アジャイル開発始めました～ (1&amp;frasl;3) &amp;#8211; ＠IT 連載四回目。 「うわっ…私のバージョン管理、ダメ過ぎ…？」を解決するGitの使い方“超”入門 (1&amp;frasl;3) &amp;#8211; ＠IT 連載五回目。</description>
+      <description>高校生になって初めてスクラムを始めました～「ストーリー」で何を作るかまとめよう (1&amp;frasl;3) - ＠IT 連載一回目。 この連載わかりやすい。 スプリントと“かんばん”でチームのビートを刻め!! ～スクラム開発で使う手法とツール～ (1&amp;frasl;3) - ＠IT 連載二回目。 スクラムやるならRedmineとALMinium！ ～新キャラ登場！無表情なあの人が笑う日は来るのか？～ (1&amp;frasl;3) - ＠IT 連載三回目。 ALMiniumって便利そうだな。 Redmineでスクラム実践！～アジャイル開発始めました～ (1&amp;frasl;3) - ＠IT 連載四回目。 「うわっ…私のバージョン管理、ダメ過ぎ…？」を解決するGitの使い方“超”入門 (1&amp;frasl;3) - ＠IT 連載五回目。</description>
     </item>
     
     <item>
@@ -1925,7 +1925,7 @@
       <pubDate>Sun, 15 Jul 2012 03:21:53 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/7/15/food-20120714/</guid>
-      <description>長時間労働・サービス残業は自分の価値を下げ企業存続を危うくする | Act as Professional &amp;#8211; hiroki.jp by HIROCASTER 長時間労働の会社に魅力を感じない。 社員は辞めたい。 新しい人は入りたくない。 そんなの当たり前。 素晴らしいプレゼンだった。 残業をしない会社を作るために &amp;#8211; GoTheDistance 上記に関連して。 残業を減らしたいなら全社的な取り組みでなければ効果は出ないというのが、僕の基本的な考え。ボトムアップでは無理。トップダウンでしか成し遂げられない。仕事上の構造的欠陥の存在を認めないといけないので、その意味では経営者が問題だと感じないとどうにもならない。 ですよね。 残業を悪とするチームを作ろう &amp;#8211; ひがやすを blog これも残業関連の記事。 残業の問題を会社や上司のせいにしても実は何も解決しません。会社や上司を変えることは、とても難しいことだからです。 なるほど。 残業をなくすためにすべきこと &amp;#8211; ひがやすを blog 上記記事の続き。 さっさとその上司から離れることに全力をつくすべきで</description>
+      <description>長時間労働・サービス残業は自分の価値を下げ企業存続を危うくする | Act as Professional - hiroki.jp by HIROCASTER 長時間労働の会社に魅力を感じない。 社員は辞めたい。 新しい人は入りたくない。 そんなの当たり前。 素晴らしいプレゼンだった。 残業をしない会社を作るために - GoTheDistance 上記に関連して。 残業を減らしたいなら全社的な取り組みでなければ効果は出ないというのが、僕の基本的な考え。ボトムアップでは無理。トップダウンでしか成し遂げられない。仕事上の構造的欠陥の存在を認めないといけないので、その意味では経営者が問題だと感じないとどうにもならない。 ですよね。 残業を悪とするチームを作ろう - ひがやすを blog これも残業関連の記事。 残業の問題を会社や上司のせいにしても実は何も解決しません。会社や上司を変えることは、とても難しいことだからです。 なるほど。 残業をなくすためにすべきこと - ひがやすを blog 上記記事の続き。 さっさとその上司から離れることに全力をつくすべきで</description>
     </item>
     
     <item>
@@ -1934,7 +1934,7 @@
       <pubDate>Sun, 15 Jul 2012 02:36:00 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/7/15/food-20120713/</guid>
-      <description>スタートアップにおけるソフトウェア開発の無駄をなくす大事な３つの考えかた &amp;#8211; Social Change! 機能やソースコードは資産ではなく負債だと考えるべきです。どれだけ速いスピードで作れたとして、それが誰にとっても価値を産まないのだとすれば、意味がないだけでなく、メンテナンスにかかるコストもあがりますし、運用するコストにも影響が出るでしょう。 この考え方には「なるほど」と思った。 iPhoneはなぜ気持ちがよいのか？ (1&amp;frasl;5) | Telescope Magazine これは非常に参考になる。 ぬるぬるしたアニメーションがいいんじゃなくて、思った通りに思ったレスポンスを返してくれるのが気持ちいいのか。 だからWindows Phoneのパタパタした遷移アニメーションはなんか気持ち悪いのか。 あれはすごく不自然なアニメーションで、iPhoneみたいに選択したアプリが広がったり、横にスライドするのは自然な動きだと感じる。 それと記事中に紹介されているマウスポインタの体験がやや衝</description>
+      <description>スタートアップにおけるソフトウェア開発の無駄をなくす大事な３つの考えかた - Social Change! 機能やソースコードは資産ではなく負債だと考えるべきです。どれだけ速いスピードで作れたとして、それが誰にとっても価値を産まないのだとすれば、意味がないだけでなく、メンテナンスにかかるコストもあがりますし、運用するコストにも影響が出るでしょう。 この考え方には「なるほど」と思った。 iPhoneはなぜ気持ちがよいのか？ (1&amp;frasl;5) | Telescope Magazine これは非常に参考になる。 ぬるぬるしたアニメーションがいいんじゃなくて、思った通りに思ったレスポンスを返してくれるのが気持ちいいのか。 だからWindows Phoneのパタパタした遷移アニメーションはなんか気持ち悪いのか。 あれはすごく不自然なアニメーションで、iPhoneみたいに選択したアプリが広がったり、横にスライドするのは自然な動きだと感じる。 それと記事中に紹介されているマウスポインタの体験がやや衝</description>
     </item>
     
     <item>
@@ -1943,7 +1943,7 @@
       <pubDate>Thu, 12 Jul 2012 23:40:25 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/7/12/food-20120712/</guid>
-      <description>コミュニケーション能力の高い奴は仕事が出来ない：島国大和のド畜生 コミュニケーション能力が高ければ仕事ができる、みたいなのはたしかにおかしいよね。 でもおれはコミュニケーションがいいものだって決めつけてた。 やっぱりおれは思慮が浅いなあ。 もっと考えないと。 Microsoft、企業内TwitterのYammer買収を確認―価格は12億ドル OfficeにSNSがのるのか胸熱。 日本の会社は糞だとか、ブラックだとかの話。：島国大和のド畜生 働くということをどうとらえるか。 おれは好きなことをしたいなー。 それなら労働時間が長くてもいい。 人類史上何度も起きた、クソ労働環境の劇的な改善の原因 &amp;#8211; 分裂勘違い君劇場 上記リンク内のこの記事も納得。 やるしかないってことか。 SonicGardenプログラマが大切にしている考え 〜キャラクタを明確にするということ〜 &amp;#8211; よかろうもん！ さりげなく 得意領域が各々違うことで、悩むことがあっ</description>
+      <description>コミュニケーション能力の高い奴は仕事が出来ない：島国大和のド畜生 コミュニケーション能力が高ければ仕事ができる、みたいなのはたしかにおかしいよね。 でもおれはコミュニケーションがいいものだって決めつけてた。 やっぱりおれは思慮が浅いなあ。 もっと考えないと。 Microsoft、企業内TwitterのYammer買収を確認―価格は12億ドル OfficeにSNSがのるのか胸熱。 日本の会社は糞だとか、ブラックだとかの話。：島国大和のド畜生 働くということをどうとらえるか。 おれは好きなことをしたいなー。 それなら労働時間が長くてもいい。 人類史上何度も起きた、クソ労働環境の劇的な改善の原因 - 分裂勘違い君劇場 上記リンク内のこの記事も納得。 やるしかないってことか。 SonicGardenプログラマが大切にしている考え 〜キャラクタを明確にするということ〜 - よかろうもん！ さりげなく 得意領域が各々違うことで、悩むことがあっ</description>
     </item>
     
     <item>
@@ -1961,7 +1961,7 @@
       <pubDate>Tue, 10 Jul 2012 22:53:04 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/7/10/food-20120710/</guid>
-      <description>uniqlo undercover とても素晴らしいアイディアだと思います。 Set Text on a Circle | CSS-Tricks SVGのパスに乗せる方法じゃなくても実現できるんだ。 一緒に仕事する仲間から信頼されるには、プライドを持って仕事をしよう。 | 社長ブログ | 株式会社LIG 自分の力量を知らなければなあ。 プレゼンのマウスポインターを巨大化して見やすく便利にするフリーソフト「PointerStick」 &amp;#8211; GIGAZINE プレゼンのときにマウスポインタ使うのはどうなの、と思ってたけどこれは逆転の発想だった。 Auto Screen On | TABROID（タブロイド）欲しいアンドロイドアプリをギュッと凝縮！ これはすごい便利そう。 でも、おれの端末は対応してなかった・・・。 アップルストアでセルフレジ！「EasyPay」を使えば自分のiPhoneだけで清算可能みたいだよ : ギズモード・ジャパン とてもよい試みだと思います。 レジの待ち時間ってすごく不毛だと思うの。 レイヤー機能による画像合成機能やサムネイル生成等が超</description>
+      <description>uniqlo undercover とても素晴らしいアイディアだと思います。 Set Text on a Circle | CSS-Tricks SVGのパスに乗せる方法じゃなくても実現できるんだ。 一緒に仕事する仲間から信頼されるには、プライドを持って仕事をしよう。 | 社長ブログ | 株式会社LIG 自分の力量を知らなければなあ。 プレゼンのマウスポインターを巨大化して見やすく便利にするフリーソフト「PointerStick」 - GIGAZINE プレゼンのときにマウスポインタ使うのはどうなの、と思ってたけどこれは逆転の発想だった。 Auto Screen On | TABROID（タブロイド）欲しいアンドロイドアプリをギュッと凝縮！ これはすごい便利そう。 でも、おれの端末は対応してなかった・・・。 アップルストアでセルフレジ！「EasyPay」を使えば自分のiPhoneだけで清算可能みたいだよ : ギズモード・ジャパン とてもよい試みだと思います。 レジの待ち時間ってすごく不毛だと思うの。 レイヤー機能による画像合成機能やサムネイル生成等が超</description>
     </item>
     
     <item>
@@ -1997,16 +1997,16 @@
       <pubDate>Thu, 05 Jul 2012 02:36:34 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/7/5/food-20120704/</guid>
-      <description>授業や会議でファーストペンギンを守る方法 &amp;#8211; teruyastarはかく語りき 非常にわかりやすい説明だった。 いかにして発言者を守るのか。 85％できる！ – ライフハック心理学 協力を仰ぐときは、85%の魅力が必要なのか。 ちょっとがんばればできるかもしれないなと思わせることが大事。 シゴタノ！ 通る提案資料は「GARPFS(ガルフス)」の順番で作る 「感情を論理でくるむことが大事です。」なるほど。 新たなスマホ用OS「Firefox OS」搭載のスマートフォンが2013年初頭に登場へ、実際のスクリーンショットはこんな感じ &amp;#8211; GIGAZINE 全部HTML5なのか。 操作性に期待。 レスポンシブとか、そういうことの前に : could レスポンシブデザインって好きじゃなかったんだけど、やってみようかな。 ウェブデザインのセンスを学ぼう、2012年上半期洗練されたディテールのUIデザインのまとめ | コリス これはかっこいい。 おれも本格的にデザインの勉強始め</description>
+      <description>授業や会議でファーストペンギンを守る方法 - teruyastarはかく語りき 非常にわかりやすい説明だった。 いかにして発言者を守るのか。 85％できる！ – ライフハック心理学 協力を仰ぐときは、85%の魅力が必要なのか。 ちょっとがんばればできるかもしれないなと思わせることが大事。 シゴタノ！ 通る提案資料は「GARPFS(ガルフス)」の順番で作る 「感情を論理でくるむことが大事です。」なるほど。 新たなスマホ用OS「Firefox OS」搭載のスマートフォンが2013年初頭に登場へ、実際のスクリーンショットはこんな感じ - GIGAZINE 全部HTML5なのか。 操作性に期待。 レスポンシブとか、そういうことの前に : could レスポンシブデザインって好きじゃなかったんだけど、やってみようかな。 ウェブデザインのセンスを学ぼう、2012年上半期洗練されたディテールのUIデザインのまとめ | コリス これはかっこいい。 おれも本格的にデザインの勉強始め</description>
     </item>
     
     <item>
-      <title>Operaの右クリックで現在表示中ページのタイトルやらURLをaタグで取得したりいい感じにする</title>
+      <title>Opera の右クリックで現在表示中ページのタイトルやら URL を a タグで取得したりいい感じにする</title>
       <link>http://blog.5000164.jp/2012/7/5/opera-url/</link>
       <pubDate>Thu, 05 Jul 2012 01:02:05 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/7/5/opera-url/</guid>
-      <description>Operaのmenu.iniを編集して実現します。 まずファイルの 1 [Document Popup Menu] の部分を探します。 見つけたら下に 12345 ++++++++++++++++++--9 ; get URL &amp;amp; Link Item, &amp;#34;Copy URL&amp;#34; = Go to page, &amp;#34;javascript:(function(){window.prompt(&amp;#39;&amp;#39;, document.title+&amp;#39;\n&amp;#39;+location.href);})();&amp;#34; &amp;amp; Delay, 100 &amp;amp; Cut &amp;amp; Cancel Item, &amp;#34;Create Link&amp;#34; = Go to page, &amp;#34;javascript:(function(){window.prompt(&amp;#39;&amp;#39;, &amp;#39;\n\n&amp;amp;lt;section&amp;amp;gt;\n&amp;amp;lt;div&amp;amp;gt;&amp;amp;lt;a href=\u0022&amp;#39;+location.href+&amp;#39;\u0022&amp;amp;gt;&amp;#39;+document.title+&amp;#39;&amp;amp;lt;/a&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\n&amp;amp;lt;p&amp;amp;gt;\n\n&amp;amp;lt;/p&amp;amp;gt;\n&amp;amp;lt;/section&amp;amp;gt;\n\n&amp;#39;);})();&amp;#34; &amp;amp; Delay, 100 &amp;amp; Cut &amp;amp; Cancel Item, &amp;#34;Reference Link&amp;#34; = Go to page, &amp;#34;javascript:(function(){window.prompt(&amp;#39;&amp;#39;, &amp;#39;&amp;amp;lt;div&amp;amp;gt;&amp;amp;lt;a href=\u0022&amp;#39;+location.href+&amp;#39;\u0022&amp;amp;gt;&amp;#39;+document.title+&amp;#39;&amp;amp;lt;/a&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\n\n&amp;#39;);})();&amp;#34; &amp;amp; Delay, 100 &amp;amp; Cut &amp;amp; Cancel と追加します。 これでOperaを再起動すれば完了です。 これは単純にJavaScriptを利用しています。 実装するときにダブルコーテーションのところで一回ハマりました。 ダブルコーテーションをエスケープしてなかったのが動かない原因かと思いきや、Operaの設定を解釈する側でダブルコーテーションを使用してはいけなかったみたいです。 なのでダブルコーテーションをUnicodeの「0022」で表現して回避しています。 実際にこれを使ってみるとこんな感じになります。 カスタマイズは簡単なので、自分の環境に合わせて使ってください。 「Copy URL」 12 生きるためのブログ http://5000164.jp/ 「Create Link」 123456</description>
+      <description>Opera の menu.ini を編集して実現します。 まずファイルの 1 [Document Popup Menu] の部分を探します。 見つけたら下に 12345 ++++++++++++++++++--9 ; get URL &amp;amp; Link Item, &amp;#34;Copy URL&amp;#34; = Go to page, &amp;#34;javascript:(function(){window.prompt(&amp;#39;&amp;#39;, document.title+&amp;#39;\n&amp;#39;+location.href);})();&amp;#34; &amp;amp; Delay, 100 &amp;amp; Cut &amp;amp; Cancel Item, &amp;#34;Create Link&amp;#34; = Go to page, &amp;#34;javascript:(function(){window.prompt(&amp;#39;&amp;#39;, &amp;#39;\n\n&amp;lt;section&amp;gt;\n&amp;lt;div&amp;gt;&amp;lt;a href=\u0022&amp;#39;+location.href+&amp;#39;\u0022&amp;gt;&amp;#39;+document.title+&amp;#39;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;\n&amp;lt;p&amp;gt;\n\n&amp;lt;/p&amp;gt;\n&amp;lt;/section&amp;gt;\n\n&amp;#39;);})();&amp;#34; &amp;amp; Delay, 100 &amp;amp; Cut &amp;amp; Cancel Item, &amp;#34;Reference Link&amp;#34; = Go to page, &amp;#34;javascript:(function(){window.prompt(&amp;#39;&amp;#39;, &amp;#39;&amp;lt;div&amp;gt;&amp;lt;a href=\u0022&amp;#39;+location.href+&amp;#39;\u0022&amp;gt;&amp;#39;+document.title+&amp;#39;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;\n\n&amp;#39;);})();&amp;#34; &amp;amp; Delay, 100 &amp;amp; Cut &amp;amp; Cancel と追加します。 これで Opera を再起動すれば完了です。 これは単純にJavaScriptを利用しています。 実装するときにダブルコーテーションのところで一回ハマりました。 ダブルコーテーションをエスケープしてなかったのが動かない原因かと思いきや、 Opera の設定を解釈する側でダブルコーテーションを使用してはいけなかったみたいです。 なのでダブルコーテーションを Unicode の「0022」で表現して回避しています。 実際にこれを使ってみるとこんな感じになります。 カスタマイズは簡単なので、自分の環境に合わせて使ってください。 Copy URL 12 生きるためのブログ http://5000164.jp/ Create Link 123456 &amp;lt;section&amp;gt; &amp;lt;div&amp;gt;&amp;lt;a href=&amp;#34;http://5000164.jp/&amp;#34;&amp;gt;生きる</description>
     </item>
     
     <item>
@@ -2015,7 +2015,7 @@
       <pubDate>Sun, 01 Jul 2012 02:40:42 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/7/1/food-20120630/</guid>
-      <description>歴史のフィードバック。またはコンピュータ史を学ぶ価値 &amp;#8211; UEI/ARC shi3zの日記 ただ技術を習得するだけでは、先に進めない。 1 [為末氏「成長を阻害するどうでもいい事」 &amp;amp;#8211; Togetter](http://togetter.com/li/327867) 自分がどう見られたいかではなく、自分はどんな目的を達したいかが大事。 1 [フリーランス向け嫌な仕事の断り方・交渉の仕方 | たけのおしごと](http://take-a-job.info/archives/924) 物理的な物ができあがるわけではないので、理解を得るのは難しいですよね。全員がソフトウェアを作ったことがあればいいんですけど。お金をもらうということは、それだけの価値があるということです。 1 CSS3 Lasers! うまいことタイミングを合わせればこんなこともできるのか。もっと柔軟に考えないと。 1 [Georgia ProとVerdana Proの深い話 – フォントブログ](http://blog.petitboys.com/archives/georgiaverdana.</description>
+      <description>歴史のフィードバック。またはコンピュータ史を学ぶ価値 - UEI/ARC shi3zの日記 ただ技術を習得するだけでは、先に進めない。 1 [為末氏「成長を阻害するどうでもいい事」 - Togetter](http://togetter.com/li/327867) 自分がどう見られたいかではなく、自分はどんな目的を達したいかが大事。 1 [フリーランス向け嫌な仕事の断り方・交渉の仕方 | たけのおしごと](http://take-a-job.info/archives/924) 物理的な物ができあがるわけではないので、理解を得るのは難しいですよね。全員がソフトウェアを作ったことがあればいいんですけど。お金をもらうということは、それだけの価値があるということです。 1 CSS3 Lasers! うまいことタイミングを合わせればこんなこともできるのか。もっと柔軟に考えないと。 1 [Georgia ProとVerdana Proの深い話 – フォントブログ](http://blog.petitboys.com/archives/georgiaverdana.</description>
     </item>
     
     <item>
@@ -2028,21 +2028,21 @@
     </item>
     
     <item>
-      <title>WordPressのテーマ「TwentyEleven」でいろいろ消したり幅広げたり色変えたりした</title>
+      <title>WordPress のテーマ「TwentyEleven」でいろいろ消したり幅広げたり色変えたりした</title>
       <link>http://blog.5000164.jp/2012/6/29/wordpress-twentyeleven-edit/</link>
       <pubDate>Fri, 29 Jun 2012 01:52:41 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/6/29/wordpress-twentyeleven-edit/</guid>
-      <description>デザインをいろいろと変更しました。 作業の途中で元ファイルがわからなくなりテーマをまるごと再インストールしたりもしました。 設定情報とかも一緒に消しちゃって記事が見れなくなった時は焦った。 でもなんとか元に戻りました。 以下は変更内容です。 あんまり詳しく調べずに、それっぽいファイルをそれっぽく修正したらそれっぽい動きになっただけなので、参考にする時は注意してください。 まず、出したくないものを消します。 メニューバー（ナビゲーションバー）と検索ボックスを消します。 今のところ使用していないので。 header.phpの114行目以降 123456789101112131415161718192021222324 &amp;amp;amp;lt;?php // Has the text been hidden? if ( &amp;#39;blank&amp;#39; == get_header_textcolor() ) : ?&amp;amp;amp;gt; &amp;amp;amp;lt;div&amp;amp;amp;gt; &amp;amp;amp;lt;?php get_search_form(); ?&amp;amp;amp;gt; &amp;amp;amp;lt;/div&amp;amp;amp;gt; &amp;amp;amp;lt;?php else : ?&amp;amp;amp;gt; &amp;amp;amp;lt;?php get_search_form(); ?&amp;amp;amp;gt; &amp;amp;amp;lt;?php endif; ?&amp;amp;amp;gt; &amp;amp;amp;lt;nav id=&amp;amp;amp;quot;access&amp;amp;amp;quot; role=&amp;amp;amp;quot;navigation&amp;amp;amp;quot;&amp;amp;amp;gt; &amp;amp;amp;lt;h3&amp;amp;amp;gt;&amp;amp;amp;lt;?php _e( &amp;#39;Main menu&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); ?&amp;amp;amp;gt;&amp;amp;amp;lt;/h3&amp;amp;amp;gt; &amp;amp;amp;lt;?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?&amp;amp;amp;gt; &amp;amp;amp;lt;div&amp;amp;amp;gt;&amp;amp;amp;lt;a href=&amp;amp;amp;quot;#content&amp;amp;amp;quot; title=&amp;amp;amp;quot;&amp;amp;amp;lt;?php esc_attr_e( &amp;#39;Skip to primary content&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); ?&amp;amp;amp;gt;&amp;amp;amp;quot;&amp;amp;amp;gt;&amp;amp;amp;lt;?php _e( &amp;#39;Skip to primary content&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); ?&amp;amp;amp;gt;&amp;amp;amp;lt;/a&amp;amp;amp;gt;&amp;amp;amp;lt;/div&amp;amp;amp;gt; &amp;amp;amp;lt;div&amp;amp;amp;gt;&amp;amp;amp;lt;a href=&amp;amp;amp;quot;#secondary&amp;amp;amp;quot; title=&amp;amp;amp;quot;&amp;amp;amp;lt;?php esc_attr_e( &amp;#39;Skip to secondary content&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); ?&amp;amp;amp;gt;&amp;amp;amp;quot;&amp;amp;amp;gt;&amp;amp;amp;lt;?php _e( &amp;#39;Skip to secondary content&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); ?&amp;amp;amp;gt;&amp;amp;amp;lt;/a&amp;amp;amp;gt;&amp;amp;amp;lt;/div&amp;amp;amp;gt; &amp;amp;amp;lt;?php /* Our navigation menu. If one isn&amp;#39;t filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn&amp;#39;t assigned, the menu with the lowest ID is used.</description>
+      <description>デザインをいろいろと変更しました。 作業の途中で元ファイルがわからなくなりテーマをまるごと再インストールしたりもしました。 設定情報とかも一緒に消しちゃって記事が見れなくなった時は焦った。 でもなんとか元に戻りました。 以下は変更内容です。 あんまり詳しく調べずに、それっぽいファイルをそれっぽく修正したらそれっぽい動きになっただけなので、参考にする時は注意してください。 まず、出したくないものを消します。 メニューバー（ナビゲーションバー）と検索ボックスを消します。 今のところ使用していないので。 header.php の114行目以降 123456789101112131415161718192021222324 &amp;lt;?php // Has the text been hidden? if ( &amp;#39;blank&amp;#39; == get_header_textcolor() ) : ?&amp;gt; &amp;lt;div&amp;gt; &amp;lt;?php get_search_form(); ?&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;?php else : ?&amp;gt; &amp;lt;?php get_search_form(); ?&amp;gt; &amp;lt;?php endif; ?&amp;gt; &amp;lt;nav id=&amp;#34;access&amp;#34; role=&amp;#34;navigation&amp;#34;&amp;gt; &amp;lt;h3&amp;gt;&amp;lt;?php _e( &amp;#39;Main menu&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); ?&amp;gt;&amp;lt;/h3&amp;gt; &amp;lt;?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?&amp;gt; &amp;lt;div&amp;gt;&amp;lt;a href=&amp;#34;#content&amp;#34; title=&amp;#34;&amp;lt;?php esc_attr_e( &amp;#39;Skip to primary content&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); ?&amp;gt;&amp;#34;&amp;gt;&amp;lt;?php _e( &amp;#39;Skip to primary content&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;a href=&amp;#34;#secondary&amp;#34; title=&amp;#34;&amp;lt;?php esc_attr_e( &amp;#39;Skip to secondary content&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); ?&amp;gt;&amp;#34;&amp;gt;&amp;lt;?php _e( &amp;#39;Skip to secondary content&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;?php /* Our navigation menu. If one isn&amp;#39;t filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn&amp;#39;t assigned, the menu with the lowest ID is used. */ ?&amp;gt; &amp;lt;?php wp_nav_menu( array( &amp;#39;theme_location&amp;#39; =&amp;gt; &amp;#39;primary&amp;#39; )</description>
     </item>
     
     <item>
-      <title>WordPressのテーマ「TwentyEleven」で作成者とパーマリンクを非表示にする</title>
+      <title>WordPress のテーマ「TwentyEleven」で作成者とパーマリンクを非表示にする</title>
       <link>http://blog.5000164.jp/2012/6/26/wordpress-twentyeleven-display-none/</link>
       <pubDate>Tue, 26 Jun 2012 01:47:45 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/6/26/wordpress-twentyeleven-display-none/</guid>
-      <description>テーマのフォルダにある 1 content-single.php を編集します。 34～40行目の 1234567 if ( &amp;#39;&amp;#39; != $tag_list ) { $utility_text = __( &amp;#39;This entry was posted in %1$s and tagged %2$s by &amp;amp;lt;a href=&amp;amp;quot;%6$s&amp;amp;quot;&amp;amp;gt;%5$s&amp;amp;lt;/a&amp;amp;gt;. Bookmark the &amp;amp;lt;a href=&amp;amp;quot;%3$s&amp;amp;quot; title=&amp;amp;quot;Permalink to %4$s&amp;amp;quot; rel=&amp;amp;quot;bookmark&amp;amp;quot;&amp;amp;gt;permalink&amp;amp;lt;/a&amp;amp;gt;.&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } elseif ( &amp;#39;&amp;#39; != $categories_list ) { $utility_text = __( &amp;#39;This entry was posted in %1$s by &amp;amp;lt;a href=&amp;amp;quot;%6$s&amp;amp;quot;&amp;amp;gt;%5$s&amp;amp;lt;/a&amp;amp;gt;. Bookmark the &amp;amp;lt;a href=&amp;amp;quot;%3$s&amp;amp;quot; title=&amp;amp;quot;Permalink to %4$s&amp;amp;quot; rel=&amp;amp;quot;bookmark&amp;amp;quot;&amp;amp;gt;permalink&amp;amp;lt;/a&amp;amp;gt;.&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } else { $utility_text = __( &amp;#39;This entry was posted by &amp;amp;lt;a href=&amp;amp;quot;%6$s&amp;amp;quot;&amp;amp;gt;%5$s&amp;amp;lt;/a&amp;amp;gt;. Bookmark the &amp;amp;lt;a href=&amp;amp;quot;%3$s&amp;amp;quot; title=&amp;amp;quot;Permalink to %4$s&amp;amp;quot; rel=&amp;amp;quot;bookmark&amp;amp;quot;&amp;amp;gt;permalink&amp;amp;lt;/a&amp;amp;gt;.&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } の部分を 1234567 if ( &amp;#39;&amp;#39; != $tag_list ) { $utility_text = __( &amp;#39;category %1$s and tag %2$s&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } elseif ( &amp;#39;&amp;#39; != $categories_list ) { $utility_text = __( &amp;#39;category %1$s&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } else { $utility_text = __( &amp;#39;&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } と変更します。 おそらく、単一記事表示時にカテゴリやタグを表示する部分での処理だと思われます。 全体表示時の対処はまだ不明。 作成者とパーマリンクは表示されないので保留にします。 参考サイト 1 WordPressのTwentyElevenで作成者を非表示にする方法 | 沖縄なんくるウェブブログ</description>
+      <description>テーマのフォルダにある 1 content-single.php を編集します。 34 - 40 行目の 1234567 if ( &amp;#39;&amp;#39; != $tag_list ) { $utility_text = __( &amp;#39;This entry was posted in %1$s and tagged %2$s by &amp;lt;a href=&amp;#34;%6$s&amp;#34;&amp;gt;%5$s&amp;lt;/a&amp;gt;. Bookmark the &amp;lt;a href=&amp;#34;%3$s&amp;#34; title=&amp;#34;Permalink to %4$s&amp;#34; rel=&amp;#34;bookmark&amp;#34;&amp;gt;permalink&amp;lt;/a&amp;gt;.&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } elseif ( &amp;#39;&amp;#39; != $categories_list ) { $utility_text = __( &amp;#39;This entry was posted in %1$s by &amp;lt;a href=&amp;#34;%6$s&amp;#34;&amp;gt;%5$s&amp;lt;/a&amp;gt;. Bookmark the &amp;lt;a href=&amp;#34;%3$s&amp;#34; title=&amp;#34;Permalink to %4$s&amp;#34; rel=&amp;#34;bookmark&amp;#34;&amp;gt;permalink&amp;lt;/a&amp;gt;.&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } else { $utility_text = __( &amp;#39;This entry was posted by &amp;lt;a href=&amp;#34;%6$s&amp;#34;&amp;gt;%5$s&amp;lt;/a&amp;gt;. Bookmark the &amp;lt;a href=&amp;#34;%3$s&amp;#34; title=&amp;#34;Permalink to %4$s&amp;#34; rel=&amp;#34;bookmark&amp;#34;&amp;gt;permalink&amp;lt;/a&amp;gt;.&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } の部分を 1234567 if ( &amp;#39;&amp;#39; != $tag_list ) { $utility_text = __( &amp;#39;category %1$s and tag %2$s&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } elseif ( &amp;#39;&amp;#39; != $categories_list ) { $utility_text = __( &amp;#39;category %1$s&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } else { $utility_text = __( &amp;#39;&amp;#39;, &amp;#39;twentyeleven&amp;#39; ); } と変更します。 おそらく、単一記事表示時にカテゴリやタグを表示する部分での処理だと思われます。 全体表示時の対処はまだ不明。 作成者とパーマリンクは表示されないので保留にします。 参考サイト WordPressのTwentyElevenで作成者を非表示にする方法 | 沖縄なんくるウェブブログ</description>
     </item>
     
     <item>
@@ -2060,7 +2060,7 @@
       <pubDate>Tue, 26 Jun 2012 01:01:16 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/6/26/windows-font/</guid>
-      <description>※下記内容については自己責任でお願いします。 Windowsの汚いフォントを少しだけマシにします。 筆者実行環境：Windows 7 Home Premium SP1 32bit まずこのサイト Downloads &amp;#8211; gdipp &amp;#8211; Customizable Windows text renderers &amp;#8211; Google Project Hosting から 1 gdipp_x86_0.9.1.msi という名前のファイルをダウンロードします。 ダウンロードしたら起動してインストールします。 基本的にそのままの設定で大丈夫です。 インストールが完了したら再起動します。 （サービスの起動でもいけるそうですが、なんとなく。） これでフォントが多少きれいに表示されるはずです。 表示を戻したかったら、gdippのサービスを切るか、アンインストールすることで戻ります。 なお、表示が崩れる場合や文字が表示されない場合もあります。 参考サイト Windowsのフォントをより美しく出来る「gdipp」とその設定 gdipp &amp;#8211; ｋ本的に無料ソフト・フリーソフト gdipp &amp;#8211; Customizable Windows text renderers &amp;#8211; Google Project Hosting</description>
+      <description>※下記内容については自己責任でお願いします。 Windowsの汚いフォントを少しだけマシにします。 筆者実行環境：Windows 7 Home Premium SP1 32bit まずこのサイト Downloads - gdipp - Customizable Windows text renderers - Google Project Hosting から 1 gdipp_x86_0.9.1.msi という名前のファイルをダウンロードします。 ダウンロードしたら起動してインストールします。 基本的にそのままの設定で大丈夫です。 インストールが完了したら再起動します。 （サービスの起動でもいけるそうですが、なんとなく。） これでフォントが多少きれいに表示されるはずです。 表示を戻したかったら、gdippのサービスを切るか、アンインストールすることで戻ります。 なお、表示が崩れる場合や文字が表示されない場合もあります。 参考サイト Windowsのフォントをより美しく出来る「gdipp」とその設定 gdipp - ｋ本的に無料ソフト・フリーソフト gdipp - Customizable Windows text renderers - Google Project Hosting</description>
     </item>
     
     <item>
@@ -2069,25 +2069,25 @@
       <pubDate>Tue, 26 Jun 2012 00:55:37 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/6/26/eclipse-setting/</guid>
-      <description>毎回毎回Eclipseの設定を思い出すのがめんどくさくなったのでついにメモった。 とりあえず最低限の設定だけ。 Eclipse Market Place Eclipse Color Themeで検索する。 Eclipse Color ThemeをInstallする。 環境設定 &amp;gt;General Show heap status check &amp;gt;Appearance -Color Theme Obsidian -Color and Fonts Basic Text Font Ricty 13 &amp;gt;ContentTypes Text CSS Add *.scss &amp;gt;Editors -FIle Associations File types Add *.css *.scss Associated editors *.cssと*.scssどちらも CSS Editor Text Editor &amp;gt;Text Editors Show line numbers check Show whitespace characters check -Keys Content Assist command + return &amp;gt;Workspace Text file encoding Other : UTF-8 New text file line delimiter Other : Unix &amp;gt;Web &amp;gt;CSS Files Encoding ISO 10646/Unicode(UTF-8) 設定ファイル Eclipse.appのパッケージの内容を表示。 /Contents/MacOS/eclipse.iniを開く。 下記内容に変更。 12345 -vmargs -XX:MaxPermSize=256m -Xss2m -Xms256m -Xmx1024m これで設定をとりあえずエクスポートして完了。 あとはDropboxで共有するなりなんなり。 参考サイト livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと Eclipse Color Themeを使ってみよう 設定のインポート・エクスポート &amp;#8211; devillikeaangelの日記</description>
+      <description>毎回毎回Eclipseの設定を思い出すのがめんどくさくなったのでついにメモった。 とりあえず最低限の設定だけ。 Eclipse Market Place Eclipse Color Themeで検索する。 Eclipse Color ThemeをInstallする。 環境設定 &amp;gt;General Show heap status check &amp;gt;Appearance -Color Theme Obsidian -Color and Fonts Basic Text Font Ricty 13 &amp;gt;ContentTypes Text CSS Add *.scss &amp;gt;Editors -FIle Associations File types Add *.css *.scss Associated editors *.cssと*.scssどちらも CSS Editor Text Editor &amp;gt;Text Editors Show line numbers check Show whitespace characters check -Keys Content Assist command + return &amp;gt;Workspace Text file encoding Other : UTF-8 New text file line delimiter Other : Unix &amp;gt;Web &amp;gt;CSS Files Encoding ISO 10646/Unicode(UTF-8) 設定ファイル Eclipse.appのパッケージの内容を表示。 /Contents/MacOS/eclipse.iniを開く。 下記内容に変更。 12345 -vmargs -XX:MaxPermSize=256m -Xss2m -Xms256m -Xmx1024m これで設定をとりあえずエクスポートして完了。 あとはDropboxで共有するなりなんなり。 参考サイト livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと Eclipse Color Themeを使ってみよう 設定のインポート・エクスポート - devillikeaangelの日記</description>
     </item>
     
     <item>
-      <title>Macでsmbに接続する時にユーザ名を最初から入力された状態にする</title>
+      <title>Mac で smb に接続する時にユーザ名を最初から入力された状態にする</title>
       <link>http://blog.5000164.jp/2012/6/26/mac-smb/</link>
       <pubDate>Tue, 26 Jun 2012 00:12:55 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/6/26/mac-smb/</guid>
-      <description>Macから認証がかかってるサーバへ接続する際は、サーバアドレス入力後にユーザ名とパスワードを入力します。 この時に、Macにログインしてるユーザ名を初期入力してくれてるのですが、必ずしもサーバのユーザ名と一致しているわけではありません。 下記のようにサーバアドレスを入力することで、任意のユーザ名を初期入力させておくことができます。 今まで接続していたアドレス 1 smb://ServerName/ShareName ユーザ名を初期入力させて接続するアドレス 1 smb://ドメイン名;ユーザ名@ServerName/ShareName 参考 Mac OS X：Windows ファイル共有 (SMB) に接続する方法 ログインした時に自動接続する方法もあるらしいです。 Mac OS X：ログインしたときに自動的にサーバに接続する方法</description>
+      <description>Macから認証がかかってるサーバへ接続する際は、サーバアドレス入力後にユーザ名とパスワードを入力します。 この時に、 Mac にログインしてるユーザ名を初期入力してくれてるのですが、必ずしもサーバのユーザ名と一致しているわけではありません。 下記のようにサーバアドレスを入力することで、任意のユーザ名を初期入力させておくことができます。 今まで接続していたアドレス 1 smb://ServerName/ShareName ユーザ名を初期入力させて接続するアドレス 1 smb://ドメイン名;ユーザ名@ServerName/ShareName 参考 Mac OS X：Windows ファイル共有 (SMB) に接続する方法 ログインした時に自動接続する方法もあるらしいです。 Mac OS X：ログインしたときに自動的にサーバに接続する方法</description>
     </item>
     
     <item>
-      <title>Mobile Safariで数字に勝手にリンクが貼られるのを無効化する</title>
+      <title>Mobile Safari で数字に勝手にリンクが貼られるのを無効化する</title>
       <link>http://blog.5000164.jp/2012/6/25/mobile-safari-link/</link>
       <pubDate>Mon, 25 Jun 2012 23:09:21 +0000</pubDate>
       
       <guid>http://blog.5000164.jp/2012/6/25/mobile-safari-link/</guid>
-      <description>Mobile Safariでは数字を電話番号だとみなして、勝手に電話番号のリンクを貼ることがあります。 これを防ぐためには勝手にリンクを貼る機能を無効化し、telto:で明示的にリンクを貼りましょう。 機能を無効化するには、ヘッダに下記のmetaタグを追加します。 1 &amp;amp;lt;meta name=&amp;#34;format-detection&amp;#34; content=&amp;#34;telephone=no&amp;#34;&amp;amp;gt; telto:でのリンクの貼り方は下記になります。 1 &amp;amp;lt;a href=&amp;#34;telto:000-0000-0000&amp;#34;&amp;amp;gt;000-0000-0000&amp;amp;lt;/a&amp;amp;gt; 参考サイト jQueryMobileを使ってのスマートフォンサイトの構築メモ at HouseTect, JavaScriptな情報をあなたに</description>
+      <description>Mobile Safari では数字を電話番号だとみなして、勝手に電話番号のリンクを貼ることがあります。 これを防ぐためには勝手にリンクを貼る機能を無効化し、 telto: で明示的にリンクを貼りましょう。 機能を無効化するには、ヘッダに下記のmetaタグを追加します。 1 &amp;lt;meta name=&amp;#34;format-detection&amp;#34; content=&amp;#34;telephone=no&amp;#34;&amp;gt; telto: でのリンクの貼り方は下記になります。 1 &amp;lt;a href=&amp;#34;telto:000-0000-0000&amp;#34;&amp;gt;000-0000-0000&amp;lt;/a&amp;gt; 参考サイト jQueryMobileを使ってのスマートフォンサイトの構築メモ at HouseTect, JavaScriptな情報をあなたに</description>
     </item>
     
     <item>

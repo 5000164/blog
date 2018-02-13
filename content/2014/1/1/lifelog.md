@@ -90,7 +90,7 @@ Fitbit Flexを約二ヶ月間使ってみて | deform
 
 ## 参考
 
-[完全防水で水陸両用フィットネスバンド「Amiigo」が今夏発売かも？！ &#8211; iPhone女史](http://www.iphone-girl.jp/2013/06/273902/)
+[完全防水で水陸両用フィットネスバンド「Amiigo」が今夏発売かも？！ - iPhone女史](http://www.iphone-girl.jp/2013/06/273902/)
 
 [メモ: Amiigo](http://hcondo2000.blogspot.jp/search/label/Amiigo)
 

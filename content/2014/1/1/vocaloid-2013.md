@@ -16,7 +16,7 @@ aliases = ["/2014-01-vocaloid_2013/"]
 
 そんなわけで2013年出会えてよかったVOCALOID曲5選です。
 
-## キアゲハ・プリケノート &#8211; 初音ミク &#8211; あえる
+## キアゲハ・プリケノート - 初音ミク - あえる
 
   [nicodo display=&#8221;player&#8221; width=&#8221;640&#8243; height=&#8221;360&#8243;]sm20271398[/nicodo]
 
@@ -30,7 +30,7 @@ aliases = ["/2014-01-vocaloid_2013/"]
 
 あえるさんの曲はみんな素敵な音です。
 
-## Mermaid &#8211; MC : MIKU RIN GUMI LUKA &#038; DJ : LEN &#8211; Torero
+## Mermaid - MC : MIKU RIN GUMI LUKA &#038; DJ : LEN - Torero
 
   [nicodo display=&#8221;player&#8221; width=&#8221;640&#8243; height=&#8221;360&#8243;]sm20624241[/nicodo]
 
@@ -44,7 +44,7 @@ Toreroさんを知ったのは[Leviathan](http://www.nicovideo.jp/watch/sm204435
 
 Toreroさんの曲の中でもMermaidが今のところ1番の好みなのでMermaidを紹介させていただきます。
 
-## 死なない魔法 &#8211; GUMI &#8211; みやけ
+## 死なない魔法 - GUMI - みやけ
 
   [nicodo display=&#8221;player&#8221; width=&#8221;640&#8243; height=&#8221;360&#8243;]sm21673452[/nicodo]
 
@@ -55,7 +55,7 @@ Toreroさんの曲の中でもMermaidが今のところ1番の好みなのでMer
 
 おしゃれでかっこよくて気持ちいいです。
 
-## 宇宙遊泳 &#8211; 初音ミク &#8211; 青屋夏生
+## 宇宙遊泳 - 初音ミク - 青屋夏生
 
   [nicodo display=&#8221;player&#8221; width=&#8221;640&#8243; height=&#8221;360&#8243;]sm22408044[/nicodo]
 
@@ -67,7 +67,7 @@ Toreroさんの曲の中でもMermaidが今のところ1番の好みなのでMer
 
 [ムーンライドディスコロック](http://www.nicovideo.jp/watch/sm22448556 "【初音ミクV3】ムーンライドディスコロック（修正版）【オリジナル曲】 - ニコニコ動画:GINZA")にもはまってます。
 
-## 制空権 &#8211; 初音ミク &#8211; ずきお
+## 制空権 - 初音ミク - ずきお
 
   [nicodo display=&#8221;player&#8221; width=&#8221;640&#8243; height=&#8221;360&#8243;]nm22446967[/nicodo]
 
