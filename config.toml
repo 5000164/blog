@@ -15,6 +15,11 @@ pygmentsCodefencesGuessSyntax = true
 
 googleAnalytics = "UA-51024599-1"
 
+[outputFormats]
+[outputFormats.RSS]
+mediatype = "application/rss"
+baseName = "feed"
+
 [Params]
 description = "菅原 浩 のブログ"
 icon = "icon.png"

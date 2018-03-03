@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     
-	<atom:link href="http://blog.5000164.jp/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.5000164.jp/categories/feed.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
