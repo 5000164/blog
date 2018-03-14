@@ -1,7 +1,7 @@
 +++
 title = "阿良々木くんはかっこいい - 小説「終物語（上）」の感想"
 date = 2015-04-29T22:13:23+09:00
-aliases = ["/2015-04-owarimonogatari_volume_1/"]
+aliases = ["/2015-04-owarimonogatari_volume_1/", "/2015-04-owarimonogatari-volume-1/"]
 +++
 
 ※ ネタバレ注意

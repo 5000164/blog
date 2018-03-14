@@ -1,7 +1,7 @@
 +++
 title = "あつい - アニメ「天元突破グレンラガン」の感想"
 date = 2015-04-29T20:00:44+09:00
-aliases = ["/2015-04-gurren_lagann/"]
+aliases = ["/2015-04-gurren_lagann/", "/2015-04-gurren-lagann/"]
 +++
 
 ※ ネタバレ注意
