@@ -27,3 +27,8 @@ date = 2018-03-18T22:49:34+09:00
 ## まとめ
 
 常時パソコン用の表示にする設定はなかったが、 Lynket が使いやすいので今のところ満足している。
+
+## リンク
+
+- [Lynket Browser (previously Chromer) - Apps on Google Play](https://play.google.com/store/apps/details?id=arun.com.chromer)
+- [Flynx - Read the web smartly - Apps on Google Play](https://play.google.com/store/apps/details?id=com.flynx)
