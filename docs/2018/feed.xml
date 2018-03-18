@@ -6,10 +6,19 @@
     <description>Recent content in 2018 on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 18 Feb 2018 22:19:18 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 18 Mar 2018 22:49:34 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/2018/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android のフローティングブラウザーを Flynx から Lynket に変えた</title>
+      <link>http://blog.5000164.jp/2018/3/18/browser/</link>
+      <pubDate>Sun, 18 Mar 2018 22:49:34 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2018/3/18/browser/</guid>
+      <description>元々は Link Bubble でフローティングブラウザーを知り、便利で愛用していたのだが、たしか使えなくなったので代替アプリを探して Flynx を使うようになった。 でも広告をブロックしたかったり、常時パソコン用の表示にしたかったりと思って、ちょいちょいフローティングブラウザーは調べていた。 それで今回もたまたま調べていたら、 Chromer というアプリがアップデートで Lynket という名前に変わっていて、改めて使ってみたらいい感じだったので乗り換えることにした。 そもそものフローティングブラウザーのよさ 作業を中断せずに続けることができる Twitter を読んでいて、気になったリンクは開いておく、 Twitter を読み終わったら開いていたリンクを読む、ということができる 作業を途切れることなく続けることができていい Lynket のいいところ 同じリンクを多重に開かない あれ、このリンクさっき開いたっけ？と思って念のため開いておく、ってやって無駄にリンクを溜めておくことがなくなる ページを表示した</description>
+    </item>
     
     <item>
       <title>いいタイミングで読めた - 本「SOFT SKILLS　ソフトウェア開発者の人生マニュアル」の感想</title>
