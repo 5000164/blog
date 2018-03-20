@@ -21,11 +21,13 @@ LINE Bot を使って生活を少し便利にしたい。
 
 ## LINE Bot を使えるように登録する
 
-Messaging API の登録をする。  
-[Messaging APIのご紹介 | LINE Business Center](https://business.line.me/ja/services/bot)
+Messaging API の登録をする。
 
-Developer Trial を選ぶ。  
-[LINE BOTの作り方を世界一わかりやすく解説（１）【アカウント準備編】 - Qiita](http://qiita.com/yoshizaki_kkgk/items/bd4277d3943200beab26)
+- [Messaging APIのご紹介 | LINE Business Center](https://business.line.me/ja/services/bot)
+
+Developer Trial を選ぶ。
+
+- [LINE BOTの作り方を世界一わかりやすく解説（１）【アカウント準備編】 - Qiita](http://qiita.com/yoshizaki_kkgk/items/bd4277d3943200beab26)
 
 ## LINE Bot を使えるように設定する
 
@@ -40,29 +42,34 @@ LINE@ MANAGER から以下の感じに Bot を設定する。
 
 ## LINE Bot と友だちになってグループトークを作成
 
-QR コードから友だち追加する。  
-[LINE Messaging APIを使用したLINE Botの作り方 - george’s ぶろぐ](http://whippet-818.hatenablog.com/entry/2017/02/07/004558)
+QR コードから友だち追加する。
+
+- [LINE Messaging APIを使用したLINE Botの作り方 - george’s ぶろぐ](http://whippet-818.hatenablog.com/entry/2017/02/07/004558)
 
 友だちになったらグループトークを作成して追加する。
 
 ## AWS Lambda と Amazon API Gateway を作成する
 
-記事を参考にしながら AWS Lambda と Amazon API Gateway を作成する。  
-[Line botをAWS LambdaとAPI Gatewayでアモーレ！！- 実装編 - Qiita](http://qiita.com/kooohei/items/650c331f95f83072f4d6)  
-[API Gatewayを使ってアクセスキー認証でLambdaを実行する - Qiita](http://qiita.com/toshihirock/items/8720118164a02dfdd11a)  
+記事を参考にしながら AWS Lambda と Amazon API Gateway を作成する。
+
+- [Line botをAWS LambdaとAPI Gatewayでアモーレ！！- 実装編 - Qiita](http://qiita.com/kooohei/items/650c331f95f83072f4d6)  
+- [API Gatewayを使ってアクセスキー認証でLambdaを実行する - Qiita](http://qiita.com/toshihirock/items/8720118164a02dfdd11a)  
 
 ## URL に直接アクセスして Hello from Lambda を表示する
 
 そのままではうまく動かなかった。  
-いろいろ見ていたら「LAMBDA_PROXY」のところが違うということに気付いた。  
-["API Gateway"のバックエンドを"Lambda"にしてJSONデータをエコーさせる | cloudpack.media](https://cloudpack.media/15956)
+いろいろ見ていたら「LAMBDA_PROXY」のところが違うということに気付いた。
+
+- ["API Gateway"のバックエンドを"Lambda"にしてJSONデータをエコーさせる | cloudpack.media](https://cloudpack.media/15956)
 
 調べたら新たに追加された機能らしい。  
-似たような現象を見つけて、レスポンスの返し方が違うと気付く。  
-[AWS API Gateway Lambda proxy integration を使う - うさぎ駆動開発](http://aile.hatenablog.com/entry/2016/09/23/220522)
+似たような現象を見つけて、レスポンスの返し方が違うと気付く。
 
-公式のサンプルが見つけられなかったけど、この記事のように `statusCode` と `body` を入れたら動いた。  
-[Python Lambda Proxy for API Gateway](http://webscale.plumbing/python-lambda-api-gateway-proxy)
+- [AWS API Gateway Lambda proxy integration を使う - うさぎ駆動開発](http://aile.hatenablog.com/entry/2016/09/23/220522)
+
+公式のサンプルが見つけられなかったけど、この記事のように `statusCode` と `body` を入れたら動いた。
+
+- [Python Lambda Proxy for API Gateway](http://webscale.plumbing/python-lambda-api-gateway-proxy)
 
 この段階でのコードは下記。  
 これでブラウザでアクセスすることで `Hello from Lambda` と表示される。
@@ -85,19 +92,22 @@ Webhook URL を設定したら Bot のいるグループチャットで発言を
 Python なので Requests とか使えたら楽だけど、サードパーティーのライブラリは zip でアップロードしたりという操作が必要なようだったので、今回は標準の機能だけでやる。
 
 環境変数に LINE developers の Channel Secret と Channel Access Token をセットする。  
-KMS というやつを使った方がセキュアらしいんですがちょっとよくわかりませんでしたすいません。  
-[AWS Lambda環境変数対応をお触り - Qiita](http://qiita.com/TakashiKOYANAGAWA/items/30352b288b23c8c8daae)
+KMS というやつを使った方がセキュアらしいんですがちょっとよくわかりませんでしたすいません。
+
+- [AWS Lambda環境変数対応をお触り - Qiita](http://qiita.com/TakashiKOYANAGAWA/items/30352b288b23c8c8daae)
 
 ここで `event` の中身を取ろうとしたら、なんかうまく取れない。  
-記事によって書いてあることもまちまちでよくわからない。  
-[LINE Messaging API と AWS Lambda で LINE BOT を作ってみた](http://www.kazuweb.asia/aws/lambda/chatbot)  
-[LINE Bot APIの使ってLINEからメッセージを送ることで自宅のエアコンの電源を入れられるようにするシステム(AWS利用)を試作してみる : 工作と競馬](http://blog.livedoor.jp/sce_info3-craft/archives/9508633.html)  
-[LINE Messaging APIを試してみた | レコチョクのエンジニアブログ](https://techblog.recochoku.jp/1835)
+記事によって書いてあることもまちまちでよくわからない。
+
+- [LINE Messaging API と AWS Lambda で LINE BOT を作ってみた](http://www.kazuweb.asia/aws/lambda/chatbot)  
+- [LINE Bot APIの使ってLINEからメッセージを送ることで自宅のエアコンの電源を入れられるようにするシステム(AWS利用)を試作してみる : 工作と競馬](http://blog.livedoor.jp/sce_info3-craft/archives/9508633.html)  
+- [LINE Messaging APIを試してみた | レコチョクのエンジニアブログ](https://techblog.recochoku.jp/1835)
 
 なのでまずはログを残すことにした。  
 とても簡単にログが残せて CloudWatch が使えてすごい便利ー、ってなりました。  
-こういう恩恵が受けられるのがサーバーレスアーキテクチャーなのかなーとかちょっと思ったよくわかってないけど。  
-[ログ記録 (Python) - AWS Lambda](http://docs.aws.amazon.com/ja_jp/lambda/latest/dg/python-logging.html)
+こういう恩恵が受けられるのがサーバーレスアーキテクチャーなのかなーとかちょっと思ったよくわかってないけど。
+
+- [ログ記録 (Python) - AWS Lambda](http://docs.aws.amazon.com/ja_jp/lambda/latest/dg/python-logging.html)
 
 ログを残して見てみた結果、 `event` は dict で `event` が持ってる `body` の中身が JSON の文字列だということがわかりました。  
 なので、他のサイトでやっているように events をループで回したいってなったら以下の方法でいけることがわかった。  
@@ -107,8 +117,9 @@ for event in json.loads(event['body'])['events']:
     # なにか処理
 ```
 
-ここまで来たらあとは LINE に POST を送れば発言できる。  
-[Python3のスクリプトでjsonをPOSTする - Qiita](http://qiita.com/neko_the_shadow/items/324976c7b54623e82b26)
+ここまで来たらあとは LINE に POST を送れば発言できる。
+
+- [Python3のスクリプトでjsonをPOSTする - Qiita](http://qiita.com/neko_the_shadow/items/324976c7b54623e82b26)
 
 現時点でのコードは下記のような感じ。  
 発言を受け取ったらただ `test` と発言するだけ。
@@ -183,9 +194,10 @@ if event['source']['userId'] != 'userId':
 この検証を行わないと LINE 以外からのリクエストにも反応してしまう。  
 個人の認証が LINE からのリクエストの検証と、ユーザー ID の特定だけで、信頼できるものなのかどうかはわからないので別途調査が必要。  
 リクエストの検証自体はサンプルを元に簡単に実装することができた。  
-Amazon API Gateway のテスト機能が便利だった。  
-[LINE API Reference](https://devdocs.line.me/ja/)  
-[1時間でLINE BOTを作ってみた – Ultica Blog – ウルチカ ブログ –](https://blog.ultica.jp/archives/6)
+Amazon API Gateway のテスト機能が便利だった。
+
+- [LINE API Reference](https://devdocs.line.me/ja/)  
+- [1時間でLINE BOTを作ってみた – Ultica Blog – ウルチカ ブログ –](https://blog.ultica.jp/archives/6)
 
 ## あらかじめ用意しておいたメモを特定の発言で返してくれる Bot の完成
 
