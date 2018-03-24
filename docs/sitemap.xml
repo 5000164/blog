@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://blog.5000164.jp/2018/3/24/display-menu/</loc>
+    <lastmod>2018-03-24T21:44:16+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://blog.5000164.jp/2018/3/18/browser/</loc>
     <lastmod>2018-03-18T22:49:34+09:00</lastmod>
   </url>
@@ -1210,13 +1215,13 @@
   
   <url>
     <loc>http://blog.5000164.jp/2018/</loc>
-    <lastmod>2018-03-18T22:49:34+09:00</lastmod>
+    <lastmod>2018-03-24T21:44:16+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.5000164.jp/</loc>
-    <lastmod>2018-03-18T22:49:34+09:00</lastmod>
+    <lastmod>2018-03-24T21:44:16+09:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,10 +6,19 @@
     <description>Recent content in 2018 on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 18 Mar 2018 22:49:34 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 24 Mar 2018 21:44:16 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/2018/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Display Menu を使ったら表示領域が広がって便利</title>
+      <link>http://blog.5000164.jp/2018/3/24/display-menu/</link>
+      <pubDate>Sat, 24 Mar 2018 21:44:16 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2018/3/24/display-menu/</guid>
+      <description>今 MacBook Pro を使っていて、画面の表示を Retina 表示のままではなく More Space に設定して表示領域を広くしていたんだけど、最近 Display Menu というアプリを教えてもらった。 これを使うと System Preferences で設定できるよりも表示領域を広くすることができる。 これで今は 2,560 x 1,600 の解像度で表示している。 作業領域が広くなって便利。 アプリ − 「Display Menu」をMac App Storeで 使い方がわかりやすかった記事 MacのRetinaディスプレイを本来の解像度で使えるようにする：Tech TIPS - ＠IT</description>
+    </item>
     
     <item>
       <title>Android のフローティングブラウザを Flynx から Lynket に変えた</title>
