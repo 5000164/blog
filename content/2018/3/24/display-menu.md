@@ -10,7 +10,7 @@ date = 2018-03-24T21:44:16+09:00
 
 ## アプリ
 
-− [「Display Menu」をMac App Storeで](https://itunes.apple.com/jp/app/display-menu/id549083868)
+- [「Display Menu」をMac App Storeで](https://itunes.apple.com/jp/app/display-menu/id549083868)
 
 ## 使い方がわかりやすかった記事
 
