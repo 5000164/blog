@@ -6,10 +6,19 @@
     <description>Recent content on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 24 Mar 2018 21:44:16 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 08 Apr 2018 23:14:26 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bash のデバッグができた</title>
+      <link>http://blog.5000164.jp/2018/4/8/bash/</link>
+      <pubDate>Sun, 08 Apr 2018 23:14:26 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2018/4/8/bash/</guid>
+      <description>brew install bashdb で bashdb をインストール Visual Studio Code に Bash Debug を追加 Bash Debug - Visual Studio Marketplace デバッグの設定を追加して実行 これで動いた。 便利。</description>
+    </item>
     
     <item>
       <title>Display Menu を使ったら表示領域が広がって便利</title>
