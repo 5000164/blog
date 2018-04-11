@@ -62,7 +62,7 @@
       <pubDate>Fri, 17 Nov 2017 13:13:43 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017/11/17/hatebu/</guid>
-      <description>コード 12 javascript:(function(){location=(&amp;#39;http://b.hatena.ne.jp/entry/&amp;#39;+(location.protocol==&amp;#39;https:&amp;#39;?&amp;#39;s/&amp;#39;:&amp;#39;&amp;#39;)+location.host+location.pathname+location.search)}()); 背景 はてなブックマークの人気エントリーを RSS で購読しているが、なんでこれが人気エントリーになっているんだろう？と思う時がある。 その時に毎回はてなブックマークを検索して、そこからさらに URL を入力して、とやっていたが、それが手間だったのでブックマークレットで遷移できるようにした。 参考 エントリーページの URL 変更について - はてなブックマーク日記 - 機能変更、お知らせなど</description>
+      <description>コード 1 2 javascript:(function(){location=(&amp;#39;http://b.hatena.ne.jp/entry/&amp;#39;+(location.protocol==&amp;#39;https:&amp;#39;?&amp;#39;s/&amp;#39;:&amp;#39;&amp;#39;)+location.host+location.pathname+location.search)}()); 背景 はてなブックマークの人気エントリーを RSS で購読しているが、なんでこれが人気エントリーになっているんだろう？と思う時がある。 その時に毎回はてなブックマークを検索して、そこからさらに URL を入力して、とやっていたが、それが手間だったのでブックマークレットで遷移できるようにした。 参考 エントリーページの URL 変更について - はてなブックマーク日記 - 機能変更、お知らせなど</description>
     </item>
     
     <item>
@@ -89,7 +89,7 @@
       <pubDate>Thu, 02 Nov 2017 13:05:43 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017/11/2/search/</guid>
-      <description>コード 12 javascript:(function(){location=(location.href+&amp;#39;&amp;amp;hl=ja&amp;#39;)}()); 背景 Google 検索の設定を英語にしているが、まだ読めないことがたくさんあるので日本語で検索したくなる。 URL に hl=ja というパラメーターをつけることで言語設定を日本語にして検索することができるのでそれを簡略するためにブックマークレットを使う。</description>
+      <description>コード 1 2 javascript:(function(){location=(location.href+&amp;#39;&amp;amp;hl=ja&amp;#39;)}()); 背景 Google 検索の設定を英語にしているが、まだ読めないことがたくさんあるので日本語で検索したくなる。 URL に hl=ja というパラメーターをつけることで言語設定を日本語にして検索することができるのでそれを簡略するためにブックマークレットを使う。</description>
     </item>
     
     <item>
@@ -143,7 +143,7 @@
       <pubDate>Mon, 14 Aug 2017 22:44:23 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017/8/14/syntax-highlighting/</guid>
-      <description>2018.1.20 追記 バージョン 0.28 から導入された Chroma で何も考えず簡単にシンタックスハイライトが使えるようになった。 Hugo | Hugo 0.28: High-speed Syntax Highlighting! Hugo | Syntax Highlighting 結論 シンタックスハイライト用の css をテーマで読み込んでおく config.toml に下記の設定を追加 12345 pygmentscodefences = true pygmentsCodeFencesGuessSyntax = true pygmentsStyle = &amp;#34;monokai&amp;#34; pygmentsUseClasses = true pygmentsoptions = &amp;#34;linenos=inline&amp;#34; 背景 コードを見やすくしたいからシンタックスハイライトを使おうと思った。 やってみたら思ったよりもできなかった。 なんか疲れたのでメモ。 手順 Pygments をインストールする シンタックスハイライトするのに必要なやつ。 何も考えずに入れる。 1 sudo easy_install Pygments シンタックスハイライト用の css を生成する カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。 クラスで指定する場合は css を事前に生成しておいて読むこんでおく必要がある。 下記のコマンドで css を生成する。 デフォルトで用意されていないカラースキーマの使い方がわからなかったので今回は monokai を使う。 1 pygmentize -f html -S monokai -a .highlight &amp;gt; monokai.css 生</description>
+      <description>2018.1.20 追記 バージョン 0.28 から導入された Chroma で何も考えず簡単にシンタックスハイライトが使えるようになった。 Hugo | Hugo 0.28: High-speed Syntax Highlighting! Hugo | Syntax Highlighting 結論 シンタックスハイライト用の css をテーマで読み込んでおく config.toml に下記の設定を追加 1 2 3 4 5 pygmentscodefences = true pygmentsCodeFencesGuessSyntax = true pygmentsStyle = &amp;#34;monokai&amp;#34; pygmentsUseClasses = true pygmentsoptions = &amp;#34;linenos=inline&amp;#34; 背景 コードを見やすくしたいからシンタックスハイライトを使おうと思った。 やってみたら思ったよりもできなかった。 なんか疲れたのでメモ。 手順 Pygments をインストールする シンタックスハイライトするのに必要なやつ。 何も考えずに入れる。 1 sudo easy_install Pygments シンタックスハイライト用の css を生成する カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。 クラスで指定する場合は css を事前に生成しておいて読むこんでおく必要がある。 下記のコマンドで css を生成する。 デフォルトで用意されていないカラースキーマの使い方がわからなかったので今回は monokai を使う。 1 pygmentize -f html -S monokai -a</description>
     </item>
     
     <item>
@@ -152,7 +152,7 @@
       <pubDate>Sun, 13 Aug 2017 05:17:55 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017/8/13/import/</guid>
-      <description>背景 WordPress から Jekyll に移行した時に記事の移行が面倒で放っておいた。 Hugo に移行することにしたから Jekyll の記事と WordPress の記事を Hugo にインポートすることになった。 つらい。 Hugo に合わせた最終的な形式 こんな感じに統一することを目指す。 記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。 123456789 +++title = &amp;#34;Jekyll の記事と WordPress の記事を Hugo にインポートする&amp;#34;date = 2017-08-13T04:26:50+09:00aliases = [&amp;#34;/2017-08-import/&amp;#34;]+++## 記事内容 つらつら 手順 実際に行ったインポート作業の内容はこちら。 Feature import article by 5000164 · Pull Request #2 · 5000164/blog WordPress の記事を Markdown 形式に変換する 最初は Jekyll に移行しようと思ってたのでこれを使いました。 benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll ファイル名を調整する なんか日付がたくさんついてたので年と月でディレクトリを分けてからファイル名をきれいにした。 12 brew install rename find . -name &amp;#34;*.md&amp;#34; | xargs rename &amp;#39;s/\d\d\d\d-\d\d-\d\d-\d\d\d\d-\d\d-//&amp;#39; Jekyll の記事の URL はファイル名に依存してたのでファイルの中に書き込む ファイル名をファイルの</description>
+      <description>背景 WordPress から Jekyll に移行した時に記事の移行が面倒で放っておいた。 Hugo に移行することにしたから Jekyll の記事と WordPress の記事を Hugo にインポートすることになった。 つらい。 Hugo に合わせた最終的な形式 こんな感じに統一することを目指す。 記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。 1 2 3 4 5 6 7 8 9 +++title = &amp;#34;Jekyll の記事と WordPress の記事を Hugo にインポートする&amp;#34;date = 2017-08-13T04:26:50+09:00aliases = [&amp;#34;/2017-08-import/&amp;#34;]+++## 記事内容 つらつら 手順 実際に行ったインポート作業の内容はこちら。 Feature import article by 5000164 · Pull Request #2 · 5000164/blog WordPress の記事を Markdown 形式に変換する 最初は Jekyll に移行しようと思ってたのでこれを使いました。 benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll ファイル名を調整する なんか日付がたくさんついてたので年と月でディレクトリを分けてからファイル名をきれいにした。 1 2 brew install rename find . -name &amp;#34;*.md&amp;#34; | xargs rename &amp;#39;s/\d\d\d\d-\d\d-\d\d-\d\d\d\d-\d\d-//&amp;#39; Jekyll の記事の URL はファイル名に依存してたのでファイルの中に書き込む ファ</description>
     </item>
     
     <item>

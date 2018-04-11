@@ -11,19 +11,19 @@ ga('send', 'pageview');
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>勉強会第3回 2012/7/18 | 5000164 is here</title>
-    <meta name="description" content="勉強会の第3回を開きました。 第2回は人が少なくて自習になったので実質初の勉強会実施になりました。 範囲はアジャイルサムライの第1章〜第2章まで。 それぞれ事前に読んできて、わからないところの確認や意識合わせなどを行いました。 今回は特にわからないところもなく、一歩進んだところで「うちの会社にどう生かせるか」の話し合い。 組織として導入するのは現時点では難しいという考え。 開発者個人としてどう生かしていけるのか。 自分の担当する開発部分でネックになる機能を決める。 まずはその機能のみを実装してテストする。 実装が完了したら機能の動きのみを見てもらって確認する。 →仕様担当者との認識の齟齬を失くすため。 こう作業することによって開発が戻るリスクを減らせるのではないかという意見。 やれるところからやっていく。 個人的な感想としては、やっぱりまだまだわからないところが多いので、まずアジャイルとはなんぞやというところを感覚">
-    <link href="http://blog.5000164.jp/2012/7/23/study-20120718/" rel="canonical">
+    <title>Basic 認証の realm は正しく設定する | 5000164 is here</title>
+    <meta name="description" content="sbt で Basic 認証がかかっている依存を解決するために ~/.sbt/.credentials に認証情報を書いていたけど、 realm がずれていたせいで認証に失敗するということが起きた。 realm とは領域という意味で、おそらく ~/.sbt/.credentials の host と realm からどの認証情報を使用するのか判断している気がする。 なので、 realm がずれていると認証に失敗する。 HTTP（Hyper Text Transfer Protocol）～後編：インターネット・プロトコル詳説（2） - ＠IT Basic認証 - Wikipedia 正しい realm は curl で確認できる。 1 curl -v &lt;対象の URL&gt; 2&gt;&amp;1 | grep realm ivy - sbt dependency resolver with basic auth - Stack Overflow">
+    <link href="http://blog.5000164.jp/2018/4/11/basic/" rel="canonical">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="勉強会第3回 2012/7/18 | 5000164 is here">
-    <meta property="og:description" content="勉強会の第3回を開きました。 第2回は人が少なくて自習になったので実質初の勉強会実施になりました。 範囲はアジャイルサムライの第1章〜第2章まで。 それぞれ事前に読んできて、わからないところの確認や意識合わせなどを行いました。 今回は特にわからないところもなく、一歩進んだところで「うちの会社にどう生かせるか」の話し合い。 組織として導入するのは現時点では難しいという考え。 開発者個人としてどう生かしていけるのか。 自分の担当する開発部分でネックになる機能を決める。 まずはその機能のみを実装してテストする。 実装が完了したら機能の動きのみを見てもらって確認する。 →仕様担当者との認識の齟齬を失くすため。 こう作業することによって開発が戻るリスクを減らせるのではないかという意見。 やれるところからやっていく。 個人的な感想としては、やっぱりまだまだわからないところが多いので、まずアジャイルとはなんぞやというところを感覚">
-    <meta property="og:url" content="http://blog.5000164.jp/2012/7/23/study-20120718/">
+    <meta property="og:title" content="Basic 認証の realm は正しく設定する | 5000164 is here">
+    <meta property="og:description" content="sbt で Basic 認証がかかっている依存を解決するために ~/.sbt/.credentials に認証情報を書いていたけど、 realm がずれていたせいで認証に失敗するということが起きた。 realm とは領域という意味で、おそらく ~/.sbt/.credentials の host と realm からどの認証情報を使用するのか判断している気がする。 なので、 realm がずれていると認証に失敗する。 HTTP（Hyper Text Transfer Protocol）～後編：インターネット・プロトコル詳説（2） - ＠IT Basic認証 - Wikipedia 正しい realm は curl で確認できる。 1 curl -v &lt;対象の URL&gt; 2&gt;&amp;1 | grep realm ivy - sbt dependency resolver with basic auth - Stack Overflow">
+    <meta property="og:url" content="http://blog.5000164.jp/2018/4/11/basic/">
     <meta property="og:image" content="http://blog.5000164.jp/icon.png">
     <meta property="og:site_name" content="5000164 is here">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="勉強会第3回 2012/7/18 | 5000164 is here">
-    <meta name="twitter:description" content="勉強会の第3回を開きました。 第2回は人が少なくて自習になったので実質初の勉強会実施になりました。 範囲はアジャイルサムライの第1章〜第2章まで。 それぞれ事前に読んできて、わからないところの確認や意識合わせなどを行いました。 今回は特にわからないところもなく、一歩進んだところで「うちの会社にどう生かせるか」の話し合い。 組織として導入するのは現時点では難しいという考え。 開発者個人としてどう生かしていけるのか。 自分の担当する開発部分でネックになる機能を決める。 まずはその機能のみを実装してテストする。 実装が完了したら機能の動きのみを見てもらって確認する。 →仕様担当者との認識の齟齬を失くすため。 こう作業することによって開発が戻るリスクを減らせるのではないかという意見。 やれるところからやっていく。 個人的な感想としては、やっぱりまだまだわからないところが多いので、まずアジャイルとはなんぞやというところを感覚">
-    <meta name="twitter:url" content="http://blog.5000164.jp/2012/7/23/study-20120718/">
+    <meta name="twitter:title" content="Basic 認証の realm は正しく設定する | 5000164 is here">
+    <meta name="twitter:description" content="sbt で Basic 認証がかかっている依存を解決するために ~/.sbt/.credentials に認証情報を書いていたけど、 realm がずれていたせいで認証に失敗するということが起きた。 realm とは領域という意味で、おそらく ~/.sbt/.credentials の host と realm からどの認証情報を使用するのか判断している気がする。 なので、 realm がずれていると認証に失敗する。 HTTP（Hyper Text Transfer Protocol）～後編：インターネット・プロトコル詳説（2） - ＠IT Basic認証 - Wikipedia 正しい realm は curl で確認できる。 1 curl -v &lt;対象の URL&gt; 2&gt;&amp;1 | grep realm ivy - sbt dependency resolver with basic auth - Stack Overflow">
+    <meta name="twitter:url" content="http://blog.5000164.jp/2018/4/11/basic/">
     <meta name="twitter:image" content="http://blog.5000164.jp/icon.png">
     <meta name="twitter:site" content="@5000164">
     <meta name="twitter:creator" content="@5000164">
@@ -38,43 +38,31 @@ ga('send', 'pageview');
 
 <article>
     <div class="title">
-        <div class="date">2012.7.23</div>
-        <h1>勉強会第3回 2012/7/18</h1>
+        <div class="date">2018.4.11</div>
+        <h1>Basic 認証の realm は正しく設定する</h1>
     </div>
     <div class="content">
-        <p>勉強会の第3回を開きました。</p>
+        <p>sbt で Basic 認証がかかっている依存を解決するために ~/.sbt/.credentials に認証情報を書いていたけど、 realm がずれていたせいで認証に失敗するということが起きた。<br />
+realm とは領域という意味で、おそらく ~/.sbt/.credentials の host と realm からどの認証情報を使用するのか判断している気がする。<br />
+なので、 realm がずれていると認証に失敗する。</p>
 
-<p>第2回は人が少なくて自習になったので実質初の勉強会実施になりました。</p>
+<ul>
+<li><a href="http://www.atmarkit.co.jp/ait/articles/0103/16/news003.html">HTTP（Hyper Text Transfer Protocol）～後編：インターネット・プロトコル詳説（2） - ＠IT</a></li>
+<li><a href="https://ja.wikipedia.org/wiki/Basic%E8%AA%8D%E8%A8%BC">Basic認証 - Wikipedia</a></li>
+</ul>
 
-<p>範囲はアジャイルサムライの第1章〜第2章まで。</p>
-
-<p>それぞれ事前に読んできて、わからないところの確認や意識合わせなどを行いました。</p>
-
-<p>今回は特にわからないところもなく、一歩進んだところで「うちの会社にどう生かせるか」の話し合い。</p>
-
-<p>組織として導入するのは現時点では難しいという考え。</p>
-
-<p>開発者個人としてどう生かしていけるのか。</p>
-
-<p>自分の担当する開発部分でネックになる機能を決める。</p>
-
-<p>まずはその機能のみを実装してテストする。</p>
-
-<p>実装が完了したら機能の動きのみを見てもらって確認する。</p>
-
-<p>→仕様担当者との認識の齟齬を失くすため。</p>
-
-<p>こう作業することによって開発が戻るリスクを減らせるのではないかという意見。</p>
-
-<p>やれるところからやっていく。</p>
-
-<p>個人的な感想としては、やっぱりまだまだわからないところが多いので、まずアジャイルとはなんぞやというところを感覚的に理解していきたいと思った。</p>
-
-<p>その上で、アジャイルを選択肢の一つに加えられればいいと思う。</p>
-
-<p>次回の開催は7/25 Wed.の予定。</p>
-
-<p>読書範囲は第3章～第4章まで。</p>
+<p>正しい realm は curl で確認できる。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl -v &lt;対象の URL&gt; <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span> | grep realm</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li><a href="https://stackoverflow.com/questions/11603607/sbt-dependency-resolver-with-basic-auth">ivy - sbt dependency resolver with basic auth - Stack Overflow</a></li>
+</ul>
 
     </div>
 </article>
