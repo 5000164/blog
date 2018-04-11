@@ -6,10 +6,19 @@
     <description>Recent content on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 08 Apr 2018 23:14:26 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 11 Apr 2018 23:16:34 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Basic 認証の realm は正しく設定する</title>
+      <link>http://blog.5000164.jp/2018/4/11/basic/</link>
+      <pubDate>Wed, 11 Apr 2018 23:16:34 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2018/4/11/basic/</guid>
+      <description>sbt で Basic 認証がかかっている依存を解決するために ~/.sbt/.credentials に認証情報を書いていたけど、 realm がずれていたせいで認証に失敗するということが起きた。 realm とは領域という意味で、おそらく ~/.sbt/.credentials の host と realm からどの認証情報を使用するのか判断している気がする。 なので、 realm がずれていると認証に失敗する。 HTTP（Hyper Text Transfer Protocol）～後編：インターネット・プロトコル詳説（2） - ＠IT Basic認証 - Wikipedia 正しい realm は curl で確認できる。 1 curl -v &amp;lt;対象の URL&amp;gt; 2&amp;gt;&amp;amp;1 | grep realm ivy - sbt dependency resolver with basic auth - Stack Overflow</description>
+    </item>
     
     <item>
       <title>Bash のデバッグができた</title>
