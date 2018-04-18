@@ -89,7 +89,7 @@
       <pubDate>Thu, 02 Nov 2017 13:05:43 +0900</pubDate>
       
       <guid>http://blog.5000164.jp/2017/11/2/search/</guid>
-      <description>コード 1 2 javascript:(function(){location=(location.href+&amp;#39;&amp;amp;hl=ja&amp;#39;)}()); 背景 Google 検索の設定を英語にしているが、まだ読めないことがたくさんあるので日本語で検索したくなる。 URL に hl=ja というパラメーターをつけることで言語設定を日本語にして検索することができるのでそれを簡略するためにブックマークレットを使う。</description>
+      <description>2018.4.18 追記 元から下記の方法を使ったやり方が便利だった。 いもすさんのツイート: &amp;ldquo;Google Chromeの検索エンジン設定で、e を ?q=%s&amp;amp;lr=lang_en&amp;amp;hl=ja に、j を ?q=%s&amp;amp;lr=lang_ja&amp;amp;hl=ja に、デフォルトを ?q=%s&amp;amp;lr=lang_ja|lang_en&amp;amp;hl=ja にすると能動的に検索する言語が選べて便利（定期）… https://t.co/8p9hdK3V9f&amp;rdquo; コード 1 2 javascript:(function(){location=(location.href+&amp;#39;&amp;amp;hl=ja&amp;#39;)}()); 背景 Google 検索の設定を英語にしているが、まだ読めないことがたくさんあるので日本語で検索したくなる。 URL に hl=ja というパラメーターをつけることで言語設定を日本語にして検索することができるのでそれを簡略するためにブックマークレットを使う。</description>
     </item>
     
     <item>
