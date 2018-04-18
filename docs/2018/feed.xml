@@ -6,10 +6,19 @@
     <description>Recent content in 2018 on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 11 Apr 2018 23:16:34 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 18 Apr 2018 20:36:02 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/2018/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>行動を変えるのは否定ではなく前進である</title>
+      <link>http://blog.5000164.jp/2018/4/18/change/</link>
+      <pubDate>Wed, 18 Apr 2018 20:36:02 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2018/4/18/change/</guid>
+      <description>ふと思ったこと。 自分の行動を変えるということに抵抗があるのは、今まで行動してきたことが否定されるような気がするからなんじゃないかと思った。 変化にはコストがかかるから、とかそういう話とは別にして。 否定だと感じてしまう理由 限られた情報の中で選択し続けないといけない。 だから選択を間違えることはよくある。 A と B を比較して、 A を選んだとして、後からやっぱり B がよかったと B に変えたとする。 そうすると、 A を選んでいた期間が間違いだったように感じてしまう。 その期間を否定されたと感じてしまうのではないかと考えた。 行動を変えるのは否定ではなく前進である A を選ぶことで人生に 10 のいいことがあるとして、 B を選ぶことで人生に 15 のいいことがあるとする。 もちろん最初から B を選べることが理想だが、人間は間違えるので、 A を選ぶことだってよくある。 A を選んだ後に B に変えると、 A を選んでいた期間がもったいないと感じてしまう。 後か</description>
+    </item>
     
     <item>
       <title>Basic 認証の realm は正しく設定する</title>
