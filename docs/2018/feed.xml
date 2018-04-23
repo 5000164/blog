@@ -6,10 +6,19 @@
     <description>Recent content in 2018 on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 18 Apr 2018 20:36:02 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 23 Apr 2018 21:18:30 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/2018/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Scala から Java ライブラリを使った時のメモ</title>
+      <link>http://blog.5000164.jp/2018/4/23/java/</link>
+      <pubDate>Mon, 23 Apr 2018 21:18:30 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2018/4/23/java/</guid>
+      <description>build.sbt でライブラリの追加 1 libraryDependencies += groupID % artifactID % revision のように書く。 最初 Scala の略記法のように %% と書いていたのでうまく動かなかった。 sbt Reference Manual — ライブラリ依存性 型のキャスト Java ライブラリに渡したりするためにキャストする時は asInstanceOf を使う。 また、 1 import collection.JavaConverters._ のようにインポートしておくことで asScala や asJava でコレクションを変換できる。 Scalaのキャスト - Qiita Java と Scala 間のコレクションの変換 | Scala Documentation null を Option に変換 Java ライブラリのメソッドが null を返す場合がある時に、 Option(func(value)) のように Option を使うことで Option 型に変換できる。 値があったら Some(result) が返ってきて、 null だったら None が返ってくるようになる。 Javaとの相互運用 · Scala研修テキスト</description>
+    </item>
     
     <item>
       <title>行動を変えるのは否定ではなく前進である</title>
