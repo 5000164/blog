@@ -6,10 +6,19 @@
     <description>Recent content in 2018 on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 23 Apr 2018 21:18:30 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 May 2018 00:20:59 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/2018/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>チャットはコンテキストを適切に分けることが大事、分報とリアクションの組み合わせで心理的安全性の構築に役立てる</title>
+      <link>http://blog.5000164.jp/2018/5/12/chat/</link>
+      <pubDate>Sat, 12 May 2018 00:20:59 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2018/5/12/chat/</guid>
+      <description>最近チャットのことをよく考えている。 ある程度の認識が自分の中で固まってきたのでここで一旦まとめる。 前提 チャットは難しい。 チャットをうまくしたらすべてが解決するとは思ってなくて、少しでも現状を良くするためのツールとして使う。 チャットのいいところは 読み返すことができる 検索することができる 多くの人が読むことができる 非同期でコミュニケーションができる というところ。 チャットで重要なのはコンテキスト チャットは文字に残ることで複数の人が非同期的にコミュニケーションをとることができるというメリットがある。 このメリットを有効的に使うためにはコンテキストを適切に分ける必要がある。 コンテキストはチャンネル、スレッド、ルームなどで分ける。 コンテキストを適切に分けることで情報のやりとりがスムーズになる。 チャットの種類 一口にチャットと言ってもすべてのチャットを同じように扱えばいいわけではない。 実際の会話に雑談や会議と</description>
+    </item>
     
     <item>
       <title>Scala から Java ライブラリを使った時のメモ</title>
