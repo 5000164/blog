@@ -6,10 +6,19 @@
     <description>Recent content on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 May 2018 00:20:59 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 15 May 2018 20:47:36 +0900</lastBuildDate>
     
 	<atom:link href="http://blog.5000164.jp/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Scala でコマンドライン引数を分解する</title>
+      <link>http://blog.5000164.jp/2018/5/15/command-line/</link>
+      <pubDate>Tue, 15 May 2018 20:47:36 +0900</pubDate>
+      
+      <guid>http://blog.5000164.jp/2018/5/15/command-line/</guid>
+      <description>下記のように書くことでコマンドライン引数を分解できる。 1 2 3 4 5 6 val keyArgs = args.collect { case &amp;#34;--dry-run&amp;#34; =&amp;gt; &amp;#34;dry-run&amp;#34; }.toSet val keyValueArgs = args.sliding(2).toList.collect { case Array(&amp;#34;--date&amp;#34;, specifiedDate: String) =&amp;gt; &amp;#34;date&amp;#34; -&amp;gt; Some(specifiedDate) }.toMap 1 --date &amp;#34;2018-05-15 00:00:00&amp;#34; --dry-run のようなコマンドライン引数を渡した時に keyArgs と keyValueArgs はそれぞれ下記のようになる。 1 2 3 4 5 // keyArgs Set(&amp;#34;dry-run&amp;#34;) // keyValueArgs Map(&amp;#34;date&amp;#34; -&amp;gt; Some(&amp;#34;2018-05-15 00:00:00&amp;#34;))</description>
+    </item>
     
     <item>
       <title>チャットはコンテキストを適切に分けることが大事、分報とリアクションの組み合わせで心理的安全性の構築に役立てる</title>
