@@ -2,156 +2,156 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2018 on 5000164 is here</title>
-    <link>http://blog.5000164.jp/2018/</link>
+    <link>https://blog.5000164.jp/2018/</link>
     <description>Recent content in 2018 on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 26 May 2018 15:18:13 +0900</lastBuildDate>
     
-	<atom:link href="http://blog.5000164.jp/2018/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.5000164.jp/2018/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>設定ファイルを Scala で書く</title>
-      <link>http://blog.5000164.jp/2018/26/settings/</link>
+      <link>https://blog.5000164.jp/2018/26/settings/</link>
       <pubDate>Sat, 26 May 2018 15:18:13 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2018/26/settings/</guid>
+      <guid>https://blog.5000164.jp/2018/26/settings/</guid>
       <description>背景 リポジトリに入れたくない情報は別ファイルに設定として書く 型が表現できないのが面倒くさい 目的 Scala で設定ファイルを書けるようにする やり方 Scala で設定を書いて Eval する 具体的なコード 設定を表現する 1 2 3 4 5 6 7 8 trait SettingsType { val hogeSettings: String val fooSettings: FooSettings } case class FooSettings( bar: String, baz: Int) build.sbt で依存関係を解決 1 libraryDependencies += &amp;#34;org.scala-lang&amp;#34; % &amp;#34;scala-compiler&amp;#34; % scalaVersion.value Eval するコードを書く 1 2 3 4 5 6 7 8 import scala.io.Source import scala.reflect.runtime.{currentMirror, universe} import scala.tools.reflect.ToolBox object Settings { val toolbox: ToolBox[universe.type] = currentMirror.mkToolBox() val settings: SettingsType = toolbox.eval(toolbox.parse(Source.fromResource(&amp;#34;Settings.scala&amp;#34;).mkString)).asInstanceOf[SettingsType] } 設定を書く 1 2 3 4 new SettingsType { val hogeSettings = &amp;#34;hogehoge&amp;#34; val fooSettings = FooSettings(&amp;#34;foobar&amp;#34;, 1) } 設定がリポジトリに含まれないように .gitignore に追記 1 Settings.scala 設定方法がわかりやすいようにサンプルを SettingsSample として作っておいてリポジトリに含める 1 2 3 4 new SettingsType { val hogeSettings = &amp;#34;&amp;#34; val fooSettings = FooSettings(&amp;#34;&amp;#34;, 0) } 参考 Scala2.11でEval - xuwei-k&amp;rsquo;s blog Scala で YAML を読み込む方法 (の代替) - Qoosky</description>
     </item>
     
     <item>
       <title>Scala でコマンドライン引数を分解する</title>
-      <link>http://blog.5000164.jp/2018/5/15/command-line/</link>
+      <link>https://blog.5000164.jp/2018/5/15/command-line/</link>
       <pubDate>Tue, 15 May 2018 20:47:36 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2018/5/15/command-line/</guid>
+      <guid>https://blog.5000164.jp/2018/5/15/command-line/</guid>
       <description>下記のように書くことでコマンドライン引数を分解できる。 1 2 3 4 5 6 val keyArgs = args.collect { case &amp;#34;--dry-run&amp;#34; =&amp;gt; &amp;#34;dry-run&amp;#34; }.toSet val keyValueArgs = args.sliding(2).toList.collect { case Array(&amp;#34;--date&amp;#34;, specifiedDate: String) =&amp;gt; &amp;#34;date&amp;#34; -&amp;gt; Some(specifiedDate) }.toMap 1 --date &amp;#34;2018-05-15 00:00:00&amp;#34; --dry-run のようなコマンドライン引数を渡した時に keyArgs と keyValueArgs はそれぞれ下記のようになる。 1 2 3 4 5 // keyArgs Set(&amp;#34;dry-run&amp;#34;) // keyValueArgs Map(&amp;#34;date&amp;#34; -&amp;gt; Some(&amp;#34;2018-05-15 00:00:00&amp;#34;))</description>
     </item>
     
     <item>
       <title>チャットはコンテキストを適切に分けることが大事、分報とリアクションの組み合わせで心理的安全性の構築に役立てる</title>
-      <link>http://blog.5000164.jp/2018/5/12/chat/</link>
+      <link>https://blog.5000164.jp/2018/5/12/chat/</link>
       <pubDate>Sat, 12 May 2018 00:20:59 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2018/5/12/chat/</guid>
+      <guid>https://blog.5000164.jp/2018/5/12/chat/</guid>
       <description>最近チャットのことをよく考えている。 ある程度の認識が自分の中で固まってきたのでここで一旦まとめる。 前提 チャットは難しい。 チャットをうまくしたらすべてが解決するとは思ってなくて、少しでも現状を良くするためのツールとして使う。 チャットのいいところは 読み返すことができる 検索することができる 多くの人が読むことができる 非同期でコミュニケーションができる というところ。 チャットで重要なのはコンテキスト チャットは文字に残ることで複数の人が非同期的にコミュニケーションをとることができるというメリットがある。 このメリットを有効的に使うためにはコンテキストを適切に分ける必要がある。 コンテキストはチャンネル、スレッド、ルームなどで分ける。 コンテキストを適切に分けることで情報のやりとりがスムーズになる。 チャットの種類 一口にチャットと言ってもすべてのチャットを同じように扱えばいいわけではない。 実際の会話に雑談や会議と</description>
     </item>
     
     <item>
       <title>Scala から Java ライブラリを使った時のメモ</title>
-      <link>http://blog.5000164.jp/2018/4/23/java/</link>
+      <link>https://blog.5000164.jp/2018/4/23/java/</link>
       <pubDate>Mon, 23 Apr 2018 21:18:30 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2018/4/23/java/</guid>
+      <guid>https://blog.5000164.jp/2018/4/23/java/</guid>
       <description>build.sbt でライブラリの追加 1 libraryDependencies += groupID % artifactID % revision のように書く。 最初 Scala の略記法のように %% と書いていたのでうまく動かなかった。 sbt Reference Manual — ライブラリ依存性 型のキャスト Java ライブラリに渡したりするためにキャストする時は asInstanceOf を使う。 また、 1 import collection.JavaConverters._ のようにインポートしておくことで asScala や asJava でコレクションを変換できる。 Scalaのキャスト - Qiita Java と Scala 間のコレクションの変換 | Scala Documentation null を Option に変換 Java ライブラリのメソッドが null を返す場合がある時に、 Option(func(value)) のように Option を使うことで Option 型に変換できる。 値があったら Some(result) が返ってきて、 null だったら None が返ってくるようになる。 Javaとの相互運用 · Scala研修テキスト</description>
     </item>
     
     <item>
       <title>行動を変えるのは否定ではなく前進である</title>
-      <link>http://blog.5000164.jp/2018/4/18/change/</link>
+      <link>https://blog.5000164.jp/2018/4/18/change/</link>
       <pubDate>Wed, 18 Apr 2018 20:36:02 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2018/4/18/change/</guid>
+      <guid>https://blog.5000164.jp/2018/4/18/change/</guid>
       <description>ふと思ったこと。 自分の行動を変えるということに抵抗があるのは、今まで行動してきたことが否定されるような気がするからなんじゃないかと思った。 変化にはコストがかかるから、とかそういう話とは別にして。 否定だと感じてしまう理由 限られた情報の中で選択し続けないといけない。 だから選択を間違えることはよくある。 A と B を比較して、 A を選んだとして、後からやっぱり B がよかったと B に変えたとする。 そうすると、 A を選んでいた期間が間違いだったように感じてしまう。 その期間を否定されたと感じてしまうのではないかと考えた。 行動を変えるのは否定ではなく前進である A を選ぶことで人生に 10 のいいことがあるとして、 B を選ぶことで人生に 15 のいいことがあるとする。 もちろん最初から B を選べることが理想だが、人間は間違えるので、 A を選ぶことだってよくある。 A を選んだ後に B に変えると、 A を選んでいた期間がもったいないと感じてしまう。 後か</description>
     </item>
     
     <item>
       <title>Basic 認証の realm は正しく設定する</title>
-      <link>http://blog.5000164.jp/2018/4/11/basic/</link>
+      <link>https://blog.5000164.jp/2018/4/11/basic/</link>
       <pubDate>Wed, 11 Apr 2018 23:16:34 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2018/4/11/basic/</guid>
+      <guid>https://blog.5000164.jp/2018/4/11/basic/</guid>
       <description>sbt で Basic 認証がかかっている依存を解決するために ~/.sbt/.credentials に認証情報を書いていたけど、 realm がずれていたせいで認証に失敗するということが起きた。 realm とは領域という意味で、おそらく ~/.sbt/.credentials の host と realm からどの認証情報を使用するのか判断している気がする。 なので、 realm がずれていると認証に失敗する。 HTTP（Hyper Text Transfer Protocol）～後編：インターネット・プロトコル詳説（2） - ＠IT Basic認証 - Wikipedia 正しい realm は curl で確認できる。 1 curl -v &amp;lt;対象の URL&amp;gt; 2&amp;gt;&amp;amp;1 | grep realm ivy - sbt dependency resolver with basic auth - Stack Overflow</description>
     </item>
     
     <item>
       <title>Bash のデバッグができた</title>
-      <link>http://blog.5000164.jp/2018/4/8/bash/</link>
+      <link>https://blog.5000164.jp/2018/4/8/bash/</link>
       <pubDate>Sun, 08 Apr 2018 23:14:26 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2018/4/8/bash/</guid>
+      <guid>https://blog.5000164.jp/2018/4/8/bash/</guid>
       <description>brew install bashdb で bashdb をインストール Visual Studio Code に Bash Debug を追加 Bash Debug - Visual Studio Marketplace デバッグの設定を追加して実行 これで動いた。 便利。</description>
     </item>
     
     <item>
       <title>Display Menu を使ったら表示領域が広がって便利</title>
-      <link>http://blog.5000164.jp/2018/3/24/display-menu/</link>
+      <link>https://blog.5000164.jp/2018/3/24/display-menu/</link>
       <pubDate>Sat, 24 Mar 2018 21:44:16 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2018/3/24/display-menu/</guid>
+      <guid>https://blog.5000164.jp/2018/3/24/display-menu/</guid>
       <description>今 MacBook Pro を使っていて、画面の表示を Retina 表示のままではなく More Space に設定して表示領域を広くしていたんだけど、最近 Display Menu というアプリを教えてもらった。 これを使うと System Preferences で設定できるよりも表示領域を広くすることができる。 これで今は 2,560 x 1,600 の解像度で表示している。 作業領域が広くなって便利。 アプリ 「Display Menu」をMac App Storeで 使い方がわかりやすかった記事 MacのRetinaディスプレイを本来の解像度で使えるようにする：Tech TIPS - ＠IT</description>
     </item>
     
     <item>
       <title>Android のフローティングブラウザを Flynx から Lynket に変えた</title>
-      <link>http://blog.5000164.jp/2018/3/18/browser/</link>
+      <link>https://blog.5000164.jp/2018/3/18/browser/</link>
       <pubDate>Sun, 18 Mar 2018 22:49:34 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2018/3/18/browser/</guid>
+      <guid>https://blog.5000164.jp/2018/3/18/browser/</guid>
       <description>元々は Link Bubble でフローティングブラウザを知り、便利で愛用していたのだが、たしか使えなくなったので代替アプリを探して Flynx を使うようになった。 でも広告をブロックしたかったり、常時パソコン用の表示にしたかったりと思って、ちょいちょいフローティングブラウザは調べていた。 それで今回もたまたま調べていたら、 Chromer というアプリがアップデートで Lynket という名前に変わっていて、改めて使ってみたらいい感じだったので乗り換えることにした。 そもそものフローティングブラウザのよさ 作業を中断せずに続けることができる Twitter を読んでいて、気になったリンクは開いておく、 Twitter を読み終わったら開いていたリンクを読む、ということができる 作業を途切れることなく続けることができていい Lynket のいいところ 同じリンクを多重に開かない あれ、このリンクさっき開いたっけ？と思って念のため開いておく、ってやって無駄にリンクを溜めておくことがなくなる ページを表示したらスタ</description>
     </item>
     
     <item>
       <title>いいタイミングで読めた - 本「SOFT SKILLS　ソフトウェア開発者の人生マニュアル」の感想</title>
-      <link>http://blog.5000164.jp/2018/2/18/soft-skills/</link>
+      <link>https://blog.5000164.jp/2018/2/18/soft-skills/</link>
       <pubDate>Sun, 18 Feb 2018 22:19:18 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2018/2/18/soft-skills/</guid>
+      <guid>https://blog.5000164.jp/2018/2/18/soft-skills/</guid>
       <description>新しい仕事を探すタイミングで、身の振り方などが勉強になるかもしれないと期待して読み始めた。 この本ではもっと広範な内容を扱っており、とても勉強になった。 1 つ 1 つの章が短くテンポがいいので苦労せずに読むことができた。 今このタイミングでこの本を読むことができてよかった。 これからも生活を改善していけたらいいなと思う。 読書メモ リスペクトとは、相手が大切にされていると感じることかもしれない 自分の時間報酬を考え直した 自分が提供できる価値を明確にする 過去に問題を乗り越えられているのだから、これからも乗り越えられると信じてできると信じる できているふりをして行動することでその理想に近付ける マーケティングとして、先に価値を提供すること 価値がある、誰かの役に立つブログを書く 価値を与えた相手に影響力を持つことができる 自分のブランドを作る ブログのアイディアリストを作る 他人にどうやって価値をもたらすかを常に考える 他人に</description>
     </item>
     
     <item>
       <title>Hugo のブログの記事の URL を変更した時のログ</title>
-      <link>http://blog.5000164.jp/2018/1/21/hugo/</link>
+      <link>https://blog.5000164.jp/2018/1/21/hugo/</link>
       <pubDate>Sun, 21 Jan 2018 21:33:31 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2018/1/21/hugo/</guid>
+      <guid>https://blog.5000164.jp/2018/1/21/hugo/</guid>
       <description>ブログの記事の URL を変更した。 今までは blog.5000164.jp/2018-1-format/ のような形式だったものを blog.5000164.jp/2018/1/19/format/ という形式にした。 今までの形式にしていた理由としては、ドメインの直下に記事の URL がぶら下がってるのかっこいい、と思っていたから。 新しい形式にした理由としては、年月日で階層が分かれてたほうがセマンティックでかっこいい、と思ったから。 変更前の状態 記事のファイルの構成は 2018/01/format.md のような感じで年月で分けて、月はゼロ埋めで 2 桁にしてある 記事の URL は url = &amp;quot;2018-01-format&amp;quot; のような感じで記事 1 つ 1 つに設定してある 記事の作成日は date = 2012-10-15T03:16:25+00:00 のような感じで 1 つ 1 つに設定してある 変更後の状態 記事のファイルの構成は 2018/1/19/format.md のような感じで作成日の年月日で分かれるようにして、月日のゼロ埋めはしない 記事の URL は指定せずにディレクトリ構成のままでいくので URL の設定を削除する 過去の URL にアクセスした時に新しい記事にリダイレクトさせる 変更方法 手作業で簡単にできるものじゃないと思ったのでツールを作った。 5000164/hugo-url-converter</description>
     </item>
     
     <item>
       <title>ブログを WordPress 👉 Octopress 👉 Hugo と変えてきて記事の書式がバラバラだったのをある程度整えた時の作業ログ 🗒️</title>
-      <link>http://blog.5000164.jp/2018/1/19/format/</link>
+      <link>https://blog.5000164.jp/2018/1/19/format/</link>
       <pubDate>Fri, 19 Jan 2018 22:46:52 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2018/1/19/format/</guid>
+      <guid>https://blog.5000164.jp/2018/1/19/format/</guid>
       <description>古い記事のメンテとかはしていないんだけど、ブログのデザインを変えた時に見てみたら思ったよりも崩れていたのでまとめてある程度修正することにした。 まだ崩れてる記事とかもあるけど、ひとつひとつ見ていくのは大変なので正確さではなくざっくりなんとなくを目的として作業を行う。 💡 前提となる記事の状態 ブログの記事の書き方は以下の変遷を辿ってきた。 WordPress で始めた最初は HTML を直接書いていた 途中から WordPress に Markdown のプラグインを入れて Markdown で書いていた ブログを Octopress に変えたが WordPress の記事はインポートしなかった 見出しの書き方を ## ではなく --- のように書いていた 見出しレベルは h1 から h3 まで使っていた ブログを Hugo に変えたタイミングで WordPress と Octopress の記事をインポートした 見出しの書き方を ## にした 本文での見出しレベルは h2 だけを使うようにした という状態で時期によって記事の書き方がごちゃごちゃ。 😩 見方 使用したツールは WebStorm 👇 の上側が正規表現での置換対象で、下側が置換内容 3 連</description>
     </item>
     
     <item>
       <title>Scala で JavaFX の Casvas の内容を画像として保存する</title>
-      <link>http://blog.5000164.jp/2018/1/15/scala-javafx-save-image/</link>
+      <link>https://blog.5000164.jp/2018/1/15/scala-javafx-save-image/</link>
       <pubDate>Mon, 15 Jan 2018 20:35:10 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2018/1/15/scala-javafx-save-image/</guid>
+      <guid>https://blog.5000164.jp/2018/1/15/scala-javafx-save-image/</guid>
       <description>昨日の記事 の続きのようなもの。 Canvas で表示できるようになったから画像として保存する。 コードはこんな感じ。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 val c = new Canvas(300, 300) val gc = c.getGraphicsContext2D gc.setFill(Color.GRAY) gc.setFont(Font.font(&amp;#34;Hiragino Sans&amp;#34;, 20)) gc.fillText(&amp;#34;テキスト&amp;#34;, 50, 50) val wi = new WritableImage(300, 300) c.snapshot(null, wi) val ri = SwingFXUtils.fromFXImage(wi, null) val f = new File(&amp;#34;test.png&amp;#34;) ImageIO.write(ri, &amp;#34;png&amp;#34;, f) val root = new StackPane() root.getChildren.add(c) val scene = new Scene(root, 350, 350) primaryStage.setTitle(&amp;#34;test&amp;#34;) primaryStage.setScene(scene) primaryStage.show() これを実行するとこういう画像ファイルが生成される。 生成された画像 ざっくり説明 Canvas の内容を WritableImage に変換する。 これが Canvas が持ってる snapshot というメソッドでできるっぽい。 その後は RenderedImage に変換してファイルに保存する。 参考 Java-Buddy: Save Canvas to PNG file JavaFX 2 Snapshot as PNG Image | code.makery.ch ついでに保存場所選択 下記のコードを追加することで保存する場所を選べるようになった。 1 2 val fc = new FileChooser val f = fc.showSaveDialog(primaryStage)</description>
     </item>
     
     <item>
       <title>Scala で JavaFX の Canvas でテキストを表示する</title>
-      <link>http://blog.5000164.jp/2018/1/14/scala-javafx-generate-image/</link>
+      <link>https://blog.5000164.jp/2018/1/14/scala-javafx-generate-image/</link>
       <pubDate>Sun, 14 Jan 2018 08:53:55 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2018/1/14/scala-javafx-generate-image/</guid>
+      <guid>https://blog.5000164.jp/2018/1/14/scala-javafx-generate-image/</guid>
       <description>昨日の記事 ではすでに存在する画像を表示したが、やりたいことは生成したテキストを画像にするということだったので、まずはテキストを表示できるようにする。 最終的には画像にしたいので、画像に変換できる Canvas を利用する。 コードはこんな感じ。 1 2 3 4 5 6 7 8 9 10 11 val c = new Canvas(300, 300) val gc = c.getGraphicsContext2D gc.setFill(Color.GRAY) gc.setFont(Font.font(&amp;#34;Hiragino Sans&amp;#34;, 20)) gc.fillText(&amp;#34;テキスト&amp;#34;, 50, 50) val root = new StackPane() root.getChildren.add(c) val scene = new Scene(root, 350, 350) primaryStage.setTitle(&amp;#34;test&amp;#34;) primaryStage.setScene(scene) primaryStage.show() このコードで下記のような実行結果になる。 実行結果 参考 JavaFX 図形・Canvas｜軽Lab canvas - JavaFX GraphicsContext change text size - Stack Overflow 試行錯誤メモ 調べていたら WritableImage というもので画像を生成できると見かけたので最初は WritableImage で画像を表示してみたのだが、テキストを描画する方法がわからず、さらに調べていたら Canvas を発見したので Canvas を使用するようにした。 試行錯誤中に参考にしたもの Java-Buddy: Draw something on WritableImage Java Code Example javafx.scene.image.WritableImage</description>
     </item>
     
     <item>
       <title>Scala で JavaFX を使って画像を表示する</title>
-      <link>http://blog.5000164.jp/2018/1/13/scala-javafx-image/</link>
+      <link>https://blog.5000164.jp/2018/1/13/scala-javafx-image/</link>
       <pubDate>Sat, 13 Jan 2018 20:59:55 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2018/1/13/scala-javafx-image/</guid>
+      <guid>https://blog.5000164.jp/2018/1/13/scala-javafx-image/</guid>
       <description>こんな感じ。 1 2 3 4 5 6 7 8 val image = new Image(getClass.getResource(&amp;#34;/test.png&amp;#34;).toString) val imageView = new ImageView(image) val root = new StackPane() root.getChildren.add(imageView) val scene = new Scene(root, 350, 350) primaryStage.setTitle(&amp;#34;test&amp;#34;) primaryStage.setScene(scene) primaryStage.show() ポイント 画像を下記のパスに配置して getClass.getResource(&amp;quot;/test.png&amp;quot;).toString でパスを取得すること。 1 2 3 4 5 . └── src └── main └── resources └── test.png 参考 java - JavaFx Images Path - Stack Overflow</description>
     </item>
     
     <item>
       <title>Scala の SSL / TLS 通信の中身を見る</title>
-      <link>http://blog.5000164.jp/2018/1/5/view-scala-traffic/</link>
+      <link>https://blog.5000164.jp/2018/1/5/view-scala-traffic/</link>
       <pubDate>Fri, 05 Jan 2018 17:48:03 +0900</pubDate>
       
-      <guid>http://blog.5000164.jp/2018/1/5/view-scala-traffic/</guid>
+      <guid>https://blog.5000164.jp/2018/1/5/view-scala-traffic/</guid>
       <description>Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy(&amp;#34;localhost&amp;#34;, 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信頼したキーストアを生成する 生成したキーストアをアプリケーションから読み込む Charles の SSL Proxy を有効にする となる。 Charles の証明書を信頼したキーストアを生成する まず Charles の証明書を取得する。 これはアプリケーションのメニューの Help &amp;gt; SSL Proxying &amp;gt; Save Charles Root Certificate... から取得でき</description>
     </item>
     
