@@ -13,10 +13,10 @@
     
     <item>
       <title>設定ファイルを Scala で書く</title>
-      <link>https://blog.5000164.jp/2018/26/settings/</link>
+      <link>https://blog.5000164.jp/2018/5/26/settings/</link>
       <pubDate>Sat, 26 May 2018 15:18:13 +0900</pubDate>
       
-      <guid>https://blog.5000164.jp/2018/26/settings/</guid>
+      <guid>https://blog.5000164.jp/2018/5/26/settings/</guid>
       <description>背景 リポジトリに入れたくない情報は別ファイルに設定として書く 型が表現できないのが面倒くさい 目的 Scala で設定ファイルを書けるようにする やり方 Scala で設定を書いて Eval する 具体的なコード 設定を表現する 1 2 3 4 5 6 7 8 trait SettingsType { val hogeSettings: String val fooSettings: FooSettings } case class FooSettings( bar: String, baz: Int) build.sbt で依存関係を解決 1 libraryDependencies += &amp;#34;org.scala-lang&amp;#34; % &amp;#34;scala-compiler&amp;#34; % scalaVersion.value Eval するコードを書く 1 2 3 4 5 6 7 8 import scala.io.Source import scala.reflect.runtime.{currentMirror, universe} import scala.tools.reflect.ToolBox object Settings { val toolbox: ToolBox[universe.type] = currentMirror.mkToolBox() val settings: SettingsType = toolbox.eval(toolbox.parse(Source.fromResource(&amp;#34;Settings.scala&amp;#34;).mkString)).asInstanceOf[SettingsType] } 設定を書く 1 2 3 4 new SettingsType { val hogeSettings = &amp;#34;hogehoge&amp;#34; val fooSettings = FooSettings(&amp;#34;foobar&amp;#34;, 1) } 設定がリポジトリに含まれないように .gitignore に追記 1 Settings.scala 設定方法がわかりやすいようにサンプルを SettingsSample として作っておいてリポジトリに含める 1 2 3 4 new SettingsType { val hogeSettings = &amp;#34;&amp;#34; val fooSettings = FooSettings(&amp;#34;&amp;#34;, 0) } 参考 Scala2.11でEval - xuwei-k&amp;rsquo;s blog Scala で YAML を読み込む方法 (の代替) - Qoosky</description>
     </item>
     
