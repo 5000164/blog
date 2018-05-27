@@ -6,10 +6,19 @@
     <description>Recent content in 2018 on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 26 May 2018 15:18:13 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 27 May 2018 16:12:04 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.5000164.jp/2018/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>メンションの通知を全員切るべき、という仮説</title>
+      <link>https://blog.5000164.jp/2018/5/27/mention/</link>
+      <pubDate>Sun, 27 May 2018 16:12:04 +0900</pubDate>
+      
+      <guid>https://blog.5000164.jp/2018/5/27/mention/</guid>
+      <description>メンションの問題点は通知が飛ぶこと メンションの問題点は「通知が飛ぶこと」ということに尽きる。 通知というのは注意を引いて作業を中断させるものなので、緊急度が高い場合以外には作業の邪魔となる。 しかし「誰に対して発言しているか」という情報は大切である。 でもメンション機能を使用せずに「○○ さん」という書き方をすると見逃しやすくなってしまう。 ソフトメンションとハードメンションという概念 そこで自分はソフトメンションとハードメンションという概念を考えた。 ソフトメンションは、通知が飛ばないメンションである。 ハードメンションは、通知が飛ぶメンションである。 基本的にソフトメンションを使用することで、相手の邪魔をせずに意図を明確にしながら会話が行えるようになると考えられる。 対応しているチャットツールがない しかし現時点で自分が知る限りではソフトメンションとハードメンションという概念を導入しているチャットツールはな</description>
+    </item>
     
     <item>
       <title>設定ファイルを Scala で書く</title>
