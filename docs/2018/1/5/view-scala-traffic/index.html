@@ -16,17 +16,17 @@ if (!doNotTrack) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Scala の SSL / TLS 通信の中身を見る | 5000164 is here</title>
-    <meta name="description" content="Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy(&#34;localhost&#34;, 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信頼したキーストアを生成する 生成したキーストアをアプリケーションから読み込む Charles の SSL Proxy を有効にする となる。 Charles の証明書を信頼したキーストアを生成する まず Charles の証明書を取得する。 これはアプリケーションのメニューの Help &gt; SSL Proxying &gt; Save Charles Root Certificate... から取得でき">
+    <meta name="description" content="Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy(&#34;localhost&#34;, 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 2018.5.28 追記 HttpURLConnectionBackend のデフォルト引数が options: SttpBackendOptions = SttpBackendOptions.Default となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるので 1 val backend: SttpBackend[Id, Nothing] = HttpURLConnectionBackend() のままでいい。 Charles は起動時に自動でシステムのプロキシー設定を書き換えてくれるので、設定がそのまま反映される。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信">
     <link href="https://blog.5000164.jp/2018/1/5/view-scala-traffic/" rel="canonical">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Scala の SSL / TLS 通信の中身を見る | 5000164 is here">
-    <meta property="og:description" content="Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy(&#34;localhost&#34;, 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信頼したキーストアを生成する 生成したキーストアをアプリケーションから読み込む Charles の SSL Proxy を有効にする となる。 Charles の証明書を信頼したキーストアを生成する まず Charles の証明書を取得する。 これはアプリケーションのメニューの Help &gt; SSL Proxying &gt; Save Charles Root Certificate... から取得でき">
+    <meta property="og:description" content="Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy(&#34;localhost&#34;, 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 2018.5.28 追記 HttpURLConnectionBackend のデフォルト引数が options: SttpBackendOptions = SttpBackendOptions.Default となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるので 1 val backend: SttpBackend[Id, Nothing] = HttpURLConnectionBackend() のままでいい。 Charles は起動時に自動でシステムのプロキシー設定を書き換えてくれるので、設定がそのまま反映される。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信">
     <meta property="og:url" content="https://blog.5000164.jp/2018/1/5/view-scala-traffic/">
     <meta property="og:image" content="https://blog.5000164.jp/icon.png">
     <meta property="og:site_name" content="5000164 is here">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Scala の SSL / TLS 通信の中身を見る | 5000164 is here">
-    <meta name="twitter:description" content="Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy(&#34;localhost&#34;, 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信頼したキーストアを生成する 生成したキーストアをアプリケーションから読み込む Charles の SSL Proxy を有効にする となる。 Charles の証明書を信頼したキーストアを生成する まず Charles の証明書を取得する。 これはアプリケーションのメニューの Help &gt; SSL Proxying &gt; Save Charles Root Certificate... から取得でき">
+    <meta name="twitter:description" content="Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy(&#34;localhost&#34;, 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 2018.5.28 追記 HttpURLConnectionBackend のデフォルト引数が options: SttpBackendOptions = SttpBackendOptions.Default となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるので 1 val backend: SttpBackend[Id, Nothing] = HttpURLConnectionBackend() のままでいい。 Charles は起動時に自動でシステムのプロキシー設定を書き換えてくれるので、設定がそのまま反映される。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信">
     <meta name="twitter:url" content="https://blog.5000164.jp/2018/1/5/view-scala-traffic/">
     <meta name="twitter:image" content="https://blog.5000164.jp/icon.png">
     <meta name="twitter:site" content="@5000164">
@@ -67,6 +67,20 @@ HTTP 通信のライブラリとして <a href="https://github.com/softwaremill/
 </div>
 <p>これだけで、 HTTP 通信の中身は見られるようになる。</p>
 
+<h2 id="2018-5-28-追記">2018.5.28 追記</h2>
+
+<p><code>HttpURLConnectionBackend</code> のデフォルト引数が <code>options: SttpBackendOptions = SttpBackendOptions.Default</code> となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるので</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> backend<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">SttpBackend</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Id</span>, <span style="color:#66d9ef">Nothing</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">HttpURLConnectionBackend</span><span style="color:#f92672">()</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>のままでいい。<br />
+Charles は起動時に自動でシステムのプロキシー設定を書き換えてくれるので、設定がそのまま反映される。</p>
+
 <h2 id="ssl-tls-通信の中身を見えるようにする">SSL / TLS 通信の中身を見えるようにする</h2>
 
 <p>SSL / TLS 通信の中身を見るための手順としては</p>
@@ -89,10 +103,10 @@ HTTP 通信のライブラリとして <a href="https://github.com/softwaremill/
 普段使用されるキーストアは jdk の中にあり、自分の場合は <code>$(/usr/libexec/java_home)/lib/security/cacerts</code> にあった。</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">keytool -keystore cacerts -importcert -alias charles -file charles-ssl-proxying-certificate.cer</code></pre></td></tr></table>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">keytool -keystore cacerts -importcert -alias charles -file charles-ssl-proxying-certificate.cer</code></pre></td></tr></table>
 </div>
 </div>
 <p>また、この時に <code>keytool -list -keystore cacerts</code> のようにして内容を表示して追加されたかどうか確認することができる。</p>
@@ -105,13 +119,26 @@ HTTP 通信のライブラリとして <a href="https://github.com/softwaremill/
 下記のような内容を実行時の <code>VM parameters</code> に設定する。</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">-Djavax.net.ssl.keyStore<span style="color:#f92672">=</span>/path/to/cacerts -Djavax.net.ssl.keyStorePassword<span style="color:#f92672">=</span>changeit -Djavax.net.ssl.trustStore<span style="color:#f92672">=</span>/path/to/cacerts -Djavax.net.ssl.trustStorePassword<span style="color:#f92672">=</span>changeit</code></pre></td></tr></table>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">-Djavax.net.ssl.keyStore<span style="color:#f92672">=</span>/path/to/cacerts -Djavax.net.ssl.keyStorePassword<span style="color:#f92672">=</span>changeit -Djavax.net.ssl.trustStore<span style="color:#f92672">=</span>/path/to/cacerts -Djavax.net.ssl.trustStorePassword<span style="color:#f92672">=</span>changeit</code></pre></td></tr></table>
 </div>
 </div>
 <p><code>/path/to/cacerts</code> には先ほど作成したキーストアへのパスを指定する。</p>
+
+<h2 id="2018-5-28-追記-1">2018.5.28 追記</h2>
+
+<p>sbt から実行する場合は</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">SBT_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-Djavax.net.ssl.keyStore=/path/to/cacerts -Djavax.net.ssl.keyStorePassword=changeit -Djavax.net.ssl.trustStore=/path/to/cacerts -Djavax.net.ssl.trustStorePassword=changeit&#34;</span> sbt run</code></pre></td></tr></table>
+</div>
+</div>
+<p>のようにする。</p>
 
 <h2 id="charles-の-ssl-proxy-を有効にする">Charles の SSL Proxy を有効にする</h2>
 

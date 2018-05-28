@@ -161,7 +161,7 @@
       <pubDate>Fri, 05 Jan 2018 17:48:03 +0900</pubDate>
       
       <guid>https://blog.5000164.jp/2018/1/5/view-scala-traffic/</guid>
-      <description>Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy(&amp;#34;localhost&amp;#34;, 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信頼したキーストアを生成する 生成したキーストアをアプリケーションから読み込む Charles の SSL Proxy を有効にする となる。 Charles の証明書を信頼したキーストアを生成する まず Charles の証明書を取得する。 これはアプリケーションのメニューの Help &amp;gt; SSL Proxying &amp;gt; Save Charles Root Certificate... から取得でき</description>
+      <description>Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy(&amp;#34;localhost&amp;#34;, 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 2018.5.28 追記 HttpURLConnectionBackend のデフォルト引数が options: SttpBackendOptions = SttpBackendOptions.Default となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるので 1 val backend: SttpBackend[Id, Nothing] = HttpURLConnectionBackend() のままでいい。 Charles は起動時に自動でシステムのプロキシー設定を書き換えてくれるので、設定がそのまま反映される。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信</description>
     </item>
     
   </channel>

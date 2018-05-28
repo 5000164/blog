@@ -20,6 +20,17 @@ val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy("l
 
 これだけで、 HTTP 通信の中身は見られるようになる。
 
+## 2018.5.28 追記
+
+`HttpURLConnectionBackend` のデフォルト引数が `options: SttpBackendOptions = SttpBackendOptions.Default` となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるので
+
+```scala
+val backend: SttpBackend[Id, Nothing] = HttpURLConnectionBackend()
+```
+
+のままでいい。  
+Charles は起動時に自動でシステムのプロキシー設定を書き換えてくれるので、設定がそのまま反映される。
+
 ## SSL / TLS 通信の中身を見えるようにする
 
 SSL / TLS 通信の中身を見るための手順としては
@@ -39,7 +50,7 @@ SSL / TLS 通信の中身を見るための手順としては
 この時に普段使用されるキーストアを別の場所にコピーしてから作業を行うことで環境を汚さないようにした。  
 普段使用されるキーストアは jdk の中にあり、自分の場合は `$(/usr/libexec/java_home)/lib/security/cacerts` にあった。
 
-```bash
+```sh
 keytool -keystore cacerts -importcert -alias charles -file charles-ssl-proxying-certificate.cer
 ```
 
@@ -52,11 +63,21 @@ keytool -keystore cacerts -importcert -alias charles -file charles-ssl-proxying-
 設定方法が環境変数に指定する方法しかわからなかったので環境変数に設定を行う。  
 下記のような内容を実行時の `VM parameters` に設定する。
 
-```bash
+```sh
 -Djavax.net.ssl.keyStore=/path/to/cacerts -Djavax.net.ssl.keyStorePassword=changeit -Djavax.net.ssl.trustStore=/path/to/cacerts -Djavax.net.ssl.trustStorePassword=changeit
 ```
 
 `/path/to/cacerts` には先ほど作成したキーストアへのパスを指定する。
+
+## 2018.5.28 追記
+
+sbt から実行する場合は
+
+```sh
+SBT_OPTS="-Djavax.net.ssl.keyStore=/path/to/cacerts -Djavax.net.ssl.keyStorePassword=changeit -Djavax.net.ssl.trustStore=/path/to/cacerts -Djavax.net.ssl.trustStorePassword=changeit" sbt run
+```
+
+のようにする。
 
 ## Charles の SSL Proxy を有効にする
 
