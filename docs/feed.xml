@@ -6,10 +6,19 @@
     <description>Recent content on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 27 May 2018 16:12:04 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jun 2018 20:50:43 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.5000164.jp/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Apple Music で BGM にいい感じのプレイリストを作る</title>
+      <link>https://blog.5000164.jp/2018/6/1/chill/</link>
+      <pubDate>Fri, 01 Jun 2018 20:50:43 +0900</pubDate>
+      
+      <guid>https://blog.5000164.jp/2018/6/1/chill/</guid>
+      <description>Apple Music には毎週自動で内容が更新される Chill Mix というプレイリストがある For You から Chill Mix をライブラリに追加する 追加しといた方がアクセスしやすくなって楽になる 新規でプレイリストを 2 つ作る 曲を溜めていく用のプレイリスト (例: Chill) と、一時的に保管する用のプレイリスト (例: Chill temp) を作る Chill Mix の内容が更新されたら全曲を Chill temp に追加する Chill Mix のプレイリストは編集できないので、気に入らない曲を外すために自分で編集できる Chill temp に入れる Chill Mix をあんまり聞く時間がなかった場合もとりあえず Chill temp に退避しておけば Chill Mix が自動更新されても聞き漏らさない Chill temp を聞いて、気に入らない曲があったらプレイリストから削除する Chill temp をしばらく聞いて、いい感じだったら Chill temp の全曲を Chill に追加して Chill temp を空にする これを繰り返すことでいい感じの曲だけが Chill に溜まっていき、 BGM にいい感じのプレイリストが出来上がる</description>
+    </item>
     
     <item>
       <title>メンションの通知を全員切るべき、という仮説</title>
