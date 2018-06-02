@@ -6,10 +6,19 @@
     <description>Recent content in 2018 on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 01 Jun 2018 20:50:43 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 02 Jun 2018 18:09:01 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.5000164.jp/2018/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>チャットツールは Slack で分報、 Twist で相談、という二刀流が最強の構成じゃないかと想像してる</title>
+      <link>https://blog.5000164.jp/2018/6/2/tool/</link>
+      <pubDate>Sat, 02 Jun 2018 18:09:01 +0900</pubDate>
+      
+      <guid>https://blog.5000164.jp/2018/6/2/tool/</guid>
+      <description>前に書いたこの記事 チャットはコンテキストを適切に分けることが大事、分報とリアクションの組み合わせで心理的安全性の構築に役立てる | 5000164 is here では具体的なツールの話はしなかった。 ここでは具体的なツールとその使い分けについて想像していることを書く。 使うことを想定しているツール 下記の 2 つのツールの組み合わせがいいのではと考えている。 各ツールの特徴と使い分ける理由については後述する。 Slack: Where work happens Twist – Mindful Team Communication Slack のメリット 全体的に使いやすい カスタム絵文字として好きな絵文字を登録できる カスタム絵文字でリアクションできるのがいい リアクションが Activity で簡単に見れるのがいい Slack デメリット コンテキストが区切りやすいわけではない 会話が簡単に混ざってしまう 話題ごとにいちいちチャンネルを作るのが手間 チャンネルを作るたびに誰をチャンネルに追加すればいいのか考えるのが手間 スレッドが使いにくい Slack から感じる思想 書くコストを下げる (その代わり読</description>
+    </item>
     
     <item>
       <title>Apple Music で BGM にいい感じのプレイリストを作る</title>
