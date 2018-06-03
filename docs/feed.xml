@@ -6,10 +6,19 @@
     <description>Recent content on 5000164 is here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 02 Jun 2018 18:09:01 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 03 Jun 2018 17:28:56 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.5000164.jp/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>謙虚・尊敬・信頼を忘れずにやっていきたい - 本「Team Geek ――Googleのギークたちはいかにしてチームを作るのか」の感想</title>
+      <link>https://blog.5000164.jp/2018/6/3/team-geek/</link>
+      <pubDate>Sun, 03 Jun 2018 17:28:56 +0900</pubDate>
+      
+      <guid>https://blog.5000164.jp/2018/6/3/team-geek/</guid>
+      <description>前々から読みたいと思っていたのでついに読んだ。 HRT について、文化について、勉強になった。 謙虚・尊敬・信頼を忘れずにやっていきたい。 読書メモ 人間は断続的なバグの大きな塊だ 自分のバグを修正したかったらダメなところを気づかせてもらう 自分がコントロールできる変数は自分自身 謙虚・尊敬・信頼 HRT の文化を育んでいく 文化がない状態では建設的な批判などができなくなる 自分のやり方でやる、というエゴを通すために多大なコストを払う価値があるか考える チームは個人の生産性や幸福に直接影響する ソフトウェア開発はチームスポーツである 個室が必要なのではなく、ノイズや邪魔を除外する 集中したいときは集中できるようにする仕組みを作る 特定の合い言葉やヘッドフォンやぬいぐるみで意思表示をするなど もちろん集中したまとまった時間が必要だが、チームには素早い接続が必要 過ちから学ぶには失敗を文書化する チームには文化がある 文化は創業者や初期メンバ</description>
+    </item>
     
     <item>
       <title>チャットツールは Slack で分報、 Twist で相談、という二刀流が最強の構成じゃないかと想像してる</title>
