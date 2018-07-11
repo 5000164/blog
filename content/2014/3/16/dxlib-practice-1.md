@@ -56,31 +56,31 @@ ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8);
 
 ```c++
 // 影の表示開始位置
-	text_x = font_size + shadow_offset_x;
-	text_y = font_size + shadow_offset_y;
+text_x = font_size + shadow_offset_x;
+text_y = font_size + shadow_offset_y;
 
-	// 影のベースとなる文字列を描画
-	for (int row = 0; row &lt; 5; row++)
-	{
-		DrawString(text_x, (int)(text_y + ((font_size * line_height) * row)), text[row], shadow_color_dx);
-	}
+// 影のベースとなる文字列を描画
+for (int row = 0; row &lt; 5; row++)
+{
+DrawString(text_x, (int)(text_y + ((font_size * line_height) * row)), text[row], shadow_color_dx);
+}
 
-	// ガウスフィルターを施して影にする
-	GraphFilter(backscreen, DX_GRAPH_FILTER_GAUSS, 8, 50);
+// ガウスフィルターを施して影にする
+GraphFilter(backscreen, DX_GRAPH_FILTER_GAUSS, 8, 50);
 ```
 
 背景ができたら、普通にフォントを描画します。
 
 ```c++
 // テキスト表示開始位置
-	text_x = font_size;
-	text_y = font_size;
+text_x = font_size;
+text_y = font_size;
 
-	// 文字列の描画
-	for (int row = 0; row &lt; 5; row++)
-	{
-		DrawString(text_x, (int)(text_y + ((font_size * line_height) * row)), text[row], font_color_dx);
-	}
+// 文字列の描画
+for (int row = 0; row &lt; 5; row++)
+{
+DrawString(text_x, (int)(text_y + ((font_size * line_height) * row)), text[row], font_color_dx);
+}
 ```
 
 これで完成です。
