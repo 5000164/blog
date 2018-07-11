@@ -16,30 +16,42 @@ date = 2018-05-26T15:18:13+09:00
 
 - Scala で設定を書いて Eval する
 
-## 具体的なコード
+## ディレクトリ構成
 
-- 設定を表現する
-
-```scala
-trait SettingsType {
-  val hogeSettings: String
-  val fooSettings: FooSettings
-}
-
-case class FooSettings(
-    bar: String,
-    baz: Int)
+```
+.
+├── build.sbt
+└── src
+    └── main
+        ├── resources
+        │   ├── Settings.scala
+        │   └── SettingsSample.scala
+        └── scala
+            ├── infrastructure
+            │   └── Settings.scala
+            └── interfaces
+                └── Application.scala
 ```
 
-- build.sbt で依存関係を解決
+## 具体的なコード
+
+## 依存関係を解決
+
+build.sbt
 
 ```sbt
 libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVersion.value
 ```
 
-- Eval するコードを書く
+## 設定を Eval する
+
+- 設定を表現する
+
+infrastructure/Settings.scala
 
 ```scala
+package infrastructure
+
 import scala.io.Source
 import scala.reflect.runtime.{currentMirror, universe}
 import scala.tools.reflect.ToolBox
@@ -48,31 +60,68 @@ object Settings {
   val toolbox: ToolBox[universe.type] = currentMirror.mkToolBox()
   val settings: SettingsType = toolbox.eval(toolbox.parse(Source.fromResource("Settings.scala").mkString)).asInstanceOf[SettingsType]
 }
-```
 
-- 設定を書く
-
-```scala
-new SettingsType {
-    val hogeSettings = "hogehoge"
-    val fooSettings = FooSettings("foobar", 1)
+trait SettingsType {
+  val hoge: String
+  val foo: Int
 }
 ```
 
-- 設定がリポジトリに含まれないように .gitignore に追記
+## 設定を書く
 
-```gitignore
-Settings.scala
+resources/Settings.scala
+
+```scala
+import infrastructure.SettingsType
+
+new SettingsType {
+    override val hoge = "hogehoge"
+    override val foo = 1
+}
 ```
+
+## 設定のサンプルを書く
 
 - 設定方法がわかりやすいようにサンプルを SettingsSample として作っておいてリポジトリに含める
 
+resources/SettingsSample.scala
+
 ```scala
+import infrastructure.SettingsType
+
 new SettingsType {
-    val hogeSettings = ""
-    val fooSettings = FooSettings("", 0)
+    override val hoge = ""
+    override val foo = 0
 }
 ```
+
+## 設定がリポジトリに含まれないようにする
+
+.gitignore
+
+```gitignore
+src/main/resources/Settings.scala
+```
+
+## 使い方
+
+interfaces/Application.scala
+
+```scala
+package interfaces
+
+import infrastructure.Settings.settings
+
+object Application extends App {
+  println(settings.hoge)
+  println(settings.foo)
+}
+```
+
+## 現時点での問題点
+
+- コンパイルした時に設定ファイルが含まれてしまう
+- 設定は外から指定できるようにしたい
 
 ## 参考
 
