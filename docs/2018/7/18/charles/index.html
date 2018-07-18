@@ -15,19 +15,19 @@ if (!doNotTrack) {
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>2018 | 5000164 is here</title>
-    <meta name="description" content="菅原 浩 のブログ">
-    <link href="https://blog.5000164.jp/2018/" rel="canonical">
+    <title>Charles の一覧から特定の拡張子を除外する | 5000164 is here</title>
+    <meta name="description" content="Charles の一覧から特定の拡張子を除外することができた。 Filter は Settings から正規表現を有効にすると正規表現で絞り込めるようになる。 この正規表現でどうやら否定的先読みが使えるようだったので、下記のように絞り込むことで特定の拡張子を除外することができた。 1 ^https://blog\.5000164\.jp(?!.*(\.css|\.js|\.png|\.gif|\.ttf|\.woff|\.woff2)).*$">
+    <link href="https://blog.5000164.jp/2018/7/18/charles/" rel="canonical">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="2018 | 5000164 is here">
-    <meta property="og:description" content="菅原 浩 のブログ">
-    <meta property="og:url" content="https://blog.5000164.jp/2018/">
+    <meta property="og:title" content="Charles の一覧から特定の拡張子を除外する | 5000164 is here">
+    <meta property="og:description" content="Charles の一覧から特定の拡張子を除外することができた。 Filter は Settings から正規表現を有効にすると正規表現で絞り込めるようになる。 この正規表現でどうやら否定的先読みが使えるようだったので、下記のように絞り込むことで特定の拡張子を除外することができた。 1 ^https://blog\.5000164\.jp(?!.*(\.css|\.js|\.png|\.gif|\.ttf|\.woff|\.woff2)).*$">
+    <meta property="og:url" content="https://blog.5000164.jp/2018/7/18/charles/">
     <meta property="og:image" content="https://blog.5000164.jp/icon.png">
     <meta property="og:site_name" content="5000164 is here">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="2018 | 5000164 is here">
-    <meta name="twitter:description" content="菅原 浩 のブログ">
-    <meta name="twitter:url" content="https://blog.5000164.jp/2018/">
+    <meta name="twitter:title" content="Charles の一覧から特定の拡張子を除外する | 5000164 is here">
+    <meta name="twitter:description" content="Charles の一覧から特定の拡張子を除外することができた。 Filter は Settings から正規表現を有効にすると正規表現で絞り込めるようになる。 この正規表現でどうやら否定的先読みが使えるようだったので、下記のように絞り込むことで特定の拡張子を除外することができた。 1 ^https://blog\.5000164\.jp(?!.*(\.css|\.js|\.png|\.gif|\.ttf|\.woff|\.woff2)).*$">
+    <meta name="twitter:url" content="https://blog.5000164.jp/2018/7/18/charles/">
     <meta name="twitter:image" content="https://blog.5000164.jp/icon.png">
     <meta name="twitter:site" content="@5000164">
     <meta name="twitter:creator" content="@5000164">
@@ -40,185 +40,25 @@ if (!doNotTrack) {
     <a href="https://blog.5000164.jp/">5000164 is here</a>
 </header>
 
-<ul class="articles">
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/7/18/charles/">
-        <div>2018.7.18</div>
-        <div>Charles の一覧から特定の拡張子を除外する</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/6/9/keyboard/">
-        <div>2018.6.9</div>
-        <div>Karabiner-Elements を使って Mistel Barocco の設定をするようにした</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/6/3/team-geek/">
-        <div>2018.6.3</div>
-        <div>謙虚・尊敬・信頼を忘れずにやっていきたい - 本「Team Geek ――Googleのギークたちはいかにしてチームを作るのか」の感想</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/6/2/tool/">
-        <div>2018.6.2</div>
-        <div>チャットツールは Slack で分報、 Twist で相談、という二刀流が最強の構成じゃないかと想像してる</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/6/1/chill/">
-        <div>2018.6.1</div>
-        <div>Apple Music で BGM にいい感じのプレイリストを作る</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/5/27/mention/">
-        <div>2018.5.27</div>
-        <div>メンションの通知を全員切るべき、という仮説</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/5/26/settings/">
-        <div>2018.5.26</div>
-        <div>設定ファイルを Scala で書く</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/5/15/command-line/">
-        <div>2018.5.15</div>
-        <div>Scala でコマンドライン引数を分解する</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/5/12/chat/">
-        <div>2018.5.12</div>
-        <div>チャットはコンテキストを適切に分けることが大事、分報とリアクションの組み合わせで心理的安全性の構築に役立てる</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/4/23/java/">
-        <div>2018.4.23</div>
-        <div>Scala から Java ライブラリを使った時のメモ</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/4/18/change/">
-        <div>2018.4.18</div>
-        <div>行動を変えるのは否定ではなく前進である</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/4/11/basic/">
-        <div>2018.4.11</div>
-        <div>Basic 認証の realm は正しく設定する</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/4/8/bash/">
-        <div>2018.4.8</div>
-        <div>Bash のデバッグができた</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/3/24/display-menu/">
-        <div>2018.3.24</div>
-        <div>Display Menu を使ったら表示領域が広がって便利</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/3/18/browser/">
-        <div>2018.3.18</div>
-        <div>Android のフローティングブラウザを Flynx から Lynket に変えた</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/2/18/soft-skills/">
-        <div>2018.2.18</div>
-        <div>いいタイミングで読めた - 本「SOFT SKILLS　ソフトウェア開発者の人生マニュアル」の感想</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/1/21/hugo/">
-        <div>2018.1.21</div>
-        <div>Hugo のブログの記事の URL を変更した時のログ</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/1/19/format/">
-        <div>2018.1.19</div>
-        <div>ブログを WordPress 👉 Octopress 👉 Hugo と変えてきて記事の書式がバラバラだったのをある程度整えた時の作業ログ 🗒️</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/1/15/scala-javafx-save-image/">
-        <div>2018.1.15</div>
-        <div>Scala で JavaFX の Casvas の内容を画像として保存する</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/1/14/scala-javafx-generate-image/">
-        <div>2018.1.14</div>
-        <div>Scala で JavaFX の Canvas でテキストを表示する</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/1/13/scala-javafx-image/">
-        <div>2018.1.13</div>
-        <div>Scala で JavaFX を使って画像を表示する</div>
-    </a>
-</li>
-
-    
-    <li>
-    <a href="https://blog.5000164.jp/2018/1/5/view-scala-traffic/">
-        <div>2018.1.5</div>
-        <div>Scala の SSL / TLS 通信の中身を見る</div>
-    </a>
-</li>
-
-    
-</ul>
+<article>
+    <div class="title">
+        <div class="date">2018.7.18</div>
+        <h1>Charles の一覧から特定の拡張子を除外する</h1>
+    </div>
+    <div class="content">
+        <p><a href="https://www.charlesproxy.com/">Charles</a> の一覧から特定の拡張子を除外することができた。<br />
+Filter は Settings から正規表現を有効にすると正規表現で絞り込めるようになる。<br />
+この正規表現でどうやら否定的先読みが使えるようだったので、下記のように絞り込むことで特定の拡張子を除外することができた。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-regex" data-lang="regex"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-regex" data-lang="regex">^https://blog\.5000164\.jp(?!.*(\.css|\.js|\.png|\.gif|\.ttf|\.woff|\.woff2)).*$</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</article>
 <footer>
     <div class="writer">
         <div>菅原 浩</div>
