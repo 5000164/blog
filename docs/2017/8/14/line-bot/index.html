@@ -1,532 +1,205 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
+<!doctype html><html lang=ja><head><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-51024599-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>AWS Lambda の Python 3.6 で LINE Bot を動かす | 5000164 is here</title><meta name=description content="目的 LINE Bot を使って生活を少し便利にしたい。 背景 最近 LINE をよく使ってるから。 なんかちょっとしたメモとか簡単に確認したいなーと思ったから。 たまたま AWS Lambda の料金を調べたら思っていたよりも安かったので使ってみたくなったから。 この記事のスタートとゴール スタートは、 LINE をすでに使っているが、 API などは使ったことがないところ。 ゴールは、 LINE のグループチャットで特定の発言をしたら特定の内容を返してくれるところ。 LINE Bot を使えるように登録する Messaging API の登録をする。 Messaging APIのご紹介 | LINE Business Center Developer Trial を選ぶ。 LINE BOTの作り方を世界一わかりやすく解説（１）【アカウント準備編】 - Qiita LINE Bot を使えるように設定する LINE@ MANAGER から以下の感じに Bot を設定する。 API を利用する Webhook を利用する グループトーク参加を利用する 自動応答メッセージを利用しない 友だち追加時あいさつを利用しない 基本設定アカウントページメニュー非表示 LINE Bot と友だちになってグループトークを作成 QR コードから"><link href=https://blog.5000164.jp/2017/8/14/line-bot/ rel=canonical><meta property=og:type content=article><meta property=og:title content="AWS Lambda の Python 3.6 で LINE Bot を動かす | 5000164 is here"><meta property=og:description content="目的 LINE Bot を使って生活を少し便利にしたい。 背景 最近 LINE をよく使ってるから。 なんかちょっとしたメモとか簡単に確認したいなーと思ったから。 たまたま AWS Lambda の料金を調べたら思っていたよりも安かったので使ってみたくなったから。 この記事のスタートとゴール スタートは、 LINE をすでに使っているが、 API などは使ったことがないところ。 ゴールは、 LINE のグループチャットで特定の発言をしたら特定の内容を返してくれるところ。 LINE Bot を使えるように登録する Messaging API の登録をする。 Messaging APIのご紹介 | LINE Business Center Developer Trial を選ぶ。 LINE BOTの作り方を世界一わかりやすく解説（１）【アカウント準備編】 - Qiita LINE Bot を使えるように設定する LINE@ MANAGER から以下の感じに Bot を設定する。 API を利用する Webhook を利用する グループトーク参加を利用する 自動応答メッセージを利用しない 友だち追加時あいさつを利用しない 基本設定アカウントページメニュー非表示 LINE Bot と友だちになってグループトークを作成 QR コードから"><meta property=og:url content=https://blog.5000164.jp/2017/8/14/line-bot/><meta property=og:image content=https://blog.5000164.jp/icon.png><meta property=og:site_name content="5000164 is here"><meta name=twitter:card content=summary><meta name=twitter:title content="AWS Lambda の Python 3.6 で LINE Bot を動かす | 5000164 is here"><meta name=twitter:description content="目的 LINE Bot を使って生活を少し便利にしたい。 背景 最近 LINE をよく使ってるから。 なんかちょっとしたメモとか簡単に確認したいなーと思ったから。 たまたま AWS Lambda の料金を調べたら思っていたよりも安かったので使ってみたくなったから。 この記事のスタートとゴール スタートは、 LINE をすでに使っているが、 API などは使ったことがないところ。 ゴールは、 LINE のグループチャットで特定の発言をしたら特定の内容を返してくれるところ。 LINE Bot を使えるように登録する Messaging API の登録をする。 Messaging APIのご紹介 | LINE Business Center Developer Trial を選ぶ。 LINE BOTの作り方を世界一わかりやすく解説（１）【アカウント準備編】 - Qiita LINE Bot を使えるように設定する LINE@ MANAGER から以下の感じに Bot を設定する。 API を利用する Webhook を利用する グループトーク参加を利用する 自動応答メッセージを利用しない 友だち追加時あいさつを利用しない 基本設定アカウントページメニュー非表示 LINE Bot と友だちになってグループトークを作成 QR コードから"><meta name=twitter:url content=https://blog.5000164.jp/2017/8/14/line-bot/><meta name=twitter:image content=https://blog.5000164.jp/icon.png><meta name=twitter:site content=@5000164><meta name=twitter:creator content=@5000164><style>html{width:100%;height:100%;margin:0;font-size:62.5%;font-family:-apple-system,BlinkMacSystemFont,helvetica neue,ヒラギノ角ゴ pron w3,hiragino kaku gothic pron,sans-serif;font-kerning:normal;font-feature-settings:"palt";letter-spacing:.02rem;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body{width:100%;height:100%;margin:0;font-size:1.8rem;line-height:1.73;color:#454654;background-color:#fff}@media(max-width:640px){body{line-height:1.9}}header{height:15vw}@media(max-width:640px){header{height:50vw}}header>a{display:block;margin:-2.5vw 0 0 -3vw;font-size:24vw;line-height:1;text-align-last:justify;letter-spacing:-5vw;transform-origin:top center;transform:scaleY(.5);color:#818398;text-decoration:none;white-space:nowrap}@media(max-width:640px){header>a{margin:-10.5vw 0 0 -3vw;transform:scaleY(2)}}header>a:visited{color:#818398}header>a::before,header>a::after{content:"";display:inline-block;position:absolute;top:21vw;width:0;height:.5vw;background:#c3ffde;transition:.2s ease-out}@media(max-width:640px){header>a::before,header>a::after{height:.4vw}}header>a::before{left:50%}header>a::after{right:50%}header>a:hover::before,header>a:hover::after{width:50%}footer{width:600px;margin:80px auto}footer .writer{text-align:right;letter-spacing:-.2rem}footer .about{margin-top:200px}footer .year{margin-top:80px}@media(max-width:640px){footer{width:95%}}a{color:#454654}a:visited{color:#73758c}.articles{width:600px;list-style:none;margin:0 auto 20px;padding:0}@media(max-width:640px){.articles{width:95%}}.articles>li{margin:60px 0}.articles>li>a{display:grid;grid-template-columns:110px 1fr;grid-gap:2vw}.articles>li>a>div:first-child{text-align:right;white-space:nowrap}.articles>li>a>div:last-child{white-space:pre-wrap;word-break:break-all;word-wrap:break-word}.title{margin:40px 0}h1{width:600px;margin:0 auto;font-size:3rem;font-weight:700}@media(max-width:640px){h1{width:95%}}.date{width:600px;margin:0 auto;text-align:right}@media(max-width:640px){.date{width:95%}}.content{margin:40px 0}.content p{width:600px;margin:40px auto}@media(max-width:640px){.content p{width:95%}}.content p:first-child{margin-top:0}.content p:last-child{margin-bottom:0}.content h2{width:600px;margin:120px auto 20px;font-size:2.4rem;font-weight:700}@media(max-width:640px){.content h2{width:95%}}.content h2:first-child{margin-top:0}.content h2+p{margin-top:0}.content h2+h2{margin-top:0}.content h4{width:600px;margin:10px auto;font-size:1.8rem;font-weight:400;text-align:center}@media(max-width:640px){.content h4{width:95%}}.content ul,.content ol{width:580px;margin:auto;padding-left:20px}@media(max-width:640px){.content ul,.content ol{width:90%;padding-left:5%}}.content figure{width:600px;margin:auto}@media(max-width:640px){.content figure{width:95%}}.content img{display:block;max-width:600px;margin:0 auto}@media(max-width:640px){.content img{max-width:95%}}.content blockquote{width:600px;margin:20px auto}@media(max-width:640px){.content blockquote{width:95%}}.content blockquote>p{position:relative;width:580px;padding-left:20px}@media(max-width:640px){.content blockquote>p{width:96%;padding-left:4%}}.content blockquote>p::before{content:"";display:block;position:absolute;top:0;left:0;width:4px;height:100%;background:#e3e4e6;border-radius:8px}.content .highlight{margin:40px 0;background-color:#272822}.content .highlight>div{max-width:100%;margin:0 auto}.content .highlight table{display:flex!important;justify-content:center;align-items:center}.content .highlight tbody{min-width:600px;max-width:98%}@media(max-width:640px){.content .highlight tbody{min-width:95%;max-width:95%}}</style><link href=/favicon.ico rel=icon><meta name=generator content="Hugo 0.47"></head><body><header><a href=https://blog.5000164.jp/>5000164 is here</a></header><article><div class=title><div class=date>2017.8.14</div><h1>AWS Lambda の Python 3.6 で LINE Bot を動かす</h1></div><div class=content><h2 id=目的>目的</h2><p>LINE Bot を使って生活を少し便利にしたい。<h2 id=背景>背景</h2><p>最近 LINE をよく使ってるから。<br>なんかちょっとしたメモとか簡単に確認したいなーと思ったから。<br>たまたま AWS Lambda の料金を調べたら思っていたよりも安かったので使ってみたくなったから。<h2 id=この記事のスタートとゴール>この記事のスタートとゴール</h2><p>スタートは、 LINE をすでに使っているが、 API などは使ったことがないところ。<br>ゴールは、 LINE のグループチャットで特定の発言をしたら特定の内容を返してくれるところ。<h2 id=line-bot-を使えるように登録する>LINE Bot を使えるように登録する</h2><p>Messaging API の登録をする。<ul><li><a href=https://business.line.me/ja/services/bot>Messaging APIのご紹介 | LINE Business Center</a></ul><p>Developer Trial を選ぶ。<ul><li><a href=http://qiita.com/yoshizaki_kkgk/items/bd4277d3943200beab26>LINE BOTの作り方を世界一わかりやすく解説（１）【アカウント準備編】 - Qiita</a></ul><h2 id=line-bot-を使えるように設定する>LINE Bot を使えるように設定する</h2><p>LINE@ MANAGER から以下の感じに Bot を設定する。<ul><li>API を利用する<li>Webhook を利用する<li>グループトーク参加を利用する<li>自動応答メッセージを利用しない<li>友だち追加時あいさつを利用しない<li>基本設定アカウントページメニュー非表示</ul><h2 id=line-bot-と友だちになってグループトークを作成>LINE Bot と友だちになってグループトークを作成</h2><p>QR コードから友だち追加する。<ul><li><a href=http://whippet-818.hatenablog.com/entry/2017/02/07/004558>LINE Messaging APIを使用したLINE Botの作り方 - george’s ぶろぐ</a></ul><p>友だちになったらグループトークを作成して追加する。<h2 id=aws-lambda-と-amazon-api-gateway-を作成する>AWS Lambda と Amazon API Gateway を作成する</h2><p>記事を参考にしながら AWS Lambda と Amazon API Gateway を作成する。<ul><li><a href=http://qiita.com/kooohei/items/650c331f95f83072f4d6>Line botをAWS LambdaとAPI Gatewayでアモーレ！！- 実装編 - Qiita</a><br><li><a href=http://qiita.com/toshihirock/items/8720118164a02dfdd11a>API Gatewayを使ってアクセスキー認証でLambdaを実行する - Qiita</a><br></ul><h2 id=url-に直接アクセスして-hello-from-lambda-を表示する>URL に直接アクセスして Hello from Lambda を表示する</h2><p>そのままではうまく動かなかった。<br>いろいろ見ていたら「LAMBDA_PROXY」のところが違うということに気付いた。<ul><li><a href=https://cloudpack.media/15956>&ldquo;API Gateway&rdquo;のバックエンドを&rdquo;Lambda&rdquo;にしてJSONデータをエコーさせる | cloudpack.media</a></ul><p>調べたら新たに追加された機能らしい。<br>似たような現象を見つけて、レスポンスの返し方が違うと気付く。<ul><li><a href=http://aile.hatenablog.com/entry/2016/09/23/220522>AWS API Gateway Lambda proxy integration を使う - うさぎ駆動開発</a></ul><p>公式のサンプルが見つけられなかったけど、この記事のように <code>statusCode</code> と <code>body</code> を入れたら動いた。<ul><li><a href=http://webscale.plumbing/python-lambda-api-gateway-proxy>Python Lambda Proxy for API Gateway</a></ul><p>この段階でのコードは下記。<br>これでブラウザでアクセスすることで <code>Hello from Lambda</code> と表示される。<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">2
+</span></code></pre><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>lambda_handler</span>(event, context):
+    <span style=color:#66d9ef>return</span> {<span style=color:#e6db74>&#39;statusCode&#39;</span>: <span style=color:#ae81ff>200</span>, <span style=color:#e6db74>&#39;body&#39;</span>: <span style=color:#e6db74>&#39;Hello from Lambda&#39;</span>}</code></pre></table></div></div><p>「Lambda プロキシ統合の使用」のオプションを外したら最初のままのコードでも動いたが、このオプションを付けた方が楽な部分があるらしい？ので付けたままにしておく。<h2 id=line-からのリクエストを受け取れるようにする>LINE からのリクエストを受け取れるようにする</h2><p>LINE developers の Webhook URL にさきほど作成した Amazon API Gateway の URL を登録する。<br>この時に <code>amazonaws.com:443</code> のように HTTPS のポート番号を付けないとうまくいかない、らしい。<br>Webhook URL を設定したら Bot のいるグループチャットで発言をして CloudWatch にログが出ることを確認する。<h2 id=line-に発言する>LINE に発言する</h2><p>Python なので Requests とか使えたら楽だけど、サードパーティーのライブラリは zip でアップロードしたりという操作が必要なようだったので、今回は標準の機能だけでやる。<p>環境変数に LINE developers の Channel Secret と Channel Access Token をセットする。<br>KMS というやつを使った方がセキュアらしいんですがちょっとよくわかりませんでしたすいません。<ul><li><a href=http://qiita.com/TakashiKOYANAGAWA/items/30352b288b23c8c8daae>AWS Lambda環境変数対応をお触り - Qiita</a></ul><p>ここで <code>event</code> の中身を取ろうとしたら、なんかうまく取れない。<br>記事によって書いてあることもまちまちでよくわからない。<ul><li><a href=http://www.kazuweb.asia/aws/lambda/chatbot>LINE Messaging API と AWS Lambda で LINE BOT を作ってみた</a><br><li><a href=http://blog.livedoor.jp/sce_info3-craft/archives/9508633.html>LINE Bot APIの使ってLINEからメッセージを送ることで自宅のエアコンの電源を入れられるようにするシステム(AWS利用)を試作してみる : 工作と競馬</a><br><li><a href=https://techblog.recochoku.jp/1835>LINE Messaging APIを試してみた | レコチョクのエンジニアブログ</a></ul><p>なのでまずはログを残すことにした。<br>とても簡単にログが残せて CloudWatch が使えてすごい便利ー、ってなりました。<br>こういう恩恵が受けられるのがサーバーレスアーキテクチャーなのかなーとかちょっと思ったよくわかってないけど。<ul><li><a href=http://docs.aws.amazon.com/ja_jp/lambda/latest/dg/python-logging.html>ログ記録 (Python) - AWS Lambda</a></ul><p>ログを残して見てみた結果、 <code>event</code> は dict で <code>event</code> が持ってる <code>body</code> の中身が JSON の文字列だということがわかりました。<br>なので、他のサイトでやっているように events をループで回したいってなったら以下の方法でいけることがわかった。<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">2
+</span></code></pre><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>for</span> event <span style=color:#f92672>in</span> json<span style=color:#f92672>.</span>loads(event[<span style=color:#e6db74>&#39;body&#39;</span>])[<span style=color:#e6db74>&#39;events&#39;</span>]:
+    <span style=color:#75715e># なにか処理</span></code></pre></table></div></div><p>ここまで来たらあとは LINE に POST を送れば発言できる。<ul><li><a href=http://qiita.com/neko_the_shadow/items/324976c7b54623e82b26>Python3のスクリプトでjsonをPOSTする - Qiita</a></ul><p>現時点でのコードは下記のような感じ。<br>発言を受け取ったらただ <code>test</code> と発言するだけ。<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">28
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">29
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">30
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">31
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">32
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">33
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">34
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">35
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">36
+</span></code></pre><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> logging
+
+<span style=color:#f92672>import</span> os
+<span style=color:#f92672>import</span> urllib.request<span style=color:#f92672>,</span> urllib.parse
+<span style=color:#f92672>import</span> json
+
+logger <span style=color:#f92672>=</span> logging<span style=color:#f92672>.</span>getLogger()
+logger<span style=color:#f92672>.</span>setLevel(logging<span style=color:#f92672>.</span>INFO)
+
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>lambda_handler</span>(request, context):
     
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-51024599-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>AWS Lambda の Python 3.6 で LINE Bot を動かす | 5000164 is here</title>
-    <meta name="description" content="目的 LINE Bot を使って生活を少し便利にしたい。 背景 最近 LINE をよく使ってるから。 なんかちょっとしたメモとか簡単に確認したいなーと思ったから。 たまたま AWS Lambda の料金を調べたら思っていたよりも安かったので使ってみたくなったから。 この記事のスタートとゴール スタートは、 LINE をすでに使っているが、 API などは使ったことがないところ。 ゴールは、 LINE のグループチャットで特定の発言をしたら特定の内容を返してくれるところ。 LINE Bot を使えるように登録する Messaging API の登録をする。 Messaging APIのご紹介 | LINE Business Center Developer Trial を選ぶ。 LINE BOTの作り方を世界一わかりやすく解説（１）【アカウント準備編】 - Qiita LINE Bot を使えるように設定する LINE@ MANAGER から以下の感じに Bot を設定する。 API を利用する Webhook を利用する グループトーク参加を利用する 自動応答メッセージを利用しない 友だち追加時あいさつを利用しない 基本設定アカウントページメニュー非表示 LINE Bot と友だちになってグループトークを作成 QR コードから">
-    <link href="https://blog.5000164.jp/2017/8/14/line-bot/" rel="canonical">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="AWS Lambda の Python 3.6 で LINE Bot を動かす | 5000164 is here">
-    <meta property="og:description" content="目的 LINE Bot を使って生活を少し便利にしたい。 背景 最近 LINE をよく使ってるから。 なんかちょっとしたメモとか簡単に確認したいなーと思ったから。 たまたま AWS Lambda の料金を調べたら思っていたよりも安かったので使ってみたくなったから。 この記事のスタートとゴール スタートは、 LINE をすでに使っているが、 API などは使ったことがないところ。 ゴールは、 LINE のグループチャットで特定の発言をしたら特定の内容を返してくれるところ。 LINE Bot を使えるように登録する Messaging API の登録をする。 Messaging APIのご紹介 | LINE Business Center Developer Trial を選ぶ。 LINE BOTの作り方を世界一わかりやすく解説（１）【アカウント準備編】 - Qiita LINE Bot を使えるように設定する LINE@ MANAGER から以下の感じに Bot を設定する。 API を利用する Webhook を利用する グループトーク参加を利用する 自動応答メッセージを利用しない 友だち追加時あいさつを利用しない 基本設定アカウントページメニュー非表示 LINE Bot と友だちになってグループトークを作成 QR コードから">
-    <meta property="og:url" content="https://blog.5000164.jp/2017/8/14/line-bot/">
-    <meta property="og:image" content="https://blog.5000164.jp/icon.png">
-    <meta property="og:site_name" content="5000164 is here">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="AWS Lambda の Python 3.6 で LINE Bot を動かす | 5000164 is here">
-    <meta name="twitter:description" content="目的 LINE Bot を使って生活を少し便利にしたい。 背景 最近 LINE をよく使ってるから。 なんかちょっとしたメモとか簡単に確認したいなーと思ったから。 たまたま AWS Lambda の料金を調べたら思っていたよりも安かったので使ってみたくなったから。 この記事のスタートとゴール スタートは、 LINE をすでに使っているが、 API などは使ったことがないところ。 ゴールは、 LINE のグループチャットで特定の発言をしたら特定の内容を返してくれるところ。 LINE Bot を使えるように登録する Messaging API の登録をする。 Messaging APIのご紹介 | LINE Business Center Developer Trial を選ぶ。 LINE BOTの作り方を世界一わかりやすく解説（１）【アカウント準備編】 - Qiita LINE Bot を使えるように設定する LINE@ MANAGER から以下の感じに Bot を設定する。 API を利用する Webhook を利用する グループトーク参加を利用する 自動応答メッセージを利用しない 友だち追加時あいさつを利用しない 基本設定アカウントページメニュー非表示 LINE Bot と友だちになってグループトークを作成 QR コードから">
-    <meta name="twitter:url" content="https://blog.5000164.jp/2017/8/14/line-bot/">
-    <meta name="twitter:image" content="https://blog.5000164.jp/icon.png">
-    <meta name="twitter:site" content="@5000164">
-    <meta name="twitter:creator" content="@5000164">
-    <style type="text/css">html{width:100%;height:100%;margin:0;font-size:62.5%;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN",sans-serif;font-kerning:normal;font-feature-settings:"palt";letter-spacing:.02rem;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body{width:100%;height:100%;margin:0;font-size:1.8rem;line-height:1.73;color:#454654;background-color:#fff}@media(max-width:640px){body{line-height:1.9}}header{height:15vw}@media(max-width:640px){header{height:50vw}}header>a{display:block;margin:-2.5vw 0 0 -3vw;font-size:24vw;line-height:1;text-align-last:justify;letter-spacing:-5vw;transform-origin:top center;transform:scaleY(0.5);color:#818398;text-decoration:none;white-space:nowrap}@media(max-width:640px){header>a{margin:-10.5vw 0 0 -3vw;transform:scaleY(2)}}header>a:visited{color:#818398}header>a::before,header>a::after{content:"";display:inline-block;position:absolute;top:21vw;width:0;height:.5vw;background:#c3ffde;transition:.2s ease-out}@media(max-width:640px){header>a::before,header>a::after{height:.4vw}}header>a::before{left:50%}header>a::after{right:50%}header>a:hover::before,header>a:hover::after{width:50%}footer{width:600px;margin:80px auto}footer .writer{text-align:right;letter-spacing:-0.2rem}footer .about{margin-top:200px}footer .year{margin-top:80px}@media(max-width:640px){footer{width:95%}}a{color:#454654}a:visited{color:#73758c}.articles{width:600px;list-style:none;margin:0 auto 20px;padding:0}@media(max-width:640px){.articles{width:95%}}.articles>li{margin:60px 0}.articles>li>a{display:grid;grid-template-columns:110px 1fr;grid-gap:2vw}.articles>li>a>div:first-child{text-align:right;white-space:nowrap}.articles>li>a>div:last-child{white-space:pre-wrap;word-break:break-all;word-wrap:break-word}.title{margin:40px 0}h1{width:600px;margin:0 auto;font-size:3rem;font-weight:bold}@media(max-width:640px){h1{width:95%}}.date{width:600px;margin:0 auto;text-align:right}@media(max-width:640px){.date{width:95%}}.content{margin:40px 0}.content p{width:600px;margin:40px auto}@media(max-width:640px){.content p{width:95%}}.content p:first-child{margin-top:0}.content p:last-child{margin-bottom:0}.content h2{width:600px;margin:120px auto 20px;font-size:2.4rem;font-weight:bold}@media(max-width:640px){.content h2{width:95%}}.content h2:first-child{margin-top:0}.content h2+p{margin-top:0}.content h2+h2{margin-top:0}.content h4{width:600px;margin:10px auto 10px;font-size:1.8rem;font-weight:normal;text-align:center}@media(max-width:640px){.content h4{width:95%}}.content ul,.content ol{width:580px;margin:auto;padding-left:20px}@media(max-width:640px){.content ul,.content ol{width:90%;padding-left:5%}}.content figure{width:600px;margin:auto}@media(max-width:640px){.content figure{width:95%}}.content img{display:block;max-width:600px;margin:0 auto}@media(max-width:640px){.content img{max-width:95%}}.content blockquote{width:600px;margin:20px auto}@media(max-width:640px){.content blockquote{width:95%}}.content blockquote>p{position:relative;width:580px;padding-left:20px}@media(max-width:640px){.content blockquote>p{width:96%;padding-left:4%}}.content blockquote>p::before{content:"";display:block;position:absolute;top:0;left:0;width:4px;height:100%;background:#e3e4e6;border-radius:8px}.content .highlight{margin:40px 0;background-color:#272822}.content .highlight>div{max-width:100%;margin:0 auto}.content .highlight table{display:flex !important;justify-content:center;align-items:center}.content .highlight tbody{min-width:600px;max-width:98%}@media(max-width:640px){.content .highlight tbody{min-width:95%;max-width:95%}}</style>
-    <link href="/favicon.ico" rel="icon">
-    <meta name="generator" content="Hugo 0.47" />
-</head>
-<body>
-<header>
-    <a href="https://blog.5000164.jp/">5000164 is here</a>
-</header>
-
-<article>
-    <div class="title">
-        <div class="date">2017.8.14</div>
-        <h1>AWS Lambda の Python 3.6 で LINE Bot を動かす</h1>
-    </div>
-    <div class="content">
+    logger<span style=color:#f92672>.</span>info(request)
+    
+    <span style=color:#66d9ef>for</span> event <span style=color:#f92672>in</span> json<span style=color:#f92672>.</span>loads(request[<span style=color:#e6db74>&#39;body&#39;</span>])[<span style=color:#e6db74>&#39;events&#39;</span>]:
+        logger<span style=color:#f92672>.</span>info(json<span style=color:#f92672>.</span>dumps(event))
         
-
-<h2 id="目的">目的</h2>
-
-<p>LINE Bot を使って生活を少し便利にしたい。</p>
-
-<h2 id="背景">背景</h2>
-
-<p>最近 LINE をよく使ってるから。<br />
-なんかちょっとしたメモとか簡単に確認したいなーと思ったから。<br />
-たまたま AWS Lambda の料金を調べたら思っていたよりも安かったので使ってみたくなったから。</p>
-
-<h2 id="この記事のスタートとゴール">この記事のスタートとゴール</h2>
-
-<p>スタートは、 LINE をすでに使っているが、 API などは使ったことがないところ。<br />
-ゴールは、 LINE のグループチャットで特定の発言をしたら特定の内容を返してくれるところ。</p>
-
-<h2 id="line-bot-を使えるように登録する">LINE Bot を使えるように登録する</h2>
-
-<p>Messaging API の登録をする。</p>
-
-<ul>
-<li><a href="https://business.line.me/ja/services/bot">Messaging APIのご紹介 | LINE Business Center</a></li>
-</ul>
-
-<p>Developer Trial を選ぶ。</p>
-
-<ul>
-<li><a href="http://qiita.com/yoshizaki_kkgk/items/bd4277d3943200beab26">LINE BOTの作り方を世界一わかりやすく解説（１）【アカウント準備編】 - Qiita</a></li>
-</ul>
-
-<h2 id="line-bot-を使えるように設定する">LINE Bot を使えるように設定する</h2>
-
-<p>LINE@ MANAGER から以下の感じに Bot を設定する。</p>
-
-<ul>
-<li>API を利用する</li>
-<li>Webhook を利用する</li>
-<li>グループトーク参加を利用する</li>
-<li>自動応答メッセージを利用しない</li>
-<li>友だち追加時あいさつを利用しない</li>
-<li>基本設定アカウントページメニュー非表示</li>
-</ul>
-
-<h2 id="line-bot-と友だちになってグループトークを作成">LINE Bot と友だちになってグループトークを作成</h2>
-
-<p>QR コードから友だち追加する。</p>
-
-<ul>
-<li><a href="http://whippet-818.hatenablog.com/entry/2017/02/07/004558">LINE Messaging APIを使用したLINE Botの作り方 - george’s ぶろぐ</a></li>
-</ul>
-
-<p>友だちになったらグループトークを作成して追加する。</p>
-
-<h2 id="aws-lambda-と-amazon-api-gateway-を作成する">AWS Lambda と Amazon API Gateway を作成する</h2>
-
-<p>記事を参考にしながら AWS Lambda と Amazon API Gateway を作成する。</p>
-
-<ul>
-<li><a href="http://qiita.com/kooohei/items/650c331f95f83072f4d6">Line botをAWS LambdaとAPI Gatewayでアモーレ！！- 実装編 - Qiita</a><br /></li>
-<li><a href="http://qiita.com/toshihirock/items/8720118164a02dfdd11a">API Gatewayを使ってアクセスキー認証でLambdaを実行する - Qiita</a><br /></li>
-</ul>
-
-<h2 id="url-に直接アクセスして-hello-from-lambda-を表示する">URL に直接アクセスして Hello from Lambda を表示する</h2>
-
-<p>そのままではうまく動かなかった。<br />
-いろいろ見ていたら「LAMBDA_PROXY」のところが違うということに気付いた。</p>
-
-<ul>
-<li><a href="https://cloudpack.media/15956">&ldquo;API Gateway&rdquo;のバックエンドを&rdquo;Lambda&rdquo;にしてJSONデータをエコーさせる | cloudpack.media</a></li>
-</ul>
-
-<p>調べたら新たに追加された機能らしい。<br />
-似たような現象を見つけて、レスポンスの返し方が違うと気付く。</p>
-
-<ul>
-<li><a href="http://aile.hatenablog.com/entry/2016/09/23/220522">AWS API Gateway Lambda proxy integration を使う - うさぎ駆動開発</a></li>
-</ul>
-
-<p>公式のサンプルが見つけられなかったけど、この記事のように <code>statusCode</code> と <code>body</code> を入れたら動いた。</p>
-
-<ul>
-<li><a href="http://webscale.plumbing/python-lambda-api-gateway-proxy">Python Lambda Proxy for API Gateway</a></li>
-</ul>
-
-<p>この段階でのコードは下記。<br />
-これでブラウザでアクセスすることで <code>Hello from Lambda</code> と表示される。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lambda_handler</span>(event, context):
-    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#39;statusCode&#39;</span>: <span style="color:#ae81ff">200</span>, <span style="color:#e6db74">&#39;body&#39;</span>: <span style="color:#e6db74">&#39;Hello from Lambda&#39;</span>}</code></pre></td></tr></table>
-</div>
-</div>
-<p>「Lambda プロキシ統合の使用」のオプションを外したら最初のままのコードでも動いたが、このオプションを付けた方が楽な部分があるらしい？ので付けたままにしておく。</p>
-
-<h2 id="line-からのリクエストを受け取れるようにする">LINE からのリクエストを受け取れるようにする</h2>
-
-<p>LINE developers の Webhook URL にさきほど作成した Amazon API Gateway の URL を登録する。<br />
-この時に <code>amazonaws.com:443</code> のように HTTPS のポート番号を付けないとうまくいかない、らしい。<br />
-Webhook URL を設定したら Bot のいるグループチャットで発言をして CloudWatch にログが出ることを確認する。</p>
-
-<h2 id="line-に発言する">LINE に発言する</h2>
-
-<p>Python なので Requests とか使えたら楽だけど、サードパーティーのライブラリは zip でアップロードしたりという操作が必要なようだったので、今回は標準の機能だけでやる。</p>
-
-<p>環境変数に LINE developers の Channel Secret と Channel Access Token をセットする。<br />
-KMS というやつを使った方がセキュアらしいんですがちょっとよくわかりませんでしたすいません。</p>
-
-<ul>
-<li><a href="http://qiita.com/TakashiKOYANAGAWA/items/30352b288b23c8c8daae">AWS Lambda環境変数対応をお触り - Qiita</a></li>
-</ul>
-
-<p>ここで <code>event</code> の中身を取ろうとしたら、なんかうまく取れない。<br />
-記事によって書いてあることもまちまちでよくわからない。</p>
-
-<ul>
-<li><a href="http://www.kazuweb.asia/aws/lambda/chatbot">LINE Messaging API と AWS Lambda で LINE BOT を作ってみた</a><br /></li>
-<li><a href="http://blog.livedoor.jp/sce_info3-craft/archives/9508633.html">LINE Bot APIの使ってLINEからメッセージを送ることで自宅のエアコンの電源を入れられるようにするシステム(AWS利用)を試作してみる : 工作と競馬</a><br /></li>
-<li><a href="https://techblog.recochoku.jp/1835">LINE Messaging APIを試してみた | レコチョクのエンジニアブログ</a></li>
-</ul>
-
-<p>なのでまずはログを残すことにした。<br />
-とても簡単にログが残せて CloudWatch が使えてすごい便利ー、ってなりました。<br />
-こういう恩恵が受けられるのがサーバーレスアーキテクチャーなのかなーとかちょっと思ったよくわかってないけど。</p>
-
-<ul>
-<li><a href="http://docs.aws.amazon.com/ja_jp/lambda/latest/dg/python-logging.html">ログ記録 (Python) - AWS Lambda</a></li>
-</ul>
-
-<p>ログを残して見てみた結果、 <code>event</code> は dict で <code>event</code> が持ってる <code>body</code> の中身が JSON の文字列だということがわかりました。<br />
-なので、他のサイトでやっているように events をループで回したいってなったら以下の方法でいけることがわかった。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> event <span style="color:#f92672">in</span> json<span style="color:#f92672">.</span>loads(event[<span style="color:#e6db74">&#39;body&#39;</span>])[<span style="color:#e6db74">&#39;events&#39;</span>]:
-    <span style="color:#75715e"># なにか処理</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>ここまで来たらあとは LINE に POST を送れば発言できる。</p>
-
-<ul>
-<li><a href="http://qiita.com/neko_the_shadow/items/324976c7b54623e82b26">Python3のスクリプトでjsonをPOSTする - Qiita</a></li>
-</ul>
-
-<p>現時点でのコードは下記のような感じ。<br />
-発言を受け取ったらただ <code>test</code> と発言するだけ。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">36
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> logging
-
-<span style="color:#f92672">import</span> os
-<span style="color:#f92672">import</span> urllib.request<span style="color:#f92672">,</span> urllib.parse
-<span style="color:#f92672">import</span> json
-
-logger <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>getLogger()
-logger<span style="color:#f92672">.</span>setLevel(logging<span style="color:#f92672">.</span>INFO)
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lambda_handler</span>(request, context):
-    
-    logger<span style="color:#f92672">.</span>info(request)
-    
-    <span style="color:#66d9ef">for</span> event <span style="color:#f92672">in</span> json<span style="color:#f92672">.</span>loads(request[<span style="color:#e6db74">&#39;body&#39;</span>])[<span style="color:#e6db74">&#39;events&#39;</span>]:
-        logger<span style="color:#f92672">.</span>info(json<span style="color:#f92672">.</span>dumps(event))
-        
-        url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://api.line.me/v2/bot/message/reply&#39;</span>
-        headers <span style="color:#f92672">=</span> {
-            <span style="color:#e6db74">&#39;Content-Type&#39;</span>: <span style="color:#e6db74">&#39;application/json&#39;</span>,
-            <span style="color:#e6db74">&#39;Authorization&#39;</span>: <span style="color:#e6db74">&#39;Bearer &#39;</span> <span style="color:#f92672">+</span> os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#39;LINE_CHANNEL_ACCESS_TOKEN&#39;</span>]
+        url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;https://api.line.me/v2/bot/message/reply&#39;</span>
+        headers <span style=color:#f92672>=</span> {
+            <span style=color:#e6db74>&#39;Content-Type&#39;</span>: <span style=color:#e6db74>&#39;application/json&#39;</span>,
+            <span style=color:#e6db74>&#39;Authorization&#39;</span>: <span style=color:#e6db74>&#39;Bearer &#39;</span> <span style=color:#f92672>+</span> os<span style=color:#f92672>.</span>environ[<span style=color:#e6db74>&#39;LINE_CHANNEL_ACCESS_TOKEN&#39;</span>]
         }
-        body <span style="color:#f92672">=</span> {
-            <span style="color:#e6db74">&#39;replyToken&#39;</span>: event[<span style="color:#e6db74">&#39;replyToken&#39;</span>],
-            <span style="color:#e6db74">&#39;messages&#39;</span>: [
+        body <span style=color:#f92672>=</span> {
+            <span style=color:#e6db74>&#39;replyToken&#39;</span>: event[<span style=color:#e6db74>&#39;replyToken&#39;</span>],
+            <span style=color:#e6db74>&#39;messages&#39;</span>: [
                 {
-                    <span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;text&#34;</span>,
-                    <span style="color:#e6db74">&#34;text&#34;</span>: <span style="color:#e6db74">&#34;test&#34;</span>,
+                    <span style=color:#e6db74>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;text&#34;</span>,
+                    <span style=color:#e6db74>&#34;text&#34;</span>: <span style=color:#e6db74>&#34;test&#34;</span>,
                 }
             ]
         }
         
-        req <span style="color:#f92672">=</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>Request(url, data<span style="color:#f92672">=</span>json<span style="color:#f92672">.</span>dumps(body)<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>), method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;POST&#39;</span>, headers<span style="color:#f92672">=</span>headers)
-        <span style="color:#66d9ef">with</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>urlopen(req) <span style="color:#66d9ef">as</span> res:
-            logger<span style="color:#f92672">.</span>info(res<span style="color:#f92672">.</span>read()<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#34;utf-8&#34;</span>))
+        req <span style=color:#f92672>=</span> urllib<span style=color:#f92672>.</span>request<span style=color:#f92672>.</span>Request(url, data<span style=color:#f92672>=</span>json<span style=color:#f92672>.</span>dumps(body)<span style=color:#f92672>.</span>encode(<span style=color:#e6db74>&#39;utf-8&#39;</span>), method<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;POST&#39;</span>, headers<span style=color:#f92672>=</span>headers)
+        <span style=color:#66d9ef>with</span> urllib<span style=color:#f92672>.</span>request<span style=color:#f92672>.</span>urlopen(req) <span style=color:#66d9ef>as</span> res:
+            logger<span style=color:#f92672>.</span>info(res<span style=color:#f92672>.</span>read()<span style=color:#f92672>.</span>decode(<span style=color:#e6db74>&#34;utf-8&#34;</span>))
     
-    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#39;statusCode&#39;</span>: <span style="color:#ae81ff">200</span>, <span style="color:#e6db74">&#39;body&#39;</span>: <span style="color:#e6db74">&#39;{}&#39;</span>}</code></pre></td></tr></table>
-</div>
-</div>
-<p><code>def lambda_handler(request, context):</code> の部分は <code>event</code> っていう変数名が使いたかったので第一引数の変数名を <code>request</code> に変更。<br />
-これの <code>&quot;text&quot;: &quot;test&quot;,</code> の部分を <code>&quot;text&quot;: event['message']['text'],</code> と変えるとオウム返しを行うことができる。<br />
-<code>logger.info(json.dumps(event))</code> みたいな感じで JSON 文字列としてログに残しておくと CloudWatch が勝手にログを整形して表示してくれるので便利。</p>
+    <span style=color:#66d9ef>return</span> {<span style=color:#e6db74>&#39;statusCode&#39;</span>: <span style=color:#ae81ff>200</span>, <span style=color:#e6db74>&#39;body&#39;</span>: <span style=color:#e6db74>&#39;{}&#39;</span>}</code></pre></table></div></div><p><code>def lambda_handler(request, context):</code> の部分は <code>event</code> っていう変数名が使いたかったので第一引数の変数名を <code>request</code> に変更。<br>これの <code>&quot;text&quot;: &quot;test&quot;,</code> の部分を <code>&quot;text&quot;: event['message']['text'],</code> と変えるとオウム返しを行うことができる。<br><code>logger.info(json.dumps(event))</code> みたいな感じで JSON 文字列としてログに残しておくと CloudWatch が勝手にログを整形して表示してくれるので便利。<h2 id=特定の内容の時だけ反応するようにする>特定の内容の時だけ反応するようにする</h2><p>ここまできたらあとは作れば動くという感じなので簡単。<br><code>event['message']['text']</code> が発言内容を持っているのでループの最初で下記のように特定の発言以外を弾くようにしてあげればいい。<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">2
+</span></code></pre><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>if</span> event[<span style=color:#e6db74>&#39;message&#39;</span>][<span style=color:#e6db74>&#39;text&#39;</span>] <span style=color:#f92672>!=</span> <span style=color:#e6db74>&#39;memo&#39;</span>:
+    <span style=color:#66d9ef>continue</span></code></pre></table></div></div><h2 id=特定の発言者にだけ反応するようにする>特定の発言者にだけ反応するようにする</h2><p>こちらも同じような感じ。<br>発言者のユーザー ID が <code>event['source']['userId']</code> で取れるので、特定のユーザー ID 以外を弾くようにする。<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">2
+</span></code></pre><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>if</span> event[<span style=color:#e6db74>&#39;source&#39;</span>][<span style=color:#e6db74>&#39;userId&#39;</span>] <span style=color:#f92672>!=</span> <span style=color:#e6db74>&#39;userId&#39;</span>:
+    <span style=color:#66d9ef>continue</span></code></pre></table></div></div><h2 id=リクエストの検証を行う>リクエストの検証を行う</h2><p>サーバーの公開されている API に送られたリクエストのうち、 LINE からきたリクエストだけを信用するようにする。<br>この検証を行わないと LINE 以外からのリクエストにも反応してしまう。<br>個人の認証が LINE からのリクエストの検証と、ユーザー ID の特定だけで、信頼できるものなのかどうかはわからないので別途調査が必要。<br>リクエストの検証自体はサンプルを元に簡単に実装することができた。<br>Amazon API Gateway のテスト機能が便利だった。<ul><li><a href=https://devdocs.line.me/ja/>LINE API Reference</a><br><li><a href=https://blog.ultica.jp/archives/6>1時間でLINE BOTを作ってみた – Ultica Blog – ウルチカ ブログ –</a></ul><h2 id=あらかじめ用意しておいたメモを特定の発言で返してくれる-bot-の完成>あらかじめ用意しておいたメモを特定の発言で返してくれる Bot の完成</h2><p>いろいろ調整して最終的にできあがったコードがこちら。<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">28
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">29
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">30
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">31
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">32
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">33
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">34
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">35
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">36
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">37
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">38
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">39
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">40
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">41
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">42
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">43
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">44
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">45
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">46
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">47
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">48
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">49
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">50
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">51
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">52
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">53
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">54
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">55
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">56
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">57
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">58
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">59
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">60
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">61
+</span></code></pre><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> logging
 
-<h2 id="特定の内容の時だけ反応するようにする">特定の内容の時だけ反応するようにする</h2>
+<span style=color:#f92672>import</span> os
+<span style=color:#f92672>import</span> urllib.request<span style=color:#f92672>,</span> urllib.parse
+<span style=color:#f92672>import</span> json
 
-<p>ここまできたらあとは作れば動くという感じなので簡単。<br />
-<code>event['message']['text']</code> が発言内容を持っているのでループの最初で下記のように特定の発言以外を弾くようにしてあげればいい。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> event[<span style="color:#e6db74">&#39;message&#39;</span>][<span style="color:#e6db74">&#39;text&#39;</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;memo&#39;</span>:
-    <span style="color:#66d9ef">continue</span></code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="特定の発言者にだけ反応するようにする">特定の発言者にだけ反応するようにする</h2>
+<span style=color:#f92672>import</span> base64
+<span style=color:#f92672>import</span> hashlib
+<span style=color:#f92672>import</span> hmac
 
-<p>こちらも同じような感じ。<br />
-発言者のユーザー ID が <code>event['source']['userId']</code> で取れるので、特定のユーザー ID 以外を弾くようにする。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> event[<span style="color:#e6db74">&#39;source&#39;</span>][<span style="color:#e6db74">&#39;userId&#39;</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;userId&#39;</span>:
-    <span style="color:#66d9ef">continue</span></code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="リクエストの検証を行う">リクエストの検証を行う</h2>
+logger <span style=color:#f92672>=</span> logging<span style=color:#f92672>.</span>getLogger()
+logger<span style=color:#f92672>.</span>setLevel(logging<span style=color:#f92672>.</span>INFO)
 
-<p>サーバーの公開されている API に送られたリクエストのうち、 LINE からきたリクエストだけを信用するようにする。<br />
-この検証を行わないと LINE 以外からのリクエストにも反応してしまう。<br />
-個人の認証が LINE からのリクエストの検証と、ユーザー ID の特定だけで、信頼できるものなのかどうかはわからないので別途調査が必要。<br />
-リクエストの検証自体はサンプルを元に簡単に実装することができた。<br />
-Amazon API Gateway のテスト機能が便利だった。</p>
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>lambda_handler</span>(request, context):
 
-<ul>
-<li><a href="https://devdocs.line.me/ja/">LINE API Reference</a><br /></li>
-<li><a href="https://blog.ultica.jp/archives/6">1時間でLINE BOTを作ってみた – Ultica Blog – ウルチカ ブログ –</a></li>
-</ul>
+    <span style=color:#75715e># リクエストの検証を行う</span>
+    channel_secret <span style=color:#f92672>=</span> os<span style=color:#f92672>.</span>environ[<span style=color:#e6db74>&#39;LINE_CHANNEL_SECRET&#39;</span>]
+    body <span style=color:#f92672>=</span> request<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;body&#39;</span>, <span style=color:#e6db74>&#39;&#39;</span>)
+    hash <span style=color:#f92672>=</span> hmac<span style=color:#f92672>.</span>new(channel_secret<span style=color:#f92672>.</span>encode(<span style=color:#e6db74>&#39;utf-8&#39;</span>), body<span style=color:#f92672>.</span>encode(<span style=color:#e6db74>&#39;utf-8&#39;</span>), hashlib<span style=color:#f92672>.</span>sha256)<span style=color:#f92672>.</span>digest()
+    signature <span style=color:#f92672>=</span> base64<span style=color:#f92672>.</span>b64encode(hash)<span style=color:#f92672>.</span>decode(<span style=color:#e6db74>&#39;utf-8&#39;</span>)
 
-<h2 id="あらかじめ用意しておいたメモを特定の発言で返してくれる-bot-の完成">あらかじめ用意しておいたメモを特定の発言で返してくれる Bot の完成</h2>
+    <span style=color:#75715e># LINE 以外からのアクセスだった場合は処理を終了させる</span>
+    <span style=color:#66d9ef>if</span> signature <span style=color:#f92672>!=</span> request<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;headers&#39;</span>)<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;X-Line-Signature&#39;</span>, <span style=color:#e6db74>&#39;&#39;</span>):
+        logger<span style=color:#f92672>.</span>info(f<span style=color:#e6db74>&#39;LINE 以外からのアクセス request={request}&#39;</span>)
+        <span style=color:#66d9ef>return</span> {<span style=color:#e6db74>&#39;statusCode&#39;</span>: <span style=color:#ae81ff>200</span>, <span style=color:#e6db74>&#39;body&#39;</span>: <span style=color:#e6db74>&#39;{}&#39;</span>}
 
-<p>いろいろ調整して最終的にできあがったコードがこちら。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">61
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> logging
+    <span style=color:#66d9ef>for</span> event <span style=color:#f92672>in</span> json<span style=color:#f92672>.</span>loads(body)<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#39;events&#39;</span>, []):
 
-<span style="color:#f92672">import</span> os
-<span style="color:#f92672">import</span> urllib.request<span style="color:#f92672">,</span> urllib.parse
-<span style="color:#f92672">import</span> json
+        <span style=color:#75715e># 発言者を絞り込む</span>
+        <span style=color:#66d9ef>if</span> event[<span style=color:#e6db74>&#39;source&#39;</span>][<span style=color:#e6db74>&#39;userId&#39;</span>] <span style=color:#f92672>!=</span> <span style=color:#e6db74>&#39;userId&#39;</span>:
+            <span style=color:#66d9ef>continue</span>
 
-<span style="color:#f92672">import</span> base64
-<span style="color:#f92672">import</span> hashlib
-<span style="color:#f92672">import</span> hmac
+        <span style=color:#75715e># 反応する発言内容を絞り込む</span>
+        <span style=color:#66d9ef>if</span> event[<span style=color:#e6db74>&#39;message&#39;</span>][<span style=color:#e6db74>&#39;text&#39;</span>] <span style=color:#f92672>!=</span> <span style=color:#e6db74>&#39;memo&#39;</span>:
+            <span style=color:#66d9ef>continue</span>
 
-logger <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>getLogger()
-logger<span style="color:#f92672">.</span>setLevel(logging<span style="color:#f92672">.</span>INFO)
+        logger<span style=color:#f92672>.</span>info(json<span style=color:#f92672>.</span>dumps(request))
+        logger<span style=color:#f92672>.</span>info(json<span style=color:#f92672>.</span>dumps(event))
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lambda_handler</span>(request, context):
-
-    <span style="color:#75715e"># リクエストの検証を行う</span>
-    channel_secret <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#39;LINE_CHANNEL_SECRET&#39;</span>]
-    body <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;body&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
-    hash <span style="color:#f92672">=</span> hmac<span style="color:#f92672">.</span>new(channel_secret<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>), body<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>), hashlib<span style="color:#f92672">.</span>sha256)<span style="color:#f92672">.</span>digest()
-    signature <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64encode(hash)<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
-
-    <span style="color:#75715e"># LINE 以外からのアクセスだった場合は処理を終了させる</span>
-    <span style="color:#66d9ef">if</span> signature <span style="color:#f92672">!=</span> request<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;headers&#39;</span>)<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;X-Line-Signature&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>):
-        logger<span style="color:#f92672">.</span>info(f<span style="color:#e6db74">&#39;LINE 以外からのアクセス request={request}&#39;</span>)
-        <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#39;statusCode&#39;</span>: <span style="color:#ae81ff">200</span>, <span style="color:#e6db74">&#39;body&#39;</span>: <span style="color:#e6db74">&#39;{}&#39;</span>}
-
-    <span style="color:#66d9ef">for</span> event <span style="color:#f92672">in</span> json<span style="color:#f92672">.</span>loads(body)<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;events&#39;</span>, []):
-
-        <span style="color:#75715e"># 発言者を絞り込む</span>
-        <span style="color:#66d9ef">if</span> event[<span style="color:#e6db74">&#39;source&#39;</span>][<span style="color:#e6db74">&#39;userId&#39;</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;userId&#39;</span>:
-            <span style="color:#66d9ef">continue</span>
-
-        <span style="color:#75715e"># 反応する発言内容を絞り込む</span>
-        <span style="color:#66d9ef">if</span> event[<span style="color:#e6db74">&#39;message&#39;</span>][<span style="color:#e6db74">&#39;text&#39;</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;memo&#39;</span>:
-            <span style="color:#66d9ef">continue</span>
-
-        logger<span style="color:#f92672">.</span>info(json<span style="color:#f92672">.</span>dumps(request))
-        logger<span style="color:#f92672">.</span>info(json<span style="color:#f92672">.</span>dumps(event))
-
-        <span style="color:#75715e"># LINE に発言する</span>
-        url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://api.line.me/v2/bot/message/reply&#39;</span>
-        headers <span style="color:#f92672">=</span> {
-            <span style="color:#e6db74">&#39;Content-Type&#39;</span>: <span style="color:#e6db74">&#39;application/json&#39;</span>,
-            <span style="color:#e6db74">&#39;Authorization&#39;</span>: <span style="color:#e6db74">&#39;Bearer &#39;</span> <span style="color:#f92672">+</span> os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#39;LINE_CHANNEL_ACCESS_TOKEN&#39;</span>],
+        <span style=color:#75715e># LINE に発言する</span>
+        url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;https://api.line.me/v2/bot/message/reply&#39;</span>
+        headers <span style=color:#f92672>=</span> {
+            <span style=color:#e6db74>&#39;Content-Type&#39;</span>: <span style=color:#e6db74>&#39;application/json&#39;</span>,
+            <span style=color:#e6db74>&#39;Authorization&#39;</span>: <span style=color:#e6db74>&#39;Bearer &#39;</span> <span style=color:#f92672>+</span> os<span style=color:#f92672>.</span>environ[<span style=color:#e6db74>&#39;LINE_CHANNEL_ACCESS_TOKEN&#39;</span>],
         }
-        body <span style="color:#f92672">=</span> {
-            <span style="color:#e6db74">&#39;replyToken&#39;</span>: event[<span style="color:#e6db74">&#39;replyToken&#39;</span>],
-            <span style="color:#e6db74">&#39;messages&#39;</span>: [
+        body <span style=color:#f92672>=</span> {
+            <span style=color:#e6db74>&#39;replyToken&#39;</span>: event[<span style=color:#e6db74>&#39;replyToken&#39;</span>],
+            <span style=color:#e6db74>&#39;messages&#39;</span>: [
                 {
-                    <span style="color:#e6db74">&#39;type&#39;</span>: <span style="color:#e6db74">&#39;text&#39;</span>,
-                    <span style="color:#e6db74">&#39;text&#39;</span>: <span style="color:#e6db74">&#39;memo</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">返してもらいたいメモの内容をここに書く&#39;</span>,
+                    <span style=color:#e6db74>&#39;type&#39;</span>: <span style=color:#e6db74>&#39;text&#39;</span>,
+                    <span style=color:#e6db74>&#39;text&#39;</span>: <span style=color:#e6db74>&#39;memo</span><span style=color:#ae81ff>\n\n</span><span style=color:#e6db74>返してもらいたいメモの内容をここに書く&#39;</span>,
                 }
             ]
         }
-        req <span style="color:#f92672">=</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>Request(url, data<span style="color:#f92672">=</span>json<span style="color:#f92672">.</span>dumps(body)<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>), method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;POST&#39;</span>, headers<span style="color:#f92672">=</span>headers)
-        <span style="color:#66d9ef">with</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>urlopen(req) <span style="color:#66d9ef">as</span> res:
-            res_body <span style="color:#f92672">=</span> res<span style="color:#f92672">.</span>read()<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
-            <span style="color:#66d9ef">if</span> res_body <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;{}&#39;</span>:
-                logger<span style="color:#f92672">.</span>info(res_body)
+        req <span style=color:#f92672>=</span> urllib<span style=color:#f92672>.</span>request<span style=color:#f92672>.</span>Request(url, data<span style=color:#f92672>=</span>json<span style=color:#f92672>.</span>dumps(body)<span style=color:#f92672>.</span>encode(<span style=color:#e6db74>&#39;utf-8&#39;</span>), method<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;POST&#39;</span>, headers<span style=color:#f92672>=</span>headers)
+        <span style=color:#66d9ef>with</span> urllib<span style=color:#f92672>.</span>request<span style=color:#f92672>.</span>urlopen(req) <span style=color:#66d9ef>as</span> res:
+            res_body <span style=color:#f92672>=</span> res<span style=color:#f92672>.</span>read()<span style=color:#f92672>.</span>decode(<span style=color:#e6db74>&#39;utf-8&#39;</span>)
+            <span style=color:#66d9ef>if</span> res_body <span style=color:#f92672>!=</span> <span style=color:#e6db74>&#39;{}&#39;</span>:
+                logger<span style=color:#f92672>.</span>info(res_body)
 
-    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#39;statusCode&#39;</span>: <span style="color:#ae81ff">200</span>, <span style="color:#e6db74">&#39;body&#39;</span>: <span style="color:#e6db74">&#39;{}&#39;</span>}</code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="感想">感想</h2>
-
-<p>最近 Python を触っているのでなにも考えずに Python を選択したが、思ったよりも情報が少なくて大変だった。<br />
-bot 作るのって楽しい。<br />
-AWS Lambda を触ってみれてよかった。<br />
-もうちょい機能とか足して個人用に便利にしていきたい。<br />
-こんな感じでコード書いてったらひどいことになりそうだから、 AWS Lambda でうまいこと整理する方法を知りたい。</p>
-
-    </div>
-</article>
-<footer>
-    <div class="writer">
-        <div>菅原 浩</div>
-    </div>
-    <div class="about">
-        <div>プロフィール</div>
-        <div><a href="https://github.com/5000164/profile">詳細はこちら</a></div>
-    </div>
-    <div class="year">
-        <div>年別記事一覧</div>
-        <ul>
-            
-            <li>
-    <a href="https://blog.5000164.jp/2012/">
-        <div>2012</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2013/">
-        <div>2013</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2014/">
-        <div>2014</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2015/">
-        <div>2015</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2016/">
-        <div>2016</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2017/">
-        <div>2017</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2018/">
-        <div>2018</div>
-    </a>
-</li>
-
-            
-        </ul>
-    </div>
-</footer>
-</body>
-</html>
-
+    <span style=color:#66d9ef>return</span> {<span style=color:#e6db74>&#39;statusCode&#39;</span>: <span style=color:#ae81ff>200</span>, <span style=color:#e6db74>&#39;body&#39;</span>: <span style=color:#e6db74>&#39;{}&#39;</span>}</code></pre></table></div></div><h2 id=感想>感想</h2><p>最近 Python を触っているのでなにも考えずに Python を選択したが、思ったよりも情報が少なくて大変だった。<br>bot 作るのって楽しい。<br>AWS Lambda を触ってみれてよかった。<br>もうちょい機能とか足して個人用に便利にしていきたい。<br>こんな感じでコード書いてったらひどいことになりそうだから、 AWS Lambda でうまいこと整理する方法を知りたい。</div></article><footer><div class=writer><div>菅原 浩</div></div><div class=about><div>プロフィール</div><div><a href=https://github.com/5000164/profile>詳細はこちら</a></div></div><div class=year><div>年別記事一覧</div><ul><li><a href=https://blog.5000164.jp/2012/><div>2012</div></a><li><a href=https://blog.5000164.jp/2013/><div>2013</div></a><li><a href=https://blog.5000164.jp/2014/><div>2014</div></a><li><a href=https://blog.5000164.jp/2015/><div>2015</div></a><li><a href=https://blog.5000164.jp/2016/><div>2016</div></a><li><a href=https://blog.5000164.jp/2017/><div>2017</div></a><li><a href=https://blog.5000164.jp/2018/><div>2018</div></a></ul></div></footer></body></html>

@@ -1,286 +1,31 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-51024599-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!doctype html><html lang=ja><head><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-51024599-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Scala の SSL / TLS 通信の中身を見る | 5000164 is here</title><meta name=description content='Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy("localhost", 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 2018.5.28 追記 HttpURLConnectionBackend のデフォルト引数が options: SttpBackendOptions = SttpBackendOptions.Default となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるので 1 val backend: SttpBackend[Id, Nothing] = HttpURLConnectionBackend() のままでいい。 Charles は起動時に自動でシステムのプロキシー設定を書き換えてくれるので、設定がそのまま反映される。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信'><link href=https://blog.5000164.jp/2018/1/5/view-scala-traffic/ rel=canonical><meta property=og:type content=article><meta property=og:title content="Scala の SSL / TLS 通信の中身を見る | 5000164 is here"><meta property=og:description content='Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy("localhost", 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 2018.5.28 追記 HttpURLConnectionBackend のデフォルト引数が options: SttpBackendOptions = SttpBackendOptions.Default となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるので 1 val backend: SttpBackend[Id, Nothing] = HttpURLConnectionBackend() のままでいい。 Charles は起動時に自動でシステムのプロキシー設定を書き換えてくれるので、設定がそのまま反映される。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信'><meta property=og:url content=https://blog.5000164.jp/2018/1/5/view-scala-traffic/><meta property=og:image content=https://blog.5000164.jp/icon.png><meta property=og:site_name content="5000164 is here"><meta name=twitter:card content=summary><meta name=twitter:title content="Scala の SSL / TLS 通信の中身を見る | 5000164 is here"><meta name=twitter:description content='Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy("localhost", 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 2018.5.28 追記 HttpURLConnectionBackend のデフォルト引数が options: SttpBackendOptions = SttpBackendOptions.Default となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるので 1 val backend: SttpBackend[Id, Nothing] = HttpURLConnectionBackend() のままでいい。 Charles は起動時に自動でシステムのプロキシー設定を書き換えてくれるので、設定がそのまま反映される。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信'><meta name=twitter:url content=https://blog.5000164.jp/2018/1/5/view-scala-traffic/><meta name=twitter:image content=https://blog.5000164.jp/icon.png><meta name=twitter:site content=@5000164><meta name=twitter:creator content=@5000164><style>html{width:100%;height:100%;margin:0;font-size:62.5%;font-family:-apple-system,BlinkMacSystemFont,helvetica neue,ヒラギノ角ゴ pron w3,hiragino kaku gothic pron,sans-serif;font-kerning:normal;font-feature-settings:"palt";letter-spacing:.02rem;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body{width:100%;height:100%;margin:0;font-size:1.8rem;line-height:1.73;color:#454654;background-color:#fff}@media(max-width:640px){body{line-height:1.9}}header{height:15vw}@media(max-width:640px){header{height:50vw}}header>a{display:block;margin:-2.5vw 0 0 -3vw;font-size:24vw;line-height:1;text-align-last:justify;letter-spacing:-5vw;transform-origin:top center;transform:scaleY(.5);color:#818398;text-decoration:none;white-space:nowrap}@media(max-width:640px){header>a{margin:-10.5vw 0 0 -3vw;transform:scaleY(2)}}header>a:visited{color:#818398}header>a::before,header>a::after{content:"";display:inline-block;position:absolute;top:21vw;width:0;height:.5vw;background:#c3ffde;transition:.2s ease-out}@media(max-width:640px){header>a::before,header>a::after{height:.4vw}}header>a::before{left:50%}header>a::after{right:50%}header>a:hover::before,header>a:hover::after{width:50%}footer{width:600px;margin:80px auto}footer .writer{text-align:right;letter-spacing:-.2rem}footer .about{margin-top:200px}footer .year{margin-top:80px}@media(max-width:640px){footer{width:95%}}a{color:#454654}a:visited{color:#73758c}.articles{width:600px;list-style:none;margin:0 auto 20px;padding:0}@media(max-width:640px){.articles{width:95%}}.articles>li{margin:60px 0}.articles>li>a{display:grid;grid-template-columns:110px 1fr;grid-gap:2vw}.articles>li>a>div:first-child{text-align:right;white-space:nowrap}.articles>li>a>div:last-child{white-space:pre-wrap;word-break:break-all;word-wrap:break-word}.title{margin:40px 0}h1{width:600px;margin:0 auto;font-size:3rem;font-weight:700}@media(max-width:640px){h1{width:95%}}.date{width:600px;margin:0 auto;text-align:right}@media(max-width:640px){.date{width:95%}}.content{margin:40px 0}.content p{width:600px;margin:40px auto}@media(max-width:640px){.content p{width:95%}}.content p:first-child{margin-top:0}.content p:last-child{margin-bottom:0}.content h2{width:600px;margin:120px auto 20px;font-size:2.4rem;font-weight:700}@media(max-width:640px){.content h2{width:95%}}.content h2:first-child{margin-top:0}.content h2+p{margin-top:0}.content h2+h2{margin-top:0}.content h4{width:600px;margin:10px auto;font-size:1.8rem;font-weight:400;text-align:center}@media(max-width:640px){.content h4{width:95%}}.content ul,.content ol{width:580px;margin:auto;padding-left:20px}@media(max-width:640px){.content ul,.content ol{width:90%;padding-left:5%}}.content figure{width:600px;margin:auto}@media(max-width:640px){.content figure{width:95%}}.content img{display:block;max-width:600px;margin:0 auto}@media(max-width:640px){.content img{max-width:95%}}.content blockquote{width:600px;margin:20px auto}@media(max-width:640px){.content blockquote{width:95%}}.content blockquote>p{position:relative;width:580px;padding-left:20px}@media(max-width:640px){.content blockquote>p{width:96%;padding-left:4%}}.content blockquote>p::before{content:"";display:block;position:absolute;top:0;left:0;width:4px;height:100%;background:#e3e4e6;border-radius:8px}.content .highlight{margin:40px 0;background-color:#272822}.content .highlight>div{max-width:100%;margin:0 auto}.content .highlight table{display:flex!important;justify-content:center;align-items:center}.content .highlight tbody{min-width:600px;max-width:98%}@media(max-width:640px){.content .highlight tbody{min-width:95%;max-width:95%}}</style><link href=/favicon.ico rel=icon><meta name=generator content="Hugo 0.47"></head><body><header><a href=https://blog.5000164.jp/>5000164 is here</a></header><article><div class=title><div class=date>2018.1.5</div><h1>Scala の SSL / TLS 通信の中身を見る</h1></div><div class=content><h2 id=scala-の通信の中身が見たい>Scala の通信の中身が見たい</h2><p>Scala で API を叩くコードを書いた。<br>ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。<h2 id=プロキシーを通す>プロキシーを通す</h2><p><a href=https://www.charlesproxy.com/>Charles</a> を使ってローカルにプロキシーを立てる。 (<a href=https://www.getpostman.com/>Postman</a> も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。)<br>HTTP 通信のライブラリとして <a href=https://github.com/softwaremill/sttp>sttp</a> を使用していたので <a href=http://sttp.readthedocs.io/en/latest/conf/proxy.html>プロキシーの設定方法</a> を参考にして下記のように設定する。<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scala data-lang=scala><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">1
+</span></code></pre><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scala data-lang=scala><span style=color:#66d9ef>val</span> backend <span style=color:#66d9ef>=</span> <span style=color:#a6e22e>HttpURLConnectionBackend</span><span style=color:#f92672>(</span>options <span style=color:#66d9ef>=</span> <span style=color:#a6e22e>SttpBackendOptions</span><span style=color:#f92672>.</span>httpProxy<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;localhost&#34;</span><span style=color:#f92672>,</span> <span style=color:#ae81ff>8888</span><span style=color:#f92672>))</span></code></pre></table></div></div><p>これだけで、 HTTP 通信の中身は見られるようになる。<h2 id=2018-5-28-追記>2018.5.28 追記</h2><p><code>HttpURLConnectionBackend</code> のデフォルト引数が <code>options: SttpBackendOptions = SttpBackendOptions.Default</code> となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるので<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scala data-lang=scala><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">1
+</span></code></pre><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scala data-lang=scala><span style=color:#66d9ef>val</span> backend<span style=color:#66d9ef>:</span> <span style=color:#66d9ef>SttpBackend</span><span style=color:#f92672>[</span><span style=color:#66d9ef>Id</span>, <span style=color:#66d9ef>Nothing</span><span style=color:#f92672>]</span> <span style=color:#66d9ef>=</span> <span style=color:#a6e22e>HttpURLConnectionBackend</span><span style=color:#f92672>()</span></code></pre></table></div></div><p>のままでいい。<br>Charles は起動時に自動でシステムのプロキシー設定を書き換えてくれるので、設定がそのまま反映される。<h2 id=ssl-tls-通信の中身を見えるようにする>SSL / TLS 通信の中身を見えるようにする</h2><p>SSL / TLS 通信の中身を見るための手順としては<ul><li>Charles の証明書を信頼したキーストアを生成する<li>生成したキーストアをアプリケーションから読み込む<li>Charles の SSL Proxy を有効にする</ul><p>となる。<h2 id=charles-の証明書を信頼したキーストアを生成する>Charles の証明書を信頼したキーストアを生成する</h2><p>まず Charles の証明書を取得する。<br>これはアプリケーションのメニューの <code>Help &gt; SSL Proxying &gt; Save Charles Root Certificate...</code> から取得できる。<br>拡張子は <code>Binary certificate (.cer)</code> で保存する。<br>保存したら取得した証明書を信頼したキーストアを生成する。<br>この時に普段使用されるキーストアを別の場所にコピーしてから作業を行うことで環境を汚さないようにした。<br>普段使用されるキーストアは jdk の中にあり、自分の場合は <code>$(/usr/libexec/java_home)/lib/security/cacerts</code> にあった。<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">1
+</span></code></pre><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>keytool -keystore cacerts -importcert -alias charles -file charles-ssl-proxying-certificate.cer</code></pre></table></div></div><p>また、この時に <code>keytool -list -keystore cacerts</code> のようにして内容を表示して追加されたかどうか確認することができる。<h2 id=生成したキーストアをアプリケーションから読み込む>生成したキーストアをアプリケーションから読み込む</h2><p>先ほど作成したキーストアをアプリケーションから読み込む。<br>実行環境としては IntelliJ IDEA で Scala を動かしている。<br>設定方法が環境変数に指定する方法しかわからなかったので環境変数に設定を行う。<br>下記のような内容を実行時の <code>VM parameters</code> に設定する。<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">1
+</span></code></pre><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>-Djavax.net.ssl.keyStore<span style=color:#f92672>=</span>/path/to/cacerts -Djavax.net.ssl.keyStorePassword<span style=color:#f92672>=</span>changeit -Djavax.net.ssl.trustStore<span style=color:#f92672>=</span>/path/to/cacerts -Djavax.net.ssl.trustStorePassword<span style=color:#f92672>=</span>changeit</code></pre></table></div></div><p><code>/path/to/cacerts</code> には先ほど作成したキーストアへのパスを指定する。<h2 id=2018-5-28-追記-1>2018.5.28 追記</h2><p>sbt から実行する場合は<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">1
+</span></code></pre><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>SBT_OPTS<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;-Djavax.net.ssl.keyStore=/path/to/cacerts -Djavax.net.ssl.keyStorePassword=changeit -Djavax.net.ssl.trustStore=/path/to/cacerts -Djavax.net.ssl.trustStorePassword=changeit&#34;</span> sbt run</code></pre></table></div></div><p>のようにする。<h2 id=charles-の-ssl-proxy-を有効にする>Charles の SSL Proxy を有効にする</h2><p>証明書を設定することで通信を行えるようにはなるが、このままでは通信の内容を見ることはできない。<br>通信の内容を見るために Charles の SSL Proxy の設定を有効にする。<br>メニューの <code>Proxy &gt; SSL Proxying Settings...</code> から設定画面を開き、 <code>Enable SSL Proxying</code> を有効にして対象のドメインを追加する。<br>これで SSL / TLS の通信の内容を見ることができるようになる。<h2 id=感想>感想</h2><p>なにをどうすれば通信の中身が見えるようになるのか全然わからない状態で調べ始めたけど、調べたらなんとかなってよかった。<br>通信の中身が見えるの便利。<h2 id=ハマったことのメモ>ハマったことのメモ</h2><ul><li>Scala に javaOptions を設定する方法がわからなかった<ul><li>build.sbt に書いても動かなかった<ul><li>IntelliJ IDEA 経由で実行してたからっぽい？ <code>sbt run</code> したら動いた</ul></ul><li>下記の方法で javaOptions の中身が表示できるけど仕組みはわかってない<ul><li>これのおかげで javaOptions に設定できたと思ってたけどできてなかった、というところが問題だと気付くことができた</ul></ul><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scala data-lang=scala><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">13
+</span></code></pre><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scala data-lang=scala><span style=color:#75715e>// import what we need
+</span><span style=color:#75715e></span><span style=color:#66d9ef>import</span> java.lang.management.ManagementFactory
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Scala の SSL / TLS 通信の中身を見る | 5000164 is here</title>
-    <meta name="description" content="Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy(&#34;localhost&#34;, 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 2018.5.28 追記 HttpURLConnectionBackend のデフォルト引数が options: SttpBackendOptions = SttpBackendOptions.Default となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるので 1 val backend: SttpBackend[Id, Nothing] = HttpURLConnectionBackend() のままでいい。 Charles は起動時に自動でシステムのプロキシー設定を書き換えてくれるので、設定がそのまま反映される。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信">
-    <link href="https://blog.5000164.jp/2018/1/5/view-scala-traffic/" rel="canonical">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Scala の SSL / TLS 通信の中身を見る | 5000164 is here">
-    <meta property="og:description" content="Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy(&#34;localhost&#34;, 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 2018.5.28 追記 HttpURLConnectionBackend のデフォルト引数が options: SttpBackendOptions = SttpBackendOptions.Default となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるので 1 val backend: SttpBackend[Id, Nothing] = HttpURLConnectionBackend() のままでいい。 Charles は起動時に自動でシステムのプロキシー設定を書き換えてくれるので、設定がそのまま反映される。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信">
-    <meta property="og:url" content="https://blog.5000164.jp/2018/1/5/view-scala-traffic/">
-    <meta property="og:image" content="https://blog.5000164.jp/icon.png">
-    <meta property="og:site_name" content="5000164 is here">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Scala の SSL / TLS 通信の中身を見る | 5000164 is here">
-    <meta name="twitter:description" content="Scala の通信の中身が見たい Scala で API を叩くコードを書いた。 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。 プロキシーを通す Charles を使ってローカルにプロキシーを立てる。 (Postman も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。) HTTP 通信のライブラリとして sttp を使用していたので プロキシーの設定方法 を参考にして下記のように設定する。 1 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy(&#34;localhost&#34;, 8888)) これだけで、 HTTP 通信の中身は見られるようになる。 2018.5.28 追記 HttpURLConnectionBackend のデフォルト引数が options: SttpBackendOptions = SttpBackendOptions.Default となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるので 1 val backend: SttpBackend[Id, Nothing] = HttpURLConnectionBackend() のままでいい。 Charles は起動時に自動でシステムのプロキシー設定を書き換えてくれるので、設定がそのまま反映される。 SSL / TLS 通信の中身を見えるようにする SSL / TLS 通信の中身を見るための手順としては Charles の証明書を信">
-    <meta name="twitter:url" content="https://blog.5000164.jp/2018/1/5/view-scala-traffic/">
-    <meta name="twitter:image" content="https://blog.5000164.jp/icon.png">
-    <meta name="twitter:site" content="@5000164">
-    <meta name="twitter:creator" content="@5000164">
-    <style type="text/css">html{width:100%;height:100%;margin:0;font-size:62.5%;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN",sans-serif;font-kerning:normal;font-feature-settings:"palt";letter-spacing:.02rem;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body{width:100%;height:100%;margin:0;font-size:1.8rem;line-height:1.73;color:#454654;background-color:#fff}@media(max-width:640px){body{line-height:1.9}}header{height:15vw}@media(max-width:640px){header{height:50vw}}header>a{display:block;margin:-2.5vw 0 0 -3vw;font-size:24vw;line-height:1;text-align-last:justify;letter-spacing:-5vw;transform-origin:top center;transform:scaleY(0.5);color:#818398;text-decoration:none;white-space:nowrap}@media(max-width:640px){header>a{margin:-10.5vw 0 0 -3vw;transform:scaleY(2)}}header>a:visited{color:#818398}header>a::before,header>a::after{content:"";display:inline-block;position:absolute;top:21vw;width:0;height:.5vw;background:#c3ffde;transition:.2s ease-out}@media(max-width:640px){header>a::before,header>a::after{height:.4vw}}header>a::before{left:50%}header>a::after{right:50%}header>a:hover::before,header>a:hover::after{width:50%}footer{width:600px;margin:80px auto}footer .writer{text-align:right;letter-spacing:-0.2rem}footer .about{margin-top:200px}footer .year{margin-top:80px}@media(max-width:640px){footer{width:95%}}a{color:#454654}a:visited{color:#73758c}.articles{width:600px;list-style:none;margin:0 auto 20px;padding:0}@media(max-width:640px){.articles{width:95%}}.articles>li{margin:60px 0}.articles>li>a{display:grid;grid-template-columns:110px 1fr;grid-gap:2vw}.articles>li>a>div:first-child{text-align:right;white-space:nowrap}.articles>li>a>div:last-child{white-space:pre-wrap;word-break:break-all;word-wrap:break-word}.title{margin:40px 0}h1{width:600px;margin:0 auto;font-size:3rem;font-weight:bold}@media(max-width:640px){h1{width:95%}}.date{width:600px;margin:0 auto;text-align:right}@media(max-width:640px){.date{width:95%}}.content{margin:40px 0}.content p{width:600px;margin:40px auto}@media(max-width:640px){.content p{width:95%}}.content p:first-child{margin-top:0}.content p:last-child{margin-bottom:0}.content h2{width:600px;margin:120px auto 20px;font-size:2.4rem;font-weight:bold}@media(max-width:640px){.content h2{width:95%}}.content h2:first-child{margin-top:0}.content h2+p{margin-top:0}.content h2+h2{margin-top:0}.content h4{width:600px;margin:10px auto 10px;font-size:1.8rem;font-weight:normal;text-align:center}@media(max-width:640px){.content h4{width:95%}}.content ul,.content ol{width:580px;margin:auto;padding-left:20px}@media(max-width:640px){.content ul,.content ol{width:90%;padding-left:5%}}.content figure{width:600px;margin:auto}@media(max-width:640px){.content figure{width:95%}}.content img{display:block;max-width:600px;margin:0 auto}@media(max-width:640px){.content img{max-width:95%}}.content blockquote{width:600px;margin:20px auto}@media(max-width:640px){.content blockquote{width:95%}}.content blockquote>p{position:relative;width:580px;padding-left:20px}@media(max-width:640px){.content blockquote>p{width:96%;padding-left:4%}}.content blockquote>p::before{content:"";display:block;position:absolute;top:0;left:0;width:4px;height:100%;background:#e3e4e6;border-radius:8px}.content .highlight{margin:40px 0;background-color:#272822}.content .highlight>div{max-width:100%;margin:0 auto}.content .highlight table{display:flex !important;justify-content:center;align-items:center}.content .highlight tbody{min-width:600px;max-width:98%}@media(max-width:640px){.content .highlight tbody{min-width:95%;max-width:95%}}</style>
-    <link href="/favicon.ico" rel="icon">
-    <meta name="generator" content="Hugo 0.47" />
-</head>
-<body>
-<header>
-    <a href="https://blog.5000164.jp/">5000164 is here</a>
-</header>
+<span style=color:#66d9ef>import</span> scala.collection.JavaConverters._
 
-<article>
-    <div class="title">
-        <div class="date">2018.1.5</div>
-        <h1>Scala の SSL / TLS 通信の中身を見る</h1>
-    </div>
-    <div class="content">
-        
+<span style=color:#75715e>// get a RuntimeMXBean reference
+</span><span style=color:#75715e></span><span style=color:#66d9ef>val</span> runtimeMxBean <span style=color:#66d9ef>=</span> <span style=color:#a6e22e>ManagementFactory</span><span style=color:#f92672>.</span>getRuntimeMXBean
 
-<h2 id="scala-の通信の中身が見たい">Scala の通信の中身が見たい</h2>
+<span style=color:#75715e>// get the jvm&#39;s input arguments as a list of strings
+</span><span style=color:#75715e></span><span style=color:#66d9ef>val</span> listOfArguments <span style=color:#66d9ef>=</span> runtimeMxBean<span style=color:#f92672>.</span>getInputArguments<span style=color:#f92672>.</span>asScala
 
-<p>Scala で API を叩くコードを書いた。<br />
-ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。</p>
-
-<h2 id="プロキシーを通す">プロキシーを通す</h2>
-
-<p><a href="https://www.charlesproxy.com/">Charles</a> を使ってローカルにプロキシーを立てる。 (<a href="https://www.getpostman.com/">Postman</a> も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。)<br />
-HTTP 通信のライブラリとして <a href="https://github.com/softwaremill/sttp">sttp</a> を使用していたので <a href="http://sttp.readthedocs.io/en/latest/conf/proxy.html">プロキシーの設定方法</a> を参考にして下記のように設定する。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> backend <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">HttpURLConnectionBackend</span><span style="color:#f92672">(</span>options <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">SttpBackendOptions</span><span style="color:#f92672">.</span>httpProxy<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;localhost&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">8888</span><span style="color:#f92672">))</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>これだけで、 HTTP 通信の中身は見られるようになる。</p>
-
-<h2 id="2018-5-28-追記">2018.5.28 追記</h2>
-
-<p><code>HttpURLConnectionBackend</code> のデフォルト引数が <code>options: SttpBackendOptions = SttpBackendOptions.Default</code> となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるので</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> backend<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">SttpBackend</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Id</span>, <span style="color:#66d9ef">Nothing</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">HttpURLConnectionBackend</span><span style="color:#f92672">()</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>のままでいい。<br />
-Charles は起動時に自動でシステムのプロキシー設定を書き換えてくれるので、設定がそのまま反映される。</p>
-
-<h2 id="ssl-tls-通信の中身を見えるようにする">SSL / TLS 通信の中身を見えるようにする</h2>
-
-<p>SSL / TLS 通信の中身を見るための手順としては</p>
-
-<ul>
-<li>Charles の証明書を信頼したキーストアを生成する</li>
-<li>生成したキーストアをアプリケーションから読み込む</li>
-<li>Charles の SSL Proxy を有効にする</li>
-</ul>
-
-<p>となる。</p>
-
-<h2 id="charles-の証明書を信頼したキーストアを生成する">Charles の証明書を信頼したキーストアを生成する</h2>
-
-<p>まず Charles の証明書を取得する。<br />
-これはアプリケーションのメニューの <code>Help &gt; SSL Proxying &gt; Save Charles Root Certificate...</code> から取得できる。<br />
-拡張子は <code>Binary certificate (.cer)</code> で保存する。<br />
-保存したら取得した証明書を信頼したキーストアを生成する。<br />
-この時に普段使用されるキーストアを別の場所にコピーしてから作業を行うことで環境を汚さないようにした。<br />
-普段使用されるキーストアは jdk の中にあり、自分の場合は <code>$(/usr/libexec/java_home)/lib/security/cacerts</code> にあった。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">keytool -keystore cacerts -importcert -alias charles -file charles-ssl-proxying-certificate.cer</code></pre></td></tr></table>
-</div>
-</div>
-<p>また、この時に <code>keytool -list -keystore cacerts</code> のようにして内容を表示して追加されたかどうか確認することができる。</p>
-
-<h2 id="生成したキーストアをアプリケーションから読み込む">生成したキーストアをアプリケーションから読み込む</h2>
-
-<p>先ほど作成したキーストアをアプリケーションから読み込む。<br />
-実行環境としては IntelliJ IDEA で Scala を動かしている。<br />
-設定方法が環境変数に指定する方法しかわからなかったので環境変数に設定を行う。<br />
-下記のような内容を実行時の <code>VM parameters</code> に設定する。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">-Djavax.net.ssl.keyStore<span style="color:#f92672">=</span>/path/to/cacerts -Djavax.net.ssl.keyStorePassword<span style="color:#f92672">=</span>changeit -Djavax.net.ssl.trustStore<span style="color:#f92672">=</span>/path/to/cacerts -Djavax.net.ssl.trustStorePassword<span style="color:#f92672">=</span>changeit</code></pre></td></tr></table>
-</div>
-</div>
-<p><code>/path/to/cacerts</code> には先ほど作成したキーストアへのパスを指定する。</p>
-
-<h2 id="2018-5-28-追記-1">2018.5.28 追記</h2>
-
-<p>sbt から実行する場合は</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">SBT_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-Djavax.net.ssl.keyStore=/path/to/cacerts -Djavax.net.ssl.keyStorePassword=changeit -Djavax.net.ssl.trustStore=/path/to/cacerts -Djavax.net.ssl.trustStorePassword=changeit&#34;</span> sbt run</code></pre></td></tr></table>
-</div>
-</div>
-<p>のようにする。</p>
-
-<h2 id="charles-の-ssl-proxy-を有効にする">Charles の SSL Proxy を有効にする</h2>
-
-<p>証明書を設定することで通信を行えるようにはなるが、このままでは通信の内容を見ることはできない。<br />
-通信の内容を見るために Charles の SSL Proxy の設定を有効にする。<br />
-メニューの <code>Proxy &gt; SSL Proxying Settings...</code> から設定画面を開き、 <code>Enable SSL Proxying</code> を有効にして対象のドメインを追加する。<br />
-これで SSL / TLS の通信の内容を見ることができるようになる。</p>
-
-<h2 id="感想">感想</h2>
-
-<p>なにをどうすれば通信の中身が見えるようになるのか全然わからない状態で調べ始めたけど、調べたらなんとかなってよかった。<br />
-通信の中身が見えるの便利。</p>
-
-<h2 id="ハマったことのメモ">ハマったことのメモ</h2>
-
-<ul>
-<li>Scala に javaOptions を設定する方法がわからなかった
-
-<ul>
-<li>build.sbt に書いても動かなかった
-
-<ul>
-<li>IntelliJ IDEA 経由で実行してたからっぽい？ <code>sbt run</code> したら動いた</li>
-</ul></li>
-</ul></li>
-<li>下記の方法で javaOptions の中身が表示できるけど仕組みはわかってない
-
-<ul>
-<li>これのおかげで javaOptions に設定できたと思ってたけどできてなかった、というところが問題だと気付くことができた</li>
-</ul></li>
-</ul>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#75715e">// import what we need
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> java.lang.management.ManagementFactory
-
-<span style="color:#66d9ef">import</span> scala.collection.JavaConverters._
-
-<span style="color:#75715e">// get a RuntimeMXBean reference
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> runtimeMxBean <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">ManagementFactory</span><span style="color:#f92672">.</span>getRuntimeMXBean
-
-<span style="color:#75715e">// get the jvm&#39;s input arguments as a list of strings
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> listOfArguments <span style="color:#66d9ef">=</span> runtimeMxBean<span style="color:#f92672">.</span>getInputArguments<span style="color:#f92672">.</span>asScala
-
-<span style="color:#75715e">// print the arguments using my logger
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>a <span style="color:#66d9ef">&lt;-</span> listOfArguments<span style="color:#f92672">)</span> println<span style="color:#f92672">(</span><span style="color:#e6db74">s&#34;ARG: </span><span style="color:#e6db74">$a</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span></code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="参考になったリンク">参考になったリンク</h2>
-
-<ul>
-<li><a href="https://alvinalexander.com/java/how-see-jvm-parameters-arguments-from-running-java-application">How to read JVM parameters/arguments from within a running Java application | alvinalexander.com</a></li>
-<li><a href="http://kiririmode.hatenablog.jp/entry/20160611/1465570800">JavaのJSSEでクライアント証明書を自由に選択できるようにする - 理系学生日記</a></li>
-<li><a href="https://qiita.com/kompiro/items/25b2e01c2e9aaab7f67d">SSLクライアント証明書を使って通信する - Qiita</a></li>
-<li><a href="http://web.plus-idea.net/2012/10/java-ssl-keystore/">javaのプログラムから、自己証明書等を利用したサイトにSSL接続する | ぱーくん plus idea</a></li>
-<li><a href="https://gist.github.com/tomykaira/6862475">How to use personal SSL CA on connecting to MySQL from Scala (sbt)</a></li>
-<li><a href="https://docs.microsoft.com/ja-jp/azure/java-add-certificate-ca-store">Java CA ストアへの証明書の追加 | Microsoft Docs</a></li>
-<li><a href="https://www.qoosky.io/techs/9db75cec15">JDK keytool の基本的な使い方 (openssl との対比) - Qoosky</a></li>
-<li><a href="https://qiita.com/nenokido2000/items/b36b6e5f0854d7d63ba6">JavaにSSL証明書を追加する - Qiita</a></li>
-</ul>
-
-    </div>
-</article>
-<footer>
-    <div class="writer">
-        <div>菅原 浩</div>
-    </div>
-    <div class="about">
-        <div>プロフィール</div>
-        <div><a href="https://github.com/5000164/profile">詳細はこちら</a></div>
-    </div>
-    <div class="year">
-        <div>年別記事一覧</div>
-        <ul>
-            
-            <li>
-    <a href="https://blog.5000164.jp/2012/">
-        <div>2012</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2013/">
-        <div>2013</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2014/">
-        <div>2014</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2015/">
-        <div>2015</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2016/">
-        <div>2016</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2017/">
-        <div>2017</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2018/">
-        <div>2018</div>
-    </a>
-</li>
-
-            
-        </ul>
-    </div>
-</footer>
-</body>
-</html>
-
+<span style=color:#75715e>// print the arguments using my logger
+</span><span style=color:#75715e></span><span style=color:#66d9ef>for</span> <span style=color:#f92672>(</span>a <span style=color:#66d9ef>&lt;-</span> listOfArguments<span style=color:#f92672>)</span> println<span style=color:#f92672>(</span><span style=color:#e6db74>s&#34;ARG: </span><span style=color:#e6db74>$a</span><span style=color:#e6db74>&#34;</span><span style=color:#f92672>)</span></code></pre></table></div></div><h2 id=参考になったリンク>参考になったリンク</h2><ul><li><a href=https://alvinalexander.com/java/how-see-jvm-parameters-arguments-from-running-java-application>How to read JVM parameters/arguments from within a running Java application | alvinalexander.com</a><li><a href=http://kiririmode.hatenablog.jp/entry/20160611/1465570800>JavaのJSSEでクライアント証明書を自由に選択できるようにする - 理系学生日記</a><li><a href=https://qiita.com/kompiro/items/25b2e01c2e9aaab7f67d>SSLクライアント証明書を使って通信する - Qiita</a><li><a href=http://web.plus-idea.net/2012/10/java-ssl-keystore/>javaのプログラムから、自己証明書等を利用したサイトにSSL接続する | ぱーくん plus idea</a><li><a href=https://gist.github.com/tomykaira/6862475>How to use personal SSL CA on connecting to MySQL from Scala (sbt)</a><li><a href=https://docs.microsoft.com/ja-jp/azure/java-add-certificate-ca-store>Java CA ストアへの証明書の追加 | Microsoft Docs</a><li><a href=https://www.qoosky.io/techs/9db75cec15>JDK keytool の基本的な使い方 (openssl との対比) - Qoosky</a><li><a href=https://qiita.com/nenokido2000/items/b36b6e5f0854d7d63ba6>JavaにSSL証明書を追加する - Qiita</a></ul></div></article><footer><div class=writer><div>菅原 浩</div></div><div class=about><div>プロフィール</div><div><a href=https://github.com/5000164/profile>詳細はこちら</a></div></div><div class=year><div>年別記事一覧</div><ul><li><a href=https://blog.5000164.jp/2012/><div>2012</div></a><li><a href=https://blog.5000164.jp/2013/><div>2013</div></a><li><a href=https://blog.5000164.jp/2014/><div>2014</div></a><li><a href=https://blog.5000164.jp/2015/><div>2015</div></a><li><a href=https://blog.5000164.jp/2016/><div>2016</div></a><li><a href=https://blog.5000164.jp/2017/><div>2017</div></a><li><a href=https://blog.5000164.jp/2018/><div>2018</div></a></ul></div></footer></body></html>

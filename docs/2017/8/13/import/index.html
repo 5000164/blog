@@ -1,211 +1,28 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-51024599-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Jekyll の記事と WordPress の記事を Hugo にインポートする | 5000164 is here</title>
-    <meta name="description" content="背景 WordPress から Jekyll に移行した時に記事の移行が面倒で放っておいた。 Hugo に移行することにしたから Jekyll の記事と WordPress の記事を Hugo にインポートすることになった。 つらい。 Hugo に合わせた最終的な形式 こんな感じに統一することを目指す。 記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。 1 2 3 4 5 6 7 8 9 &#43;&#43;&#43;title = &#34;Jekyll の記事と WordPress の記事を Hugo にインポートする&#34;date = 2017-08-13T04:26:50&#43;09:00aliases = [&#34;/2017-08-import/&#34;]&#43;&#43;&#43;## 記事内容 つらつら 手順 実際に行ったインポート作業の内容はこちら。 Feature import article by 5000164 · Pull Request #2 · 5000164/blog WordPress の記事を Markdown 形式に変換する 最初は Jekyll に移行しようと思ってたのでこれを使いました。 benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll ファイル名を調整する なんか日付がたくさんついてたので年と月でディレクトリを分けてからファイル名をきれいにした。 1 2 brew install rename find . -name &#34;*.md&#34; | xargs rename &#39;s/\d\d\d\d-\d\d-\d\d-\d\d\d\d-\d\d-//&#39; Jekyll の記事の URL はファイル名に依存してたのでファイルの中に書き込む ファ">
-    <link href="https://blog.5000164.jp/2017/8/13/import/" rel="canonical">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Jekyll の記事と WordPress の記事を Hugo にインポートする | 5000164 is here">
-    <meta property="og:description" content="背景 WordPress から Jekyll に移行した時に記事の移行が面倒で放っておいた。 Hugo に移行することにしたから Jekyll の記事と WordPress の記事を Hugo にインポートすることになった。 つらい。 Hugo に合わせた最終的な形式 こんな感じに統一することを目指す。 記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。 1 2 3 4 5 6 7 8 9 &#43;&#43;&#43;title = &#34;Jekyll の記事と WordPress の記事を Hugo にインポートする&#34;date = 2017-08-13T04:26:50&#43;09:00aliases = [&#34;/2017-08-import/&#34;]&#43;&#43;&#43;## 記事内容 つらつら 手順 実際に行ったインポート作業の内容はこちら。 Feature import article by 5000164 · Pull Request #2 · 5000164/blog WordPress の記事を Markdown 形式に変換する 最初は Jekyll に移行しようと思ってたのでこれを使いました。 benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll ファイル名を調整する なんか日付がたくさんついてたので年と月でディレクトリを分けてからファイル名をきれいにした。 1 2 brew install rename find . -name &#34;*.md&#34; | xargs rename &#39;s/\d\d\d\d-\d\d-\d\d-\d\d\d\d-\d\d-//&#39; Jekyll の記事の URL はファイル名に依存してたのでファイルの中に書き込む ファ">
-    <meta property="og:url" content="https://blog.5000164.jp/2017/8/13/import/">
-    <meta property="og:image" content="https://blog.5000164.jp/icon.png">
-    <meta property="og:site_name" content="5000164 is here">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Jekyll の記事と WordPress の記事を Hugo にインポートする | 5000164 is here">
-    <meta name="twitter:description" content="背景 WordPress から Jekyll に移行した時に記事の移行が面倒で放っておいた。 Hugo に移行することにしたから Jekyll の記事と WordPress の記事を Hugo にインポートすることになった。 つらい。 Hugo に合わせた最終的な形式 こんな感じに統一することを目指す。 記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。 1 2 3 4 5 6 7 8 9 &#43;&#43;&#43;title = &#34;Jekyll の記事と WordPress の記事を Hugo にインポートする&#34;date = 2017-08-13T04:26:50&#43;09:00aliases = [&#34;/2017-08-import/&#34;]&#43;&#43;&#43;## 記事内容 つらつら 手順 実際に行ったインポート作業の内容はこちら。 Feature import article by 5000164 · Pull Request #2 · 5000164/blog WordPress の記事を Markdown 形式に変換する 最初は Jekyll に移行しようと思ってたのでこれを使いました。 benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll ファイル名を調整する なんか日付がたくさんついてたので年と月でディレクトリを分けてからファイル名をきれいにした。 1 2 brew install rename find . -name &#34;*.md&#34; | xargs rename &#39;s/\d\d\d\d-\d\d-\d\d-\d\d\d\d-\d\d-//&#39; Jekyll の記事の URL はファイル名に依存してたのでファイルの中に書き込む ファ">
-    <meta name="twitter:url" content="https://blog.5000164.jp/2017/8/13/import/">
-    <meta name="twitter:image" content="https://blog.5000164.jp/icon.png">
-    <meta name="twitter:site" content="@5000164">
-    <meta name="twitter:creator" content="@5000164">
-    <style type="text/css">html{width:100%;height:100%;margin:0;font-size:62.5%;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN",sans-serif;font-kerning:normal;font-feature-settings:"palt";letter-spacing:.02rem;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body{width:100%;height:100%;margin:0;font-size:1.8rem;line-height:1.73;color:#454654;background-color:#fff}@media(max-width:640px){body{line-height:1.9}}header{height:15vw}@media(max-width:640px){header{height:50vw}}header>a{display:block;margin:-2.5vw 0 0 -3vw;font-size:24vw;line-height:1;text-align-last:justify;letter-spacing:-5vw;transform-origin:top center;transform:scaleY(0.5);color:#818398;text-decoration:none;white-space:nowrap}@media(max-width:640px){header>a{margin:-10.5vw 0 0 -3vw;transform:scaleY(2)}}header>a:visited{color:#818398}header>a::before,header>a::after{content:"";display:inline-block;position:absolute;top:21vw;width:0;height:.5vw;background:#c3ffde;transition:.2s ease-out}@media(max-width:640px){header>a::before,header>a::after{height:.4vw}}header>a::before{left:50%}header>a::after{right:50%}header>a:hover::before,header>a:hover::after{width:50%}footer{width:600px;margin:80px auto}footer .writer{text-align:right;letter-spacing:-0.2rem}footer .about{margin-top:200px}footer .year{margin-top:80px}@media(max-width:640px){footer{width:95%}}a{color:#454654}a:visited{color:#73758c}.articles{width:600px;list-style:none;margin:0 auto 20px;padding:0}@media(max-width:640px){.articles{width:95%}}.articles>li{margin:60px 0}.articles>li>a{display:grid;grid-template-columns:110px 1fr;grid-gap:2vw}.articles>li>a>div:first-child{text-align:right;white-space:nowrap}.articles>li>a>div:last-child{white-space:pre-wrap;word-break:break-all;word-wrap:break-word}.title{margin:40px 0}h1{width:600px;margin:0 auto;font-size:3rem;font-weight:bold}@media(max-width:640px){h1{width:95%}}.date{width:600px;margin:0 auto;text-align:right}@media(max-width:640px){.date{width:95%}}.content{margin:40px 0}.content p{width:600px;margin:40px auto}@media(max-width:640px){.content p{width:95%}}.content p:first-child{margin-top:0}.content p:last-child{margin-bottom:0}.content h2{width:600px;margin:120px auto 20px;font-size:2.4rem;font-weight:bold}@media(max-width:640px){.content h2{width:95%}}.content h2:first-child{margin-top:0}.content h2+p{margin-top:0}.content h2+h2{margin-top:0}.content h4{width:600px;margin:10px auto 10px;font-size:1.8rem;font-weight:normal;text-align:center}@media(max-width:640px){.content h4{width:95%}}.content ul,.content ol{width:580px;margin:auto;padding-left:20px}@media(max-width:640px){.content ul,.content ol{width:90%;padding-left:5%}}.content figure{width:600px;margin:auto}@media(max-width:640px){.content figure{width:95%}}.content img{display:block;max-width:600px;margin:0 auto}@media(max-width:640px){.content img{max-width:95%}}.content blockquote{width:600px;margin:20px auto}@media(max-width:640px){.content blockquote{width:95%}}.content blockquote>p{position:relative;width:580px;padding-left:20px}@media(max-width:640px){.content blockquote>p{width:96%;padding-left:4%}}.content blockquote>p::before{content:"";display:block;position:absolute;top:0;left:0;width:4px;height:100%;background:#e3e4e6;border-radius:8px}.content .highlight{margin:40px 0;background-color:#272822}.content .highlight>div{max-width:100%;margin:0 auto}.content .highlight table{display:flex !important;justify-content:center;align-items:center}.content .highlight tbody{min-width:600px;max-width:98%}@media(max-width:640px){.content .highlight tbody{min-width:95%;max-width:95%}}</style>
-    <link href="/favicon.ico" rel="icon">
-    <meta name="generator" content="Hugo 0.47" />
-</head>
-<body>
-<header>
-    <a href="https://blog.5000164.jp/">5000164 is here</a>
-</header>
-
-<article>
-    <div class="title">
-        <div class="date">2017.8.13</div>
-        <h1>Jekyll の記事と WordPress の記事を Hugo にインポートする</h1>
-    </div>
-    <div class="content">
-        
-
-<h2 id="背景">背景</h2>
-
-<p>WordPress から Jekyll に移行した時に記事の移行が面倒で放っておいた。<br />
-Hugo に移行することにしたから Jekyll の記事と WordPress の記事を Hugo にインポートすることになった。<br />
-つらい。</p>
-
-<h2 id="hugo-に合わせた最終的な形式">Hugo に合わせた最終的な形式</h2>
-
-<p>こんな感じに統一することを目指す。<br />
-記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">9
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">+++<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>title = &#34;Jekyll の記事と WordPress の記事を Hugo にインポートする&#34;<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>date = 2017-08-13T04:26:50+09:00<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>aliases = [&#34;/2017-08-import/&#34;]<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>+++<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">##</span> 記事内容
-<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>つらつら</code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="手順">手順</h2>
-
-<p>実際に行ったインポート作業の内容はこちら。<br />
-<a href="https://github.com/5000164/blog/pull/2">Feature import article by 5000164 · Pull Request #2 · 5000164/blog</a></p>
-
-<h2 id="wordpress-の記事を-markdown-形式に変換する">WordPress の記事を Markdown 形式に変換する</h2>
-
-<p>最初は Jekyll に移行しようと思ってたのでこれを使いました。<br />
-<a href="https://github.com/benbalter/wordpress-to-jekyll-exporter">benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll</a></p>
-
-<h2 id="ファイル名を調整する">ファイル名を調整する</h2>
-
-<p>なんか日付がたくさんついてたので年と月でディレクトリを分けてからファイル名をきれいにした。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install rename
-find . -name <span style="color:#e6db74">&#34;*.md&#34;</span> | xargs rename <span style="color:#e6db74">&#39;s/\d\d\d\d-\d\d-\d\d-\d\d\d\d-\d\d-//&#39;</span></code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="jekyll-の記事の-url-はファイル名に依存してたのでファイルの中に書き込む">Jekyll の記事の URL はファイル名に依存してたのでファイルの中に書き込む</h2>
-
-<p>ファイル名をファイルの中に書き込んでからあとで url に設定をするようにする。<br />
-ついでにファイル名も調整する。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>find . -name <span style="color:#e6db74">&#34;*.markdown&#34;</span><span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> echo <span style="color:#e6db74">${</span>i<span style="color:#e6db74">}</span> &gt; <span style="color:#e6db74">${</span>i<span style="color:#e6db74">}</span>.new; cat <span style="color:#e6db74">${</span>i<span style="color:#e6db74">}</span> &gt;&gt; <span style="color:#e6db74">${</span>i<span style="color:#e6db74">}</span>.new; <span style="color:#66d9ef">done</span>
-find . -name <span style="color:#e6db74">&#34;*.markdown.new&#34;</span> | xargs rename <span style="color:#e6db74">&#39;s/.markdown.new/.md/&#39;</span>
-find . -name <span style="color:#e6db74">&#34;*.markdown&#34;</span> | xargs rm -f
-find . -name <span style="color:#e6db74">&#34;*.md&#34;</span> | xargs rename <span style="color:#e6db74">&#39;s/\d\d\d\d-\d\d-\d\d-//&#39;</span></code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="ひたすら正規表現で置換する">ひたすら正規表現で置換する</h2>
-
-<p>あとはもう望む形になるようにひたすら正規表現で置換する。<br />
-<code>title</code> と <code>date</code> は最初から入っているものをうまく使う。<br />
-Jekyll の <code>date</code> の形式が違くてエラーになっていたので書式に気をつける。<br />
-WordPress からエクスポートした記事には <code>permalink</code> が入っていたのでそれをうまく利用して <code>url</code> にする。<br />
-Jekyll のファイルには先ほどファイルの中に埋め込んだファイル名をうまく使って <code>url</code> にする。<br />
-画像のリンクとかもひたすら変換する。</p>
-
-<h2 id="あとはなんかおかしいのを見つけたら手で直す">あとはなんかおかしいのを見つけたら手で直す</h2>
-
-<p>WordPress からエクスポートしたものが変なふうになってたり、なぜか <code>date</code> が 2 個設定されている記事があったり、おかしいものがあったら見つけ次第手で直す。</p>
-
-<h2 id="見た目おかしかったり壊れてるところがあったりするけどひとまず完了">見た目おかしかったり壊れてるところがあったりするけどひとまず完了</h2>
-
-<p>なんとなく見られるようになればよい、という感じでやりました。</p>
-
-    </div>
-</article>
-<footer>
-    <div class="writer">
-        <div>菅原 浩</div>
-    </div>
-    <div class="about">
-        <div>プロフィール</div>
-        <div><a href="https://github.com/5000164/profile">詳細はこちら</a></div>
-    </div>
-    <div class="year">
-        <div>年別記事一覧</div>
-        <ul>
-            
-            <li>
-    <a href="https://blog.5000164.jp/2012/">
-        <div>2012</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2013/">
-        <div>2013</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2014/">
-        <div>2014</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2015/">
-        <div>2015</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2016/">
-        <div>2016</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2017/">
-        <div>2017</div>
-    </a>
-</li>
-
-            
-            <li>
-    <a href="https://blog.5000164.jp/2018/">
-        <div>2018</div>
-    </a>
-</li>
-
-            
-        </ul>
-    </div>
-</footer>
-</body>
-</html>
-
+<!doctype html><html lang=ja><head><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-51024599-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Jekyll の記事と WordPress の記事を Hugo にインポートする | 5000164 is here</title><meta name=description content='背景 WordPress から Jekyll に移行した時に記事の移行が面倒で放っておいた。 Hugo に移行することにしたから Jekyll の記事と WordPress の記事を Hugo にインポートすることになった。 つらい。 Hugo に合わせた最終的な形式 こんな感じに統一することを目指す。 記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。 1 2 3 4 5 6 7 8 9 &#43;&#43;&#43;title = "Jekyll の記事と WordPress の記事を Hugo にインポートする"date = 2017-08-13T04:26:50&#43;09:00aliases = ["/2017-08-import/"]&#43;&#43;&#43;## 記事内容 つらつら 手順 実際に行ったインポート作業の内容はこちら。 Feature import article by 5000164 · Pull Request #2 · 5000164/blog WordPress の記事を Markdown 形式に変換する 最初は Jekyll に移行しようと思ってたのでこれを使いました。 benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll ファイル名を調整する なんか日付がたくさんついてたので年と月でディレクトリを分けてからファイル名をきれいにした。 1 2 brew install rename find . -name "*.md" | xargs rename &#39;s/\d\d\d\d-\d\d-\d\d-\d\d\d\d-\d\d-//&#39; Jekyll の記事の URL はファイル名に依存してたのでファイルの中に書き込む ファ'><link href=https://blog.5000164.jp/2017/8/13/import/ rel=canonical><meta property=og:type content=article><meta property=og:title content="Jekyll の記事と WordPress の記事を Hugo にインポートする | 5000164 is here"><meta property=og:description content='背景 WordPress から Jekyll に移行した時に記事の移行が面倒で放っておいた。 Hugo に移行することにしたから Jekyll の記事と WordPress の記事を Hugo にインポートすることになった。 つらい。 Hugo に合わせた最終的な形式 こんな感じに統一することを目指す。 記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。 1 2 3 4 5 6 7 8 9 &#43;&#43;&#43;title = "Jekyll の記事と WordPress の記事を Hugo にインポートする"date = 2017-08-13T04:26:50&#43;09:00aliases = ["/2017-08-import/"]&#43;&#43;&#43;## 記事内容 つらつら 手順 実際に行ったインポート作業の内容はこちら。 Feature import article by 5000164 · Pull Request #2 · 5000164/blog WordPress の記事を Markdown 形式に変換する 最初は Jekyll に移行しようと思ってたのでこれを使いました。 benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll ファイル名を調整する なんか日付がたくさんついてたので年と月でディレクトリを分けてからファイル名をきれいにした。 1 2 brew install rename find . -name "*.md" | xargs rename &#39;s/\d\d\d\d-\d\d-\d\d-\d\d\d\d-\d\d-//&#39; Jekyll の記事の URL はファイル名に依存してたのでファイルの中に書き込む ファ'><meta property=og:url content=https://blog.5000164.jp/2017/8/13/import/><meta property=og:image content=https://blog.5000164.jp/icon.png><meta property=og:site_name content="5000164 is here"><meta name=twitter:card content=summary><meta name=twitter:title content="Jekyll の記事と WordPress の記事を Hugo にインポートする | 5000164 is here"><meta name=twitter:description content='背景 WordPress から Jekyll に移行した時に記事の移行が面倒で放っておいた。 Hugo に移行することにしたから Jekyll の記事と WordPress の記事を Hugo にインポートすることになった。 つらい。 Hugo に合わせた最終的な形式 こんな感じに統一することを目指す。 記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。 1 2 3 4 5 6 7 8 9 &#43;&#43;&#43;title = "Jekyll の記事と WordPress の記事を Hugo にインポートする"date = 2017-08-13T04:26:50&#43;09:00aliases = ["/2017-08-import/"]&#43;&#43;&#43;## 記事内容 つらつら 手順 実際に行ったインポート作業の内容はこちら。 Feature import article by 5000164 · Pull Request #2 · 5000164/blog WordPress の記事を Markdown 形式に変換する 最初は Jekyll に移行しようと思ってたのでこれを使いました。 benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll ファイル名を調整する なんか日付がたくさんついてたので年と月でディレクトリを分けてからファイル名をきれいにした。 1 2 brew install rename find . -name "*.md" | xargs rename &#39;s/\d\d\d\d-\d\d-\d\d-\d\d\d\d-\d\d-//&#39; Jekyll の記事の URL はファイル名に依存してたのでファイルの中に書き込む ファ'><meta name=twitter:url content=https://blog.5000164.jp/2017/8/13/import/><meta name=twitter:image content=https://blog.5000164.jp/icon.png><meta name=twitter:site content=@5000164><meta name=twitter:creator content=@5000164><style>html{width:100%;height:100%;margin:0;font-size:62.5%;font-family:-apple-system,BlinkMacSystemFont,helvetica neue,ヒラギノ角ゴ pron w3,hiragino kaku gothic pron,sans-serif;font-kerning:normal;font-feature-settings:"palt";letter-spacing:.02rem;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body{width:100%;height:100%;margin:0;font-size:1.8rem;line-height:1.73;color:#454654;background-color:#fff}@media(max-width:640px){body{line-height:1.9}}header{height:15vw}@media(max-width:640px){header{height:50vw}}header>a{display:block;margin:-2.5vw 0 0 -3vw;font-size:24vw;line-height:1;text-align-last:justify;letter-spacing:-5vw;transform-origin:top center;transform:scaleY(.5);color:#818398;text-decoration:none;white-space:nowrap}@media(max-width:640px){header>a{margin:-10.5vw 0 0 -3vw;transform:scaleY(2)}}header>a:visited{color:#818398}header>a::before,header>a::after{content:"";display:inline-block;position:absolute;top:21vw;width:0;height:.5vw;background:#c3ffde;transition:.2s ease-out}@media(max-width:640px){header>a::before,header>a::after{height:.4vw}}header>a::before{left:50%}header>a::after{right:50%}header>a:hover::before,header>a:hover::after{width:50%}footer{width:600px;margin:80px auto}footer .writer{text-align:right;letter-spacing:-.2rem}footer .about{margin-top:200px}footer .year{margin-top:80px}@media(max-width:640px){footer{width:95%}}a{color:#454654}a:visited{color:#73758c}.articles{width:600px;list-style:none;margin:0 auto 20px;padding:0}@media(max-width:640px){.articles{width:95%}}.articles>li{margin:60px 0}.articles>li>a{display:grid;grid-template-columns:110px 1fr;grid-gap:2vw}.articles>li>a>div:first-child{text-align:right;white-space:nowrap}.articles>li>a>div:last-child{white-space:pre-wrap;word-break:break-all;word-wrap:break-word}.title{margin:40px 0}h1{width:600px;margin:0 auto;font-size:3rem;font-weight:700}@media(max-width:640px){h1{width:95%}}.date{width:600px;margin:0 auto;text-align:right}@media(max-width:640px){.date{width:95%}}.content{margin:40px 0}.content p{width:600px;margin:40px auto}@media(max-width:640px){.content p{width:95%}}.content p:first-child{margin-top:0}.content p:last-child{margin-bottom:0}.content h2{width:600px;margin:120px auto 20px;font-size:2.4rem;font-weight:700}@media(max-width:640px){.content h2{width:95%}}.content h2:first-child{margin-top:0}.content h2+p{margin-top:0}.content h2+h2{margin-top:0}.content h4{width:600px;margin:10px auto;font-size:1.8rem;font-weight:400;text-align:center}@media(max-width:640px){.content h4{width:95%}}.content ul,.content ol{width:580px;margin:auto;padding-left:20px}@media(max-width:640px){.content ul,.content ol{width:90%;padding-left:5%}}.content figure{width:600px;margin:auto}@media(max-width:640px){.content figure{width:95%}}.content img{display:block;max-width:600px;margin:0 auto}@media(max-width:640px){.content img{max-width:95%}}.content blockquote{width:600px;margin:20px auto}@media(max-width:640px){.content blockquote{width:95%}}.content blockquote>p{position:relative;width:580px;padding-left:20px}@media(max-width:640px){.content blockquote>p{width:96%;padding-left:4%}}.content blockquote>p::before{content:"";display:block;position:absolute;top:0;left:0;width:4px;height:100%;background:#e3e4e6;border-radius:8px}.content .highlight{margin:40px 0;background-color:#272822}.content .highlight>div{max-width:100%;margin:0 auto}.content .highlight table{display:flex!important;justify-content:center;align-items:center}.content .highlight tbody{min-width:600px;max-width:98%}@media(max-width:640px){.content .highlight tbody{min-width:95%;max-width:95%}}</style><link href=/favicon.ico rel=icon><meta name=generator content="Hugo 0.47"></head><body><header><a href=https://blog.5000164.jp/>5000164 is here</a></header><article><div class=title><div class=date>2017.8.13</div><h1>Jekyll の記事と WordPress の記事を Hugo にインポートする</h1></div><div class=content><h2 id=背景>背景</h2><p>WordPress から Jekyll に移行した時に記事の移行が面倒で放っておいた。<br>Hugo に移行することにしたから Jekyll の記事と WordPress の記事を Hugo にインポートすることになった。<br>つらい。<h2 id=hugo-に合わせた最終的な形式>Hugo に合わせた最終的な形式</h2><p>こんな感じに統一することを目指す。<br>記事のファイルの見通しをよくするためにディレクトリを分けて管理したかったので URL は各ファイルで指定する。<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">9
+</span></code></pre><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md>+++<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>title = &#34;Jekyll の記事と WordPress の記事を Hugo にインポートする&#34;<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>date = 2017-08-13T04:26:50+09:00<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>aliases = [&#34;/2017-08-import/&#34;]<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>+++<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>##</span> 記事内容
+<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>つらつら</code></pre></table></div></div><h2 id=手順>手順</h2><p>実際に行ったインポート作業の内容はこちら。<br><a href=https://github.com/5000164/blog/pull/2>Feature import article by 5000164 · Pull Request #2 · 5000164/blog</a><h2 id=wordpress-の記事を-markdown-形式に変換する>WordPress の記事を Markdown 形式に変換する</h2><p>最初は Jekyll に移行しようと思ってたのでこれを使いました。<br><a href=https://github.com/benbalter/wordpress-to-jekyll-exporter>benbalter/wordpress-to-jekyll-exporter: One-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Jekyll</a><h2 id=ファイル名を調整する>ファイル名を調整する</h2><p>なんか日付がたくさんついてたので年と月でディレクトリを分けてからファイル名をきれいにした。<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">2
+</span></code></pre><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew install rename
+find . -name <span style=color:#e6db74>&#34;*.md&#34;</span> | xargs rename <span style=color:#e6db74>&#39;s/\d\d\d\d-\d\d-\d\d-\d\d\d\d-\d\d-//&#39;</span></code></pre></table></div></div><h2 id=jekyll-の記事の-url-はファイル名に依存してたのでファイルの中に書き込む>Jekyll の記事の URL はファイル名に依存してたのでファイルの中に書き込む</h2><p>ファイル名をファイルの中に書き込んでからあとで url に設定をするようにする。<br>ついでにファイル名も調整する。<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7c7c79">4
+</span></code></pre><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#66d9ef>for</span> i in <span style=color:#66d9ef>$(</span>find . -name <span style=color:#e6db74>&#34;*.markdown&#34;</span><span style=color:#66d9ef>)</span>; <span style=color:#66d9ef>do</span> echo <span style=color:#e6db74>${</span>i<span style=color:#e6db74>}</span> &gt; <span style=color:#e6db74>${</span>i<span style=color:#e6db74>}</span>.new; cat <span style=color:#e6db74>${</span>i<span style=color:#e6db74>}</span> &gt;&gt; <span style=color:#e6db74>${</span>i<span style=color:#e6db74>}</span>.new; <span style=color:#66d9ef>done</span>
+find . -name <span style=color:#e6db74>&#34;*.markdown.new&#34;</span> | xargs rename <span style=color:#e6db74>&#39;s/.markdown.new/.md/&#39;</span>
+find . -name <span style=color:#e6db74>&#34;*.markdown&#34;</span> | xargs rm -f
+find . -name <span style=color:#e6db74>&#34;*.md&#34;</span> | xargs rename <span style=color:#e6db74>&#39;s/\d\d\d\d-\d\d-\d\d-//&#39;</span></code></pre></table></div></div><h2 id=ひたすら正規表現で置換する>ひたすら正規表現で置換する</h2><p>あとはもう望む形になるようにひたすら正規表現で置換する。<br><code>title</code> と <code>date</code> は最初から入っているものをうまく使う。<br>Jekyll の <code>date</code> の形式が違くてエラーになっていたので書式に気をつける。<br>WordPress からエクスポートした記事には <code>permalink</code> が入っていたのでそれをうまく利用して <code>url</code> にする。<br>Jekyll のファイルには先ほどファイルの中に埋め込んだファイル名をうまく使って <code>url</code> にする。<br>画像のリンクとかもひたすら変換する。<h2 id=あとはなんかおかしいのを見つけたら手で直す>あとはなんかおかしいのを見つけたら手で直す</h2><p>WordPress からエクスポートしたものが変なふうになってたり、なぜか <code>date</code> が 2 個設定されている記事があったり、おかしいものがあったら見つけ次第手で直す。<h2 id=見た目おかしかったり壊れてるところがあったりするけどひとまず完了>見た目おかしかったり壊れてるところがあったりするけどひとまず完了</h2><p>なんとなく見られるようになればよい、という感じでやりました。</div></article><footer><div class=writer><div>菅原 浩</div></div><div class=about><div>プロフィール</div><div><a href=https://github.com/5000164/profile>詳細はこちら</a></div></div><div class=year><div>年別記事一覧</div><ul><li><a href=https://blog.5000164.jp/2012/><div>2012</div></a><li><a href=https://blog.5000164.jp/2013/><div>2013</div></a><li><a href=https://blog.5000164.jp/2014/><div>2014</div></a><li><a href=https://blog.5000164.jp/2015/><div>2015</div></a><li><a href=https://blog.5000164.jp/2016/><div>2016</div></a><li><a href=https://blog.5000164.jp/2017/><div>2017</div></a><li><a href=https://blog.5000164.jp/2018/><div>2018</div></a></ul></div></footer></body></html>
