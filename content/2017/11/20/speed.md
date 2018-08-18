@@ -37,4 +37,4 @@ CSS の Minify は YUI Compressor と WebStorm の File Watcher を使って実�
 
 Hugo が minify に対応した。
 
-[Output Minification, Live-Reload Fixes and More | Hugo](https://gohugo.io/news/0.47-relnotes/)
+- [Output Minification, Live-Reload Fixes and More | Hugo](https://gohugo.io/news/0.47-relnotes/)
