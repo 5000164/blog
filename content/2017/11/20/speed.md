@@ -32,3 +32,9 @@ partial を使えばできそうだと思ってぐぐったらあった。
 CSS の Minify は YUI Compressor と WebStorm の File Watcher を使って実現した。
 
 - [Minifying CSS - Help | WebStorm](https://www.jetbrains.com/help/webstorm/minifying-css.html)
+
+## 2018.8.18 追記
+
+Hugo が minify に対応した。
+
+[Output Minification, Live-Reload Fixes and More | Hugo](https://gohugo.io/news/0.47-relnotes/)
