@@ -4,7 +4,7 @@ date = 2018-01-15T20:35:10+09:00
 aliases = ["/2018-01-scala_javafx_save_image/"]
 +++
 
-[昨日の記事]({{< relref "2018/1/14/scala-javafx-generate-image.md" >}}) の続きのようなもの。  
+[昨日の記事]({{< relref "/2018/1/14/scala-javafx-generate-image.md" >}}) の続きのようなもの。  
 `Canvas` で表示できるようになったから画像として保存する。  
 コードはこんな感じ。
 
