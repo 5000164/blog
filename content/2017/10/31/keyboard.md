@@ -1,7 +1,6 @@
 +++
 title = "Mistel Barocco の設定備忘録"
 date = 2017-10-31T23:19:11+09:00
-aliases = ["/2017-10-keyboard/"]
 +++
 
 ## 設定

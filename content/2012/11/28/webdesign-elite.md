@@ -1,7 +1,6 @@
 +++
 title = "Webデザインについて考える（http://mythemepreviews.com/elite-wp/）"
 date = 2012-11-28T00:29:41+00:00
-aliases = ["/2012-11-webdesign_elite/"]
 +++
 
 このサイトのデザインについて考える。

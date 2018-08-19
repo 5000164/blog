@@ -1,7 +1,6 @@
 +++
 title = "Operaの右クリックで表示中のページのURLを取得したり別のブラウザで開いたり"
 date = 2013-03-04T04:16:33+00:00
-aliases = ["/2013-03-opera/"]
 +++
 
 {{< figure src="/images/2013/03/de_20130303_Opera.jpg" title="" >}}

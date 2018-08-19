@@ -1,7 +1,6 @@
 +++
 title = "Windowsのフォントをきれいにする"
 date = 2012-07-25T02:14:00+00:00
-aliases = ["/2012-07-windows_mactype/"]
 +++
 
 再びWindowsのフォントをきれいにします。

@@ -1,7 +1,6 @@
 +++
 title = "FuelPHP で Debug::dump() と Log::debug() を簡単に使えるようにする"
 date = 2015-03-01T22:19:02+09:00
-aliases = ["/2015-03-fuelphp_debug/"]
 +++
 
 ## FuelPHP で Debug::dump() とか Log::debug() とかうつのがだるかった

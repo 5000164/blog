@@ -1,7 +1,6 @@
 +++
 title = "小説の感想（笑わない数学者／森博嗣）"
 date = 2013-05-04T06:52:16+00:00
-aliases = ["/2013-05-mathematical_goodbye/"]
 +++
 
 <div style="text-align: center;">

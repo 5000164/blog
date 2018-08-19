@@ -1,7 +1,6 @@
 +++
 title = "AWS Lambda の Python 3.6 で LINE Bot を動かす"
 date = 2017-08-14T23:04:38+09:00
-aliases = ["/2017-08-line_bot/"]
 +++
 
 ## 目的

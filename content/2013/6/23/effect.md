@@ -1,7 +1,6 @@
 +++
 title = "他人を変えることはできないけど、影響を与えることはできると信じてる"
 date = 2013-06-23T04:59:54+00:00
-aliases = ["/2013-06-effect/"]
 +++
 
 </p> <div style="text-align: center;">

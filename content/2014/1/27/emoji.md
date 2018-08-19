@@ -1,7 +1,6 @@
 +++
 title = "HTC J One HTL22では絵文字が表示されないので簡単な対処法を見つけた"
 date = 2014-01-27T01:29:02+00:00
-aliases = ["/2014-01-emoji/"]
 +++
 
 {{< figure src="/images/2014/01/20140127_emoji_eye.png" title="" >}}

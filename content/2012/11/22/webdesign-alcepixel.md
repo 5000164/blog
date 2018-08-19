@@ -1,7 +1,6 @@
 +++
 title = "Webデザインについて考える（http://alcepixel.com/）"
 date = 2012-11-22T00:55:30+00:00
-aliases = ["/2012-11-webdesign_alcepixel/"]
 +++
 
 このサイトのデザインについて考える。

@@ -1,7 +1,6 @@
 +++
 title = "小説の感想（有限と微小のパン／森博嗣）"
 date = 2013-05-23T23:14:27+00:00
-aliases = ["/2013-05-the_perfect_outsider/"]
 +++
 
 <div style="text-align: center;">

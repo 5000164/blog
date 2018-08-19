@@ -1,7 +1,6 @@
 +++
 title = "自分を紹介するポートフォリオサイトを作った"
 date = 2014-01-21T13:15:09+00:00
-aliases = ["/2014-01-portfolio/"]
 +++
 
 {{< figure src="/images/2014/01/de_20140121_portfolio.jpg" title="" >}}

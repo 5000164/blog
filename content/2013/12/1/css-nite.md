@@ -1,7 +1,6 @@
 +++
 title = "CSS Nite in SENDAI, Vol.7 「変化するWebデザイン 〜既成概念を打ち破るWeb制作のあり方を考える」に参加しました"
 date = 2013-12-01T23:18:10+00:00
-aliases = ["/2013-12-css_nite/"]
 +++
 
 {{< figure src="/images/2013/12/de_20131201_css_nite.jpg" title="" >}}

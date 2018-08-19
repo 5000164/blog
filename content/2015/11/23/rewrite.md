@@ -1,7 +1,6 @@
 +++
 title = "DOM の内容を書き換える API"
 date = 2015-11-23T18:55:15+09:00
-aliases = ["/2015-11-rewrite/"]
 +++
 
 ## Firefox で innerText が動かない

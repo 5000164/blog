@@ -1,7 +1,6 @@
 +++
 title = "Scala の SSL / TLS 通信の中身を見る"
 date = 2018-01-05T17:48:03+09:00
-aliases = ["/2018-01-view_scala_traffic/"]
 +++
 
 ## Scala の通信の中身が見たい

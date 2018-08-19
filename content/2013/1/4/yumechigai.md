@@ -1,7 +1,6 @@
 +++
 title = "小説の感想（夢違／恩田陸）"
 date = 2013-01-04T03:56:01+00:00
-aliases = ["/2013-01-yumechigai/"]
 +++
 
 <div style="text-align: center;">

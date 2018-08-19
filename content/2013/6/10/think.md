@@ -1,7 +1,6 @@
 +++
 title = "神様が言う『自分で考えろ！』という言葉の意味と具体例を考えた"
 date = 2013-06-10T04:52:56+00:00
-aliases = ["/2013-06-think/"]
 +++
 
 </p> <div style="text-align: center;">

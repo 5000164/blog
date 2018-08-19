@@ -1,7 +1,6 @@
 +++
 title = "小説の感想（夏のレプリカ／森博嗣）"
 date = 2013-05-20T03:06:47+00:00
-aliases = ["/2013-05-replaceable_summer/"]
 +++
 
 <div style="text-align: center;">

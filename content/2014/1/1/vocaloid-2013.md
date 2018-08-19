@@ -1,7 +1,6 @@
 +++
 title = "2013年出会えてよかったVOCALOID曲5選"
 date = 2014-01-01T15:44:14+00:00
-aliases = ["/2014-01-vocaloid_2013/"]
 +++
 
 {{< figure src="/images/2013/06/vocaloid.png" title="" >}}

@@ -1,7 +1,6 @@
 +++
 title = "Mobile Safari で数字に勝手にリンクが貼られるのを無効化する"
 date = 2012-06-25T23:09:21+00:00
-aliases = ["/2012-06-mobile_safari_link/"]
 +++
 
 Mobile Safari では数字を電話番号だとみなして、勝手に電話番号のリンクを貼ることがあります。

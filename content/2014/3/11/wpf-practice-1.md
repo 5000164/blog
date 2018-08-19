@@ -1,7 +1,6 @@
 +++
 title = "WPF で枠のないウィンドウを作る"
 date = 2014-03-11T23:17:38+00:00
-aliases = ["/2014-03-wpf_practice_1/"]
 +++
 
 {{< figure src="/images/2014/03/20140311_practice1.png" title="" >}}

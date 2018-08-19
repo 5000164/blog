@@ -1,7 +1,6 @@
 +++
 title = "小説の感想（ココロコネクト ヒトランダム／庵田定夏）"
 date = 2013-06-02T23:57:08+00:00
-aliases = ["/2013-06-kokoroconnect_hitorandom/"]
 +++
 
 <div style="text-align: center;">

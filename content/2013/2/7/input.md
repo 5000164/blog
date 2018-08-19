@@ -1,7 +1,6 @@
 +++
 title = "テキストボックスの文字を右寄せにしているとiOSで入力しにくい"
 date = 2013-02-07T00:57:47+00:00
-aliases = ["/2013-02-input/"]
 +++
 
 {{< figure src="/images/2013/02/de_20130206_input.jpg" title="" >}}

@@ -1,7 +1,6 @@
 +++
 title = "Processing 始めました"
 date = 2014-11-12T04:52:21+09:00
-aliases = ["/2014-11-processing_practice_1/"]
 +++
 
 ## Processing がおもしろそうだった

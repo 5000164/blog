@@ -1,7 +1,6 @@
 +++
 title = "気が利くデザイン（Pocket）"
 date = 2013-11-02T03:03:50+00:00
-aliases = ["/2013-11-pocket/"]
 +++
 
 {{< figure src="/images/2013/11/20131101_pocket.png" title="" >}}

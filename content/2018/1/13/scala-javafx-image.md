@@ -1,7 +1,6 @@
 +++
 title = "Scala で JavaFX を使って画像を表示する"
 date = 2018-01-13T20:59:55+09:00
-aliases = ["/2018-01-scala_javafx_image/"]
 +++
 
 こんな感じ。

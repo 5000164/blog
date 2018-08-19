@@ -1,7 +1,6 @@
 +++
 title = "Scala で JavaFX の Canvas でテキストを表示する"
 date = 2018-01-14T08:53:55+09:00
-aliases = ["/2018-01-scala_javafx_generate_image/"]
 +++
 
 [昨日の記事]({{< relref "/2018/1/13/scala-javafx-image.md" >}}) ではすでに存在する画像を表示したが、やりたいことは生成したテキストを画像にするということだったので、まずはテキストを表示できるようにする。  

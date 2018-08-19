@@ -1,7 +1,6 @@
 +++
 title = "アニメの感想（ダンガンロンパ 希望の学園と絶望の高校生 The Animation）"
 date = 2013-10-18T23:17:49+00:00
-aliases = ["/2013-10-danganronpa/"]
 +++
 
 <div style="text-align: center;">

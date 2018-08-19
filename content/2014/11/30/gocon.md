@@ -1,7 +1,6 @@
 +++
 title = "シンプルさ - 「Go Conference 2014 autumn」に参加しました"
 date = 2014-11-30T23:04:02+09:00
-aliases = ["/2014-11-gocon/"]
 +++
 
 ## 「Go Conference 2014 autumn」に参加しました

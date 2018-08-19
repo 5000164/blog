@@ -1,7 +1,6 @@
 +++
 title = "夢を語り合える世界をつくりたい - 「Hoping Invites | Tsutomu Uematsu | TEDxSapporo」の感想"
 date = 2014-11-22T00:12:40+09:00
-aliases = ["/2014-11-hoping_invites/"]
 +++
 
 <div style="text-align: center;"><iframe width="560" height="315" src="//www.youtube.com/embed/gBumdOWWMhY" frameborder="0" allowfullscreen></iframe></div>

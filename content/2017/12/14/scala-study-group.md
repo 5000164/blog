@@ -1,7 +1,6 @@
 +++
 title = "青山エンジニア勉強交流会～Scala勉強会～に参加した"
 date = 2017-12-14T20:27:37+09:00
-aliases = ["/2017-12-scala_study_group/"]
 +++
 
 ## Scala の勉強会

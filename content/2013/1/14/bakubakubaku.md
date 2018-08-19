@@ -1,7 +1,6 @@
 +++
 title = "漫画の感想（バクバクバク／γ‐γ）"
 date = 2013-01-14T01:52:01+00:00
-aliases = ["/2013-01-bakubakubaku/"]
 +++
 
 <a title="バクバクバク" href="http://nagurigaki.web.fc2.com/baku/" target="_blank">{{< figure src="/images/2013/01/1fc28d2282cd.png" title="" >}}</a>

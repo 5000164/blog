@@ -1,7 +1,6 @@
 +++
 title = "小説の感想（詩的私的ジャック／森博嗣）"
 date = 2013-05-06T17:41:52+00:00
-aliases = ["/2013-05-jack_the_poetical_private/"]
 +++
 
 <div style="text-align: center;">

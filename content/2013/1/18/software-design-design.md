@@ -1,7 +1,6 @@
 +++
 title = "「ソフトウェア開発とデザイン －デザインとは－」という題で社内で発表しました"
 date = 2013-01-18T00:48:23+00:00
-aliases = ["/2013-01-software_design_design/"]
 +++
 
 <script async class="speakerdeck-embed" data-id="c3481e0042e80130b322123138156909" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>

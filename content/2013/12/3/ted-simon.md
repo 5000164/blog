@@ -1,7 +1,6 @@
 +++
 title = "TEDの感想（サイモン シネック: 優れたリーダーはどうやって行動を促すか）"
 date = 2013-12-03T00:50:28+00:00
-aliases = ["/2013-12-ted_simon/"]
 +++
 
 {{< figure src="/images/2013/12/20131203_golden_circle.png" title="" >}}

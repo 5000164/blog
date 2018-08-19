@@ -1,7 +1,6 @@
 +++
 title = "テスト頑張ろう - 技術書「テスト駆動開発入門」の感想"
 date = 2016-09-15T03:01:06+09:00
-aliases = ["/2016-09-test_driven_development_by_example/"]
 +++
 
 <div style="text-align: center;">

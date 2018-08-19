@@ -1,7 +1,6 @@
 +++
 title = "FuelPHP 1.3 で Profiler を有効にしたら最初から展開した状態で表示されるようにする"
 date = 2012-10-15T01:50:10+00:00
-aliases = ["/2012-10-fuelphp/"]
 +++
 
 {{< figure src="/images/2012/10/FuelPHP_Profiler.png" title="" >}}

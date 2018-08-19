@@ -1,7 +1,6 @@
 +++
 title = "小説の感想（今はもうない／森博嗣）"
 date = 2013-05-21T09:16:22+00:00
-aliases = ["/2013-05-switch_back/"]
 +++
 
 <div style="text-align: center;">

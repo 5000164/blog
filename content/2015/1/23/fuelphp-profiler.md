@@ -1,7 +1,6 @@
 +++
 title = "FuelPHP に fuelphp-profiler-log をインストールする"
 date = 2015-01-23T03:32:18+09:00
-aliases = ["/2015-01-fuelphp_profiler/"]
 +++
 
 ## FuelPHP のログにプロファイラの情報を出力できるパッケージをインストールしてみる

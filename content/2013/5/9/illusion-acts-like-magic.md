@@ -1,7 +1,6 @@
 +++
 title = "小説の感想（幻惑の死と使途／森博嗣）"
 date = 2013-05-09T02:01:24+00:00
-aliases = ["/2013-05-illusion_acts_like_magic/"]
 +++
 
 <div style="text-align: center;">

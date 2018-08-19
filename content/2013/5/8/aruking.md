@@ -1,7 +1,6 @@
 +++
 title = "小説の感想（あるキング／伊坂幸太郎）"
 date = 2013-05-08T02:27:26+00:00
-aliases = ["/2013-05-aruking/"]
 +++
 
 <div style="text-align: center;">

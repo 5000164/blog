@@ -1,7 +1,6 @@
 +++
 title = "DXライブラリで読み込んだテキストをエンターで表示"
 date = 2014-04-01T02:03:09+00:00
-aliases = ["/2014-03-dxlib_practice_2/"]
 +++
 
 {{< figure src="/images/2014/04/20140331_practice2_eye.png" title="" >}}

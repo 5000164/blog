@@ -1,7 +1,6 @@
 +++
 title = "ブログ移転しました"
 date = 2014-05-13T00:11:23+09:00
-aliases = ["/2014-05-blog_moved/"]
 +++
 
 ## WordPressからOctopressへ

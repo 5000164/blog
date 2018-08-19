@@ -1,7 +1,6 @@
 +++
 title = "小説の感想（すべてがFになる／森博嗣）"
 date = 2013-05-01T10:11:50+00:00
-aliases = ["/2013-04-the_perfect_insider/"]
 +++
 
 <div style="text-align: center;">

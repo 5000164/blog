@@ -1,7 +1,6 @@
 +++
 title = "休職して退職してやっとわかったこと"
 date = 2013-06-03T15:37:28+00:00
-aliases = ["/2013-06-retire/"]
 +++
 
 {{< figure src="/images/2013/06/de_20130603_retire.jpg" title="退職の「退」" >}}

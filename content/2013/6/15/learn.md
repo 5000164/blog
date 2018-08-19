@@ -1,7 +1,6 @@
 +++
 title = "「おれってダメだ」「そんなことないよ」について教えてもらって考えた"
 date = 2013-06-15T04:12:39+00:00
-aliases = ["/2013-06-learn/"]
 +++
 
 </p> <div style="text-align: center;">

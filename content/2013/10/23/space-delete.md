@@ -1,7 +1,6 @@
 +++
 title = "空白と改行を削除するツールを作った"
 date = 2013-10-23T23:59:00+00:00
-aliases = ["/2013-10-space_delete/"]
 +++
 
 {{< figure src="/images/2013/10/20131023_space_delete_thumb.png" title="" >}}

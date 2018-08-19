@@ -1,7 +1,6 @@
 +++
 title = "Webデザインについて考える（http://www.wearegrand.com/）"
 date = 2012-11-21T00:44:26+00:00
-aliases = ["/2012-11-webdesign_grand/"]
 +++
 
 このサイトのデザインについて考える。

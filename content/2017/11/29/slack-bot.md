@@ -1,7 +1,6 @@
 +++
 title = "Scala で Slack bot"
 date = 2017-11-29T13:53:55+09:00
-aliases = ["/2017-11-slack_bot/"]
 +++
 
 ## 動機

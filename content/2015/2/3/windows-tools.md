@@ -1,7 +1,6 @@
 +++
 title = "Windows で PHP の開発をするときに使ったツール"
 date = 2015-02-03T23:13:39+09:00
-aliases = ["/2015-02-windows_tools/"]
 +++
 
 ## 最近 Windows で PHP の開発をする機会があったので、使用したツールをまとめます

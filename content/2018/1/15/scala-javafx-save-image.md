@@ -1,7 +1,6 @@
 +++
 title = "Scala で JavaFX の Casvas の内容を画像として保存する"
 date = 2018-01-15T20:35:10+09:00
-aliases = ["/2018-01-scala_javafx_save_image/"]
 +++
 
 [昨日の記事]({{< relref "/2018/1/14/scala-javafx-generate-image.md" >}}) の続きのようなもの。  

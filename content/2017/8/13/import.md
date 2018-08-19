@@ -1,7 +1,6 @@
 +++
 title = "Jekyll の記事と WordPress の記事を Hugo にインポートする"
 date = 2017-08-13T05:17:55+09:00
-aliases = ["/2017-08-import/"]
 +++
 
 ## 背景

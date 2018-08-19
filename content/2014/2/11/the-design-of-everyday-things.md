@@ -1,7 +1,6 @@
 +++
 title = "使いやすさとはなにか - 本の感想（誰のためのデザイン？／D.A.ノーマン、野島久雄訳）"
 date = 2014-02-11T23:47:53+00:00
-aliases = ["/2014-02-the_design_of_everyday_things/"]
 +++
 
 <div style="text-align: center;">

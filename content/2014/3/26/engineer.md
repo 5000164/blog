@@ -1,7 +1,6 @@
 +++
 title = "変えられないエンジニア"
 date = 2014-03-26T23:03:14+00:00
-aliases = ["/2014-03-engineer/"]
 +++
 
 {{< figure src="/images/2014/03/20140326_engineer.jpg" title="" >}}

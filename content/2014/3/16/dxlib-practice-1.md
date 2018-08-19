@@ -1,7 +1,6 @@
 +++
 title = "DXライブラリできれいなフォントを表示する"
 date = 2014-03-16T03:20:28+00:00
-aliases = ["/2014-03-dxlib_practice_1/"]
 +++
 
 {{< figure src="/images/2014/03/20140315_practice1.png" title="" >}}

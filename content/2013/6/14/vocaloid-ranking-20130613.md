@@ -1,7 +1,6 @@
 +++
 title = "おれおれVOCALOIDランキング（2013.6.13）"
 date = 2013-06-14T01:41:01+00:00
-aliases = ["/2013-6-vocaloid_ranking_20130613/"]
 +++
 
 </p> <div style="text-align: center;">

@@ -1,7 +1,6 @@
 +++
 title = "生きるのが難しい"
 date = 2013-02-09T02:24:26+00:00
-aliases = ["/2013-02-live/"]
 +++
 
 {{< figure src="/images/2013/02/de_20130208_live.jpg" title="" >}}

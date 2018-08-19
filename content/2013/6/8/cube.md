@@ -1,7 +1,6 @@
 +++
 title = "CSS3でなんちゃって立方体を実装してみた"
 date = 2013-06-08T19:51:33+00:00
-aliases = ["/2013-06-cube/"]
 +++
 
 </p> <div style="text-align: center;">

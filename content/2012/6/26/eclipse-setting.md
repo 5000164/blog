@@ -1,7 +1,6 @@
 +++
 title = "Eclipse設定メモ"
 date = 2012-06-26T00:55:37+00:00
-aliases = ["/2012-06-eclipse_setting/"]
 +++
 
 毎回毎回Eclipseの設定を思い出すのがめんどくさくなったのでついにメモった。

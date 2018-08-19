@@ -1,7 +1,6 @@
 +++
 title = "WordPress始めました"
 date = 2012-06-24T06:53:41+00:00
-aliases = ["/2012-06-start_wordpress/"]
 +++
 
 やっとこさWordPress始めました。

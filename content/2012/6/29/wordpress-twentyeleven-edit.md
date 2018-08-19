@@ -1,7 +1,6 @@
 +++
 title = "WordPress のテーマ「TwentyEleven」でいろいろ消したり幅広げたり色変えたりした"
 date = 2012-06-29T01:52:41+00:00
-aliases = ["/2012-06-wordpress_twentyeleven_edit/"]
 +++
 
 デザインをいろいろと変更しました。  

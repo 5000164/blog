@@ -1,7 +1,6 @@
 +++
 title = "HTMLとCSSとJavaScriptで空白と改行を削除するWebアプリを作ったので詳細説明します"
 date = 2013-11-29T21:01:01+00:00
-aliases = ["/2013-11-space_delete/"]
 +++
 
 {{< figure src="/images/2013/11/20131129_space_delete.png" title="" >}}

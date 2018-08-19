@@ -1,7 +1,6 @@
 +++
 title = "hoverした要素に好きなようにハイライトをかける"
 date = 2014-01-22T17:10:00+00:00
-aliases = ["/2014-01-hover/"]
 +++
 
 {{< figure src="/images/2014/01/20140122_hover.png" title="" >}}

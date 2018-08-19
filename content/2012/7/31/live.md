@@ -1,7 +1,6 @@
 +++
 title = "ライブを見に行ってきた"
 date = 2012-07-31T23:32:11+00:00
-aliases = ["/2012-07-live/"]
 +++
 
 {{< figure src="/images/2012/07/f0c04e684d9251de7c6d35ff9f12d60e.jpg" title="" >}}

@@ -1,7 +1,6 @@
 +++
 title = "小説の感想（封印再度／森博嗣）"
 date = 2013-05-06T23:35:12+00:00
-aliases = ["/2013-05-who_inside/"]
 +++
 
 <div style="text-align: center;">

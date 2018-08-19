@@ -1,7 +1,6 @@
 +++
 title = "恩人や恋人よりも、時に幼女を優先する男 - 小説「終物語（中）」の感想"
 date = 2015-05-02T05:22:31+09:00
-aliases = ["/2015-05-owarimonogatari_volume_2/", "/2015-05-owarimonogatari-volume-2/"]
 +++
 
 ※ ネタバレ注意
