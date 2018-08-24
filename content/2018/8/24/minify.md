@@ -13,9 +13,18 @@ Closure Compiler は jar を持ってくるのがだるいなぁと思ってた�
 
 インストールしたら JetBrains IDE で設定を追加する。
 
-1. Preferences | Tools | File Watchers の + から Closure Compiler を選択
-1. Program を `npx` にする
-1. Arguments を `google-closure-compiler --compilation_level SIMPLE_OPTIMIZATIONS --js $FileName$ --source_map_format=V3 --create_source_map $FileNameWithoutExtension$.min.js.map --output_wrapper "%output%//@ sourceMappingURL=$FileNameWithoutExtension$.min.js.map"` にする
+- Preferences | Tools | File Watchers の + から Closure Compiler を選択
+- Program を設定
+
+```
+npx
+```
+
+- Arguments を設定
+
+```
+google-closure-compiler --compilation_level SIMPLE_OPTIMIZATIONS --js $FileName$ --source_map_format=V3 --create_source_map $FileNameWithoutExtension$.min.js.map --output_wrapper "%output%//@ sourceMappingURL=$FileNameWithoutExtension$.min.js.map"
+```
 
 設定は下記サイトを参考にした。  
 npm 版を使ってるので npx を使ってるところが違う。
