@@ -19,14 +19,6 @@ DB をマイグレーションしようと思った時に、せっかくだか�
 
 ## ざっくりした使い方
 
-- インストール
-
-```bash
-docker run --rm --interactive --tty \
-    --volume $PWD:/app \
-    composer:1.7.2 require robmorgan/phinx
-```
-
 - MySQL に対してマイグレーションを行おうと思ったので pdo_mysql を使えるようにしておく
 
 ```
