@@ -35,7 +35,8 @@ date = 2013-10-23T23:59:00+00:00
 
 ## 作ってみた Ver.1
 
-{{< figure src="/images/2013/10/20131023_space_delete_ver1.png" title="" >}}  
+{{< figure src="/images/2013/10/20131023_space_delete_ver1.png" title="" >}}
+
 というわけで作ってみた。  
 編集領域はちょっと広め。  
 なによりも編集部分のフォントサイズと行間の設定を自分好みにした。  
@@ -46,7 +47,8 @@ date = 2013-10-23T23:59:00+00:00
 
 ## 作ってみた Ver.2
 
-{{< figure src="/images/2013/10/20131023_space_delete_ver2.png" title="" >}}  
+{{< figure src="/images/2013/10/20131023_space_delete_ver2.png" title="" >}}
+
 というわけで作ってみた。  
 とってもエディタエディタさせました。  
 ウィンドウサイズを変更しても編集領域が追従します。  
