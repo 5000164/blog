@@ -3,7 +3,7 @@ title: "気が利くデザイン（Pocket）"
 date: "2013-11-02T03:03:50+00:00"
 ---
 
-{{< figure src="/images/2013/11/20131101_pocket.png" title="" >}}
+![](/images/2013/11/20131101_pocket.png)
 
 ## Pocketについて
 

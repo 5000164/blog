@@ -4,7 +4,7 @@ date: "2013-06-14T01:41:01+00:00"
 ---
 
 </p> <div style="text-align: center;">
-  {{< figure src="/images/2013/06/vocaloid-150x150.png" title="" >}}
+  ![](/images/2013/06/vocaloid-150x150.png)
 </div></a>
 
 ## イントロ

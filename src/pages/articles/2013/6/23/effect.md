@@ -4,7 +4,7 @@ date: "2013-06-23T04:59:54+00:00"
 ---
 
 </p> <div style="text-align: center;">
-  {{< figure src="/images/2013/06/20130622_effect.png" title="" >}}
+  ![](/images/2013/06/20130622_effect.png)
 </div></a>
 
 ## 他人を救うことはできない

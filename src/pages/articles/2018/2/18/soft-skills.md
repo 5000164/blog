@@ -3,7 +3,7 @@ title: "いいタイミングで読めた - 本「SOFT SKILLS　ソフトウェ�
 date: "2018-02-18T22:19:18+09:00"
 ---
 
-[{{< figure src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B01GDS0994&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=5000164-22" title="" >}}](https://www.amazon.co.jp/gp/product/B01GDS0994/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B01GDS0994&linkCode=as2&tag=5000164-22&linkId=02060feef5c31cf470375d013c0e835d)
+[![](//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B01GDS0994&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=5000164-22)](https://www.amazon.co.jp/gp/product/B01GDS0994/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B01GDS0994&linkCode=as2&tag=5000164-22&linkId=02060feef5c31cf470375d013c0e835d)
 
 新しい仕事を探すタイミングで、身の振り方などが勉強になるかもしれないと期待して読み始めた。  
 この本ではもっと広範な内容を扱っており、とても勉強になった。  

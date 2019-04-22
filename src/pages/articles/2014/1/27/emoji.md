@@ -3,7 +3,7 @@ title: "HTC J One HTL22では絵文字が表示されないので簡単な対処
 date: "2014-01-27T01:29:02+00:00"
 ---
 
-{{< figure src="/images/2014/01/20140127_emoji_eye.png" title="" >}}
+![](/images/2014/01/20140127_emoji_eye.png)
 
 ## HTC J Oneって絵文字が表示されないんですね
 
@@ -27,15 +27,15 @@ rootをとって絵文字のフォントを入れれば表示することもで�
 
 絵文字をコピーします。
 
-{{< figure src="/images/2014/01/20140127_emoji_1.png" title="" >}}
+![](/images/2014/01/20140127_emoji_1.png)
 
 Eメールアプリを起動して絵文字を貼り付けます。
 
-{{< figure src="/images/2014/01/20140127_emoji_2.png" title="" >}}
+![](/images/2014/01/20140127_emoji_2.png)
 
 絵文字が表示されます。
 
-{{< figure src="/images/2014/01/20140127_emoji_3.png" title="" >}}
+![](/images/2014/01/20140127_emoji_3.png)
 
 ## どうやらEメールアプリはアプリ側で解釈してくれているらしい
 

@@ -30,7 +30,7 @@ primaryStage.show()
 
 これを実行するとこういう画像ファイルが生成される。
 
-{{< figure src="/images/2018/01/scala_javafx_save_image-1.png" title="生成された画像" >}}
+![生成された画像](/images/2018/01/scala_javafx_save_image-1.png)
 
 ## ざっくり説明
 

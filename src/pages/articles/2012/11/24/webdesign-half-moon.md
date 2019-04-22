@@ -7,7 +7,7 @@ date: "2012-11-24T03:26:12+00:00"
 
 [歯科ハーフムーン｜仙台市 インプラント 無痛治療｜トップページ](http://www.half-moon.or.jp/)
 
-{{< figure src="/images/2012/11/8a4183b6df54.png" title="" >}}
+![](/images/2012/11/8a4183b6df54.png)
 
 ## タイトル画像
 

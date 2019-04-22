@@ -23,6 +23,19 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `5000164 is here`,
@@ -34,7 +47,6 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
-    `gatsby-transformer-remark`,
     `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-feed`,

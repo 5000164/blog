@@ -7,7 +7,7 @@ date: "2012-11-22T00:55:30+00:00"
 
 [alcePixel](http://alcepixel.com/)
 
-{{< figure src="/images/2012/11/alcePixel.png" title="" >}}
+![](/images/2012/11/alcePixel.png)
 
 ## 全体
 

@@ -3,7 +3,7 @@ title: "空白と改行を削除するツールを作った"
 date: "2013-10-23T23:59:00+00:00"
 ---
 
-{{< figure src="/images/2013/10/20131023_space_delete_thumb.png" title="" >}}
+![](/images/2013/10/20131023_space_delete_thumb.png)
 
 ## 作ったものの概要
 
@@ -35,7 +35,7 @@ date: "2013-10-23T23:59:00+00:00"
 
 ## 作ってみた Ver.1
 
-{{< figure src="/images/2013/10/20131023_space_delete_ver1.png" title="" >}}
+![](/images/2013/10/20131023_space_delete_ver1.png)
 
 というわけで作ってみた。  
 編集領域はちょっと広め。  
@@ -47,7 +47,7 @@ date: "2013-10-23T23:59:00+00:00"
 
 ## 作ってみた Ver.2
 
-{{< figure src="/images/2013/10/20131023_space_delete_ver2.png" title="" >}}
+![](/images/2013/10/20131023_space_delete_ver2.png)
 
 というわけで作ってみた。  
 とってもエディタエディタさせました。  

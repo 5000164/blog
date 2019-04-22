@@ -7,7 +7,7 @@ date: "2012-11-25T03:55:43+00:00"
 
 [Gene Lu. User Experience/Interaction Designer. Welcome.](http://genelu.com/)
 
-{{< figure src="/images/2012/11/GeneLu.png" title="" >}}
+![](/images/2012/11/GeneLu.png)
 
 ## 全体
 

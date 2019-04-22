@@ -23,7 +23,7 @@ primaryStage.show()
 
 このコードで下記のような実行結果になる。
 
-{{< figure src="/images/2018/01/scala_javafx_generate_image-1.png" title="実行結果" >}}
+![実行結果](/images/2018/01/scala_javafx_generate_image-1.png)
 
 ## 参考
 

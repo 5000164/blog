@@ -7,7 +7,7 @@ date: "2012-11-28T00:29:41+00:00"
 
 [Welcome to Elite Premium WordPress Theme](http://mythemepreviews.com/elite-wp/)
 
-{{< figure src="/images/2012/11/Elite.png" title="" >}}
+![](/images/2012/11/Elite.png)
 
 ## 色
 

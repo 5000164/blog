@@ -7,7 +7,7 @@ date: "2012-11-21T00:44:26+00:00"
 
 [GRAND : 416.977.3831 - Digital, Interactive, Mobile & Social](http://www.wearegrand.com/)
 
-{{< figure src="/images/2012/11/20121120.png" title="" >}}
+![](/images/2012/11/20121120.png)
 
 ## テクスチャ
 

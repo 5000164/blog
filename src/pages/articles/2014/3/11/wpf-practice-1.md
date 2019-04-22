@@ -3,11 +3,11 @@ title: "WPF で枠のないウィンドウを作る"
 date: "2014-03-11T23:17:38+00:00"
 ---
 
-{{< figure src="/images/2014/03/20140311_practice1.png" title="" >}}
+![](/images/2014/03/20140311_practice1.png)
 
 ## 実際に作ったものはこんな感じです
 
-{{< figure src="/images/2014/03/20140311_practice1-300x300.png" title="" >}}
+![](/images/2014/03/20140311_practice1-300x300.png)
 
 ソースコードはこちら。
 

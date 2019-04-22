@@ -3,7 +3,7 @@ title: "山に登ってきた"
 date: "2012-08-01T00:39:33+00:00"
 ---
 
-{{< figure src="/images/2012/08/eac1b62354dddad12eec431e4eb1a8f1.jpg" title="" >}}
+![](/images/2012/08/eac1b62354dddad12eec431e4eb1a8f1.jpg)
 
 久しぶりの登山に行って来ました。
 

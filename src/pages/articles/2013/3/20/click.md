@@ -3,7 +3,7 @@ title: "iOSでDOMに要素追加してjQueryでclickイベントを取得する"
 date: "2013-03-20T01:46:32+00:00"
 ---
 
-{{< figure src="/images/2013/03/de_20130319_click.jpg" title="" >}}
+![](/images/2013/03/de_20130319_click.jpg)
 
 ## clickイベントを取得したい
 

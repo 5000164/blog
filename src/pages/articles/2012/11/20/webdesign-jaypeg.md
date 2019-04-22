@@ -7,7 +7,7 @@ date: "2012-11-20T01:44:22+00:00"
 
 [JAYPEG](https://jypg.net/) 
 
-{{< figure src="/images/2012/11/JAYPEG_20121119.png" title="" >}}
+![](/images/2012/11/JAYPEG_20121119.png)
 
 ## トップ画像
 

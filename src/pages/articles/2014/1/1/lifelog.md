@@ -3,7 +3,7 @@ title: "リストバンド型のライフログガジェットを調べたので
 date: "2014-01-01T17:44:17+00:00"
 ---
 
-{{< figure src="/images/2014/01/de_20140101_lifelog.jpg" title="" >}}
+![](/images/2014/01/de_20140101_lifelog.jpg)
 
 ## きっかけ
 

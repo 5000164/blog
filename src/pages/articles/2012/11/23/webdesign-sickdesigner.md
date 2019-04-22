@@ -7,7 +7,7 @@ date: "2012-11-23T01:12:53+00:00"
 
 [Sickdesigner.com › The work and play of Radu Chelariu](http://sickdesigner.com/)
 
-{{< figure src="/images/2012/11/Sickdesigner.com_.png" title="" >}}
+![](/images/2012/11/Sickdesigner.com_.png)
 
 ## 全体
 

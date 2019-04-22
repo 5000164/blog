@@ -3,7 +3,7 @@ title: "謙虚・尊敬・信頼を忘れずにやっていきたい - 本「Tea
 date: "2018-06-03T17:28:56+09:00"
 ---
 
-[{{< figure src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=4873116309&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=5000164-22" title="" >}}](https://www.amazon.co.jp/gp/product/4873116309/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4873116309&linkCode=as2&tag=5000164-22&linkId=b72429711e30a1448339d91913c8c4b1)
+[![](//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=4873116309&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=5000164-22)](https://www.amazon.co.jp/gp/product/4873116309/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4873116309&linkCode=as2&tag=5000164-22&linkId=b72429711e30a1448339d91913c8c4b1)
 
 前々から読みたいと思っていたのでついに読んだ。  
 HRT について、文化について、勉強になった。  

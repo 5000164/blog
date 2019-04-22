@@ -3,7 +3,7 @@ title: "HTMLとCSSとJavaScriptで空白と改行を削除するWebアプリを�
 date: "2013-11-29T21:01:01+00:00"
 ---
 
-{{< figure src="/images/2013/11/20131129_space_delete.png" title="" >}}
+![](/images/2013/11/20131129_space_delete.png)
 
 ## 概要
 

@@ -4,7 +4,7 @@ date: "2013-11-21T23:58:36+00:00"
 ---
 
 </p> <div style="text-align: center;">
-  {{< figure src="/images/2013/06/vocaloid-150x150.png" title="" >}}
+  ![](/images/2013/06/vocaloid-150x150.png)
 </div></a>
 
 ## イントロまたしても久しぶりのランキングです。

@@ -7,7 +7,7 @@ date: "2012-11-26T01:24:33+00:00"
 
 [Laurent Millet](http://www.laurent-millet.com/)
 
-{{< figure src="/images/2012/11/Laurent-Millet.png" title="" >}}
+![](/images/2012/11/Laurent-Millet.png)
 
 ## コンテンツの並べ方
 

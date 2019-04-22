@@ -7,7 +7,7 @@ date: "2012-11-27T00:39:29+00:00"
 
 [Buffalo - Web Development, E-Commerce & Web Design - Brighton UK](http://builtbybuffalo.com/)
 
-{{< figure src="/images/2012/11/Buffalo.png" title="" >}}
+![](/images/2012/11/Buffalo.png)
 
 ## ナビゲーションについて
 
@@ -19,6 +19,6 @@ date: "2012-11-27T00:39:29+00:00"
 
 このサイトでは下記の図のように3つの長方形を組み合わせることで実現している。
 
-{{< figure src="/images/2012/11/3ace5290e996.png" title="" >}}
+![](/images/2012/11/3ace5290e996.png)
 
 こうすることによってマウスの判定も見た目と同様となりUXが向上すると思われる。

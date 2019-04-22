@@ -3,7 +3,7 @@ title: "CSS Nite in SENDAI, Vol.7 「変化するWebデザイン 〜既成概念
 date: "2013-12-01T23:18:10+00:00"
 ---
 
-{{< figure src="/images/2013/12/de_20131201_css_nite.jpg" title="" >}}
+![](/images/2013/12/de_20131201_css_nite.jpg)
 
 ## CSS Nite in SENDAIについて
 

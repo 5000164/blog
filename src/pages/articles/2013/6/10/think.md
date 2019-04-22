@@ -4,7 +4,7 @@ date: "2013-06-10T04:52:56+00:00"
 ---
 
 </p> <div style="text-align: center;">
-  {{< figure src="/images/2013/06/20130609_think.jpg" title="" >}}
+  ![](/images/2013/06/20130609_think.jpg)
 </div></a>
 
 ## 言葉との出会い

@@ -3,11 +3,11 @@ title: "DXライブラリできれいなフォントを表示する"
 date: "2014-03-16T03:20:28+00:00"
 ---
 
-{{< figure src="/images/2014/03/20140315_practice1.png" title="" >}}
+![](/images/2014/03/20140315_practice1.png)
 
 ## 早速見ていただきましょう
 
-{{< figure src="/images/2014/03/20140315_practice1.png" title="" >}}
+![](/images/2014/03/20140315_practice1.png)
 
 ソースコードはこちら。
 
@@ -25,7 +25,7 @@ date: "2014-03-16T03:20:28+00:00"
 
 ## 結果はごらんの通り
 
-{{< figure src="/images/2014/03/20140315_practice1_zoom-300x300.png" title="" >}}
+![](/images/2014/03/20140315_practice1_zoom-300x300.png)
 
 美しいフォントを表示させることができました。
 
