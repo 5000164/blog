@@ -74,6 +74,10 @@ const Pagination = styled.ul`
   margin: 60px auto 20px;
   padding: 0;
   text-align: center;
+  @media (max-width: 800px) {
+    width: 95%;
+    overflow-x: scroll;
+  }
 `
 
 const Page = styled.li`
