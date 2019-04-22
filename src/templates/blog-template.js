@@ -152,25 +152,19 @@ const GlobalStyle = createGlobalStyle`
     background: #e3e4e6;
     border-radius: 8px;
   }
-  .content .highlight {
-    margin: 40px 0;
-    background-color: #272822;
-  }
-  .content .highlight > div {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  .content .highlight table {
-    display: flex !important;
+  .content pre {
+    display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    margin: 40px 0;
+    padding: 1em 0;
   }
-  .content .highlight tbody {
+  .content pre > code {
     min-width: 800px;
-    max-width: 98%;
   }
   @media (max-width: 800px) {
-    .content .highlight tbody {
+    .content pre > code {
       min-width: 95%;
       max-width: 95%;
     }

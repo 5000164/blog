@@ -6,6 +6,7 @@ import Footer from "./footer"
 
 const GlobalStyle = createGlobalStyle`
   html {
+    box-sizing: border-box;
     width: 100%;
     height: 100%;
     margin: 0;
