@@ -3,7 +3,7 @@ title: "Scala で JavaFX の Casvas の内容を画像として保存する"
 date: "2018-01-15T20:35:10+09:00"
 ---
 
-[昨日の記事]({{< relref "/2018/1/14/scala-javafx-generate-image.md" >}}) の続きのようなもの。  
+[昨日の記事](/2018/1/14/scala-javafx-generate-image/) の続きのようなもの。  
 `Canvas` で表示できるようになったから画像として保存する。  
 コードはこんな感じ。
 

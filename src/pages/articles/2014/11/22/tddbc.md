@@ -44,7 +44,7 @@ date: "2014-11-22T23:08:52+09:00"
 
 というか全体的によくわかってない。  
 これをまずは立ち読みしてみる。  
-<div style="text-align: center;"><iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=5000164-22&o=9&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=4798124583" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe></div>
+[実践テスト駆動開発 (Object Oriented SELECTION) | Steve Freeman, Nat Pryce, 和智 右桂, 高木 正弘 |本 | 通販 | Amazon](https://www.amazon.co.jp/dp/4798124583)
 
 ## やれるところからやる
 
@@ -85,6 +85,6 @@ Hello, world! にテストはいらない。
 
 ## 勉強する
 
-<div style="text-align: center;"><iframe src="//www.slideshare.net/slideshow/embed_code/41785717" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe></div> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/KyonMm/ss-41785717" title="テストファースト、自動テストを導入するという事について（@社内勉強会）" target="_blank">テストファースト、自動テストを導入するという事について（@社内勉強会）</a> </strong> from <strong><a href="//www.slideshare.net/KyonMm" target="_blank">Kyon Mm</a></strong> </div>
-[「いまさら聞けないTDD/BDD超入門」最新記事一覧 - ITmedia Keywords](http://www.atmarkit.co.jp/ait/kw/tdd_bdd.html)  
-[Mikado-Method - Google 検索](https://www.google.co.jp/search?q=Mikado-Method)
+- [テストファースト、自動テストを導入するという事について（@社内勉強会）](https://www.slideshare.net/KyonMm/ss-41785717)
+- [「いまさら聞けないTDD/BDD超入門」最新記事一覧 - ITmedia Keywords](http://www.atmarkit.co.jp/ait/kw/tdd_bdd.html)  
+- [Mikado-Method - Google 検索](https://www.google.co.jp/search?q=Mikado-Method)

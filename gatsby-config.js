@@ -57,6 +57,7 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
+    `gatsby-plugin-catch-links`,
     `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-feed`,

@@ -3,9 +3,7 @@ title: "おれおれVOCALOIDランキング（2013.6.13）"
 date: "2013-06-14T01:41:01+00:00"
 ---
 
-</p> <div style="text-align: center;">
-  ![](/images/2013/06/vocaloid-150x150.png)
-</div></a>
+![](/images/2013/06/vocaloid-150x150.png)
 
 ## イントロ
 

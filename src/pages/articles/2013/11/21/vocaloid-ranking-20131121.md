@@ -3,9 +3,7 @@ title: "おれおれVOCALOIDランキング（2013.11.21）"
 date: "2013-11-21T23:58:36+00:00"
 ---
 
-</p> <div style="text-align: center;">
-  ![](/images/2013/06/vocaloid-150x150.png)
-</div></a>
+![](/images/2013/06/vocaloid-150x150.png)
 
 ## イントロまたしても久しぶりのランキングです。
 
