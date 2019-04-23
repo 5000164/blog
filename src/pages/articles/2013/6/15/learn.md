@@ -3,9 +3,7 @@ title: "「おれってダメだ」「そんなことないよ」について教
 date: "2013-06-15T04:12:39+00:00"
 ---
 
-</p> <div style="text-align: center;">
-  ![](/images/2013/06/20130614_learn.png)
-</div></a>
+![](/images/2013/06/20130614_learn.png)
 
 ## よく思うこと
 

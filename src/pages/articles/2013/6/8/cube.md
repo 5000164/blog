@@ -3,9 +3,7 @@ title: "CSS3でなんちゃって立方体を実装してみた"
 date: "2013-06-08T19:51:33+00:00"
 ---
 
-</p> <div style="text-align: center;">
-  ![](/images/2013/06/20130608_cube-300x300.png)
-</div></a>
+![](/images/2013/06/20130608_cube-300x300.png)
 
 ## 実装の練習
 

@@ -5,10 +5,6 @@ date: "2015-05-02T05:22:31+09:00"
 
 ※ ネタバレ注意
 
-<div style="text-align: center;">
-<a href="http://www.amazon.co.jp/gp/product/4062838613/ref=as_li_ss_il?ie=UTF8&camp=247&creative=7399&creativeASIN=4062838613&linkCode=as2&tag=5000164-22"><img border="0" src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=4062838613&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=as2&o=9&a=4062838613" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-</div>
-
 ## 自分の価値は誰が決めるのか
 
 自分とは自分 1 人なのか。  

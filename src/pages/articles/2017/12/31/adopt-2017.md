@@ -62,8 +62,6 @@ date: "2017-12-31T17:57:13+09:00"
 
 ## 電子書籍リーダー
 
-<a href="https://www.amazon.co.jp/dp/B06XDK92KS/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=9e9091ebc13575dc402d67874b83936f" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B06XDK92KS&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=li3&o=9&a=B06XDK92KS" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-
 - [Amazon | Kindle Oasis - 電子書籍リーダー](https://www.amazon.co.jp/dp/B06XDK92KS)
 
 電子ペーパーが切り替わるところがあまり好きじゃなかったので避けていたが、軽くて片手で持てて表示もきれいで画面も大きくて見やすいので買った。  
@@ -78,8 +76,6 @@ L 字デスクに興味はあったが使ったことがなかったので買っ
 作業スペースが広くていい。
 
 ## モニターアーム
-
-<a href="https://www.amazon.co.jp/dp/B074NVDV1J/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=b3cc66dba6c3a091078e166e0bd7834f" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B074NVDV1J&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=li3&o=9&a=B074NVDV1J" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
 - [Amazon | グリーンハウス 液晶ディスプレイアーム 5軸 クランプ式 (モニターサイズ:32インチまで) GH-AMCG01 | グリーンハウス | パソコン・周辺機器 通販](https://www.amazon.co.jp/dp/B074NVDV1J)
 
@@ -112,16 +108,12 @@ COMP GUMMY は味が甘い系ではなくしょっぱい系で、噛みごたえ
 
 ## 空気清浄機
 
-<a href="https://www.amazon.co.jp/dp/B073WJDQMN/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=c23a61e8d27cab86efeba1ec1854342a" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B073WJDQMN&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=li3&o=9&a=B073WJDQMN" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-
 - [ヨドバシ.com - Blueair ブルーエア 101436 [空気清浄機 Blue Pure 411 Particle＋Carbon] 通販【全品無料配達】](http://www.yodobashi.com/product/100000001003707352/)
 
 空気清浄機も買ったことがなかったので買ってみた。  
 買ったやつはあんまり評価良くないけど、ほこりをたくさん吸ってるのを見るとこんなにほこりを吸っていたのかとなって買ってよかったという気持ちになる。
 
 ## 収納
-
-<a href="https://www.amazon.co.jp/dp/B001RCU1V8/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=35671f17e731867b5a24a4443d34674b" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B001RCU1V8&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=li3&o=9&a=B001RCU1V8" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
 - [Amazon | フェローズ バンカーズボックス 703ボックス A4ファイル用 黒 3枚パック 対荷重30kg | 文房具・オフィス用品 | 文房具・オフィス用品](https://www.amazon.co.jp/dp/B001RCU1V8)
 
@@ -130,8 +122,6 @@ COMP GUMMY は味が甘い系ではなくしょっぱい系で、噛みごたえ
 引っ越しをよくするので、その気になれば簡単に捨てられるものを探した結果ダンボール製の収納を買うことにした。
 
 ## 光目覚まし時計
-
-<a href="https://hb.afl.rakuten.co.jp/hgc/164a7833.fc0cc12c.164a7834.5b0639cb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmoonmoon%2Finti4%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmoonmoon%2Fi%2F10000152%2F&link_type=pict&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0Iiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJkb3duIiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MH0%3D" target="_blank" rel="nofollow" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hgb/164a7833.fc0cc12c.164a7834.5b0639cb/?me_id=1280430&item_id=10000152&m=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_gold%2Fmoonmoon%2Fimages%2Finti4_pc%2Finti4_items_00b.jpg%3F_ex%3D80x80&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_gold%2Fmoonmoon%2Fimages%2Finti4_pc%2Finti4_items_00b.jpg%3F_ex%3D400x400&s=400x400&t=pict" border="0" alt="" title=""></a>
 
 - [【楽天市場】目覚まし時計 光と大音量の最強目覚ましinti4 最新の寝坊対策は光と大音量で起きる 保証付 おしゃれ 子供 デジタル おもしろ：ムーンムーン楽天市場店](https://item.rakuten.co.jp/moonmoon/inti4/)
 

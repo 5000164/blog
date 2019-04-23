@@ -5,10 +5,6 @@ date: "2015-08-10T00:20:39+09:00"
 
 ※ネタバレ注意
 
-<div style="text-align: center;">
-<a href="http://www.amazon.co.jp/gp/product/B0041RQQCY/ref=as_li_qf_sp_asin_il?ie=UTF8&camp=247&creative=1211&creativeASIN=B0041RQQCY&linkCode=as2&tag=5000164-22"><img border="0" src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0041RQQCY&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=as2&o=9&a=B0041RQQCY" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-</div>
-
 ## おもしろかった
 
 展開が早い。  

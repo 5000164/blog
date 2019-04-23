@@ -3,7 +3,7 @@ title: "夢を語り合える世界をつくりたい - 「Hoping Invites | Tsut
 date: "2014-11-22T00:12:40+09:00"
 ---
 
-<div style="text-align: center;"><iframe width="560" height="315" src="//www.youtube.com/embed/gBumdOWWMhY" frameborder="0" allowfullscreen></iframe></div>
+[Hope invites | Tsutomu Uematsu | TEDxSapporo - YouTube](https://www.youtube.com/watch?v=gBumdOWWMhY)
 
 ## ひとりでも多くの子どもたちが、可能性を奪われなくなったらいいなぁ
 

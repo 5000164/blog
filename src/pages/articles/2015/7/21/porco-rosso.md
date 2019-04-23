@@ -5,10 +5,6 @@ date: "2015-07-21T23:13:34+09:00"
 
 ※ネタバレ注意
 
-<div style="text-align: center;">
-<a href="http://www.amazon.co.jp/gp/product/B00005R5J6/ref=as_li_qf_sp_asin_il?ie=UTF8&camp=247&creative=1211&creativeASIN=B00005R5J6&linkCode=as2&tag=5000164-22"><img border="0" src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00005R5J6&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22" ></a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=5000164-22&l=as2&o=9&a=B00005R5J6" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-</div>
-
 # 海と空がきれいで、光の使い方が心地よい
 
 海がきれい。  

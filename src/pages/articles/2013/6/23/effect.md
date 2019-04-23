@@ -3,9 +3,7 @@ title: "他人を変えることはできないけど、影響を与えること
 date: "2013-06-23T04:59:54+00:00"
 ---
 
-</p> <div style="text-align: center;">
-  ![](/images/2013/06/20130622_effect.png)
-</div></a>
+![](/images/2013/06/20130622_effect.png)
 
 ## 他人を救うことはできない
 
