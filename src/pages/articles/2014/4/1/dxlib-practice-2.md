@@ -3,23 +3,23 @@ title: "DXライブラリで読み込んだテキストをエンターで表示"
 date: "2014-04-01 02:03:09 +0900"
 ---
 
-![](/images/2014/04/20140331_practice2_eye.png)
+![](/images/2014/4/1/dxlib-practice-2-1.png)
 
 ## 実行結果
 
-![](/images/2014/04/20140331_practice2_1.png)
+![](/images/2014/4/1/dxlib-practice-2-2.png)
 
 これが。
 
-![](/images/2014/04/20140331_practice2_2.png)
+![](/images/2014/4/1/dxlib-practice-2-3.png)
 
 こうなって。
 
-![](/images/2014/04/20140331_practice2_3.png)
+![](/images/2014/4/1/dxlib-practice-2-4.png)
 
 こうなってって。
 
-![](/images/2014/04/20140331_practice2_4.png)
+![](/images/2014/4/1/dxlib-practice-2-5.png)
 
 最終的にはこうなります。
 

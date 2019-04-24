@@ -3,7 +3,7 @@ title: "気が利くデザイン（Pocket）"
 date: "2013-11-02 03:03:50 +0900"
 ---
 
-![](/images/2013/11/20131101_pocket.png)
+![](/images/2013/11/2/pocket-1.png)
 
 ## Pocketについて
 

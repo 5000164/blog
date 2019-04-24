@@ -3,7 +3,7 @@ title: "2013年出会えてよかったVOCALOID曲5選"
 date: "2014-01-01 15:44:14 +0900"
 ---
 
-![](/images/2013/06/vocaloid.png)
+![](/images/2014/1/1/vocaloid-2013-1.png)
 
 ## イントロ
 

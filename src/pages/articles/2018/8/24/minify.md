@@ -33,7 +33,7 @@ npm 版を使ってるので npx を使ってるところが違う。
 
 こんな感じになる。
 
-![設定内容](/images/2018/8/24/minify/watcher.png)
+![設定内容](/images/2018/8/24/minify-1.png)
 
 ## メモ
 

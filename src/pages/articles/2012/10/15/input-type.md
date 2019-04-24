@@ -19,19 +19,19 @@ HTML5 からは入力文字を pattern で正規表現を利用して制御で�
 <input type="number">
 ```
 
-![](/images/2012/10/number1.png)
+![](/images/2012/10/15/input-type-1.png)
 
 ```html
 <input type="tel">
 ```
 
-![](/images/2012/10/tel1.png)
+![](/images/2012/10/15/input-type-2.png)
 
 ```html
 <input type="text" pattern="\d*">
 ```
 
-![](/images/2012/10/text1.png)
+![](/images/2012/10/15/input-type-3.png)
 
 ## 以下、参考
 

@@ -13,7 +13,7 @@ Adobeから新しいプログラミング用フォントがリリースされた
 
 まずは私が普段使っているRictyフォントの英字フォントであるInconsolataから。 
 
-![](/images/2012/09/Inconsolata.png)
+![](/images/2012/9/26/font-1.png)
 
 表示するスペースが少ないのに可読性が非常に高いのが特徴だと思います。 
 
@@ -23,7 +23,7 @@ Adobeから新しいプログラミング用フォントがリリースされた
 
 次にWindowsにプリインストールされているConsolas。 
 
-![](/images/2012/09/Consolas.png)
+![](/images/2012/9/26/font-2.png)
 
 少しまるっとしていて非常に読みやすいフォントです。 
 
@@ -33,7 +33,7 @@ Windowsにプリインストールされているので、とりあえず表示�
 
 そして新しくリリースされたSource Code Pro。 
 
-![](/images/2012/09/Source_Code_Pro.png)
+![](/images/2012/9/26/font-3.png)
 
 他の2つに比べて少し大きく文字間と行間が広めなのが特徴だと思います。 
 
@@ -57,12 +57,12 @@ Windowsにプリインストールされているので、とりあえず表示�
 
 ## MS UI Gothic
 
-![](/images/2012/09/MS_UI_Gothic.png)
+![](/images/2012/9/26/font-4.png)
 
 ## Meiryo UI
 
-![](/images/2012/09/Meiryo_UI.png)
+![](/images/2012/9/26/font-5.png)
 
 ## Segoe UI
 
-![](/images/2012/09/Segoe_UI.png)
+![](/images/2012/9/26/font-6.png)

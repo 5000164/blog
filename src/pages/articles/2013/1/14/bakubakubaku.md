@@ -3,7 +3,7 @@ title: "漫画の感想（バクバクバク／γ‐γ）"
 date: "2013-01-14 01:52:01 +0900"
 ---
 
-<a title="バクバクバク" href="http://nagurigaki.web.fc2.com/baku/" target="_blank">![](/images/2013/01/1fc28d2282cd.png)</a>
+![](/images/2013/1/14/bakubakubaku-1.png)
 
 ## ネタバレ注意
 
