@@ -5,6 +5,7 @@ module.exports = {
     siteUrl: `https://blog.5000164.jp`,
     image: `/images/icon.png`,
     twitterUsername: `@5000164`,
+    repository: `https://github.com/5000164/blog`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

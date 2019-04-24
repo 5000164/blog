@@ -9,10 +9,12 @@ const Header = ({ data, topPage, slug, title, date }) => {
   if (topPage) {
     return <TopPageHeader/>
   } else {
+    const historyLink = data.site.siteMetadata.repository + "/commits/master/src/pages/articles" + slug.slice(0, -1) + ".md"
+    const formattedDate = moment(date).local().format(`MMMM Do, YYYY`)
     return <StyledHeader>
       <StyledTopLink to="/">{data.site.siteMetadata.title}</StyledTopLink>
       <StyledTitleLink to={slug}>{title}</StyledTitleLink>
-      <Subtitle>Published {moment(date).local().format(`MMMM Do, YYYY`)} by Hiroshi Sugawara</Subtitle>
+      <Subtitle><a href={historyLink}>Published {formattedDate}</a> by Hiroshi Sugawara</Subtitle>
     </StyledHeader>
   }
 }
@@ -75,6 +77,7 @@ export default props => (
         site {
           siteMetadata {
             title
+            repository
           }
         }
       }
@@ -88,6 +91,7 @@ Header.propTypes = {
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
         title: PropTypes.string.isRequired,
+        repository: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
   }).isRequired,
