@@ -9,13 +9,13 @@ fn キーだけはキーボード本体で設定しないといけないので�
 あとは Karabiner-Elements の設定をエクスポートして GitHub などにあげておく予定である。  
 fn キーの設定方法だけメモを残しておく。
 
-## fn キーの設定方法
+# fn キーの設定方法
 
 1. fn + 左 Shift 3 秒間長押し
 2. LED が赤く点滅したら離して fn キーを押す
 3. fn を設定したいキーを押す
     - 自分は左下の ctrl キーを fn キーにしている
 
-## リンク
+# リンク
 
 - [tekezo/Karabiner-Elements: Karabiner-Elements is a powerful utility for keyboard customization on macOS Sierra (10.12) or later.](https://github.com/tekezo/Karabiner-Elements)

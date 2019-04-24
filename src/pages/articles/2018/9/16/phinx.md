@@ -13,11 +13,11 @@ Phinx はこれ。
 
 - [Phinx Documentation — Phinx 0.9.2 documentation](http://docs.phinx.org/en/latest/)
 
-## 動機
+# 動機
 
 DB をマイグレーションしようと思った時に、せっかくだから PHP 製のマイグレーションツールを使おうと思って探したら Phinx がよさそうだったから使ってみた。
 
-## ざっくりした使い方
+# ざっくりした使い方
 
 - MySQL に対してマイグレーションを行おうと思ったので pdo_mysql を使えるようにしておく
 
@@ -59,14 +59,14 @@ docker run --rm --interactive --tty \
     phinx vendor/bin/phinx migrate -e development
 ```
 
-## 所感
+# 所感
 
 PHP プロジェクトの場合に PHP で統一できるのはいい。  
 Docker でさっと使えて便利だった。  
 マイグレーションファイルの書き方は独自記法があるようだったが、SQL をそのまま書いて使った。  
 軽くしか使ってないけどなんとなくよさそうかも。
 
-## 参考
+# 参考
 
 - [5000164/php7-practice-1](https://github.com/5000164/php7-practice-1)
     - 練習用に使ってみたリポジトリ

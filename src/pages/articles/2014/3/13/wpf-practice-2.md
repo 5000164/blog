@@ -5,14 +5,14 @@ date: "2014-03-13 04:21:42 +0900"
 
 ![](/images/2014/3/13/wpf-practice-2-1.png)
 
-## 実際に作ったものはこんな感じです
+# 実際に作ったものはこんな感じです
 
 方向キーの入力した方向へで赤い点が動きます。  
 ソースコードはこちら。
 
 - [5000164/wpf-practice-2](https://github.com/5000164/wpf-practice-2)
 
-## 画面に動かすものを表示する
+# 画面に動かすものを表示する
 
 とりあえずなんでもよかったので、 Rectangle タグで四角形を表示します。  
 そして、位置を指定するために Canvas タグで囲みます。
@@ -26,21 +26,21 @@ date: "2014-03-13 04:21:42 +0900"
 これで XAML 側はほぼ完成。  
 あとは動かすだけ。
 
-## キーボードの入力を取得します
+# キーボードの入力を取得します
 
 Window に PreviewKeyDown をつけます。  
 これでキーが押されたらイベントが発生します。
 
 - [WPFサンプル:KeyDownイベントとKeybord.Modifiersプロパティ:Gushwell&#8217;s C# Dev Notes](http://gushwell.ldblog.jp/archives/52318833.html)
 
-## C# 側で座標を取得するために
+# C# 側で座標を取得するために
 
 まずは四角に Name をつけます。  
 これで C# 側で変数として扱えます。
 
 - [XAML とプログラムコード（WPF） (.NET Framework)](http://ufcpp.net/study/dotnet/wpf_xamlcode.html)
 
-## 四角の現在位置を取得する
+# 四角の現在位置を取得する
 
 C# 側で四角につけた名前から座標を取得します。
 
@@ -52,7 +52,7 @@ Double topPosition = Canvas.GetTop(this.pointer);
 
 - [Canvas.GetLeft メソッド (System.Windows.Controls)](http://msdn.microsoft.com/ja-jp/library/system.windows.controls.canvas.getleft(v=vs.110).aspx)
 
-## 入力されたキーの内容を判断する
+# 入力されたキーの内容を判断する
 
 次は、方向キーが入力された方向へ動くために、入力されたキーを判断します。
 
@@ -70,7 +70,7 @@ else if (e.Key == Key.Right)
 
 - [Key 列挙体 (System.Windows.Input)](http://msdn.microsoft.com/ja-jp/library/system.windows.input.key(v=vs.110).aspx)
 
-## 入力された方向へ移動する
+# 入力された方向へ移動する
 
 入力された方向がわかったら、その方向へ座標を移動して this.pointer にセットします。
 
@@ -88,7 +88,7 @@ else if (e.Key == Key.Right)
 
 - [Canvas.SetLeft メソッド (System.Windows.Controls)](http://msdn.microsoft.com/ja-jp/library/system.windows.controls.canvas.setleft(v=vs.110).aspx)
 
-## 完成
+# 完成
 
 これで、キーボードの方向キーを入力した方向へ移動することができました。  
 ただ、ゲームのようなものを作ろうと思っていたのですが、これだと実装が大変そうです。  

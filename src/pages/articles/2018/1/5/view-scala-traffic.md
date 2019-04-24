@@ -3,12 +3,12 @@ title: "Scala の SSL / TLS 通信の中身を見る"
 date: "2018-01-05 17:48:03 +0900"
 ---
 
-## Scala の通信の中身が見たい
+# Scala の通信の中身が見たい
 
 Scala で API を叩くコードを書いた。  
 ちゃんと API を叩けているのか知りたい、リクエストとレスポンスが見たいと思った。
 
-## プロキシーを通す
+# プロキシーを通す
 
 [Charles](https://www.charlesproxy.com/) を使ってローカルにプロキシーを立てる。 ([Postman](https://www.getpostman.com/) も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。)  
 HTTP 通信のライブラリとして [sttp](https://github.com/softwaremill/sttp) を使用していたので [プロキシーの設定方法](http://sttp.readthedocs.io/en/latest/conf/proxy.html) を参考にして下記のように設定する。
@@ -19,7 +19,7 @@ val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy("l
 
 これだけで、 HTTP 通信の中身は見られるようになる。
 
-## 2018.5.28 追記
+# 2018.5.28 追記
 
 `HttpURLConnectionBackend` のデフォルト引数が `options: SttpBackendOptions = SttpBackendOptions.Default` となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるので
 
@@ -30,7 +30,7 @@ val backend: SttpBackend[Id, Nothing] = HttpURLConnectionBackend()
 のままでいい。  
 Charles は起動時に自動でシステムのプロキシー設定を書き換えてくれるので、設定がそのまま反映される。
 
-## SSL / TLS 通信の中身を見えるようにする
+# SSL / TLS 通信の中身を見えるようにする
 
 SSL / TLS 通信の中身を見るための手順としては
 
@@ -40,7 +40,7 @@ SSL / TLS 通信の中身を見るための手順としては
 
 となる。
 
-## Charles の証明書を信頼したキーストアを生成する
+# Charles の証明書を信頼したキーストアを生成する
 
 まず Charles の証明書を取得する。  
 これはアプリケーションのメニューの `Help > SSL Proxying > Save Charles Root Certificate...` から取得できる。  
@@ -55,7 +55,7 @@ keytool -keystore cacerts -importcert -alias charles -file charles-ssl-proxying-
 
 また、この時に `keytool -list -keystore cacerts` のようにして内容を表示して追加されたかどうか確認することができる。
 
-## 生成したキーストアをアプリケーションから読み込む
+# 生成したキーストアをアプリケーションから読み込む
 
 先ほど作成したキーストアをアプリケーションから読み込む。  
 実行環境としては IntelliJ IDEA で Scala を動かしている。  
@@ -68,7 +68,7 @@ keytool -keystore cacerts -importcert -alias charles -file charles-ssl-proxying-
 
 `/path/to/cacerts` には先ほど作成したキーストアへのパスを指定する。
 
-## 2018.5.28 追記
+# 2018.5.28 追記
 
 sbt から実行する場合は
 
@@ -78,19 +78,19 @@ SBT_OPTS="-Djavax.net.ssl.keyStore=/path/to/cacerts -Djavax.net.ssl.keyStorePass
 
 のようにする。
 
-## Charles の SSL Proxy を有効にする
+# Charles の SSL Proxy を有効にする
 
 証明書を設定することで通信を行えるようにはなるが、このままでは通信の内容を見ることはできない。  
 通信の内容を見るために Charles の SSL Proxy の設定を有効にする。  
 メニューの `Proxy > SSL Proxying Settings...` から設定画面を開き、 `Enable SSL Proxying` を有効にして対象のドメインを追加する。  
 これで SSL / TLS の通信の内容を見ることができるようになる。
 
-## 感想
+# 感想
 
 なにをどうすれば通信の中身が見えるようになるのか全然わからない状態で調べ始めたけど、調べたらなんとかなってよかった。  
 通信の中身が見えるの便利。
 
-## ハマったことのメモ
+# ハマったことのメモ
 
 - Scala に javaOptions を設定する方法がわからなかった
     - build.sbt に書いても動かなかった
@@ -114,7 +114,7 @@ val listOfArguments = runtimeMxBean.getInputArguments.asScala
 for (a <- listOfArguments) println(s"ARG: $a")
 ```
 
-## 参考になったリンク
+# 参考になったリンク
 
 - [How to read JVM parameters/arguments from within a running Java application | alvinalexander.com](https://alvinalexander.com/java/how-see-jvm-parameters-arguments-from-running-java-application)
 - [JavaのJSSEでクライアント証明書を自由に選択できるようにする - 理系学生日記](http://kiririmode.hatenablog.jp/entry/20160611/1465570800)

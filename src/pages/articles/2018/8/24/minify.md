@@ -35,7 +35,7 @@ npm 版を使ってるので npx を使ってるところが違う。
 
 ![設定内容](/images/2018/8/24/minify-1.png)
 
-## メモ
+# メモ
 
 JetBrains IDE は IntelliJ IDEA とか PhpStorm とか WebStorm のこと。  
 検索の時にどの単語を使うかで引っかからなかったりしたら悲しいのでここに列挙しておく。

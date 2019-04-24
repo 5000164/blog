@@ -3,17 +3,17 @@ title: "Ansible で作成したユーザーをパスワードなしで sudo で�
 date: "2015-11-28 02:55:39 +0900"
 ---
 
-## 先に簡単な結論
+# 先に簡単な結論
 
 `/etc/sudoers.d/` の下にパスワードなしで sudo できる設定を追加する。
 
-## Vagrant の VM に Ansible で環境を構築する
+# Vagrant の VM に Ansible で環境を構築する
 
 いつもは vagrant ユーザーをそのまま使っていたのだが、ユーザー名を変えておいた方がなんとなくよさそう、と思ってユーザー名を変えることにした。  
 ユーザーの追加は user モジュールを使って簡単にできる。  
 問題は作成したユーザーで sudo できないことだった。
 
-## 一応オプションをつけて毎回パスワードを入力すれば回避できる
+# 一応オプションをつけて毎回パスワードを入力すれば回避できる
 
 ```
 ansible-playbook playbook.yml --ask-sudo-pass
@@ -22,7 +22,7 @@ ansible-playbook playbook.yml --ask-sudo-pass
 ってやって、毎回パスワードを入れれば動く。  
 でもだるい。
 
-## vagrant ユーザーはなんでパスワードなしで sudo できるのか
+# vagrant ユーザーはなんでパスワードなしで sudo できるのか
 
 なぜ、どうして。  
 全然仕組みを理解できていなかった。  
@@ -44,19 +44,19 @@ ansible-playbook playbook.yml --ask-sudo-pass
 
 やってみよう。
 
-## sudo はできたけどパスワードは聞かれる
+# sudo はできたけどパスワードは聞かれる
 
 なぜだ。  
 そうか、vagrant と同じグループに入れればいいのかと思いつく。  
 vagrant グループに入れてみる。
 
-## 状況は変わらず
+# 状況は変わらず
 
 なんで vagrant はパスワードなしで実行できるんだ。  
 特に `/etc/sudoers` に vagrant の記述はないのに。  
 と思ったら、よく見たら最後に `#includedir /etc/sudoers.d` って書いてある。
 
-## /etc/sudoers.d/ に vagrant ってファイルがあった
+# /etc/sudoers.d/ に vagrant ってファイルがあった
 
 ```
 vagrant ALL=(ALL) NOPASSWD:ALL
@@ -66,19 +66,19 @@ vagrant ALL=(ALL) NOPASSWD:ALL
 なるほどたしかにパスワードなしって書いてある。  
 でもそしたらやっぱり vagrant グループに入れればいけるのでは？
 
-## % がついてないからグループに指定してるのではなく vagrant ユーザーにだけ指定してた
+# % がついてないからグループに指定してるのではなく vagrant ユーザーにだけ指定してた
 
 やっと理解した。  
 つまり追加するユーザーの設定をここに追加すればいいわけだ。
 
-## copy モジュールで持ってったら動いた
+# copy モジュールで持ってったら動いた
 
 やった。  
 でも調べてたらもっと簡単な記述があった。
 
 - [Vagrant + Ansibleで環境構築をコード化する(4)さらにPlaybook　～終わり～ - Qiita](http://qiita.com/hidekuro/items/8cd1ebe1c52a256593ef)
 
-## 結論
+# 結論
 
 ```
 +++

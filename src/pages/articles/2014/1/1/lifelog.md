@@ -5,7 +5,7 @@ date: "2014-01-01 17:44:17 +0900"
 
 ![](/images/2014/1/1/lifelog-1.jpg)
 
-## きっかけ
+# きっかけ
 
 なんかうまく睡眠をとれている気がしません。
 
@@ -13,13 +13,13 @@ date: "2014-01-01 17:44:17 +0900"
 
 リストバンド型が楽そうだなと思ったので、リストバンド型だけ調べてます。
 
-## Jawbone UP
+# Jawbone UP
 
 いきなりですが、これを買いました。
 
 慣れてきたら使用感をレビューしたいと思います。 
 
-## メモ
+# メモ
 
 同期する際にスマートフォンに接続する必要がある。
 
@@ -29,7 +29,7 @@ Bluetoothで接続できるUP24が発売されたが、日本では未発売。
 
 UP24が日本で発売されるまで様子を見るか、UPを買うか。
 
-## 参考
+# 参考
 
 [Jawbone UPを1ヵ月使ってわかったこと | absorbed in&#8230;](http://hirsky.com/588.html)
 
@@ -37,27 +37,27 @@ UP24が日本で発売されるまで様子を見るか、UPを買うか。
 
 [Jawbone UP24 : Jawboneから次のUPが発表！今度はBluetooth機能が追加！ | favLife with iPhone](http://www.favlife.com/archives/16755)
 
-## Nike+ FuelBand SE
+# Nike+ FuelBand SE
 
-## メモ
+# メモ
 
 運動×ソーシャルというイメージ。
 
 睡眠のトラッキングやライフログという側面とは少し違うかも。
 
-## 参考
+# 参考
 
 [付けただけでアクティブな気分！毎日のあらゆる活動を記録する「Nike+ FuelBand SE」が日本上陸！ : ギズモード・ジャパン](http://www.gizmodo.jp/2013/11/nike_fuelband_se_2.html)
 
-## Fitbit Force, Fitbit Flex
+# Fitbit Force, Fitbit Flex
 
-## メモ
+# メモ
 
 日本純正だとSoftBank HealthCareの契約が必要なのが致命的。
 
 スマートフォンの着信を振動で知らせてくれるのは便利そう。
 
-## 参考
+# 参考
 
 [Fitbit Forceハンズオン：今度は期待通りかも！ : ギズモード・ジャパン](http://www.gizmodo.jp/2013/10/fitbit_force.html)
 
@@ -65,9 +65,9 @@ UP24が日本で発売されるまで様子を見るか、UPを買うか。
 
 Fitbit Flexを約二ヶ月間使ってみて | deform
 
-## BASIS
+# BASIS
 
-## メモ
+# メモ
 
 心拍数とかカロリーとか計測できるデータが多い。
 
@@ -75,25 +75,25 @@ Fitbit Flexを約二ヶ月間使ってみて | deform
 
 日本では未発売っぽい。
 
-## 参考
+# 参考
 
 [where on earth is my wonderwall? 多分日本でいちばん早いBASISのレビュー](http://qwerty1234567890.blog116.fc2.com/blog-entry-319.html)
 
-## Amiigo
+# Amiigo
 
-## メモ
+# メモ
 
 計測できるデータが多いし、使いやすそうだし、値段も安いが、未発売。
 
 情報が足りない。
 
-## 参考
+# 参考
 
 [完全防水で水陸両用フィットネスバンド「Amiigo」が今夏発売かも？！ - iPhone女史](http://www.iphone-girl.jp/2013/06/273902/)
 
 [メモ: Amiigo](http://hcondo2000.blogspot.jp/search/label/Amiigo)
 
-## まとめ
+# まとめ
 
 NikeのFuelBandしか知らなかったけど、調べたらいろいろあることがわかりました。
 

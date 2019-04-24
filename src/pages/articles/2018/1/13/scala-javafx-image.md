@@ -16,7 +16,7 @@ primaryStage.setScene(scene)
 primaryStage.show()
 ```
 
-## ポイント
+# ポイント
 
 画像を下記のパスに配置して `getClass.getResource("/test.png").toString` でパスを取得すること。
 
@@ -28,6 +28,6 @@ primaryStage.show()
             └── test.png
 ```
 
-## 参考
+# 参考
 
 - [java - JavaFx Images Path - Stack Overflow](https://stackoverflow.com/questions/33305037/javafx-images-path)

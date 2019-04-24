@@ -19,7 +19,7 @@ smb://ServerName/ShareName
 smb://ドメイン名;ユーザ名@ServerName/ShareName
 ```
 
-## 参考
+# 参考
 
 - [Mac OS X：Windows ファイル共有 (SMB) に接続する方法](http://support.apple.com/kb/HT1568?viewlocale=ja_JP&locale=ja_JP)
 - [Mac OS X：ログインしたときに自動的にサーバに接続する方法](http://support.apple.com/kb/HT4011?viewlocale=ja_JP&locale=ja_JP)

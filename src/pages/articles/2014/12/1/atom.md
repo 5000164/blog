@@ -3,11 +3,11 @@ title: "Windows の Atom で矩形選択する方法"
 date: "2014-12-01 23:55:30 +0900"
 ---
 
-## 結論
+# 結論
 
 Windows の Atom はセンタークリックのドラッグで矩形選択できる。
 
-## Windows の Atom で矩形選択するやり方です
+# Windows の Atom で矩形選択するやり方です
 
 まず、Atom はこれ。  
 [Atom](https://atom.io/)  

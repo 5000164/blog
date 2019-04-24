@@ -3,14 +3,14 @@ title: "Hugo でシンタックスハイライトを使う"
 date: "2017-08-14 22:44:23 +0900"
 ---
 
-## 2018.1.20 追記
+# 2018.1.20 追記
 
 バージョン 0.28 から導入された Chroma で何も考えず簡単にシンタックスハイライトが使えるようになった。
 
 - [Hugo | Hugo 0.28: High-speed Syntax Highlighting!](https://gohugo.io/news/0.28-relnotes/)
 - [Hugo | Syntax Highlighting](https://gohugo.io/content-management/syntax-highlighting/)
 
-## 結論
+# 結論
 
 - シンタックスハイライト用の css をテーマで読み込んでおく
 - `config.toml` に下記の設定を追加
@@ -23,15 +23,15 @@ pygmentsUseClasses = true
 pygmentsoptions = "linenos=inline"
 ```
 
-## 背景
+# 背景
 
 コードを見やすくしたいからシンタックスハイライトを使おうと思った。  
 やってみたら思ったよりもできなかった。  
 なんか疲れたのでメモ。
 
-## 手順
+# 手順
 
-## Pygments をインストールする
+# Pygments をインストールする
 
 シンタックスハイライトするのに必要なやつ。  
 何も考えずに入れる。
@@ -40,7 +40,7 @@ pygmentsoptions = "linenos=inline"
 sudo easy_install Pygments
 ```
 
-## シンタックスハイライト用の css を生成する
+# シンタックスハイライト用の css を生成する
 
 カラーコードを直接埋め込む方法もあるけど、クラスで指定した方がかっこいいと思ったのでクラスで指定する。  
 クラスで指定する場合は css を事前に生成しておいて読むこんでおく必要がある。  
@@ -51,11 +51,11 @@ sudo easy_install Pygments
 pygmentize -f html -S monokai -a .highlight > monokai.css
 ```
 
-## 生成した css をテーマで読み込む
+# 生成した css をテーマで読み込む
 
 テーマの static ディレクトリに css を置いて header で読み込む。
 
-## シンタックスハイライトを使うように設定する
+# シンタックスハイライトを使うように設定する
 
 `config.toml` に下記の設定を追加。  
 `pygmentscodefences` の設定が公式ドキュメントに見つからなくて罠だった。  
@@ -70,12 +70,12 @@ pygmentsUseClasses = true
 pygmentsoptions = "linenos=inline"
 ```
 
-## 感想
+# 感想
 
 スッとできると思ったら意外とひっかかって疲れた。  
 でも終わってみれば簡単っぽい。
 
-## 参考
+# 参考
 
 - [Hugo | Syntax Highlighting](https://gohugo.io/tools/syntax-highlighting/)
 - [How to install Pygments (syntax highlighter) using Homebrew :: Andrew Havens, Ruby Developer](http://www.andrewhavens.com/posts/13/how-to-install-pygments-syntax-highlighter-using-homebrew/)

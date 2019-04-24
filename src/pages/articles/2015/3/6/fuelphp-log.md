@@ -3,12 +3,12 @@ title: "FuelPHP のログレベルは INFO の方が DEBUG よりも上"
 date: "2015-03-06 00:25:25 +0900"
 ---
 
-## FuelPHP のログレベルは INFO の方が DEBUG よりも上
+# FuelPHP のログレベルは INFO の方が DEBUG よりも上
 
 Fuel の Core の Log クラスに $levels が定義されています。  
 FuelPHP 1.7.2 で INFO は 200、DEBUG は 100。
 
-## なぜ疑問に思ったのか
+# なぜ疑問に思ったのか
 
 FuelPHP の config.php の出力するログレベルの設定のところに、
 
@@ -27,11 +27,11 @@ FuelPHP の config.php の出力するログレベルの設定のところに、
 
 このように書いてあるので、「INFO に設定したら DEBUG ログも出るのかー」と勝手に思い込んでいたからでした。
 
-## 実際に動かせばわかる
+# 実際に動かせばわかる
 
 実際に動かしたら、設定が DEBUG の時はログレベル INFO も DEBUG も出力されたが、設定が INFO の時は INFO が出力されて DEBUG は出力されなかった。
 
-## 結論
+# 結論
 
 調べるために[ドキュメント](http://fuelphp.com/docs/classes/log.html)を読んでいたら、Log::write() で任意のレベルをつけられること、logger() というエイリアスの関数があることがわかった。  
 [この前](/2015/3/1/fuelphp-debug/) l() って関数でログ出力できるようにしたばっかりだったのに、すでに似たようなものがあったとは。

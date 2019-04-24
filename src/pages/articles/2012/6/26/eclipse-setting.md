@@ -76,7 +76,7 @@ Eclipse.appのパッケージの内容を表示。
 
 あとはDropboxで共有するなりなんなり。
 
-## 参考サイト
+# 参考サイト
 
 [livedoor Techブログ : Eclipse初心者がAndroid開発する際に押さえるべきこと](http://blog.livedoor.jp/techblog/archives/65399350.html)
 

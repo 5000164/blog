@@ -3,7 +3,7 @@ title: "Windows で PHP の開発をするときに使ったツール"
 date: "2015-02-03 23:13:39 +0900"
 ---
 
-## 最近 Windows で PHP の開発をする機会があったので、使用したツールをまとめます
+# 最近 Windows で PHP の開発をする機会があったので、使用したツールをまとめます
 
 - [Atom](https://atom.io/)
     - エディタ
@@ -78,7 +78,7 @@ date: "2015-02-03 23:13:39 +0900"
 - [Antibody Software - WizMouse makes your mouse wheel work on the window under the mouse](http://antibody-software.com/web/software/software/wizmouse-makes-your-mouse-wheel-work-on-the-window-under-the-mouse/)
     - ユーティリティ
 
-## 使ってみればよかった
+# 使ってみればよかった
 
 - [ダウンロード](http://www.ponsoftware.com/archiver/download.htm)
     - アーカイバ

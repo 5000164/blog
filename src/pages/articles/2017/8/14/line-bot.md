@@ -3,22 +3,22 @@ title: "AWS Lambda の Python 3.6 で LINE Bot を動かす"
 date: "2017-08-14 23:04:38 +0900"
 ---
 
-## 目的
+# 目的
 
 LINE Bot を使って生活を少し便利にしたい。
 
-## 背景
+# 背景
 
 最近 LINE をよく使ってるから。  
 なんかちょっとしたメモとか簡単に確認したいなーと思ったから。  
 たまたま AWS Lambda の料金を調べたら思っていたよりも安かったので使ってみたくなったから。
 
-## この記事のスタートとゴール
+# この記事のスタートとゴール
 
 スタートは、 LINE をすでに使っているが、 API などは使ったことがないところ。  
 ゴールは、 LINE のグループチャットで特定の発言をしたら特定の内容を返してくれるところ。
 
-## LINE Bot を使えるように登録する
+# LINE Bot を使えるように登録する
 
 Messaging API の登録をする。
 
@@ -28,7 +28,7 @@ Developer Trial を選ぶ。
 
 - [LINE BOTの作り方を世界一わかりやすく解説（１）【アカウント準備編】 - Qiita](http://qiita.com/yoshizaki_kkgk/items/bd4277d3943200beab26)
 
-## LINE Bot を使えるように設定する
+# LINE Bot を使えるように設定する
 
 LINE@ MANAGER から以下の感じに Bot を設定する。
 
@@ -39,7 +39,7 @@ LINE@ MANAGER から以下の感じに Bot を設定する。
 - 友だち追加時あいさつを利用しない
 - 基本設定アカウントページメニュー非表示
 
-## LINE Bot と友だちになってグループトークを作成
+# LINE Bot と友だちになってグループトークを作成
 
 QR コードから友だち追加する。
 
@@ -47,14 +47,14 @@ QR コードから友だち追加する。
 
 友だちになったらグループトークを作成して追加する。
 
-## AWS Lambda と Amazon API Gateway を作成する
+# AWS Lambda と Amazon API Gateway を作成する
 
 記事を参考にしながら AWS Lambda と Amazon API Gateway を作成する。
 
 - [Line botをAWS LambdaとAPI Gatewayでアモーレ！！- 実装編 - Qiita](http://qiita.com/kooohei/items/650c331f95f83072f4d6)  
 - [API Gatewayを使ってアクセスキー認証でLambdaを実行する - Qiita](http://qiita.com/toshihirock/items/8720118164a02dfdd11a)  
 
-## URL に直接アクセスして Hello from Lambda を表示する
+# URL に直接アクセスして Hello from Lambda を表示する
 
 そのままではうまく動かなかった。  
 いろいろ見ていたら「LAMBDA_PROXY」のところが違うということに気付いた。
@@ -80,13 +80,13 @@ def lambda_handler(event, context):
 
 「Lambda プロキシ統合の使用」のオプションを外したら最初のままのコードでも動いたが、このオプションを付けた方が楽な部分があるらしい？ので付けたままにしておく。
 
-## LINE からのリクエストを受け取れるようにする
+# LINE からのリクエストを受け取れるようにする
 
 LINE developers の Webhook URL にさきほど作成した Amazon API Gateway の URL を登録する。  
 この時に `amazonaws.com:443` のように HTTPS のポート番号を付けないとうまくいかない、らしい。  
 Webhook URL を設定したら Bot のいるグループチャットで発言をして CloudWatch にログが出ることを確認する。
 
-## LINE に発言する
+# LINE に発言する
 
 Python なので Requests とか使えたら楽だけど、サードパーティーのライブラリは zip でアップロードしたりという操作が必要なようだったので、今回は標準の機能だけでやる。
 
@@ -167,7 +167,7 @@ def lambda_handler(request, context):
 これの `"text": "test",` の部分を `"text": event['message']['text'],` と変えるとオウム返しを行うことができる。  
 `logger.info(json.dumps(event))` みたいな感じで JSON 文字列としてログに残しておくと CloudWatch が勝手にログを整形して表示してくれるので便利。
 
-## 特定の内容の時だけ反応するようにする
+# 特定の内容の時だけ反応するようにする
 
 ここまできたらあとは作れば動くという感じなので簡単。  
 `event['message']['text']` が発言内容を持っているのでループの最初で下記のように特定の発言以外を弾くようにしてあげればいい。
@@ -177,7 +177,7 @@ if event['message']['text'] != 'memo':
     continue
 ```
 
-## 特定の発言者にだけ反応するようにする
+# 特定の発言者にだけ反応するようにする
 
 こちらも同じような感じ。  
 発言者のユーザー ID が `event['source']['userId']` で取れるので、特定のユーザー ID 以外を弾くようにする。
@@ -187,7 +187,7 @@ if event['source']['userId'] != 'userId':
     continue
 ```
 
-## リクエストの検証を行う
+# リクエストの検証を行う
 
 サーバーの公開されている API に送られたリクエストのうち、 LINE からきたリクエストだけを信用するようにする。  
 この検証を行わないと LINE 以外からのリクエストにも反応してしまう。  
@@ -198,7 +198,7 @@ Amazon API Gateway のテスト機能が便利だった。
 - [LINE API Reference](https://devdocs.line.me/ja/)  
 - [1時間でLINE BOTを作ってみた – Ultica Blog – ウルチカ ブログ –](https://blog.ultica.jp/archives/6)
 
-## あらかじめ用意しておいたメモを特定の発言で返してくれる Bot の完成
+# あらかじめ用意しておいたメモを特定の発言で返してくれる Bot の完成
 
 いろいろ調整して最終的にできあがったコードがこちら。
 
@@ -266,7 +266,7 @@ def lambda_handler(request, context):
     return {'statusCode': 200, 'body': '{}'}
 ```
 
-## 感想
+# 感想
 
 最近 Python を触っているのでなにも考えずに Python を選択したが、思ったよりも情報が少なくて大変だった。  
 bot 作るのって楽しい。  

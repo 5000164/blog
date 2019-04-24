@@ -35,7 +35,7 @@ gdipp_x86_0.9.1.msi
 
 なお、表示が崩れる場合や文字が表示されない場合もあります。
 
-## 参考サイト
+# 参考サイト
 
 [Windowsのフォントをより美しく出来る「gdipp」とその設定](http://lufesu.blog3.fc2.com/blog-entry-57.html)
 

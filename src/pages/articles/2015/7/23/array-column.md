@@ -3,13 +3,13 @@ title: "PHP の二次元配列から同じキーの値だけで新しい配列�
 date: "2015-07-23 00:15:30 +0900"
 ---
 
-## PHP の二次元配列から同じキーの値だけで新しい配列を生成する関数 array_column
+# PHP の二次元配列から同じキーの値だけで新しい配列を生成する関数 array_column
 
 他の人のコードを読んでたらたまたま見つけた便利な関数 array_column。  
 二次元配列から同じキーの値だけで新しい配列を生成する。  
 [PHP: array_column - Manual](http://php.net/manual/ja/function.array-column.php)
 
-## 同じキーの値だけで新しい配列を作るサンプル
+# 同じキーの値だけで新しい配列を作るサンプル
 
 ```php
 <?php
@@ -45,7 +45,7 @@ var_dump($name_list);
 
 ```
 
-## 二次元配列の縦横を入れ替える (転置行列を得る) サンプル
+# 二次元配列の縦横を入れ替える (転置行列を得る) サンプル
 
 ```php
 <?php
@@ -85,7 +85,7 @@ var_dump($transposed_matrix);
 
 ```
 
-## 参考
+# 参考
 
 - [PHPのarray_columnが便利 - Qiita](http://qiita.com/harukasan/items/a0773aef27d838852e44)
 - [【php】配列の縦横入れ替え的な操作 at softelメモ](https://www.softel.co.jp/blogs/tech/archives/2576)

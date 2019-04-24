@@ -32,18 +32,18 @@ primaryStage.show()
 
 ![生成された画像](/images/2018/1/15/scala-javafx-save-image-1.png)
 
-## ざっくり説明
+# ざっくり説明
 
 `Canvas` の内容を `WritableImage` に変換する。  
 これが `Canvas` が持ってる `snapshot` というメソッドでできるっぽい。  
 その後は `RenderedImage` に変換してファイルに保存する。
 
-## 参考
+# 参考
 
 - [Java-Buddy: Save Canvas to PNG file](http://java-buddy.blogspot.jp/2013/04/save-canvas-to-png-file.html)
 - [JavaFX 2 Snapshot as PNG Image | code.makery.ch](http://code.makery.ch/blog/javafx-2-snapshot-as-png-image/)
 
-## ついでに保存場所選択
+# ついでに保存場所選択
 
 下記のコードを追加することで保存する場所を選べるようになった。
 

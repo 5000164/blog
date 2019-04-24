@@ -9,7 +9,7 @@ date: "2012-10-15 23:24:54 +0900"
 
 では、ランキングをどうぞ
 
-## 3位：Escape☆=Velocity／PSGO-Z
+# 3位：Escape☆=Velocity／PSGO-Z
 
 [nicodo display=&#8221;player&#8221; width=&#8221;640&#8243; height=&#8221;360&#8243;]sm16594273[/nicodo] 
 
@@ -25,7 +25,7 @@ Nsenでたまたま知ったPSGO-Zさん。
 
 いや、流星群かなー。 
 
-## 2位：ワンホット・ミニッツ／ショミ
+# 2位：ワンホット・ミニッツ／ショミ
 
 [nicodo display=&#8221;player&#8221; width=&#8221;640&#8243; height=&#8221;360&#8243;]sm16482252[/nicodo] 
 
@@ -39,7 +39,7 @@ Nsenでたまたま知ったPSGO-Zさん。
 
 この音のノリノリな感じがかっこいいですねー。 
 
-## 1位：みんなみくみくにしてあげる♪／ika, MOSAIC.TUNE
+# 1位：みんなみくみくにしてあげる♪／ika, MOSAIC.TUNE
 
 [nicodo display=&#8221;player&#8221; width=&#8221;640&#8243; height=&#8221;360&#8243;]sm19069321[/nicodo] 
 
@@ -67,7 +67,7 @@ VOCALOIDの文化はみくみくにしてあげる♪から始まったと言っ
 
 みっくみくにされました！！！！１
 
-## 以下、現時点のマイリスト
+# 以下、現時点のマイリスト
 
   [nicodo]sm14476037[/nicodo]
 [nicodo]sm14564166[/nicodo]  

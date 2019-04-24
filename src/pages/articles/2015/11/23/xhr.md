@@ -3,7 +3,7 @@ title: "XHR のプリフライトリクエストを Access-Control-Allow-Origin 
 date: "2015-11-23 19:03:22 +0900"
 ---
 
-## Firefox で API からデータが取得できない
+# Firefox で API からデータが取得できない
 
 サーバー側に API を実装して、Chrome では値が取得できてるのに、Firefox では値が取得できていなかった。  
 ちゃんと `Access-Control-Allow-Origin: *` って感じにしてたのに、許可されていませんって感じのエラーメッセージが出ていた。  
