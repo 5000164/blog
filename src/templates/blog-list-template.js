@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Helmet from "react-helmet"
 import styled from "styled-components"
+import moment from "moment"
 import Layout from "../components/layout"
 
 export default class BlogList extends React.Component {
@@ -20,7 +21,7 @@ export default class BlogList extends React.Component {
           {posts.map(({ node }) => (
             <Article key={node.fields.slug}>
               <StyledLink to={node.fields.slug}>{node.frontmatter.title}</StyledLink>
-              <StyledDiv>{node.frontmatter.date}</StyledDiv>
+              <StyledDiv>{moment(node.frontmatter.date).local().format(`MMMM Do, YYYY`)}</StyledDiv>
               <StyledP>{node.excerpt}</StyledP>
             </Article>
           ))}
@@ -106,7 +107,7 @@ export const query = graphql`
           }
           frontmatter {
             title
-            date(formatString: "YYYY.M.D")
+            date
           }
         }
       }
