@@ -16,7 +16,7 @@ date: "2018-05-26 15:18:13 +0900"
 
 - Scala で設定を書いて Eval する
 
-# ディレクトリ構成
+## ディレクトリ構成
 
 - `resources` 以下に設定ファイルを入れてしまうと生成された jar に含まれてしまうのでトップディレクトリに設定ファイルを配置する
 
@@ -36,7 +36,7 @@ date: "2018-05-26 15:18:13 +0900"
 
 # 具体的なコード
 
-# 依存関係を解決
+## 依存関係を解決
 
 - `build.sbt`
 
@@ -44,7 +44,7 @@ date: "2018-05-26 15:18:13 +0900"
 libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVersion.value
 ```
 
-# 設定を Eval する
+## 設定を Eval する
 
 - `infrastructure/Settings.scala` で設定を表現する
 - `System.getProperty("settings")` を使うことで使用する設定ファイルを実行時に指定できるようになる
@@ -68,7 +68,7 @@ trait SettingsType {
 }
 ```
 
-# 設定を書く
+## 設定を書く
 
 - `Settings.settings`
     - 拡張子が `.scala` だとコンパイルされてしまうのでコンパイルされないように拡張子を任意の拡張子に変える
@@ -83,7 +83,7 @@ new SettingsType {
 }
 ```
 
-# 設定のサンプルを書く
+## 設定のサンプルを書く
 
 - 設定方法がわかりやすいようにサンプルを `SettingsSample.settings` として作っておいてリポジトリに含める
 
@@ -96,7 +96,7 @@ new SettingsType {
 }
 ```
 
-# 設定がリポジトリに含まれないようにする
+## 設定がリポジトリに含まれないようにする
 
 .gitignore
 
@@ -104,7 +104,7 @@ new SettingsType {
 Settings.scala
 ```
 
-# 使い方
+## 使い方
 
 - `interfaces/Application.scala`
 
