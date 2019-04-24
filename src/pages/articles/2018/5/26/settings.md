@@ -18,14 +18,15 @@ date: "2018-05-26 15:18:13 +0900"
 
 ## ディレクトリ構成
 
+- `resources` 以下に設定ファイルを入れてしまうと生成された jar に含まれてしまうのでトップディレクトリに設定ファイルを配置する
+
 ```
 .
 ├── build.sbt
+├── Settings.settings
+├── SettingsSample.settings
 └── src
     └── main
-        ├── resources
-        │   ├── Settings.scala
-        │   └── SettingsSample.scala
         └── scala
             ├── infrastructure
             │   └── Settings.scala
@@ -37,7 +38,7 @@ date: "2018-05-26 15:18:13 +0900"
 
 ## 依存関係を解決
 
-build.sbt
+- `build.sbt`
 
 ```sbt
 libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVersion.value
@@ -45,9 +46,9 @@ libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVersion.value
 
 ## 設定を Eval する
 
-- 設定を表現する
-
-infrastructure/Settings.scala
+- `infrastructure/Settings.scala` で設定を表現する
+- `System.getProperty("settings")` を使うことで使用する設定ファイルを実行時に指定できるようになる
+    - 例: `java -Dsettings=Settings.settings -jar run.jar`
 
 ```scala
 package infrastructure
@@ -58,7 +59,7 @@ import scala.tools.reflect.ToolBox
 
 object Settings {
   val toolbox: ToolBox[universe.type] = currentMirror.mkToolBox()
-  val settings: SettingsType = toolbox.eval(toolbox.parse(Source.fromResource("Settings.scala").mkString)).asInstanceOf[SettingsType]
+  val settings: SettingsType = toolbox.eval(toolbox.parse(Source.fromFile(System.getProperty("settings")).mkString)).asInstanceOf[SettingsType]
 }
 
 trait SettingsType {
@@ -69,7 +70,9 @@ trait SettingsType {
 
 ## 設定を書く
 
-resources/Settings.scala
+- `Settings.settings`
+    - 拡張子が `.scala` だとコンパイルされてしまうのでコンパイルされないように拡張子を任意の拡張子に変える
+        - IntelliJ でこの拡張子を Scala ファイルとして開くという設定をすることでコードを補完しながら設定を書くことができる
 
 ```scala
 import infrastructure.SettingsType
@@ -82,9 +85,7 @@ new SettingsType {
 
 ## 設定のサンプルを書く
 
-- 設定方法がわかりやすいようにサンプルを SettingsSample として作っておいてリポジトリに含める
-
-resources/SettingsSample.scala
+- 設定方法がわかりやすいようにサンプルを `SettingsSample.settings` として作っておいてリポジトリに含める
 
 ```scala
 import infrastructure.SettingsType
@@ -100,12 +101,12 @@ new SettingsType {
 .gitignore
 
 ```gitignore
-src/main/resources/Settings.scala
+Settings.scala
 ```
 
 ## 使い方
 
-interfaces/Application.scala
+- `interfaces/Application.scala`
 
 ```scala
 package interfaces
@@ -117,11 +118,6 @@ object Application extends App {
   println(settings.foo)
 }
 ```
-
-## 現時点での問題点
-
-- コンパイルした時に設定ファイルが含まれてしまう
-- 設定は外から指定できるようにしたい
 
 ## 参考
 
