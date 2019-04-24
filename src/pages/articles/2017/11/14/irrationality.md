@@ -1,6 +1,6 @@
 ---
 title: "その判断は合理的か？ - 本「不合理　誰もがまぬがれない思考の罠100」の感想"
-date: "2017-11-14T20:55:51+09:00"
+date: "2017-11-14 20:55:51 +0900"
 ---
 
 [![](//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00JRQJUYU&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=5000164-22)](https://www.amazon.co.jp/dp/B00JRQJUYU/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=5000164-22&linkId=43dcea29b1dbfeb76123fc4326629ace)

@@ -1,6 +1,6 @@
 ---
 title: "夢を語り合える世界をつくりたい - 「Hoping Invites | Tsutomu Uematsu | TEDxSapporo」の感想"
-date: "2014-11-22T00:12:40+09:00"
+date: "2014-11-22 00:12:40 +0900"
 ---
 
 [Hope invites | Tsutomu Uematsu | TEDxSapporo - YouTube](https://www.youtube.com/watch?v=gBumdOWWMhY)

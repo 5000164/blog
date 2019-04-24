@@ -1,6 +1,6 @@
 ---
 title: "I went to a meetup called \"Building JSON Codecs with Functional Lenses\" with a presentation by Alexey Kotlyarov"
-date: "2019-02-25T21:28:30+11:00"
+date: "2019-02-25 21:28:30 +1100"
 ---
 
 This is the detail about the meetup.

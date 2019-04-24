@@ -1,6 +1,6 @@
 ---
 title: "PhpStorm で ClipMenu が動作しない問題を修正する"
-date: "2015-03-22T17:10:34+09:00"
+date: "2015-03-22 17:10:34 +0900"
 ---
 
 ## ClipMenu が PhpStorm でうまく動かない

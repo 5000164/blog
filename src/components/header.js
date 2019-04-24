@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql, Link, StaticQuery } from "gatsby"
 import styled from "styled-components"
+import moment from "moment"
 import TopPageHeader from "./top-page-header"
 
 const Header = ({ data, topPage, title, date }) => {
@@ -11,7 +12,7 @@ const Header = ({ data, topPage, title, date }) => {
     return <StyledHeader>
       <StyledTopLink to="/">{data.site.siteMetadata.title}</StyledTopLink>
       <StyledTitleLink to="/">{title}</StyledTitleLink>
-      <Subtitle>Published {date} by Hiroshi Sugawara</Subtitle>
+      <Subtitle>Published {moment(date).local().format(`MMMM Do, YYYY`)} by Hiroshi Sugawara</Subtitle>
     </StyledHeader>
   }
 }
