@@ -90,18 +90,20 @@ const GlobalStyle = createGlobalStyle`
       width: 95%;
     }
   }
-  .content ul,
-  .content ol {
+  .content ul, .content ol {
     width: 780px;
     margin: auto;
     padding-left: 20px;
   }
   @media (max-width: 800px) {
-    .content ul,
-    .content ol {
+    .content ul, .content ol {
       width: 90%;
       padding-left: 5%;
     }
+  }
+  .content ul p, .content ol p {
+    margin-top: 0;
+    margin-bottom: 0;
   }
   .content figure {
     width: 800px;
