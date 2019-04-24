@@ -48,7 +48,7 @@ export default class Blog extends React.Component {
 const GlobalStyle = createGlobalStyle`
   .content p {
     width: 800px;
-    margin: 40px auto;
+    margin: 20px auto;
   }
   @media (max-width: 800px) {
     .content p {
@@ -63,8 +63,8 @@ const GlobalStyle = createGlobalStyle`
   }
   .content h1 {
     width: 800px;
-    margin: 120px auto 20px;
-    font-size: 3rem;
+    margin: 60px auto 20px;
+    font-size: 2.4rem;
     font-weight: bold;
     text-align: center;
   }
@@ -75,7 +75,7 @@ const GlobalStyle = createGlobalStyle`
   }
   .content h2 {
     width: 800px;
-    margin: 120px auto 20px;
+    margin: 60px auto 20px;
     font-size: 2.4rem;
     font-weight: bold;
   }
@@ -84,26 +84,8 @@ const GlobalStyle = createGlobalStyle`
       width: 95%;
     }
   }
-  .content h2:first-child {
-    margin-top: 0;
-  }
-  .content h2 + p {
-    margin-top: 0;
-  }
-  .content h2 + h2 {
-    margin-top: 0;
-  }
-  .content h4 {
-    width: 800px;
-    margin: 10px auto 10px;
-    font-size: 1.8rem;
-    font-weight: normal;
-    text-align: center;
-  }
-  @media (max-width: 800px) {
-    .content h4 {
-      width: 95%;
-    }
+  .content h1 + h2 {
+    margin-top: 20px;
   }
   .content ul, .content ol {
     width: 780px;
@@ -119,15 +101,6 @@ const GlobalStyle = createGlobalStyle`
   .content ul p, .content ol p {
     margin-top: 0;
     margin-bottom: 0;
-  }
-  .content figure {
-    width: 800px;
-    margin: auto;
-  }
-  @media (max-width: 800px) {
-    .content figure {
-      width: 95%;
-    }
   }
   .content img {
     display: block;
