@@ -44,7 +44,7 @@ export default class BlogList extends React.Component {
 const Articles = styled.ul`
   width: 800px;
   list-style: none;
-  margin: 60px auto 20px;
+  margin: 120px auto;
   padding: 0;
   @media (max-width: 800px) {
     width: 95%;
@@ -52,7 +52,7 @@ const Articles = styled.ul`
 `
 
 const Article = styled.li`
-  margin: 60px 0 240px;
+  margin: 120px 0;
 `
 
 const StyledLink = styled(props => <Link {...props} />)`
@@ -73,7 +73,7 @@ const StyledP = styled.p`
 const Pagination = styled.ul`
   width: 800px;
   list-style: none;
-  margin: 60px auto 20px;
+  margin: 120px auto;
   padding: 0;
   text-align: center;
   @media (max-width: 800px) {

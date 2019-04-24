@@ -11,7 +11,7 @@ const Footer = ({ data }) => (
 )
 
 const StyledFooter = styled.footer`
-  margin: 240px auto 10px;
+  margin: 120px auto 20px;
   font-size: 1.2rem;
   text-align: center;
   color: hsl(235, 10%, 65%);

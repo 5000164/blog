@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import styled, { createGlobalStyle } from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/SEO"
@@ -8,6 +8,7 @@ export default class Blog extends React.Component {
   render() {
     const { markdownRemark } = this.props.data
     const { frontmatter, html, excerpt } = markdownRemark
+    const { previous, next } = this.props.pageContext
 
     return (
       <>
@@ -20,15 +21,29 @@ export default class Blog extends React.Component {
             article={true}
           />
           <Article className="content" dangerouslySetInnerHTML={{ __html: html }}/>
+          <StyledUl>
+            <PreviousLi>
+              {previous && (
+                <Link to={previous.fields.slug} rel="prev">
+                  <div>←</div>
+                  <div>{previous.frontmatter.title}</div>
+                </Link>
+              )}
+            </PreviousLi>
+            <NextLi>
+              {next && (
+                <Link to={next.fields.slug} rel="next">
+                  <div>→</div>
+                  <div>{next.frontmatter.title}</div>
+                </Link>
+              )}
+            </NextLi>
+          </StyledUl>
         </Layout>
       </>
     )
   }
 }
-
-const Article = styled.article`
-  margin: 40px 0;
-`
 
 const GlobalStyle = createGlobalStyle`
   .content p {
@@ -172,6 +187,31 @@ const GlobalStyle = createGlobalStyle`
       max-width: 95%;
     }
   }
+`
+
+const Article = styled.article`
+  margin: 60px 0;
+`
+
+const StyledUl = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 2em;
+  width: 800px;
+  list-style: none;
+  margin: 120px auto;
+  padding: 0;
+  @media (max-width: 800px) {
+    width: 95%;
+  }
+`
+
+const PreviousLi = styled.li`
+  text-align: left;
+`
+
+const NextLi = styled.li`
+  text-align: right;
 `
 
 export const query = graphql`
