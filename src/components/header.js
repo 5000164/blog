@@ -14,7 +14,7 @@ const Header = ({ data, topPage, slug, title, date }) => {
     return <StyledHeader>
       <StyledTopLink to="/">{data.site.siteMetadata.title}</StyledTopLink>
       <StyledTitleLink to={slug}>{title}</StyledTitleLink>
-      <Subtitle><a href={historyLink}>Published {formattedDate}</a> by Hiroshi Sugawara</Subtitle>
+      <Subtitle><a href={historyLink}>Published {formattedDate}</a> by <a href={data.site.siteMetadata.profileUrl}>Hiroshi Sugawara</a></Subtitle>
     </StyledHeader>
   }
 }
@@ -78,6 +78,7 @@ export default props => (
           siteMetadata {
             title
             repository
+            profileUrl
           }
         }
       }
@@ -92,6 +93,7 @@ Header.propTypes = {
       siteMetadata: PropTypes.shape({
         title: PropTypes.string.isRequired,
         repository: PropTypes.string.isRequired,
+        profileUrl: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
   }).isRequired,

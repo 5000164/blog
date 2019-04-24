@@ -6,6 +6,7 @@ module.exports = {
     image: `/images/icon.png`,
     twitterUsername: `@5000164`,
     repository: `https://github.com/5000164/blog`,
+    profileUrl: `https://github.com/5000164/profile`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
