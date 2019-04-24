@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Helmet from "react-helmet"
 import styled, { createGlobalStyle } from "styled-components"
 import Layout from "../components/layout"
+import SEO from "../components/SEO"
 
 export default class Blog extends React.Component {
   render() {
@@ -13,11 +13,12 @@ export default class Blog extends React.Component {
       <>
         <GlobalStyle/>
         <Layout topPage={false} slug={markdownRemark.fields.slug} title={frontmatter.title} date={frontmatter.date}>
-          <Helmet>
-            <meta charSet="utf-8"/>
-            <title>{frontmatter.title} | {this.props.data.site.siteMetadata.title}</title>
-            <meta name="description" content={excerpt}/>
-          </Helmet>
+          <SEO
+            title={frontmatter.title + "|" + this.props.data.site.siteMetadata.title}
+            description={excerpt}
+            slug={markdownRemark.fields.slug}
+            article={true}
+          />
           <Article className="content" dangerouslySetInnerHTML={{ __html: html }}/>
         </Layout>
       </>

@@ -3,6 +3,8 @@ module.exports = {
     title: `5000164 is here`,
     description: `This blog is written about my life include technology.`,
     siteUrl: `https://blog.5000164.jp`,
+    image: `/images/icon.png`,
+    twitterUsername: `@5000164`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

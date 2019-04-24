@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Helmet from "react-helmet"
 import styled from "styled-components"
 import moment from "moment"
 import Layout from "../components/layout"
+import SEO from "../components/SEO"
 
 export default class BlogList extends React.Component {
   render() {
@@ -12,11 +12,12 @@ export default class BlogList extends React.Component {
 
     return (
       <Layout topPage={true}>
-        <Helmet>
-          <meta charSet="utf-8"/>
-          <title>{this.props.data.site.siteMetadata.title}</title>
-          <meta name="description" content={this.props.data.site.siteMetadata.description}/>
-        </Helmet>
+        <SEO
+          title={this.props.data.site.siteMetadata.title}
+          description={this.props.data.site.siteMetadata.description}
+          slug={"/"}
+          article={false}
+        />
         <Articles>
           {posts.map(({ node }) => (
             <Article key={node.fields.slug}>
