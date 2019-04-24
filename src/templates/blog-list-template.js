@@ -101,7 +101,6 @@ export const query = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 300)
           fields {
             slug
           }
@@ -109,6 +108,11 @@ export const query = graphql`
             title
             date
           }
+          excerpt(
+            format: PLAIN
+            pruneLength: 300
+            truncate: true
+          )
         }
       }
     }

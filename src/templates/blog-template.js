@@ -182,12 +182,16 @@ export const query = graphql`
       fields {
         slug
       }
-      excerpt
-      html
       frontmatter {
         title
         date
       }
+      html
+      excerpt(
+        format: PLAIN
+        pruneLength: 300
+        truncate: true
+      )
     }
   }
 `
