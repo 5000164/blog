@@ -12,7 +12,7 @@ export default class Blog extends React.Component {
     return (
       <>
         <GlobalStyle/>
-        <Layout topPage={false} title={frontmatter.title} date={frontmatter.date}>
+        <Layout topPage={false} slug={markdownRemark.fields.slug} title={frontmatter.title} date={frontmatter.date}>
           <Helmet>
             <meta charSet="utf-8"/>
             <title>{frontmatter.title} | {this.props.data.site.siteMetadata.title}</title>
@@ -179,6 +179,9 @@ export const query = graphql`
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      fields {
+        slug
+      }
       excerpt
       html
       frontmatter {

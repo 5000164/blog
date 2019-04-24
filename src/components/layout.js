@@ -41,11 +41,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Layout = ({ children, topPage, title, date }) => {
+const Layout = ({ children, slug, topPage, title, date }) => {
   return (
     <>
       <GlobalStyle/>
-      <Header topPage={topPage} title={title} date={date}/>
+      <Header topPage={topPage} slug={slug} title={title} date={date}/>
       {children}
       <Footer/>
     </>

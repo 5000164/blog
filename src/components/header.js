@@ -5,13 +5,13 @@ import styled from "styled-components"
 import moment from "moment"
 import TopPageHeader from "./top-page-header"
 
-const Header = ({ data, topPage, title, date }) => {
+const Header = ({ data, topPage, slug, title, date }) => {
   if (topPage) {
     return <TopPageHeader/>
   } else {
     return <StyledHeader>
       <StyledTopLink to="/">{data.site.siteMetadata.title}</StyledTopLink>
-      <StyledTitleLink to="/">{title}</StyledTitleLink>
+      <StyledTitleLink to={slug}>{title}</StyledTitleLink>
       <Subtitle>Published {moment(date).local().format(`MMMM Do, YYYY`)} by Hiroshi Sugawara</Subtitle>
     </StyledHeader>
   }
