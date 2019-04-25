@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import styled, { createGlobalStyle } from "styled-components"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 
 export default class Blog extends React.Component {
