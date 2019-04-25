@@ -40,7 +40,8 @@
     "react-helmet": "^5.2.0",
     "react-instantsearch-dom": "^5.5.0",
     "styled-components": "^4.2.0",
-    "styled-icons": "^7.10.0"
+    "styled-icons": "^7.10.0",
+    "typescript": "^3.4.5"
   },
   "devDependencies": {
     "prettier": "^1.17.0"
