@@ -49,7 +49,7 @@ SSL / TLS 通信の中身を見るための手順としては
 この時に普段使用されるキーストアを別の場所にコピーしてから作業を行うことで環境を汚さないようにした。  
 普段使用されるキーストアは jdk の中にあり、自分の場合は `$(/usr/libexec/java_home)/lib/security/cacerts` にあった。
 
-```sh
+```bash
 keytool -keystore cacerts -importcert -alias charles -file charles-ssl-proxying-certificate.cer
 ```
 
@@ -62,7 +62,7 @@ keytool -keystore cacerts -importcert -alias charles -file charles-ssl-proxying-
 設定方法が環境変数に指定する方法しかわからなかったので環境変数に設定を行う。  
 下記のような内容を実行時の `VM parameters` に設定する。
 
-```sh
+```bash
 -Djavax.net.ssl.keyStore=/path/to/cacerts -Djavax.net.ssl.keyStorePassword=changeit -Djavax.net.ssl.trustStore=/path/to/cacerts -Djavax.net.ssl.trustStorePassword=changeit
 ```
 
@@ -72,7 +72,7 @@ keytool -keystore cacerts -importcert -alias charles -file charles-ssl-proxying-
 
 sbt から実行する場合は
 
-```sh
+```bash
 SBT_OPTS="-Djavax.net.ssl.keyStore=/path/to/cacerts -Djavax.net.ssl.keyStorePassword=changeit -Djavax.net.ssl.trustStore=/path/to/cacerts -Djavax.net.ssl.trustStorePassword=changeit" sbt run
 ```
 

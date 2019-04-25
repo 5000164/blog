@@ -29,7 +29,7 @@ date: "2014-03-16 03:20:28 +0900"
 
 # フォントをきれいに表示するには1行追加するだけ
 
-```c++
+```cpp
 ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8);
 ```
 
@@ -49,7 +49,7 @@ ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8);
 
 フォントを描画したあとにガウシアンフィルタをかけるのがポイント。
 
-```c++
+```cpp
 // 影の表示開始位置
 text_x = font_size + shadow_offset_x;
 text_y = font_size + shadow_offset_y;
@@ -66,7 +66,7 @@ GraphFilter(backscreen, DX_GRAPH_FILTER_GAUSS, 8, 50);
 
 背景ができたら、普通にフォントを描画します。
 
-```c++
+```cpp
 // テキスト表示開始位置
 text_x = font_size;
 text_y = font_size;

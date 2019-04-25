@@ -40,7 +40,7 @@ date: "2018-05-26 15:18:13 +0900"
 
 - `build.sbt`
 
-```sbt
+```
 libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVersion.value
 ```
 
@@ -100,7 +100,7 @@ new SettingsType {
 
 .gitignore
 
-```gitignore
+```
 Settings.scala
 ```
 

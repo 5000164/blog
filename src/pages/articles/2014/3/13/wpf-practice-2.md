@@ -44,7 +44,7 @@ Window に PreviewKeyDown をつけます。
 
 C# 側で四角につけた名前から座標を取得します。
 
-```c#
+```csharp
 // 現在地を取得
 Double leftPosition = Canvas.GetLeft(this.pointer);
 Double topPosition = Canvas.GetTop(this.pointer);
@@ -56,7 +56,7 @@ Double topPosition = Canvas.GetTop(this.pointer);
 
 次は、方向キーが入力された方向へ動くために、入力されたキーを判断します。
 
-```c#
+```csharp
 // 入力された方向キーの方向へ移動
 if (e.Key == Key.Up)
     // 上
@@ -74,7 +74,7 @@ else if (e.Key == Key.Right)
 
 入力された方向がわかったら、その方向へ座標を移動して this.pointer にセットします。
 
-```c#
+```csharp
 // 入力された方向キーの方向へ移動
 if (e.Key == Key.Up)
     Canvas.SetTop(this.pointer, topPosition - 10);
