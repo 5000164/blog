@@ -1,0 +1,76 @@
+import React from "react"
+import { connectSearchBox } from "react-instantsearch-dom"
+import styled, { css } from "styled-components"
+import { Search } from "styled-icons/fa-solid"
+
+export default connectSearchBox(({ refine, ...rest }) => (
+  <Form {...rest} >
+    <SearchIcon {...rest} />
+    <Input
+      type="text"
+      onChange={e => refine(e.target.value)}
+      {...rest}
+    />
+  </Form>
+))
+
+const Form = styled.form`
+  width: 600px;
+  @media (max-width: 800px) {
+    width: 95%;
+  }
+  ${props => props.topPage ? topPageForm : articlePageForm};
+`
+
+const topPageForm = css`
+  margin: 60px auto;
+`
+
+const articlePageForm = css`
+  position: absolute;
+  top: 54px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+`
+
+const SearchIcon = styled(Search)`
+  width: 2em;
+  padding: 0 .5em;
+  ${props => props.focused ? focusedIcon : blurredIcon}
+`
+
+const blurredIcon = css`
+  color: hsl(235, 10%, 40%);
+`
+
+const focusedIcon = css`
+  color: hsl(235, 10%, 80%);
+`
+
+const Input = styled.input`
+  font-size: 1em;
+  background: transparent;
+  margin-left: -2em;
+  padding-left: 2em;
+  outline: none;
+  border: none;
+  transition: width .25s ease-out 0s;
+  ${props => props.focused ? focusedText : blurredText}
+`
+
+const blurredText = css`
+  width: 150px;
+  color: hsl(235, 10%, 40%);
+  border-bottom: 1px solid hsl(235, 10%, 40%);
+`
+
+const focusedText = css`
+  width: 600px;
+  color: hsl(235, 10%, 80%);
+  border-bottom: 1px solid hsl(235, 10%, 80%);
+  cursor: text;
+  @media (max-width: 800px) {
+    width: 95%;
+  }
+`

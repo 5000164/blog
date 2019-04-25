@@ -6,7 +6,6 @@ import Footer from "../Footer"
 
 const GlobalStyle = createGlobalStyle`
   html {
-    box-sizing: border-box;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -38,6 +37,9 @@ const GlobalStyle = createGlobalStyle`
   }
   a:visited {
     color: hsl(235, 10%, 60%);
+  }
+  * {
+    box-sizing: border-box;
   }
 `
 

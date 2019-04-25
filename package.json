@@ -11,9 +11,12 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "algoliasearch": "^3.32.1",
     "babel-plugin-styled-components": "^1.10.0",
+    "dotenv": "^7.0.0",
     "gatsby": "^2.3.25",
     "gatsby-image": "^2.0.39",
+    "gatsby-plugin-algolia": "^0.3.0",
     "gatsby-plugin-canonical-urls": "^2.0.12",
     "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-feed": "^2.1.1",
@@ -35,7 +38,9 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "styled-components": "^4.2.0"
+    "react-instantsearch-dom": "^5.5.0",
+    "styled-components": "^4.2.0",
+    "styled-icons": "^7.10.0"
   },
   "devDependencies": {
     "prettier": "^1.17.0"

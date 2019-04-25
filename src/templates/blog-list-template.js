@@ -20,7 +20,7 @@ export default class BlogList extends React.Component {
         />
         <Articles>
           {posts.map(({ node }) => {
-            const formattedDate = moment(node.frontmatter.date, "YYYY-MM-DD HH:mm:ss Z").local().format(`MMMM Do, YYYY`)
+            const formattedDate = moment(node.frontmatter.date, "YYYY-MM-DD HH:mm:ss Z").local().format("MMMM Do, YYYY")
             return <Article key={node.fields.slug}>
               <StyledLink to={node.fields.slug}>{node.frontmatter.title}</StyledLink>
               <StyledDiv>{formattedDate}</StyledDiv>

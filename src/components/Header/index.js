@@ -4,27 +4,28 @@ import { graphql, Link, StaticQuery } from "gatsby"
 import styled from "styled-components"
 import moment from "moment"
 import TopPageHeader from "./top-page-header"
+import Search from "../Search"
 
 const Header = ({ data, topPage, slug, title, date }) => {
   if (topPage) {
     return <TopPageHeader/>
   } else {
     const historyLink = data.site.siteMetadata.repository + "/commits/master/src/posts" + slug.slice(0, -1) + ".md"
-    const formattedDate = moment(date, "YYYY-MM-DD HH:mm:ss Z").local().format(`MMMM Do, YYYY`)
-    return <StyledHeader>
-      <StyledTopLink to="/">{data.site.siteMetadata.title}</StyledTopLink>
-      <StyledTitleLink to={slug}>{title}</StyledTitleLink>
-      <Subtitle><a href={historyLink}>Published {formattedDate}</a> by <a href={data.site.siteMetadata.profileUrl}>Hiroshi Sugawara</a></Subtitle>
-    </StyledHeader>
+    const formattedDate = moment(date, "YYYY-MM-DD HH:mm:ss Z").local().format("MMMM Do, YYYY")
+    return (
+      <StyledHeader>
+        <StyledTopLink to="/">{data.site.siteMetadata.title}</StyledTopLink>
+        <Search topPage={false}/>
+        <StyledTitleLink to={slug}>{title}</StyledTitleLink>
+        <Subtitle><a href={historyLink}>Published {formattedDate}</a> by <a href={data.site.siteMetadata.profileUrl}>Hiroshi Sugawara</a></Subtitle>
+      </StyledHeader>
+    )
   }
 }
 
 const StyledHeader = styled.header`
   margin: 8px 8px 0;
-  padding-top: calc(8vw - -180px);
-  padding-bottom: calc(8vw - -160px);
-  padding-left: 0;
-  padding-right: 0;
+  padding: calc(8vw + 180px) 0 calc(8vw + 160px);
   text-align: center;
   background: hsl(0, 0%, 16%);
 `

@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql, Link, StaticQuery } from "gatsby"
 import styled from "styled-components"
+import Search from "../Search"
 
 const TopPageHeader = ({ data }) => (
   <StyledHeader>
@@ -12,15 +13,13 @@ const TopPageHeader = ({ data }) => (
       <AboutItem><StyledA href="https://github.com/5000164">GitHub</StyledA></AboutItem>
       <AboutItem><StyledA href="https://twitter.com/5000164">Twitter</StyledA></AboutItem>
     </About>
+    <Search topPage={true}/>
   </StyledHeader>
 )
 
 const StyledHeader = styled.header`
   margin: 8px 8px 0;
-  padding-top: calc(8vw - -180px);
-  padding-bottom: calc(8vw - -160px);
-  padding-left: 0;
-  padding-right: 0;
+  padding: calc(8vw + 180px) 0 calc(8vw + 40px);
   text-align: center;
   background: hsl(0, 0%, 16%);
 `
