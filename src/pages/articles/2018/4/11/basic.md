@@ -12,7 +12,7 @@ realm とは領域という意味で、おそらく ~/.sbt/.credentials の host
 
 正しい realm は curl で確認できる。
 
-```sh
+```bash
 curl -v <対象の URL> 2>&1 | grep realm
 ```
 

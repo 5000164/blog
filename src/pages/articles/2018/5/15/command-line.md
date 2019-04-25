@@ -14,7 +14,7 @@ val keyValueArgs = args.sliding(2).toList.collect {
 }.toMap
 ```
 
-```sh
+```bash
 --date "2018-05-15 00:00:00" --dry-run
 ```
 
