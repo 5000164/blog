@@ -10,7 +10,7 @@ const Header = ({ data, topPage, slug, title, date }) => {
     return <TopPageHeader/>
   } else {
     const historyLink = data.site.siteMetadata.repository + "/commits/master/src/pages/articles" + slug.slice(0, -1) + ".md"
-    const formattedDate = moment(date).local().format(`MMMM Do, YYYY`)
+    const formattedDate = moment(date, "YYYY-MM-DD HH:mm:ss Z").local().format(`MMMM Do, YYYY`)
     return <StyledHeader>
       <StyledTopLink to="/">{data.site.siteMetadata.title}</StyledTopLink>
       <StyledTitleLink to={slug}>{title}</StyledTitleLink>

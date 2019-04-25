@@ -19,13 +19,14 @@ export default class BlogList extends React.Component {
           article={false}
         />
         <Articles>
-          {posts.map(({ node }) => (
-            <Article key={node.fields.slug}>
+          {posts.map(({ node }) => {
+            const formattedDate = moment(node.frontmatter.date, "YYYY-MM-DD HH:mm:ss Z").local().format(`MMMM Do, YYYY`)
+            return <Article key={node.fields.slug}>
               <StyledLink to={node.fields.slug}>{node.frontmatter.title}</StyledLink>
-              <StyledDiv>{moment(node.frontmatter.date).local().format(`MMMM Do, YYYY`)}</StyledDiv>
+              <StyledDiv>{formattedDate}</StyledDiv>
               <StyledP>{node.excerpt}</StyledP>
             </Article>
-          ))}
+          })}
         </Articles>
         <Pagination>
           {Array.from({ length: numPages }, (_, i) => {
