@@ -17,11 +17,8 @@ HTTP 通信のライブラリとして [sttp](https://github.com/softwaremill/st
 val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy("localhost", 8888))
 ```
 
-これだけで、 HTTP 通信の中身は見られるようになる。
-
-# 2018.5.28 追記
-
-`HttpURLConnectionBackend` のデフォルト引数が `options: SttpBackendOptions = SttpBackendOptions.Default` となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるので
+これだけで、 HTTP 通信の中身は見られるようになる。  
+`HttpURLConnectionBackend` のデフォルト引数が `options: SttpBackendOptions = SttpBackendOptions.Default` となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるのでこれだけでいい。
 
 ```scala
 val backend: SttpBackend[Id, Nothing] = HttpURLConnectionBackend()
