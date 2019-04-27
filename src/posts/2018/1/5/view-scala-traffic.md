@@ -10,22 +10,17 @@ Scala で API を叩くコードを書いた。
 
 # プロキシーを通す
 
-[Charles](https://www.charlesproxy.com/) を使ってローカルにプロキシーを立てる。 ([Postman](https://www.getpostman.com/) も試してみたんだけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった。)  
-HTTP 通信のライブラリとして [sttp](https://github.com/softwaremill/sttp) を使用していたので [プロキシーの設定方法](http://sttp.readthedocs.io/en/latest/conf/proxy.html) を参考にして下記のように設定する。
-
-```scala
-val backend = HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy("localhost", 8888))
-```
-
-これだけで、 HTTP 通信の中身は見られるようになる。  
-`HttpURLConnectionBackend` のデフォルト引数が `options: SttpBackendOptions = SttpBackendOptions.Default` となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるのでこれだけでいい。
+- [Charles](https://www.charlesproxy.com/) を使う
+    - ([Postman](https://www.getpostman.com/) も試してみたけどレスポンスが自動保存されないっぽい気がして、連続で API を叩いて内容がどんどん変わっていく今回の用途では使えなかった
+- HTTP 通信のライブラリとして [sttp](https://github.com/softwaremill/sttp) を使用していたので [プロキシーの設定方法](http://sttp.readthedocs.io/en/latest/conf/proxy.html) を参考にして下記のように設定する
+    - `HttpURLConnectionBackend` のデフォルト引数が `options: SttpBackendOptions = SttpBackendOptions.Default` となっていて、なにも設定しなければシステムのプロキシー設定を反映してくれるので `HttpURLConnectionBackend(options = SttpBackendOptions.httpProxy("localhost", 8888))` というように明示的に設定する必要はなかった
+        - Charles は起動時に自動でシステムのプロキシー設定を書き換えてくれるので、設定がそのまま反映される
 
 ```scala
 val backend: SttpBackend[Id, Nothing] = HttpURLConnectionBackend()
 ```
 
-のままでいい。  
-Charles は起動時に自動でシステムのプロキシー設定を書き換えてくれるので、設定がそのまま反映される。
+これだけで、 HTTP 通信の中身は見られるようになる。
 
 # SSL / TLS 通信の中身を見えるようにする
 
