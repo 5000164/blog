@@ -15,7 +15,7 @@ export default class Blog extends React.Component {
         <GlobalStyle/>
         <Layout topPage={false} slug={markdownRemark.fields.slug} title={frontmatter.title} date={frontmatter.date}>
           <SEO
-            title={frontmatter.title + "|" + this.props.data.site.siteMetadata.title}
+            title={frontmatter.title + " | " + this.props.data.site.siteMetadata.title}
             description={excerpt}
             slug={markdownRemark.fields.slug}
             article={true}
