@@ -7,7 +7,7 @@ module.exports = {
     title: `5000164 is here`,
     description: `This blog is written about my life include technology.`,
     siteUrl: `https://blog.5000164.jp`,
-    image: `/images/icon.png`,
+    image: `/icon.png`,
     twitterUsername: `@5000164`,
     repository: `https://github.com/5000164/blog`,
     profileUrl: `https://github.com/5000164/profile`,
