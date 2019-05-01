@@ -62,9 +62,10 @@ const Article = styled.article`
   h1 {
     width: 800px;
     margin: 60px auto 20px;
+    padding: 0 0 20px 0;
     font-size: 2.4rem;
     font-weight: bold;
-    text-align: center;
+    border-bottom: 1px solid hsl(235, 10%, 30%);
   }
   @media (max-width: 800px) {
     h1 {
@@ -74,7 +75,8 @@ const Article = styled.article`
   h2 {
     width: 800px;
     margin: 60px auto 20px;
-    font-size: 2.4rem;
+    padding: 0;
+    font-size: 2.0rem;
     font-weight: bold;
   }
   @media (max-width: 800px) {
