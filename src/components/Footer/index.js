@@ -2,10 +2,14 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql, Link, StaticQuery } from "gatsby"
 import styled from "styled-components"
+import { Rss } from "styled-icons/boxicons-regular/Rss"
 
 const Footer = ({ data }) => (
   <StyledFooter>
-    <div><StyledTopLink to="/">{data.site.siteMetadata.title}</StyledTopLink></div>
+    <div>
+      <Link to="/">{data.site.siteMetadata.title}</Link>
+      <a href={data.site.siteMetadata.siteUrl + "/feed.xml"}><StyledRss/></a>
+    </div>
     <div>Copyright © 2019 Hiroshi Sugawara. All rights reserved.</div>
   </StyledFooter>
 )
@@ -20,9 +24,9 @@ const StyledFooter = styled.footer`
   }
 `
 
-const StyledTopLink = styled(props => <Link {...props} />)`
-  display: block;
-  margin: 0 0 10px;
+const StyledRss = styled(props => <Rss {...props} />)`
+  width: calc(1em + 4px);
+  padding: 0 0 0 4px;
 `
 
 export default props => (
@@ -32,6 +36,7 @@ export default props => (
         site {
           siteMetadata {
             title
+            siteUrl
           }
         }
       }
