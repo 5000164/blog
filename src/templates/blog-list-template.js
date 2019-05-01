@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
-import moment from "moment"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import Article from "../components/Article"
@@ -12,23 +11,14 @@ export default class BlogList extends React.Component {
     const { currentPage, numPages } = this.props.pageContext
 
     return (
-      <Layout topPage={true}>
+      <Layout>
         <SEO
           title={this.props.data.site.siteMetadata.title}
           description={this.props.data.site.siteMetadata.description}
           slug={"/"}
           article={false}
         />
-        <Articles>
-          {posts.map(({ node }) => {
-            const formattedDate = moment(node.frontmatter.date, "YYYY-MM-DD HH:mm:ss Z").local().format("MMMM Do, YYYY")
-            return <ArticleWrapper key={node.fields.slug}>
-              <StyledLink to={node.fields.slug}>{node.frontmatter.title}</StyledLink>
-              <StyledDiv>{formattedDate}</StyledDiv>
-              <Article dangerouslySetInnerHTML={{ __html: node.excerpt }}/>
-            </ArticleWrapper>
-          })}
-        </Articles>
+        {posts.map(({ node }) => <Article key={node.fields.slug} slug={node.fields.slug} title={node.frontmatter.title} date={node.frontmatter.date} content={node.html}/>)}
         <Pagination>
           {Array.from({ length: numPages }, (_, i) => {
             if (currentPage === i + 1) {
@@ -42,31 +32,6 @@ export default class BlogList extends React.Component {
     )
   }
 }
-
-const Articles = styled.ul`
-  width: 800px;
-  list-style: none;
-  margin: 120px auto;
-  padding: 0;
-  @media (max-width: 800px) {
-    width: 95%;
-  }
-`
-
-const ArticleWrapper = styled.li`
-  margin: 120px 0;
-`
-
-const StyledLink = styled(props => <Link {...props} />)`
-  display: block;
-  text-align: center;
-`
-
-const StyledDiv = styled.div`
-  font-size: 1.2rem;
-  text-align: center;
-  color: hsl(235, 10%, 65%);
-`
 
 const Pagination = styled.ul`
   width: 800px;
@@ -107,11 +72,7 @@ export const query = graphql`
             title
             date
           }
-          excerpt(
-            format: HTML
-            pruneLength: 3000
-            truncate: true
-          )
+          html
         }
       }
     }

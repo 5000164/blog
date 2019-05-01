@@ -1,6 +1,15 @@
 import styled from "styled-components"
+import Title from "./title"
+import React from "react"
 
-const Article = styled.article`
+const Article = ({ slug, title, date, content }) => (
+  <>
+    <Title slug={slug} title={title} date={date}/>
+    <StyledArticle dangerouslySetInnerHTML={{ __html: content }}/>
+  </>
+)
+
+const StyledArticle = styled.article`
   margin: 60px 0;
   p {
     width: 800px;

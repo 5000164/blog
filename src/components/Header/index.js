@@ -2,53 +2,39 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql, Link, StaticQuery } from "gatsby"
 import styled from "styled-components"
-import moment from "moment"
-import TopPageHeader from "./top-page-header"
 import Search from "../Search"
 
-const Header = ({ data, topPage, slug, title, date }) => {
-  if (topPage) {
-    return <TopPageHeader/>
-  } else {
-    const historyLink = data.site.siteMetadata.repository + "/commits/master/src/posts" + slug.slice(0, -1) + ".md"
-    const formattedDate = moment(date, "YYYY-MM-DD HH:mm:ss Z").local().format("MMMM Do, YYYY")
-    return (
-      <StyledHeader>
-        <StyledTopLink to="/">{data.site.siteMetadata.title}</StyledTopLink>
-        <Search topPage={false}/>
-        <StyledTitleLink to={slug}>{title}</StyledTitleLink>
-        <Subtitle><a href={historyLink}>Published {formattedDate}</a> by <a href={data.site.siteMetadata.profileUrl}>Hiroshi Sugawara</a></Subtitle>
-      </StyledHeader>
-    )
-  }
-}
+const Header = ({ data }) => (
+  <StyledHeader>
+    <StyledTitleLink to="/">{data.site.siteMetadata.title}</StyledTitleLink>
+    <Subtitle>My writing is my life.</Subtitle>
+    <About>
+      <AboutItem><StyledA href="https://github.com/5000164/profile">About me</StyledA></AboutItem>
+      <AboutItem><StyledA href="https://github.com/5000164">GitHub</StyledA></AboutItem>
+      <AboutItem><StyledA href="https://twitter.com/5000164">Twitter</StyledA></AboutItem>
+    </About>
+    <Search/>
+  </StyledHeader>
+)
 
 const StyledHeader = styled.header`
-  margin: 8px 8px 0;
-  padding: calc(8vw + 180px) 0 calc(8vw + 160px);
+  width: 200px;
+  height: 200px;
+  margin: 8px auto;
   text-align: center;
   background: hsl(0, 0%, 16%);
 `
 
-const StyledTopLink = styled(props => <Link {...props} />)`
-  position: absolute;
-  top: 16px;
-  left: 0;
-  right: 0;
-  font-family: Georgia, serif;
-  font-size: 2.6rem;
-  letter-spacing: -0.2rem;
-  line-height: 1;
-`
-
 const StyledTitleLink = styled(props => <Link {...props} />)`
   display: block;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  font-size: 3rem;
-  font-weight: bold;
+  height: 50px;
+  margin: auto;
+  padding-top: 30px;
+  font-family: Georgia, serif;
+  font-size: 2rem;
   text-align: center;
+  letter-spacing: -0.2rem;
+  line-height: 1;
   color: hsl(0, 100%, 100%);
   text-decoration: none;
   &:visited {
@@ -60,14 +46,33 @@ const StyledTitleLink = styled(props => <Link {...props} />)`
 `
 
 const Subtitle = styled.div`
-  max-width: 1200px;
-  width: 100%;
-  margin: 10px auto 0;
+  height: 50px;
+  margin: auto;
   font-size: 1.2rem;
   text-align: center;
-  color: hsl(235, 10%, 60%);
+  color: hsl(235, 10%, 65%);
   @media (max-width: 800px) {
     width: 95%;
+  }
+`
+
+const About = styled.ul`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+`
+
+const AboutItem = styled.li`
+  line-height: 1.2;
+`
+
+const StyledA = styled.a`
+  font-size: 1.4rem;
+  line-height: 1;
+  text-align: center;
+  color: hsl(235, 10%, 80%);
+  &:visited {
+    color: hsl(235, 10%, 80%);
   }
 `
 
@@ -78,8 +83,6 @@ export default props => (
         site {
           siteMetadata {
             title
-            repository
-            profileUrl
           }
         }
       }
@@ -93,8 +96,6 @@ Header.propTypes = {
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
         title: PropTypes.string.isRequired,
-        repository: PropTypes.string.isRequired,
-        profileUrl: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
   }).isRequired,

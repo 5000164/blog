@@ -51,49 +51,37 @@ export default class Search extends Component {
   render() {
     const { query, focused, ref } = this.state
     const index = "Posts"
-    const topPage = this.props.topPage
 
     return (
-      <SearchWrapper topPage={topPage}>
-        <InstantSearch
-          searchClient={this.searchClient}
-          indexName={index}
-          onSearchStateChange={this.updateState}
-          root={{ Root, props: { ref } }}
-        >
-          <Input onFocus={this.focus} {...{ focused, topPage }} />
-          <HitsWrapper show={query.length > 0 && focused} topPage={topPage}>
-            <Index key={index} indexName={index}>
-              <Results>
-                <Hits hitComponent={PostHit(this.disableHits)}/>
-              </Results>
-            </Index>
-            <By>Powered by<a href="https://www.algolia.com"><StyledAlgolia/>Algolia</a></By>
-          </HitsWrapper>
-        </InstantSearch>
-      </SearchWrapper>
+      <InstantSearch
+        searchClient={this.searchClient}
+        indexName={index}
+        onSearchStateChange={this.updateState}
+        root={{ Root, props: { ref } }}
+      >
+        <Input onFocus={this.focus} {...{ focused }} />
+        <HitsWrapper show={query.length > 0 && focused}>
+          <Index key={index} indexName={index}>
+            <Results>
+              <Hits hitComponent={PostHit(this.disableHits)}/>
+            </Results>
+          </Index>
+          <By>Powered by<a href="https://www.algolia.com"><StyledAlgolia/>Algolia</a></By>
+        </HitsWrapper>
+      </InstantSearch>
     )
   }
 }
 
-const SearchWrapper = styled.div`
-  ${props => props.topPage ? topPageSearchWrapper : articlePageSearchWrapper};
-`
-
-const topPageSearchWrapper = css`
+const Root = styled.div`
   position: relative;
 `
 
-const articlePageSearchWrapper = css`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-`
-
-const Root = styled.div``
-
 const HitsWrapper = styled.div`
+  position: absolute;
+  top: calc(100% + 0.5em);
+  left: -200px;
+  right: 0;
   visibility: ${props => props.show ? "visible" : "hidden"};
   opacity: ${props => props.show ? "1" : "0"};
   width: 600px;
@@ -108,21 +96,6 @@ const HitsWrapper = styled.div`
     width: 95%;
   }
   ${() => hits}
-  ${props => (props.topPage ? topPageHitsWrapper : articlePageHitsWrapper)}
-`
-
-const topPageHitsWrapper = css`
-  position: absolute;
-  top: calc(100% + 0.5em);
-  left: 0;
-  right: 0;
-`
-
-const articlePageHitsWrapper = css`
-  position: absolute;
-  top: calc(54px + 2em);
-  left: 0;
-  right: 0;
 `
 
 const hits = css`

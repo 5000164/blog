@@ -36,18 +36,18 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
   a:visited {
-    color: hsl(235, 10%, 60%);
+    color: hsl(235, 10%, 50%);
   }
   * {
     box-sizing: border-box;
   }
 `
 
-const Layout = ({ children, slug, topPage, title, date }) => {
+const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle/>
-      <Header topPage={topPage} slug={slug} title={title} date={date}/>
+      <Header/>
       {children}
       <Footer/>
     </>

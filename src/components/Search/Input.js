@@ -4,7 +4,7 @@ import styled, { css } from "styled-components"
 import { Search } from "styled-icons/fa-solid"
 
 export default connectSearchBox(({ refine, ...rest }) => (
-  <Form {...rest} >
+  <Form>
     <SearchIcon {...rest} />
     <Input
       type="text"
@@ -15,23 +15,7 @@ export default connectSearchBox(({ refine, ...rest }) => (
 ))
 
 const Form = styled.form`
-  width: 600px;
-  @media (max-width: 800px) {
-    width: 95%;
-  }
-  ${props => props.topPage ? topPageForm : articlePageForm};
-`
-
-const topPageForm = css`
-  margin: 60px auto;
-`
-
-const articlePageForm = css`
-  position: absolute;
-  top: 54px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  width: 200px;
 `
 
 const SearchIcon = styled(Search)`
@@ -66,11 +50,8 @@ const blurredText = css`
 `
 
 const focusedText = css`
-  width: 600px;
+  width: 200px;
   color: hsl(235, 10%, 80%);
   border-bottom: 1px solid hsl(235, 10%, 80%);
   cursor: text;
-  @media (max-width: 800px) {
-    width: 95%;
-  }
 `

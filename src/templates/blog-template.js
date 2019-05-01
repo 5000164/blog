@@ -12,14 +12,14 @@ export default class Blog extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout topPage={false} slug={markdownRemark.fields.slug} title={frontmatter.title} date={frontmatter.date}>
+      <Layout>
         <SEO
           title={frontmatter.title + " | " + this.props.data.site.siteMetadata.title}
           description={excerpt}
           slug={markdownRemark.fields.slug}
           article={true}
         />
-        <Article dangerouslySetInnerHTML={{ __html: html }}/>
+        <Article slug={markdownRemark.fields.slug} title={frontmatter.title} date={frontmatter.date} content={html}/>
         <StyledUl>
           <PreviousLi>
             {previous && (
