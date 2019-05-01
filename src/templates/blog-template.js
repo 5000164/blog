@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import styled, { createGlobalStyle } from "styled-components"
+import styled from "styled-components"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 
@@ -11,57 +11,55 @@ export default class Blog extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
-      <>
-        <GlobalStyle/>
-        <Layout topPage={false} slug={markdownRemark.fields.slug} title={frontmatter.title} date={frontmatter.date}>
-          <SEO
-            title={frontmatter.title + " | " + this.props.data.site.siteMetadata.title}
-            description={excerpt}
-            slug={markdownRemark.fields.slug}
-            article={true}
-          />
-          <Article className="content" dangerouslySetInnerHTML={{ __html: html }}/>
-          <StyledUl>
-            <PreviousLi>
-              {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  <div>←</div>
-                  <div>{previous.frontmatter.title}</div>
-                </Link>
-              )}
-            </PreviousLi>
-            <NextLi>
-              {next && (
-                <Link to={next.fields.slug} rel="next">
-                  <div>→</div>
-                  <div>{next.frontmatter.title}</div>
-                </Link>
-              )}
-            </NextLi>
-          </StyledUl>
-        </Layout>
-      </>
+      <Layout topPage={false} slug={markdownRemark.fields.slug} title={frontmatter.title} date={frontmatter.date}>
+        <SEO
+          title={frontmatter.title + " | " + this.props.data.site.siteMetadata.title}
+          description={excerpt}
+          slug={markdownRemark.fields.slug}
+          article={true}
+        />
+        <Article dangerouslySetInnerHTML={{ __html: html }}/>
+        <StyledUl>
+          <PreviousLi>
+            {previous && (
+              <Link to={previous.fields.slug} rel="prev">
+                <div>←</div>
+                <div>{previous.frontmatter.title}</div>
+              </Link>
+            )}
+          </PreviousLi>
+          <NextLi>
+            {next && (
+              <Link to={next.fields.slug} rel="next">
+                <div>→</div>
+                <div>{next.frontmatter.title}</div>
+              </Link>
+            )}
+          </NextLi>
+        </StyledUl>
+      </Layout>
     )
   }
 }
 
-const GlobalStyle = createGlobalStyle`
-  .content p {
+const Article = styled.article`
+  margin: 60px 0;
+  p {
     width: 800px;
     margin: 20px auto;
   }
   @media (max-width: 800px) {
-    .content p {
+    p {
       width: 95%;
     }
   }
-  .content p:first-child {
+  p:first-child {
     margin-top: 0;
   }
-  .content p:last-child {
+  p:last-child {
     margin-bottom: 0;
   }
-  .content h1 {
+  h1 {
     width: 800px;
     margin: 60px auto 20px;
     font-size: 2.4rem;
@@ -69,70 +67,70 @@ const GlobalStyle = createGlobalStyle`
     text-align: center;
   }
   @media (max-width: 800px) {
-    .content h1 {
+    h1 {
       width: 95%;
     }
   }
-  .content h2 {
+  h2 {
     width: 800px;
     margin: 60px auto 20px;
     font-size: 2.4rem;
     font-weight: bold;
   }
   @media (max-width: 800px) {
-    .content h2 {
+    h2 {
       width: 95%;
     }
   }
-  .content h1 + h2 {
+  h1 + h2 {
     margin-top: 20px;
   }
-  .content ul, .content ol {
+  ul, ol {
     width: 780px;
     margin: auto;
     padding-left: 20px;
   }
   @media (max-width: 800px) {
-    .content ul, .content ol {
+    ul, ol {
       width: 90%;
       padding-left: 5%;
     }
   }
-  .content ul p, .content ol p {
+  ul p, ol p {
     margin-top: 0;
     margin-bottom: 0;
   }
-  .content img {
+  img {
     display: block;
     max-width: 800px;
     margin: 0 auto;
   }
   @media (max-width: 800px) {
-    .content img {
+    img {
       max-width: 95%;
     }
   }
-  .content blockquote {
+  blockquote {
     width: 800px;
     margin: 20px auto;
   }
   @media (max-width: 800px) {
-    .content blockquote {
+    blockquote {
       width: 95%;
     }
   }
-  .content blockquote > p {
+  blockquote > p {
     position: relative;
     width: 780px;
     padding-left: 20px;
   }
   @media (max-width: 800px) {
-    .content blockquote > p {
+    blockquote > p {
       width: 96%;
       padding-left: 4%;
     }
   }
-  .content blockquote > p::before {
+  blockquote > p::before {
     content: "";
     display: block;
     position: absolute;
@@ -143,7 +141,7 @@ const GlobalStyle = createGlobalStyle`
     background: #e3e4e6;
     border-radius: 8px;
   }
-  .content pre {
+  pre {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -151,19 +149,15 @@ const GlobalStyle = createGlobalStyle`
     margin: 40px 0;
     padding: 1em 0;
   }
-  .content pre > code {
+  pre > code {
     min-width: 800px;
   }
   @media (max-width: 800px) {
-    .content pre > code {
+    pre > code {
       min-width: 95%;
       max-width: 95%;
     }
   }
-`
-
-const Article = styled.article`
-  margin: 60px 0;
 `
 
 const StyledUl = styled.ul`
