@@ -4,6 +4,7 @@ import styled from "styled-components"
 import moment from "moment"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import Article from "../components/Article"
 
 export default class BlogList extends React.Component {
   render() {
@@ -21,11 +22,11 @@ export default class BlogList extends React.Component {
         <Articles>
           {posts.map(({ node }) => {
             const formattedDate = moment(node.frontmatter.date, "YYYY-MM-DD HH:mm:ss Z").local().format("MMMM Do, YYYY")
-            return <Article key={node.fields.slug}>
+            return <ArticleWrapper key={node.fields.slug}>
               <StyledLink to={node.fields.slug}>{node.frontmatter.title}</StyledLink>
               <StyledDiv>{formattedDate}</StyledDiv>
-              <StyledP>{node.excerpt}</StyledP>
-            </Article>
+              <Article dangerouslySetInnerHTML={{ __html: node.excerpt }}/>
+            </ArticleWrapper>
           })}
         </Articles>
         <Pagination>
@@ -52,7 +53,7 @@ const Articles = styled.ul`
   }
 `
 
-const Article = styled.li`
+const ArticleWrapper = styled.li`
   margin: 120px 0;
 `
 
@@ -65,10 +66,6 @@ const StyledDiv = styled.div`
   font-size: 1.2rem;
   text-align: center;
   color: hsl(235, 10%, 65%);
-`
-
-const StyledP = styled.p`
-  word-break: break-all;
 `
 
 const Pagination = styled.ul`
@@ -111,8 +108,8 @@ export const query = graphql`
             date
           }
           excerpt(
-            format: PLAIN
-            pruneLength: 300
+            format: HTML
+            pruneLength: 3000
             truncate: true
           )
         }
