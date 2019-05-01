@@ -89,6 +89,7 @@ const HitsWrapper = styled.div`
   margin: 0 auto;
   background-color: hsl(0, 100%, 100%);
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   transition: ${props => (props.show ?
   "visibility 0s ease-out 0s, opacity .25s ease-out 0s" :
   "visibility 0s ease-out .25s, opacity .25s ease-out 0s")};
