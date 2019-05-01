@@ -4,7 +4,7 @@ import styled, { css } from "styled-components"
 import { Search } from "styled-icons/fa-solid"
 
 export default connectSearchBox(({ refine, ...rest }) => (
-  <Form>
+  <Form onSubmit={e => e.preventDefault()}>
     <SearchIcon {...rest} />
     <Input
       type="text"
