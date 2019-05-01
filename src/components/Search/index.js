@@ -88,6 +88,9 @@ const HitsWrapper = styled.div`
   max-height: 500px;
   margin: 0 auto;
   background-color: hsl(0, 100%, 100%);
+  border-radius: 3px;
+  border: 1px solid hsl(0, 0%, 95%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
   transition: ${props => (props.show ?
