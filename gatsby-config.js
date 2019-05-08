@@ -9,7 +9,7 @@ module.exports = {
     siteUrl: `https://blog.5000164.jp`,
     image: `/icon.png`,
     twitterUsername: `@5000164`,
-    repository: `https://github.com/5000164/blog`,
+    repository: `https://github.com/5000164/blog.5000164.jp`,
     profileUrl: `https://github.com/5000164/profile`,
   },
   plugins: [
