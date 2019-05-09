@@ -1,8 +1,5 @@
-const queries = require("./src/utils/algolia")
-
-require("dotenv").config()
-
 module.exports = {
+  __experimentalThemes: ["gatsby-theme-blog"],
   siteMetadata: {
     title: `5000164 is here`,
     description: `This blog is written about my life include technology.`,
@@ -10,10 +7,9 @@ module.exports = {
     image: `/icon.png`,
     twitterUsername: `@5000164`,
     repository: `https://github.com/5000164/blog.5000164.jp`,
-    profileUrl: `https://github.com/5000164/profile`,
+    profileUrl: `https://5000164.jp`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -28,37 +24,6 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 800,
-            },
-          },
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              classPrefix: "language-",
-              inlineCodeMarker: null,
-              aliases: {},
-              showLineNumbers: false,
-              noInlineHighlight: false,
-            },
-          },
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        showSpinner: false,
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -71,67 +36,16 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
-    `gatsby-plugin-catch-links`,
-    `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
-                })
-              })
-            },
-            query: `
-            {
-              allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-                edges {
-                  node {
-                    excerpt
-                    html
-                    fields {
-                      slug
-                    }
-                    frontmatter {
-                      date
-                      title
-                    }
-                  }
-                }
-              }
-            }
-          `,
-            output: "/feed.xml",
-          },
-        ],
-      },
-    },
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
         siteUrl: `https://blog.5000164.jp`,
       },
     },
-    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-51024599-1",
-      },
-    },
-    {
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: process.env.GATSBY_ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_ADMIN_KEY,
-        queries,
-        chunkSize: 10000,
       },
     },
   ],
