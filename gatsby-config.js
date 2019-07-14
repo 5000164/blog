@@ -1,5 +1,4 @@
 module.exports = {
-  __experimentalThemes: ["gatsby-theme-blog"],
   siteMetadata: {
     title: `5000164 is here`,
     description: `This blog is written about my life include technology.`,
@@ -10,6 +9,10 @@ module.exports = {
     profileUrl: `https://5000164.jp`,
   },
   plugins: [
+    {
+      resolve: "gatsby-theme-blog",
+      options: {},
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
