@@ -3,7 +3,7 @@ title: "「ソフトウェア開発とデザイン －デザインとは－」�
 date: "2013-01-18 00:48:23 +0900"
 ---
 
-<script async class="speakerdeck-embed" data-id="c3481e0042e80130b322123138156909" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+<iframe src="//speakerdeck.com/player/c3481e0042e80130b322123138156909" width="710" height="399"></iframe>
 
 「ソフトウェア開発とデザイン －デザインとは－」という題で社内で発表しました。  
 これはそのときの発表資料です。
