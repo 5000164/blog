@@ -1,6 +1,7 @@
 ---
 title: "JetBrains IDE で minify しつつ source map を生成する"
-date: "2018-08-24 13:23:10 +0900"
+published: "2018-08-24 13:23:10 +0900"
+updated: "2018-08-24 13:23:10 +0900"
 ---
 
 YUI Compressor を使っていたが YUI Compressor では minify した時に source map が生成できなかったので Closure Compiler を使う。

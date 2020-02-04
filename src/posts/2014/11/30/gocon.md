@@ -1,6 +1,7 @@
 ---
 title: "シンプルさ - 「Go Conference 2014 autumn」に参加しました"
-date: "2014-11-30 23:04:02 +0900"
+published: "2014-11-30 23:04:02 +0900"
+updated: "2014-11-30 23:04:02 +0900"
 ---
 
 # 「Go Conference 2014 autumn」に参加しました

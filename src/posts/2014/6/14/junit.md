@@ -1,6 +1,7 @@
 ---
 title: "UbuntuのIntelliJ IDEAでJUnitを使う準備をする"
-date: "2014-06-14 22:46:26 +0900"
+published: "2014-06-14 22:46:26 +0900"
+updated: "2014-06-14 22:46:26 +0900"
 ---
 
 # Ubuntuのバージョン

@@ -1,6 +1,7 @@
 ---
 title: "Karabiner-Elements を使って Mistel Barocco の設定をするようにした"
-date: "2018-06-09 15:59:12 +0900"
+published: "2018-06-09 15:59:12 +0900"
+updated: "2018-06-09 15:59:12 +0900"
 ---
 
 Mistel Barocco はキーボード単体でキーの設定を行うことができる。  

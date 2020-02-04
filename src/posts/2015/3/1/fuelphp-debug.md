@@ -1,6 +1,7 @@
 ---
 title: "FuelPHP で Debug::dump() と Log::debug() を簡単に使えるようにする"
-date: "2015-03-01 22:19:02 +0900"
+published: "2015-03-01 22:19:02 +0900"
+updated: "2015-03-01 22:19:02 +0900"
 ---
 
 # FuelPHP で Debug::dump() とか Log::debug() とかうつのがだるかった

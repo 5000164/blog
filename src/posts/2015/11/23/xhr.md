@@ -1,6 +1,7 @@
 ---
 title: "XHR のプリフライトリクエストを Access-Control-Allow-Origin で許可する"
-date: "2015-11-23 19:03:22 +0900"
+published: "2015-11-23 19:03:22 +0900"
+updated: "2015-11-23 19:03:22 +0900"
 ---
 
 # Firefox で API からデータが取得できない

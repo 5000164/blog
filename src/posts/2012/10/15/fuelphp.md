@@ -1,6 +1,7 @@
 ---
 title: "FuelPHP 1.3 で Profiler を有効にしたら最初から展開した状態で表示されるようにする"
-date: "2012-10-15 01:50:10 +0900"
+published: "2012-10-15 01:50:10 +0900"
+updated: "2012-10-15 01:50:10 +0900"
 ---
 
 ![FuelPHP Profiler](/images/2012/10/15/fuelphp-1.png)

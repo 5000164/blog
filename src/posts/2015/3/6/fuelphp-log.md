@@ -1,6 +1,7 @@
 ---
 title: "FuelPHP のログレベルは INFO の方が DEBUG よりも上"
-date: "2015-03-06 00:25:25 +0900"
+published: "2015-03-06 00:25:25 +0900"
+updated: "2015-03-06 00:25:25 +0900"
 ---
 
 # FuelPHP のログレベルは INFO の方が DEBUG よりも上

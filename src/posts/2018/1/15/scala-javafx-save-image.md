@@ -1,6 +1,7 @@
 ---
 title: "Scala で JavaFX の Casvas の内容を画像として保存する"
-date: "2018-01-15 20:35:10 +0900"
+published: "2018-01-15 20:35:10 +0900"
+updated: "2018-01-15 20:35:10 +0900"
 ---
 
 [昨日の記事](/2018/1/14/scala-javafx-generate-image/) の続きのようなもの。  

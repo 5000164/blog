@@ -1,6 +1,7 @@
 ---
 title: "本「Amazon Web Services負荷試験入門」の感想"
-date: "2019-07-09 01:32:12 +1000"
+published: "2019-07-09 01:32:12 +1000"
+updated: "2019-07-09 01:32:12 +1000"
 ---
 
 [Amazon Web Services負荷試験入門 ――クラウドの性能の引き出し方がわかる Software Design plus | 仲川 樽八, 森下 健 | 工学 | Kindleストア | Amazon](https://www.amazon.co.jp/dp/B075SV3VN3) を読んだ。とても勉強になった。

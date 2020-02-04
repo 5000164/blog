@@ -1,6 +1,7 @@
 ---
 title: "SwipePad の代わりに Swiftly Switch を使っている"
-date: "2019-02-03 01:03:19 +1100"
+published: "2019-02-03 01:03:19 +1100"
+updated: "2019-02-03 01:03:19 +1100"
 ---
 
 SwipePad がなぜか Google Play からなくなっていたので新しいランチャーアプリを探した結果 Swiftly Switch を使っている。  
