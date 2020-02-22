@@ -8,7 +8,7 @@ updated: "2012-11-23 01:12:53 +0900"
 
 [Sickdesigner.com › The work and play of Radu Chelariu](http://sickdesigner.com/)
 
-![](/images/2012/11/23/webdesign-sickdesigner-1.png)
+![](../../../../images/2012/11/23/webdesign-sickdesigner-1.png)
 
 # 全体
 

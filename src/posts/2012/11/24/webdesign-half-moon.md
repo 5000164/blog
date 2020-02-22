@@ -8,7 +8,7 @@ updated: "2012-11-24 03:26:12 +0900"
 
 [歯科ハーフムーン｜仙台市 インプラント 無痛治療｜トップページ](http://www.half-moon.or.jp/)
 
-![](/images/2012/11/24/webdesign-half-moon-1.png)
+![](../../../../images/2012/11/24/webdesign-half-moon-1.png)
 
 # タイトル画像
 

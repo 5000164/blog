@@ -8,7 +8,7 @@ updated: "2012-11-26 01:24:33 +0900"
 
 [Laurent Millet](http://www.laurent-millet.com/)
 
-![](/images/2012/11/26/webdesign-laurent-millet-1.png)
+![](../../../../images/2012/11/26/webdesign-laurent-millet-1.png)
 
 # コンテンツの並べ方
 

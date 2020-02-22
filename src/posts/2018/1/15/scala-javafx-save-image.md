@@ -31,7 +31,7 @@ primaryStage.show()
 
 これを実行するとこういう画像ファイルが生成される。
 
-![生成された画像](/images/2018/1/15/scala-javafx-save-image-1.png)
+![生成された画像](../../../../images/2018/1/15/scala-javafx-save-image-1.png)
 
 # ざっくり説明
 

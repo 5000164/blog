@@ -4,7 +4,7 @@ published: "2012-10-15 01:50:10 +0900"
 updated: "2012-10-15 01:50:10 +0900"
 ---
 
-![FuelPHP Profiler](/images/2012/10/15/fuelphp-1.png)
+![FuelPHP Profiler](../../../../images/2012/10/15/fuelphp-1.png)
 
 最近 FuelPHP を使っています。  
 バージョン 1.2.1 を使っていたのですが、 1.3 がでたということで 1.3 を使い始めました。  

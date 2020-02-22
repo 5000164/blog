@@ -8,7 +8,7 @@ updated: "2012-11-25 03:55:43 +0900"
 
 [Gene Lu. User Experience/Interaction Designer. Welcome.](http://genelu.com/)
 
-![](/images/2012/11/25/webdesign-genelu-1.png)
+![](../../../../images/2012/11/25/webdesign-genelu-1.png)
 
 # 全体
 

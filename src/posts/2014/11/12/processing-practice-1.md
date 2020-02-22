@@ -18,7 +18,7 @@ updated: "2014-11-12 04:52:21 +0900"
 
 勉強会の課題を勝手にやってみました  
 こんなんができました
-![実行結果](/images/2014/11/12/processing-practice-1-1.gif)
+![実行結果](../../../../images/2014/11/12/processing-practice-1-1.gif)
 ソースはここにあります
 [5000164/processing-practice-1](https://github.com/5000164/processing-practice-1)
 

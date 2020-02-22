@@ -4,7 +4,7 @@ published: "2013-11-29 21:01:01 +0900"
 updated: "2013-11-29 21:01:01 +0900"
 ---
 
-![](/images/2013/11/29/space-delete-1.png)
+![](../../../../images/2013/11/29/space-delete-1.png)
 
 # 概要
 

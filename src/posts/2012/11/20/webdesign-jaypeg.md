@@ -8,7 +8,7 @@ updated: "2012-11-20 01:44:22 +0900"
 
 [JAYPEG](https://jypg.net/) 
 
-![](/images/2012/11/20/webdesign-jaypeg-1.png)
+![](../../../../images/2012/11/20/webdesign-jaypeg-1.png)
 
 # トップ画像
 

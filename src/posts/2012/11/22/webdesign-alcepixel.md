@@ -8,7 +8,7 @@ updated: "2012-11-22 00:55:30 +0900"
 
 [alcePixel](http://alcepixel.com/)
 
-![](/images/2012/11/22/webdesign-alicepixel-1.png)
+![](../../../../images/2012/11/22/webdesign-alicepixel-1.png)
 
 # 全体
 

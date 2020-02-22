@@ -8,7 +8,7 @@ updated: "2012-11-21 00:44:26 +0900"
 
 [GRAND : 416.977.3831 - Digital, Interactive, Mobile & Social](http://www.wearegrand.com/)
 
-![](/images/2012/11/21/webdesign-grand-1.png)
+![](../../../../images/2012/11/21/webdesign-grand-1.png)
 
 # テクスチャ
 

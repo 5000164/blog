@@ -24,7 +24,7 @@ primaryStage.show()
 
 このコードで下記のような実行結果になる。
 
-![実行結果](/images/2018/1/14/scala-javafx-generate-image-1.png)
+![実行結果](../../../../images/2018/1/14/scala-javafx-generate-image-1.png)
 
 # 参考
 

@@ -4,7 +4,7 @@ published: "2013-12-01 23:18:10 +0900"
 updated: "2013-12-01 23:18:10 +0900"
 ---
 
-![](/images/2013/12/1/css-nite-1.jpg)
+![](../../../../images/2013/12/1/css-nite-1.jpg)
 
 # CSS Nite in SENDAIについて
 

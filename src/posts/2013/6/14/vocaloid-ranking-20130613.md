@@ -4,7 +4,7 @@ published: "2013-06-14 01:41:01 +0900"
 updated: "2013-06-14 01:41:01 +0900"
 ---
 
-![](/images/2013/6/14/vocaloid-ranking-20130613-1.png)
+![](../../../../images/2013/6/14/vocaloid-ranking-20130613-1.png)
 
 # イントロ
 

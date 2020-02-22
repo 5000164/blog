@@ -4,7 +4,7 @@ published: "2013-01-14 01:52:01 +0900"
 updated: "2013-01-14 01:52:01 +0900"
 ---
 
-![](/images/2013/1/14/bakubakubaku-1.png)
+![](../../../../images/2013/1/14/bakubakubaku-1.png)
 
 # ネタバレ注意
 
