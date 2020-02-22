@@ -2,9 +2,8 @@
 title: "HTMLとCSSとJavaScriptで空白と改行を削除するWebアプリを作ったので詳細説明します"
 published: "2013-11-29 21:01:01 +0900"
 updated: "2013-11-29 21:01:01 +0900"
+featuredImage: ../../../../images/2013/11/29/space-delete-featured.png
 ---
-
-![](../../../../images/2013/11/29/space-delete-1.png)
 
 # 概要
 

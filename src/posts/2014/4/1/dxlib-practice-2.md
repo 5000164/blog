@@ -2,25 +2,24 @@
 title: "DXライブラリで読み込んだテキストをエンターで表示"
 published: "2014-04-01 02:03:09 +0900"
 updated: "2014-04-01 02:03:09 +0900"
+featuredImage: ../../../../images/2014/4/1/dxlib-practice-2-featured.png
 ---
-
-![](../../../../images/2014/4/1/dxlib-practice-2-1.png)
 
 # 実行結果
 
-![](../../../../images/2014/4/1/dxlib-practice-2-2.png)
+![](../../../../images/2014/4/1/dxlib-practice-2-1.png)
 
 これが。
 
-![](../../../../images/2014/4/1/dxlib-practice-2-3.png)
+![](../../../../images/2014/4/1/dxlib-practice-2-2.png)
 
 こうなって。
 
-![](../../../../images/2014/4/1/dxlib-practice-2-4.png)
+![](../../../../images/2014/4/1/dxlib-practice-2-3.png)
 
 こうなってって。
 
-![](../../../../images/2014/4/1/dxlib-practice-2-5.png)
+![](../../../../images/2014/4/1/dxlib-practice-2-4.png)
 
 最終的にはこうなります。
 

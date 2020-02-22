@@ -2,9 +2,8 @@
 title: "生きるのが難しい"
 published: "2013-02-09 02:24:26 +0900"
 updated: "2013-02-09 02:24:26 +0900"
+featuredImage: ../../../../images/2013/2/9/live-featured.jpg
 ---
-
-![](../../../../images/2013/2/9/live-1.jpg)
 
 自分の力不足がすごくつらい
 

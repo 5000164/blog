@@ -2,9 +2,8 @@
 title: "ブログのデザインを変更しました Version 1.8"
 published: "2013-03-17 08:32:19 +0900"
 updated: "2013-03-17 08:32:19 +0900"
+featuredImage: ../../../../images/2013/3/17/blog-design-featured.png
 ---
-
-![](../../../../images/2013/3/17/blog-design-1.png)
 
 ブログのデザインを変更しました。
 

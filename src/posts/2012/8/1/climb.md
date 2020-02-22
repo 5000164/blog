@@ -2,9 +2,8 @@
 title: "山に登ってきた"
 published: "2012-08-01 00:39:33 +0900"
 updated: "2012-08-01 00:39:33 +0900"
+featuredImage: ../../../../images/2012/8/1/climb-featured.jpg
 ---
-
-![](../../../../images/2012/8/1/climb-1.jpg)
 
 久しぶりの登山に行って来ました。
 

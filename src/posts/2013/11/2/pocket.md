@@ -2,9 +2,8 @@
 title: "気が利くデザイン（Pocket）"
 published: "2013-11-02 03:03:50 +0900"
 updated: "2013-11-02 03:03:50 +0900"
+featuredImage: ../../../../images/2013/11/2/pocket-featured.png
 ---
-
-![](../../../../images/2013/11/2/pocket-1.png)
 
 # Pocketについて
 

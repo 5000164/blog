@@ -2,9 +2,8 @@
 title: "おれおれVOCALOIDランキング（2013.11.21）"
 published: "2013-11-21 23:58:36 +0900"
 updated: "2013-11-21 23:58:36 +0900"
+featuredImage: ../../../../images/2013/11/21/vocaloid-featured.png
 ---
-
-![](../../../../images/2013/11/21/vocaloid-1.png)
 
 # イントロまたしても久しぶりのランキングです。
 
