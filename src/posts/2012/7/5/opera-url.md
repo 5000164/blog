@@ -7,7 +7,7 @@ updated: "2012-07-05 01:02:05 +0900"
 Opera の menu.ini を編集して実現します。  
 まずファイルの
 
-```
+```none
 [Document Popup Menu]
 ```
 
@@ -47,7 +47,6 @@ http://5000164.jp/
 
 </p>
 </section>
-
 ```
 
 - Reference Link

@@ -14,7 +14,7 @@ partial を使えばできそうだと思ってぐぐったらあった。
 
 これに従って下記のように修正する。
 
-```
+```none
 <style type="text/css">{{ partial "css/main.css" . | print | safeCSS }}{{ partial "css/monokai.css" . | print | safeCSS }}</style>
 ```
 

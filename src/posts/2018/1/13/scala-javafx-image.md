@@ -21,7 +21,7 @@ primaryStage.show()
 
 画像を下記のパスに配置して `getClass.getResource("/test.png").toString` でパスを取得すること。
 
-```
+```none
 .
 └── src
     └── main

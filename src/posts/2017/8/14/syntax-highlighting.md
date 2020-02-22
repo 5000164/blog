@@ -16,7 +16,7 @@ updated: "2018-01-20 00:00:00 +0900"
 - シンタックスハイライト用の css をテーマで読み込んでおく
 - `config.toml` に下記の設定を追加
 
-```
+```none
 pygmentscodefences = true
 pygmentsCodeFencesGuessSyntax = true
 pygmentsStyle = "monokai"
@@ -63,7 +63,7 @@ pygmentize -f html -S monokai -a .highlight > monokai.css
 これを `true` にしないとバッククオート 3 つでシンタックスハイライトを有効にする機能が動かない。  
 `pygmentsoptions` は Pygments のオプションを指定するところで、ここで見た目を変えたりできる。
 
-```
+```none
 pygmentscodefences = true
 pygmentsCodeFencesGuessSyntax = true
 pygmentsStyle = "monokai"

@@ -13,7 +13,7 @@ FuelPHP 1.7.2 で INFO は 200、DEBUG は 100。
 
 FuelPHP の config.php の出力するログレベルの設定のところに、
 
-```
+```none
 /**
  * Logging Threshold.  Can be set to any of the following:
  *

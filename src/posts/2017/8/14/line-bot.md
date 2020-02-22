@@ -161,7 +161,6 @@ def lambda_handler(request, context):
             logger.info(res.read().decode("utf-8"))
     
     return {'statusCode': 200, 'body': '{}'}
-
 ```
 
 `def lambda_handler(request, context):` の部分は `event` っていう変数名が使いたかったので第一引数の変数名を `request` に変更。  

@@ -65,7 +65,7 @@ Eclipse.appのパッケージの内容を表示。
 
 下記内容に変更。
 
-```
+```none
 -vmargs
 -XX:MaxPermSize=256m
 -Xss2m

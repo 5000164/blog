@@ -43,7 +43,6 @@ var_dump($name_list);
 //   [1]=>
 //   string(3) "bbb"
 // }
-
 ```
 
 # 二次元配列の縦横を入れ替える (転置行列を得る) サンプル
@@ -83,7 +82,6 @@ var_dump($transposed_matrix);
 //     string(3) "bbb"
 //   }
 // }
-
 ```
 
 # 参考
