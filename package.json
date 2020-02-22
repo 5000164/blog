@@ -11,7 +11,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "new": "./scripts/create-new-post.sh"
   },
-  "dependencies": {
+  "devDependencies": {
     "algoliasearch": "^4.0.1",
     "babel-plugin-styled-components": "^1.10.7",
     "dotenv": "^8.2.0",
@@ -39,6 +39,7 @@
     "gatsby-transformer-remark": "^2.6.50",
     "gatsby-transformer-sharp": "^2.3.14",
     "moment": "^2.24.0",
+    "prettier": "^1.19.1",
     "prismjs": "^1.19.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -48,8 +49,5 @@
     "styled-components": "4.4.1",
     "styled-icons": "^9.3.0",
     "typescript": "^3.7.5"
-  },
-  "devDependencies": {
-    "prettier": "^1.19.1"
   }
 }
