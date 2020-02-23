@@ -2,7 +2,7 @@
 title: "HTC J One HTL22では絵文字が表示されないので簡単な対処法を見つけた"
 published: "2014-01-27 01:29:02 +0900"
 updated: "2014-01-27 01:29:02 +0900"
-featuredImage: ../../../../images/2014/1/27/emoji-featured.png
+featuredImage: "../../../../images/2014/1/27/emoji-featured.png"
 ---
 
 # HTC J Oneって絵文字が表示されないんですね

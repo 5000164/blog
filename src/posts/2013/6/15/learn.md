@@ -2,7 +2,7 @@
 title: "「おれってダメだ」「そんなことないよ」について教えてもらって考えた"
 published: "2013-06-15 04:12:39 +0900"
 updated: "2013-06-15 04:12:39 +0900"
-featuredImage: ../../../../images/2013/6/15/learn-featured.png
+featuredImage: "../../../../images/2013/6/15/learn-featured.png"
 ---
 
 # よく思うこと

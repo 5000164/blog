@@ -2,7 +2,7 @@
 title: "iOSでDOMに要素追加してjQueryでclickイベントを取得する"
 published: "2013-03-20 01:46:32 +0900"
 updated: "2013-03-20 01:46:32 +0900"
-featuredImage: ../../../../images/2013/3/20/click-featured.jpg
+featuredImage: "../../../../images/2013/3/20/click-featured.jpg"
 ---
 
 # clickイベントを取得したい

@@ -2,7 +2,7 @@
 title: "休職して退職してやっとわかったこと"
 published: "2013-06-03 15:37:28 +0900"
 updated: "2013-06-03 15:37:28 +0900"
-featuredImage: ../../../../images/2013/6/3/retire-featured.jpg
+featuredImage: "../../../../images/2013/6/3/retire-featured.jpg"
 ---
 
 # 約 3 年間働いた会社を退職しました

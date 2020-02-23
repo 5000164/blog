@@ -2,7 +2,7 @@
 title: "hoverした要素に好きなようにハイライトをかける"
 published: "2014-01-22 17:10:00 +0900"
 updated: "2014-01-22 17:10:00 +0900"
-featuredImage: ../../../../images/2014/1/22/hover-featured.png
+featuredImage: "../../../../images/2014/1/22/hover-featured.png"
 ---
 
 # リンクとかをホバーしたら背景色を変えたりしますよね

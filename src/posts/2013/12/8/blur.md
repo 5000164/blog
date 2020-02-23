@@ -2,7 +2,7 @@
 title: "スクロールしてコンテンツが重なった部分にだけぼかしをかけているように見せる"
 published: "2013-12-08 05:40:29 +0900"
 updated: "2013-12-08 05:40:29 +0900"
-featuredImage: ../../../../images/2013/12/8/blur-featured.png
+featuredImage: "../../../../images/2013/12/8/blur-featured.png"
 ---
 
 # きっかけ

@@ -2,7 +2,7 @@
 title: "DV のことを調べたので簡単にまとめた"
 published: "2013-06-24 04:51:48 +0900"
 updated: "2013-06-24 04:51:48 +0900"
-featuredImage: ../../../../images/2013/6/24/dv-featured.png
+featuredImage: "../../../../images/2013/6/24/dv-featured.png"
 ---
 
 # 調べるきっかけ

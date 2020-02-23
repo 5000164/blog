@@ -2,7 +2,7 @@
 title: "CSS3でなんちゃって立方体を実装してみた"
 published: "2013-06-08 19:51:33 +0900"
 updated: "2013-06-08 19:51:33 +0900"
-featuredImage: ../../../../images/2013/6/8/cube-featured.png
+featuredImage: "../../../../images/2013/6/8/cube-featured.png"
 ---
 
 # 実装の練習

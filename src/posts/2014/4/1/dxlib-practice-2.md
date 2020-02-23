@@ -2,7 +2,7 @@
 title: "DXライブラリで読み込んだテキストをエンターで表示"
 published: "2014-04-01 02:03:09 +0900"
 updated: "2014-04-01 02:03:09 +0900"
-featuredImage: ../../../../images/2014/4/1/dxlib-practice-2-featured.png
+featuredImage: "../../../../images/2014/4/1/dxlib-practice-2-featured.png"
 ---
 
 # 実行結果

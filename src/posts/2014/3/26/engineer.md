@@ -2,7 +2,7 @@
 title: "変えられないエンジニア"
 published: "2014-03-26 23:03:14 +0900"
 updated: "2014-03-26 23:03:14 +0900"
-featuredImage: ../../../../images/2014/3/26/engineer-featured.jpg
+featuredImage: "../../../../images/2014/3/26/engineer-featured.jpg"
 ---
 
 # 「君は変えられるエンジニアか？変えられないエンジニアか？」

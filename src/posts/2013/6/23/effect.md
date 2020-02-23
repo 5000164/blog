@@ -2,7 +2,7 @@
 title: "他人を変えることはできないけど、影響を与えることはできると信じてる"
 published: "2013-06-23 04:59:54 +0900"
 updated: "2013-06-23 04:59:54 +0900"
-featuredImage: ../../../../images/2013/6/23/effect-featured.png
+featuredImage: "../../../../images/2013/6/23/effect-featured.png"
 ---
 
 # 他人を救うことはできない

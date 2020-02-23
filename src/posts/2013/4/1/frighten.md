@@ -2,7 +2,7 @@
 title: "「あんたが怯えるから相手も怯えるのよ」という言葉を考えて頭に染み込ませる"
 published: "2013-04-01 02:13:58 +0900"
 updated: "2013-04-01 02:13:58 +0900"
-featuredImage: ../../../../images/2013/4/1/frighten-featured.jpg
+featuredImage: "../../../../images/2013/4/1/frighten-featured.jpg"
 ---
 
 # はじめに

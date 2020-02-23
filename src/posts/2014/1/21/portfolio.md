@@ -2,7 +2,7 @@
 title: "自分を紹介するポートフォリオサイトを作った"
 published: "2014-01-21 13:15:09 +0900"
 updated: "2014-01-21 13:15:09 +0900"
-featuredImage: ../../../../images/2014/1/21/portfolio-featured.jpg
+featuredImage: "../../../../images/2014/1/21/portfolio-featured.jpg"
 ---
 
 # 就職のためにポートフォリオサイトを作りました

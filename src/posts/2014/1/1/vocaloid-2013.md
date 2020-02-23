@@ -2,7 +2,7 @@
 title: "2013年出会えてよかったVOCALOID曲5選"
 published: "2014-01-01 15:44:14 +0900"
 updated: "2014-01-01 15:44:14 +0900"
-featuredImage: ../../../../images/2014/1/1/vocaloid-2013-featured.png
+featuredImage: "../../../../images/2014/1/1/vocaloid-2013-featured.png"
 ---
 
 # イントロ

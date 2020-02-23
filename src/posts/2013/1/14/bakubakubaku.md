@@ -2,7 +2,7 @@
 title: "漫画の感想（バクバクバク／γ‐γ）"
 published: "2013-01-14 01:52:01 +0900"
 updated: "2013-01-14 01:52:01 +0900"
-featuredImage: ../../../../images/2013/1/14/bakubakubaku-featured.png
+featuredImage: "../../../../images/2013/1/14/bakubakubaku-featured.png"
 ---
 
 # ネタバレ注意

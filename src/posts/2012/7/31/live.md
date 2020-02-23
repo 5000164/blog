@@ -2,7 +2,7 @@
 title: "ライブを見に行ってきた"
 published: "2012-07-31 23:32:11 +0900"
 updated: "2012-07-31 23:32:11 +0900"
-featuredImage: ../../../../images/2012/7/31/live-featured.jpg
+featuredImage: "../../../../images/2012/7/31/live-featured.jpg"
 ---
 
 ちょっぴりこじんまりした会場でのライブ。

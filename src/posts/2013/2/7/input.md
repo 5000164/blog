@@ -2,7 +2,7 @@
 title: "テキストボックスの文字を右寄せにしているとiOSで入力しにくい"
 published: "2013-02-07 00:57:47 +0900"
 updated: "2013-02-07 00:57:47 +0900"
-featuredImage: ../../../../images/2013/2/7/input-featured.jpg
+featuredImage: "../../../../images/2013/2/7/input-featured.jpg"
 ---
 
 # iOSでの文字入力

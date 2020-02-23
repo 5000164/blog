@@ -2,7 +2,7 @@
 title: "DXライブラリできれいなフォントを表示する"
 published: "2014-03-16 03:20:28 +0900"
 updated: "2014-03-16 03:20:28 +0900"
-featuredImage: ../../../../images/2014/3/16/dxlib-practice-1-featured.png
+featuredImage: "../../../../images/2014/3/16/dxlib-practice-1-featured.png"
 ---
 
 # 早速見ていただきましょう
