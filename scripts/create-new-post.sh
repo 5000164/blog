@@ -2,8 +2,11 @@
 
 echo -n "Input a post URL: "
 read postURL
-postDirectory="./src/posts/"$(date "+%Y/%-m/%-d")
+ymd=$(date "+%Y/%-m/%-d")
+postDirectory="./src/posts/"${ymd}
+imageDirectory="./src/images/"${ymd}
 date=$(date "+%Y-%m-%d %H:%M:%S %z")
-frontmatter="---\ntitle: \"\"\npublished: \""${date}"\"\nupdated: \""${date}"\"\n---"
+frontmatter="---\ntitle: \"\"\npublished: \""${date}"\"\nupdated: \""${date}"\"\nfeaturedImage: \"../../../../images/${ymd}/${postURL}-featured.jpg\"\n---"
 mkdir -p ${postDirectory}
+mkdir -p ${imageDirectory}
 echo -e ${frontmatter} > ${postDirectory}/${postURL}.md
