@@ -2,6 +2,9 @@ module.exports = {
   siteMetadata: {
     title: `5000164 is here`,
     description: `This blog is written about my life include technology.`,
+    name: "菅原 浩",
+    profile:
+      "Web プログラマー。好きな言葉は「安定的に不安定」。オーストラリアで英語を勉強した後に、現在デンマークで幸せについて考えている。",
     siteUrl: `https://blog.5000164.jp`,
     image: `/icon.png`,
     twitterUsername: `@5000164`,
