@@ -5,6 +5,11 @@ module.exports = {
     name: "菅原 浩",
     profile:
       "Web プログラマー。好きな言葉は「安定的に不安定」。オーストラリアで英語を勉強した後に、現在デンマークで幸せについて考えている。",
+    consent: {
+      text: "このウェブサイトでは Cookie を使用します。<a href='/privacy/'>詳細はこちら</a>",
+      accept: "同意する",
+      decline: "同意しない",
+    },
     siteUrl: `https://blog.5000164.jp`,
     image: `/icon.png`,
     twitterUsername: `@5000164`,
@@ -49,9 +54,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
-        trackingId: "UA-51024599-1",
+        googleAnalytics: {
+          trackingId: "UA-51024599-1",
+        },
       },
     },
   ],
