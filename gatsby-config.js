@@ -1,4 +1,5 @@
 const trackingId = "UA-51024599-1"
+const anonymize = true
 
 module.exports = {
   siteMetadata: {
@@ -18,6 +19,7 @@ module.exports = {
     repository: `https://github.com/5000164/blog.5000164.jp`,
     profileUrl: `https://5000164.jp`,
     trackingId,
+    anonymize,
   },
   plugins: [
     {
@@ -62,7 +64,7 @@ module.exports = {
         googleAnalytics: {
           trackingId,
           cookieName: "gatsby-gdpr-google-analytics",
-          anonymize: true,
+          anonymize,
         },
         facebookPixel: {
           pixelId: "",

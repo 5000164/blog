@@ -1,9 +1,9 @@
 import React from "react"
 import { Layout, SEO, Static } from "gatsby-theme-blog"
 
-export default () => {
+export default ({ location }) => {
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO
         title={"Privacy Policy | 5000164 is here"}
         description={"Privacy Policy"}

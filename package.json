@@ -35,7 +35,7 @@
     "gatsby-remark-prismjs": "^3.3.31",
     "gatsby-remark-unwrap-images": "^1.0.1",
     "gatsby-source-filesystem": "^2.1.48",
-    "gatsby-theme-blog": "github:5000164/gatsby-theme-blog",
+    "gatsby-theme-blog": "github:5000164/gatsby-theme-blog#9fe2c4df",
     "gatsby-transformer-remark": "^2.6.53",
     "gatsby-transformer-sharp": "^2.3.16",
     "moment": "^2.24.0",
