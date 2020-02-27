@@ -12,7 +12,7 @@
     "new": "./scripts/create-new-post.sh",
     "clean": "gatsby clean"
   },
-  "devDependencies": {
+  "dependencies": {
     "algoliasearch": "^4.0.3",
     "babel-plugin-styled-components": "^1.10.7",
     "dotenv": "^8.2.0",
@@ -39,7 +39,6 @@
     "gatsby-transformer-remark": "^2.6.53",
     "gatsby-transformer-sharp": "^2.3.14",
     "moment": "^2.24.0",
-    "prettier": "^1.19.1",
     "prismjs": "^1.19.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -48,7 +47,10 @@
     "react-helmet": "^5.2.1",
     "react-instantsearch-dom": "^6.3.0",
     "styled-components": "^4.4.1",
-    "styled-icons": "^9.5.0",
+    "styled-icons": "^9.5.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1",
     "typescript": "^3.8.2"
   }
 }
