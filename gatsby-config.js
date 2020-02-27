@@ -58,7 +58,14 @@ module.exports = {
       options: {
         googleAnalytics: {
           trackingId: "UA-51024599-1",
+          cookieName: "gatsby-gdpr-google-analytics",
+          anonymize: true,
         },
+        facebookPixel: {
+          pixelId: "",
+          cookieName: "gatsby-gdpr-facebook-pixel",
+        },
+        environments: ["production", "development"],
       },
     },
   ],
