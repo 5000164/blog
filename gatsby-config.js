@@ -3,6 +3,7 @@ const anonymize = true
 
 module.exports = {
   siteMetadata: {
+    lang: "ja",
     title: `5000164 is here`,
     description: `This blog is written about my life include technology.`,
     name: "菅原 浩",

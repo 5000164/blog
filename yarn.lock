@@ -6295,9 +6295,9 @@ gatsby-telemetry@^1.2.3:
     stack-utils "1.0.2"
     uuid "3.4.0"
 
-"gatsby-theme-blog@github:5000164/gatsby-theme-blog#e0dcd1dfd112c5aa5c79d23b0312d64f32d06224":
+"gatsby-theme-blog@github:5000164/gatsby-theme-blog#3820afd2fa48434b4579870bc9821c6007a705d8":
   version "0.0.1"
-  resolved "https://codeload.github.com/5000164/gatsby-theme-blog/tar.gz/e0dcd1dfd112c5aa5c79d23b0312d64f32d06224"
+  resolved "https://codeload.github.com/5000164/gatsby-theme-blog/tar.gz/3820afd2fa48434b4579870bc9821c6007a705d8"
 
 gatsby-transformer-remark@^2.6.53:
   version "2.7.1"
