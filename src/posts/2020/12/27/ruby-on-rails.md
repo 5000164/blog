@@ -1,7 +1,7 @@
 ---
 title: "Ruby on Rails のチュートリアルをやった時のログ"
 published: "2020-12-27 16:48:53 +0900"
-updated: "2020-12-27 16:48:53 +0900"
+updated: "2021-01-02 16:13:29 +0900"
 featuredImage: "../../../../images/2020/12/27/ruby-on-rails-featured.jpg"
 ---
 
@@ -9,7 +9,7 @@ Ruby on Rails を勉強しようと思ってチュートリアルをやったの
 
 # まずはインストールから
 
-Docker で環境を作ろうと思ったので、[Quickstart: Compose and Rails | Docker Documentation](https://docs.docker.com/compose/rails/) を参考に少し変更しながら進めた。
+Docker で環境を作ろうと思ったので、[Quickstart: Compose and Rails | Docker Documentation](https://docs.docker.com/compose/rails/) を参考に下記の部分を変更しながら進めた。
 
 - Dockerfile の Ruby が 2.5 だったので 2.7 に変えた
 - Gemfile の Rails が 5 だったので 6 に変えた
@@ -19,8 +19,11 @@ Docker で環境を作ろうと思ったので、[Quickstart: Compose and Rails 
   - webpacker
   - turbolinks
 
+credentials.yml.enc という名前のファイルがあって、名前的にバージョン管理に含めていいのかわからなかったけど、調べたら config/master.key を安全に管理している限りは含めても大丈夫なようだった[^3]。
+
 [^1]: API サーバーだけを作る予定
 [^2]: [How to disable/remove webpacker from a project? · Issue #1333 · rails/webpacker](https://github.com/rails/webpacker/issues/1333) を参考に削除したが、後から API サーバーとしてセットアップする方法がわかったので後述
+[^3]: [Securing Rails Applications — Ruby on Rails Guides](https://guides.rubyonrails.org/security.html#custom-credentials)
 
 # Ruby on Rails のチュートリアルをやる
 
@@ -36,7 +39,7 @@ docker-compose run web rails generate controller Welcome index
 
 ライブラリが足りないっぽくて表示ができなかった。調べたら API サーバーとして使う方法のガイド [Using Rails for API-only Applications — Ruby on Rails Guides](https://guides.rubyonrails.org/api_app.html) があったのでそれを読む。
 
-API サーバーとして使う場合は rails new する時に --api オプションを付けることで API 用にできるっぽかった[^3]。
+API サーバーとして使う場合は rails new する時に --api オプションを付けることで API 用にできるっぽかった[^4]。
 
 ```
 docker-compose run --no-deps web rails new . --api --force --database=postgresql
@@ -48,7 +51,7 @@ Welcome コントローラーも下記のようにすることで不要なファ
 docker-compose run web rails generate controller Welcome index --no-assets
 ```
 
-[^3]: インストール時に除外したライブラリも含まれなくなっていた
+[^4]: インストール時に除外したライブラリも含まれなくなっていた
 
 ## API のレスポンスを返す
 
@@ -76,9 +79,9 @@ docker-compose run web rails generate controller Articles --no-assets
 
 ## new がなくて動かない
 
-チュートリアル通りに進めていたら動かなかった。どうやら api_only にしたら new と edit は routes に生成されないらしかった[^4]ので飛ばして進める。
+チュートリアル通りに進めていたら動かなかった。どうやら api_only にしたら new と edit は routes に生成されないらしかった[^5]ので飛ばして進める。
 
-[^4]: [ruby - New and Edit Routes missing in Rails Resources routes - Stack Overflow](https://stackoverflow.com/questions/60531303/new-and-edit-routes-missing-in-rails-resources-routes)
+[^5]: [ruby - New and Edit Routes missing in Rails Resources routes - Stack Overflow](https://stackoverflow.com/questions/60531303/new-and-edit-routes-missing-in-rails-resources-routes)
 
 ## モデルを作る
 
@@ -124,6 +127,7 @@ docker-compose run web rails generate controller Comments --no-assets
 - デバッグ実行をしたら `LoadError: cannot load such file -- debase` というエラーが出た
 - [ruby-debug/ruby-debug-ide: An interface which glues ruby-debug to IDEs like Eclipse (RDT), NetBeans and RubyMine.](https://github.com/ruby-debug/ruby-debug-ide) に `Ruby 2.x - ruby-debug-ide and debase` って書いてあるから `debase` も追加した
 - 追加してみたけど何も変わってないかも知れない
+  - また追加しないで試してみたけどうまくいかなかったので必要かも知れない
 - そもそも IDE の調子が悪かったので再起動した
 - デバッグ実行したら実行できた
 - docker-compose を再 build したけどただの再起動でもいけたのかも
