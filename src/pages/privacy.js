@@ -1,7 +1,7 @@
 import React from "react"
 import { Layout, SEO, Static } from "gatsby-theme-blog"
 
-export default ({ location }) => {
+const privacy = ({ location }) => {
   return (
     <Layout location={location}>
       <SEO
@@ -23,3 +23,5 @@ export default ({ location }) => {
     </Layout>
   )
 }
+
+export default privacy
