@@ -29,7 +29,7 @@
     "gatsby-remark-images": "^4.0.0",
     "gatsby-remark-prismjs": "^4.0.0",
     "gatsby-source-filesystem": "^3.0.0",
-    "gatsby-theme-blog": "github:5000164/gatsby-theme-blog#6eebed6f52e77011fb00e2bfabcbc1b46e9dfc9d",
+    "gatsby-theme-blog": "github:5000164/gatsby-theme-blog#514bcc74666c54406d194338bf1bf0565acf9672",
     "gatsby-transformer-remark": "^3.0.0",
     "gatsby-transformer-sharp": "^3.0.0",
     "moment": "^2.29.1",
