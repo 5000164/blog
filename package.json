@@ -10,6 +10,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@loadable/component": "^5.14.1",
     "algoliasearch": "^4.8.5",
     "babel-plugin-styled-components": "^1.12.0",
     "dotenv": "^8.2.0",
@@ -29,7 +30,7 @@
     "gatsby-remark-images": "^4.0.0",
     "gatsby-remark-prismjs": "^4.0.0",
     "gatsby-source-filesystem": "^3.0.0",
-    "gatsby-theme-blog": "github:5000164/gatsby-theme-blog#514bcc74666c54406d194338bf1bf0565acf9672",
+    "gatsby-theme-blog": "github:5000164/gatsby-theme-blog#f2922ff736be55e577ea7f4bf754db16296322fe",
     "gatsby-transformer-remark": "^3.0.0",
     "gatsby-transformer-sharp": "^3.0.0",
     "moment": "^2.29.1",
