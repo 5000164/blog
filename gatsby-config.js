@@ -1,3 +1,7 @@
+const currentEnvironment = process.env.ENV || process.env.NODE_ENV || "development"
+const queries = require("gatsby-theme-blog/src/utils/algolia")
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     lang: `ja`,
@@ -45,5 +49,18 @@ module.exports = {
         siteUrl: `https://blog.5000164.jp`,
       },
     },
+    ...(currentEnvironment === "algolia"
+      ? [
+          {
+            resolve: `gatsby-plugin-algolia`,
+            options: {
+              appId: process.env.GATSBY_ALGOLIA_APP_ID,
+              apiKey: process.env.ALGOLIA_ADMIN_KEY,
+              queries,
+              chunkSize: 10000,
+            },
+          },
+        ]
+      : []),
   ],
 }
