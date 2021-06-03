@@ -16,7 +16,7 @@ updated: "2015-11-28 02:55:39 +0900"
 
 # 一応オプションをつけて毎回パスワードを入力すれば回避できる
 
-```none
+```
 ansible-playbook playbook.yml --ask-sudo-pass
 ```
 
@@ -59,7 +59,7 @@ vagrant グループに入れてみる。
 
 # /etc/sudoers.d/ に vagrant ってファイルがあった
 
-```none
+```
 vagrant ALL=(ALL) NOPASSWD:ALL
 ```
 
@@ -81,7 +81,7 @@ vagrant ALL=(ALL) NOPASSWD:ALL
 
 # 結論
 
-```none
+```
 +++
 - hosts: all
   remote_user: vagrant

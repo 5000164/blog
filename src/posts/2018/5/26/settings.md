@@ -21,7 +21,7 @@ updated: "2018-05-26 15:18:13 +0900"
 
 - `resources` 以下に設定ファイルを入れてしまうと生成された jar に含まれてしまうのでトップディレクトリに設定ファイルを配置する
 
-```none
+```
 .
 ├── build.sbt
 ├── Settings.settings
@@ -41,7 +41,7 @@ updated: "2018-05-26 15:18:13 +0900"
 
 - `build.sbt`
 
-```none
+```
 libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVersion.value
 ```
 
@@ -101,7 +101,7 @@ new SettingsType {
 
 .gitignore
 
-```none
+```
 Settings.scala
 ```
 

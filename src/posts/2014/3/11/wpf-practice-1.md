@@ -20,7 +20,7 @@ featuredImage: "../../../../images/2014/3/11/wpf-practice-1-featured.png"
 この記事に沿っていったらできました。  
 これを追記するだけ。
 
-```none
+```
 <WindowChrome.WindowChrome>
     <WindowChrome CaptionHeight="23" ResizeBorderThickness="100" />
 </WindowChrome.WindowChrome>
@@ -39,7 +39,7 @@ WPF初心者の私には無理だと判断したので、この記事の冒頭�
 
 # 影をいい感じにつける
 
-```none
+```
 <Window x:Class="練習1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"

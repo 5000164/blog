@@ -6,7 +6,7 @@ updated: "2014-11-14 20:39:16 +0900"
 
 # 結論
 
-```none
+```
 adb shell
 run-as {パッケージ名} cat databases/{DB 名} > /sdcard/{DB 名}
 exit
@@ -29,7 +29,7 @@ Android は cp コマンドがないので cat コマンドの出力をリダイ
 
 # まとめ
 
-```none
+```
 adb -d shell "run-as {パッケージ名} cat databases/{DB 名} > /sdcard/{DB 名}"
 adb pull /sdcard/{DB 名} ~/Downloads/{DB 名}
 ```

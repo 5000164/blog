@@ -22,7 +22,7 @@ DB をマイグレーションしようと思った時に、せっかくだか�
 
 - MySQL に対してマイグレーションを行おうと思ったので pdo_mysql を使えるようにしておく
 
-```none
+```
 FROM php:7.2.9-cli
 
 RUN docker-php-ext-install pdo_mysql

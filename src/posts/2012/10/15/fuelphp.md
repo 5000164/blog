@@ -12,7 +12,7 @@ featuredImage: "../../../../images/2012/10/15/fuelphp-featured.png"
 true ってしたらプロファイラは常に表示されてて欲しいです。  
 ということで、常に表示されるようにします。
 
-```none
+```
 fuel/core/vendor/phpquickprofiler/display.php
 ```
 
