@@ -2,8 +2,9 @@
 title: "WPF で枠のないウィンドウを作る"
 published: "2014-03-11 23:17:38 +0900"
 updated: "2014-03-11 23:17:38 +0900"
-featuredImage: "../../../../images/2014/3/11/wpf-practice-1-featured.png"
 ---
+
+![](../../../../images/2014/3/11/wpf-practice-1-1.png)
 
 # 実際に作ったものはこんな感じです
 

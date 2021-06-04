@@ -2,8 +2,9 @@
 title: "Operaの右クリックで表示中のページのURLを取得したり別のブラウザで開いたり"
 published: "2013-03-04 04:16:33 +0900"
 updated: "2013-03-04 04:16:33 +0900"
-featuredImage: "../../../../images/2013/3/4/opera-featured.jpg"
 ---
+
+![](../../../../images/2013/3/4/opera-1.jpg)
 
 # Operaの右クリックをカスタマイズ
 

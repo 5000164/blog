@@ -2,8 +2,9 @@
 title: "4ヶ月無職で過ごした感想"
 published: "2014-02-28 00:14:30 +0900"
 updated: "2014-02-28 00:14:30 +0900"
-featuredImage: "../../../../images/2014/2/28/musyoku-featured.jpg"
 ---
+
+![](../../../../images/2014/2/28/musyoku-1.jpg)
 
 # 私は無職で約4ヶ月間過ごしました
 

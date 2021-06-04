@@ -2,8 +2,9 @@
 title: "WPF で方向キーを入力した方向へ四角形を動かす"
 published: "2014-03-13 04:21:42 +0900"
 updated: "2014-03-13 04:21:42 +0900"
-featuredImage: "../../../../images/2014/3/13/wpf-practice-2-featured.png"
 ---
+
+![](../../../../images/2014/3/13/wpf-practice-2-1.png)
 
 # 実際に作ったものはこんな感じです
 
@@ -17,7 +18,7 @@ featuredImage: "../../../../images/2014/3/13/wpf-practice-2-featured.png"
 とりあえずなんでもよかったので、 Rectangle タグで四角形を表示します。  
 そして、位置を指定するために Canvas タグで囲みます。
 
-```xml
+```
 <Canvas>
     <Rectangle Name="pointer" Width="10" Height="10" Fill="Red" Canvas.Left="0" Canvas.Top="0" />
 </Canvas>

@@ -2,8 +2,9 @@
 title: "作詞してみた"
 published: "2013-02-14 03:19:55 +0900"
 updated: "2013-02-14 03:19:55 +0900"
-featuredImage: "../../../../images/2013/2/13/lyrics-featured.jpg"
 ---
+
+![](../../../../images/2013/2/13/lyrics-1.jpg)
 
 # 友達の曲に詞をつけてみた
 

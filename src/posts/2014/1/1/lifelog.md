@@ -2,8 +2,9 @@
 title: "リストバンド型のライフログガジェットを調べたのでまとめた"
 published: "2014-01-01 17:44:17 +0900"
 updated: "2014-01-01 17:44:17 +0900"
-featuredImage: "../../../../images/2014/1/1/lifelog-featured.jpg"
 ---
+
+![](../../../../images/2014/1/1/lifelog-1.jpg)
 
 # きっかけ
 

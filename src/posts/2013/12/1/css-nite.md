@@ -2,8 +2,9 @@
 title: "CSS Nite in SENDAI, Vol.7 「変化するWebデザイン 〜既成概念を打ち破るWeb制作のあり方を考える」に参加しました"
 published: "2013-12-01 23:18:10 +0900"
 updated: "2013-12-01 23:18:10 +0900"
-featuredImage: "../../../../images/2013/12/1/css-nite-featured.jpg"
 ---
+
+![](../../../../images/2013/12/1/css-nite-1.jpg)
 
 # CSS Nite in SENDAIについて
 

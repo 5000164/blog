@@ -2,8 +2,9 @@
 title: "TEDの感想（サイモン シネック: 優れたリーダーはどうやって行動を促すか）"
 published: "2013-12-03 00:50:28 +0900"
 updated: "2013-12-03 00:50:28 +0900"
-featuredImage: "../../../../images/2013/12/3/ted-simon-featured.png"
 ---
+
+![](../../../../images/2013/12/3/ted-simon-1.png)
 
 # 動画について
 
