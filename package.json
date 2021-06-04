@@ -30,7 +30,7 @@
     "gatsby-remark-images": "^5.2.0",
     "gatsby-remark-prismjs": "^5.2.0",
     "gatsby-source-filesystem": "^3.5.0",
-    "gatsby-theme-blog": "github:5000164/gatsby-theme-blog#e74bfbb1c96564b1a59780e673c40a23570d34d8",
+    "gatsby-theme-blog": "github:5000164/gatsby-theme-blog#128cb47353bf057404cd79ccc9da348a09b3a857",
     "gatsby-transformer-remark": "^4.2.0",
     "gatsby-transformer-sharp": "^3.5.0",
     "moment": "^2.29.1",
