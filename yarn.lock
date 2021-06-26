@@ -7056,9 +7056,9 @@ gatsby-telemetry@^2.5.0:
     node-fetch "^2.6.1"
     uuid "3.4.0"
 
-"gatsby-theme-blog@github:5000164/gatsby-theme-blog#128cb47353bf057404cd79ccc9da348a09b3a857":
+"gatsby-theme-blog@github:5000164/gatsby-theme-blog#184fc35a1e5f0a764016d6acb80be40f60aa89cd":
   version "0.0.1"
-  resolved "https://codeload.github.com/5000164/gatsby-theme-blog/tar.gz/128cb47353bf057404cd79ccc9da348a09b3a857"
+  resolved "https://codeload.github.com/5000164/gatsby-theme-blog/tar.gz/184fc35a1e5f0a764016d6acb80be40f60aa89cd"
 
 gatsby-transformer-remark@^4.2.0:
   version "4.2.0"
